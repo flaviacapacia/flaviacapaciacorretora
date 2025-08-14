@@ -4,184 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Imóveis da Flavia</title>
-
-  <!-- Fonte e ícones -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-  <style>
-    :root {
-      --preto: #111;
-      --dourado: #c9a93a;
-      --cinza-claro: #f8f8f8;
-    }
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const codigoInput = document.getElementById("codigo");
-    const gerarCodigo = () => {
-      const prefixo = "IMV";
-      const aleatorio = Math.floor(1000 + Math.random() * 9000);
-      return `${prefixo}-${aleatorio}`;
-    };
-    codigoInput.value = gerarCodigo();
-  });
-
-  document.getElementById("form-cadastro").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Imóvel cadastrado com sucesso!");
-    // Aqui você pode enviar os dados para um backend, Google Forms ou email
-  });
-</script>
-
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background-color: var(--preto);
-      color: white;
-    }
-
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: var(--preto);
-      border-bottom: 2px solid var(--dourado);
-    }
-
-    .logo-area img,
-    .footer-logo img {
-      height: 100px;
-      width: auto;
-      max-width: 100%;
-      display: block;
-    }
-
-    .main-nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .main-nav ul li a {
-      text-decoration: none;
-      color: var(--dourado);
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .main-nav ul li a:hover {
-      color: white;
-    }
-
-    .menu-toggle {
-      display: none;
-    }
-
-    .hero img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2em;
-      color: var(--dourado);
-      margin-top: 40px;
-    }
-
-    .imoveis-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .imovel img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-    }
-
-    .imovel p {
-      text-align: center;
-      color: white;
-      margin-top: 10px;
-    }
-
-    .sobre-section {
-      display: flex;
-      gap: 20px;
-      padding: 40px 20px;
-      align-items: center;
-      background-color: #1a1a1a;
-    }
-
-    .sobre-foto img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
-    .sobre-texto h2 {
-      color: var(--dourado);
-    }
-
-    .cta-banner {
-      background-color: var(--dourado);
-      text-align: center;
-      padding: 30px;
-      color: var(--preto);
-      font-weight: bold;
-    }
-
-    .site-footer {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
-      background-color: var(--preto);
-      border-top: 2px solid var(--dourado);
-    }
-
-    .footer-contact a {
-      color: var(--dourado);
-      text-decoration: none;
-    }
-
-    .footer-contact p {
-      margin: 5px 0;
-    }
-
-    @media (max-width: 768px) {
-      .imoveis-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .sobre-section {
-        flex-direction: column;
-      }
-
-      .site-header {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .main-nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -198,32 +22,22 @@
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
-    <button class="menu-toggle" aria-label="Abrir/fechar menu">
-      <i class="fas fa-bars"></i>
-    </button>
   </header>
 
   <section id="hero" class="hero">
-    <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" class="capa"/>
+    <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
   </section>
 
   <main id="lista-imoveis">
     <h2 class="section-title">Imóveis Disponíveis</h2>
     <div class="imoveis-grid">
-      <div class="imovel"><img src="img/imovel1.jpg" alt="Imóvel 1"/><p>Apê no Kobrasol</p></div>
-      <div class="imovel"><img src="img/imovel2.jpg" alt="Imóvel 2"/><p>Casa com piscina</p></div>
-      <div class="imovel"><img src="img/imovel3.jpg" alt="Imóvel 3"/><p>Studio moderno</p></div>
-      <div class="imovel"><img src="img/imovel4.jpg" alt="Imóvel 4"/><p>Vista para o mar</p></div>
-      <div class="imovel"><img src="img/imovel5.jpg" alt="Imóvel 5"/><p>Duplex elegante</p></div>
-      <div class="imovel"><img src="img/imovel6.jpg" alt="Imóvel 6"/><p>Próximo ao shopping</p></div>
-      <div class="imovel"><img src="img/imovel7.jpg" alt="Imóvel 7"/><p>Condomínio fechado</p></div>
-      <div class="imovel"><img src="img/imovel8.jpg" alt="Imóvel 8"/><p>Ideal para família</p></div>
+      <!-- Imóveis listados -->
     </div>
   </main>
 
   <section id="sobre" class="sobre-section">
     <div class="sobre-foto">
-      <img src="img/flavia.sobre.jpg" alt="Flavia Capacia"/>
+      <img src="img/flavia.sobre.jpg" alt="Flavia Capacia" />
     </div>
     <div class="sobre-texto">
       <h2>Sobre a Flavia Capacia</h2>
@@ -231,74 +45,19 @@
     </div>
   </section>
 
-<section id="negocie" class="negocie-section">
-  <h2 class="section-title">Negocie seu Imóvel</h2>
-  <p style="text-align:center;">Entre em contato para anunciar seu imóvel com segurança e agilidade.</p>
-  <p>Preencha os dados abaixo para cadastrar seu imóvel. Seus dados pessoais não serão exibidos publicamente.</p>
-
-  <!-- Formulário aqui -->
-  <form action="https://formsubmit.co/seu-email@email.com" method="POST" class="form-cadastro" id="form-cadastro">
-    <input type="hidden" name="_next" value="https://www.flaviacapaciacorretora.site/imoveis-cadastrados.html">
-    <input type="hidden" name="_captcha" value="false">
-
-    <label for="codigo">Código do Imóvel</label>
-    <input type="text" id="codigo" name="Código" readonly />
-
-    <label for="nome">Nome do Proprietário</label>
-    <input type="text" id="nome" name="Nome" required />
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="Email" required />
-
-    <label for="telefone">Telefone</label>
-    <input type="tel" id="telefone" name="Telefone" required />
-
-    <label for="descricao">Descrição do Imóvel</label>
-    <textarea id="descricao" name="Descrição" rows="4" required></textarea>
-
-    <label for="localizacao">Localização</label>
-    <input type="text" id="localizacao" name="Localização" required />
-
-    <button type="submit">Cadastrar Imóvel</button>
-  </form>
-
-  <div class="link-imoveis-cadastrados">
-    <p>Veja os imóveis já cadastrados:</p>
-    <a href="imoveis-cadastrados.html" class="btn-imovel">Ver Imóveis Cadastrados</a>
-  </div>
-</section>
-
+  <section id="negocie" class="negocie-section">
+    <h2 class="section-title">Negocie seu Imóvel</h2>
+    <form id="form-cadastro">
+      <label for="codigo">Código do Imóvel</label>
+      <input type="text" id="codigo" name="codigo" readonly />
+      <!-- Outros campos -->
+      <button type="submit">Cadastrar Imóvel</button>
+    </form>
+  </section>
 
   <section id="financie" class="financie-section">
     <h2 class="section-title">Financie</h2>
-    <p style="text-align:center;">Em breve mais detalhes sobre financiamento facilitado.</p>
-    <section id="negocie" class="negocie-section">
-  <h2 class="section-title">Negocie seu Imóvel</h2>
-  <p>Preencha os dados abaixo para cadastrar seu imóvel. Entraremos em contato em breve!</p>
-
-  <form id="form-cadastro" class="form-cadastro">
-    <label for="codigo">Código do Imóvel</label>
-    <input type="text" id="codigo" name="codigo" readonly />
-
-    <label for="nome">Nome do Proprietário</label>
-    <input type="text" id="nome" name="nome" required />
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required />
-
-    <label for="telefone">Telefone</label>
-    <input type="tel" id="telefone" name="telefone" required />
-
-    <label for="descricao">Descrição do Imóvel</label>
-    <textarea id="descricao" name="descricao" rows="4" required></textarea>
-
-    <label for="localizacao">Localização</label>
-    <input type="text" id="localizacao" name="localizacao" required />
-
-    <button type="submit">Cadastrar Imóvel</button>
-  </form>
-</section>
-
+    <p>Em breve mais detalhes sobre financiamento facilitado.</p>
   </section>
 
   <section class="cta-banner">
@@ -312,4 +71,10 @@
     <div class="footer-contact">
       <h3 style="color: var(--dourado);">Contato</h3>
       <p><a href="mailto:flavia@email.com">flavia@email.com</a></p>
-      <p><a href="tel:+5548999999999">(48) 
+      <p><a href="tel:+5548999999999">(48) 99999-9999</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

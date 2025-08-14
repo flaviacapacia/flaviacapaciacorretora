@@ -1,60 +1,98 @@
 :root {
   --preto: #111;
-  --bronze: #b08d57;
-  --hover-bronze: #a07c45;
-  --card-bg: #1a1a1a;
-  --bg-dark: #222;
-  --text-light: #fff;
+  --dourado: #c9a93a;
+  --cinza-claro: #f8f8f8;
 }
 
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
   background-color: var(--preto);
-  color: var(--text-light);
+  color: white;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: var(--preto);
+  border-bottom: 2px solid var(--dourado);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: var(--dourado);
+  font-weight: bold;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
 }
 
 .section-title {
   text-align: center;
   font-size: 2em;
-  color: var(--bronze);
+  color: var(--dourado);
   margin-top: 40px;
 }
 
-.form-cadastro {
-  max-width: 600px;
-  margin: 2rem auto;
+.imoveis-grid {
   display: grid;
-  gap: 1rem;
-  background: var(--card-bg);
-  padding: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.imovel img {
+  width: 100%;
   border-radius: 8px;
 }
 
-.form-cadastro label {
-  color: var(--bronze);
+.sobre-section {
+  display: flex;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+}
+
+.sobre-foto img {
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.sobre-texto h2 {
+  color: var(--dourado);
+}
+
+.sobre-texto p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.cta-banner {
+  background-color: var(--dourado);
+  text-align: center;
+  padding: 30px;
+  color: var(--preto);
   font-weight: bold;
 }
 
-.form-cadastro input,
-.form-cadastro textarea {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 4px;
-  background: var(--bg-dark);
-  color: var(--text-light);
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--preto);
+  border-top: 2px solid var(--dourado);
 }
 
-.form-cadastro button {
-  background: var(--bronze);
-  color: white;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.form-cadastro button:hover {
-  background: var(--hover-bronze);
+.footer-contact a {
+  color: var(--dourado);
+  text-decoration: none;
 }
