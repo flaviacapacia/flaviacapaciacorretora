@@ -57,24 +57,27 @@ body {
 
 .sobre-section {
   display: flex;
-  gap: 20px;
-  padding: 40px 20px;
-  background-color: #1a1a1a;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
 }
 
-.sobre-foto img {
+.sobre-section img {
   max-width: 300px;
-  border-radius: 8px;
+  border-radius: 12px;
+  order: 2;
 }
 
-.sobre-texto h2 {
-  color: var(--dourado);
+.sobre-section .texto-sobre {
+  flex: 1;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  order: 1;
 }
 
-.sobre-texto p {
-  color: #ccc;
-  line-height: 1.6;
-}
+
 
 .cta-banner {
   background-color: var(--dourado);
