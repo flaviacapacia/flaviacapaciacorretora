@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imóveis da Flavia</title>
+
+  <!-- Fonte e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #f8f8f8;
+    }
+
+    .logo-area img,
+    .footer-logo img {
+      height: 80px;
+      width: auto;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+    }
+
+    .main-nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .imoveis-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .imovel img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .sobre-section {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sobre-foto img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .cta-banner {
+      background-color: #eee;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .footer-contact a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .imoveis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sobre-section {
+        flex-direction: column;
+      }
+
+      .site-header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="logo.png" alt="Logo Flavia Imóveis" class="logo"/>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#negocie">Negocie</a></li>
+        <li><a href="#financie">Financie</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Abrir/fechar menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <section id="hero" class="hero">
+    <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" class="capa"/>
+  </section>
+
+  <main id="lista-imoveis">
+    <h2 class="section-title">Imóveis Disponíveis</h2>
+    <div class="imoveis-grid">
+      <div class="imovel"><img src="img/imovel1.jpg" alt="Imóvel 1"/><p>Apê no Kobrasol</p></div>
+      <div class="imovel"><img src="img/imovel2.jpg" alt="Imóvel 2"/><p>Casa com piscina</p></div>
+      <div class="imovel"><img src="img/imovel3.jpg" alt="Imóvel 3"/><p>Studio moderno</p></div>
+      <div class="imovel"><img src="img/imovel4.jpg" alt="Imóvel 4"/><p>Vista para o mar</p></div>
+      <div class="imovel"><img src="img/imovel5.jpg" alt="Imóvel 5"/><p>Duplex elegante</p></div>
+      <div class="imovel"><img src="img/imovel6.jpg" alt="Imóvel 6"/><p>Próximo ao shopping</p></div>
+      <div class="imovel"><img src="img/imovel7.jpg" alt="Imóvel 7"/><p>Condomínio fechado</p></div>
+      <div class="imovel"><img src="img/imovel8.jpg" alt="Imóvel 8"/><p>Ideal para família</p></div>
+    </div>
+    <a href="https://wa.me/5548999600601" class="whatsapp-float" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </main>
+
+  <section id="sobre" class="sobre-section">
+    <div class="sobre-texto">
+      <h2>Sobre a Flavia Capacia</h2>
+      <p>Flavia Capacia é a profissional por trás de grandes realizações na Grande Florianópolis...</p>
+    </div>
+    <div class="sobre-foto">
+      <img src="img/flavia.sobre.jpg" alt="Flavia Capacia"/>
+    </div>
+  </section>
+
+  <section id="negocie" class="negocie-section">
+    <h2>Negocie seu Imóvel</h2>
+  </section>
+
+  <section id="financie" class="financie-section">
+    <h2>Financie</h2>
+    <p>Em breve mais detalhes!</p>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Seu imóvel a um clique de você</h2>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <img src="logo.png" alt="Logo Flavia"/>
+    </div>
+    <div class="footer-contact">
+      <h3>Contato</h3>
+      <p><a href="mailto:flavia@email.com">flavia@email.com</a></p>
+      <p><a href="tel:+5548999999999">(48) 99999-9999</a></p>
+      <p>Kobrasol, São José - SC</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.main-nav');
+      btn.addEventListener('click', () => nav.classList.toggle('active'));
+    });
+  </script>
+</body>
+</html>

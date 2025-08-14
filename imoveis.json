@@ -1,0 +1,32 @@
+[ 
+{ 
+"titulo": "Apartamento no Centro", 
+"descricao": "3 quartos, 2 banheiros, 90m²", 
+"preco": "R$ 450.000", 
+"imagem": "apto-centro.jpg", 
+"link": "https://www.casamineira.com.br/imovel/123456" 
+}, 
+{ 
+"titulo": "Casa com quintal", 
+"descricao": "2 quartos, 1 suíte, 120m²", 
+"preco": "R$ 600.000", 
+"imagem": "casa-quintal.jpg", 
+"link": "https://www.casamineira.com.br/imovel/789012" 
+} 
+[
+  {
+    "codigo": "0001",
+    "tipo": "Casa",
+    "negocio": "Venda",
+    "valor": "R$ 320.000",
+    "endereco": "Rua X, Centro",
+    "bairro": "Centro",
+    "condominio": "Residencial Sol",
+    "descricao": "Casa com 2 quartos, 1 suíte, quintal amplo.",
+    "fotos": ["link1.jpg", "link2.jpg"],
+    "documentos": "https://drive.google.com/drive/folders/SEU_LINK",
+    "contato": "(48) 99999-0000"
+  }
+]
+
+] 
