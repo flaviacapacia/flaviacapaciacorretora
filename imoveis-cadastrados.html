@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Imóveis Cadastrados</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const codigoInput = document.getElementById("codigo");
+    const gerarCodigo = () => {
+      const prefixo = "IMV";
+      const aleatorio = Math.floor(1000 + Math.random() * 9000);
+      return `${prefixo}-${aleatorio}`;
+    };
+    codigoInput.value = gerarCodigo();
+  });
+</script>
+
+<body>
+  <header class="site-header">
+    <h1>Imóveis Cadastrados</h1>
+  </header>
+
+  <main class="imoveis-grid">
+    <!-- Aqui você pode listar os imóveis manualmente ou integrar com a planilha -->
+    <div class="imovel">
+      <p><strong>Descrição:</strong> Casa com piscina</p>
+      <p><strong>Localização:</strong> Barreiros, São José</p>
+    </div>
+
+    <div class="imovel">
+      <p><strong>Descrição:</strong> Studio moderno</p>
+      <p><strong>Localização:</strong> Centro, Florianópolis</p>
+    </div>
+  </main>
+</body>
+</html>

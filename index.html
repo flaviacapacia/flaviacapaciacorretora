@@ -10,9 +10,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
+    :root {
+      --preto: #111;
+      --dourado: #c9a93a;
+      --cinza-claro: #f8f8f8;
+    }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const codigoInput = document.getElementById("codigo");
+    const gerarCodigo = () => {
+      const prefixo = "IMV";
+      const aleatorio = Math.floor(1000 + Math.random() * 9000);
+      return `${prefixo}-${aleatorio}`;
+    };
+    codigoInput.value = gerarCodigo();
+  });
+
+  document.getElementById("form-cadastro").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Imóvel cadastrado com sucesso!");
+    // Aqui você pode enviar os dados para um backend, Google Forms ou email
+  });
+</script>
+
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
+      background-color: var(--preto);
+      color: white;
     }
 
     .site-header {
@@ -20,13 +45,16 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
-      background-color: #f8f8f8;
+      background-color: var(--preto);
+      border-bottom: 2px solid var(--dourado);
     }
 
     .logo-area img,
     .footer-logo img {
-      height: 80px;
+      height: 100px;
       width: auto;
+      max-width: 100%;
+      display: block;
     }
 
     .main-nav ul {
@@ -35,13 +63,17 @@
       gap: 20px;
       padding: 0;
       margin: 0;
-      justify-content: center;
     }
 
     .main-nav ul li a {
       text-decoration: none;
-      color: #333;
+      color: var(--dourado);
       font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .main-nav ul li a:hover {
+      color: white;
     }
 
     .menu-toggle {
@@ -52,6 +84,13 @@
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2em;
+      color: var(--dourado);
+      margin-top: 40px;
     }
 
     .imoveis-grid {
@@ -65,36 +104,58 @@
       width: 100%;
       height: auto;
       display: block;
+      border-radius: 8px;
+    }
+
+    .imovel p {
+      text-align: center;
+      color: white;
+      margin-top: 10px;
     }
 
     .sobre-section {
       display: flex;
       gap: 20px;
-      padding: 20px;
+      padding: 40px 20px;
+      align-items: center;
+      background-color: #1a1a1a;
     }
 
     .sobre-foto img {
       width: 100%;
       max-width: 300px;
       height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .sobre-texto h2 {
+      color: var(--dourado);
     }
 
     .cta-banner {
-      background-color: #eee;
+      background-color: var(--dourado);
       text-align: center;
       padding: 30px;
+      color: var(--preto);
+      font-weight: bold;
     }
 
     .site-footer {
       display: flex;
       justify-content: space-between;
       padding: 20px;
-      background-color: #f0f0f0;
+      background-color: var(--preto);
+      border-top: 2px solid var(--dourado);
     }
 
     .footer-contact a {
-      color: #333;
+      color: var(--dourado);
       text-decoration: none;
+    }
+
+    .footer-contact p {
+      margin: 5px 0;
     }
 
     @media (max-width: 768px) {
@@ -126,7 +187,7 @@
 
   <header class="site-header">
     <div class="logo-area">
-      <img src="logo.png" alt="Logo Flavia Imóveis" class="logo"/>
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
     </div>
     <nav class="main-nav">
       <ul>
@@ -158,52 +219,97 @@
       <div class="imovel"><img src="img/imovel7.jpg" alt="Imóvel 7"/><p>Condomínio fechado</p></div>
       <div class="imovel"><img src="img/imovel8.jpg" alt="Imóvel 8"/><p>Ideal para família</p></div>
     </div>
-    <a href="https://wa.me/5548999600601" class="whatsapp-float" title="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
   </main>
 
   <section id="sobre" class="sobre-section">
-    <div class="sobre-texto">
-      <h2>Sobre a Flavia Capacia</h2>
-      <p>Flavia Capacia é a profissional por trás de grandes realizações na Grande Florianópolis...</p>
-    </div>
     <div class="sobre-foto">
       <img src="img/flavia.sobre.jpg" alt="Flavia Capacia"/>
     </div>
+    <div class="sobre-texto">
+      <h2>Sobre a Flavia Capacia</h2>
+      <p>Flavia Capacia é a profissional por trás de grandes realizações na Grande Florianópolis. Com experiência, dedicação e paixão pelo mercado imobiliário, ela transforma sonhos em realidade todos os dias.</p>
+    </div>
   </section>
 
-  <section id="negocie" class="negocie-section">
-    <h2>Negocie seu Imóvel</h2>
-  </section>
+<section id="negocie" class="negocie-section">
+  <h2 class="section-title">Negocie seu Imóvel</h2>
+  <p style="text-align:center;">Entre em contato para anunciar seu imóvel com segurança e agilidade.</p>
+  <p>Preencha os dados abaixo para cadastrar seu imóvel. Seus dados pessoais não serão exibidos publicamente.</p>
+
+  <!-- Formulário aqui -->
+  <form action="https://formsubmit.co/seu-email@email.com" method="POST" class="form-cadastro" id="form-cadastro">
+    <input type="hidden" name="_next" value="https://www.flaviacapaciacorretora.site/imoveis-cadastrados.html">
+    <input type="hidden" name="_captcha" value="false">
+
+    <label for="codigo">Código do Imóvel</label>
+    <input type="text" id="codigo" name="Código" readonly />
+
+    <label for="nome">Nome do Proprietário</label>
+    <input type="text" id="nome" name="Nome" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="Email" required />
+
+    <label for="telefone">Telefone</label>
+    <input type="tel" id="telefone" name="Telefone" required />
+
+    <label for="descricao">Descrição do Imóvel</label>
+    <textarea id="descricao" name="Descrição" rows="4" required></textarea>
+
+    <label for="localizacao">Localização</label>
+    <input type="text" id="localizacao" name="Localização" required />
+
+    <button type="submit">Cadastrar Imóvel</button>
+  </form>
+
+  <div class="link-imoveis-cadastrados">
+    <p>Veja os imóveis já cadastrados:</p>
+    <a href="imoveis-cadastrados.html" class="btn-imovel">Ver Imóveis Cadastrados</a>
+  </div>
+</section>
+
 
   <section id="financie" class="financie-section">
-    <h2>Financie</h2>
-    <p>Em breve mais detalhes!</p>
+    <h2 class="section-title">Financie</h2>
+    <p style="text-align:center;">Em breve mais detalhes sobre financiamento facilitado.</p>
+    <section id="negocie" class="negocie-section">
+  <h2 class="section-title">Negocie seu Imóvel</h2>
+  <p>Preencha os dados abaixo para cadastrar seu imóvel. Entraremos em contato em breve!</p>
+
+  <form id="form-cadastro" class="form-cadastro">
+    <label for="codigo">Código do Imóvel</label>
+    <input type="text" id="codigo" name="codigo" readonly />
+
+    <label for="nome">Nome do Proprietário</label>
+    <input type="text" id="nome" name="nome" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="telefone">Telefone</label>
+    <input type="tel" id="telefone" name="telefone" required />
+
+    <label for="descricao">Descrição do Imóvel</label>
+    <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+    <label for="localizacao">Localização</label>
+    <input type="text" id="localizacao" name="localizacao" required />
+
+    <button type="submit">Cadastrar Imóvel</button>
+  </form>
+</section>
+
   </section>
 
   <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
   </section>
 
-  <footer class="site-footer">
+  <footer class="site-footer" id="contato">
     <div class="footer-logo">
-      <img src="logo.png" alt="Logo Flavia"/>
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia"/>
     </div>
     <div class="footer-contact">
-      <h3>Contato</h3>
+      <h3 style="color: var(--dourado);">Contato</h3>
       <p><a href="mailto:flavia@email.com">flavia@email.com</a></p>
-      <p><a href="tel:+5548999999999">(48) 99999-9999</a></p>
-      <p>Kobrasol, São José - SC</p>
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('.main-nav');
-      btn.addEventListener('click', () => nav.classList.toggle('active'));
-    });
-  </script>
-</body>
-</html>
+      <p><a href="tel:+5548999999999">(48) 
