@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Imóveis em Floripa FC</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+ <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -56,9 +56,20 @@
       <img src="img/flavia_sobre.jpg" alt="Flavia Capacia">
     </div>
     <div class="texto-sobre">
-      <h2>Sobre Flavia Capacia</h2>
-      <p>Apaixonada pela corretagem de imóveis, Flavia Capacia é a profissional por trás de grandes realizações na Grande Florianópolis...</p>
-    </div>
+
+     <h2>Sobre  Flavia Capacia</h2>
+    <p>
+        Apaixonada pela corretagem de imóveis, Flavia Capacia é a profissional
+        por trás de grandes realizações na Grande Florianópolis. Com mais de
+        10 anos de experiência, destaca-se pela conduta ética, compromisso e
+        transparência, conquistando a confiança de clientes e parceiros.
+      </p>
+      <p>
+        Determinada a unir as necessidades de venda e a realização de compra,
+        Flavia busca sempre entregar o melhor, concretizando sonhos e fechando
+        negócios de sucesso.
+      </p>    
+  </div>    
   </section>
 
   <section id="negocie" class="negocie-section">
@@ -66,14 +77,57 @@
     <form id="form-cadastro">
       <label for="codigo">Código do Imóvel</label>
       <input type="text" id="codigo" name="codigo" readonly />
+        <!-- Outros campos -->
       <button type="submit">Cadastrar Imóvel</button>
     </form>
   </section>
 
-  <section id="financie" class="financie-section">
-    <h2 class="section-title">Financie</h2>
-    <p>Em breve mais detalhes sobre financiamento</p>
-  </section>
+ <section id="financie" class="financie-section">
+  <h2 class="section-title">Financie</h2>
+  <p>Escolha seu banco preferido para simular o financiamento:</p>
+  <div class="bancos-financiamento">
+    <a href="https://www.itau.com.br/credito-imobiliario/simulador/" target="_blank">
+      <img src="imagens/logo-itau.png" alt="Itaú" width="100">
+    </a>
+    <a href="https://www.santander.com.br/credito-imobiliario/simulador" target="_blank">
+      <img src="imagens/logo-santander.png" alt="Santander" width="100">
+    </a>
+    <a href="https://banco.bradesco/html/classic/produtos/credito-imobiliario/simulador.shtm" target="_blank">
+      <img src="imagens/logo-bradesco.png" alt="Bradesco" width="100">
+    </a>
+  </div>
+  <p class="simule-texto">💰 Simule seu financiamento com segurança e praticidade.</p>
+</section>
+
+<section id="contato" class="contato-section">
+  <h2>Contato</h2>
+  <form action="mailto:flavia@email.com" method="post" enctype="text/plain">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="telefone" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <div class="whatsapp-contato">
+    <a href="https://wa.me/5548999600601" target="_blank">
+      <img src="imagens/logo-whatsapp.png" alt="WhatsApp" width="50">
+      Fale comigo pelo WhatsApp
+    </a>
+  </div>
+
+  <div class="imagem-contato">
+    <img src="imagens/imovel-destaque.jpg" alt="Imagem de imóvel" width="300">
+  </div>
+</section>
 
   <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
