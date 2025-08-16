@@ -125,17 +125,33 @@ body {
   color: var(--dourado);
   margin-top: 40px;
 }
+.imoveis-section {
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+  border-top: 2px solid var(--dourado);
+  border-bottom: 2px solid var(--dourado);
+}
 
 .imoveis-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 20px;
+  margin-top: 20px;
 }
 
 .imovel img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  height: 200px;
+}
+
+.imovel img:hover {
+  transform: scale(1.03);
+}
+
 }
 
 .sobre-section {
