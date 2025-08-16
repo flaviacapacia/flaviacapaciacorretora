@@ -1,6 +1,6 @@
 :root {
   --preto: #111;
-  --dourado: #c9a93a;
+  --dourado: #b8860b;
   --cinza-claro: #f8f8f8;
 }
 
@@ -10,6 +10,7 @@ body {
   background-color: var(--preto);
   color: white;
 }
+
 /* Ícones sociais no topo */
 .social-icons {
   display: flex;
@@ -95,6 +96,7 @@ body {
   color: var(--dourado);
   font-weight: bold;
 }
+
 .hero {
   height: 300px; /* ajuste conforme desejar */
   overflow: hidden;
@@ -112,7 +114,6 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
-
 
 .hero img:hover {
   transform: scale(1.02);
@@ -159,8 +160,6 @@ body {
   order: 1;
 }
 
-
-
 .cta-banner {
   background-color: var(--dourado);
   text-align: center;
@@ -168,6 +167,7 @@ body {
   color: var(--preto);
   font-weight: bold;
 }
+
 .bancos-financiamento {
   display: flex;
   justify-content: center;
@@ -183,13 +183,13 @@ body {
   background-color: #f0f0f0;
   padding: 10px 15px;
   border-radius: 8px;
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 8px rgba(184, 134, 11, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bancos-financiamento a:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+  box-shadow: 0 0 12px rgba(184, 134, 11, 0.7);
 }
 
 .simule-texto {
@@ -199,16 +199,42 @@ body {
   color: #444;
 }
 
-
 .site-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   padding: 20px;
   background-color: var(--preto);
   border-top: 2px solid var(--dourado);
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 100px;
+  height: auto;
 }
 
 .footer-contact a {
   color: var(--dourado);
   text-decoration: none;
+}
+
+.social-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-list li {
+  margin: 5px 0;
+}
+
+.social-list a {
+  color: var(--dourado);
+  text-decoration: none;
+}
+
+.social-list a:hover {
+  text-decoration: underline;
 }
