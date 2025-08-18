@@ -4,48 +4,103 @@
   --dourado: #C28840;
   --bronze-claro: #7A5C45;
   --fonte-padrao: 'Playfair Display', serif;
-  --cinza-claro: #f9f9f9;
 }
-
-/* Reset */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Base */
 body {
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+body,
+header,
+section,
+footer {
+  margin: 0;
   font-family: var(--fonte-padrao);
   background-color: var(--fundo-branco);
   color: var(--texto-bronze);
-  line-height: 1.6;
 }
-
-/* Header */
-.site-header {
+header {
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 20px;
-  background-color: var(--fundo-branco);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
-.main-nav ul {
+nav ul {
+  list-style: none;
   display: flex;
   gap: 30px;
-  list-style: none;
 }
-
-.main-nav a {
+nav ul li a {
+  color: #007BFF;
   text-decoration: none;
   font-weight: bold;
-  color: var(--dourado);
 }
 
-/* Redes sociais na lateral */
+<button id="botao-tema" onclick="document.body.classList.toggle('tema-escuro')">Alternar Tema</button>
 .redes-sociais {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.redes-sociais img {
+  width: 32px;
+  height: 32px;
+}
+
+
+
+/* Seção Sobre */
+.sessao-sobre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+}
+
+.sessao-sobre img {
+  max-width: 45%;
+  height: auto;
+}
+
+.sessao-sobre .descricao {
+  max-width: 50%;
+  font-size: 1.1em;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sessao-sobre {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sessao-sobre img,
+  .sessao-sobre .descricao {
+    max-width: 100%;
+  }
+
+  .socia:root {
+  --preto: #1118f8;
+  --dourado: #b8860b;
+  --cinza-claro: #f8f8f8;
+}
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: var(--branco);
+  color: white;
+}
+
+.social-icons {
   position: fixed;
   top: 50%;
   left: 10px;
@@ -56,90 +111,134 @@ body {
   z-index: 999;
 }
 
-.redes-sociais img {
-  width: 24px;
-  height: 24px;
+.social-icons .icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
 }
 
-/* Hero */
+.social-icons .icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividade geral */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .main-nav ul li {
+    margin: 10px 0;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-area img {
+    width: 120px;
+    height: auto;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
+
+  .imoveis-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sobre-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .foto-sobre {
+  width: 250px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+ }
+
+  .footer-contact, .footer-social {
+    text-align: center;
+  }
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: var(--preto);
+  border-bottom: 2px solid var(--dourado);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: var(--dourado);
+  font-weight: bold;
+}
+
 .hero {
-  text-align: center;
-  background-color: var(--cinza-claro);
-  padding: 40px 20px;
+  height: 300px; /* ajuste conforme desejar */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
 }
 
 .hero img {
   width: 100%;
-  max-height: 400px;
+  max-height: 300px; /* ou use: max-height: 60vh; */
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
-/* Seção Sobre */
-.sobre-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 3rem 2rem;
-  background-color: var(--fundo-branco);
+.hero img:hover {
+  transform: scale(1.02);
 }
 
-.sobre-foto {
-  flex: 1 1 300px;
-}
-
-.sobre-foto img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-.texto-sobre {
-  flex: 2 1 300px;
-}
-
-.texto-sobre h2 {
+.section-title {
+  text-align: center;
+  font-size: 2em;
   color: var(--dourado);
-  margin-bottom: 1rem;
+  margin-top: 40px;
 }
-
-.texto-sobre p {
-  margin-bottom: 1rem;
-}
-
-/* Imóveis */
 .imoveis-section {
-  background-color: var(--cinza-claro);
-  padding: 40px 20px;
+padding: 40px 20px;
+  background-color: #f9f9f9;
 }
 
 .section-title {
   text-align: center;
   font-size: 2em;
   margin-bottom: 30px;
-  color: var(--texto-bronze);
+  color: #333;
 }
 
 .imoveis-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* dois imóveis por linha */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-}
-.imoveis-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-@media (max-width: 768px) {
-  .imoveis-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .imovel {
-  background-color: var(--fundo-branco);
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -159,7 +258,7 @@ body {
 .imovel h3 {
   font-size: 1.2em;
   margin: 15px;
-  color: var(--texto-bronze);
+  color: #444;
 }
 
 .imovel p {
@@ -168,17 +267,77 @@ body {
   color: #666;
 }
 
-/* Rodapé */
+
+.sobre-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
+}
+
+.sobre-section img {
+  max-width: 300px;
+  border-radius: 12px;
+  order: 2;
+}
+
+.sobre-section .texto-sobre {
+  flex: 1;
+  font-family: 'Playfair Display', serif;
+  color: #f3f3f4f8;
+  order: 1;
+}
+
+.cta-banner {
+  background-color: var(--dourado);
+  text-align: center;
+  padding: 30px;
+  color: var(--preto);
+  font-weight: bold;
+}
+
+.bancos-financiamento {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.bancos-financiamento a {
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(184, 134, 11, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bancos-financiamento a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(184, 134, 11, 0.7);
+}
+
+.simule-texto {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 10px;
+  color: #0e0000;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 20px;
-  background-color: var(--fundo-branco);
+  background-color: var(--preto);
   border-top: 2px solid var(--dourado);
   flex-wrap: wrap;
   text-align: center;
-  color: var(--texto-bronze);
 }
 
 .footer-logo img {
@@ -186,8 +345,7 @@ body {
   height: auto;
 }
 
-.footer-contact a,
-.social-list a {
+.footer-contact a {
   color: var(--dourado);
   text-decoration: none;
 }
@@ -202,22 +360,21 @@ body {
   margin: 5px 0;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .sobre-section {
-    flex-direction: column;
-    text-align: center;
-  }
+.social-list a {
+  color: var(--dourado);
+  text-decoration: none;
+}
 
-  .redes-sociais {
-    position: static;
-    flex-direction: row;
+.social-list a:hover {
+  text-decoration: underline;
+}
+l-icons {
     justify-content: center;
-    margin: 20px 0;
+    padding-left: 0;
   }
 }
 
-/* Botão de tema escuro (desativado por padrão) */
+/* Botão de tema escuro 
 #botao-tema {
   display: none;
 }
@@ -237,15 +394,8 @@ body.dev-mode #botao-tema {
   border-radius: 5px;
 }
 
+/* Tema escuro preparado 
 body.tema-escuro {
   background-color: #111;
   color: var(--dourado);
 }
-@media (max-width: 768px) {
-  .imoveis-grid {
-    grid-template-columns: 1fr; /* um imóvel por linha */
-  }
-}
-
-
-
