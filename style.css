@@ -122,8 +122,20 @@ body {
 
 .imoveis-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* dois imóveis por linha */
   gap: 20px;
+}
+.imoveis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .imoveis-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .imovel {
@@ -229,4 +241,11 @@ body.tema-escuro {
   background-color: #111;
   color: var(--dourado);
 }
+@media (max-width: 768px) {
+  .imoveis-grid {
+    grid-template-columns: 1fr; /* um imóvel por linha */
+  }
+}
+
+
 
