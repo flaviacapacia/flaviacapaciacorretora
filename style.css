@@ -1,280 +1,231 @@
-/*-------------------------------------------
- Variables
---------------------------------------------*/
 :root {
-  --bg-dark: #111;
-  --card-bg: #222;
-  --text-light: #f5f5f5;
-  --text-muted: #ccc;
-  --accent: #bfa76f;
-  --hover-accent: #a68e57;
+  --fundo-branco: #ffffff;
+  --texto-bronze: #4B3A2F;
+  --dourado: #C28840;
+  --bronze-claro: #7A5C45;
+  --fonte-padrao: 'Playfair Display', serif;
+  --cinza-claro: #f9f9f9;
 }
 
-/*-------------------------------------------
- Reset
---------------------------------------------*/
-*,
-*::before,
-*::after {
+/* Reset */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*-------------------------------------------
- Base
---------------------------------------------*/
+/* Base */
 body {
-  font-family: 'Playfair Display', serif;
-  background: var(--bg-dark);
-  color: var(--text-light);
-  line-height: 1.5;
-  scroll-behavior: smooth;
+  font-family: var(--fonte-padrao);
+  background-color: var(--fundo-branco);
+  color: var(--texto-bronze);
+  line-height: 1.6;
 }
 
-a {
-  color: var(--accent);
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: var(--hover-accent);
-}
-
-/*-------------------------------------------
- Header & Menu
---------------------------------------------*/
+/* Header */
 .site-header {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-  background: var(--bg-dark);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.logo {
-  width: 180px; /* Logo maior */
+  align-items: center;
+  padding: 20px;
+  background-color: var(--fundo-branco);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .main-nav ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 30px;
   list-style: none;
 }
 
 .main-nav a {
-  font-weight: 700;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--dourado);
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-light);
-  font-size: 1.5rem;
-  cursor: pointer;
+/* Redes sociais na lateral */
+.redes-sociais {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  .main-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--bg-dark);
-    text-align: center;
-    padding: 1rem 0;
-  }
-  .main-nav.active {
-    display: block;
-  }
-  .main-nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
+.redes-sociais img {
+  width: 32px;
+  height: 32px;
 }
 
-/*-------------------------------------------
- Hero
---------------------------------------------*/
+/* Hero */
 .hero {
   text-align: center;
+  background-color: var(--cinza-claro);
+  padding: 40px 20px;
 }
-.hero .capa {
+
+.hero img {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-  display: block;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/*-------------------------------------------
- Imóveis
---------------------------------------------*/
-#lista-imoveis {
-  padding: 2rem 1rem;
-  background: var(--bg-dark);
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--accent);
-}
-
-.imoveis-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.imovel {
-  background: var(--card-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.imovel img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.imovel p {
-  padding: 0.75rem;
-  text-align: center;
-}
-
-.imovel:hover {
-  transform: translateY(-5px);
-}
-
-@media (max-width: 1024px) {
-  .imoveis-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 768px) {
-  .imoveis-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/*-------------------------------------------
- Sobre (fundo branco)
---------------------------------------------*/
+/* Seção Sobre */
 .sobre-section {
   display: flex;
   flex-wrap: wrap;
-  background: #fff;
-  color: #333;
-  padding: 3rem 2rem;
   gap: 2rem;
-}
-
-.sobre-texto {
-  flex: 1 1 300px;
-}
-
-.sobre-texto h2 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.sobre-texto p {
-  margin-bottom: 1rem;
+  padding: 3rem 2rem;
+  background-color: var(--fundo-branco);
 }
 
 .sobre-foto {
   flex: 1 1 300px;
 }
+
 .sobre-foto img {
   width: 100%;
+  border-radius: 12px;
+}
+
+.texto-sobre {
+  flex: 2 1 300px;
+}
+
+.texto-sobre h2 {
+  color: var(--dourado);
+  margin-bottom: 1rem;
+}
+
+.texto-sobre p {
+  margin-bottom: 1rem;
+}
+
+/* Imóveis */
+.imoveis-section {
+  background-color: var(--cinza-claro);
+  padding: 40px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: var(--texto-bronze);
+}
+
+.imoveis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.imovel {
+  background-color: var(--fundo-branco);
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.imovel:hover {
+  transform: scale(1.03);
+}
+
+.imovel img {
+  width: 100%;
+  height: 200px;
   object-fit: cover;
 }
 
-/*-------------------------------------------
- Negocie
---------------------------------------------*/
-.negocie-section {
-  background: var(--bg-dark);
-  padding: 2rem;
-  text-align: center;
+.imovel h3 {
+  font-size: 1.2em;
+  margin: 15px;
+  color: var(--texto-bronze);
 }
 
-.negocie-section h2 {
-  color: var(--accent);
-  margin-bottom: 1rem;
+.imovel p {
+  font-size: 0.95em;
+  margin: 0 15px 15px;
+  color: #666;
 }
 
-.negocie-section ul {
-  list-style: disc inside;
-  max-width: 600px;
-  margin: 0 auto;
-  color: var(--text-light);
-  text-align: left;
-}
-.negocie-section li {
-  margin: 0.5rem 0;
-}
-
-/*-------------------------------------------
- Financie
---------------------------------------------*/
-.financie-section {
-  background: var(--card-bg);
-  padding: 2rem;
-  text-align: center;
-}
-
-.financie-section h2 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-/*-------------------------------------------
- Contracapa (CTA)
---------------------------------------------*/
-.cta-banner {
-  background: url('capa-final.jpg') center/cover no-repeat;
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.cta-banner h2 {
-  font-size: 2rem;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-}
-
-/*-------------------------------------------
- Rodapé
---------------------------------------------*/
+/* Rodapé */
 .site-footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  background: var(--bg-dark);
-  color: var(--text-muted);
+  padding: 20px;
+  background-color: var(--fundo-branco);
+  border-top: 2px solid var(--dourado);
   flex-wrap: wrap;
+  text-align: center;
+  color: var(--texto-bronze);
 }
 
 .footer-logo img {
   width: 100px;
+  height: auto;
 }
 
-.footer-contact h3 {
-  color: var(--accent);
-  margin-bottom: 0.5rem;
+.footer-contact a,
+.social-list a {
+  color: var(--dourado);
+  text-decoration: none;
+}
+
+.social-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-list li {
+  margin: 5px 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sobre-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .redes-sociais {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0;
+  }
+}
+
+/* Botão de tema escuro (desativado por padrão) */
+#botao-tema {
+  display: none;
+}
+
+body.dev-mode #botao-tema {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: var(--dourado);
+  color: var(--fundo-branco);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+body.tema-escuro {
+  background-color: #111;
+  color: var(--dourado);
 }
