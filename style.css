@@ -35,6 +35,15 @@ body {
   max-width: 170px;
   height: auto;
 }
+.logo-contato {
+  max-width: 200px;
+  margin-bottom: 20px;
+  display: block;
+}
+.contato-logo {
+  text-align: center;
+}
+
 
 /* Navegação */
 .main-nav ul {
@@ -229,3 +238,4 @@ body {
   padding: 0;
   margin-top: 10px;
 }
+
