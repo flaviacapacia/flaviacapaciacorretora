@@ -175,6 +175,20 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
+.bancos img {
+  width: 150px;     /* largura comprida */
+  height: 60px;     /* altura mais baixa para formato retangular */
+  object-fit: contain;
+  margin: 10px;
+  border-radius: 8px; /* cantos levemente arredondados */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* sombra suave */
+}
+.bancos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
 .simule-texto {
   text-align: center;
@@ -238,4 +252,5 @@ body {
   padding: 0;
   margin-top: 10px;
 }
+
 
