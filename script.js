@@ -304,3 +304,16 @@ document.querySelector('.prev').addEventListener('click', () => {
 function updateSlider() {
   slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Troca automática a cada 5 segundos
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+}, 5000);

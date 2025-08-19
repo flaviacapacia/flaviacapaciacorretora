@@ -102,10 +102,9 @@ body {
 }
 
 .slider-container {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
+  width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .slider {
@@ -116,20 +115,23 @@ body {
 .slide {
   min-width: 100%;
   box-sizing: border-box;
-  padding: 10px;
 }
 
 .slide img {
   width: 100%;
+  max-height: 300px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.slide p {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #333;
-}
+
+
+
+
+
+
+
+
 
 .prev, .next {
   position: absolute;
