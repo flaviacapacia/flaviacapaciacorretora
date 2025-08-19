@@ -1,421 +1,466 @@
-/*-------------------------------------------
- Variables
---------------------------------------------*/
 :root {
-  --bg-dark: #111;
-  --card-bg: #222;
-  --text-light: #f5f5f5;
-  --text-muted: #ccc;
-  --accent: #bfa76f;
-  --hover-accent: #a68e57;
+  --fundo-branco: #ffffff;
+  --texto-bronze: #4B3A2F;
+
+  --bronze-claro: #7A5C45;
+  --fonte-padrao: 'Playfair Display', serif;
+  --dourado: #b08d57;
+  color: var(--dourado);
 }
 
-/*-------------------------------------------
- Reset
---------------------------------------------*/
-*,
-*::before,
-*::after {
+
+
+
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*-------------------------------------------
- Base
---------------------------------------------*/
+/* Tema claro */
 body {
-  font-family: 'Playfair Display', serif;
-  background: var(--bg-dark);
-  color: var(--text-light);
-  line-height: 1.5;
-  scroll-behavior: smooth;
+  background-color: var(--fundo-branco);
+  color: var(--texto-bronze);
+  font-family: var(--fonte-padrao);
+  line-height: 1.6;
 }
 
-a {
-  color: var(--accent);
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: var(--hover-accent);
-}
-
-/*-------------------------------------------
- Header & Menu
---------------------------------------------*/
+/* Cabeçalho */
 .site-header {
+  background-color: var(--fundo-branco);
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-  background: var(--bg-dark);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
-.logo {
-  width: 180px; /* Logo maior */
+.logo-area img {
+  max-width: 170px;
+  height: auto;
+}
+.logo-contato {
+  max-width: 200px;
+  margin-bottom: 20px;
+  display: block;
+}
+.contato-logo {
+  text-align: center;
 }
 
+
+/* Navegação */
 .main-nav ul {
-  display: flex;
-  gap: 1.5rem;
   list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .main-nav a {
-  font-weight: 700;
+  text-decoration: none;
+  color: var(--texto-bronze);
+  font-weight: bold;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-light);
-  font-size: 1.5rem;
-  cursor: pointer;
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 0;
+  margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  .main-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--bg-dark);
-    text-align: center;
-    padding: 1rem 0;
-  }
-  .main-nav.active {
-    display: block;
-  }
-  .main-nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
+.social-icons .icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
 }
 
-
-/*-------------------------------------------
- Hero
---------------------------------------------*/
-.hero {
-  text-align: center;
+.social-icons .icon:hover {
+  transform: scale(1.1);
 }
-.hero .capa {
+
+/* Hero 
+.hero img {
   width: 100%;
-  max-height: 400px;
-  object-fit: cover;
+  height: auto;
   display: block;
+}*/
+.hero img {
+  width: 100%;
+  height: auto;
+  max-height: 600px; /* altura máxima no desktop */
+  object-fit: cover;
 }
 
-/*-------------------------------------------
- Imóveis
---------------------------------------------*/
-#lista-imoveis {
-  padding: 2rem 1rem;
-  background: var(--bg-dark);
+/* Ajuste específico para telas maiores */
+@media screen and (min-width: 768px) {
+  .hero img {
+    max-height: 400px; /* reduz um pouco no desktop */
+  }
 }
 
-.section-title {
+
+/* Imóveis */
+.imoveis-section {
+  padding: 40px 20px;
+}
+.destaques-section {
   text-align: center;
-  margin-bottom: 1rem;
-  color: var(--accent);
+  padding: 40px 20px;
 }
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #b08d57;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
 
 .imoveis-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
 .imovel {
-  background: var(--card-bg);
+  border: 1px solid #ddd;
+  padding: 20px;
   border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.imovel img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.imovel p {
-  padding: 0.75rem;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease;
   text-align: center;
 }
 
 .imovel:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 1024px) {
-  .imoveis-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.imovel img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
+
+.imovel h3 {
+  color: var(--dourado);
+  margin-bottom: 5px;
+}
+
+.imovel p {
+  color: var(--texto-bronze);
+}
+#lista-imoveis-tecimob {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.imovel-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.imovel-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+#filtros {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+#imoveis-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.imovel-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.imovel-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.imovel-card a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #25D366;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+
+/* Responsivo */
 @media (max-width: 768px) {
   .imoveis-grid {
     grid-template-columns: 1fr;
   }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-/*-------------------------------------------
- Sobre (fundo branco)
---------------------------------------------*/
+/* Sobre */
 .sobre-section {
   display: flex;
   flex-wrap: wrap;
-  background: #fff;
-  color: #333;
-  padding: 3rem 2rem;
-  gap: 2rem;
+  gap: 20px;
+  padding: 40px 20px;
+  align-items: center;
 }
-.section-title,
-.sobre-section h2 {
+
+.titulo-dourado {
+  color: #b08d57;
   text-align: center;
-  color: #b08d57; /* dourado bronze */
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-weight: b
-
-
-.sobre-texto {
-  flex: 1 1 300px;
 }
 
-.sobre-texto h2 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.sobre-texto p {
-  margin-bottom: 1rem;
-}
-
-.sobre-foto {
-  flex: 1 1 300px;
-}
 .sobre-foto img {
-  width: 100%;
+  max-width: 300px;
   border-radius: 8px;
-  object-fit: cover;
 }
 
-/*-------------------------------------------
- Negocie
---------------------------------------------*/
-.negocie-section {
-  background: var(--bg-dark);
-  padding: 2rem;
-  text-align: center;
+.texto-sobre {
+  flex: 1;
 }
-
-.negocie-section h2 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.negocie-section ul {
-  list-style: disc inside;
-  max-width: 600px;
-  margin: 0 auto;
-  color: var(--text-light);
-  text-align: left;
-}
-.negocie-section li {
-  margin: 0.5rem 0;
-}
-
-/*-------------------------------------------
- Financie
---------------------------------------------*/
-.financie-section {
-  background: var(--card-bg);
-  padding: 2rem;
-  text-align: center;
-}
-
-.financie-section h2 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-/*-------------------------------------------
- Contracapa (CTA)
---------------------------------------------*/
-.cta-banner {
-  background: url('capa-final.jpg') center/cover no-repeat;
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.cta-banner h2 {
-  font-size: 2rem;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-}
-
-/*-------------------------------------------
- Rodapé
---------------------------------------------*/
-.site-footer {
+.menu-principal {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  background: var(--bg-dark);
-  color: var(--text-muted);
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.menu-principal a {
+  color: #b08d57; /* dourado bronze */
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.menu-principal a:hover {
+  background-color: #f5f0e6;
+}
+
+
+/* Negocie */
+.negocie-section {
+  padding: 40px 20px;
+}
+
+/* Financie */
+.financie-section {
+  padding: 40px 20px;
+}
+
+.bancos-financiamento {
+  display: flex;
+  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.bancos img {
+  width: 150px;     /* largura comprida */
+  height: 60px;     /* altura mais baixa para formato retangular */
+  object-fit: contain;
+  margin: 10px;
+  border-radius: 8px; /* cantos levemente arredondados */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* sombra suave */
+}
+.bancos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.simule-texto {
+  text-align: center;
+  margin-top: 20px;
+}
+.section-title,
+.contato-section h2 {
+  color: #b08d57; /* dourado bronze */
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.financie-section,
+.contato-section {
+  text-align: center;
+}
+
+.bancos-financiamento {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+
+
+
+/* Contato */
+.contato-section   
+..padding: 40px 20px;
+.form-section {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Playfair Display', serif;
+}
+
+.form-section h2 {
+  text-align: center;
+  color: #b08d57;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form button {
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: #b08d57;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+form button:hover {
+  background-color: #a0763d;
+}
+
+
+
+/* CTA */
+.cta-banner {
+  background-color: var(--bronze-claro);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Rodapé */
+.site-footer {
+  background-color: var(--fundo-branco);
+  color: var(--texto-bronze);
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #ddd;
 }
 
 .footer-logo img {
-  width: 100px;
+  max-width: 170px;
+  height: auto;
 }
 
-.footer-contact h3 {
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-const slider = document.querySelector('.slider');
-const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
-
-document.querySelector('.next').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateSlider();
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  updateSlider();
-});
-
-function updateSlider() {
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-const slider = document.querySelector('.slider');
-const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
-
-function updateSlider() {
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+.footer-contact a {
+  color: var(--texto-bronze);
+  text-decoration: none;
 }
 
-// Troca automática a cada 5 segundos
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateSlider();
-}, 5000);
-fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml')
-  .then(response => response.text())
-  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-  .then(data => {
-    const imoveis = data.querySelectorAll("imovel");
-    const container = document.getElementById("lista-imoveis-tecimob");
-
-    imoveis.forEach(imovel => {
-      const titulo = imovel.querySelector("titulo")?.textContent || "Imóvel sem título";
-      const descricao = imovel.querySelector("descricao")?.textContent || "";
-      const preco = imovel.querySelector("valor")?.textContent || "Sob consulta";
-      const imagem = imovel.querySelector("fotos foto")?.textContent || "img/imovel-default.jpg";
-
-      const card = document.createElement("div");
-      card.className = "imovel-card";
-      card.innerHTML = `
-        <img src="${imagem}" alt="${titulo}">
-        <h3>${titulo}</h3>
-        <p>${descricao}</p>
-        <strong>Valor: R$ ${preco}</strong>
-      `;
-      container.appendChild(card);
-    });
-  })
-  .catch(error => console.error("Erro ao carregar imóveis:", error));
-const urlXML = 'https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml';
-
-fetch(urlXML)
-  .then(res => res.text())
-  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-  .then(xml => {
-    const imoveis = Array.from(xml.querySelectorAll("imovel"));
-    const lista = document.getElementById("imoveis-lista");
-    const bairros = new Set();
-    const tipos = new Set();
-
-    function render(imoveisFiltrados) {
-      lista.innerHTML = "";
-      imoveisFiltrados.forEach(imovel => {
-        const titulo = imovel.querySelector("titulo")?.textContent || "Sem título";
-        const descricao = imovel.querySelector("descricao")?.textContent || "";
-        const preco = imovel.querySelector("valor")?.textContent || "Sob consulta";
-        const imagem = imovel.querySelector("fotos foto")?.textContent || "img/imovel-default.jpg";
-        const bairro = imovel.querySelector("bairro")?.textContent || "";
-        const tipo = imovel.querySelector("tipo")?.textContent || "";
-        const whatsapp = "55SEUNUMEROAQUI"; // Substitua com seu número
-
-        bairros.add(bairro);
-        tipos.add(tipo);
-
-        const card = document.createElement("div");
-        card.className = "imovel-card";
-        card.innerHTML = `
-          <img src="${imagem}" alt="${titulo}">
-          <h3>${titulo}</h3>
-          <p>${descricao}</p>
-          <strong>Valor: R$ ${preco}</strong><br>
-          <em>${bairro} - ${tipo}</em><br>
-          <a href="https://wa.me/${whatsapp}?text=Olá! Tenho interesse no imóvel: ${titulo}" target="_blank">📱 Falar no WhatsApp</a>
-        `;
-        lista.appendChild(card);
-      });
-    }
-
-    function aplicarFiltros() {
-      const bairro = document.getElementById("filtro-bairro").value;
-      const tipo = document.getElementById("filtro-tipo").value;
-      const precoMax = parseFloat(document.getElementById("filtro-preco").value);
-
-      const filtrados = imoveis.filter(imovel => {
-        const preco = parseFloat(imovel.querySelector("valor")?.textContent || 0);
-        const bairroAtual = imovel.querySelector("bairro")?.textContent || "";
-        const tipoAtual = imovel.querySelector("tipo")?.textContent || "";
-
-        return (!bairro || bairroAtual === bairro) &&
-               (!tipo || tipoAtual === tipo) &&
-               (!precoMax || preco <= precoMax);
-      });
-
-      render(filtrados);
-    }
-
-    // Preenche os filtros
-    bairros.forEach(b => {
-      const opt = document.createElement("option");
-      opt.value = opt.textContent = b;
-      document.getElementById("filtro-bairro").appendChild(opt);
-    });
-
-    tipos.forEach(t => {
-      const opt = document.createElement("option");
-      opt.value = opt.textContent = t;
-      document.getElementById("filtro-tipo").appendChild(opt);
-    });
-
-    document.querySelectorAll("#filtros select, #filtros input").forEach(el => {
-      el.addEventListener("change", aplicarFiltros);
-    });
-
-    render(imoveis);
-  });
+.social-list ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  margin-top: 10px;
+}
 
