@@ -179,6 +179,14 @@ a:hover {
   padding: 3rem 2rem;
   gap: 2rem;
 }
+.section-title,
+.sobre-section h2 {
+  text-align: center;
+  color: #b08d57; /* dourado bronze */
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: b
+
 
 .sobre-texto {
   flex: 1 1 300px;
