@@ -286,10 +286,14 @@ a:hover {
 .footer-contact h3 {
   color: var(--accent);
   margin-bottom: 0.5rem;
-}
+}// JavaScript funcional
 const slider = document.querySelector('.slider');
 const slides = document.querySelectorAll('.slide');
 let currentIndex = 0;
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
 
 document.querySelector('.next').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % slides.length;
@@ -301,18 +305,7 @@ document.querySelector('.prev').addEventListener('click', () => {
   updateSlider();
 });
 
-function updateSlider() {
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-const slider = document.querySelector('.slider');
-const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
-
-function updateSlider() {
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-// Troca automática a cada 5 segundos
+// Troca automática
 setInterval(() => {
   currentIndex = (currentIndex + 1) % slides.length;
   updateSlider();
