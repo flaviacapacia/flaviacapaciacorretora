@@ -101,20 +101,24 @@ body {
   padding: 40px 20px;
 }
 
+/* CSS essencial */
 .slider-container {
-  width: 100%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
 }
 
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 300%; /* 100% * número de slides */
 }
 
 .slide {
-  min-width: 100%;
-  box-sizing: border-box;
+  flex: 0 0 100%;
+  width: 100%;
 }
 
 .slide img {
@@ -368,4 +372,5 @@ form button {
   padding: 0;
   margin-top: 10px;
 }
+
 
