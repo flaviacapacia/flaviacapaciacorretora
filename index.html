@@ -89,7 +89,7 @@
       <img src="img/flavia_sobre.jpg" alt="Flavia Capacia">
     </div>
     <div class="texto-sobre">
-      <h2>Sobre Flavia Capacia</h2>
+      <h2 class="titulo-dourado">Sobre Flavia Capacia</h2>
       <p>Apaixonada pela corretagem de imóveis, Flavia Capacia é a profissional por trás de grandes realizações na Grande Florianópolis. Com mais de 10 anos de experiência, destaca-se pela conduta ética, compromisso e transparência, conquistando a confiança de clientes e parceiros.</p>
       <p>Determinada a unir as necessidades de venda e a realização de compra, Flavia busca sempre entregar o melhor, concretizando sonhos e fechando negócios de sucesso.</p>
     </div>
@@ -98,7 +98,7 @@
   <section id="negocie" class="negocie-section">
     <h2 class="section-title">Negocie seu Imóvel</h2>
     <form id="form-cadastro">
-      <label for="codigo">Código do Imóvel</label>
+      <label for="codigo"></label>
       <input type="text" id="codigo" name="codigo" readonly />
       <button type="submit">Cadastrar Imóvel</button>
     </form>
@@ -124,18 +124,26 @@
     <p class="simule-texto">💰 Simule seu financiamento com segurança e praticidade.</p>
   </section>
 
+
   <section id="contato" class="contato-section">
-    <h2>Contato</h2>
-    <form action="mailto:flavia@email.com" method="post" enctype="text/plain">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" required>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" rows="4"></textarea>
-      <input type="submit" value="Enviar">
+    
+  <h2 class="titulo-dourado">Contato</h2>
+  <form action="mailto:flavia.capacia@creci.gov" method="post" enctype="text/plain">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br>
+
+    <label for="telefone">Telefone:</label><br>
+    <input type="tel" id="telefone" name="telefone"><br>
+
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="mensagem">Mensagem:</label><br>
+    <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br>
+
+    <button type="submit">Enviar</button>
+</section>
+
     </form>
 
     <div class="whatsapp-contato">
@@ -176,7 +184,6 @@
   <script src="script.js"></script>
 </body>
 </html>
-
 
 
 
