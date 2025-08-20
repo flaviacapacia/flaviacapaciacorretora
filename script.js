@@ -105,6 +105,36 @@ body {
   }
 }
 
+fetch("https://script.google.com/macros/s/AKfycbxEZL8pWyvoHUm1T1puJq0ObHdM-go3LXdc6PSW4r9b5xysTr0yGqL9PifFGfEE-axsCA/exec", {
+  method: "POST",
+  body: dados,
+})
+function doPost(e) {
+  const sheet = SpreadsheetApp.openById("ID_DA_SUA_PLANILHA").getSheetByName("Imóveis");
+
+  const dados = [
+    e.parameter.codigo,
+    e.parameter.tipo,
+    e.parameter.vendaOuAluguel,
+    e.parameter.valor,
+    e.parameter.valorCondominio,
+    e.parameter.valorIPTU,
+    e.parameter.endereco,
+    e.parameter.condominio,
+    e.parameter.descricao,
+    e.parameter.imagem,
+    e.parameter.link,
+    e.parameter.proprietario,
+    e.parameter.contato,
+    e.parameter.informacoesPrivadas,
+    e.parameter.documento,
+    new Date() // Data de envio
+  ];
+
+  sheet.appendRow(dados);
+
+  return ContentService.createTextOutput("Dados recebidos com sucesso").setMimeType(ContentService.MimeType.TEXT);
+}
 
 /* Imóveis */
 .imoveis-section {
@@ -489,4 +519,5 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
