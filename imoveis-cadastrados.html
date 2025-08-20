@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
   <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
-
 </head>
 <body>
 
@@ -15,20 +14,15 @@
     <div class="logo-area">
       <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
     </div>
-
-  <header>
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-      <li><a href="negocie.html">Negocie</a></li>
-      <li><a href="financie.html">Financie</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
-</header>
-
-
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="negocie.html">Negocie</a></li>
+        <li><a href="financie.html">Financie</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
     <div class="social-icons">
       <a href="https://www.instagram.com/flacapacciacorretora" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="icon"/>
@@ -45,254 +39,66 @@
     </div>
   </header>
 
-  <section id="hero" class="hero">
-    <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
-  </section>
-
-  <!-- 🔝 NOVA SEÇÃO DE DESTAQUES -->
-   <div class="slider-container">
-  <div class="slider">
-    <div class="slide"><img src="img/imovel1.jpg" alt="Imóvel 1"></div>
-    <div class="slide"><img src="img/imovel2.jpg" alt="Imóvel 2"></div>
-    <div class="slide"><img src="img/imovel3.jpg" alt="Imóvel 3"></div>
-  </div>
-</div>
-
-  <section class="destaques-section">
-    <h2 class="section-title">Imóveis em Destaque</h2>
-    <div class="slider-container">
-      <div class="slider">
-        <div class="slide">
-          <img src="img/imagem1.jpg" alt="Apartamento no Centro">
-          <p>Apartamento no Centro - R$ 450.000</p>
+  <main>
+    <section class="destaques-section">
+      <h2 class="titulo-dourado">Imóveis em Destaque</h2>
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <img src="img/imovel1.jpg" alt="Apartamento no Centro">
+            <p>Apartamento no Centro - R$ 450.000</p>
+          </div>
+          <div class="slide">
+            <img src="img/imovel2.jpg" alt="Casa com piscina">
+            <p>Casa com piscina - R$ 780.000</p>
+          </div>
+          <div class="slide">
+            <img src="img/imovel3.jpg" alt="Cobertura com vista">
+            <p>Cobertura com vista - R$ 1.200.000</p>
+          </div>
         </div>
-        <div class="slide">
-          <img src="img/imagem4.jpg" alt="Casa com piscina">
-          <p>Casa com piscina - R$ 780.000</p>
-        </div>
-        <div class="slide">
-          <img src="img/imagem5.jpg" alt="Apartamento mobiliado">
-          <p>Apartamento mobiliado - R$ 620.000</p>
-        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
       </div>
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    </div>
-  </section>
+    </section>
 
-  
-  <main id="lista-imoveis">
-    <section id="imoveis-tecimob">
-  <h2>Imóveis da Flavia Capacia</h2>
-  <div id="lista-imoveis-tecimob"></div>
-</section>
-
-    <section id="imoveis" class="imoveis-section">
-      <h2 class="section-title">Imóveis Disponíveis</h2>
+    <section class="imoveis-section">
+      <h2>Imóveis Cadastrados</h2>
       <div class="imoveis-grid">
         <div class="imovel">
-          <img src="img/imagem1.jpg" alt="Imóvel 1">
-          <h3>Apartamento no Centro</h3>
-          <p>2 quartos, 1 suíte, vaga de garagem</p>
+          <img src="img/imovel-default.jpg" alt="Apartamento no Centro">
+          <h3>Apartamento com 2 dormitórios no Centro</h3>
+          <p>Totalmente reformado, mobiliado, com sala para dois ambientes...</p>
+          <strong>R$ 680.000</strong>
+          <a href="https://www.casamineira.com.br/imovel/venda/apartamento-2-quartos-a-venda-no-centro-florianopolis-sc/2999704647" target="_blank">Ver anúncio</a>
         </div>
+
         <div class="imovel">
-          <img src="img/imagem2.jpg" alt="Imóvel 2">
-          <h3>Casa no Campeche</h3>
-          <p>3 quartos, quintal amplo, perto da praia</p>
+          <img src="img/imovel-default.jpg" alt="Casa em Canasvieiras">
+          <h3>Casa duplex com 3 dormitórios em Canasvieiras</h3>
+          <p>198m² construídos, churrasqueira, porcelanato, varanda...</p>
+          <strong>R$ 1.590.000</strong>
+          <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-canasvieiras-florianopolis-sc/2999887429" target="_blank">Ver anúncio</a>
         </div>
+
         <div class="imovel">
-          <img src="img/imagem3.jpg" alt="Imóvel 3">
-          <h3>Studio moderno</h3>
-          <p>Ideal para estudantes, próximo à UFSC</p>
+          <img src="img/imovel-default.jpg" alt="Casa na Pedra Branca">
+          <h3>Casa alto padrão com piscina na Pedra Branca</h3>
+          <p>Suíte master com hidromassagem, fechadura digital, próxima à Unisul...</p>
+          <strong>R$ 1.690.000</strong>
+          <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-pedra-branca-palhoca-sc/2992650902" target="_blank">Ver anúncio</a>
         </div>
+
         <div class="imovel">
-          <img src="img/imagem4.jpg" alt="Imóvel 4">
-          <h3>Casa com piscina</h3>
-          <p>4 quartos, área gourmet, vista para o mar</p>
+          <img src="img/imovel-default.jpg" alt="Casa na Praia do Meio">
+          <h3>Casa Alto Padrão na Praia do Meio – Palhoça</h3>
+          <p>3 dormitórios, churrasqueira em porcelanato, garagem para 3 carros, mobiliada...</p>
+          <strong>R$ 750.000</strong>
+          <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-praia-do-meio-ens-brito-palhoca-sc/2995684111" target="_blank">Ver anúncio</a>
         </div>
-        <div class="imovel">
-          <img src="img/imagem5.jpg" alt="Imóvel 5">
-          <h3>Apartamento mobiliado</h3>
-          <p>Pronto para morar, bairro tranquilo</p>
-        </div>
-        <div class="imovel">
-          <img src="img/imagem6.jpg" alt="Imóvel 6">
-          <h3>Terreno amplo</h3>
-          <p>Ideal para construção, 500m²</p>
-        </div>
-<section id="imoveis" class="imoveis-section">
-  <h2 class="section-title">Imóveis Cadastrados</h2>
-  <div class="imoveis-grid">
-
-    <!-- Imóvel 1: Apartamento no Centro -->
-    <div class="imovel">
-      <img src="img/imovel-default.jpg" alt="Apartamento no Centro">
-      <h3>Apartamento com 2 dormitórios no Centro – Florianópolis</h3>
-      <p>112m², totalmente reformado e mobiliado, com sala para dois ambientes, ar-condicionado e cozinha equipada.</p>
-      <strong>R$ 680.000</strong>
-      <a href="https://www.casamineira.com.br/imovel/venda/apartamento-2-quartos-a-venda-no-centro-florianopolis-sc/2999704647" target="_blank">Ver anúncio</a>
-      <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20vi%20o%20apartamento%20no%20Centro%20de%20Florianópolis%20por%20R$680.000%20e%20gostaria%20de%20mais%20informações!" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- Imóvel 2: Casa em Canasvieiras -->
-    <div class="imovel">
-      <img src="img/imovel-default.jpg" alt="Casa em Canasvieiras">
-      <h3>Casa duplex com 3 dormitórios em Canasvieiras – Florianópolis</h3>
-      <p>198m², churrasqueira, porcelanato, varanda, garagem coberta, excelente localização a 500m da praia.</p>
-      <strong>R$ 1.590.000</strong>
-      <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-canasvieiras-florianopolis-sc/2999887429" target="_blank">Ver anúncio</a>
-      <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20vi%20a%20casa%20em%20Canasvieiras%20por%20R$1.590.000%20e%20gostaria%20de%20mais%20informações!" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- Imóvel 3: Casa na Pedra Branca -->
-    <div class="imovel">
-      <img src="img/imovel-default.jpg" alt="Casa na Pedra Branca">
-      <h3>Casa alto padrão com piscina na Pedra Branca – Palhoça</h3>
-      <p>162m², suíte master com hidromassagem, fechadura digital, piscina, próxima à Unisul e Colégio Fórmula.</p>
-      <strong>R$ 1.690.000</strong>
-      <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-pedra-branca-palhoca-sc/2992650902" target="_blank">Ver anúncio</a>
-      <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20vi%20a%20casa%20na%20Pedra%20Branca%20por%20R$1.690.000%20e%20gostaria%20de%20mais%20informações!" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- Imóvel 4: Casa na <section id="imoveis-disponiveis" class="imoveis-section">
-  <h2 class="section-title">Imóveis Disponíveis</h2>
-  <div class="imoveis-grid">
-    <div class="imovel">
-      <img src="img/imagem1.jpg" alt="Apartamento no Centro com 2 quartos e vaga de garagem">
-      <h3>Apartamento no Centro</h3>
-      <p>2 quartos, 1 suíte, vaga de garagem</p>
-    </div>
-    <div class="imovel">
-      <img src="img/imagem2.jpg" alt="Casa no Campeche com quintal amplo">
-      <h3>Casa no Campeche</h3>
-      <p>3 quartos, quintal amplo, perto da praia</p>
-    </div>
-    <div class="imovel">
-      <img src="img/imagem3.jpg" alt="Studio moderno próximo à UFSC">
-      <h3>Studio moderno</h3>
-      <p>Ideal para estudantes, próximo à UFSC</p>
-    </div>
-    <div class="imovel">
-      <img src="img/imagem4.jpg" alt="Casa com piscina e vista para o mar">
-      <h3>Casa com piscina</h3>
-      <p>4 quartos, área gourmet, vista para o mar</p>
-    </div>
-    <div class="imovel">
-      <img src="img/imagem5.jpg" alt="Apartamento mobiliado em bairro tranquilo">
-      <h3>Apartamento mobiliado</h3>
-      <p>Pronto para morar, bairro tranquilo</p>
-    </div>
-    <div class="imovel">
-      <img src="img/imagem6.jpg" alt="Terreno amplo de 500m²">
-      <h3>Terreno amplo</h3>
-      <p>Ideal para construção, 500m²</p>
-    </div>
-  </div>
-</section>
-
-<section id="imoveis-cadastrados" class="imoveis-section">
-  <h2 class="section-title">Imóveis Cadastrados Manualmente</h2>
-  <div class="imoveis-grid">
-
-    <!-- Imóvel 1 -->
-    <div class="imovel">
-      <img src="img/imovel-default.jpg" alt="Apartamento no Centro reformado">
-      <h3>Apartamento com 2 dormitórios no Centro – Florianópolis</h3>
-      <p>112m², totalmente reformado e mobiliado, com sala para dois ambientes, ar-condicionado e cozinha equipada.</p>
-      <strong>R$ 680.000</strong>
-      <a href="https://www.casamineira.com.br/imovel/venda/apartamento-2-quartos-a-venda-no-centro-florianopolis-sc/2999704647" target="_blank">Ver anúncio</a>
-      <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20vi%20o%20apartamento%20no%20Centro%20de%20Florianópolis%20por%20R$680.000%20e%20gostaria%20de%20mais%20informações!" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- Imóvel 2 -->
-    <div class="imovel">
-      <img src="img/imovel-default.jpg" alt="Casa em Canasvieiras com varanda">
-      <h3>Casa duplex com 3 dormitórios em Canasvieiras – Florianópolis</h3>
-      <p>198m², churrasqueira, porcelanato, varanda, garagem coberta, excelente localização a 500m da praia.</p>
-      <strong>R$ 1.590.000</strong>
-      <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-canasvieiras-florianopolis-sc/2999887429" target="_blank">Ver anúncio</a>
-      <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20vi%20a%20casa%20em%20Canasvieiras%20por%20R$1.590.000%20e%20gostaria%20de%20mais%20informações!" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- Imóvel 3 -->
-    <div class="imovel">
-      <img src="img/imovel-default.jpg" alt="Casa na Pedra Branca com piscina">
-      <h3>Casa alto padrão com piscina na Pedra Branca – Palhoça</h3>
-      <p>162m², suíte master com hidromassagem, fechadura digital, piscina, próxima à Unisul e Colégio Fórmula.</p>
-      <strong>R$ 1.690.000</strong>
-      <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-pedra-branca-palhoca-sc/2992650902" target="_blank">Ver anúncio</a>
-      <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20vi%20a%20casa%20na%20Pedra%20Branca%20por%20R$1.690.000%20e%20gostaria%20de%20mais%20informações!" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- Imóvel 4 -->
-    <div class="imovel">
-      <img src="img/imovel-default.jpg" alt="Casa na Praia do Meio mobiliada">
-      <h3>Casa Alto Padrão na Praia do Meio – Palhoça</h3>
-      <p>152m², churrasqueira em porcelanato, garagem para 3 carros, mobiliada, a 300m da praia.</p>
-      <strong>R$ 750.000</strong>
-      <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-praia-do-meio-ens-brito-palhoca-sc/2995684111" target="_blank">Ver anúncio</a>
-      <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20vi%20a%20casa%20na%20Praia%20do%20Meio%20por%20R$750.000%20e%20gostaria%20de%20mais%20informações!" target="_blank">WhatsApp</a>
-    </div>
-
-  </div>
-</section>
- do Meio -->
-    <div class="imovel">
-      <img src="img/imovel-default.jpg" alt="Casa na Praia do Meio">
-      <h3>Casa Alto Padrão na Praia do Meio – Palhoça</h3>
-      <p>152m², churrasqueira em porcelanato, garagem para 3 carros, mobiliada, a 300m da praia.</p>
-      <strong>R$ 750.000</strong>
-      <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-praia-do-meio-ens-brito-palhoca-sc/2995684111" target="_blank">Ver anúncio</a>
-      <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20vi%20a%20casa%20na%20Praia%20do%20Meio%20por%20R$750.000%20e%20gostaria%20de%20mais%20informações!" target="_blank">WhatsApp</a>
-    </div>
-
-  </div>
-</section>
       </div>
     </section>
   </main>
 
-  
-
-  
-
-
-
-
- 
-
-  
-
-  <section class="cta-banner">
-    <h2>Seu imóvel a um clique de você</h2>
-  </section>
-
-  <footer class="site-footer" id="contato">
-    <div class="footer-logo">
-      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia"/>
-    </div>
-    <div class="footer-contact">
-       <h3 style="color: var(--dourado);">Contato</h3>
-      <p><a href="mailto:flavia@email.com">flavia.capacia@creci.gov</a></p>
-      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-   <div class="social-list">
-  <ul>
-    <li><a href=https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
-    <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
-    <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
-    <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
-  </ul>
-</div>
-
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
