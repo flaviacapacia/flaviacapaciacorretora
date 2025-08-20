@@ -7,10 +7,6 @@
   --dourado: #b08d57;
   color: var(--dourado);
 }
-
-
-
-
 /* Reset básico */
 * {
   margin: 0;
@@ -104,6 +100,10 @@ body {
     max-height: 400px; /* reduz um pouco no desktop */
   }
 }
+headers: {
+  "Accept": "application/json"
+}
+
 
 fetch("https://script.google.com/macros/s/AKfycbxEZL8pWyvoHUm1T1puJq0ObHdM-go3LXdc6PSW4r9b5xysTr0yGqL9PifFGfEE-axsCA/exec", {
   method: "POST",
@@ -135,6 +135,8 @@ function doPost(e) {
 
   return ContentService.createTextOutput("Dados recebidos com sucesso").setMimeType(ContentService.MimeType.TEXT);
 }
+return ContentService.createTextOutput(JSON.stringify({ status: "sucesso" }))
+  .setMimeType(ContentService.MimeType.JSON);
 
 /* Imóveis */
 .imoveis-section {
@@ -519,5 +521,6 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
