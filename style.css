@@ -141,12 +141,6 @@ body {
 
 
 
-
-
-
-
-
-
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -204,20 +198,77 @@ body {
   gap: 20px;
   padding: 20px;
 }
-
-.imovel-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+.titulo-dourado-centralizado {
+  text-align: center;
+  color: #b08d57;
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  font-family: 'Playfair Display', serif;
 }
 
-.imovel-card img {
+.imovel-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.imovel-card:hover {
+  transform: scale(1.02);
+}
+
+.card-imagem img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.card-conteudo {
+  padding: 15px;
+  text-align: left;
+}
+
+.card-conteudo h3 {
+  color: #b08d57;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.card-conteudo p {
+  color: #4B3A2F;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.card-preco {
+  font-size: 16px;
+  color: #7A5C45;
+}
+
+.card-contato {
+  display: inline-block;
+  margin-top: 10px;
+  background: #25D366;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.card-contato:hover {
+  background: #1da851;
+}
+@media (max-width: 768px) {
+  #lista-imoveis-tecimob {
+    grid-template-columns: 1fr;
+  }
 }
 #filtros {
   display: flex;
@@ -257,7 +308,6 @@ body {
   border-radius: 4px;
   text-decoration: none;
 }
-
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -463,6 +513,7 @@ form button:hover {
   padding: 0;
   margin-top: 10px;
 }
+
 .aviso-sem-imoveis, .erro-carregamento {
   background-color: #fff3cd;
   border: 1px solid #ffeeba;
@@ -471,5 +522,3 @@ form button:hover {
   border-radius: 5px;
   color: #856404;
 }
-
-
