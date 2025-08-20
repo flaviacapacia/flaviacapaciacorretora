@@ -55,18 +55,28 @@
     <section class="negocie-section">
       <h2 class="titulo-dourado">Negocie seu Imóvel</h2>
       <p>Preencha os dados abaixo para cadastrar seu imóvel e iniciar a negociação com segurança e transparência.</p>
-      <form action="mailto:capaciaimoveis@gmail.com" method="post" enctype="text/plain">
-        <label for="codigo">Código do Imóvel:</label>
-        <input type="text" id="codigo" name="codigo" required>
+    <form action="https://script.google.com/macros/s/AKfycbzC9qm-w62fqKhUs232P3U5AFFhy4w8ej8DtXTplb8/exec" method="post">
+  <label for="nome">Nome do imóvel:</label>
+  <input type="text" id="nome" name="nome" required />
 
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+  <label for="endereco">Endereço:</label>
+  <input type="text" id="endereco" name="endereco" required />
 
-        <label for="valor">Valor estimado:</label>
-        <input type="text" id="valor" name="valor">
+  <label for="tipo">Tipo:</label>
+  <input type="text" id="tipo" name="tipo" required />
 
-        <button type="submit">Cadastrar Imóvel</button>
-      </form>
+  <label for="preco">Preço:</label>
+  <input type="text" id="preco" name="preco" required />
+
+  <label for="contato">Contato:</label>
+  <input type="text" id="contato" name="contato" required />
+
+  <label for="link">Link do anúncio:</label>
+  <input type="text" id="link" name="link" />
+
+  <button type="submit">Cadastrar Imóvel</button>
+</form>
+
     </section>
   </main>
 <section class="cta-banner">
@@ -97,12 +107,3 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
-</body>
-</html>
