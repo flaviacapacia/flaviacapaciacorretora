@@ -351,6 +351,26 @@ return ContentService.createTextOutput(JSON.stringify({ status: "sucesso" }))
 .negocie-section {
   padding: 40px 20px;
 }
+const form = document.getElementById("formulario");
+const mensagem = document.getElementById("mensagem");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const dados = new FormData(form);
+
+  fetch("https://script.google.com/macros/s/AKfycbw3k2_vXhV0TlO0ZmJG63rvrDrkfEuhmgWz8nJDjczH0YePZg1mPMneTouYNm-oF3H4/exec", {
+    method: "POST",
+    body: dados,
+  })
+    .then(() => {
+      mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
+      form.reset();
+    })
+    .catch(() => {
+      mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
+    });
+});
 
 /* Financie */
 .financie-section {
@@ -521,6 +541,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
