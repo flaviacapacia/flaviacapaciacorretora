@@ -105,38 +105,7 @@ headers: {
 }
 
 
-fetch("https://script.google.com/macros/s/AKfycbxEZL8pWyvoHUm1T1puJq0ObHdM-go3LXdc6PSW4r9b5xysTr0yGqL9PifFGfEE-axsCA/exec", {
-  method: "POST",
-  body: dados,
-})
-function doPost(e) {
-  const sheet = SpreadsheetApp.openById("ID_DA_SUA_PLANILHA").getSheetByName("Imóveis");
 
-  const dados = [
-    e.parameter.codigo,
-    e.parameter.tipo,
-    e.parameter.vendaOuAluguel,
-    e.parameter.valor,
-    e.parameter.valorCondominio,
-    e.parameter.valorIPTU,
-    e.parameter.endereco,
-    e.parameter.condominio,
-    e.parameter.descricao,
-    e.parameter.imagem,
-    e.parameter.link,
-    e.parameter.proprietario,
-    e.parameter.contato,
-    e.parameter.informacoesPrivadas,
-    e.parameter.documento,
-    new Date() // Data de envio
-  ];
-
-  sheet.appendRow(dados);
-
-  return ContentService.createTextOutput("Dados recebidos com sucesso").setMimeType(ContentService.MimeType.TEXT);
-}
-return ContentService.createTextOutput(JSON.stringify({ status: "sucesso" }))
-  .setMimeType(ContentService.MimeType.JSON);
 
 /* Imóveis */
 .imoveis-section {
@@ -169,15 +138,6 @@ return ContentService.createTextOutput(JSON.stringify({ status: "sucesso" }))
   object-fit: cover;
   border-radius: 8px;
 }
-
-
-
-
-
-
-
-
-
 
 .prev, .next {
   position: absolute;
@@ -359,9 +319,38 @@ form.addEventListener("submit", function (e) {
 
   const dados = new FormData(form);
 
-  fetch("https://script.google.com/macros/s/AKfycbw3k2_vXhV0TlO0ZmJG63rvrDrkfEuhmgWz8nJDjczH0YePZg1mPMneTouYNm-oF3H4/exec", {
-    method: "POST",
-    body: dados,
+ fetch("https://script.google.com/macros/s/AKfycbzEaYk_pPuo9kDir49LTekbqcGODIZ7E2iYicPWyq65XwOImHqkCE8nDWsVV-mf_Hyz2A/exec", {
+  method: "POST",
+  body: dados,
+})
+function doPost(e) {
+  const sheet = SpreadsheetApp.openById("1W9RL62esDrmQjFUVWsZ8i9TE7cmkpQxHxwGwa5btvlc").getSheetByName("Imóveis");
+
+  const dados = [
+    e.parameter.codigo,
+    e.parameter.tipo,
+    e.parameter.vendaOuAluguel,
+    e.parameter.valor,
+    e.parameter.valorCondominio,
+    e.parameter.valorIPTU,
+    e.parameter.endereco,
+    e.parameter.condominio,
+    e.parameter.descricao,
+    e.parameter.imagem,
+    e.parameter.link,
+    e.parameter.proprietario,
+    e.parameter.contato,
+    e.parameter.informacoesPrivadas,
+    e.parameter.documento,
+    new Date() // Data de envio
+  ];
+
+  sheet.appendRow(dados);
+
+  return ContentService.createTextOutput("Dados recebidos com sucesso").setMimeType(ContentService.MimeType.TEXT);
+}
+return ContentService.createTextOutput(JSON.stringify({ status: "sucesso" }))
+  .setMimeType(ContentService.MimeType.JSON);
   })
     .then(() => {
       mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
@@ -372,149 +361,6 @@ form.addEventListener("submit", function (e) {
     });
 });
 
-/* Financie */
-.financie-section {
-  padding: 40px 20px;
-}
-
-.bancos-financiamento {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-.bancos img {
-  width: 150px;     /* largura comprida */
-  height: 60px;     /* altura mais baixa para formato retangular */
-  object-fit: contain;
-  margin: 10px;
-  border-radius: 8px; /* cantos levemente arredondados */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* sombra suave */
-}
-.bancos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.simule-texto {
-  text-align: center;
-  margin-top: 20px;
-}
-.section-title,
-.contato-section h2 {
-  color: #b08d57; /* dourado bronze */
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.financie-section,
-.contato-section {
-  text-align: center;
-}
-
-.bancos-financiamento {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-
-
-
-/* Contato */
-.contato-section   
-..padding: 40px 20px;
-.form-section {
-  background-color: #f9f9f9;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 600px;
-  margin: 40px auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  font-family: 'Playfair Display', serif;
-}
-
-.form-section h2 {
-  text-align: center;
-  color: #b08d57;
-  margin-bottom: 20px;
-}
-
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #333;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-top: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-form button {
-  margin-top: 1.5rem;
-  padding: 1rem 2rem;
-  background-color: #b08d57;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-form button:hover {
-  background-color: #a0763d;
-}
-
-
-
-/* CTA */
-.cta-banner {
-  background-color: var(--bronze-claro);
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Rodapé */
-.site-footer {
-  background-color: var(--fundo-branco);
-  color: var(--texto-bronze);
-  text-align: center;
-  padding: 20px;
-  border-top: 1px solid #ddd;
-}
-
-.footer-logo img {
-  max-width: 170px;
-  height: auto;
-}
-
-.footer-contact a {
-  color: var(--texto-bronze);
-  text-decoration: none;
-}
-
-.social-list ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 0;
-  margin-top: 10px;
-}
 
 fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml')
   .then(response => response.text())
@@ -541,6 +387,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
