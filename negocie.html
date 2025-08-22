@@ -56,167 +56,58 @@
       <h2 class="titulo-dourado">Negocie seu Imóvel</h2>
       <p>Preencha os dados abaixo para cadastrar seu imóvel e iniciar a negociação com segurança e transparência.</p>
       <style>
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 900px;
-    margin: auto;
-  }
+  <form id="formulario" enctype="multipart/form-data">
+  <h2>Cadastro de Imóvel</h2>
 
-  .form-grid label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
+  <!-- Dados do proprietário -->
+  <label>Nome:</label>
+  <input type="text" name="proprietario" required>
 
-  .form-grid input,
-  .form-grid textarea,
-  .form-grid select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+  <label>Telefone:</label>
+  <input type="text" name="contato" required>
 
-  .full-width {
-    grid-column: span 2;
-  }
+  <!-- Dados do imóvel -->
+  <label>Venda ou Aluguel:</label>
+  <select name="vendaOuAluguel" required>
+    <option value="Venda">Venda</option>
+    <option value="Aluguel">Aluguel</option>
+  </select>
 
-  button {
-    padding: 10px 20px;
-    background-color: #d4af37;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+  <label>Tipo:</label>
+  <input type="text" name="tipo" required>
 
-  #mensagem {
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-</style>
+  <label>Valor estimado (R$):</label>
+  <input type="number" name="valor" required>
 
-<form id="formulario">
-  <div class="form-grid">
-    <div>
-      <label for="codigo">Código do Imóvel (Privado)</label>
-      <input type="text" id="codigo" name="codigo" required>
-    </div>
+  <label>Valor do Condomínio (R$):</label>
+  <input type="number" name="valorCondominio">
 
-    <div>
-      <label for="tipo">Tipo</label>
-      <select id="tipo" name="tipo" required>
-        <option value="">Selecione</option>
-        <option value="Casa">Casa</option>
-        <option value="Apartamento">Apartamento</option>
-        <option value="Terreno">Terreno</option>
-        <option value="Comercial">Comercial</option>
-      </select>
-    </div>
+  <label>Valor do IPTU (R$):</label>
+  <input type="number" name="valorIPTU">
 
-    <div>
-      <label for="vendaOuAluguel">Venda ou Aluguel</label>
-      <select id="vendaOuAluguel" name="vendaOuAluguel" required>
-        <option value="">Selecione</option>
-        <option value="Venda">Venda</option>
-        <option value="Aluguel">Aluguel</option>
-      </select>
-    </div>
+  <label>Endereço:</label>
+  <input type="text" name="endereco" required>
 
-    <div>
-      <label for="valor">Valor estimado (R$)</label>
-      <input type="text" id="valor" name="valor">
-    </div>
+  <label>Nome do Condomínio:</label>
+  <input type="text" name="condominio">
 
-    <div>
-      <label for="valorCondominio">Valor do Condomínio (R$)</label>
-      <input type="text" id="valorCondominio" name="valorCondominio">
-    </div>
+  <label>Descrição:</label>
+  <textarea name="descricao"></textarea>
 
-    <div>
-      <label for="valorIPTU">Valor do IPTU (R$)</label>
-      <input type="text" id="valorIPTU" name="valorIPTU">
-    </div>
+  <!-- Sessão de fotos -->
+  <label>Fotos do imóvel:</label>
+  <input type="file" name="imagem" accept="image/*" multiple>
 
-    <div>
-      <label for="endereco">Endereço</label>
-      <input type="text" id="endereco" name="endereco">
-    </div>
+  <!-- Campos privados (preenchidos pelo dono do site via script) -->
+  <input type="hidden" name="codigo" value="gerado-pelo-site">
+  <input type="hidden" name="link" value="link-do-anuncio">
+  <input type="hidden" name="informacoesPrivadas" value="dados confidenciais">
+  <input type="hidden" name="documento" value="link-ou-imagem-do-documento">
 
-    <div>
-      <label for="condominio">Nome do Condomínio</label>
-      <input type="text" id="condominio" name="condominio">
-    </div>
-
-    <div class="full-width">
-      <label for="descricao">Descrição</label>
-      <textarea id="descricao" name="descricao" rows="4"></textarea>
-    </div>
-
-    <div>
-      <label for="imagem">Imagem (URL)</label>
-      <input type="text" id="imagem" name="imagem">
-    </div>
-
-    <div>
-      <label for="link">Link do anúncio</label>
-      <input type="text" id="link" name="link">
-    </div>
-
-    <div>
-      <label for="proprietario">Proprietário (Privado)</label>
-      <input type="text" id="proprietario" name="proprietario">
-    </div>
-
-    <div>
-      <label for="contato">Contato (Privado)</label>
-      <input type="text" id="contato" name="contato">
-    </div>
-
-    <div class="full-width">
-      <label for="informacoesPrivadas">Informações Privadas</label>
-      <textarea id="informacoesPrivadas" name="informacoesPrivadas" rows="3"></textarea>
-    </div>
-
-    <div class="full-width">
-      <label for="documento">Documento (Imagem ou Link)</label>
-      <input type="text" id="documento" name="documento">
-    </div>
-  </div>
-
-  <div style="text-align: center;">
-    <button type="submit">Cadastrar Imóvel</button>
-  </div>
-
-  <div id="mensagem"></div>
+  <button type="submit">Cadastrar Imóvel</button>
 </form>
+<div id="mensagem"></div>
 
-<script>
-  const form = document.getElementById("formulario");
-  const mensagem = document.getElementById("mensagem");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const dados = new FormData(form);
-
-    fetch("URL_DO_SEU_WEBAPP", {
-      method: "POST",
-      body: dados,
-    })
-      .then(() => {
-        mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
-        form.reset();
-      })
-      .catch(() => {
-        mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
-      });
-  });
 </script>
 
     </section>
@@ -251,3 +142,4 @@
 
 
 tml>
+
