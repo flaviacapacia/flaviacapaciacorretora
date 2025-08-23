@@ -15,10 +15,7 @@ form.addEventListener("submit", function (e) {
   method: "POST",
   body: dados,
 })
-function doPost(e) {
-  const sheet = SpreadsheetApp.openById("1W9RL62esDrmQjFUVWsZ8i9TE7cmkpQxHxwGwa5btvlc").getSheetByName("Imóveis");
 
-})
     .then(() => {
       mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
       form.reset();
@@ -53,6 +50,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
