@@ -11,19 +11,18 @@ form.addEventListener("submit", function (e) {
 
   const dados = new FormData(form);
 
- fetch("https://script.google.com/macros/s/AKfycby6YguhKgNMGkm69tFUoVBkW-Zw_cDIaLdHQ0xOD58xukNrP3hHHEDzMOFINmnDRzrvDQ/exec")
+fetch("https://script.google.com/macros/s/AKfycbwy-BdWTAfixFYJKWDbrfFUN7JEXyjGERCik0gIT2PLn8f4_ei4sUYYQZs6gkL6QA9SzQ/exec", {
   method: "POST",
-  body: dados,
+  body: dados
 })
-
-    .then(() => {
-      mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
-      form.reset();
-    })
-    .catch(() => {
-      mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
-    });
+.then(() => {
+  mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
+  form.reset();
+})
+.catch(() => {
+  mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
 });
+
 
 fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml')
   .then(response => response.text())
@@ -50,6 +49,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
