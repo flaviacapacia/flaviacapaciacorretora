@@ -11,7 +11,7 @@ form.addEventListener("submit", function (e) {
 
   const dados = new FormData(form);
 
- fetch("https://script.google.com/macros/s/AKfycbyr60_APuhnxKxoxVWQbB94mQoeQGkoAGuzwtKICYqfYTZyqE3HqBsRe2rShkdDXkw_tQ/exec", {
+ fetch("https://script.google.com/macros/s/AKfycbwghi17wIMYgSyCWCn784WYBNa3xy_b0niw4xXhg4yv85nQ4yEUAP23jsv4Pr0zz11WUw/exec")
   method: "POST",
   body: dados,
 })
@@ -50,6 +50,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
