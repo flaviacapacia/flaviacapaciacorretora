@@ -1,6 +1,6 @@
 
 /* Negocie */
-}
+
 const form = document.getElementById("formulario");
 const mensagem = document.getElementById("mensagem");
 
@@ -47,6 +47,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
