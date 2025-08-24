@@ -21,13 +21,30 @@ fetch("https://script.google.com/macros/s/AKfycbz4wI_GX2GzH2Q3yfHXoVDijpp2N70d02
   mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
 });
   
+
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
+  const form = document.querySelector("form");
+
+  // Preenche os campos
   for (const [key, value] of params.entries()) {
     const field = document.querySelector(`[name="${key}"]`);
     if (field) field.value = decodeURIComponent(value);
   }
+
+  // Se todos os campos obrigatórios estiverem preenchidos, envia automaticamente
+  const requiredFields = ["proprietario", "contato", "vendaOuAluguel", "tipo", "valor", "endereco"];
+  const allFilled = requiredFields.every(name => {
+    const field = document.querySelector(`[name="${name}"]`);
+    return field && field.value.trim() !== "";
+  });
+
+  if (allFilled) {
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
 });
+
+
 
 
 
@@ -56,6 +73,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
