@@ -20,6 +20,15 @@ fetch("https://script.google.com/macros/s/AKfycbz4wI_GX2GzH2Q3yfHXoVDijpp2N70d02
 .catch(() => {
   mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
 });
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  for (const [key, value] of params.entries()) {
+    const field = document.querySelector(`[name="${key}"]`);
+    if (field) field.value = decodeURIComponent(value);
+  }
+});
+
 
 
 fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml')
@@ -47,6 +56,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
