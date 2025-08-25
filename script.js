@@ -1,50 +1,34 @@
 
 /* Negocie */
 
-const form = document.getElementById("formulario");
-const mensagem = document.getElementById("mensagem");
-
-form.addEventListener("submit", function (e) {
+document.getElementById("formNegocie").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  // Cria um FormData com todos os campos e arquivos
+  const form = e.target;
   const formData = new FormData(form);
+  const mensagem = document.getElementById("mensagem");
 
-  fetch("https://script.google.com/macros/s/AKfycbxNwrDCZ1WWD8dZGv0CM7In-OwWgHUYcBx2XWP7BVXWbgMOJpClRp3U2Wit9065KODC-g/exec", {
-    method: "POST",
-    body: formData
-  })
-  .then(() => {
-    mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
-    form.reset();
-  })
-  .catch(() => {
-    mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
-  });
-});
+  mensagem.textContent = "Enviando...";
 
+  try {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbzc21L2t1fEqNEsV4jyRfAbJCg48c116BwWIOT5XmAB3ILhEVudlxjo9s_mfZkr_p80bg/exec", {
+      method: "POST",
+      body: formData
+    });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const form = document.querySelector("form");
+    const texto = await resposta.text();
+    mensagem.textContent = texto;
+    mensagem.style.color = resposta.ok ? "green" : "red";
 
-  // Preenche os campos
-  for (const [key, value] of params.entries()) {
-    const field = document.querySelector(`[name="${key}"]`);
-    if (field) field.value = decodeURIComponent(value);
-  }
-
-  // Se todos os campos obrigatórios estiverem preenchidos, envia automaticamente
-  const requiredFields = ["proprietario", "contato", "vendaOuAluguel", "tipo", "valor", "endereco"];
-  const allFilled = requiredFields.every(name => {
-    const field = document.querySelector(`[name="${name}"]`);
-    return field && field.value.trim() !== "";
-  });
-
-  if (allFilled) {
-    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    if (resposta.ok) {
+      form.reset();
+    }
+  } catch (erro) {
+    mensagem.textContent = "Erro ao enviar: " + erro;
+    mensagem.style.color = "red";
   }
 });
+
 
 
 
@@ -75,6 +59,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
