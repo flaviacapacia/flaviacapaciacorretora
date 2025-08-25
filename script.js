@@ -11,7 +11,7 @@ document.getElementById("formNegocie").addEventListener("submit", async function
   mensagem.textContent = "Enviando...";
 
   try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbxNwrDCZ1WWD8dZGv0CM7In-OwWgHUYcBx2XWP7BVXWbgMOJpClRp3U2Wit9065KODC-g/exec", {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbyNqEQou--9KqorHzIZRxmivZvmY3XBmX7wy2IpJyswdW7Nd8mEc7mEQe9KNF45mhwKrg/exec", {
       method: "POST",
       body: formData
     });
@@ -60,6 +60,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
