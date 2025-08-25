@@ -10,7 +10,7 @@ form.addEventListener("submit", function (e) {
   // Cria um FormData com todos os campos e arquivos
   const formData = new FormData(form);
 
-  fetch("https://script.google.com/macros/s/AKfycbx3cIMrLPUzHjar69-lXygNtkM83YLE6_CLTncqdnV2tZ8wnpq3Qr2LRAA_rXKHFW1V9g/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxNwrDCZ1WWD8dZGv0CM7In-OwWgHUYcBx2XWP7BVXWbgMOJpClRp3U2Wit9065KODC-g/exec", {
     method: "POST",
     body: formData
   })
@@ -75,6 +75,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
