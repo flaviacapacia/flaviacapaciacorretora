@@ -4,23 +4,47 @@
 const form = document.getElementById("formulario");
 const mensagem = document.getElementById("mensagem");
 
+const form = document.getElementById("formulario");
+const mensagem = document.getElementById("mensagem");
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const dados = new FormData(form);
+  // Coleta os dados do formulário manualmente
+  const dados = {
+    proprietario: form.proprietario.value,
+    contato: form.contato.value,
+    vendaOuAluguel: form.vendaOuAluguel.value,
+    tipo: form.tipo.value,
+    valor: form.valor.value,
+    valorCondominio: form.valorCondominio.value,
+    valorIPTU: form.valorIPTU.value,
+    endereco: form.endereco.value,
+    condominio: form.condominio.value,
+    descricao: form.descricao.value,
+    imagem: form.imagem.value,
+    codigo: form.codigo.value,
+    link: form.link.value,
+    informacoesPrivadas: form.informacoesPrivadas.value,
+    documento: form.documento.value
+  };
 
-fetch("https://script.google.com/macros/s/AKfycbx3cIMrLPUzHjar69-lXygNtkM83YLE6_CLTncqdnV2tZ8wnpq3Qr2LRAA_rXKHFW1V9g/exec",
-      {
-  method: "POST",
-  body: dados
-})
-.then(() => {
-  mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
-  form.reset();
-})
-.catch(() => {
-  mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
+  fetch("https://script.google.com/macros/s/AKfycbx3cIMrLPUzHjar69-lXygNtkM83YLE6_CLTncqdnV2tZ8wnpq3Qr2LRAA_rXKHFW1V9g/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(dados)
+  })
+  .then(() => {
+    mensagem.innerHTML = "<p style='color:green;'>Imóvel cadastrado com sucesso!</p>";
+    form.reset();
+  })
+  .catch(() => {
+    mensagem.innerHTML = "<p style='color:red;'>Erro ao cadastrar o imóvel.</p>";
+  });
 });
+
   
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,6 +98,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
