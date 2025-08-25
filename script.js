@@ -9,7 +9,7 @@
   mensagem.textContent = "Enviando...";
 
   try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbyNqEQou--9KqorHzIZRxmivZvmY3XBmX7wy2IpJyswdW7Nd8mEc7mEQe9KNF45mhwKrg/exec", {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbzZNipD-2mxW0LH1Q54fYKvNR8twenjwifKc5U7A2-1TTaadzCQm0RBH5IVE4r5gJBg/exec", {
       method: "POST",
       body: formData
     });
@@ -53,6 +53,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
