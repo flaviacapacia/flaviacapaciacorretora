@@ -17,66 +17,75 @@
   <main>
     <section class="negocie-section">
       <h1 class="titulo-dourado">Venda ou Alugue seu Imóvel</h1>
-      <p>Preencha os dados abaixo para cadastrar seu imóvel e iniciar a negociação com segurança e transparência.</p>
-    
+      <p>Preencha os dados abaixo para cadastrar seu imóvel e iniciar a negociação com segurança e transparência.</p><h
 
-<form id="formulario" enctype="multipart/form-data">
-  <!-- outros campos -->
-  <input type="file" name="imagem" accept="image/*" />
-  <button type="submit">Enviar</button>
-</form>
+</head>
+<body>
 
+  <h1>Cadastro de Imóvel</h1>
 
-  <!-- Dados do proprietário -->
-  <label>Nome:</label>
-  <input type="text" name="proprietario" required>
+  <form id="formNegocie" enctype="multipart/form-data">
+    <!-- Token de segurança (opcional) -->
+    <input type="hidden" name="token" value="SEU_TOKEN_AQUI">
 
-  <label>Telefone:</label>
-  <input type="text" name="contato" required>
+    <label>Proprietário:</label>
+    <input type="text" name="proprietario" required>
 
-  <!-- Dados do imóvel -->
-  <label>Venda ou Aluguel:</label>
-  <select name="vendaOuAluguel" required>
-    <option value="Venda">Venda</option>
-    <option value="Aluguel">Aluguel</option>
-  </select>
+    <label>Contato:</label>
+    <input type="text" name="contato" required>
 
-  <label>Tipo:</label>
-  <input type="text" name="tipo" required>
+    <label>Venda ou Aluguel:</label>
+    <select name="vendaOuAluguel">
+      <option value="Venda">Venda</option>
+      <option value="Aluguel">Aluguel</option>
+    </select>
 
-  <label>Valor estimado (R$):</label>
-  <input type="number" name="valor" required>
+    <label>Tipo de Imóvel:</label>
+    <input type="text" name="tipo">
 
-  <label>Valor do Condomínio (R$):</label>
-  <input type="number" name="valorCondominio">
+    <label>Valor:</label>
+    <input type="number" name="valor" step="0.01">
 
-  <label>Valor do IPTU (R$):</label>
-  <input type="number" name="valorIPTU">
+    <label>Valor do Condomínio:</label>
+    <input type="number" name="valorCondominio" step="0.01">
 
-  <label>Endereço:</label>
-  <input type="text" name="endereco" required>
+    <label>Valor do IPTU:</label>
+    <input type="number" name="valorIPTU" step="0.01">
 
-  <label>Nome do Condomínio:</label>
-  <input type="text" name="condominio">
+    <label>Endereço:</label>
+    <input type="text" name="endereco">
 
-  <label>Descrição:</label>
-  <textarea name="descricao"></textarea>
+    <label>Nome do Condomínio:</label>
+    <input type="text" name="condominio">
 
-  <!-- Sessão de fotos -->
-  <label>Fotos do imóvel:</label>
-  <input type="file" name="imagem" accept="image/*" multiple>
+    <label>Descrição:</label>
+    <textarea name="descricao"></textarea>
 
-  <!-- Campos privados (preenchidos pelo dono do site via script) -->
-  <input type="hidden" name="codigo" value="gerado-pelo-site">
-  <input type="hidden" name="link" value="link-do-anuncio">
-  <input type="hidden" name="informacoesPrivadas" value="dados confidenciais">
-  <input type="hidden" name="documento" value="link-ou-imagem-do-documento">
+    <label>Imagem do Imóvel:</label>
+    <input type="file" name="imagem" accept="image/*">
 
-  <button type="submit">Cadastrar Imóvel</button>
-</form>
-<div id="mensagem"></div>
+    <label>Código do Imóvel:</label>
+    <input type="text" name="codigo">
 
-  <header>
+    <label>Link Externo:</label>
+    <input type="url" name="link">
+
+    <label>Informações Privadas:</label>
+    <textarea name="informacoesPrivadas"></textarea>
+
+    <label>Documento:</label>
+    <input type="text" name="documento">
+
+    <button type="submit">Enviar Cadastro</button>
+  </form>
+
+  <div id="mensagem"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+</section>
+  </main>
       
   <nav class="main-nav">
     <ul>
@@ -109,8 +118,7 @@
   <section id="hero" class="hero">
     <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
   </section>
-</section>
-  </main>
+
 <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
   </section>
@@ -138,6 +146,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
