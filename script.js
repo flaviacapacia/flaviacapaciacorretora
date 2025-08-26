@@ -1,15 +1,16 @@
 
 /* Negocie */
   
-  document.getElementById("formNegocie").addEventListener("submit", async function(e) {
+document.getElementById("formNegocie").addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const formData = new FormData(this);
   const mensagem = document.getElementById("mensagem");
   mensagem.textContent = "Enviando...";
+  mensagem.style.color = "black";
 
   try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbzKLQYHHt2IJNBaKDLtRtaKbNEBdcRtEauqd2Zhl_TADBaMPjffwDOTeCxHwnrnvn4/exec", {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbzArn5cSSYq2FBIeTWohNn6VE5UlR4OMXn7vSny3ZWnAYmeShg6XEYS9QqCGbDcZJs_/exec", {
       method: "POST",
       body: formData
     });
@@ -53,6 +54,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
