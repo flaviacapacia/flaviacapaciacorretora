@@ -26,8 +26,15 @@
       <option value="Aluguel">Aluguel</option>
     </select>
 
-    <label for="tipoImovel">Tipo de Imóvel:</label>
-    <input type="text" id="tipoImovel" name="tipoImovel" required>
+   <label for="tipoImovel">Tipo de Imóvel:</label>
+  <select id="tipoImovel" name="tipoImovel" required>
+  <option value="">Selecione</option>
+  <option value="Casa">Casa</option>
+  <option value="Apartamento">Apartamento</option>
+  <option value="Terreno">Terreno</option>
+  <option value="Comercial">Comercial</option>
+  </select>
+
 
     <label for="valor">Valor:</label>
     <input type="number" id="valor" name="valor" step="0.01" required>
@@ -47,8 +54,8 @@
     <label for="descricao">Descrição:</label>
     <textarea id="descricao" name="descricao"></textarea>
 
-    <label for="imagemImovel">Imagem do Imóvel:</label>
-    <input type="file" id="imagemImovel" name="imagemImovel" accept="image/*">
+    <label for="imagemImovel">Imagens do Imóvel:</label>
+<input type="file" id="imagemImovel" name="imagemImovel" accept="image/*" multiple>
 
     <button type="submit">Enviar Cadastro</button>
   </form>
@@ -82,6 +89,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
