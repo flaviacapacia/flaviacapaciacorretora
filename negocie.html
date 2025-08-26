@@ -3,24 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Imóveis em Floripa FC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <title>Cadastro de Imóvel</title>
   <link rel="stylesheet" href="style.css"/>
-  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
 </head>
 <body>
 
-  <!-- Conteúdo Negocie Sessão -->
   <main>
     <section class="negocie-section">
-      <h1 class="titulo-dourado">Venda ou Alugue seu Imóvel</h1>
-      <p>Preencha os dados abaixo para cadastrar seu imóvel e iniciar a negociação com segurança e transparência.</p>
+      <h1>Venda ou Alugue seu Imóvel</h1>
+      <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
 
-      <h1>Cadastro de Imóvel</h1>
-      <form id="formNegocie" method="post" enctype="multipart/form-data">
-        <!-- Token de segurança (opcional) -->
-        <input type="hidden" name="token" value="SEU_TOKEN_AQUI">
-
+      <form id="formNegocie" enctype="multipart/form-data">
         <label>Proprietário:</label>
         <input type="text" name="proprietario" required>
 
@@ -59,9 +52,75 @@
 
         <button type="submit">Enviar Cadastro</button>
       </form>
+
+      <div id="mensagem"></div>
     </section>
   </main>
 
+  <script src="script.js"></script>
+</body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Imóvel</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <main>
+    <section class="negocie-section">
+      <h1>Venda ou Alugue seu Imóvel</h1>
+      <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
+
+      <form id="formNegocie" enctype="multipart/form-data">
+        <label>Proprietário:</label>
+        <input type="text" name="proprietario" required>
+
+        <label>Contato:</label>
+        <input type="text" name="contato" required>
+
+        <label>Venda ou Aluguel:</label>
+        <select name="vendaOuAluguel">
+          <option value="Venda">Venda</option>
+          <option value="Aluguel">Aluguel</option>
+        </select>
+
+        <label>Tipo de Imóvel:</label>
+        <input type="text" name="tipo">
+
+        <label>Valor:</label>
+        <input type="number" name="valor" step="0.01">
+
+        <label>Valor do Condomínio:</label>
+        <input type="number" name="valorCondominio" step="0.01">
+
+        <label>Valor do IPTU:</label>
+        <input type="number" name="valorIPTU" step="0.01">
+
+        <label>Endereço:</label>
+        <input type="text" name="endereco">
+
+        <label>Nome do Condomínio:</label>
+        <input type="text" name="condominio">
+
+        <label>Descrição:</label>
+        <textarea name="descricao"></textarea>
+
+        <label>Imagem do Imóvel:</label>
+        <input type="file" name="imagem" accept="image/*">
+
+        <button type="submit">Enviar Cadastro</button>
+      </form>
+
+      <div id="mensagem"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
   <!-- Header e navegação (vem depois do main) -->
   <header class="site-header">
@@ -94,3 +153,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
