@@ -627,6 +627,24 @@ form button {
 form button:hover {
   background-color: #a0763d;
 }
+.avaliacao-section {
+  background-color: #f9f9f9;
+  padding: 40px;
+  text-align: center;
+}
+
+.avaliacao-section h2 {
+  color: var(--dourado);
+}
+
+.btn-avaliacao {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--dourado);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
 
 
@@ -665,4 +683,5 @@ form button:hover {
   padding: 0;
   margin-top: 10px;
 }
+
 
