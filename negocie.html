@@ -9,52 +9,53 @@
 </head>
 <body>
 
-      <section class="negocie-section">
-      <h1>Venda ou Alugue seu Imóvel</h1>
-      <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
-<form id="formNegocie" action="processa_form.php" method="post" enctype="multipart/form-data">
+     <section class="negocie-section">
+  <h1>Venda ou Alugue seu Imóvel</h1>
+  <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
 
-        <label>Proprietário:</label>
-        <input type="text" name="proprietario" required>
+  <form id="formNegocie" enctype="multipart/form-data" method="post">
+    <label for="proprietario">Proprietário:</label>
+    <input type="text" id="proprietario" name="proprietario" required>
 
-        <label>Contato:</label>
-        <input type="text" name="contato" required>
+    <label for="contato">Contato:</label>
+    <input type="text" id="contato" name="contato" required>
 
-        <label>Venda ou Aluguel:</label>
-        <select name="vendaOuAluguel">
-          <option value="Venda">Venda</option>
-          <option value="Aluguel">Aluguel</option>
-        </select>
+    <label for="tipoNegocio">Venda ou Aluguel:</label>
+    <select id="tipoNegocio" name="tipoNegocio" required>
+      <option value="Venda">Venda</option>
+      <option value="Aluguel">Aluguel</option>
+    </select>
 
-        <label>Tipo de Imóvel:</label>
-        <input type="text" name="tipo">
+    <label for="tipoImovel">Tipo de Imóvel:</label>
+    <input type="text" id="tipoImovel" name="tipoImovel" required>
 
-        <label>Valor:</label>
-        <input type="number" name="valor" step="0.01">
+    <label for="valor">Valor:</label>
+    <input type="number" id="valor" name="valor" step="0.01" required>
 
-        <label>Valor do Condomínio:</label>
-        <input type="number" name="valorCondominio" step="0.01">
+    <label for="valorCondominio">Valor do Condomínio:</label>
+    <input type="number" id="valorCondominio" name="valorCondominio" step="0.01">
 
-        <label>Valor do IPTU:</label>
-        <input type="number" name="valorIPTU" step="0.01">
+    <label for="valorIPTU">Valor do IPTU:</label>
+    <input type="number" id="valorIPTU" name="valorIPTU" step="0.01">
 
-        <label>Endereço:</label>
-        <input type="text" name="endereco">
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" required>
 
-        <label>Nome do Condomínio:</label>
-        <input type="text" name="condominio">
+    <label for="nomeCondominio">Nome do Condomínio:</label>
+    <input type="text" id="nomeCondominio" name="nomeCondominio">
 
-        <label>Descrição:</label>
-        <textarea name="descricao"></textarea>
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" name="descricao"></textarea>
 
-        <label>Imagem do Imóvel:</label>
-        <input type="file" name="imagem" accept="image/*">
+    <label for="imagemImovel">Imagem do Imóvel:</label>
+    <input type="file" id="imagemImovel" name="imagemImovel" accept="image/*">
 
-        <button type="submit">Enviar Cadastro</button>
-      </form>
+    <button type="submit">Enviar Cadastro</button>
+  </form>
 
-      <div id="mensagem"></div>
-    </section>
+  <div id="mensagem"></div>
+</section>
+
   <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
   </section>
@@ -81,6 +82,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
