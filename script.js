@@ -1,31 +1,46 @@
 
 /* Negocie */
-document.addEventListener("DOMContentLoaded", function () {
+// URL do seu Google Apps Script publicado como Web App
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw0a2faPni_dQf-aIVuhRMC96bpzCy61q_bIXHpzWTytD8Q9qZn-MA2CYSL15Ihw--z/exec";
+
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formNegocie");
-  const mensagem = document.getElementById("mensagem");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // evita recarregar a página
+  if (!form) {
+    console.error("Formulário #formNegocie não encontrado.");
+    return;
+  }
 
-    mensagem.textContent = "Enviando...";
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
+    // Monta os dados do formulário
     const formData = new FormData(form);
 
-    fetch("https://script.google.com/macros/s/AKfycbw-IQHYiBMRW1t_dfti7qWPvJstgwoX7hDw3lDSobJkM2pJIrNOZyASrR450jDyZRXq/exec", {
-      method: "POST",
-      body: formData
-    })
-      .then(response => response.text())
-      .then(texto => {
-        mensagem.textContent = texto;
-        mensagem.style.color = "green";
-        form.reset();
-      })
-      .catch(error => {
-        console.error("Erro no envio:", error);
-        mensagem.textContent = "Ocorreu um erro ao enviar. Tente novamente.";
-        mensagem.style.color = "red";
+    // Log para debug (opcional)
+    console.log("Enviando dados:", [...formData.entries()]);
+
+    try {
+      // Envia via fetch
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData
       });
+
+      if (!response.ok) {
+        throw new Error(`Erro HTTP: ${response.status}`);
+      }
+
+      const result = await response.text(); // ou .json() se o Apps Script retornar JSON
+      console.log("Resposta do servidor:", result);
+
+      alert("✅ Cadastro enviado com sucesso!");
+      form.reset();
+
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      alert("❌ Ocorreu um erro ao enviar. Tente novamente.");
+    }
   });
 });
 
@@ -56,6 +71,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
