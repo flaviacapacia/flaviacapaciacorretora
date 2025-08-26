@@ -1,7 +1,5 @@
-
 /* Negocie */
-// URL do seu Google Apps Script publicado como Web App
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxUmtr3qCNKhudgCzfYdScdA48iZZWIELZ2kpxFDMrMuit9lUzdK3NWiw169wUCSf0A/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzj2zf5pufRdziKllb0zNOO_s1syRGddTWpz0wBQOw0aTGuPBcBAOd-GxUewF8flsKp/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formNegocie");
@@ -14,84 +12,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // Preenche Data e Codigo automaticamente
+    const agora = new Date();
+    form.querySelector('[name="Data"]').value = agora.toLocaleDateString("pt-BR");
+    form.querySelector('[name="Codigo"]').value = "IMV-" + Date.now();
+
+    // Se não quiser que o cliente veja Informações Privada, remova do HTML ou use hidden
+    // form.querySelector('[name="Informaçoes Privada"]').value = "Somente uso interno";
+
     const formData = new FormData(form);
 
     try {
-      btn && (btn.disabled = true);
-      btn && (btn.textContent = "Enviando...");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Enviando...";
+      }
 
-      const resp = await fetch(SCRIPT_URL, { method: "POST", body: formData });
+      const resp = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData
+      });
+
       const texto = await resp.text();
-
       if (!resp.ok) throw new Error(`Falha HTTP ${resp.status}`);
 
       alert(texto || "Cadastro enviado com sucesso!");
       form.reset();
+
     } catch (err) {
       console.error("Erro no envio:", err);
       alert("Ocorreu um erro ao enviar. Verifique os campos e tente novamente.");
     } finally {
-      btn && (btn.disabled = false);
-      btn && (btn.textContent = "Enviar Cadastro");
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = "Enviar Cadastro";
+      }
     }
   });
 });
-
-
-    });
-  })
-  .catch(error => console.error("Erro ao carregar imóveis:", error));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
