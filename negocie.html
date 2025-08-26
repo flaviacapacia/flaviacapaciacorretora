@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,119 +8,112 @@
 </head>
 <body>
 
-     <section class="negocie-section">
+<section class="negocie-section">
   <h1>Venda ou Alugue seu Imóvel</h1>
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
-<form id="formNegocie" enctype="multipart/form-data" method="post">
-  <div class="form-grid">
 
-    <div>
-      <label for="proprietario">Proprietário:</label>
-      <input type="text" id="proprietario" name="proprietario" required>
+  <!-- Adicione a URL do seu Apps Script no action -->
+  <form id="formNegocie" action="URL_DO_SEU_APPS_SCRIPT" enctype="multipart/form-data" method="post">
+    <div class="form-grid">
+
+      <div>
+        <label for="proprietario">Proprietário:</label>
+        <input type="text" id="proprietario" name="proprietario" required>
+      </div>
+
+      <div>
+        <label for="contato">Contato:</label>
+        <input type="text" id="contato" name="contato" required>
+      </div>
+
+      <div>
+        <label for="tipoNegocio">Venda ou Aluguel:</label>
+        <select id="tipoNegocio" name="tipoNegocio" required>
+          <option value="">Selecione</option>
+          <option value="Venda">Venda</option>
+          <option value="Aluguel">Aluguel</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="tipoImovel">Tipo de Imóvel:</label>
+        <select id="tipoImovel" name="tipoImovel" required>
+          <option value="">Selecione</option>
+          <option value="Casa">Casa</option>
+          <option value="Apartamento">Apartamento</option>
+          <option value="Terreno">Terreno</option>
+          <option value="Comercial">Comercial</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" name="valor" step="0.01" required>
+      </div>
+
+      <div>
+        <label for="valorCondominio">Valor do Condomínio:</label>
+        <input type="number" id="valorCondominio" name="valorCondominio" step="0.01">
+      </div>
+
+      <div>
+        <label for="valorIPTU">Valor do IPTU:</label>
+        <input type="number" id="valorIPTU" name="valorIPTU" step="0.01">
+      </div>
+
+      <div>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+      </div>
+
+      <div>
+        <label for="nomeCondominio">Nome do Condomínio:</label>
+        <input type="text" id="nomeCondominio" name="nomeCondominio">
+      </div>
+
+      <div class="descricao-full">
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" placeholder="Descreva o imóvel..."></textarea>
+      </div>
+
+      <div>
+        <label for="imagemImovel">Imagens do Imóvel:</label>
+        <input type="file" id="imagemImovel" name="imagemImovel" accept="image/*" multiple>
+      </div>
+
+      <div class="full-width">
+        <button type="submit">Enviar Cadastro</button>
+      </div>
+
     </div>
-
-    <div>
-      <label for="contato">Contato:</label>
-      <input type="text" id="contato" name="contato" required>
-    </div>
-
-    <div>
-      <label for="tipoNegocio">Venda ou Aluguel:</label>
-      <select id="tipoNegocio" name="tipoNegocio" required>
-        <option value="">Selecione</option>
-        <option value="Venda">Venda</option>
-        <option value="Aluguel">Aluguel</option>
-      </select>
-    </div>
-
-    <div>
-      <label for="tipoImovel">Tipo de Imóvel:</label>
-      <select id="tipoImovel" name="tipoImovel" required>
-        <option value="">Selecione</option>
-        <option value="Casa">Casa</option>
-        <option value="Apartamento">Apartamento</option>
-        <option value="Terreno">Terreno</option>
-        <option value="Comercial">Comercial</option>
-      </select>
-    </div>
-
-    <div>
-      <label for="valor">Valor:</label>
-      <input type="number" id="valor" name="valor" step="0.01" required>
-    </div>
-
-    <div>
-      <label for="valorCondominio">Valor do Condomínio:</label>
-      <input type="number" id="valorCondominio" name="valorCondominio" step="0.01">
-    </div>
-
-    <div>
-      <label for="valorIPTU">Valor do IPTU:</label>
-      <input type="number" id="valorIPTU" name="valorIPTU" step="0.01">
-    </div>
-
-    <div>
-      <label for="endereco">Endereço:</label>
-      <input type="text" id="endereco" name="endereco" required>
-    </div>
-
-    <div>
-      <label for="nomeCondominio">Nome do Condomínio:</label>
-      <input type="text" id="nomeCondominio" name="nomeCondominio">
-    </div>
-
-    <div class="descricao-full">
-      <label for="descricao">Descrição:</label>
-      <textarea id="descricao" name="descricao" placeholder="Descreva o imóvel..."></textarea>
-    </div>
-
-    <div>
-      <label for="imagemImovel">Imagens do Imóvel:</label>
-      <input type="file" id="imagemImovel" name="imagemImovel" accept="image/*" multiple>
-    </div>
-
-    <div class="full-width">
-      <button type="submit">Enviar Cadastro</button>
-    </div>
-
-  </div>
-</form>
-
+  </form>
 </section>
 
-  <section class="cta-banner">
-    <h2>Seu imóvel a um clique de você</h2>
-  </section>
-  <!-- Rodapé -->
-   <footer class="site-footer" id="contato">
-    <div class="footer-logo">
-      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia"/>
+<section class="cta-banner">
+  <h2>Seu imóvel a um clique de você</h2>
+</section>
+
+<footer class="site-footer" id="contato">
+  <div class="footer-logo">
+    <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia"/>
+  </div>
+  <div class="footer-contact">
+    <h3 style="color: var(--dourado);">Contato</h3>
+    <p><a href="mailto:flavia@email.com">flavia.capacia@creci.gov</a></p>
+    <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+    <div class="social-list">
+      <ul>
+        <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
+        <li><a href="https://www.instagram.com/flacapacciacorretora/">Instagram</a></li>
+        <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
+        <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
+      </ul>
     </div>
-    <div class="footer-contact">
-       <h3 style="color: var(--dourado);">Contato</h3>
-      <p><a href="mailto:flavia@email.com">flavia.capacia@creci.gov</a></p>
-      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-   <div class="social-list">
-  <ul>
-    <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
-    <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
-    <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
-    <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
-  </ul>
-</div>
+  </div>
+</footer>
 
-  </footer>
+<!-- Carregar JS no final -->
+<script src="script.js"></script>
 
-  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
