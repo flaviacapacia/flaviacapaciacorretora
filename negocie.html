@@ -12,67 +12,81 @@
      <section class="negocie-section">
   <h1>Venda ou Alugue seu Imóvel</h1>
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
+<form id="formNegocie" enctype="multipart/form-data" method="post">
+  <div class="form-grid">
 
-  <form id="formNegocie" enctype="multipart/form-data" method="post">
-    <label for="proprietario">Proprietário:</label>
-    <input type="text" id="proprietario" name="proprietario" required>
+    <div>
+      <label for="proprietario">Proprietário:</label>
+      <input type="text" id="proprietario" name="proprietario" required>
+    </div>
 
-    <label for="contato">Contato:</label>
-    <input type="text" id="contato" name="contato" required>
+    <div>
+      <label for="contato">Contato:</label>
+      <input type="text" id="contato" name="contato" required>
+    </div>
 
-    <label for="tipoNegocio">Venda ou Aluguel:</label>
-    <select id="tipoNegocio" name="tipoNegocio" required>
-      <option value="Venda">Venda</option>
-      <option value="Aluguel">Aluguel</option>
-    </select>
+    <div>
+      <label for="tipoNegocio">Venda ou Aluguel:</label>
+      <select id="tipoNegocio" name="tipoNegocio" required>
+        <option value="">Selecione</option>
+        <option value="Venda">Venda</option>
+        <option value="Aluguel">Aluguel</option>
+      </select>
+    </div>
 
-   <label for="tipoImovel">Tipo de Imóvel:</label>
-  <select id="tipoImovel" name="tipoImovel" required>
-  <option value="">Selecione</option>
-  <option value="Casa">Casa</option>
-  <option value="Apartamento">Apartamento</option>
-  <option value="Terreno">Terreno</option>
-  <option value="Comercial">Comercial</option>
-  </select>
+    <div>
+      <label for="tipoImovel">Tipo de Imóvel:</label>
+      <select id="tipoImovel" name="tipoImovel" required>
+        <option value="">Selecione</option>
+        <option value="Casa">Casa</option>
+        <option value="Apartamento">Apartamento</option>
+        <option value="Terreno">Terreno</option>
+        <option value="Comercial">Comercial</option>
+      </select>
+    </div>
 
+    <div>
+      <label for="valor">Valor:</label>
+      <input type="number" id="valor" name="valor" step="0.01" required>
+    </div>
 
-    <label for="valor">Valor:</label>
-    <input type="number" id="valor" name="valor" step="0.01" required>
+    <div>
+      <label for="valorCondominio">Valor do Condomínio:</label>
+      <input type="number" id="valorCondominio" name="valorCondominio" step="0.01">
+    </div>
 
-    <label for="valorCondominio">Valor do Condomínio:</label>
-    <input type="number" id="valorCondominio" name="valorCondominio" step="0.01">
+    <div>
+      <label for="valorIPTU">Valor do IPTU:</label>
+      <input type="number" id="valorIPTU" name="valorIPTU" step="0.01">
+    </div>
 
-    <label for="valorIPTU">Valor do IPTU:</label>
-    <input type="number" id="valorIPTU" name="valorIPTU" step="0.01">
+    <div>
+      <label for="endereco">Endereço:</label>
+      <input type="text" id="endereco" name="endereco" required>
+    </div>
 
-    <label for="endereco">Endereço:</label>
-    <input type="text" id="endereco" name="endereco" required>
+    <div>
+      <label for="nomeCondominio">Nome do Condomínio:</label>
+      <input type="text" id="nomeCondominio" name="nomeCondominio">
+    </div>
 
-    <label for="nomeCondominio">Nome do Condomínio:</label>
-    <input type="text" id="nomeCondominio" name="nomeCondominio">
+    <div class="descricao-full">
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" placeholder="Descreva o imóvel..."></textarea>
+    </div>
 
-    <label for="descricao">Descrição:</label>
-    <textarea id="descricao" name="descricao"></textarea>
+    <div>
+      <label for="imagemImovel">Imagens do Imóvel:</label>
+      <input type="file" id="imagemImovel" name="imagemImovel" accept="image/*" multiple>
+    </div>
 
-    <label for="imagemImovel">Imagens do Imóvel:</label>
-<input type="file" id="imagemImovel" name="imagemImovel" accept="image/*" multiple>
+    <div class="full-width">
+      <button type="submit">Enviar Cadastro</button>
+    </div>
 
-    <button type="submit">Enviar Cadastro</button>
-    <div class="form-grid">
-  <div>
-    <label for="proprietario">Proprietário</label>
-    <input type="text" id="proprietario" name="proprietario" required>
   </div>
-  <div>
-    <label for="contato">Contato</label>
-    <input type="text" id="contato" name="contato" required>
-  </div>
-  <!-- mais campos -->
-</div>
+</form>
 
-  </form>
-
-  <div id="mensagem"></div>
 </section>
 
   <section class="cta-banner">
@@ -101,6 +115,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
