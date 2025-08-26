@@ -1,40 +1,32 @@
 
 /* Negocie */
-  document.getElementById("formNegocie").addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("formNegocie");
   const mensagem = document.getElementById("mensagem");
-  mensagem.textContent = "Enviando...";
-  mensagem.style.color = "black";
 
-  try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbzArn5cSSYq2FBIeTWohNn6VE5UlR4OMXn7vSny3ZWnAYmeShg6XEYS9QqCGbDcZJs_/exec", {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // evita recarregar a página
+
+    mensagem.textContent = "Enviando...";
+
+    const formData = new FormData(form);
+
+    fetch("https://script.google.com/macros/s/AKfycbw9hIq2LF02pnTXrG01CzjcsnhGbFUxWQHPoH4NTg38o-N2sGVEf7ravnVlMLFD6Hhm/exec", {
       method: "POST",
       body: formData
-    });
-
-    const texto = await resposta.text();
-    mensagem.textContent = texto;
-    mensagem.style.color = resposta.ok ? "green" : "red";
-
-    if (resposta.ok) {
-      this.reset();
-    }
-  } catch (err) {
-    mensagem.textContent = "Erro: " + err;
-    mensagem.style.color = "red";
-  }
-});
-document.getElementById('formNegocie').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(this);
-  fetch('https://script.google.com/macros/s/AKfycbzArn5cSSYq2FBIeTWohNn6VE5UlR4OMXn7vSny3ZWnAYmeShg6XEYS9QqCGbDcZJs_/exec', {
-    method: 'POST',
-    body: formData
-  }).then(res => res.text())
-    .then(msg => document.getElementById('mensagem').innerText = msg)
-    .catch(err => console.error(err));
+    })
+      .then(response => response.text())
+      .then(texto => {
+        mensagem.textContent = texto;
+        mensagem.style.color = "green";
+        form.reset();
+      })
+      .catch(error => {
+        console.error("Erro no envio:", error);
+        mensagem.textContent = "Ocorreu um erro ao enviar. Tente novamente.";
+        mensagem.style.color = "red";
+      });
+  });
 });
 
 
@@ -64,6 +56,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
