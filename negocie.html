@@ -13,80 +13,53 @@
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
 
   <!-- Adicione a URL do seu Apps Script no action -->
-  <form id="formNegocie" action="URL_DO_SEU_APPS_SCRIPT" enctype="multipart/form-data" method="post">
-    <div class="form-grid">
+ <form id="formNegocie" enctype="multipart/form-data" method="post">
+  <label>Proprietário:
+    <input type="text" name="proprietario" required>
+  </label>
 
-      <div>
-        <label for="proprietario">Proprietário:</label>
-        <input type="text" id="proprietario" name="proprietario" required>
-      </div>
+  <label>Contato:
+    <input type="text" name="contato" required>
+  </label>
 
-      <div>
-        <label for="contato">Contato:</label>
-        <input type="text" id="contato" name="contato" required>
-      </div>
+  <label>Venda ou Aluguel:
+    <select name="tipoNegocio" required>
+      <option value="">Selecione</option>
+      <option value="Venda">Venda</option>
+      <option value="Aluguel">Aluguel</option>
+    </select>
+  </label>
 
-      <div>
-        <label for="tipoNegocio">Venda ou Aluguel:</label>
-        <select id="tipoNegocio" name="tipoNegocio" required>
-          <option value="">Selecione</option>
-          <option value="Venda">Venda</option>
-          <option value="Aluguel">Aluguel</option>
-        </select>
-      </div>
+  <label>Endereço:
+    <input type="text" name="endereco" required>
+  </label>
 
-      <div>
-        <label for="tipoImovel">Tipo de Imóvel:</label>
-        <select id="tipoImovel" name="tipoImovel" required>
-          <option value="">Selecione</option>
-          <option value="Casa">Casa</option>
-          <option value="Apartamento">Apartamento</option>
-          <option value="Terreno">Terreno</option>
-          <option value="Comercial">Comercial</option>
-        </select>
-      </div>
+  <label>Nome do Condomínio:
+    <input type="text" name="nomeCondominio">
+  </label>
 
-      <div>
-        <label for="valor">Valor:</label>
-        <input type="number" id="valor" name="valor" step="0.01" required>
-      </div>
+  <label>Descrição:
+    <textarea name="descricao"></textarea>
+  </label>
 
-      <div>
-        <label for="valorCondominio">Valor do Condomínio:</label>
-        <input type="number" id="valorCondominio" name="valorCondominio" step="0.01">
-      </div>
+  <label>Valor do Condomínio:
+    <input type="number" step="0.01" name="valorCondominio">
+  </label>
 
-      <div>
-        <label for="valorIPTU">Valor do IPTU:</label>
-        <input type="number" id="valorIPTU" name="valorIPTU" step="0.01">
-      </div>
+  <label>Valor do IPTU:
+    <input type="number" step="0.01" name="valorIPTU">
+  </label>
 
-      <div>
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" required>
-      </div>
+  <label>Imagens do Imóvel / Documentos:
+    <input type="file" name="imagemImovel" multiple>
+  </label>
 
-      <div>
-        <label for="nomeCondominio">Nome do Condomínio:</label>
-        <input type="text" id="nomeCondominio" name="nomeCondominio">
-      </div>
+  <label>Informações Privada:
+    <textarea name="infoPrivada"></textarea>
+  </label>
 
-      <div class="descricao-full">
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" placeholder="Descreva o imóvel..."></textarea>
-      </div>
-
-      <div>
-        <label for="imagemImovel">Imagens do Imóvel:</label>
-        <input type="file" id="imagemImovel" name="imagemImovel" accept="image/*" multiple>
-      </div>
-
-      <div class="full-width">
-        <button type="submit">Enviar Cadastro</button>
-      </div>
-
-    </div>
-  </form>
+  <button type="submit">Enviar Cadastro</button>
+</form>
 </section>
 
 <section class="cta-banner">
@@ -117,3 +90,4 @@
 
 </body>
 </html>
+
