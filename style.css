@@ -369,6 +369,17 @@ body {
 .negocie-section {
   padding: 40px 20px;
 }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+form label {
+  color: var(--dourado); /* mantém o dourado/bronze */
+  font-weight: bold;
+}
+
 
 /* Financie */
 .financie-section {
@@ -475,8 +486,6 @@ form button {
 form button:hover {
   background-color: #a0763d;
 }
-
-
 
 /* CTA */
 .cta-banner {
@@ -683,5 +692,6 @@ form button:hover {
   padding: 0;
   margin-top: 10px;
 }
+
 
 
