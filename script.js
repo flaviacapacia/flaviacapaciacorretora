@@ -27,6 +27,18 @@ document.getElementById("formNegocie").addEventListener("submit", async function
     mensagem.style.color = "red";
   }
 });
+<script>
+document.getElementById('formNegocie').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  fetch('https://seu-endpoint.com/api', {
+    method: 'POST',
+    body: formData
+  }).then(res => res.text())
+    .then(msg => document.getElementById('mensagem').innerText = msg)
+    .catch(err => console.error(err));
+});
+</script>
 
 
 fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml')
@@ -54,6 +66,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
