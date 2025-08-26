@@ -1,10 +1,11 @@
 
 /* Negocie */
 // URL do seu Google Apps Script publicado como Web App
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxkcxhCELLg6rxYUW6QJ0mv8iy11ZIvRNdTTjsvi35B5HB9O98Frv4f6XQe9PddQl0n/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbye270bAH5WZhye9zNwVZ7UKW-a-AYCPY7rDeC-agLIpR5MlDSMHkgdNaDbYEP-n1pj/exec"; // atualize com a URL vigente
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formNegocie");
+  const btn = form?.querySelector('button[type="submit"]');
 
   if (!form) {
     console.error("Formulário #formNegocie não encontrado.");
@@ -14,36 +15,28 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Monta os dados do formulário
     const formData = new FormData(form);
 
-    // Log para debug (opcional)
-    console.log("Enviando dados:", [...formData.entries()]);
-
     try {
-      // Envia via fetch
-      const response = await fetch(SCRIPT_URL, {
-        method: "POST",
-        body: formData
-      });
+      btn && (btn.disabled = true);
+      btn && (btn.textContent = "Enviando...");
 
-      if (!response.ok) {
-        throw new Error(`Erro HTTP: ${response.status}`);
-      }
+      const resp = await fetch(SCRIPT_URL, { method: "POST", body: formData });
+      const texto = await resp.text();
 
-      const result = await response.text(); // ou .json() se o Apps Script retornar JSON
-      console.log("Resposta do servidor:", result);
+      if (!resp.ok) throw new Error(`Falha HTTP ${resp.status}`);
 
-      alert("✅ Cadastro enviado com sucesso!");
+      alert(texto || "Cadastro enviado com sucesso!");
       form.reset();
-
-    } catch (error) {
-      console.error("Erro ao enviar formulário:", error);
-      alert("❌ Ocorreu um erro ao enviar. Tente novamente.");
+    } catch (err) {
+      console.error("Erro no envio:", err);
+      alert("Ocorreu um erro ao enviar. Verifique os campos e tente novamente.");
+    } finally {
+      btn && (btn.disabled = false);
+      btn && (btn.textContent = "Enviar Cadastro");
     }
   });
 });
-
 
 
 fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml')
@@ -71,6 +64,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
