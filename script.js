@@ -1,7 +1,7 @@
 
 /* Negocie */
 // URL do seu Google Apps Script publicado como Web App
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw0a2faPni_dQf-aIVuhRMC96bpzCy61q_bIXHpzWTytD8Q9qZn-MA2CYSL15Ihw--z/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzocfd5qO4Ggotu5Rw3wBquBTyjdazXbfnGTVMy2YhBdSQ7KW14W5wm1gpJgphvDDVG/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formNegocie");
@@ -71,6 +71,7 @@ fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/teci
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
