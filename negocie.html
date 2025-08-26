@@ -7,69 +7,58 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
 <section class="negocie-section">
   <h1>Venda ou Alugue seu Imóvel</h1>
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
 
-  <!-- Adicione a URL do seu Apps Script no action -->
   <form id="formNegocie" enctype="multipart/form-data" method="post">
-
-    <!-- Campos privados -->
+    <!-- Campos privados preenchidos pelo JS/Apps Script -->
     <input type="hidden" name="Data">
     <input type="hidden" name="Codigo">
+    <input type="hidden" name="ID_Imagem">
+    <input type="hidden" name="(Link">
+    <input type="hidden" name="Informaçoes Privada">
 
-    <label>Proprietário:
-      <input type="text" name="Proprietario" required>
-    </label>
+    <label for="proprietario">Proprietário:</label>
+    <input type="text" id="proprietario" name="Proprietario" required>
 
-    <label>Contato:
-      <input type="text" name="Contato" required>
-    </label>
+    <label for="contato">Contato:</label>
+    <input type="text" id="contato" name="Contato" required>
 
-    <label>Venda ou Aluguel:
-      <select name="Venda ou Aluguel" required>
-        <option value="">Selecione</option>
-        <option value="Venda">Venda</option>
-        <option value="Aluguel">Aluguel</option>
-      </select>
-    </label>
+    <label for="tipoNegocio">Venda ou Aluguel:</label>
+    <select id="tipoNegocio" name="Venda ou Aluguel" required>
+      <option value="">Selecione</option>
+      <option value="Venda">Venda</option>
+      <option value="Aluguel">Aluguel</option>
+    </select>
 
-    <label>Endereço:
-      <input type="text" name="Endereço" required>
-    </label>
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="Endereço" required>
 
-    <label>Condominio:
-      <input type="text" name="Condominio">
-    </label>
+    <label for="nomeCondominio">Condomínio:</label>
+    <input type="text" id="nomeCondominio" name="Condominio">
 
-    <label>Descrição:
-      <textarea name="Descrição"></textarea>
-    </label>
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" name="Descrição"></textarea>
 
-    <!-- Grid lado a lado -->
     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-      <label style="flex: 1;">Valor do Condominio:
-        <input type="number" step="0.01" name="Valor do Condominio">
+      <label style="flex: 1;">Valor do Condomínio:
+        <input type="number" id="valorCondominio" name="Valor do Condominio" step="0.01">
       </label>
 
       <label style="flex: 1;">Valor do IPTU:
-        <input type="number" step="0.01" name="Valor do IPTU">
+        <input type="number" id="valorIPTU" name="Valor do IPTU" step="0.01">
       </label>
     </div>
 
-    <label>Imagem dos Documentos do Imovel:
-      <input type="file" name="Imagem dos Documentos do Imovel" multiple>
-    </label>
-
-    <input type="hidden" name="ID_Imagem">
-    <input type="hidden" name="(Link">
-
-    <label>Informações Privada:
-      <textarea name="Informaçoes Privada"></textarea>
-    </label>
+    <label for="imagemImovel">Imagem dos Documentos do Imóvel:</label>
+    <input type="file" id="imagemImovel" name="Imagem dos Documentos do Imovel" accept="image/*" multiple>
 
     <button type="submit">Enviar Cadastro</button>
   </form>
+
+  <div id="mensagem"></div>
 </section>
 
 <section class="cta-banner">
@@ -87,30 +76,7 @@
     <div class="social-list">
       <ul>
         <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
-        <li><a href="https://www.instagram.com/flacapacciacorretora/">Instagram</a></li>
-        <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
-        <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="cta-banner">
-  <h2>Seu imóvel a um clique de você</h2>
-</section>
-
-<footer class="site-footer" id="contato">
-  <div class="footer-logo">
-    <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia"/>
-  </div>
-  <div class="footer-contact">
-    <h3 style="color: var(--dourado);">Contato</h3>
-    <p><a href="mailto:flavia@email.com">flavia.capacia@creci.gov</a></p>
-    <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-    <div class="social-list">
-      <ul>
-        <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
-        <li><a href="https://www.instagram.com/flacapacciacorretora/">Instagram</a></li>
+        <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
         <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
         <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
       </ul>
@@ -118,10 +84,6 @@
   </div>
 </footer>
 
-<!-- Carregar JS no final -->
 <script src="script.js"></script>
-
 </body>
 </html>
-
-
