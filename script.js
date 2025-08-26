@@ -1,7 +1,7 @@
 
 /* Negocie */
 // URL do seu Google Apps Script publicado como Web App
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbye270bAH5WZhye9zNwVZ7UKW-a-AYCPY7rDeC-agLIpR5MlDSMHkgdNaDbYEP-n1pj/exec"; // atualize com a URL vigente
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzzJ7wt-0JDIPlYtLWUt_NKJPfGQII_6TlqbxE0wcBy2ylSXfUmbGnXyMAoRK4Fjhl9/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formNegocie");
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
     const formData = new FormData(form);
 
     try {
@@ -38,8 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-/* fetch('https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grq6lwb4htd1/b/tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml')
+/*tecimob-production/o/integrations/5b33fb35-31ad-48a1-9ad7-78e3918ca78f/casa-mineira.xml')
   .then(response => response.text())
   .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
   .then(data => {
@@ -64,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })
   .catch(error => console.error("Erro ao carregar imóveis:", error));
+
 
 
 
