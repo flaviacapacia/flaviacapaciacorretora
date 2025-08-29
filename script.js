@@ -1,11 +1,7 @@
-const formData = new FormData(form);
-fetch("https://script.google.com/macros/s/AKfycbxgiT0UGo0ybEMYBMfM_veXRS6sFR55Vap5DA2eJjY_u4EEK9FjBeqcq84Pfmz5EbnD/exec", { method: "POST", body: formData });
-
-
 document.addEventListener("DOMContentLoaded", () => {
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgiT0UGo0ybEMYBMfM_veXRS6sFR55Vap5DA2eJjY_u4EEK9FjBeqcq84Pfmz5EbnD/exec";
   const form = document.getElementById("formNegocie");
   const btn = form.querySelector('button[type="submit"]');
-
 
   const tiposValidos = [
     "Apartamento",
@@ -51,5 +47,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-
