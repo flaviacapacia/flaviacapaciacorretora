@@ -1,24 +1,30 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzO4QZJmVoWniOC9-SdQ9oQGRFZ-agVTIzam8_aMJoaU_cir4cOt2d6WQyNKNK6fhcz/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz9STtitG_T2l05tSDgRv9O65dPALVFRhBe2LBvckVZKHL8BJM6c2Zz3qnycDGULec/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("formNegocie");
+  const form = document.getElementById("formularioImovel");
   const btn = form?.querySelector('button[type="submit"]');
 
-  if (!form) {
-    console.error("Formulário #formNegocie não encontrado.");
-    return;
-  }
+  const tiposValidos = [
+    "Apartamento",
+    "Casa",
+    "Terreno",
+    "Sala comercial",
+    "Loja comercial"
+  ];
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Preenche Data e Codigo automaticamente
-    const agora = new Date();
-    form.querySelector('[name="Data"]').value = agora.toLocaleDateString("pt-BR");
-    form.querySelector('[name="Codigo"]').value = "IMV-" + Date.now();
+    const tipo = form.querySelector('[name="Tipo"]').value;
+    if (!tiposValidos.includes(tipo)) {
+      alert("Selecione um tipo de imóvel válido.");
+      return;
+    }
 
-    // Se não quiser que o cliente veja Informações Privada, remova do HTML ou use hidden
-    // form.querySelector('[name="Informaçoes Privada"]').value = "Somente uso interno";
+    // Preenche campos automáticos
+    const agora = new Date();
+    form.appendChild(createHiddenInput("Data", agora.toLocaleDateString("pt-BR")));
+    form.appendChild(createHiddenInput("Codigo", "IMV-" + Date.now()));
 
     const formData = new FormData(form);
 
@@ -34,19 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const texto = await resp.text();
-      if (!resp.ok) throw new Error(`Falha HTTP ${resp.status}`);
-
       alert(texto || "Cadastro enviado com sucesso!");
       form.reset();
-
     } catch (err) {
       console.error("Erro no envio:", err);
-      alert("Ocorreu um erro ao enviar. Verifique os campos e tente novamente.");
+      alert("Erro ao enviar. Verifique os campos.");
     } finally {
       if (btn) {
         btn.disabled = false;
-        btn.textContent = "Enviar Cadastro";
+        btn.textContent = "Cadastrar Imóvel";
       }
     }
   });
+
+  function createHiddenInput(name, value) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    return input;
+  }
 });
