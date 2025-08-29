@@ -1,5 +1,4 @@
-/* Negocie */
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzj2zf5pufRdziKllb0zNOO_s1syRGddTWpz0wBQOw0aTGuPBcBAOd-GxUewF8flsKp/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzO4QZJmVoWniOC9-SdQ9oQGRFZ-agVTIzam8_aMJoaU_cir4cOt2d6WQyNKNK6fhcz/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formNegocie");
