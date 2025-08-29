@@ -1,19 +1,14 @@
-  document.addEventListener("DOMContentLoaded", () => {
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbweWucNc6iglGYoQRtLWWBMjpnZs5apWWr0djTT8_Hr_1RPh6x9SzoCpKwQmqFCeZp4/exe";
+document.addEventListener("DOMContentLoaded", () => {
+  // 🔗 URL do seu Apps Script publicado
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzRP_ujpBiA4uLyYeqc5jIncPRAIuXcgFSYqNI53LnQSP_8oEMbrR_MBhPSPQ0fexCh/exec";
+
   const form = document.getElementById("formNegocie");
   const btn = form.querySelector('button[type="submit"]');
-
-  const tiposValidos = ["Apartamento", "Casa", "Terreno", "Sala comercial", "Loja comercial"];
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const tipo = form.querySelector('[name="Tipo"]').value;
-    if (!tiposValidos.includes(tipo)) {
-      alert("Selecione um tipo de imóvel válido.");
-      return;
-    }
-
+    // Preenche Data e Código automaticamente
     form.querySelector('[name="Data"]').value = new Date().toLocaleDateString("pt-BR");
     form.querySelector('[name="Codigo"]').value = "IMV-" + Date.now();
 
@@ -23,18 +18,28 @@
       btn.disabled = true;
       btn.textContent = "Enviando...";
 
-      const resp = await fetch(SCRIPT_URL, { method: "POST", body: formData });
+      const resp = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData
+      });
+
       const dados = await resp.json();
 
-      document.getElementById("mensagem").innerText =
-        dados.status === "sucesso"
-          ? `Cadastro enviado com sucesso! Código: ${dados.codigo}`
-          : "Erro ao enviar. Verifique os campos.";
+      if (dados.status === "sucesso") {
+        document.getElementById("mensagem").innerHTML = `
+          ✅ ${dados.mensagem}<br>
+          Código do imóvel: <strong>${dados.codigo}</strong><br>
+          <a href="${dados.pastaImagens}" target="_blank">📂 Pasta com todas as imagens</a><br>
+          ${dados.imagens.map(link => `<a href="${link}" target="_blank">📷 Ver imagem</a>`).join(" | ")}
+        `;
+        form.reset();
+      } else {
+        document.getElementById("mensagem").innerText = "❌ Erro: " + dados.mensagem;
+      }
 
-      form.reset();
     } catch (err) {
       console.error("Erro no envio:", err);
-      document.getElementById("mensagem").innerText = "Erro ao enviar. Verifique os campos.";
+      document.getElementById("mensagem").innerText = "❌ Erro na conexão: " + err;
     } finally {
       btn.disabled = false;
       btn.textContent = "Cadastrar Imóvel";
