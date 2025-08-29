@@ -12,61 +12,80 @@
   <h1>Venda ou Alugue seu Imóvel</h1>
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
 
-  <form id="formNegocie" enctype="multipart/form-data">
-    <!-- Campos ocultos preenchidos pelo JS -->
-    <input type="hidden" name="Data">
-    <input type="hidden" name="Codigo">
+ <form id="formNegocie" method="POST" enctype="multipart/form-data">
+  <!-- Campos ocultos que o JS preenche -->
+  <input type="hidden" name="Data" />
+  <input type="hidden" name="Codigo" />
 
-    <label>Proprietário:</label>
+  <!-- Demais campos (names exatamente como no Apps Script) -->
+  <label>Proprietário:
     <input type="text" name="Proprietario" required>
+  </label>
 
-    <label>Contato:</label>
+  <label>Contato:
     <input type="text" name="Contato" required>
+  </label>
 
-    <label>Venda ou Aluguel:</label>
+  <label>Venda ou Aluguel:
     <select name="Venda ou Aluguel" required>
       <option value="">Selecione</option>
       <option value="Venda">Venda</option>
       <option value="Aluguel">Aluguel</option>
     </select>
+  </label>
 
-    <label>Tipo:</label>
+  <label>Tipo:
     <select name="Tipo" required>
       <option value="">Selecione</option>
-      <option value="Apartamento">Apartamento</option>
       <option value="Casa">Casa</option>
+      <option value="Apartamento">Apartamento</option>
       <option value="Terreno">Terreno</option>
-      <option value="Sala comercial">Sala comercial</option>
-      <option value="Loja comercial">Loja comercial</option>
+      <option value="Sala Comercial">Sala Comercial</option>
     </select>
+  </label>
 
-    <label>Valor:</label>
-    <input type="number" name="Valor" step="0.01">
+  <label>Valor:
+    <input type="text" name="Valor">
+  </label>
 
-    <label>Endereço:</label>
-    <input type="text" name="Endereço" required>
+  <label>Endereço:
+    <input type="text" name="Endereço">
+  </label>
 
-    <label>Condomínio:</label>
+  <label>Condominio:
     <input type="text" name="Condominio">
+  </label>
 
-    <label>Descrição:</label>
+  <label>Valor do Condominio:
+    <input type="text" name="Valor do Condominio">
+  </label>
+
+  <label>Valor do IPTU:
+    <input type="text" name="Valor do IPTU">
+  </label>
+
+  <label>Descrição:
     <textarea name="Descrição"></textarea>
+  </label>
 
-    <label>Valor do Condomínio:</label>
-    <input type="number" name="Valor do Condominio" step="0.01">
+  <label>Informações:
+    <textarea name="Informações"></textarea>
+  </label>
 
-    <label>Valor do IPTU:</label>
-    <input type="number" name="Valor do IPTU" step="0.01">
+  <!-- Input de arquivos: obrigatório ter enctype="multipart/form-data" no form -->
+  <label>Imagens do Imóvel:
+    <input type="file" name="imagens" accept="image/*" multiple>
+  </label>
 
-    <label>Informações Privadas:</label>
-    <textarea name="Informações Privadas"></textarea>
+  <button type="submit">Cadastrar Imóvel</button>
+</form>
 
-    <label>Imagens do Imóvel:</label>
-    <input type="file" name="Imagens do Imóvel" multiple>
+<!-- Onde a resposta vai aparecer -->
+<div id="mensagem" style="margin-top:12px;"></div>
 
+<!-- Seu script.js deve estar incluído após o formulário -->
+<script src="script.js" defer></script>
 
-    <button type="submit">Cadastrar Imóvel</button>
-  </form>
 
   <div id="mensagem"></div>
 </section>
@@ -93,10 +112,9 @@
     </div>
   </div>
 </footer>
-
-<script src="script.js"></script>
 </body>
 </html>
+
 
 
 
