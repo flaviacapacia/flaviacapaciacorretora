@@ -12,67 +12,60 @@
   <h1>Venda ou Alugue seu Imóvel</h1>
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
 
- <form id="formNegocie" enctype="multipart/form-data" method="post">
-  <!-- Campos ocultos preenchidos via JS/Apps Script -->
-  <input type="hidden" name="Data">
-  <input type="hidden" name="Codigo">
-  <input type="hidden" name="ID_Imagem">
-  <input type="hidden" name="Link">
-  <input type="hidden" name="Informações Privadas">
+  <form id="formNegocie" enctype="multipart/form-data">
+    <!-- Campos ocultos preenchidos pelo JS -->
+    <input type="hidden" name="Data">
+    <input type="hidden" name="Codigo">
 
-  <label for="proprietario">Proprietário:</label>
-  <input type="text" id="proprietario" name="Proprietario" required>
+    <label>Proprietário:</label>
+    <input type="text" name="Proprietario" required>
 
-  <label for="contato">Contato:</label>
-  <input type="text" id="contato" name="Contato" required>
+    <label>Contato:</label>
+    <input type="text" name="Contato" required>
 
-  <label for="tipoNegocio">Venda ou Aluguel:</label>
-  <select id="tipoNegocio" name="Venda ou Aluguel" required>
-    <option value="">Selecione</option>
-    <option value="Venda">Venda</option>
-    <option value="Aluguel">Aluguel</option>
-  </select>
+    <label>Venda ou Aluguel:</label>
+    <select name="Venda ou Aluguel" required>
+      <option value="">Selecione</option>
+      <option value="Venda">Venda</option>
+      <option value="Aluguel">Aluguel</option>
+    </select>
 
-  <label for="tipo">Tipo de imóvel:</label>
-  <select id="tipo" name="Tipo" required>
-    <option value="">Selecione</option>
-    <option value="Apartamento">Apartamento</option>
-    <option value="Casa">Casa</option>
-    <option value="Terreno">Terreno</option>
-    <option value="Sala comercial">Sala comercial</option>
-    <option value="Loja comercial">Loja comercial</option>
-  </select>
+    <label>Tipo:</label>
+    <select name="Tipo" required>
+      <option value="">Selecione</option>
+      <option value="Apartamento">Apartamento</option>
+      <option value="Casa">Casa</option>
+      <option value="Terreno">Terreno</option>
+      <option value="Sala comercial">Sala comercial</option>
+      <option value="Loja comercial">Loja comercial</option>
+    </select>
 
-  <label for="valor">Valor:</label>
-  <input type="number" id="valor" name="Valor" required>
+    <label>Valor:</label>
+    <input type="number" name="Valor" step="0.01">
 
-  <label for="endereco">Endereço:</label>
-  <input type="text" id="endereco" name="Endereço" required>
+    <label>Endereço:</label>
+    <input type="text" name="Endereço" required>
 
-  <label for="nomeCondominio">Condomínio:</label>
-  <input type="text" id="nomeCondominio" name="Condominio">
+    <label>Condomínio:</label>
+    <input type="text" name="Condominio">
 
-  <label for="descricao">Descrição:</label>
-  <textarea id="descricao" name="Descrição" rows="4"></textarea>
+    <label>Descrição:</label>
+    <textarea name="Descrição"></textarea>
 
-  <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-    <label style="flex: 1;">Valor do Condomínio:
-      <input type="number" id="valorCondominio" name="Valor do Condominio" step="0.01">
-    </label>
-    <label style="flex: 1;">Valor do IPTU:
-      <input type="number" id="valorIPTU" name="Valor do IPTU" step="0.01">
-    </label>
-  </div>
+    <label>Valor do Condomínio:</label>
+    <input type="number" name="Valor do Condominio" step="0.01">
 
-  <label for="informacoesPrivadas">Informações Privadas:</label>
-  <textarea id="informacoesPrivadas" name="Informações Privadas" rows="3"></textarea>
+    <label>Valor do IPTU:</label>
+    <input type="number" name="Valor do IPTU" step="0.01">
 
-  <label for="imagemImovel">Imagem dos Documentos do Imóvel:</label>
-  <input type="file" id="imagemImovel" name="Imagem dos Documentos do Imovel" accept="image/*" multiple>
+    <label>Informações Privadas:</label>
+    <textarea name="Informações Privadas"></textarea>
 
-  <button type="submit">Enviar Cadastro</button>
-</form>
+    <label>Imagem dos Documentos do Imóvel:</label>
+    <input type="file" name="Imagem dos Documentos do Imovel" accept="image/*" multiple>
 
+    <button type="submit">Cadastrar Imóvel</button>
+  </form>
 
   <div id="mensagem"></div>
 </section>
@@ -103,4 +96,5 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
