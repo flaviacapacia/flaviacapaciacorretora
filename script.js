@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgiT0UGo0ybEMYBMfM_veXRS6sFR55Vap5DA2eJjY_u4EEK9FjBeqcq84Pfmz5EbnD/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSGNf06wADrlHKD_K1CAAPfuBQHalZOu7SUYsxzqIO710cHRTlIQ-cNPl0-591lHIR/exec";
   const form = document.getElementById("formNegocie");
   const btn = form.querySelector('button[type="submit"]');
 
@@ -47,3 +47,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
