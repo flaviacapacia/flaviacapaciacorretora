@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSBR0OmE9LSQXUeIEXZjy-VOewHnJ6MWarko8ZA_C06LRHtH9YJSQGPgKi7IKHxm4r/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzAKSip6WvNxspXSYZ2Hd9ymTtQX0d9RgzSdNsGEYRvSaMXlYZXZD0RBhj-7vH2oNPN/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formNegocie");
@@ -48,3 +48,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
