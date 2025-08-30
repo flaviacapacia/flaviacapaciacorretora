@@ -16,61 +16,108 @@
 Este formulário envia dados e imagens para o seu script do Google Apps Script.
 Troque a URL abaixo pela URL de implantação do seu Web App (modo EXECUTAR COMO: VOCÊ e ACESSO: Qualquer pessoa).
 -->
-<form id="formCadastro" enctype="multipart/form-data" method="POST">
-  <h2>Cadastro de Imóvel</h2>
-
-  <!-- Campos de texto -->
+<form id="formNegocie" enctype="multipart/form-data">
+  <!-- Data (vai para a planilha, mas não usada no Drive) -->
   <label>Data:</label>
-  <input type="date" name="Data"><br><br>
+  <input type="date" name="Data">
 
+  <!-- Proprietário -->
   <label>Proprietário:</label>
-  <input type="text" name="Proprietario" required><br><br>
+  <input type="text" name="Proprietario" required>
 
+  <!-- Contato -->
   <label>Contato:</label>
-  <input type="text" name="Contato" required><br><br>
+  <input type="text" name="Contato" required>
 
+  <!-- Venda ou Aluguel -->
   <label>Venda ou Aluguel:</label>
   <select name="Venda ou Aluguel" required>
     <option value="Venda">Venda</option>
     <option value="Aluguel">Aluguel</option>
-  </select><br><br>
+  </select>
 
+  <!-- Tipo de Imóvel (vai para a planilha, mas não usada no Drive) -->
   <label>Tipo de Imóvel:</label>
-  <input type="text" name="Tipo" required><br><br>
+  <input type="text" name="Tipo">
 
+  <!-- Valor -->
   <label>Valor:</label>
-  <input type="number" name="Valor" required><br><br>
+  <input type="text" name="Valor">
 
+  <!-- Endereço -->
   <label>Endereço:</label>
-  <input type="text" name="Endereco" required><br><br>
+  <input type="text" name="Endereco">
 
+  <!-- Condomínio -->
   <label>Condomínio:</label>
-  <input type="text" name="Condominio"><br><br>
+  <input type="text" name="Condominio">
 
+  <!-- Valor do Condomínio -->
   <label>Valor do Condomínio:</label>
-  <input type="number" name="Valor do Condominio"><br><br>
+  <input type="text" name="Valor do Condominio">
 
+  <!-- Valor do IPTU -->
   <label>Valor do IPTU:</label>
-  <input type="number" name="Valor do IPTU"><br><br>
+  <input type="text" name="Valor do IPTU">
 
+  <!-- Descrição -->
   <label>Descrição:</label>
-  <textarea name="Descricao"></textarea><br><br>
+  <textarea name="Descricao"></textarea>
 
+  <!-- Informações adicionais -->
   <label>Informações adicionais:</label>
-  <textarea name="Informacoes"></textarea><br><br>
+  <textarea name="Informacoes"></textarea>
 
   <!-- Upload de imagens -->
-  <label>Fotos do imóvel:</label>
-  <input type="file" name="foto1" accept="image/*" multiple><br><br>
+  <label>Imagens do imóvel:</label>
+  <input type="file" name="imagens" accept="image/*" multiple>
 
-  <button type="submit">Enviar</button>
+  <button type="submit">Cadastrar Imóvel</button>
 </form>
 
-<!-- Área para mostrar mensagens -->
 <div id="mensagem"></div>
 
-<!-- Importa o JS -->
-<script src="cadastro.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const SCRIPT_URL = "https://script.google.com/macros/s/SEU_ID_DO_SCRIPT/exec";
+  const form = document.getElementById("formNegocie");
+  const btn = form.querySelector('button[type="submit"]');
+  const msgBox = document.getElementById("mensagem");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msgBox.textContent = "";
+
+    const formData = new FormData(form);
+
+    try {
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+
+      const resp = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      const dados = await resp.json();
+
+      if (dados.status === "sucesso") {
+        msgBox.innerHTML = `<span style="color:green">✅ ${dados.mensagem}</span>`;
+        form.reset();
+      } else {
+        msgBox.innerHTML = `<span style="color:red">❌ Erro: ${dados.mensagem}</span>`;
+      }
+    } catch (err) {
+      console.error("Erro no envio:", err);
+      msgBox.innerHTML = `<span style="color:red">❌ Erro na conexão: ${err.message}</span>`;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Cadastrar Imóvel";
+    }
+  });
+});
+</script>
+
 
 <section class="cta-banner">
   <h2>Seu imóvel a um clique de você</h2>
@@ -104,6 +151,7 @@ Troque a URL abaixo pela URL de implantação do seu Web App (modo EXECUTAR COMO
 </footer>
 </body>
 </html>
+
 
 
 
