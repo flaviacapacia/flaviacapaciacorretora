@@ -3,10 +3,9 @@ document.getElementById("formNegocie").addEventListener("submit", async function
   const form = e.target;
   const formData = new FormData(form);
 
-  // Adiciona a data atual
+  // Adiciona a data atual sem sobrescrever arquivos
   const agora = new Date();
-  formData.set("Data", agora.toLocaleString("pt-BR"));
-
+  formData.append("Data", agora.toLocaleString("pt-BR"));
   try {
     const resposta = await fetch("https://script.google.com/macros/s/AKfycbx0GuVO1H8pOuVoII7lZOyxbAcMR2EZu4bmZlg_9cFw9Ntos0bQCg6ON4RM3K1BrIQd/exec", { // <-- troque pelo URL implantado do Apps Script
       method: "POST",
@@ -27,4 +26,5 @@ document.getElementById("formNegocie").addEventListener("submit", async function
       `<p style="color:red">Falha na conexão: ${erro.message}</p>`;
   }
 });
+
 
