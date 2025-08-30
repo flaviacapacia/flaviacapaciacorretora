@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 🔗 URL do seu Apps Script publicado
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5Dy9pkW7MfLexLwt7YnQY0uy30nYvQvz-n6EVa5GfBbEDFi6rpAEONduHvLlNzHM1/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwj_hGYEyrwPwf7hszqQOVbpx0jhzCZ_BLxE4CfsFqVH6qlH5mNDrSZim4x2noJKMTb/exec";
 
   const form = document.getElementById("formNegocie");
   const btn = form.querySelector('button[type="submit"]');
@@ -52,3 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
