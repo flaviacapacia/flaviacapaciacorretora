@@ -12,9 +12,8 @@
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
 
   <form id="formNegocie" enctype="multipart/form-data">
-    <!-- Data -->
-    <label>Data:</label>
-    <input type="date" name="Data">
+    <!-- Data oculta -->
+    <input type="hidden" name="Data" id="campoData">
 
     <!-- Proprietário -->
     <label>Proprietário:</label>
@@ -31,9 +30,14 @@
       <option value="Aluguel">Aluguel</option>
     </select>
 
-    <!-- Tipo de Imóvel -->
+    <!-- Tipo -->
     <label>Tipo de Imóvel:</label>
-    <input type="text" name="Tipo">
+    <select name="Tipo" required>
+      <option value="Casa">Casa</option>
+      <option value="Apartamento">Apartamento</option>
+      <option value="Terreno">Terreno</option>
+      <option value="Sala/Loja Comercial">Sala/Loja Comercial</option>
+    </select>
 
     <!-- Valor -->
     <label>Valor:</label>
@@ -47,6 +51,10 @@
     <label>Condomínio:</label>
     <input type="text" name="Condominio">
 
+    <!-- Descrição -->
+    <label>Descrição:</label>
+    <textarea name="Descricao"></textarea>
+
     <!-- Valor do Condomínio -->
     <label>Valor do Condomínio:</label>
     <input type="text" name="Valor do Condominio">
@@ -55,12 +63,8 @@
     <label>Valor do IPTU:</label>
     <input type="text" name="Valor do IPTU">
 
-    <!-- Descrição -->
-    <label>Descrição:</label>
-    <textarea name="Descricao"></textarea>
-
-    <!-- Informações adicionais -->
-    <label>Informações adicionais:</label>
+    <!-- Informações Privadas -->
+    <label>Informações Privadas:</label>
     <textarea name="Informacoes"></textarea>
 
     <!-- Upload de imagens -->
@@ -72,7 +76,6 @@
 
   <div id="mensagem"></div>
 </section>
-
 <script src="script.js"></script>
 
 <section class="cta-banner">
@@ -107,6 +110,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
