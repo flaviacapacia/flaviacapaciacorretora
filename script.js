@@ -1,41 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // 🔗 URL do seu Apps Script publicado
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyWkSnUNYFU5VwCNZcbQhMo56wns1EyhYWg4b20ylkZwd0B6OCCl7DCNCMziPhhOnjm/exec";
+document.getElementById("formNegocie").addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-  const form = document.getElementById("formNegocie");
-  const btn = form.querySelector('button[type="submit"]');
-  const msgBox = document.getElementById("mensagem");
+  const form = e.target;
+  const formData = new FormData(form);
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    msgBox.textContent = "";
+  // Adiciona a data atual
+  const agora = new Date();
+  formData.set("Data", agora.toLocaleString("pt-BR"));
 
-    // Captura todos os campos e arquivos
-    const formData = new FormData(form);
+  try {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbxDK2OD5z7pg2LkpoNleHsD3UtL75S5h5EJkQOdZrw9fOu-k1EIpqkaMHy_4iG0pscA/exec", {
+      method: "POST",
+      body: formData
+    });
 
-    try {
-      btn.disabled = true;
-      btn.textContent = "Enviando...";
+    const resultado = await resposta.json();
 
-      const resp = await fetch(SCRIPT_URL, {
-        method: "POST",
-        body: formData
-      });
-
-      const dados = await resp.json();
-
-      if (dados.status === "sucesso") {
-        msgBox.innerHTML = `<span style="color:green">✅ ${dados.mensagem}</span>`;
-        form.reset();
-      } else {
-        msgBox.innerHTML = `<span style="color:red">❌ Erro: ${dados.mensagem}</span>`;
-      }
-    } catch (err) {
-      console.error("Erro no envio:", err);
-      msgBox.innerHTML = `<span style="color:red">❌ Erro na conexão: ${err.message}</span>`;
-    } finally {
-      btn.disabled = false;
-      btn.textContent = "Cadastrar Imóvel";
+    if (resultado.status === "sucesso") {
+      document.getElementById("mensagem").innerHTML =
+        `<p style="color:green">Imóvel cadastrado com sucesso! Código: ${resultado.codigo}</p>`;
+      form.reset();
+    } else {
+      document.getElementById("mensagem").innerHTML =
+        `<p style="color:red">Erro: ${resultado.mensagem}</p>`;
     }
-  });
+  } catch (erro) {
+    document.getElementById("mensagem").innerHTML =
+      `<p style="color:red">Falha na conexão: ${erro.message}</p>`;
+  }
 });
