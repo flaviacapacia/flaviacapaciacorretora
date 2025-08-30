@@ -7,118 +7,73 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
 <section class="negocie-section">
   <h1>Venda ou Alugue seu Imóvel</h1>
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
 
-<!--
-Este formulário envia dados e imagens para o seu script do Google Apps Script.
-Troque a URL abaixo pela URL de implantação do seu Web App (modo EXECUTAR COMO: VOCÊ e ACESSO: Qualquer pessoa).
--->
-<form id="formNegocie" enctype="multipart/form-data">
-  <!-- Data (vai para a planilha, mas não usada no Drive) -->
-  <label>Data:</label>
-  <input type="date" name="Data">
+  <form id="formNegocie" enctype="multipart/form-data">
+    <!-- Data -->
+    <label>Data:</label>
+    <input type="date" name="Data">
 
-  <!-- Proprietário -->
-  <label>Proprietário:</label>
-  <input type="text" name="Proprietario" required>
+    <!-- Proprietário -->
+    <label>Proprietário:</label>
+    <input type="text" name="Proprietario" required>
 
-  <!-- Contato -->
-  <label>Contato:</label>
-  <input type="text" name="Contato" required>
+    <!-- Contato -->
+    <label>Contato:</label>
+    <input type="text" name="Contato" required>
 
-  <!-- Venda ou Aluguel -->
-  <label>Venda ou Aluguel:</label>
-  <select name="Venda ou Aluguel" required>
-    <option value="Venda">Venda</option>
-    <option value="Aluguel">Aluguel</option>
-  </select>
+    <!-- Venda ou Aluguel -->
+    <label>Venda ou Aluguel:</label>
+    <select name="Venda ou Aluguel" required>
+      <option value="Venda">Venda</option>
+      <option value="Aluguel">Aluguel</option>
+    </select>
 
-  <!-- Tipo de Imóvel (vai para a planilha, mas não usada no Drive) -->
-  <label>Tipo de Imóvel:</label>
-  <input type="text" name="Tipo">
+    <!-- Tipo de Imóvel -->
+    <label>Tipo de Imóvel:</label>
+    <input type="text" name="Tipo">
 
-  <!-- Valor -->
-  <label>Valor:</label>
-  <input type="text" name="Valor">
+    <!-- Valor -->
+    <label>Valor:</label>
+    <input type="text" name="Valor">
 
-  <!-- Endereço -->
-  <label>Endereço:</label>
-  <input type="text" name="Endereco">
+    <!-- Endereço -->
+    <label>Endereço:</label>
+    <input type="text" name="Endereco">
 
-  <!-- Condomínio -->
-  <label>Condomínio:</label>
-  <input type="text" name="Condominio">
+    <!-- Condomínio -->
+    <label>Condomínio:</label>
+    <input type="text" name="Condominio">
 
-  <!-- Valor do Condomínio -->
-  <label>Valor do Condomínio:</label>
-  <input type="text" name="Valor do Condominio">
+    <!-- Valor do Condomínio -->
+    <label>Valor do Condomínio:</label>
+    <input type="text" name="Valor do Condominio">
 
-  <!-- Valor do IPTU -->
-  <label>Valor do IPTU:</label>
-  <input type="text" name="Valor do IPTU">
+    <!-- Valor do IPTU -->
+    <label>Valor do IPTU:</label>
+    <input type="text" name="Valor do IPTU">
 
-  <!-- Descrição -->
-  <label>Descrição:</label>
-  <textarea name="Descricao"></textarea>
+    <!-- Descrição -->
+    <label>Descrição:</label>
+    <textarea name="Descricao"></textarea>
 
-  <!-- Informações adicionais -->
-  <label>Informações adicionais:</label>
-  <textarea name="Informacoes"></textarea>
+    <!-- Informações adicionais -->
+    <label>Informações adicionais:</label>
+    <textarea name="Informacoes"></textarea>
 
-  <!-- Upload de imagens -->
-  <label>Imagens do imóvel:</label>
-  <input type="file" name="imagens" accept="image/*" multiple>
+    <!-- Upload de imagens -->
+    <label>Imagens do imóvel:</label>
+    <input type="file" name="imagens" accept="image/*" multiple>
 
-  <button type="submit">Cadastrar Imóvel</button>
-</form>
+    <button type="submit">Cadastrar Imóvel</button>
+  </form>
 
-<div id="mensagem"></div>
+  <div id="mensagem"></div>
+</section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyWkSnUNYFU5VwCNZcbQhMo56wns1EyhYWg4b20ylkZwd0B6OCCl7DCNCMziPhhOnjm/exec";
-  const form = document.getElementById("formNegocie");
-  const btn = form.querySelector('button[type="submit"]');
-  const msgBox = document.getElementById("mensagem");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    msgBox.textContent = "";
-
-    const formData = new FormData(form);
-
-    try {
-      btn.disabled = true;
-      btn.textContent = "Enviando...";
-
-      const resp = await fetch(SCRIPT_URL, {
-        method: "POST",
-        body: formData
-      });
-
-      const dados = await resp.json();
-
-      if (dados.status === "sucesso") {
-        msgBox.innerHTML = `<span style="color:green">✅ ${dados.mensagem}</span>`;
-        form.reset();
-      } else {
-        msgBox.innerHTML = `<span style="color:red">❌ Erro: ${dados.mensagem}</span>`;
-      }
-    } catch (err) {
-      console.error("Erro no envio:", err);
-      msgBox.innerHTML = `<span style="color:red">❌ Erro na conexão: ${err.message}</span>`;
-    } finally {
-      btn.disabled = false;
-      btn.textContent = "Cadastrar Imóvel";
-    }
-  });
-});
-</script>
-
-
+<script src="script.js"></script>
 
 <section class="cta-banner">
   <h2>Seu imóvel a um clique de você</h2>
@@ -152,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </footer>
 </body>
 </html>
+
 
 
 
