@@ -4,12 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.getElementById("formNegocie");
   const btn = form.querySelector('button[type="submit"]');
+  const msgBox = document.getElementById("mensagem");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Preenche Data automaticamente
-    form.querySelector('[name="Data"]').value = new Date().toLocaleDateString("pt-BR");
+    // Limpa mensagens anteriores
+    msgBox.textContent = "";
+
+    // Preenche Data automaticamente (se o campo existir)
+    const dataField = form.querySelector('[name="Data"]');
+    if (dataField) {
+      dataField.value = new Date().toLocaleDateString("pt-BR");
+    }
 
     const formData = new FormData(form);
 
@@ -22,23 +29,26 @@ document.addEventListener("DOMContentLoaded", () => {
         body: formData
       });
 
-      const dados = await resp.json();
+      let dados;
+      try {
+        dados = await resp.json();
+      } catch {
+        throw new Error("Resposta inválida do servidor");
+      }
 
       if (dados.status === "sucesso") {
-        document.getElementById("mensagem").innerHTML = `✅ ${dados.mensagem}`;
+        msgBox.innerHTML = `<span style="color:green">✅ ${dados.mensagem}</span>`;
         form.reset();
       } else {
-        document.getElementById("mensagem").innerText = "❌ Erro: " + dados.mensagem;
+        msgBox.innerHTML = `<span style="color:red">❌ Erro: ${dados.mensagem}</span>`;
       }
 
     } catch (err) {
       console.error("Erro no envio:", err);
-      document.getElementById("mensagem").innerText = "❌ Erro na conexão: " + err;
+      msgBox.innerHTML = `<span style="color:red">❌ Erro na conexão: ${err.message}</span>`;
     } finally {
       btn.disabled = false;
       btn.textContent = "Cadastrar Imóvel";
     }
   });
 });
-
-
