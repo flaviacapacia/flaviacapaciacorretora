@@ -1,6 +1,5 @@
 document.getElementById("formNegocie").addEventListener("submit", async function(e) {
   e.preventDefault();
-
   const form = e.target;
   const formData = new FormData(form);
 
@@ -9,13 +8,12 @@ document.getElementById("formNegocie").addEventListener("submit", async function
   formData.set("Data", agora.toLocaleString("pt-BR"));
 
   try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbyvB3qMvM4Oz3IeyulosHCKCgRGV1viTBQE_R05TXHDG7AkhRf2UdwIZ7Dk009z60eE/exec", {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbxsysfVWUTyrd5IWyxxd1-pTUDUypbromfAv2ZA2g8DdJgZdmfbyoPTrIux0_cyNPXI/exec", { // <-- troque pelo URL implantado do Apps Script
       method: "POST",
       body: formData
     });
 
     const resultado = await resposta.json();
-
     if (resultado.status === "sucesso") {
       document.getElementById("mensagem").innerHTML =
         `<p style="color:green">Imóvel cadastrado com sucesso! Código: ${resultado.codigo}</p>`;
