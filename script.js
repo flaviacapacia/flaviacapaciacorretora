@@ -8,16 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    // Limpa mensagens anteriores
     msgBox.textContent = "";
 
-    // Preenche Data automaticamente (se o campo existir)
-    const dataField = form.querySelector('[name="Data"]');
-    if (dataField) {
-      dataField.value = new Date().toLocaleDateString("pt-BR");
-    }
-
+    // Captura todos os campos e arquivos
     const formData = new FormData(form);
 
     try {
@@ -29,12 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         body: formData
       });
 
-      let dados;
-      try {
-        dados = await resp.json();
-      } catch {
-        throw new Error("Resposta inválida do servidor");
-      }
+      const dados = await resp.json();
 
       if (dados.status === "sucesso") {
         msgBox.innerHTML = `<span style="color:green">✅ ${dados.mensagem}</span>`;
@@ -42,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         msgBox.innerHTML = `<span style="color:red">❌ Erro: ${dados.mensagem}</span>`;
       }
-
     } catch (err) {
       console.error("Erro no envio:", err);
       msgBox.innerHTML = `<span style="color:red">❌ Erro na conexão: ${err.message}</span>`;
@@ -52,5 +39,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-
