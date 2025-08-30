@@ -9,7 +9,7 @@ document.getElementById("formNegocie").addEventListener("submit", async function
   formData.set("Data", agora.toLocaleString("pt-BR"));
 
   try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbxw1jnTc4HXXnYpO4UtbK1RG1WD0BHPlduaaXlnvitka6hk9hsCS-9Sgr7bhSsKSgE/exec", {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbyvB3qMvM4Oz3IeyulosHCKCgRGV1viTBQE_R05TXHDG7AkhRf2UdwIZ7Dk009z60eE/exec", {
       method: "POST",
       body: formData
     });
@@ -29,4 +29,3 @@ document.getElementById("formNegocie").addEventListener("submit", async function
       `<p style="color:red">Falha na conexão: ${erro.message}</p>`;
   }
 });
-
