@@ -7,10 +7,7 @@
 <body>
   <h2>Cadastro de Imóvel</h2>
 
-  <form id="formNegocie"
-        method="post"
-        action="https://script.google.com/macros/s/AKfycbxJfXxoGNAV9gwP265OiL90iv3cBtiVE-mMhewMFE4oYDZoTvKZaFagR1WT9igo4LcQ/exec"
-        enctype="multipart/form-data">
+ <form id="formnegocie" enctype="multipart/form-data">
 
     <label>Proprietário:</label><br>
     <input type="text" name="Proprietario" required><br><br>
@@ -55,52 +52,10 @@
     <textarea name="Informacoes"></textarea><br><br>
 
     <label>Imagens:</label><br>
-    <input type="file" name="imagens" id="imagens" multiple><br><br>
-
+    <input type="file" name="imagens" multiple
+      
     <button type="submit">Enviar</button>
   </form>
-
-  <div id="mensagem" style="margin-top:20px;"></div>
-
-  <script>
-    document.getElementById("formNegocie").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-
-      // Adiciona a data atual
-      const agora = new Date();
-      formData.append("Data", agora.toLocaleString("pt-BR"));
-
-      try {
-        const resposta = await fetch(form.action, {
-          method: "POST",
-          body: formData
-        });
-
-        let resultado;
-        try {
-          resultado = await resposta.json();
-        } catch {
-          throw new Error("Resposta inválida do servidor");
-        }
-
-        if (resultado.status === "sucesso") {
-          document.getElementById("mensagem").innerHTML =
-            `<p style="color:green">Imóvel cadastrado com sucesso! Código: ${resultado.codigo}</p>`;
-          form.reset();
-        } else {
-          document.getElementById("mensagem").innerHTML =
-            `<p style="color:red">Erro: ${resultado.mensagem || "Erro desconhecido"}</p>`;
-        }
-      } catch (erro) {
-        document.getElementById("mensagem").innerHTML =
-          `<p style="color:red">Falha na conexão: ${erro.message}</p>`;
-      }
-    });
-  </script>
-</body>
-</html>
 
 <script src="script.js"></script>
 
@@ -136,6 +91,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
