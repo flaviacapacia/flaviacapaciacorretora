@@ -7,7 +7,7 @@ document.getElementById("formNegocie").addEventListener("submit", async function
   const agora = new Date();
   formData.append("Data", agora.toLocaleString("pt-BR"));
   try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbwKSZLrP-sFR_CstqRSS0mLn38EOZaIBUClCxtR85dpTXFd5dPs_t7n8fzyQ1JVkv2N/exec", { // <-- troque pelo URL implantado do Apps Script
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbybWLkLVLwEvQbLPfpX78_iQ7Y5IAxt7FRDA4qK5zsFyg0vwjFRWKEbjJlYYsp1te3s/exec", { // <-- troque pelo URL implantado do Apps Script
       method: "POST",
       body: formData
     });
@@ -26,6 +26,7 @@ document.getElementById("formNegocie").addEventListener("submit", async function
       `<p style="color:red">Falha na conexão: ${erro.message}</p>`;
   }
 });
+
 
 
 
