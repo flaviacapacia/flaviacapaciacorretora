@@ -10,8 +10,8 @@
 <section class="negocie-section">
   <h1>Venda ou Alugue seu Imóvel</h1>
   <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
+<form id="formNegocie" method="POST" enctype="multipart/form-data">
 
-  <form id="formNegocie" enctype="multipart/form-data">
     <!-- Data oculta -->
     <input type="hidden" name="Data" id="campoData">
 
@@ -69,7 +69,7 @@
 
     <!-- Upload de imagens -->
 <label>Imagens do imóvel:</label>
-<input type="file" name="imagens" accept="image/*" multiple required>
+<input type="file" name="imagens" accept="image/*" multiple>
 
     <button type="submit">Cadastrar Imóvel</button>
   </form>
@@ -110,6 +110,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
