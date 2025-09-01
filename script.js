@@ -1,4 +1,31 @@
-document.getElementById("formNegocie").addEventListener("submit", async function(e) {
+document.getElementById("formNegocie").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  // Adiciona a data atual sem sobrescrever arquivos
+  const agora = new Date();
+  formData.append("Data", agora.toLocaleString("pt-BR"));
+
+  try {
+    const resposta = await fetch(
+      "https://script.google.com/macros/s/AKfycbxJfXxoGNAV9gwP265OiL90iv3cBtiVE-mMhewMFE4oYDZoTvKZaFagR1WT9igo4LcQ/exec", // <-- troque pelo URL implantado do Apps Script
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    // Garante que a resposta seja JSON antes de tentar parsear
+    let resultado;
+    try {
+      resultado = await resposta.json();
+    } catch {
+      throw new Error("Resposta inválida do servidor");
+    }
+
+    ifdocument.getElementById("formNegocie").addEventListener("submit", async function(e) {
   e.preventDefault();
   const form = e.target;
   const formData = new FormData(form);
@@ -26,6 +53,7 @@ document.getElementById("formNegocie").addEventListener("submit", async function
       `<p style="color:red">Falha na conexão: ${erro.message}</p>`;
   }
 });
+
 
 
 
