@@ -1,23 +1,22 @@
-document.getElementById("formNegocie").addEventListener("submit", async function (e) {
+document.getElementById("formnegocie").addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const form = e.target;
   const formData = new FormData(form);
 
-  // Adiciona a data atual sem sobrescrever arquivos
+  // Adiciona a data atual
   const agora = new Date();
   formData.append("Data", agora.toLocaleString("pt-BR"));
 
   try {
     const resposta = await fetch(
-      "https://script.google.com/macros/s/AKfycbxJfXxoGNAV9gwP265OiL90iv3cBtiVE-mMhewMFE4oYDZoTvKZaFagR1WT9igo4LcQ/exec", // <-- troque pelo URL implantado do Apps Script
+      "https://script.google.com/macros/s/AKfycbxJfXxoGNAV9gwP265OiL90iv3cBtiVE-mMhewMFE4oYDZoTvKZaFagR1WT9igo4LcQ/exec",
       {
         method: "POST",
         body: formData
       }
     );
 
-    // Garante que a resposta seja JSON antes de tentar parsear
     let resultado;
     try {
       resultado = await resposta.json();
@@ -25,44 +24,19 @@ document.getElementById("formNegocie").addEventListener("submit", async function
       throw new Error("Resposta inválida do servidor");
     }
 
-    ifdocument.getElementById("formNegocie").addEventListener("submit", async function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-
-  // Adiciona a data atual sem sobrescrever arquivos
-  const agora = new Date();
-  formData.append("Data", agora.toLocaleString("pt-BR"));
-  try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbxJfXxoGNAV9gwP265OiL90iv3cBtiVE-mMhewMFE4oYDZoTvKZaFagR1WT9igo4LcQ/exec", { // <-- troque pelo URL implantado do Apps Script
-      method: "POST",
-      body: formData
-    });
-
-    const resultado = await resposta.json();
     if (resultado.status === "sucesso") {
       document.getElementById("mensagem").innerHTML =
-        `<p style="color:green">Imóvel cadastrado com sucesso! Código: ${resultado.codigo}</p>`;
+        `<p style="color:green">✅ Imóvel cadastrado com sucesso!<br>Código: <strong>${resultado.codigo}</strong></p>`;
       form.reset();
     } else {
       document.getElementById("mensagem").innerHTML =
-        `<p style="color:red">Erro: ${resultado.mensagem}</p>`;
+        `<p style="color:red">❌ Erro: ${resultado.mensagem || "Erro desconhecido"}</p>`;
     }
   } catch (erro) {
     document.getElementById("mensagem").innerHTML =
-      `<p style="color:red">Falha na conexão: ${erro.message}</p>`;
+      `<p style="color:red">❌ Falha na conexão: ${erro.message}</p>`;
   }
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
