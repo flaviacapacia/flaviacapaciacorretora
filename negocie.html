@@ -1,86 +1,107 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCT<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Cadastro de Imóvel</title>
-  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<section class="negocie-section">
-  <h1>Venda ou Alugue seu Imóvel</h1>
-  <p>Preencha os dados abaixo para cadastrar seu imóvel.</p>
-  
-<form id="formCadastro" 
-      method="post" 
-      action="https://script.google.com/macros/s/AKfycbxJfXxoGNAV9gwP265OiL90iv3cBtiVE-mMhewMFE4oYDZoTvKZaFagR1WT9igo4LcQ/exec"
-      enctype="multipart/form-data">
-  
-    <!-- Data oculta -->
-    <input type="hidden" name="Data" id="campoData">
+  <h2>Cadastro de Imóvel</h2>
 
-    <!-- Proprietário -->
-    <label>Proprietário:</label>
-    <input type="text" name="Proprietario" required>
+  <form id="formNegocie"
+        method="post"
+        action="https://script.google.com/macros/s/AKfycbxJfXxoGNAV9gwP265OiL90iv3cBtiVE-mMhewMFE4oYDZoTvKZaFagR1WT9igo4LcQ/exec"
+        enctype="multipart/form-data">
 
-    <!-- Contato -->
-    <label>Contato:</label>
-    <input type="text" name="Contato" required>
+    <label>Proprietário:</label><br>
+    <input type="text" name="Proprietario" required><br><br>
 
-    <!-- Venda ou Aluguel -->
-    <label>Venda ou Aluguel:</label>
+    <label>Contato:</label><br>
+    <input type="text" name="Contato" required><br><br>
+
+    <label>Venda ou Aluguel:</label><br>
     <select name="Venda ou Aluguel" required>
+      <option value="">Selecione</option>
       <option value="Venda">Venda</option>
       <option value="Aluguel">Aluguel</option>
-    </select>
+    </select><br><br>
 
-    <!-- Tipo -->
-    <label>Tipo de Imóvel:</label>
+    <label>Tipo:</label><br>
     <select name="Tipo" required>
+      <option value="">Selecione</option>
       <option value="Casa">Casa</option>
       <option value="Apartamento">Apartamento</option>
       <option value="Terreno">Terreno</option>
-      <option value="Sala/Loja Comercial">Sala/Loja Comercial</option>
-    </select>
+    </select><br><br>
 
-    <!-- Valor -->
-    <label>Valor:</label>
-    <input type="text" name="Valor">
+    <label>Valor:</label><br>
+    <input type="text" name="Valor"><br><br>
 
-    <!-- Endereço -->
-    <label>Endereço:</label>
-    <input type="text" name="Endereco">
+    <label>Endereço:</label><br>
+    <input type="text" name="Endereco"><br><br>
 
-    <!-- Condomínio -->
-    <label>Condomínio:</label>
-    <input type="text" name="Condominio">
+    <label>Condomínio:</label><br>
+    <input type="text" name="Condominio"><br><br>
 
-    <!-- Descrição -->
-    <label>Descrição:</label>
-    <textarea name="Descricao"></textarea>
+    <label>Descrição:</label><br>
+    <textarea name="Descricao"></textarea><br><br>
 
-    <!-- Valor do Condomínio -->
-    <label>Valor do Condomínio:</label>
-    <input type="text" name="Valor do Condominio">
+    <label>Valor do Condomínio:</label><br>
+    <input type="text" name="Valor do Condominio"><br><br>
 
-    <!-- Valor do IPTU -->
-    <label>Valor do IPTU:</label>
-    <input type="text" name="Valor do IPTU">
+    <label>Valor do IPTU:</label><br>
+    <input type="text" name="Valor do IPTU"><br><br>
 
-    <!-- Informações Privadas -->
-    <label>Informações Privadas:</label>
-    <textarea name="Informacoes"></textarea>
+    <label>Informações Privadas:</label><br>
+    <textarea name="Informacoes"></textarea><br><br>
 
-    <!-- Upload de imagens -->
-<label>Imagens do imóvel:</label>
-  <input type="file" name="imagens" multiple>
-  
+    <label>Imagens:</label><br>
+    <input type="file" name="imagens" id="imagens" multiple><br><br>
 
-    <button type="submit">Cadastrar Imóvel</button>
+    <button type="submit">Enviar</button>
   </form>
 
-  <div id="mensagem"></div>
-</section>
+  <div id="mensagem" style="margin-top:20px;"></div>
+
+  <script>
+    document.getElementById("formNegocie").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+
+      // Adiciona a data atual
+      const agora = new Date();
+      formData.append("Data", agora.toLocaleString("pt-BR"));
+
+      try {
+        const resposta = await fetch(form.action, {
+          method: "POST",
+          body: formData
+        });
+
+        let resultado;
+        try {
+          resultado = await resposta.json();
+        } catch {
+          throw new Error("Resposta inválida do servidor");
+        }
+
+        if (resultado.status === "sucesso") {
+          document.getElementById("mensagem").innerHTML =
+            `<p style="color:green">Imóvel cadastrado com sucesso! Código: ${resultado.codigo}</p>`;
+          form.reset();
+        } else {
+          document.getElementById("mensagem").innerHTML =
+            `<p style="color:red">Erro: ${resultado.mensagem || "Erro desconhecido"}</p>`;
+        }
+      } catch (erro) {
+        document.getElementById("mensagem").innerHTML =
+          `<p style="color:red">Falha na conexão: ${erro.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
+
 <script src="script.js"></script>
 
 <section class="cta-banner">
@@ -115,6 +136,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
