@@ -10,7 +10,7 @@ document.getElementById("formnegocie").addEventListener("submit", async function
 
   try {
     const resposta = await fetch(
-      "https://script.google.com/macros/s/AKfycbxJfXxoGNAV9gwP265OiL90iv3cBtiVE-mMhewMFE4oYDZoTvKZaFagR1WT9igo4LcQ/exec",
+      "https://script.google.com/macros/s/AKfycbwy_bcuE9Uau0NpeuP9P-L4IAt4j4TgTGr_n9cQHOnuED4MH8TWab4gsPxjyoTPXltBHg/exec",
       {
         method: "POST",
         body: formData
@@ -37,6 +37,7 @@ document.getElementById("formnegocie").addEventListener("submit", async function
       `<p style="color:red">❌ Falha na conexão: ${erro.message}</p>`;
   }
 });
+
 
 
 
