@@ -8,7 +8,7 @@ document.getElementById("formnegocie").addEventListener("submit", async function
   console.log("Arquivos selecionados:", formData.getAll("imagens"));
 
   try {
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbwYBeQd9kxbdCakQK3f8TjM5TXrkvsxhz65dvFPbb7idDF4MYkkBP--qfeuXFEiGVAd/exec", {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbyy3ArWzGXl_D7Pg2n7Quz7xzKcHylrspLLL_6jnz6VGw7elAtCYP8g_nSTMq60yzev/exec", {
       method: "POST",
       body: formData // não definir Content-Type manualmente!
     });
@@ -20,3 +20,4 @@ document.getElementById("formnegocie").addEventListener("submit", async function
     document.getElementById("mensagem").innerText = "Erro: " + erro.message;
   }
 });
+
