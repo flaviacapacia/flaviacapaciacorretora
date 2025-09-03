@@ -4,43 +4,19 @@ document.getElementById("formnegocie").addEventListener("submit", async function
   const form = e.target;
   const formData = new FormData(form);
 
-  // Adiciona a data atual
-  const agora = new Date();
-  formData.append("Data", agora.toLocaleString("pt-BR"));
+  // Debug: ver se as imagens estão indo
+  console.log("Arquivos selecionados:", formData.getAll("imagens"));
 
   try {
-    const resposta = await fetch(
-      "https://script.google.com/macros/s/AKfycbwy_bcuE9Uau0NpeuP9P-L4IAt4j4TgTGr_n9cQHOnuED4MH8TWab4gsPxjyoTPXltBHg/exec",
-      {
-        method: "POST",
-        body: formData
-      }
-    );
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbwYBeQd9kxbdCakQK3f8TjM5TXrkvsxhz65dvFPbb7idDF4MYkkBP--qfeuXFEiGVAd/exec", {
+      method: "POST",
+      body: formData // não definir Content-Type manualmente!
+    });
 
-    let resultado;
-    try {
-      resultado = await resposta.json();
-    } catch {
-      throw new Error("Resposta inválida do servidor");
-    }
+    const resultado = await resposta.json();
+    document.getElementById("mensagem").innerText = resultado.mensagem;
 
-    if (resultado.status === "sucesso") {
-      document.getElementById("mensagem").innerHTML =
-        `<p style="color:green">✅ Imóvel cadastrado com sucesso!<br>Código: <strong>${resultado.codigo}</strong></p>`;
-      form.reset();
-    } else {
-      document.getElementById("mensagem").innerHTML =
-        `<p style="color:red">❌ Erro: ${resultado.mensagem || "Erro desconhecido"}</p>`;
-    }
   } catch (erro) {
-    document.getElementById("mensagem").innerHTML =
-      `<p style="color:red">❌ Falha na conexão: ${erro.message}</p>`;
+    document.getElementById("mensagem").innerText = "Erro: " + erro.message;
   }
 });
-
-
-
-
-
-
-
