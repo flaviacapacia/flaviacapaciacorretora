@@ -126,64 +126,15 @@
     <h2>Seu imóvel a um clique de você</h2>
   </section>
 
-  <!-- 🔐 Comparativo de Garantias Locatícias -->
-  <section id="garantias-locacao" class="imoveis-section">
-    <h2 class="titulo-dourado-centralizado">🔐 Comparativo de Garantias Locatícias</h2>
-    <div class="tab">
-      <button class="tablinks" onclick="openTab(event, 'SeguroFianca')">Seguro Fiança</button>
-      <button class="tablinks" onclick="openTab(event, 'Caucao')">Caução</button>
-      <button class="tablinks" onclick="openTab(event, 'Fiador')">Fiador</button>
-    </div>
-
-    <div id="SeguroFianca" class="tabcontent">
-      <h3>Seguro Fiança</h3>
-      <ul>
-        <li>📌 Garantia paga por seguradora em caso de inadimplência.</li>
-        <li>💰 Custo: 1 a 2 aluguéis/ano (parcelável pelo inquilino).</li>
-        <li>🛡️ Cobertura: aluguel, condomínio, IPTU e, em alguns casos, danos.</li>
-        <li>⚡ Recebimento rápido após acionar a seguradora.</li>
-      </ul>
-    </div>
-
-    <div id="Caucao" class="tabcontent">
-      <h3>Caução</h3>
-      <ul>
-        <li>📌 Depósito de até 3 meses de aluguel.</li>
-        <li>💰 Devolvido ao final com correção, se não houver débitos/danos.</li>
-        <li>🛡️ Cobre apenas até o valor depositado.</li>
-        <li>⚡ Simples e rápida de formalizar.</li>
-      </ul>
-    </div>
-
-    <div id="Fiador" class="tabcontent">
-      <h3>Fiador</h3>
-      <ul>
-        <li>📌 Pessoa física que assume a dívida em caso de inadimplência.</li>
-        <li>💰 Sem custo direto para o inquilino.</li>
-        <li>🛡️ Alta segurança se o fiador tiver bens e renda compatíveis.</li>
-        <li>⚠️ Pode ser difícil encontrar fiador aprovado.</li>
-      </ul>
-    </div>
+ 
+<section class="cta-banner">
+  <h2>Locação Segura e Descomplicada</h2>
+  <p>Conheça nosso processo de locação, garantias e vantagens para proprietários e inquilinos.</p>
+  <a href="locacao.html" class="btn-dourado">Saiba mais</a>
+</section>
+ <section class="cta-banner">
+    <h2>Seu imóvel a um clique de você</h2>
   </section>
-
-  <!-- Script das abas -->
-  <script>
-    function openTab(evt, tabName) {
-      const tabcontent = document.getElementsByClassName("tabcontent");
-      for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      const tablinks = document.getElementsByClassName("tablinks");
-      for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelector(".tablinks").click();
-    });
-  </script>
 
   <footer class="site-footer" id="contato">
     <div class="footer-logo">
@@ -209,6 +160,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
