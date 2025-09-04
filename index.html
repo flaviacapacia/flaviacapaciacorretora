@@ -1,47 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Locação - Flavia Capacia Corretora</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Estilo simples para as abas */
-    .tab { overflow: hidden; border-bottom: 2px solid var(--dourado); margin-top: 20px; }
-    .tab button {
-      background-color: inherit;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-      font-size: 16px;
-      color: var(--dourado);
-    }
-    .tab button:hover { background-color: #f1f1f1; }
-    .tab button.active { background-color: var(--dourado); color: #fff; }
-    .tabcontent { display: none; padding: 20px 0; }
-    .area-interna { background: #f9f9f9; padding: 20px; margin-top: 40px; border-radius: 8px; }
-    .area-interna h2 { color: var(--dourado); }
-    .area-interna ul { list-style: none; padding: 0; }
-    .area-interna li { margin-bottom: 10px; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imóveis em Floripa FC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
 </head>
 <body>
 
-<header>
-  <!-- mesmo header do site -->
-</header>
+  <!-- Cabeçalho -->
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="negocie.html">Negocie</a></li>
+        <li><a href="financie.html">Financie</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/flacapacciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="icon"/></a>
+      <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" class="icon"/></a>
+      <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" class="icon"/></a>
+      <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="icon"/></a>
+    </div>
+  </header>
 
-<main class="locacao-page">
+  <!-- Banner de capa -->
+  <section id="hero" class="hero">
+    <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
+  </section>
 
-  <h1 class="titulo-dourado-centralizado">📂 Central de Locação</h1>
-
-  <!-- Área pública -->
-  <section>
-    <h2>Para Clientes</h2>
-    <p>Informações claras sobre garantias, documentos e processo de locação.</p>
-
+  <!-- Conteúdo de Locação -->
+  <section id="garantias-locacao" class="imoveis-section">
+    <h2 class="titulo-dourado-centralizado">🔐 Comparativo de Garantias Locatícias</h2>
     <div class="tab">
       <button class="tablinks" onclick="openTab(event, 'SeguroFianca')">Seguro Fiança</button>
       <button class="tablinks" onclick="openTab(event, 'Caucao')">Caução</button>
@@ -56,7 +54,6 @@
         <li>Cobertura: aluguel, condomínio, IPTU e, em alguns casos, danos.</li>
         <li>Recebimento rápido após acionar a seguradora.</li>
       </ul>
-      <a href="https://www.portoseguro.com.br/seguro-fianca" target="_blank" class="btn-dourado">Saiba mais</a>
     </div>
 
     <div id="Caucao" class="tabcontent">
@@ -78,59 +75,48 @@
     </div>
   </section>
 
-  <!-- Área interna -->
-  <section class="area-interna">
-    <h2>Área Interna (Somente para uso da corretora)</h2>
-    <ul>
-      <li><a href="docs/checklist-locacao.pdf" target="_blank">📄 Checklist de Locação</a></li>
-      <li><a href="docs/modelo-contrato.docx" target="_blank">📄 Modelo de Contrato</a></li>
-      <li><a href="docs/clausulas-garantias.pdf" target="_blank">📄 Cláusulas de Garantias</a></li>
-      <li><a href="https://www.portoseguro.com.br/titulo-de-capitalizacao-para-aluguel" target="_blank">🔗 Título de Capitalização Porto Seguro</a></li>
-    </ul>
-  </section>
-
-</main>
-
-
- <section class="cta-banner">
+  <!-- Banner final -->
+  <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
   </section>
 
+  <!-- Rodapé -->
   <footer class="site-footer" id="contato">
     <div class="footer-logo">
       <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia"/>
     </div>
     <div class="footer-contact">
-       <h3 style="color: var(--dourado);">Contato</h3>
-      <p><a href="mailto:flavia@email.com">flavia.capacia@creci.gov</a></p>
+      <h3 style="color: var(--dourado);">Contato</h3>
+      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
       <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-   <div class="social-list">
-  <ul>
-    <li><a href=https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
-    <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
-    <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
-    <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
-  </ul>
-</div>
-  <div style="text-align:center; margin-top:20px; font-size:14px; color:var(--dourado);">
-    Feito com 💛 <strong> Capacia Group </strong>  💛
-  </div>
+      <div class="social-list">
+        <ul>
+          <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
+          <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
+          <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
+          <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
+        </ul>
+      </div>
+      <div style="text-align:center; margin-top:20px; font-size:14px; color:var(--dourado);">
+        Feito com 💛 <strong>Capacia Group</strong> 💛
+      </div>
+    </div>
   </footer>
 
-
-<script>
-function openTab(evt, tabName) {
-  const tabcontent = document.getElementsByClassName("tabcontent");
-  for (let i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
-  const tablinks = document.getElementsByClassName("tablinks");
-  for (let i = 0; i < tablinks.length; i++) tablinks[i].className = tablinks[i].className.replace(" active", "");
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".tablinks").click();
-});
-</script>
+  <!-- Script das abas -->
+  <script>
+    function openTab(evt, tabName) {
+      const tabcontent = document.getElementsByClassName("tabcontent");
+      for (let i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
+      const tablinks = document.getElementsByClassName("tablinks");
+      for (let i = 0; i < tablinks.length; i++) tablinks[i].className = tablinks[i].className.replace(" active", "");
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".tablinks").click();
+    });
+  </script>
 
 </body>
 </html>
