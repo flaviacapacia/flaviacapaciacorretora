@@ -3,59 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <title>Cadastro de Imóvel</title>
+  <style>
+    :root {
+      --dourado: #c9a646;
+      --azul: #004aad;
+      --fundo-claro: #f9f9f9;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--fundo-claro);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--dourado);
+      font-family: 'Playfair Display', serif;
+      margin-top: 1.5rem;
+    }
+
+    form {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2rem;
+    }
+
+    form label {
+      font-weight: bold;
+      color: var(--azul);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    form textarea {
+      grid-column: span 2;
+      resize: vertical;
+    }
+
+    form input[type="file"] {
+      border: none;
+      padding: 0;
+    }
+
+    form button {
+      grid-column: span 2;
+      padding: 1rem;
+      background-color: var(--dourado);
+      color: white;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #b08d3b;
+    }
+
+    #mensagem {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: var(--azul);
+    }
+
+    .cta-banner {
+      background-color: var(--dourado);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--azul);
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+      form textarea, form button {
+        grid-column: span 1;
+      }
+    }
+  </style>
 </head>
 <body>
   <h2>Cadastro de Imóvel</h2>
 
   <form id="formnegocie" enctype="multipart/form-data">
-    <label>Proprietário:</label><br>
-    <input type="text" name="Proprietario" required><br><br>
+    <div>
+      <label>Proprietário:</label>
+      <input type="text" name="Proprietario" required>
+    </div>
 
-    <label>Contato:</label><br>
-    <input type="text" name="Contato" required><br><br>
+    <div>
+      <label>Contato:</label>
+      <input type="text" name="Contato" required>
+    </div>
 
-    <label>Venda ou Aluguel:</label><br>
-    <select name="Venda ou Aluguel" required>
-      <option value="">Selecione</option>
-      <option value="Venda">Venda</option>
-      <option value="Aluguel">Aluguel</option>
-    </select><br><br>
+    <div>
+      <label>Venda ou Aluguel:</label>
+      <select name="Venda ou Aluguel" required>
+        <option value="">Selecione</option>
+        <option value="Venda">Venda</option>
+        <option value="Aluguel">Aluguel</option>
+      </select>
+    </div>
 
-    <label>Tipo:</label><br>
-    <select name="Tipo" required>
-      <option value="">Selecione</option>
-      <option value="Casa">Casa</option>
-      <option value="Apartamento">Apartamento</option>
-      <option value="Terreno">Terreno</option>
-    </select><br><br>
+    <div>
+      <label>Tipo:</label>
+      <select name="Tipo" required>
+        <option value="">Selecione</option>
+        <option value="Casa">Casa</option>
+        <option value="Apartamento">Apartamento</option>
+        <option value="Terreno">Terreno</option>
+      </select>
+    </div>
 
-    <label>Valor:</label><br>
-    <input type="text" name="Valor"><br><br>
+    <div>
+      <label>Valor:</label>
+      <input type="text" name="Valor">
+    </div>
 
-    <label>Endereço:</label><br>
-    <input type="text" name="Endereco"><br><br>
+    <div>
+      <label>Endereço:</label>
+      <input type="text" name="Endereco">
+    </div>
 
-    <label>Condomínio:</label><br>
-    <input type="text" name="Condominio"><br><br>
+    <div>
+      <label>Condomínio:</label>
+      <input type="text" name="Condominio">
+    </div>
 
-    <label>Descrição:</label><br>
-    <textarea name="Descricao"></textarea><br><br>
+    <div>
+      <label>Valor do Condomínio:</label>
+      <input type="text" name="Valor do Condominio">
+    </div>
 
-    <label>Valor do Condomínio:</label><br>
-    <input type="text" name="Valor do Condominio"><br><br>
+    <div>
+      <label>Valor do IPTU:</label>
+      <input type="text" name="Valor do IPTU">
+    </div>
 
-    <label>Valor do IPTU:</label><br>
-    <input type="text" name="Valor do IPTU"><br><br>
+    <div>
+      <label>Informações Privadas:</label>
+      <input type="text" name="Informações Privada:">
+    </div>
 
-    <label>Informações Privadas:</label>
-    <input type="text" name="Informações Privada:"><br><br>
+    <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
 
+    <div>
+      <label>Imagens:</label>
+      <input type="file" name="file" multiple>
+    </div>
 
-    <label>Imagens:</label><br>
- <input type="file" name="file" multiple><br><br>
-
-
-    <button type="submit">Enviar</button><br><br>
+    <button type="submit">Enviar</button>
   </form>
 
   <div id="mensagem"></div>
@@ -70,27 +198,3 @@
     <div class="footer-logo">
       <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia"/>
     </div>
-    <div class="footer-contact">
-      <h3 style="color: var(--dourado);">Contato</h3>
-      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
-      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <div class="social-list">
-        <ul>
-          <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
-          <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
-          <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
-          <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
-        </ul>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:20px; font-size:14px; color:var(--dourado);">
-      Feito por 💛 <strong>Capacia Group</strong> 💛
-    </div>
-  </footer>
-</body>
-</html>
-
-
-
-
-
