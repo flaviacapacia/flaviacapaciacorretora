@@ -19,7 +19,6 @@
     .site-header {
       background-color: var(--dourado);
       padding: 10px 20px;
-      border-bottom: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -57,16 +56,6 @@
       color: var(--texto-bronze);
     }
 
-    header nav a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-    }
-
-    header nav a:hover {
-      text-decoration: underline;
-    }
-
     /* Hero */
     .hero {
       position: relative;
@@ -78,7 +67,7 @@
       width: 100%;
       height: 300px;
       object-fit: cover;
-      filter: brightness(0.6);
+      filter: brightness(0.9); /* mais claro que o original */
     }
 
     .hero h1 {
@@ -88,8 +77,10 @@
       transform: translate(-50%, -50%);
       font-size: 2.5rem;
       font-family: 'Playfair Display', serif;
-      color: var(--dourado);
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+      color: var(--texto-bronze); /* bronze para contraste */
+      background-color: rgba(255,255,255,0.6); /* fundo translúcido */
+      padding: 10px 20px;
+      border-radius: 6px;
     }
 
     h2 {
@@ -243,6 +234,48 @@
 
   <section id="hero" class="hero">
     <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
+    <h1>Negocie seu Imóvel</h1>
+  </section>
+
+  <!-- Formulário -->
+  <h2>Cadastro de Imóvel</h2>
+  <form id="formnegocie" enctype="multipart/form-data">
+    <!-- campos do formulário aqui -->
+  </form>
+
+  <div id="mensagem"></div>
+
+
+
+
+
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="negocie.html">Negocie</a></li>
+        <li><a href="financie.html">Financie</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="social-icons" style="text-align:center; margin-top:10px;">
+    <a href="https://www.instagram.com/flacapacciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="24"/></a>
+    <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" width="24"/></a>
+    <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" width="24"/></a>
+    <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="24"/></a>
+  </div>
+
+  <section id="hero" class="hero">
+    <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
   </section>
 
   <h2>Cadastro de Imóvel</h2>
@@ -361,3 +394,4 @@
 
 </body>
 </html>
+
