@@ -1,0 +1,211 @@
+:root {
+  --fundo-branco: #ffffff;
+  --texto-bronze: #4B3A2F;
+  --bronze-claro: #7A5C45;
+  --fonte-padrao: 'Playfair Display', serif;
+  --dourado: #b08d57;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tema */
+body {
+  background-color: var(--fundo-branco);
+  color: var(--texto-bronze);
+  font-family: var(--fonte-padrao);
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+.site-header {
+  background-color: var(--fundo-branco);
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-area img {
+  max-width: 170px;
+  height: auto;
+}
+
+/* Navegação */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--texto-bronze);
+  font-weight: bold;
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons .icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons .icon:hover {
+  transform: scale(1.1);
+}
+
+/* Hero */
+.hero img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .hero img {
+    max-height: 400px;
+  }
+}
+
+/* Seções */
+.imoveis-section, .destaques-section {
+  padding: 40px 20px;
+}
+
+.destaques-section {
+  text-align: center;
+}
+
+/* Slider */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--dourado);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Grid de imóveis */
+.imoveis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.imovel {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.imovel:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.imovel img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.imovel h3 {
+  color: var(--dourado);
+  margin-bottom: 5px;
+}
+
+/* Títulos */
+.titulo-dourado-centralizado {
+  text-align: center;
+  color: var(--dourado);
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* CTA */
+.cta-banner {
+  background-color: var(--bronze-claro);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Rodapé */
+.site-footer {
+  background-color: var(--fundo-branco);
+  color: var(--texto-bronze);
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-logo img {
+  max-width: 170px;
+  height: auto;
+}
+
+.footer-contact a {
+  color: var(--texto-bronze);
+  text-decoration: none;
+}
+
+.social-list ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  margin-top: 10px;
+}
