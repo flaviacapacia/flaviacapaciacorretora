@@ -62,3 +62,195 @@ footer {
     background-color: #004aad;
     color: white;
 }
+/* ===== Estilo das Abas ===== */
+.tab {
+  overflow: hidden;
+  border-bottom: 2px solid var(--dourado, #c9a646);
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.tab button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--dourado, #c9a646);
+  border-radius: 5px 5px 0 0;
+}
+
+.tab button:hover {
+  background-color: rgba(201, 166, 70, 0.1);
+}
+
+.tab button.active {
+  background-color: var(--dourado, #c9a646);
+  color: #fff;
+}
+
+/* ===== Conteúdo das Abas ===== */
+.tabcontent {
+  display: none;
+  padding: 20px;
+  border: 1px solid var(--dourado, #c9a646);
+  border-top: none;
+  animation: fadeEffect 0.5s;
+  background-color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tabcontent h3 {
+  color: var(--dourado, #c9a646);
+  margin-bottom: 10px;
+}
+
+.tabcontent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tabcontent ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== Animação suave ===== */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #004aad;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+}
+
+.imoveis {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    width: 300px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.preco {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #004aad;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #004aad;
+    color: white;
+}
+/* ===== Estilo das Abas ===== */
+.tab {
+  overflow: hidden;
+  border-bottom: 2px solid var(--dourado, #c9a646);
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.tab button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--dourado, #c9a646);
+  border-radius: 5px 5px 0 0;
+}
+
+.tab button:hover {
+  background-color: rgba(201, 166, 70, 0.1);
+}
+
+.tab button.active {
+  background-color: var(--dourado, #c9a646);
+  color: #fff;
+}
+
+/* ===== Conteúdo das Abas ===== */
+.tabcontent {
+  display: none;
+  padding: 20px;
+  border: 1px solid var(--dourado, #c9a646);
+  border-top: none;
+  animation: fadeEffect 0.5s;
+  background-color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tabcontent h3 {
+  color: var(--dourado, #c9a646);
+  margin-bottom: 10px;
+}
+
+.tabcontent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tabcontent ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== Animação suave ===== */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
