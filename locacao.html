@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locação - Flavia Capacia Corretora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --dourado: #c9a646;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+    }
+
+    .locacao {
+      padding: 2rem;
+      background-color: white;
+    }
+
+    .titulo-dourado-centralizado {
+      text-align: center;
+      color: var(--dourado);
+    }
+
+    /* ===== Estilo das Abas ===== */
+    .tab {
+      overflow: hidden;
+      border-bottom: 2px solid var(--dourado);
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 12px 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--dourado);
+      border-radius: 5px 5px 0 0;
+    }
+
+    .tab button:hover {
+      background-color: rgba(201, 166, 70, 0.1);
+    }
+
+    .tab button.active {
+      background-color: var(--dourado);
+      color: #fff;
+    }
+
+    /* ===== Conteúdo das Abas ===== */
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      border: 1px solid var(--dourado);
+      border-top: none;
+      animation: fadeEffect 0.5s;
+      background-color: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .tabcontent h3 {
+      color: var(--dourado);
+      margin-bottom: 10px;
+    }
+
+    .tabcontent ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tabcontent ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* ===== Animação suave ===== */
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .cta-banner {
+      background-color: var(--dourado);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #004aad;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo-area">
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
+    </div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="negocie.html">Negocie</a>
+      <a href="financie.html">Financie</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Banner de capa -->
+  <section id="hero" class="hero">
+    <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
+  </section>
+
+  <!-- Conteúdo de Locação -->
+  <section class="locacao">
+    <h2 class="titulo-dourado-centralizado">🔐 Comparativo de Garantias Locatícias</h2>
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'SeguroFianca')">Seguro Fiança</button>
+      <button class="tablinks" onclick="openTab(event, 'Caucao')">Caução</button>
+      <button class="tablinks" onclick="openTab(event, 'Fiador')">Fiador</button>
+    </div>
+
+    <div id="SeguroFianca" class="tabcontent">
+      <h3>Seguro Fiança</h3>
+      <ul>
+        <li>Garantia paga por seguradora em caso de inadimplência.</li>
+        <li>Custo: 1 a 2 aluguéis/ano (parcelável pelo inquilino).</li>
+        <li>Cobertura: aluguel, condomínio, IPTU e, em alguns casos, danos.</li>
+        <li>Recebimento rápido após acionar a seguradora.</li>
+      </ul>
+    </div>
+
+    <div id="Caucao" class="tabcontent">
+      <h3>Caução</h3>
+      <ul>
+        <li>Depósito de até 3 meses de aluguel.</li>
+        <li>Devolvido ao final do contrato se não houver débitos ou danos.</li>
+        <li>Valor corrigido conforme contrato.</li>
+      </ul>
+    </div>
+
+    <div id="Fiador" class="tabcontent">
+      <h3>Fiador</h3>
+      <ul>
+        <li>Pessoa física que assume a responsabilidade pelo pagamento.</li>
+        <li>Deve comprovar renda e possuir imóvel próprio.</li>
+        <li>Sem custo direto para o inquilino.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Banner final -->
+  <section class="cta-banner">
+    <h2>Seu imóvel a um clique de você</h2>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>Contato: <a href="mailto:flavia.capacia@creci.gov" style="color:white;">flavia.capacia@creci.gov</a> | <a href="tel:+5548999600601" style="color:white;">(48) 99960-0601</a></p>
+    <p>Facebook | Instagram | LinkedIn | YouTube</p>
+    <p>Feito com 💛 <strong>Capacia Group</strong> 💛</p>
+  </footer>
+
+  <!-- Script das abas -->
+  <script>
+    function openTab(evt, tabName) {
+      const tabcontent = document.getElementsByClassName("tabcontent");
+      for (let i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
+      const tablinks = document.getElementsByClassName("tablinks");
+      for (let i = 0; i < tablinks.length; i++) tablinks[i].className = tablinks[i].className.replace(" active", "");
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".tablinks").click();
+    });
+  </script>
+
+</body>
+</html>
