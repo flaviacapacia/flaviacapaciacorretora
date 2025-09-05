@@ -569,9 +569,12 @@
 
   <h2>Cadastro de Imóvel</h2>
 
-  <form id="formnegocie" enctype="multipart/form-data">
+<form id="formnegocie" enctype="multipart/form-data" method="POST">
+    
     <div><label>Proprietário:</label><input type="text" name="Proprietario" required></div>
+    
     <div><label>Contato:</label><input type="text" name="Contato" required></div>
+    
     <div><label>Venda ou Aluguel:</label>
       <select name="Venda ou Aluguel" required>
         <option value="">Selecione</option>
@@ -631,6 +634,28 @@
   </form>
 
   <div id="mensagem"></div>
+<script>
+document.getElementById("formnegocie").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+
+  try {
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbwdNECR2frAsSi9OBTs0KPEt7JW3ko5DHmrgL5QBHbWHx9hMrjLEajTpEGphRgobr6Q/exec", {
+      method: "POST",
+      body: formData
+    });
+
+    const resultado = await resposta.json();
+    document.getElementById("mensagem").innerText = resultado.mensagem || "Formulário enviado com sucesso!";
+    document.getElementById("mensagem").style.color = "green";
+    form.reset();
+  } catch (erro) {
+    document.getElementById("mensagem").innerText = "Erro ao enviar: " + erro.message;
+    document.getElementById("mensagem").style.color = "red";
+  }
+});
+</script>
 
   <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
@@ -658,34 +683,10 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById("formnegocie").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-
-      try {
-        const resposta = await fetch("https://script.google.com/macros/s/AKfycbzYnkrVlNkPIKre_0tsoZIou_7txJnUTDBYY-3VWZ4elEzyQfmtzN-cmqopG69-vFLg/exec", {
-          method: "POST",
-          body: formData
-        });
-
-        const resultado = await resposta.json();
-        document.getElementById("mensagem").innerText = resultado.mensagem || "Formulário enviado com sucesso!";
-        document.getElementById("mensagem").style.color = "green";
-        form.reset();
-      } catch (erro) {
-        document.getElementById("mensagem").innerText = "Erro ao enviar: " + erro.message;
-        document.getElementById("mensagem").style.color = "red";
-      }
-    });
-  </script>
-
 </body>
 </html>
 
 
 
-</body>
-</html>
+
 
