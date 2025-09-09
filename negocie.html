@@ -160,7 +160,7 @@
       text-align: center;
       padding: 2rem 1rem;
       background-color: transparent; /* transparente */
-      color: var(--texto-bronze);
+      color: var(--texto-bronze); /* texto visível */
     }
 
     .footer-logo img {
@@ -239,8 +239,7 @@
 
   <h2>Cadastro de Imóvel</h2>
 
-<form method="post" enctype="multipart/form-data" action="https://script.google.com/macros/s/AKfycbzk7VF_MmPSRbnZy3eXXLXO0AvPr9bOrGuiD9fFpTwAeXe3gn6r_G5ZaNMGfKYJcOFrfQ/exec">
-  </form>
+  <form id="formnegocie" enctype="multipart/form-data">
     <div><label>Proprietário:</label><input type="text" name="Proprietario" required></div>
     <div><label>Contato:</label><input type="text" name="Contato" required></div>
     <div><label>Venda ou Aluguel:</label>
@@ -250,6 +249,7 @@
         <option value="Aluguel">Aluga</option>  
       </select>
     </div>
+
     <div>
       <label>Tipo:</label>
       <select name="Tipo" required>
@@ -259,41 +259,48 @@
         <option value="Terreno">Terreno</option>
       </select>
     </div>
-    <div><label>Valor:</label><input type="text" name="Valor"></div>
-    <div><label>Endereço:</label><input type="text" name="Endereco"></div>
-    <div><label>Condomínio:</label><input type="text" name="Condominio"></div>
-    <div><label>Valor do Condomínio:</label><input type="text" name="Valor do Condominio"></div>
-    <div><label>Valor do IPTU:</label><input type="text" name="Valor do IPTU"></div>
-    <div><label>Informações Privadas:</label><input type="text" name="Informações Privada:"></div>
+
+    <div>
+      <label>Valor:</label>
+      <input type="text" name="Valor">
+    </div>
+
+    <div>
+      <label>Endereço:</label>
+      <input type="text" name="Endereco">
+    </div>
+
+    <div>
+      <label>Condomínio:</label>
+      <input type="text" name="Condominio">
+    </div>
+
+    <div>
+      <label>Valor do Condomínio:</label>
+      <input type="text" name="Valor do Condominio">
+    </div>
+
+    <div>
+      <label>Valor do IPTU:</label>
+      <input type="text" name="Valor do IPTU">
+    </div>
+
+    <div>
+      <label>Informações Privadas:</label>
+      <input type="text" name="Informações Privada:">
+    </div>
+
     <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
-    <div><label>Imagens:</label><input type="file" name="file" multiple></div>
+
+    <div>
+      <label>Imagens:</label>
+      <input type="file" name="file" multiple>
+    </div>
+
     <button type="submit">Enviar</button>
   </form>
 
   <div id="mensagem"></div>
-
-  <script>
-  document.getElementById("formnegocie").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-
-    try {
-      const resposta = await fetch("https://script.google.com/macros/s/AKfycbzk7VF_MmPSRbnZy3eXXLXO0AvPr9bOrGuiD9fFpTwAeXe3gn6r_G5ZaNMGfKYJcOFrfQ/exec", {
-        method: "POST",
-        body: formData
-      });
-
-      const resultado = await resposta.json();
-      document.getElementById("mensagem").innerText = resultado.mensagem || "Formulário enviado com sucesso!";
-      document.getElementById("mensagem").style.color = "green";
-      form.reset();
-    } catch (erro) {
-      document.getElementById("mensagem").innerText = "Erro ao enviar: " + erro.message;
-      document.getElementById("mensagem").style.color = "red";
-    }
-  });
-  </script>
 
   <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
@@ -309,11 +316,374 @@
       <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
       <div class="social-list">
         <ul>
-          <li><a href="https://www.facebook.com/flaviacapaciacorretora"
+          <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
+          <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
+          <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
+          <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-credit">
+        Feito com 💛 <strong>Capacia Group</strong> 💛
+      </div>
+    </div>
+  </footer>
 
+  <script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imóveis em Floripa FC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --fundo-branco: #ffffff;
+      --texto-bronze: #4B3A2F;
+      --bronze-claro: #7A5C45;
+      --fonte-padrao: 'Playfair Display', serif;
+      --dourado: #b08d57;
+      --fundo-claro: #f9f9f9;
+    }
 
+    /* Cabeçalho */
+    .site-header {
+      background-color: transparent; /* transparente */
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
+    .logo-area img {
+      max-width: 150px;
+      height: auto;
+    }
 
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--texto-bronze);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .main-nav a:hover {
+      color: var(--bronze-claro);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--fundo-claro);
+      color: var(--texto-bronze);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      filter: brightness(0.9);
+    }
+
+    .hero h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--texto-bronze);
+      background-color: rgba(255,255,255,0.6);
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--dourado);
+      font-family: 'Playfair Display', serif;
+      margin-top: 1.5rem;
+    }
+
+    /* Formulário */
+    form {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    form label {
+      font-weight: bold;
+      color: var(--texto-bronze);
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    form textarea {
+      grid-column: span 2;
+      resize: vertical;
+    }
+
+    form button {
+      grid-column: span 2;
+      padding: 1rem;
+      background-color: var(--dourado);
+      color: white;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #9c7745;
+    }
+
+    @media (max-width: 768px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+      form textarea, form button {
+        grid-column: span 1;
+      }
+    }
+
+    /* CTA */
+    .cta-banner {
+      background-color: var(--bronze-claro);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: transparent; /* transparente */
+      color: var(--texto-bronze); /* texto visível */
+    }
+
+    .footer-logo img {
+      max-width: 170px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact h3 {
+      color: var(--dourado);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact p {
+      margin: 0.3rem 0;
+    }
+
+    .footer-contact a {
+      color: var(--texto-bronze);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .social-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-list ul li a {
+      color: var(--texto-bronze);
+      font-weight: bold;
+    }
+
+    .footer-credit {
+      margin-top: 1.5rem;
+      font-size: 14px;
+      color: var(--texto-bronze);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="negocie.html">Negocie</a></li>
+        <li><a href="financie.html">Financie</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="social-icons" style="text-align:center; margin-top:10px;">
+    <a href="https://www.instagram.com/flacapacciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="24"/></a>
+    <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" width="24"/></a>
+    <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" width="24"/></a>
+    <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="24"/></a>
+  </div>
+
+  <section id="hero" class="hero">
+    <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
+    <h1>Negocie seu Imóvel</h1>
+  </section>
+
+  <h2>Cadastro de Imóvel</h2>
+
+  <form id="formnegocie" enctype="multipart/form-data">
+    <div><label>Proprietário:</label><input type="text" name="Proprietario" required></div>
+    <div><label>Contato:</label><input type="text" name="Contato" required></div>
+    <div><label>Venda ou Aluguel:</label>
+      <select name="Venda ou Aluguel" required>
+        <option value="">Selecione</option>
+        <option value="Venda">Venda</option>
+        <option value="Aluguel">Aluga</option>  
+      </select>
+    </div>
+
+    <div>
+      <label>Tipo:</label>
+      <select name="Tipo" required>
+        <option value="">Selecione</option>
+        <option value="Casa">Casa</option>
+        <option value="Apartamento">Apartamento</option>
+        <option value="Terreno">Terreno</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Valor:</label>
+      <input type="text" name="Valor">
+    </div>
+
+    <div>
+      <label>Endereço:</label>
+      <input type="text" name="Endereco">
+    </div>
+
+    <div>
+      <label>Condomínio:</label>
+      <input type="text" name="Condominio">
+    </div>
+
+    <div>
+      <label>Valor do Condomínio:</label>
+      <input type="text" name="Valor do Condominio">
+    </div>
+
+    <div>
+      <label>Valor do IPTU:</label>
+      <input type="text" name="Valor do IPTU">
+    </div>
+
+    <div>
+      <label>Informações Privadas:</label>
+      <input type="text" name="Informações Privada:">
+    </div>
+
+    <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
+
+    <div>
+      <label>Imagens:</label>
+      <input type="file" name="file" multiple>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="mensagem"></div>
+
+  <section class="cta-banner">
+    <h2>Seu imóvel a um clique de você</h2>
+  </section>
+
+  <footer class="site-footer" id="contato">
+    <div class="footer-logo">
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia" />
+    </div>
+    <div class="footer-contact">
+      <h3>Contato</h3>
+      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
+      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+      <div class="social-list">
+        <ul>
+          <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
+          <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
+          <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
+          <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-credit">
+        Feito com 💛 <strong>Capacia Group</strong> 💛
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("formnegocie").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+
+      try {
+        const resposta = await fetch("https://script.google.com/macros/s/AKfycbzk7VF_MmPSRbnZy3eXXLXO0AvPr9bOrGuiD9fFpTwAeXe3gn6r_G5ZaNMGfKYJcOFrfQ/exec", {
+          method: "POST",
+          body: formData
+        });
+
+        const resultado = await resposta.json();
+        document.getElementById("mensagem").innerText = resultado.mensagem || "Formulário enviado com sucesso!";
+        document.getElementById("mensagem").style.color = "green";
+        form.reset();
+      } catch (erro) {
+        document.getElementById("mensagem").innerText = "Erro ao enviar: " + erro.message;
+        document.getElementById("mensagem").style.color = "red";
+      }
+    });
+  </script>
+
+</body>
+</html>
 
 
 
