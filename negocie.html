@@ -239,7 +239,8 @@
 
   <h2>Cadastro de Imóvel</h2>
 
-  <form id="formnegocie" enctype="multipart/form-data" method="POST">
+<form method="post" enctype="multipart/form-data" action="URL_DO_SEU_SCRIPT_AQUI">
+  </form>
     <div><label>Proprietário:</label><input type="text" name="Proprietario" required></div>
     <div><label>Contato:</label><input type="text" name="Contato" required></div>
     <div><label>Venda ou Aluguel:</label>
@@ -278,7 +279,7 @@
     const formData = new FormData(form);
 
     try {
-      const resposta = await fetch("https://script.google.com/macros/s/AKfycbyl0LUf--B2YVi_xY7d0pH2NaBcf84aULXDElxUzawgSJzEby9UXQuyZ2h1ih2Uq6u21A/exec", {
+      const resposta = await fetch("https://script.google.com/macros/s/AKfycbzk7VF_MmPSRbnZy3eXXLXO0AvPr9bOrGuiD9fFpTwAeXe3gn6r_G5ZaNMGfKYJcOFrfQ/exec", {
         method: "POST",
         body: formData
       });
@@ -309,6 +310,7 @@
       <div class="social-list">
         <ul>
           <li><a href="https://www.facebook.com/flaviacapaciacorretora"
+
 
 
 
