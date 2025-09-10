@@ -246,8 +246,7 @@ body {
   </style>
 </head>
 <body>
-  <h2>Cadastro de Imóvel</h2>
-
+ 
   <section id="formulario-integrado" style="max-width: 1000px; margin: 2rem auto; padding: 2rem; background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
   <h2 style="text-align: center; color: #b08d57; font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Cadastro de Imóvel</h2>
   <iframe 
@@ -259,50 +258,7 @@ body {
   </iframe>
 </section>
 
-
-  <script>
-    document.getElementById("formnegocie").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const formData = {};
-      [...form.elements].forEach(el => {
-        if (el.name) formData[el.name] = el.value;
-      });
-
-      const filesInput = document.getElementById("files");
-      const files = [];
-      for (let file of filesInput.files) {
-        const reader = new FileReader();
-        await new Promise(resolve => {
-          reader.onload = () => {
-            files.push({
-              name: file.name,
-              mimeType: file.type,
-              content: reader.result.split(",")[1]
-            });
-            resolve();
-          };
-          reader.readAsDataURL(file);
-        });
-      }
-
-      formData.files = files;
-
-      google.script.run.withSuccessHandler(function(msg) {
-        document.getElementById("mensagem").innerText = msg;
-        document.getElementById("mensagem").style.color = "green";
-        form.reset();
-      }).withFailureHandler(function(err) {
-        document.getElementById("mensagem").innerText = "Erro: " + err.message;
-        document.getElementById("mensagem").style.color = "red";
-      }).uploadImovel(formData);
-    });
-  </script>
-</body>
-</html>
-
-
-  <section class="cta-banner">
+   <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
   </section>
 
@@ -329,6 +285,7 @@ body {
  
 </body>
 </html>
+
 
 
 
