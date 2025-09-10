@@ -15,9 +15,15 @@
       --fundo-claro: #f9f9f9;
     }
 
-    /* Cabeçalho */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--fundo-claro);
+      color: var(--texto-bronze);
+    }
+
     .site-header {
-      background-color: transparent; /* transparente */
+      background-color: transparent;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
@@ -49,14 +55,6 @@
       color: var(--bronze-claro);
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: var(--fundo-claro);
-      color: var(--texto-bronze);
-    }
-
-    /* Hero */
     .hero {
       position: relative;
       text-align: center;
@@ -76,7 +74,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 2.5rem;
-      font-family: 'Playfair Display', serif;
+      font-family: var(--fonte-padrao);
       color: var(--texto-bronze);
       background-color: rgba(255,255,255,0.6);
       padding: 10px 20px;
@@ -86,11 +84,10 @@
     h2 {
       text-align: center;
       color: var(--dourado);
-      font-family: 'Playfair Display', serif;
+      font-family: var(--fonte-padrao);
       margin-top: 1.5rem;
     }
 
-    /* Formulário */
     form {
       max-width: 900px;
       margin: 2rem auto;
@@ -146,7 +143,6 @@
       }
     }
 
-    /* CTA */
     .cta-banner {
       background-color: var(--bronze-claro);
       color: white;
@@ -155,12 +151,11 @@
       margin-top: 2rem;
     }
 
-    /* Rodapé */
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: transparent; /* transparente */
-      color: var(--texto-bronze); /* texto visível */
+      background-color: transparent;
+      color: var(--texto-bronze);
     }
 
     .footer-logo img {
@@ -172,10 +167,6 @@
     .footer-contact h3 {
       color: var(--dourado);
       margin-bottom: 0.5rem;
-    }
-
-    .footer-contact p {
-      margin: 0.3rem 0;
     }
 
     .footer-contact a {
@@ -194,11 +185,6 @@
       display: flex;
       justify-content: center;
       gap: 1rem;
-    }
-
-    .social-list ul li a {
-      color: var(--texto-bronze);
-      font-weight: bold;
     }
 
     .footer-credit {
@@ -225,13 +211,6 @@
     </nav>
   </header>
 
-  <div class="social-icons" style="text-align:center; margin-top:10px;">
-    <a href="https://www.instagram.com/flacapacciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="24"/></a>
-    <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" width="24"/></a>
-    <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" width="24"/></a>
-    <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="24"/></a>
-  </div>
-
   <section id="hero" class="hero">
     <img src="img/hero.interior.jpg" alt="Interior moderno e luxuoso" />
     <h1>Negocie seu Imóvel</h1>
@@ -246,10 +225,9 @@
       <select name="Venda ou Aluguel" required>
         <option value="">Selecione</option>
         <option value="Venda">Venda</option>
-        <option value="Aluguel">Aluga</option>  
+        <option value="Aluguel">Aluguel</option>  
       </select>
     </div>
-
     <div>
       <label>Tipo:</label>
       <select name="Tipo" required>
@@ -259,67 +237,37 @@
         <option value="Terreno">Terreno</option>
       </select>
     </div>
-
-    <div>
-      <label>Valor:</label>
-      <input type="text" name="Valor">
-    </div>
-
-    <div>
-      <label>Endereço:</label>
-      <input type="text" name="Endereco">
-    </div>
-
-    <div>
-      <label>Condomínio:</label>
-      <input type="text" name="Condominio">
-    </div>
-
-    <div>
-      <label>Valor do Condomínio:</label>
-      <input type="text" name="Valor do Condominio">
-    </div>
-
-    <div>
-      <label>Valor do IPTU:</label>
-      <input type="text" name="Valor do IPTU">
-    </div>
-
-    <div>
-      <label>Informações Privadas:</label>
-      <input type="text" name="Informações Privada:">
-    </div>
-
+    <div><label>Valor:</label><input type="text" name="Valor"></div>
+    <div><label>Endereço:</label><input type="text" name="Endereco"></div>
+    <div><label>Condomínio:</label><input type="text" name="Condominio"></div>
+    <div><label>Valor do Condomínio:</label><input type="text" name="Valor do Condominio"></div>
+    <div><label>Valor do IPTU:</label><input type="text" name="Valor do IPTU"></div>
+    <div><label>Informações Privadas:</label><input type="text" name="InformacoesPrivadas"></div>
     <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
-
-    <div>
-      <label>Imagens:</label>
-      <input type="file" name="file" multiple>
-    </div>
-
+    <div><label>Imagens:</label><input type="file" name="file[]" multiple></div>
     <button type="submit">Enviar</button>
   </form>
 
-  <div id="mensagem"></div>
+  <div id="mensagem" style="text-align:center; font-weight:bold;"></div>
 
   <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
   </section>
 
-  <footer class="site-footer" id="contato">
+   <footer class="site-footer" id="contato">
     <div class="footer-logo">
       <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia" />
     </div>
     <div class="footer-contact">
       <h3>Contato</h3>
-      <p><a href="mailto:flavia.capacia@creci.gov">flaviacapacia@creci.org.br</a></p>
+      <p><a href="mailto:flaviacapacia@creci.org.br">flaviacapacia@creci.org.br</a></p>
       <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
       <div class="social-list">
         <ul>
           <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
           <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
-          <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
-          <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/flavia-capacia-imoveis-em-floripa/">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@flaviacapaciacorretora">YouTube</a></li>
         </ul>
       </div>
       <div class="footer-credit">
@@ -335,7 +283,7 @@
       const formData = new FormData(form);
 
       try {
-        const resposta = await fetch(https://script.google.com/macros/s/AKfycbxYjuUAlm2oDlxj4NuENk3Q_M0JvHaGZ4k6enHuVtycm_2LtpAMHm6AGcSfHxQAV9Bq3g/exec", {
+        const resposta = await fetch("https://script.google.com/macros/s/AKfycbxYjuUAlm2oDlxj4NuENk3Q_M0JvHaGZ4k6enHuVtycm_2LtpAMHm6AGcSfHxQAV9Bq3g/exec", {
           method: "POST",
           body: formData
         });
@@ -353,11 +301,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
