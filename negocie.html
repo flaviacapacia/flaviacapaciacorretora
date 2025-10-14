@@ -190,29 +190,38 @@ body {
 <body>
   <h2>Cadastro de Imóvel</h2>
 
-  <form id="formnegocie">
-    <input type="text" name="Proprietario" placeholder="Proprietário" required>
-    <input type="text" name="Contato" placeholder="Contato" required>
-    <select name="Venda ou Aluguel" required>
-      <option value="">Venda ou Aluguel</option>
-      <option value="Venda">Venda</option>
-      <option value="Aluguel">Aluguel</option>
-    </select>
-    <select name="Tipo" required>
-      <option value="">Tipo</option>
-      <option value="Casa">Casa</option>
-      <option value="Apartamento">Apartamento</option>
-      <option value="Terreno">Terreno</option>
-    </select>
-    <input type="text" name="Valor" placeholder="Valor">
-    <input type="text" name="Valor do Condominio" placeholder="Valor do Condomínio">
-    <input type="text" name="Valor do IPTU" placeholder="Valor do IPTU">
-    <input type="text" name="Endereco" placeholder="Endereço">
-    <input type="text" name="Condominio" placeholder="Condomínio">
-    <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
-    <input type="file" id="files" multiple>
-    <button type="submit">Enviar</button>
-  </form>
+ <form id="formnegocie" target="iframeRetorno" method="POST" enctype="multipart/form-data"
+  action="https://script.google.com/macros/s/AKfycbxEhfI_yC1JVDp4HAcp9gVu-SIv0mr3-i0oIC3VrAjj-_07A6V-Zdb_8VTikOqJGFLayA/exec">
+
+  <input type="text" name="Proprietario" placeholder="Proprietário" required>
+  <input type="text" name="Contato" placeholder="Contato" required>
+
+  <select name="Venda ou Aluguel" required>
+    <option value="">Venda ou Aluguel</option>
+    <option value="Venda">Venda</option>
+    <option value="Aluguel">Aluguel</option>
+  </select>
+
+  <select name="Tipo" required>
+    <option value="">Tipo</option>
+    <option value="Casa">Casa</option>
+    <option value="Apartamento">Apartamento</option>
+    <option value="Terreno">Terreno</option>
+  </select>
+
+  <input type="text" name="Valor" placeholder="Valor">
+  <input type="text" name="Valor do Condominio" placeholder="Valor do Condomínio">
+  <input type="text" name="Valor do IPTU" placeholder="Valor do IPTU">
+  <input type="text" name="Endereco" placeholder="Endereço">
+  <input type="text" name="Condominio" placeholder="Condomínio">
+  <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
+
+  <input type="file" name="files" id="files" multiple>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<iframe name="iframeRetorno" style="width:100%; height:250px; border:none; margin-top:1rem;"></iframe>
 
   <div id="mensagem"></div>
 
@@ -285,6 +294,7 @@ body {
  
 </body>
 </html>
+
 
 
 
