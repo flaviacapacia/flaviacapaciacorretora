@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Negocie seu Imóvel</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+
   <style>
     :root {
       --fundo-branco: #ffffff;
@@ -15,20 +16,20 @@
       --fundo-claro: #f9f9f9;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* Tema */
     body {
       background-color: var(--fundo-claro);
       color: var(--texto-bronze);
       font-family: Arial, sans-serif;
       line-height: 1.6;
+      margin: 0;
       padding: 2rem;
     }
 
+    /* Cabeçalho */
     .site-header {
       background-color: var(--fundo-branco);
       padding: 20px;
@@ -38,11 +39,9 @@
       align-items: center;
     }
 
-    .logo-area img {
-      max-width: 170px;
-      height: auto;
-    }
+    .logo-area img { max-width: 170px; height: auto; }
 
+    /* Navegação */
     .main-nav ul {
       list-style: none;
       display: flex;
@@ -58,6 +57,7 @@
       font-weight: bold;
     }
 
+    /* Ícones sociais */
     .social-icons {
       display: flex;
       justify-content: center;
@@ -123,9 +123,7 @@
       transition: background 0.3s ease;
     }
 
-    form button:hover {
-      background-color: #9c7745;
-    }
+    form button:hover { background-color: #9c7745; }
 
     #mensagem {
       text-align: center;
@@ -134,18 +132,11 @@
     }
 
     @media (max-width: 768px) {
-      form {
-        grid-template-columns: 1fr;
-      }
-      form textarea, form button {
-        grid-column: span 1;
-      }
+      form { grid-template-columns: 1fr; }
+      form textarea, form button { grid-column: span 1; }
     }
 
-    .cta-banner {
-      text-align: center;
-      margin: 2rem 0;
-    }
+    .cta-banner { text-align: center; margin: 2rem 0; }
 
     .site-footer {
       background-color: var(--fundo-branco);
@@ -154,10 +145,7 @@
       text-align: center;
     }
 
-    .footer-logo img {
-      max-width: 170px;
-      height: auto;
-    }
+    .footer-logo img { max-width: 170px; height: auto; }
 
     .footer-contact h3 {
       margin-top: 1rem;
@@ -165,26 +153,13 @@
       color: var(--dourado);
     }
 
-    .footer-contact a {
-      color: var(--texto-bronze);
-      text-decoration: none;
-    }
+    .footer-contact a { color: var(--texto-bronze); text-decoration: none; }
 
-    .social-list ul {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-    }
+    .social-list ul { list-style: none; padding: 0; margin: 1rem 0; }
 
-    .social-list li {
-      display: inline;
-      margin: 0 10px;
-    }
+    .social-list li { display: inline; margin: 0 10px; }
 
-    .footer-credit {
-      margin-top: 1rem;
-      font-weight: bold;
-    }
+    .footer-credit { margin-top: 1rem; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -193,6 +168,7 @@
     <div class="logo-area">
       <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
     </div>
+
     <nav class="main-nav">
       <ul>
         <li><a href="#hero">Início</a></li>
@@ -202,6 +178,7 @@
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
+
     <div class="social-icons">
       <a href="https://www.instagram.com/flacapacciacorretora" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="icon"/>
@@ -219,28 +196,35 @@
   </header>
 
   <h2>Cadastro de Imóvel</h2>
+
   <form id="formnegocie" target="iframeRetorno" method="POST" enctype="multipart/form-data"
-    action="https://script.google.com/macros/s/AKfycbxEhfI_yC1JVDp4HAcp9gVu-SIv0mr3-i0oIC3VrAjj-_07A6V-Zdb_8VTikOqJGFLayA/exec">
+    action="https://script.google.com/macros/s/SEU_SCRIPT_ID/exec">
+
     <input type="text" name="Proprietario" placeholder="Proprietário" required>
     <input type="text" name="Contato" placeholder="Contato" required>
+
     <select name="Venda ou Aluguel" required>
       <option value="">Venda ou Aluguel</option>
       <option value="Venda">Venda</option>
       <option value="Aluguel">Aluguel</option>
     </select>
+
     <select name="Tipo" required>
       <option value="">Tipo</option>
       <option value="Casa">Casa</option>
       <option value="Apartamento">Apartamento</option>
       <option value="Terreno">Terreno</option>
     </select>
+
     <input type="text" name="Valor" placeholder="Valor">
     <input type="text" name="Valor do Condominio" placeholder="Valor do Condomínio">
     <input type="text" name="Valor do IPTU" placeholder="Valor do IPTU">
     <input type="text" name="Endereco" placeholder="Endereço">
     <input type="text" name="Condominio" placeholder="Condomínio">
     <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
+
     <input type="file" name="files" id="files" multiple>
+
     <button type="submit">Enviar</button>
   </form>
 
@@ -250,8 +234,7 @@
     <h2>Seu imóvel a um clique de você</h2>
   </section>
 
-
-   <footer class="site-footer" id="contato">
+  <footer class="site-footer" id="contato">
     <div class="footer-logo">
       <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia" />
     </div>
@@ -271,16 +254,7 @@
         Feito com 💛 <strong>Capacia</strong> 💛
       </div>
     </div>
- 
+  </footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
