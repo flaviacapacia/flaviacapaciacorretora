@@ -1,0 +1,15 @@
+public class ImovelFormDto
+{
+    public string Proprietario { get; set; }
+    public string Contato { get; set; }
+    public string VendaOuAluguel { get; set; }
+    public string Tipo { get; set; }
+    public string Valor { get; set; }
+    public string ValorCondominio { get; set; }
+    public string ValorIPTU { get; set; }
+    public string Endereco { get; set; }
+    public string Condominio { get; set; }
+    public string Descricao { get; set; }
+    public string ImagemUrl { get; set; }
+    public List<IFormFile> Files { get; set; }
+}
