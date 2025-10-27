@@ -1,6 +1,7 @@
 public class Imovel
 {
     public int Id { get; set; }
+    public string Codigo { get; set; }
     public string Proprietario { get; set; }
     public string Contato { get; set; }
     public string VendaOuAluguel { get; set; }
