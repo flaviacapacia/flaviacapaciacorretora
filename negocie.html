@@ -163,31 +163,41 @@
   </style>
 </head>
   <script>
-document.querySelector("#negocie").addEventListener("submit", async function(e) {
+document.querySelector("#negocie").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
+  const form = e.target;
+  const formData = new FormData(form);
+
+  // Dica: se quiser limitar tamanho total (ex.: 10MB)
+  const files = document.getElementById("files").files;
+  let totalSize = 0;
+  for (const f of files) totalSize += f.size;
+  if (totalSize > 10 * 1024 * 1024) {
+    document.getElementById("mensagem").innerText = "⚠️ As imagens ultrapassam 10MB no total.";
+    return;
+  }
 
   try {
     const response = await fetch("http://localhost:5000/api/imoveis", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+      body: formData // sem headers de Content-Type; o browser define corretamente
     });
 
     if (response.ok) {
-      alert("Imóvel enviado com sucesso!");
-      this.reset();
+      document.getElementById("mensagem").innerText = "✅ Imóvel enviado com sucesso!";
+      form.reset();
     } else {
-      alert("Erro ao enviar. Verifique os dados.");
+      const text = await response.text();
+      document.getElementById("mensagem").innerText = "⚠️ Erro ao enviar: " + text;
     }
   } catch (error) {
-    alert("Erro de conexão com o servidor.");
     console.error(error);
+    document.getElementById("mensagem").innerText = "❌ Erro de conexão com o servidor.";
   }
 });
 </script>
+
 
 <body>
 
@@ -224,7 +234,7 @@ document.querySelector("#negocie").addEventListener("submit", async function(e) 
 
   <h2>Cadastro de Imóvel</h2>
 
- <form id="negocie">
+ <form id="negocie" enctype="multipart/form-data">
   <input type="text" name="Proprietario" placeholder="Proprietário" required>
   <input type="text" name="Contato" placeholder="Contato" required>
 
@@ -248,10 +258,17 @@ document.querySelector("#negocie").addEventListener("submit", async function(e) 
   <input type="text" name="Condominio" placeholder="Condomínio">
   <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
 
-  <input type="text" name="ImagemUrl" placeholder="Link da imagem (Drive, Imgur, etc)">
+  <!-- Link (opcional) -->
+  <input type="text" name="ImagemUrl" placeholder="Link da imagem (Google Drive, Imgur, etc)">
+
+  <!-- Upload (opcional) -->
+  <input type="file" name="Files" id="files" multiple accept="image/*">
 
   <button type="submit">Enviar</button>
 </form>
+
+<div id="mensagem"></div>
+
 
 
   <section class="cta-banner">
@@ -282,5 +299,6 @@ document.querySelector("#negocie").addEventListener("submit", async function(e) 
 
 </body>
 </html>
+
 
 
