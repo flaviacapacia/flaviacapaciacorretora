@@ -162,6 +162,33 @@
     .footer-credit { margin-top: 1rem; font-weight: bold; }
   </style>
 </head>
+  <script>
+document.querySelector("#negocie").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch("http://localhost:5000/api/imoveis", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      alert("Imóvel enviado com sucesso!");
+      this.reset();
+    } else {
+      alert("Erro ao enviar. Verifique os dados.");
+    }
+  } catch (error) {
+    alert("Erro de conexão com o servidor.");
+    console.error(error);
+  }
+});
+</script>
+
 <body>
 
   <header class="site-header">
@@ -197,38 +224,35 @@
 
   <h2>Cadastro de Imóvel</h2>
 
-  <form id="negocie" target="iframeRetorno" method="POST" enctype="multipart/form-data"
-    action="https://script.google.com/macros/s/SEU_SCRIPT_ID/exec">
+ <form id="negocie">
+  <input type="text" name="Proprietario" placeholder="Proprietário" required>
+  <input type="text" name="Contato" placeholder="Contato" required>
 
-    <input type="text" name="Proprietario" placeholder="Proprietário" required>
-    <input type="text" name="Contato" placeholder="Contato" required>
+  <select name="VendaOuAluguel" required>
+    <option value="">Venda ou Aluguel</option>
+    <option value="Venda">Venda</option>
+    <option value="Aluguel">Aluguel</option>
+  </select>
 
-    <select name="Venda ou Aluguel" required>
-      <option value="">Venda ou Aluguel</option>
-      <option value="Venda">Venda</option>
-      <option value="Aluguel">Aluguel</option>
-    </select>
+  <select name="Tipo" required>
+    <option value="">Tipo</option>
+    <option value="Casa">Casa</option>
+    <option value="Apartamento">Apartamento</option>
+    <option value="Terreno">Terreno</option>
+  </select>
 
-    <select name="Tipo" required>
-      <option value="">Tipo</option>
-      <option value="Casa">Casa</option>
-      <option value="Apartamento">Apartamento</option>
-      <option value="Terreno">Terreno</option>
-    </select>
+  <input type="text" name="Valor" placeholder="Valor">
+  <input type="text" name="ValorCondominio" placeholder="Valor do Condomínio">
+  <input type="text" name="ValorIPTU" placeholder="Valor do IPTU">
+  <input type="text" name="Endereco" placeholder="Endereço">
+  <input type="text" name="Condominio" placeholder="Condomínio">
+  <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
 
-    <input type="text" name="Valor" placeholder="Valor">
-    <input type="text" name="Valor do Condominio" placeholder="Valor do Condomínio">
-    <input type="text" name="Valor do IPTU" placeholder="Valor do IPTU">
-    <input type="text" name="Endereco" placeholder="Endereço">
-    <input type="text" name="Condominio" placeholder="Condomínio">
-    <textarea name="Descricao" placeholder="Descrição do imóvel"></textarea>
+  <input type="text" name="ImagemUrl" placeholder="Link da imagem (Drive, Imgur, etc)">
 
-    <input type="file" name="files" id="files" multiple>
+  <button type="submit">Enviar</button>
+</form>
 
-    <button type="submit">Enviar</button>
-  </form>
-
-  <iframe name="iframeRetorno" style="width:100%; height:250px; border:none; margin-top:1rem;"></iframe>
 
   <section class="cta-banner">
     <h2>Seu imóvel a um clique de você</h2>
@@ -258,4 +282,5 @@
 
 </body>
 </html>
+
 
