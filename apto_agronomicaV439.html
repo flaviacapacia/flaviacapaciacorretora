@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apartamento à venda na Agronômica - Florianópolis | Código V439</title>
+  <h1 class="titulo-dourado-centralizado">
+  Apartamento na Agronômica Florianópolis
+</h1>
+
  
 
   <!-- CSS embutido -->
@@ -15,6 +19,34 @@
       --fonte-padrao: 'Playfair Display', serif;
       --dourado: #b08d57;
     }
+    .titulo-dourado-centralizado {
+  text-align: center;          /* centraliza */
+  color: var(--preto);       /* cor dourada */
+  font-size: 2rem;             /* tamanho maior */
+  margin: 30px 0 20px;         /* espaçamento */
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+.titulo-dourado-centralizado {
+  text-align: center;
+  color: var(--dourado);
+  font-size: 2rem;
+  margin: 30px 0 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  position: relative;
+}
+
+.titulo-dourado-centralizado::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--dourado);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
 
     body {
       background-color: var(--fundo-branco);
@@ -366,6 +398,7 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
