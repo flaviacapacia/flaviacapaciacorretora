@@ -189,22 +189,35 @@
 }
 
 }
+.masonry {
+  column-count: 4;        /* número de colunas no desktop */
+  column-gap: 8px;        /* espaço entre colunas */
+}
 
-.galeria-grid img {
+.masonry img {
   width: 100%;
+  margin-bottom: 8px;     /* espaço entre imagens */
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;
 }
 
+/* Responsivo */
+@media (max-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
 }
 
-.galeria-grid img:hover {
-  transform: scale(1.05);
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
 }
-    
-@media (min-width: 1024px) {
-  .galeria-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+@media (max-width: 480px) {
+  .masonry {
+    column-count: 1;
   }
 }
 
@@ -301,7 +314,7 @@
   </section>
 <section class="galeria">
   <h2 class="destaque">Fotos do Imóvel</h2>
-  <div class="galeria-grid">
+  <div class="masonry">
     <img src="../img/apto_agronomicaV439 (1).jpg" alt="Foto 1" />
     <img src="../img/apto_agronomicaV439 (2).jpg" alt="Foto 2" />
     <img src="../img/apto_agronomicaV439 (3).jpg" alt="Foto 3" />
@@ -398,6 +411,7 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
