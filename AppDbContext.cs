@@ -1,2 +1,3 @@
-public DbSet<Imoveis> Imoveis { get; set; }
+public DbSet<Imoveil> Imoveis { get; set; }
+
 
