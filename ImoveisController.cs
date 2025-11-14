@@ -2,7 +2,7 @@
 [Route("api/imoveis")]
 public async Task<IActionResult> CadastrarImovel([FromForm] ImovelDto dto)
 {
-    var imovel = new Codigos_imoveisFC
+    var imovel = new Imoveis
     {
         Proprietario = dto.Proprietario,
         Contato = dto.Contato,
@@ -18,7 +18,7 @@ public async Task<IActionResult> CadastrarImovel([FromForm] ImovelDto dto)
         DataCadastro = DateTime.Now
     };
 
-    _context.Codigos_imoveisFC.Add(imovel);
+    _context.Imoveis.Add(imovel);
     await _context.SaveChangesAsync();
 
     return Ok("✅ Imóvel cadastrado com sucesso!");
