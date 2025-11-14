@@ -5,15 +5,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apartamento à venda na Agronômica - Florianópolis | Código V439</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css" />
   <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
+
+  <!-- CSS embutido -->
+  <style>
+    :root {
+      --fundo-branco: #ffffff;
+      --texto-bronze: #4B3A2F;
+      --bronze-claro: #7A5C45;
+      --fonte-padrao: 'Playfair Display', serif;
+      --dourado: #b08d57;
+    }
+
+    body {
+      background-color: var(--fundo-branco);
+      color: var(--texto-bronze);
+      font-family: var(--fonte-padrao);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    .site-header {
+      background-color: var(--fundo-branco);
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .logo-area img {
+      max-width: 170px;
+      height: auto;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--texto-bronze);
+      font-weight: bold;
+    }
+
+    /* Ícones sociais */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .social-icons .icon {
+      width: 28px; /* tamanho ajustado */
+      height: 28px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons .icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* Hero */
+    .hero img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    /* Conteúdo do imóvel */
+    .imovel-page {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .imovel-page h1 {
+      color: var(--dourado);
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .preco {
+      font-size: 1.4rem;
+      color: var(--bronze-claro);
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .imovel-page img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .imovel-page section {
+      margin: 25px 0;
+      padding: 15px;
+      background: #fdfdfd;
+      border-left: 4px solid var(--dourado);
+      border-radius: 6px;
+    }
+
+    .imovel-page h2 {
+      color: var(--dourado);
+      margin-bottom: 10px;
+    }
+
+    .imovel-page ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .imovel-page li {
+      margin: 8px 0;
+      padding: 8px;
+      background: #f9f9f9;
+      border-radius: 4px;
+    }
+
+    .info-extra {
+      text-align: center;
+      font-weight: bold;
+      color: var(--texto-bronze);
+    }
+
+    /* Botão WhatsApp */
+    .whatsapp-btn {
+      display: block;
+      background: var(--dourado);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .whatsapp-btn:hover {
+      background: var(--bronze-claro);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--fundo-branco);
+      color: var(--texto-bronze);
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-logo img {
+      max-width: 170px;
+      height: auto;
+    }
+
+    .footer-contact a {
+      color: var(--texto-bronze);
+      text-decoration: none;
+    }
+
+    .social-list ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header -->
 <header class="site-header">
   <div class="logo-area">
-    <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo" />
+    <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" />
   </div>
 
   <nav class="main-nav">
@@ -42,12 +221,10 @@
   </div>
 </header>
 
-<!-- Hero -->
 <section id="hero" class="hero">
-  <img src="img/apto_agronomica.jpg" alt="Apartamento na Agronômica Florianópolis" />
+  <img src="../img/apto_agronomica.jpg" alt="Apartamento na Agronômica Florianópolis" />
 </section>
 
-<!-- Conteúdo do imóvel -->
 <main class="imovel-page">
   <h1>Oportunidade exclusiva em Florianópolis – Bairro Agronômica</h1>
   <p class="preco">Valor de venda: R$ 785.000,00</p>
@@ -61,9 +238,9 @@
     <ul>
       <li>Ocupação anual superior a 90% via Airbnb</li>
       <li>Localização estratégica: próximo à Beira Mar Norte, OAB, Justiça Federal e MP</li>
-      <li>Dois quartos (uma suíte) + sofá cama retrátil, acomodando até 6 hóspedes</li>
+      <li>Dois quartos (uma suíte) + sofá cama retrátil</li>
       <li>Vista parcial para o mar da Baía Norte</li>
-      <li>Estrutura moderna: ar-condicionado, Smart TV, Alexa, cozinha equipada, lavanderia completa</li>
+       <li>Estrutura moderna: ar-condicionado, Smart TV, Alexa, cozinha equipada, lavanderia completa</li>
       <li>Vaga de garagem coberta + rotativa para visitantes</li>
       <li>Prédio com portaria 24h e monitoramento</li>
     </ul>
@@ -118,3 +295,4 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
