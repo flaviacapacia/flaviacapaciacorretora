@@ -107,17 +107,13 @@ body {
 /* Hero */
 .hero {
   width: 100%;
-  max-height: 280px; /* altura menor */
   overflow: hidden;
-  background: black; /* fundo preto para logo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .hero img {
-  max-height: 200px; /* logo menor */
-  width: auto;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   display: block;
 }
 
@@ -128,6 +124,7 @@ body {
   margin-top: 12px;
   font-weight: bold;
 }
+
 
 /* Conteúdo do imóvel */
 .imovel-page {
@@ -366,13 +363,9 @@ body {
 </header>
 
 <section id="hero" class="hero">
-  <!-- Foto principal do imóvel -->
   <img src="../img/apto_agronomicaV439 (16).jpg" alt="Apartamento na Agronômica Florianópolis" />
-
-  <!-- Legenda abaixo da foto -->
   <p class="hero-legenda">Apartamento na Agronômica Florianópolis | Código V439</p>
 </section>
-
 
 
 <main class="imovel-page">
@@ -484,6 +477,7 @@ body {
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
