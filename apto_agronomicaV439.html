@@ -6,149 +6,231 @@
   <title>Apartamento à venda na Agronômica - Florianópolis | Código V439</title>
 
   <!-- CSS embutido -->
-  <style>
-    :root {
-      --fundo-branco: #ffffff;
-      --texto-bronze: #4B3A2F;
-      --bronze-claro: #7A5C45;
-      --fonte-padrao: 'Playfair Display', serif;
-      --dourado: #b08d57;
-    }
+<!-- CSS embutido -->
+<style>
+  :root {
+    --fundo-branco: #ffffff;
+    --texto-bronze: #4B3A2F;
+    --bronze-claro: #7A5C45;
+    --fonte-padrao: 'Playfair Display', serif;
+    --dourado: #b08d57;
+  }
 
-    body {
-      background-color: var(--fundo-branco);
-      color: var(--texto-bronze);
-      font-family: var(--fonte-padrao);
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
+  body {
+    background-color: var(--fundo-branco);
+    color: var(--texto-bronze);
+    font-family: var(--fonte-padrao);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
 
-    /* Header */
-    .site-header {
-      background-color: var(--fundo-branco);
-      padding: 20px;
-      border-bottom: 1px solid #ddd;
-      text-align: center;
-    }
+  /* Título principal */
+  .titulo-dourado-centralizado {
+    text-align: center;
+    color: var(--dourado);
+    font-size: 2rem;
+    margin: 30px 0 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    position: relative;
+  }
 
-    .logo-area img {
-      max-width: 170px;
-      height: auto;
-    }
+  .titulo-dourado-centralizado::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--dourado);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
 
-    .main-nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 10px;
-      padding: 0;
-    }
+  /* Header */
+  .site-header {
+    background-color: var(--fundo-branco);
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
 
-    .main-nav a {
-      text-decoration: none;
-      color: var(--texto-bronze);
-      font-weight: bold;
-    }
+  .logo-area img {
+    max-width: 170px;
+    height: auto;
+  }
 
-    /* Ícones sociais */
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 0;
+  }
 
-    .social-icons .icon {
-      width: 28px;
-      height: 28px;
-      transition: transform 0.3s ease;
-    }
+  .main-nav a {
+    text-decoration: none;
+    color: var(--texto-bronze);
+    font-weight: bold;
+  }
 
-    .social-icons .icon:hover {
-      transform: scale(1.1);
-    }
+  /* Ícones sociais */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      width: 100%;
-      max-height: 400px;
-      overflow: hidden;
-    }
+  .social-icons .icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+  }
 
-    .hero img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+  .social-icons .icon:hover {
+    transform: scale(1.1);
+  }
 
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: var(--texto-bronze); /* bronze escuro */
-      background: rgba(255,255,255,0.7);
-      padding: 10px 20px;
-      border-radius: 6px;
-    }
+  /* Conteúdo do imóvel */
+  .imovel-page {
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
 
-    .hero-text h1 {
-      font-size: 2rem;
-      font-family: 'Playfair Display', serif;
-      font-weight: bold;
-      margin: 0;
-    }
+  .imovel-page h1 {
+    color: var(--dourado);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-    /* Conteúdo do imóvel */
-    .imovel-page {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+  .preco {
+    font-size: 1.4rem;
+    color: var(--bronze-claro);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-    .imovel-page h1 {
-      color: var(--dourado);
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 15px;
-    }
+  /* Info extra discreta */
+  .info-extra {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666; /* cinza discreto */
+    margin-bottom: 20px;
+  }
 
-    .preco {
-      font-size: 1.4rem;
-      color: var(--bronze-claro);
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+  .imovel-page section {
+    margin: 25px 0;
+    padding: 15px;
+    background: #fdfdfd;
+    border-left: 4px solid var(--dourado);
+    border-radius: 6px;
+  }
 
-    .descricao {
-      margin: 25px 0;
-      padding: 15px;
-      background: #fdfdfd;
-      border-left: 4px solid var(--dourado);
-      border-radius: 6px;
-    }
+  .imovel-page h2 {
+    color: var(--dourado);
+    margin-bottom: 10px;
+  }
 
-    .descricao h2 {
-      color: var(--dourado);
-      margin-bottom: 10px;
-    }
+  .imovel-page ul {
+    list-style: none;
+    padding: 0;
+  }
 
-    /* Info extra discreta */
-    .info-extra {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #666; /* cinza discreto */
-      font-weight: normal;
-    }
-  </style>
+  .imovel-page li {
+    margin: 8px 0;
+    padding: 8px;
+    background: #f9f9f9;
+    border-radius: 4px;
+  }
+
+  /* Galeria estilo Pinterest */
+  .galeria {
+    margin: 30px 0;
+  }
+
+  .galeria h2 {
+    text-align: center;
+    color: var(--dourado);
+    margin-bottom: 20px;
+  }
+
+  .masonry {
+    column-count: 4;
+    column-gap: 8px;
+  }
+
+  .masonry img {
+    width: 100%;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: block;
+  }
+
+  @media (max-width: 1024px) {
+    .masonry { column-count: 3; }
+  }
+
+  @media (max-width: 768px) {
+    .masonry { column-count: 2; }
+  }
+
+  @media (max-width: 480px) {
+    .masonry { column-count: 1; }
+  }
+
+  /* Botão WhatsApp */
+  .whatsapp-btn {
+    display: block;
+    background: var(--dourado);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .whatsapp-btn:hover {
+    background: var(--bronze-claro);
+  }
+
+  /* Footer */
+  .site-footer {
+    background-color: var(--fundo-branco);
+    color: var(--texto-bronze);
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+  }
+
+  .footer-logo img {
+    max-width: 170px;
+    height: auto;
+  }
+
+  .footer-contact a {
+    color: var(--texto-bronze);
+    text-decoration: none;
+  }
+
+  .social-list ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin-top: 10px;
+  }
+</style>
+
 </head>
 <body>
 
@@ -192,16 +274,11 @@
 
 <main class="imovel-page">
   <h1>Oportunidade exclusiva em Florianópolis – Bairro Agronômica</h1>
-  <p class="preco">Valor de venda: R$ 785.000,00</p>
+<p class="preco">Valor de venda: R$ 785.000,00</p>
+<div class="info-extra">
+  IPTU: R$ 1.200,00 | Condomínio: R$ 950,00 | Código: V439
+</div>
 
-  <section class="descricao">
-    <h2>Descrição</h2>
-    <p>Ativo imobiliário de alta performance, recentemente reformado e entregue porteira fechada. Localizado em uma das regiões que mais se valorizaram nos últimos cinco anos, combina demanda constante de locação por temporada com conveniência e infraestrutura completas.</p>
-  </section>
-
-<main class="imovel-page">
-  <h1>Oportunidade exclusiva em Florianópolis – Bairro Agronômica</h1>
-  <p class="preco">Valor de venda: R$ 785.000,00</p>
 
   <section class="descricao">
     <p>Ativo imobiliário de alta performance, recentemente reformado e entregue porteira fechada. Localizado em uma das regiões que mais se valorizaram nos últimos cinco anos, combina demanda constante de locação por temporada com conveniência e infraestrutura completas.</p>
@@ -236,10 +313,7 @@
     <img src="../img/apto_agronomicaV439 (25).jpg" alt="Foto 25" />
     <img src="../img/apto_agronomicaV439 (26).jpg" alt="Foto 26" />
     <img src="../img/apto_agronomicaV439 (27).jpg" alt="Foto 27" />
-    <img src="../img/apto_agronomicaV439 (28).jpg" alt="Foto 28" />
-    <img src="../img/apto_agronomicaV439 (29).jpg" alt="Foto 29" />
-    <img src="../img/apto_agronomicaV439 (31).jpg" alt="Foto 31" />
-  </div>
+     </div>
 </section>
 
 
@@ -266,21 +340,9 @@
     </ul>
   </section>
 
-  <!-- Info extra discreta -->
-  <div class="info-extra">
-    IPTU: R$ 1.200,00 | Condomínio: R$ 950,00 | Código: V439
-  </div>
 </main>
-
-
-  <!-- Info extra discreta -->
-  <div class="info-extra">
-    IPTU: R$ 1.200,00 | Condomínio: R$ 950,00 | Código: V439
-  </div>
-</main>
-
-
-  <!-- Botão WhatsApp -->
+ 
+ <!-- Botão WhatsApp -->
   <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20tenho%20interesse%20no%20imóvel%20V439%20na%20Agronômica"
      class="whatsapp-btn" target="_blank">
      💬 Falar no WhatsApp
@@ -313,6 +375,7 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
