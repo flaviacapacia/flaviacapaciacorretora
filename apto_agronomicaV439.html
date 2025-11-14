@@ -152,19 +152,28 @@
 
 .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px; /* menos espaço entre imagens */
+}
+
 }
 
 .galeria-grid img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
 }
 
 .galeria-grid img:hover {
   transform: scale(1.05);
+}
+    
+@media (min-width: 1024px) {
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
 
 
@@ -290,7 +299,6 @@
     <img src="../img/apto_agronomicaV439 (27).jpg" alt="Foto 27" />
     <img src="../img/apto_agronomicaV439 (28).jpg" alt="Foto 28" />
     <img src="../img/apto_agronomicaV439 (29).jpg" alt="Foto 29" />
-    <img src="../img/apto_agronomicaV439 (30).jpg" alt="Foto 30" />
     <img src="../img/apto_agronomicaV439 (31).jpg" alt="Foto 31" />
   </div>
 </section>
@@ -358,6 +366,7 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
