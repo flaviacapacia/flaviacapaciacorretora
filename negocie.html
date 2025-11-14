@@ -245,8 +245,8 @@ document.querySelector("#negocie").addEventListener("submit", async function (e)
   </header>
 
   <h2>Cadastro de Imóvel</h2>
+<form id="negocie" action="/api/imoveis" method="post" enctype="multipart/form-data">
 
- <form id="negocie" enctype="multipart/form-data">
   <input type="text" name="Proprietario" placeholder="Proprietário" required>
   <input type="text" name="Contato" placeholder="Contato" required>
 
@@ -311,6 +311,7 @@ document.querySelector("#negocie").addEventListener("submit", async function (e)
 
 </body>
 </html>
+
 
 
 
