@@ -1,17 +1,17 @@
-public class Imovel
+public class Imoveis
 {
     public int Id { get; set; }
-    public string Codigo { get; set; }
     public string Proprietario { get; set; }
     public string Contato { get; set; }
     public string VendaOuAluguel { get; set; }
     public string Tipo { get; set; }
-    public string Valor { get; set; }
-    public string ValorCondominio { get; set; }
-    public string ValorIPTU { get; set; }
+    public decimal? Valor { get; set; }
+    public decimal? ValorCondominio { get; set; }
+    public decimal? ValorIPTU { get; set; }
     public string Endereco { get; set; }
     public string Condominio { get; set; }
     public string Descricao { get; set; }
     public string ImagemUrl { get; set; }
     public DateTime DataCadastro { get; set; }
 }
+
