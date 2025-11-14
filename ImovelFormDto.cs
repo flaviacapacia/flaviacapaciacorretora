@@ -1,5 +1,6 @@
-public class ImovelDto
+public class Imoveis
 {
+    public int Id { get; set; }
     public string Proprietario { get; set; }
     public string Contato { get; set; }
     public string VendaOuAluguel { get; set; }
@@ -11,4 +12,5 @@ public class ImovelDto
     public string Condominio { get; set; }
     public string Descricao { get; set; }
     public string ImagemUrl { get; set; }
+    public DateTime DataCadastro { get; set; }
 }
