@@ -184,6 +184,59 @@
   @media (max-width: 480px) {
     .masonry { column-count: 1; }
   }
+.captacao {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fdfdfd;
+  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 700px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.captacao h2 {
+  color: var(--dourado);
+  margin-bottom: 10px;
+}
+
+.captacao p {
+  margin-bottom: 20px;
+  color: var(--texto-bronze);
+}
+
+.form-captacao {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-captacao input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: var(--fonte-padrao);
+}
+
+.form-captacao button {
+  background: var(--dourado);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-captacao button:hover {
+  background: var(--bronze-claro);
+}
+
+.prova-social {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 15px;
+}
 
   /* Botão WhatsApp */
   .whatsapp-btn {
@@ -266,14 +319,14 @@
 </header>
 
 <section id="hero" class="hero">
-  <img src="../img/apto_agronomica.jpg" alt="Apartamento na Agronômica Florianópolis" />
+  <img src="../img/apto_agronomicaV439 (2).jpg" alt="Apartamento na Agronômica Florianópolis" />
   <div class="hero-text">
     <h1>Apartamento na Agronômica Florianópolis</h1>
   </div>
 </section>
 
 <main class="imovel-page">
-  <h1>Oportunidade exclusiva em Florianópolis – Bairro Agronômica</h1>
+  <h1>Oportunidade exclusiva em Florianópolis </h1>
 <p class="preco">Valor de venda: R$ 785.000,00</p>
 <div class="info-extra">
   IPTU: R$ 1.200,00 | Condomínio: R$ 950,00 | Código: V439
@@ -304,16 +357,31 @@
     <img src="../img/apto_agronomicaV439 (16).jpg" alt="Foto 16" />
     <img src="../img/apto_agronomicaV439 (17).jpg" alt="Foto 17" />
     <img src="../img/apto_agronomicaV439 (18).jpg" alt="Foto 18" />
-    <img src="../img/apto_agronomicaV439 (19).jpg" alt="Foto 19" />
-    <img src="../img/apto_agronomicaV439 (20).jpg" alt="Foto 20" />
-    <img src="../img/apto_agronomicaV439 (21).jpg" alt="Foto 21" />
-    <img src="../img/apto_agronomicaV439 (22).jpg" alt="Foto 22" />
-    <img src="../img/apto_agronomicaV439 (23).jpg" alt="Foto 23" />
-    <img src="../img/apto_agronomicaV439 (24).jpg" alt="Foto 24" />
-    <img src="../img/apto_agronomicaV439 (25).jpg" alt="Foto 25" />
-    <img src="../img/apto_agronomicaV439 (26).jpg" alt="Foto 26" />
-    <img src="../img/apto_agronomicaV439 (27).jpg" alt="Foto 27" />
      </div>
+</section>
+<section class="captacao">
+  <h2>Quer saber mais sobre este imóvel?</h2>
+  <p>Preencha seus dados ou fale direto comigo no WhatsApp. Respondo rápido!</p>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20tenho%20interesse%20no%20imóvel%20V439%20na%20Agronômica" 
+     class="whatsapp-btn">
+    📲 Falar no WhatsApp
+  </a>
+
+  <!-- Formulário rápido -->
+  <form class="form-captacao">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="tel" name="telefone" placeholder="Seu telefone" required>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <button type="submit">Quero mais informações</button>
+  </form>
+
+  <!-- Prova social -->
+  <div class="prova-social">
+    <p>✅ Mais de 90% de ocupação anual via Airbnb</p>
+    <p>✅ Atendimento personalizado e clientes satisfeitos</p>
+  </div>
 </section>
 
 
@@ -375,6 +443,7 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
