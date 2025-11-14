@@ -5,107 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apartamento à venda na Agronômica - Florianópolis | Código V439</title>
    <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
-</head> 
- 
- 
-<!-- CSS embutido -->
 <style>
   :root {
-    --fundo-branco: #ffffff;
-    --texto-bronze: #4B3A2F;
-    --bronze-claro: #7A5C45;
-    --fonte-padrao: 'Playfair Display', serif;
-    --dourado: #b08d57;
-  }
+  --fundo-branco: #ffffff;
+  --texto-bronze: #4B3A2F;
+  --bronze-claro: #7A5C45;
+  --fonte-padrao: 'Playfair Display', serif;
+  --dourado: #b08d57;
+}
 
-  body {
-    background-color: var(--fundo-branco);
-    color: var(--texto-bronze);
-    font-family: var(--fonte-padrao);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
+body {
+  background-color: var(--fundo-branco);
+  color: var(--texto-bronze);
+  font-family: var(--fonte-padrao);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Título principal */
-  .titulo-dourado-centralizado {
-    text-align: center;
-    color: var(--dourado);
-    font-size: 2rem;
-    margin: 30px 0 20px;
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    position: relative;
-  }
+/* Título principal */
+.titulo-dourado-centralizado {
+  text-align: center;
+  color: var(--dourado);
+  font-size: 2rem;
+  margin: 30px 0 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  position: relative;
+}
 
-  .titulo-dourado-centralizado::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--dourado);
-    margin: 10px auto 0;
-    border-radius: 2px;
-  }
+.titulo-dourado-centralizado::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--dourado);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
 
-  /* Header */
-  .site-header {
-    background-color: var(--fundo-branco);
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-  }
+/* Header */
+.site-header {
+  background-color: var(--fundo-branco);
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
 
-  .logo-area img {
-    max-width: 170px;
-    height: auto;
-  }
+.logo-area img {
+  max-width: 170px;
+  height: auto;
+}
 
-  .main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    padding: 0;
-  }
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 0;
+}
 
-  .main-nav a {
-    text-decoration: none;
-    color: var(--texto-bronze);
-    font-weight: bold;
-  }
+.main-nav a {
+  text-decoration: none;
+  color: var(--texto-bronze);
+  font-weight: bold;
+}
 
-  /* Ícones sociais */
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
 
-  .social-icons .icon {
-    width: 28px;
-    height: 28px;
-    transition: transform 0.3s ease;
-  }
+.social-icons .icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
 
-  .social-icons .icon:hover {
-    transform: scale(1.1);
-  }
+.social-icons .icon:hover {
+  transform: scale(1.1);
+}
 
+/* Hero */
 .hero {
   width: 100%;
-  max-height: 300px; /* altura menor e proporcional */
+  max-height: 280px; /* altura menor */
   overflow: hidden;
+  background: black; /* fundo preto para logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  max-height: 200px; /* logo menor */
+  width: auto;
   display: block;
 }
 
@@ -113,99 +113,102 @@
   text-align: center;
   font-size: 1.2rem;
   color: var(--texto-bronze);
-  margin-top: 8px;
+  margin-top: 12px;
   font-weight: bold;
 }
-  /* Conteúdo do imóvel */
-  .imovel-page {
-    padding: 30px 20px;
-    max-width: 900px;
-    margin: auto;
-  }
 
-  .imovel-page h1 {
-    color: var(--dourado);
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 15px;
-  }
+/* Conteúdo do imóvel */
+.imovel-page {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: auto;
+}
 
-  .preco {
-    font-size: 1.4rem;
-    color: var(--bronze-claro);
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
-  }
+.imovel-page h1 {
+  color: var(--dourado);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
 
-  /* Info extra discreta */
-  .info-extra {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666; /* cinza discreto */
-    margin-bottom: 20px;
-  }
+.preco {
+  font-size: 1.4rem;
+  color: var(--bronze-claro);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-  .imovel-page section {
-    margin: 25px 0;
-    padding: 15px;
-    background: #fdfdfd;
-    border-left: 4px solid var(--dourado);
-    border-radius: 6px;
-  }
+/* Info extra discreta */
+.info-extra {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
 
-  .imovel-page h2 {
-    color: var(--dourado);
-    margin-bottom: 10px;
-  }
+.imovel-page section {
+  margin: 25px 0;
+  padding: 15px;
+  background: #fdfdfd;
+  border-left: 4px solid var(--dourado);
+  border-radius: 6px;
+}
 
-  .imovel-page ul {
-    list-style: none;
-    padding: 0;
-  }
+.imovel-page h2 {
+  color: var(--dourado);
+  margin-bottom: 10px;
+}
 
-  .imovel-page li {
-    margin: 8px 0;
-    padding: 8px;
-    background: #f9f9f9;
-    border-radius: 4px;
-  }
+.imovel-page ul {
+  list-style: none;
+  padding: 0;
+}
 
-  /* Galeria estilo Pinterest */
-  .galeria {
-    margin: 30px 0;
-  }
+.imovel-page li {
+  margin: 8px 0;
+  padding: 8px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
 
-  .galeria h2 {
-    text-align: center;
-    color: var(--dourado);
-    margin-bottom: 20px;
-  }
+/* Galeria estilo Pinterest */
+.galeria {
+  margin: 30px 0;
+}
 
-  .masonry {
-    column-count: 4;
-    column-gap: 8px;
-  }
+.galeria h2 {
+  text-align: center;
+  color: var(--dourado);
+  margin-bottom: 20px;
+}
 
-  .masonry img {
-    width: 100%;
-    margin-bottom: 8px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    display: block;
-  }
+.masonry {
+  column-count: 4;
+  column-gap: 8px;
+}
 
-  @media (max-width: 1024px) {
-    .masonry { column-count: 3; }
-  }
+.masonry img {
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;
+}
 
-  @media (max-width: 768px) {
-    .masonry { column-count: 2; }
-  }
+@media (max-width: 1024px) {
+  .masonry { column-count: 3; }
+}
 
-  @media (max-width: 480px) {
-    .masonry { column-count: 1; }
-  }
+@media (max-width: 768px) {
+  .masonry { column-count: 2; }
+}
+
+@media (max-width: 480px) {
+  .masonry { column-count: 1; }
+}
+
+/* Seção de captação */
 .captacao {
   text-align: center;
   padding: 30px 20px;
@@ -260,70 +263,62 @@
   margin-top: 15px;
 }
 
-  /* Botão WhatsApp */
-  .whatsapp-btn {
-    display: block;
-    background: var(--dourado);
-    color: white;
-    text-align: center;
-    padding: 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-
-  .whatsapp-btn:hover {
-    background: var(--bronze-claro);
-  }
-
-
+/* Call to Action (WhatsApp) */
 .whatsapp-btn {
   display: inline-block;
   background: #25d366;
   color: white;
-  padding: 18px 28px; /* maior que o padrão */
+  padding: 18px 28px;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 1.2rem; /* aumenta fonte */
+  font-size: 1.2rem;
   font-weight: bold;
-  margin: 20px auto;
+  margin: 30px auto;
+  text-align: center;
 }
 
 .whatsapp-btn:hover {
   background: #1ebe5d;
 }
 
-
-  /* Footer */
-  .site-footer {
-    background-color: var(--fundo-branco);
-    color: var(--texto-bronze);
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #ddd;
+/* Desktop ajuste */
+@media (min-width: 1025px) {
+  .whatsapp-btn {
+    display: block;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
+}
 
-  .footer-logo img {
-    max-width: 170px;
-    height: auto;
-  }
+/* Footer */
+.site-footer {
+  background-color: var(--fundo-branco);
+  color: var(--texto-bronze);
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
 
-  .footer-contact a {
-    color: var(--texto-bronze);
-    text-decoration: none;
-  }
+.footer-logo img {
+  max-width: 170px;
+  height: auto;
+}
 
-  .social-list ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 0;
-    margin-top: 10px;
-  }
+.footer-contact a {
+  color: var(--texto-bronze);
+  text-decoration: none;
+}
+
+.social-list ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  margin-top: 10px;
+}
 </style>
-
 </head>
 <body>
 
@@ -473,6 +468,7 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
