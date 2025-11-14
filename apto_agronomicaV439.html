@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apartamento à venda na Agronômica - Florianópolis | Código V439</title>
 
   <!-- CSS embutido -->
   <style>
@@ -13,34 +14,6 @@
       --fonte-padrao: 'Playfair Display', serif;
       --dourado: #b08d57;
     }
-    .titulo-dourado-centralizado {
-  text-align: center;          /* centraliza */
-  color: var(--preto);       /* cor dourada */
-  font-size: 2rem;             /* tamanho maior */
-  margin: 30px 0 20px;         /* espaçamento */
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
-}
-.titulo-dourado-centralizado {
-  text-align: center;
-  color: var(--dourado);
-  font-size: 2rem;
-  margin: 30px 0 20px;
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
-  position: relative;
-}
-
-.titulo-dourado-centralizado::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--dourado);
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
 
     body {
       background-color: var(--fundo-branco);
@@ -90,7 +63,7 @@
     }
 
     .social-icons .icon {
-      width: 28px; /* tamanho ajustado */
+      width: 28px;
       height: 28px;
       transition: transform 0.3s ease;
     }
@@ -100,18 +73,37 @@
     }
 
     /* Hero */
+    .hero {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
     .hero img {
       width: 100%;
       height: auto;
-      max-height: 400px;
       object-fit: cover;
-    }<section id="hero" class="hero">
-  <img src="../img/apto_agronomica.jpg" alt="Apartamento na Agronômica Florianópolis" />
-  <div class="hero-text">
-    <h1>Apartamento na Agronômica Florianópolis</h1>
-  </div>
-</section>
+    }
 
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: var(--texto-bronze); /* bronze escuro */
+      background: rgba(255,255,255,0.7);
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      margin: 0;
+    }
 
     /* Conteúdo do imóvel */
     .imovel-page {
@@ -135,14 +127,7 @@
       margin-bottom: 20px;
     }
 
-    .imovel-page img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 20px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .imovel-page section {
+    .descricao {
       margin: 25px 0;
       padding: 15px;
       background: #fdfdfd;
@@ -150,121 +135,18 @@
       border-radius: 6px;
     }
 
-    .imovel-page h2 {
+    .descricao h2 {
       color: var(--dourado);
       margin-bottom: 10px;
     }
 
-    .imovel-page ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .imovel-page li {
-      margin: 8px 0;
-      padding: 8px;
-      background: #f9f9f9;
-      border-radius: 4px;
-    }
-
+    /* Info extra discreta */
     .info-extra {
-      text-align: center;
-      font-weight: bold;
-      color: var(--texto-bronze);
-    }
-    .galeria {
-  margin: 30px 0;
-}
-
-.galeria h2 {
-  text-align: center;
-  color: var(--dourado);
-  margin-bottom: 20px;
-}
-
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 8px; /* menos espaço entre imagens */
-}
-
-}
-.masonry {
-  column-count: 4;        /* número de colunas no desktop */
-  column-gap: 8px;        /* espaço entre colunas */
-}
-
-.masonry img {
-  width: 100%;
-  margin-bottom: 8px;     /* espaço entre imagens */
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  display: block;
-}
-
-/* Responsivo */
-@media (max-width: 1024px) {
-  .masonry {
-    column-count: 3;
-  }
-}
-
-@media (max-width: 768px) {
-  .masonry {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .masonry {
-    column-count: 1;
-  }
-}
-
-
-    /* Botão WhatsApp */
-    .whatsapp-btn {
-      display: block;
-      background: var(--dourado);
-      color: white;
-      text-align: center;
-      padding: 15px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
       margin-top: 20px;
-    }
-
-    .whatsapp-btn:hover {
-      background: var(--bronze-claro);
-    }
-
-    /* Footer */
-    .site-footer {
-      background-color: var(--fundo-branco);
-      color: var(--texto-bronze);
       text-align: center;
-      padding: 20px;
-      border-top: 1px solid #ddd;
-    }
-
-    .footer-logo img {
-      max-width: 170px;
-      height: auto;
-    }
-
-    .footer-contact a {
-      color: var(--texto-bronze);
-      text-decoration: none;
-    }
-
-    .social-list ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 0;
-      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #666; /* cinza discreto */
+      font-weight: normal;
     }
   </style>
 </head>
@@ -307,6 +189,15 @@
     <h1>Apartamento na Agronômica Florianópolis</h1>
   </div>
 </section>
+
+<main class="imovel-page">
+  <h1>Oportunidade exclusiva em Florianópolis – Bairro Agronômica</h1>
+  <p class="preco">Valor de venda: R$ 785.000,00</p>
+
+  <section class="descricao">
+    <h2>Descrição</h2>
+    <p>Ativo imobiliário de alta performance, recentemente reformado e entregue porteira fechada. Localizado em uma das regiões que mais se valorizaram nos últimos cinco anos, combina demanda constante de locação por temporada com conveniência e infraestrutura completas.</p>
+  </section>
 
 <main class="imovel-page">
   <h1>Oportunidade exclusiva em Florianópolis – Bairro Agronômica</h1>
@@ -375,11 +266,19 @@
     </ul>
   </section>
 
-  <section class="info-extra">
-    <p><strong>IPTU:</strong> R$ 1.200,00</p>
-    <p><strong>Condomínio:</strong> R$ 950,00</p>
-    <p><strong>Código do imóvel:</strong> V439</p>
-  </section>
+  <!-- Info extra discreta -->
+  <div class="info-extra">
+    IPTU: R$ 1.200,00 | Condomínio: R$ 950,00 | Código: V439
+  </div>
+</main>
+
+
+  <!-- Info extra discreta -->
+  <div class="info-extra">
+    IPTU: R$ 1.200,00 | Condomínio: R$ 950,00 | Código: V439
+  </div>
+</main>
+
 
   <!-- Botão WhatsApp -->
   <a href="https://wa.me/5548999600601?text=Olá%20Flávia,%20tenho%20interesse%20no%20imóvel%20V439%20na%20Agronômica"
@@ -414,6 +313,7 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
