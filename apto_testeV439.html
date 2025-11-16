@@ -58,10 +58,36 @@
     }
     .main-nav a { text-decoration: none; color: var(--texto-bronze); font-weight: bold; }
 
-    /* Hero */
+    /* Hero 
     .hero { width: 100%; height: 280px; overflow: hidden; }
     .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
-    .hero-legenda { text-align: center; font-size: 1.2rem; margin: 12px auto; font-weight: bold; }
+    .hero-legenda { text-align: center; font-size: 1.2rem; margin: 12px auto; font-weight: bold; } */
+    
+/* Container do picture */
+picture {
+  display: block;
+  width: 100%;
+  max-width: 1200px; /* limite para não ficar muito esticado */
+  margin: 0 auto;    /* centraliza na página */
+  overflow: hidden;  /* evita que a imagem ultrapasse */
+  border-radius: 12px; /* cantos arredondados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* sombra suave */
+}
+
+/* Imagem dentro do picture */
+picture img {
+  width: 100%;
+  height: auto;       /* mantém proporção */
+  display: block;
+  object-fit: cover;  /* corta se necessário sem distorcer */
+  transition: transform 0.3s ease; /* animação suave */
+}
+
+/* Efeito ao passar o mouse */
+picture img:hover {
+  transform: scale(1.05); /* zoom leve */
+  cursor: pointer;
+}
 
     /* Conteúdo */
     .imovel-page { padding: 30px 20px; max-width: 900px; margin: auto; }
@@ -160,9 +186,11 @@
   </nav>
 </header>
 
-<section id="hero" class="hero">
-  <img src="img/sala1.webpp" alt="Apartamento Mobilhado com 02 Dormitórios" loading="lazy"/>
-</section>
+
+  <source srcset="img/sala1.webp" type="image/webp">
+  <img src="img/sala1.jpg" alt="Apartamento Mobilhado com 02 Dormitórios" loading="lazy"/>
+</picture>
+
 <p class="hero-legenda">Apartamento Mobilhado com 02 Dormitórios</p>
 
 <main class="imovel-page">
@@ -258,6 +286,7 @@ document.querySelectorAll(".swiper-slide img").forEach(img => {
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
