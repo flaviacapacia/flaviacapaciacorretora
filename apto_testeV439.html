@@ -74,16 +74,24 @@
     .swiper-slide img { width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
 
 .swiper {
-  width: 100%;
-  max-width: 900px;
+  max-height: 350px;
   margin: auto;
 }
 
 .swiper-slide img {
   width: 100%;
+  max-height: 350px; /* controla a altura máxima */
+  object-fit: cover; /* mantém proporção sem distorcer */
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+    @media (max-width: 768px) {
+  .swiper-slide img {
+    max-height: 280px;
+  }
+}
+
+
     /* Captacao */
     .captacao { text-align: center; padding: 30px 20px; background: #fdfdfd; border-radius: 8px; margin: 40px auto; max-width: 700px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
     .form-captacao { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
@@ -124,7 +132,7 @@
 </header>
 
 <section id="hero" class="hero">
-  <img src="img/apto-sala.webp" alt="Apartamento Mobilhado com 02 Dormitórios" loading="lazy"/>
+  <img src="img/sala1.webpp" alt="Apartamento Mobilhado com 02 Dormitórios" loading="lazy"/>
 </section>
 <p class="hero-legenda">Apartamento Mobilhado com 02 Dormitórios</p>
 
@@ -143,14 +151,8 @@
   <h2>Fotos do Imóvel</h2>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <!-- Quartos -->
-      <div class="swiper-slide"><img src="img/quarto1.webp" alt="Quarto 1" loading="lazy"></div>
-      <div class="swiper-slide"><img src="img/quarto1 (3).webp" alt="Quarto 1 extra" loading="lazy"></div>
-      <div class="swiper-slide"><img src="img/quarto2.webp" alt="Quarto 2" loading="lazy"></div>
-      <div class="swiper-slide"><img src="img/quarto3.webp" alt="Quarto 3" loading="lazy"></div>
-      <div class="swiper-slide"><img src="img/quarto4.webp" alt="Quarto 4" loading="lazy"></div>
 
-      <!-- Sala de estar -->
+            <!-- Sala de estar -->
       <div class="swiper-slide"><img src="img/sala1.webp" alt="Sala 1" loading="lazy"></div>
       <div class="swiper-slide"><img src="img/sala2.webp" alt="Sala 2" loading="lazy"></div>
       <div class="swiper-slide"><img src="img/sala3.webp" alt="Sala 3" loading="lazy"></div>
@@ -161,10 +163,18 @@
       <div class="swiper-slide"><img src="img/sala8.webp" alt="Sala 8" loading="lazy"></div>
       <div class="swiper-slide"><img src="img/sala9.webp" alt="Sala 9" loading="lazy"></div>
       <div class="swiper-slide"><img src="img/sala10.webp" alt="Sala 10" loading="lazy"></div>
-
-      <!-- Sala de jantar -->
+  <!-- Sala de jantar -->
       <div class="swiper-slide"><img src="img/salajantar.webp" alt="Sala de jantar" loading="lazy"></div>
     </div>
+      <!-- Quartos -->
+      <div class="swiper-slide"><img src="img/quarto1.webp" alt="Quarto 1" loading="lazy"></div>
+      <div class="swiper-slide"><img src="img/quarto1 (3).webp" alt="Quarto 1 extra" loading="lazy"></div>
+      <div class="swiper-slide"><img src="img/quarto2.webp" alt="Quarto 2" loading="lazy"></div>
+      <div class="swiper-slide"><img src="img/quarto3.webp" alt="Quarto 3" loading="lazy"></div>
+      <div class="swiper-slide"><img src="img/quarto4.webp" alt="Quarto 4" loading="lazy"></div>
+
+
+    
 
     <!-- Botões de navegação -->
     <div class="swiper-button-next"></div>
@@ -219,6 +229,7 @@
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
