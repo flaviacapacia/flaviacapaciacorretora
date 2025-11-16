@@ -116,11 +116,10 @@ picture {
   border-radius: 12px; /* cantos arredondados */
   box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* sombra suave */
 }
-/* Grid de fotos */
 .grid-fotos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas → total 6 fotos */
-  gap: 15px; /* separação entre fotos */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
   margin: 20px 0;
 }
 .grid-fotos img {
@@ -131,6 +130,26 @@ picture {
 }
 .grid-fotos img:hover {
   transform: scale(1.05);
+}
+
+/* Botão faixa */
+.faixa-botao {
+  text-align: center;
+  margin: 30px 0;
+}
+.btn-veja-todas {
+  background: linear-gradient(90deg, #b87333, #8b5e3c);
+  color: #fff;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.btn-veja-todas:hover {
+  background: linear-gradient(90deg, #8b5e3c, #b87333);
 }
 
 /* Lightbox */
@@ -389,11 +408,7 @@ picture img:hover {
 </header>
 
 
-  <source srcset="img/sala1.webp" type="image/webp">
-  <img src="img/sala1..webp" alt="Apartamento Mobilhado com 02 Dormitórios" loading="lazy"/>
-</picture>
-
-<main class="imovel-page">
+ <main class="imovel-page">
   <h1>Oportunidade exclusiva em Florianópolis – Agronômica</h1>
   <p class="preco">Valor de venda: R$ 785.000,00</p>
   <div class="info-extra">Código: V439 | IPTU: R$ 1.200,00 | Condomínio: R$ 950,00</div>
@@ -405,21 +420,25 @@ picture img:hover {
 
 <section class="galeria-grid">
   <h2>Fotos do Imóvel</h2>
-  <div class="grid-fotos">
-    <img src="img/sala1.webp" alt="Sala 1" loading="lazy"/>
-    <img src="img/sala2.webp" alt="Sala 2" loading="lazy"/>
-    <img src="img/sala3.webp" alt="Sala 3" loading="lazy"/>
-    <img src="img/sala4.webp" alt="Sala 4" loading="lazy"/>
-    <img src="img/sala5.webp" alt="Sala 5" loading="lazy"/>
-    <img src="img/sala6.webp" alt="Sala 6" loading="lazy"/>
 
-  <!-- Botão veja todas as fotos  -->
-     <img src="img/salajantar.webp" alt="Sala 1" loading="lazy"/>
-    <img src="img/cozinha1.webp" alt="Sala 2" loading="lazy"/>
-    <img src="img/quarto1.webp" alt="Sala 3" loading="lazy"/>
-    <img src="img/quarto24.webp" alt="Sala 4" loading="lazy"/>
-    <img src="img/quarto3.webp" alt="Sala 5" loading="lazy"/>
-    <img src="img/vista.webp" alt="Sala 6" loading="lazy"/>
+  <!-- Primeiras fotos (visíveis) -->
+  <div class="grid-fotos">
+    <img src="img/sala1.webp" alt="Sala de estar ampla" loading="lazy"/>
+    <img src="img/sala2.webp" alt="Sala de estar decorada" loading="lazy"/>
+    <img src="img/sala3.webp" alt="Sala com iluminação natural" loading="lazy"/>
+    <img src="img/sala4.webp" alt="Sala de TV aconchegante" loading="lazy"/>
+    <img src="img/sala5.webp" alt="Sala integrada com jantar" loading="lazy"/>
+    <img src="img/sala6.webp" alt="Sala moderna com móveis planejados" loading="lazy"/>
+  </div>
+
+  <!-- Fotos extras (escondidas inicialmente) -->
+  <div class="grid-fotos fotos-extras" style="display:none;">
+    <img src="img/salajantar.webp" alt="Sala de jantar elegante" loading="lazy"/>
+    <img src="img/cozinha1.webp" alt="Cozinha planejada" loading="lazy"/>
+    <img src="img/quarto1.webp" alt="Quarto principal com suíte" loading="lazy"/>
+    <img src="img/quarto24.webp" alt="Segundo quarto decorado" loading="lazy"/>
+    <img src="img/quarto3.webp" alt="Quarto adicional para hóspedes" loading="lazy"/>
+    <img src="img/vista.webp" alt="Vista panorâmica da sacada" loading="lazy"/>
   </div>
 
   <!-- Botão faixa -->
@@ -428,6 +447,7 @@ picture img:hover {
   </div>
 </section>
 
+ 
 <!-- Formulário de contato -->
 <section class="form-contato">
   <h2>Agende uma visita</h2>
@@ -512,6 +532,7 @@ document.querySelectorAll(".grid-fotos img").forEach(img => {
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
