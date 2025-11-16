@@ -58,10 +58,11 @@
     }
     .main-nav a { text-decoration: none; color: var(--texto-bronze); font-weight: bold; }
 
-    /* Hero 
+    
     .hero { width: 100%; height: 280px; overflow: hidden; }
     .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
-    .hero-legenda { text-align: center; font-size: 1.2rem; margin: 12px auto; font-weight: bold; } 
+    .hero-legenda { text-align: center; font-size: 1.2rem; margin: 12px auto; font-weight: bold; 
+    }
     
 /* Ícones sociais */
 .social-icons {
@@ -85,25 +86,17 @@
 /* Hero */
 .hero {
   position: relative;
-  height: 80vh; /* altura controlada */
+  height: 60vh; /* menor altura */
   overflow: hidden;
 }
 
 .hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* corta sem distorcer */
-  object-position: center bottom; /* ajusta foco: ponte + pôr do sol */
+  object-fit: cover;        /* corta sem distorcer */
+  object-position: center top; /* foca no topo da ponte */
 }
 
-.hero-text {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  text-align: center;
-}
 
 /* Container do picture */
 picture {
@@ -283,47 +276,29 @@ picture img:hover {
   border-top: 1px solid #ddd;
 }
 
+.site-footer {
+  background: #fff;
+  padding: 50px 40px;
+  border-top: 1px solid #ddd;
+}
+
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around; /* centraliza melhor */
   align-items: flex-start;
   max-width: 1400px;
   margin: 0 auto;
   flex-wrap: wrap;
+  text-align: center; /* centraliza logo */
 }
 
 .footer-logo img {
   max-width: 220px;
+  margin-bottom: 20px;
 }
 
-.footer-contact {
-  margin-left: 60px; /* empurra contato mais à direita */
-}
-
-.footer-contact h3 {
-  color: var(--dourado);
-  margin-bottom: 10px;
-}
-
-.footer-contact p,
-.footer-contact a {
-  color: #333;
-  text-decoration: none;
-  font-size: 16px;
+.footer-contact p {
   margin: 6px 0;
-}
-
-.footer-contact a:hover {
-  color: var(--dourado);
-}
-
-.footer-social {
-  margin-left: 60px;
-}
-
-.footer-social h3 {
-  color: var(--dourado);
-  margin-bottom: 10px;
 }
 
 .footer-social ul {
@@ -333,15 +308,6 @@ picture img:hover {
 
 .footer-social li {
   margin: 6px 0;
-}
-
-.footer-social a {
-  color: #333;
-  text-decoration: none;
-}
-
-.footer-social a:hover {
-  color: var(--dourado);
 }
 
 .footer-credit {
@@ -506,11 +472,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- Footer -->
 <footer class="site-footer">
-<!-- Footer -->
-<footer class="site-footer" id="contato">
   <div class="footer-container">
-    
-    <!-- Logo com link -->
+    <!-- Logo centralizada -->
     <div class="footer-logo">
       <a href="index.html">
         <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:220,h:220,mx" 
@@ -523,17 +486,17 @@ document.addEventListener("DOMContentLoaded", () => {
       <h3>Contato</h3>
       <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
       <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <p>Florianópolis • Palhoça • São José</p>
+      <p>Florianópolis • Palhoça <br> São José</p>
     </div>
 
     <!-- Redes sociais -->
     <div class="footer-social">
       <h3>Redes Sociais</h3>
       <ul>
-        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
-        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
-        <li><a href="https://youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+        <li><a href="https://facebook.com/flaviacapaciacorretora">Facebook</a></li>
+        <li><a href="https://instagram.com/flaviacapaciacorretora">Instagram</a></li>
+        <li><a href="https://linkedin.com/flaviacapaciacorretora">LinkedIn</a></li>
+        <li><a href="https://youtube.com/@flaviacapaciacorretora">YouTube</a></li>
       </ul>
     </div>
   </div>
@@ -548,6 +511,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
