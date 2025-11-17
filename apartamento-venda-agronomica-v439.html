@@ -467,16 +467,59 @@ picture img:hover {
 </div>
 
 <!-- Formulário de contato -->
-<section class="form-contato">
-  <h2>Agende uma visita</h2>
-  <form>
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu e-mail" required>
-    <input type="tel" name="telefone" placeholder="Seu telefone" required>
-    <textarea name="mensagem" placeholder="Mensagem"></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
+<form id="contatoForm">
+  <div class="field">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required>
+  </div>
+
+  <div class="field">
+    <label for="telefone">Telefone</label>
+    <input type="tel" name="telefone" id="telefone" required>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+  </div>
+
+  <div class="field">
+    <label for="mensagem">Mensagem</label>
+    <textarea name="mensagem" id="mensagem"></textarea>
+  </div>
+
+  <input type="submit" id="button" value="Enviar Email">
+</form>
+<!-- SDK do EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  // Inicializa com sua chave pública
+  emailjs.init("EkOcMAMTiFekZj6mJ");
+
+  // Captura o envio do formulário
+  const form = document.getElementById("contatoForm");
+  const button = document.getElementById("button");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    button.value = "Enviando...";
+
+    emailjs.sendForm("service_m5n014j", "template_r19ih3n", this)
+      .then(() => {
+        alert("Mensagem enviada com sucesso!");
+        button.value = "Enviar Email";
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("Erro:", err);
+        alert("Erro ao enviar. Veja o console para detalhes.");
+        button.value = "Enviar Email";
+      });
+  });
+</script>
+
 <script>
 // Inicialização do Swiper
 document.addEventListener("DOMContentLoaded", () => {
@@ -569,6 +612,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
