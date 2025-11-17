@@ -591,41 +591,41 @@ body {
 
 <!-- Formulário de contato -->
 <section class="form-contato">
-  <h2>Quero receber informações</h2>
+  <h2>Agende uma visita</h2>
   <form id="contatoForm">
     <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="tel" name="telefone" placeholder="Seu telefone" required>
     <input type="email" name="email" placeholder="Seu e-mail" required>
-    <textarea name="mensagem" placeholder="Deixe sua mensagem"></textarea>
+    <input type="tel" name="telefone" placeholder="Seu telefone" required>
+    <textarea name="mensagem" placeholder="Mensagem"></textarea>
     <button type="submit">Enviar</button>
   </form>
 </section>
 
-<!-- Script invisível do EmailJS -->
-<script src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
+<!-- Script do formulário -->
 <script>
-  // Inicializa com sua chave pública
-  emailjs.init({ publicKey: "email_QwoyDa888qoEAXpQ76YZrD97" });
+document.getElementById("contatoForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-  // Captura o envio do formulário
-  document.getElementById("contatoForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+  const formData = {
+    nome: e.target.nome.value,
+    email: e.target.email.value,
+    telefone: e.target.telefone.value,
+    mensagem: e.target.mensagem.value
+  };
 
-    emailjs.sendForm("service_m5n014j", "template_r19ih3n", this)
-      .then(() => {
-        alert("Mensagem enviada com sucesso!");
-        this.reset();
-      })
-      .catch((err) => {
-        console.error("Erro:", err);
-        alert("Erro ao enviar. Veja o console para detalhes.");
-      });
+  // Exemplo de envio para Google Apps Script
+  const response = await fetch("https://script.google.com/macros/s/AKfycbw0WebwIAcmlnSH6AQ3ViAY2_Gr3dEJgaSrJ67YpjH9KtOfANOXufCHNQt-GuAKX17T/exec", {
+    method: "POST",
+    body: JSON.stringify(formData)
   });
+
+  const result = await response.json();
+  alert(result.mensagem);
+});
 </script>
 
-  <script>
 <!-- Script do Swiper -->
-
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   var swiper = new Swiper(".swiper", {
     slidesPerView: 6,
@@ -634,6 +634,8 @@ document.addEventListener("DOMContentLoaded", () => {
     navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
   });
 });
+</script>
+
 
   // Mostrar fotos extras ao clicar no botão
   const btn = document.querySelector(".btn-veja-todas");
@@ -710,10 +712,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="../assets/script.js"></script>
 </body>
 </html>
-
-
-
-
 
 
 
