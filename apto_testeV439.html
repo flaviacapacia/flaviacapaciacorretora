@@ -594,18 +594,18 @@ body {
   <h2>Agende uma visita</h2>
   <form id="contatoForm">
     <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu e-mail" required>
     <input type="tel" name="telefone" placeholder="Seu telefone" required>
-    <textarea name="mensagem" placeholder="Mensagem"></textarea>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <textarea name="mensagem" placeholder="Deixe sua mensagem"></textarea>
     <button type="submit">Enviar</button>
   </form>
 </section>
 
 <!-- Script invisível do EmailJS -->
-<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
 <script>
-  // Inicializa o EmailJS com seu USER_ID
-  emailjs.init("email_QwoyDa888qoEAXpQ76YZrD97"); 
+  // Inicializa com sua chave pública
+  emailjs.init({ publicKey: "email_QwoyDa888qoEAXpQ76YZrD97" });
 
   // Captura o envio do formulário
   document.getElementById("contatoForm").addEventListener("submit", function(e) {
@@ -613,15 +613,16 @@ body {
 
     emailjs.sendForm("service_m5n014j", "template_r19ih3n", this)
       .then(() => {
-        alert("Mensagem enviada com sucesso! Olá, obrigada! Logo entrarei em contato.");
-        e.target.reset(); // limpa o formulário
+        alert("Mensagem enviada com sucesso!");
+        this.reset();
       })
-      .catch(err => {
-        alert("Erro ao enviar: " + JSON.stringify(err));
+      .catch((err) => {
+        console.error("Erro:", err);
+        alert("Erro ao enviar. Veja o console para detalhes.");
       });
   });
-
 </script>
+
   <script>
 <!-- Script do Swiper -->
 
@@ -709,6 +710,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
