@@ -216,8 +216,7 @@ picture {
 .form-contato button:hover {
   background: #128C7E;
 }
-
-   form {
+form {
   max-width: 500px;
   margin: 30px auto;
   padding: 25px;
@@ -248,11 +247,11 @@ picture {
   box-sizing: border-box;
 }
 
-/* Botão principal */
+ Botão principal 
 #button {
   width: 100%;
   padding: 12px;
-  background-color: #b8860b; /* bronze/dourado escuro */
+  background-color: #b8860b;  bronze/dourado escuro
   color: white;
   border: none;
   border-radius: 6px;
@@ -264,7 +263,6 @@ picture {
 #button:hover {
   background-color: #996515; /* tom mais escuro para hover */
 }
-
 
 /* Imagem dentro do picture */
 picture img {
@@ -398,6 +396,11 @@ picture img:hover {
   font-size: 14px;
   color: var(--dourado);
 }
+    .footer-logo {
+  display: flex;
+  justify-content: flex-start; /* força a logo para a esquerda */
+}
+
 
 .lightbox {
   position: fixed;
@@ -412,6 +415,124 @@ picture img:hover {
   max-width:90%;
   max-height:90%;
 }
+    /* Layout base */
+body {
+  background-color: var(--fundo-branco);
+  color: var(--texto-bronze);
+  font-family: var(--fonte-padrao);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--fundo-branco);
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.logo-area img { max-width: 170px; height: auto; }
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 0;
+}
+.main-nav a { text-decoration: none; color: var(--texto-bronze); font-weight: bold; }
+
+/* Galeria */
+.galeria-grid {
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+}
+.grid-fotos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+.grid-fotos img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.grid-fotos img:hover { transform: scale(1.05); }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index: 9999;
+}
+.lightbox img {
+  width: auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* Formulário */
+.form-contato {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 40px auto;
+}
+.form-contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-contato input, .form-contato textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  background: #fff;
+  padding: 40px 20px;
+  border-top: 1px solid #ddd;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-logo img { max-width: 180px; }
+.footer-contact, .footer-social { flex: 1; min-width: 200px; }
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .grid-fotos { grid-template-columns: repeat(2, 1fr); }
+  .footer-container { flex-direction: column; text-align: center; }
+}
+@media (max-width: 600px) {
+  .grid-fotos { grid-template-columns: 1fr; }
+  .main-nav ul { flex-direction: column; gap: 10px; }
+  .form-contato { padding: 20px; }
+}
+
 
   </style>
 <body>
@@ -516,6 +637,9 @@ picture img:hover {
 </div>
 
 <!-- Formulário de contato -->
+  
+<section class="form-contato">
+ 
   <form id="contatoForm">
   <h2>Quero mais informações</h2> <!-- título do formulário -->
 
@@ -537,11 +661,12 @@ picture img:hover {
   <div class="field">
     <label for="mensagem">Mensagem</label>
     <textarea name="mensagem" id="mensagem"></textarea>
-  </div
-    
-<!-- SDK do EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </div>
 
+  <input type="submit" id="button" value="Quero mais informações">
+</form>
+<!-- Script do formulário -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
   // Inicializa com sua chave pública
   emailjs.init("EkOcMAMTiFekZj6mJ");
@@ -569,55 +694,25 @@ picture img:hover {
   });
 </script>
 
+<!-- Script do Swiper -->
 <script>
-// Inicialização do Swiper
-document.addEventListener("DOMContentLoaded", () => {
-  var swiper = new Swiper(".swiper", {
-    slidesPerView: 6,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-
-  // Mostrar fotos extras ao clicar no botão
-  const btn = document.querySelector(".btn-veja-todas");
-  const extras = document.querySelector(".fotos-extras");
-  if (btn && extras) {
-    btn.addEventListener("click", () => {
-      extras.style.display = "grid"; // mostra em grid
-      btn.style.display = "none";    // esconde o botão
-    });
-  }
-
-  // Lightbox para ampliar fotos
-  document.querySelectorAll(".grid-fotos img").forEach(img => {
-    img.addEventListener("click", () => {
-      const modal = document.createElement("div");
-      modal.classList.add("lightbox");
-      modal.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
-      modal.addEventListener("click", () => modal.remove());
-      document.body.appendChild(modal);
+  document.addEventListener("DOMContentLoaded", () => {
+    var swiper = new Swiper(".swiper", {
+      slidesPerView: 6,
+      spaceBetween: 10,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
     });
   });
-});
 </script>
 
-  
-  <!-- Botao Whatsapp flutuante  -->
+<!-- Botão Whatsapp flutuante -->
 <a href="https://wa.me/5548999999999" 
    class="whatsapp-btn-fixed" 
    target="_blank">
    💬 Fale pelo WhatsApp
 </a>
 
-<!-- Footer -->
-<footer class="site-footer">
 <!-- Footer -->
 <footer class="site-footer" id="contato">
   <div class="footer-container">
@@ -637,7 +732,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
       <p>Florianópolis • Palhoça <br> São José</p>
     </div>
-   
 
     <!-- Redes sociais -->
     <div class="footer-social">
@@ -657,34 +751,9 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </footer>
 
-
+<!-- Script adicional -->
 <script src="../assets/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
