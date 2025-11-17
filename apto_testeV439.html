@@ -601,27 +601,25 @@ body {
   </form>
 </section>
 
-<!-- Script do formulário -->
+<!-- Script invisível do EmailJS -->
+<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
 <script>
-document.getElementById("contatoForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
+  // Inicializa o EmailJS com seu USER_ID
+  emailjs.init("email_QwoyDa888qoEAXpQ76YZrD97"); 
 
-  const formData = {
-    nome: e.target.nome.value,
-    email: e.target.email.value,
-    telefone: e.target.telefone.value,
-    mensagem: e.target.mensagem.value
-  };
+  // Captura o envio do formulário
+  document.getElementById("contatoForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  // Exemplo de envio para Google Apps Script
-  const response = await fetch("https://script.google.com/macros/s/AKfycbw0WebwIAcmlnSH6AQ3ViAY2_Gr3dEJgaSrJ67YpjH9KtOfANOXufCHNQt-GuAKX17T/exec", {
-    method: "POST",
-    body: JSON.stringify(formData)
+    emailjs.sendForm("service_m5n014j", "template_r19ih3n", this)
+      .then(() => {
+        alert("Mensagem enviada com sucesso! Olá, obrigada! Logo entrarei em contato.");
+        e.target.reset(); // limpa o formulário
+      })
+      .catch(err => {
+        alert("Erro ao enviar: " + JSON.stringify(err));
+      });
   });
-
-  const result = await response.json();
-  alert(result.mensagem);
-});
 </script>
 
 <!-- Script do Swiper -->
@@ -634,8 +632,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
   });
 });
-</script>
-
 
   // Mostrar fotos extras ao clicar no botão
   const btn = document.querySelector(".btn-veja-todas");
@@ -712,6 +708,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
