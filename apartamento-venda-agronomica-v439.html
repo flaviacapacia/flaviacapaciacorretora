@@ -217,13 +217,13 @@ picture {
   background: #128C7E;
 }
 
-    form {
+   form {
   max-width: 500px;
   margin: 30px auto;
   padding: 25px;
-  border: 1px solid #ddd;
+  border: 1px solid #b8860b; /* bronze/dourado escuro */
   border-radius: 10px;
-  background-color: #fff; /* ou a cor que combina com seu site */
+  background-color: #fff;
   font-family: system-ui, sans-serif, Arial;
 }
 
@@ -248,10 +248,11 @@ picture {
   box-sizing: border-box;
 }
 
+/* Botão principal */
 #button {
   width: 100%;
   padding: 12px;
-  background-color: #2c3e50; /* cor principal do seu site */
+  background-color: #b8860b; /* bronze/dourado escuro */
   color: white;
   border: none;
   border-radius: 6px;
@@ -261,7 +262,7 @@ picture {
 }
 
 #button:hover {
-  background-color: #34495e; /* tom mais escuro no hover */
+  background-color: #996515; /* tom mais escuro para hover */
 }
 
 
@@ -536,34 +537,8 @@ picture img:hover {
   <div class="field">
     <label for="mensagem">Mensagem</label>
     <textarea name="mensagem" id="mensagem"></textarea>
-  </div>
-
-  <input type="submit" id="button" value="Quero mais informações">
-</form>
-
-<form id="contatoForm">
-  <div class="field">
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" required>
-  </div>
-
-  <div class="field">
-    <label for="telefone">Telefone</label>
-    <input type="tel" name="telefone" id="telefone" required>
-  </div>
-
-  <div class="field">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" required>
-  </div>
-
-  <div class="field">
-    <label for="mensagem">Mensagem</label>
-    <textarea name="mensagem" id="mensagem"></textarea>
-  </div>
-
-  <input type="submit" id="button" value="Enviar Email">
-</form>
+  </div
+    
 <!-- SDK do EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
@@ -686,6 +661,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="../assets/script.js"></script>
 </body>
 </html>
+
 
 
 
