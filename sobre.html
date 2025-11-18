@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
   <style>
+/* Layout desktop */
 .sobre-container {
   display: flex;
   gap: 40px;
@@ -16,18 +17,17 @@
   max-width: 1100px;
 }
 
+/* Foto menor */
 .sobre-foto img {
+  width: 180px;   /* tamanho reduzido */
+  height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: block;
+  margin: 0 auto;
 }
 
-.frase-impacto {
-  text-align: center;
-  margin-top: 10px;
-  font-style: italic;
-  color: #d4af37;
-}
-
+/* Texto destacado */
 .texto-sobre p {
   background: rgba(255, 215, 0, 0.1);
   padding: 15px;
@@ -38,50 +38,42 @@
   line-height: 1.6;
 }
 
-.diferenciais {
-  background: #fafafa;
-  padding: 40px 20px;
-  text-align: center;
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;   /* vira blocos verticais */
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-foto img {
+    width: 140px;   /* ainda menor no celular */
+    margin-bottom: 20px;
+  }
+
+  .texto-sobre p {
+    text-align: left; /* mantém leitura agradável */
+    font-size: 1rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .whatsapp-btn-fixed {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.card img {
-  width: 60px;
-  margin-bottom: 10px;
-}
-
-.whatsapp-btn-fixed {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: background 0.3s ease;
-}
-
-.whatsapp-btn-fixed:hover {
-  background: #1ebe5d;
-}
 
   </style>
 <body>
@@ -186,4 +178,5 @@
 
 </body>
 </html>
+
 
