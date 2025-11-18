@@ -199,7 +199,25 @@ body {
   text-align: center;
   padding: 30px 20px;
 }
-.whatsapp-btn-fixed:hover { background: #128C7E; }
+
+    /* WhatsApp fixo */
+    .whatsapp-btn-fixed {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #25D366; color: #fff; padding: 12px 18px;
+      border-radius: 50px; text-decoration: none; font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .whatsapp-btn-fixed:hover { background: #128C7E; }
+
+*/FOOTER*/
+.site-footer {
+  background: #fff;
+  padding: 50px 40px;
+  border-top: 1px solid #ddd;
+}
+
+
 
 /* Rodapé */  .site-footer {
   background: #ffffff; /* fundo branco */
@@ -284,3 +302,4 @@ body {
 }
 
 </style>
+
