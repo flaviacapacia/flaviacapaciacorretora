@@ -138,28 +138,6 @@
 
     .cta-banner { text-align: center; margin: 2rem 0; }
 
-    .site-footer {
-      background-color: var(--fundo-branco);
-      padding: 2rem;
-      border-top: 1px solid #ddd;
-      text-align: center;
-    }
-
-    .footer-logo img { max-width: 170px; height: auto; }
-
-    .footer-contact h3 {
-      margin-top: 1rem;
-      font-family: var(--fonte-padrao);
-      color: var(--dourado);
-    }
-
-    .footer-contact a { color: var(--texto-bronze); text-decoration: none; }
-
-    .social-list ul { list-style: none; padding: 0; margin: 1rem 0; }
-
-    .social-list li { display: inline; margin: 0 10px; }
-
-    .footer-credit { margin-top: 1rem; font-weight: bold; }
   </style>
 </head>
   <script>
@@ -287,32 +265,45 @@ document.querySelector("#negocie").addEventListener("submit", async function (e)
     <h2>Seu imóvel a um clique de você</h2>
   </section>
 
-  <footer class="site-footer" id="contato">
-    <div class="footer-logo">
-      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia" />
-    </div>
+<!-- Rodapé -->
+<footer class="site-footer" id="contato">
+  <div class="footer-container">
+    <!-- Coluna esquerda: Contato -->
     <div class="footer-contact">
       <h3>Contato</h3>
-      <p><a href="mailto:flaviacapacia@creci.org.br">flaviacapacia@creci.org.br</a></p>
+      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
       <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <div class="social-list">
-        <ul>
-          <li><a href="https://www.facebook.com/flaviacapaciacorretora">Facebook</a></li>
-          <li><a href="https://www.instagram.com/flaviacapaciacorretora/">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/in/flavia-capacia-imoveis-em-floripa/">LinkedIn</a></li>
-          <li><a href="https://www.youtube.com/@flaviacapaciacorretora">YouTube</a></li>
-        </ul>
+      <p>Florianópolis • São José</p>
+      <p> Palhoça </p>
       </div>
-      <div class="footer-credit">
-        Feito com 💛 <strong>Capacia</strong> 💛
-      </div>
-    </div>
-  </footer>
+    
 
+    <!-- Coluna central: Logo -->
+    <div class="footer-logo">
+      <a href="index.html">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" 
+             alt="Logo Flavia Imóveis"/>
+      </a>
+    </div>
+
+    <!-- Coluna direita: Redes sociais -->
+    <div class="footer-social">
+      <h3>Redes Sociais</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Créditos -->
+  <div class="footer-credit">
+    Feito com 💛 por <strong>Capacia Group</strong> 💛
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
