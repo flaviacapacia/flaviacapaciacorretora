@@ -9,6 +9,28 @@
   <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
 
 </head>
+  <style>
+    .bancos-financiamento {
+  display: flex;
+  flex-wrap: wrap;        /* permite quebrar linha */
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 15px;              /* espaço entre os logos */
+  margin-top: 20px;
+}
+
+.bancos-financiamento img {
+  max-width: 100px;       /* tamanho padrão */
+  height: auto;
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+  .bancos-financiamento img {
+    max-width: 45%;       /* duas imagens por linha no celular */
+  }
+}
+
+  </style>
 <body>
 
   <header class="site-header">
@@ -118,3 +140,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
