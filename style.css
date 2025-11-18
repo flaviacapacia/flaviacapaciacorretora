@@ -201,72 +201,86 @@ body {
 }
 .whatsapp-btn-fixed:hover { background: #128C7E; }
 
-/* Rodapé */  
-.site-footer {
-    background: #ffffff; /* fundo branco */
-    color: #000000;      /* texto preto */
-    padding: 40px 20px;
-    font-family: 'Playfair Display', serif;
-  }
+/* Rodapé */  .site-footer {
+  background: #ffffff; /* fundo branco */
+  color: #000000;      /* texto preto */
+  padding: 40px 20px;
+  font-family: 'Playfair Display', serif;
+}
 
-  .footer-container {
-    display: flex;
-    justify-content: space-between; /* distribui colunas */
-    align-items: center;
-    max-width: 650px;
-    margin: 0 auto;
-  }
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* distribui colunas */
+  align-items: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
 
- .footer-logo {
+.footer-logo {
   margin: 0 auto;      /* centraliza horizontalmente */
   text-align: center;  /* garante alinhamento interno */
 }
 
-  .footer-logo img {
-    width: 180px; /* logo maior */
-    transition: transform 0.7s ease;
-  }
+.footer-logo img {
+  width: 180px; /* logo maior */
+  transition: transform 0.7s ease;
+}
 
-  .footer-logo img:hover {
-    transform: scale(1.05);
-  }
-  .footer-contact h3, .footer-social h3 {
-    color: var(--dourado);
-  margin-bottom: 5px;
-    margin-bottom: 10px;
-  }
+.footer-logo img:hover {
+  transform: scale(1.05);
+}
 
-  .footer-contact a, .footer-social a {
-color: var(--dourado);
-  margin-bottom: 5px;
-    text-decoration: none;
-  }
+/* Contato e Redes sociais em dourado */
+.footer-contact h3,
+.footer-social h3 {
+  color: var(--dourado);
+  margin-bottom: 10px;
+}
 
-  .footer-social ul {
-    list-style: none;
-    padding: 0;
-  }
+.footer-contact a,
+.footer-social a {
+  color: var(--dourado);
+  text-decoration: none;
+}
 
-  .footer-social li {
-    margin-bottom: 8px;
-  }
+.footer-contact a:hover,
+.footer-social a:hover {
+  color: #333; /* efeito hover em preto */
+}
 
-  .footer-credit {
+.footer-contact p {
+  color: var(--dourado); /* cidades também em dourado */
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social li {
+  margin-bottom: 8px;
+}
+
+.footer-credit {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #000000; /* créditos em preto */
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #000000; /* créditos em preto */
+    gap: 20px;
   }
 
-  /* Responsivo para celular */
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-      gap: 20px;
-    }
+  .footer-logo img {
+    margin: 0 auto;
+  }
+}
 
-    .footer-logo img {
-      margin: 0 auto;
-    }
-
+</style>
