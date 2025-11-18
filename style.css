@@ -219,7 +219,9 @@ body {
 
 
 
-/* Rodapé */  .site-footer {
+/* Rodapé */  
+
+.site-footer {
   background: #ffffff; /* fundo branco */
   color: #000000;      /* texto preto */
   padding: 40px 20px;
@@ -302,4 +304,5 @@ body {
 }
 
 </style>
+
 
