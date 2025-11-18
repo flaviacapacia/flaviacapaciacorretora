@@ -86,10 +86,79 @@
 
   <!-- Conteúdo da Página -->
   <main>
-   <section class="captacao">
-  <h2>Quer saber mais sobre este imóvel?</h2>
+
   <p>Preencha seus dados ou fale direto comigo no WhatsApp. Respondo rápido!</p>
 
+<!-- Formulário de contato -->
+  
+<section class="form-contato">
+ 
+  <form id="contatoForm">
+  <h2>Quer informações sobre  comprar ou verder imóveis ?</h2> <!-- título do formulário -->
+      <p>Preencha seus dados ou fale direto comigo no WhatsApp. Respondo rápido!</p>
+
+  <div class="field">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required>
+  </div>
+
+  <div class="field">
+    <label for="telefone">Telefone</label>
+    <input type="tel" name="telefone" id="telefone" required>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+  </div>
+
+  <div class="field">
+    <label for="mensagem">Mensagem</label>
+    <textarea name="mensagem" id="mensagem"></textarea>
+  </div>
+
+  <input type="submit" id="button" value="Quero mais informações">
+</form>
+<!-- Script do formulário -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Inicializa com sua chave pública
+  emailjs.init("EkOcMAMTiFekZj6mJ");
+
+  // Captura o envio do formulário
+  const form = document.getElementById("contatoForm");
+  const button = document.getElementById("button");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    button.value = "Enviando...";
+
+    emailjs.sendForm("service_m5n014j", "template_r19ih3n", this)
+      .then(() => {
+        alert("Mensagem enviada com sucesso!");
+        button.value = "Enviar Email";
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("Erro:", err);
+        alert("Erro ao enviar. Veja o console para detalhes.");
+        button.value = "Enviar Email";
+      });
+  });
+</script>
+
+<!-- Script do Swiper -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    var swiper = new Swiper(".swiper", {
+      slidesPerView: 6,
+      spaceBetween: 10,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+    });
+  });
+</script>
 
 
 
@@ -139,3 +208,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
