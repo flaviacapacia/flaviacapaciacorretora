@@ -55,6 +55,27 @@
     font-size: 1rem;
   }
 }
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px; /* altura padrão no desktop */
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* cobre toda a área sem distorcer */
+  object-position: center; /* centraliza o foco da imagem */
+  display: block;
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+  .hero {
+    height: 250px; /* altura menor no mobile */
+  }
+}
 
 </style>
 
@@ -145,5 +166,6 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
