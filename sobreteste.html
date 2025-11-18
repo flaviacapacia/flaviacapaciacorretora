@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre • Flavia Capacia Imóveis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+  <style>
+/* Layout desktop */
+.sobre-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+/* Foto menor */
+.sobre-foto img {
+  width: 180px;   /* tamanho reduzido */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Texto destacado */
+.texto-sobre p {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 15px;
+  border-left: 4px solid #d4af37;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;   /* vira blocos verticais */
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-foto img {
+    width: 140px;   /* ainda menor no celular */
+    margin-bottom: 20px;
+  }
+
+  .texto-sobre p {
+    text-align: left; /* mantém leitura agradável */
+    font-size: 1rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .whatsapp-btn-fixed {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+
+  </style>
+<body>
+
+<header class="site-header">
+  <div class="logo-area">
+    <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html" class="active">Sobre</a></li>
+      <li><a href="negocie.html">Negocie</a></li>
+      <li><a href="financie.html">Financie</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="hero" class="hero">
+  <img src="img/hero.interior (2).webp" alt="Interior moderno e luxuoso" />
+</section>
+
+<main>
+  <!-- Seção Sobre -->
+  <section id="sobre" class="sobre-section">
+    <div class="sobre-container">
+      <!-- Foto -->
+      <div class="sobre-foto">
+        <img src="img/flavia_sobre (1) (2).webp" alt="Flavia Capacia">
+        <p class="frase-impacto">Transformando sonhos em imóveis de sucesso</p>
+      </div>
+
+      <!-- Texto -->
+      <div class="texto-sobre">
+        <h2 class="titulo-dourado">Sobre Flavia Capacia</h2>
+        <p>Apaixonada pela corretagem de imóveis, Flavia Capacia é a profissional por trás de grandes realizações na Grande Florianópolis.</p>
+        <p>Com mais de 10 anos de experiência, destaca-se pela conduta ética, compromisso e transparência, conquistando a confiança de clientes e parceiros.</p>
+        <p>Determinada a unir as necessidades de venda e a realização de compra, Flavia busca sempre entregar o melhor, concretizando sonhos e fechando negócios de sucesso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section class="diferenciais">
+    <h2 class="titulo-dourado">Por que escolher a Flavia?</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="img/icone-experiencia.png" alt="Experiência"/>
+        <h3>+10 anos de experiência</h3>
+        <p>Histórico sólido na Grande Florianópolis.</p>
+      </div>
+      <div class="card">
+        <img src="img/icone-etica.png" alt="Ética"/>
+        <h3>Ética e Transparência</h3>
+        <p>Relacionamento de confiança com clientes e parceiros.</p>
+      </div>
+      <div class="card">
+        <img src="img/icone-sonhos.png" alt="Sonhos"/>
+        <h3>Realização de Sonhos</h3>
+        <p>Transformando desejos em conquistas imobiliárias.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Botão WhatsApp -->
+<a href="https://wa.me/5548999999999" 
+   class="whatsapp-btn-fixed" 
+   target="_blank">
+   💬 Fale pelo WhatsApp
+</a>
+
+<!-- Footer -->
+<footer class="site-footer" id="contato">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <a href="index.html">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:220,h:220,mx" alt="Logo Flavia Imóveis"/>
+      </a>
+    </div>
+    <div class="footer-contact">
+      <h3>Contato</h3>
+      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
+      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+      <p>Florianópolis • Palhoça • São José</p>
+    </div>
+    <div class="footer-social">
+      <h3>Redes Sociais</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+        <li><a href="https://linkedin.com/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+        <li><a href="https://youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-credit">
+    Feito com 💛 <strong>Capacia Group</strong> 💛
+  </div>
+</footer>
+
+</body>
+</html>
+
