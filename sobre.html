@@ -83,6 +83,71 @@
       width: 50px;
       margin-bottom: 10px;
     }
+/* Layout desktop */
+.sobre-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+/* Foto menor */
+.sobre-foto img {
+  width: 180px;   /* tamanho reduzido */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Texto destacado */
+.texto-sobre p {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 15px;
+  border-left: 4px solid #d4af37;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;   /* vira blocos verticais */
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-foto img {
+    width: 140px;   /* ainda menor no celular */
+    margin-bottom: 20px;
+  }
+
+  .texto-sobre p {
+    text-align: left; /* mantém leitura agradável */
+    font-size: 1rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .whatsapp-btn-fixed {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
 
     /* Botão WhatsApp */
     .whatsapp-btn-fixed {
@@ -223,4 +288,5 @@
 
 </body>
 </html>
+
 
