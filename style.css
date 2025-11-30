@@ -307,41 +307,44 @@ body {
   height: auto;      /* mantém proporção */
   display: block;    /* evita espaçamento extra */
   margin: 0 auto;    /* centraliza */
-  .footer-nav {
-  text-align: center; /* Centraliza todo o conteúdo */
-  background-color: #000; /* Fundo preto */
-  padding: 20px;
+
+  .featured-properties {
+  background-color: #fff; /* fundo branco */
+  text-align: center;
+  padding: 30px 20px;
 }
 
-.footer-nav h4 {
-  color: #d4af37; /* Dourado */
+.featured-properties h2 {
+  color: #000; /* título preto */
+  margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
-  margin-bottom: 15px;
 }
 
-.footer-nav ul {
+.featured-properties ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-nav ul li {
+.featured-properties ul li {
   display: inline-block;
   margin: 0 15px;
 }
 
-.footer-nav ul li a {
-  color: #d4af37; /* Links dourados */
-  text-decoration: none;
+.featured-properties ul li a {
+  color: #d4af37; /* dourado */
   font-weight: bold;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-nav ul li a:hover {
-  color: #fff; /* Branco ao passar o mouse */
+.featured-properties ul li a:hover {
+  color: #000; /* preto ao passar o mouse */
 }
 
+
 </style>
+
 
 
 
