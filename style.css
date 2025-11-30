@@ -307,17 +307,17 @@ body {
   height: auto;      /* mantém proporção */
   display: block;    /* evita espaçamento extra */
   margin: 0 auto;    /* centraliza */
-
-  .featured-properties {
-  background-color: #fff; /* fundo branco */
-  text-align: center;
-  padding: 30px 20px;
+.featured-properties {
+  background-color: #000; /* fundo preto */
+  text-align: center;     /* centraliza todo o conteúdo */
+  padding: 40px 20px;
 }
 
 .featured-properties h2 {
-  color: #000; /* título preto */
-  margin-bottom: 20px;
+  color: #d4af37; /* dourado */
   font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 .featured-properties ul {
@@ -327,23 +327,25 @@ body {
 }
 
 .featured-properties ul li {
-  display: inline-block;
-  margin: 0 15px;
+  display: inline-block;   /* coloca os links lado a lado */
+  margin: 0 20px;
 }
 
 .featured-properties ul li a {
-  color: #d4af37; /* dourado */
+  color: #d4af37;          /* links dourados */
   font-weight: bold;
   text-decoration: none;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
 
 .featured-properties ul li a:hover {
-  color: #000; /* preto ao passar o mouse */
+  color: #fff;             /* branco ao passar o mouse */
 }
 
 
 </style>
+
 
 
 
