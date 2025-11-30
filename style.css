@@ -302,7 +302,13 @@ body {
     margin: 0 auto;
   }
 }
-
+.imovel-page img {
+  max-width: 100%;   /* nunca ultrapassa o tamanho do container */
+  height: auto;      /* mantém proporção */
+  display: block;    /* evita espaçamento extra */
+  margin: 0 auto;    /* centraliza */
+  
 </style>
+
 
 
