@@ -183,38 +183,6 @@ body {
   opacity: 1;
 }
 /* Container dos imóveis */
-.grid-imoveis {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 20px;
-}
-
-/* Cada imóvel */
-.imovel {
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Imagem do imóvel */
-.imovel img {
-  width: 100%;       /* ocupa toda a largura da coluna */
-  height: auto;      /* mantém proporção */
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-/* Título do imóvel */
-.imovel p {
-  font-size: 18px;
-  font-weight: 600;
-  color: #B8860B; /* bronze */
-  margin: 0;
-}
 
 /* Títulos */
 .titulo-dourado-centralizado {
@@ -374,13 +342,72 @@ body {
 }
 
 /* Título centralizado e dourado */
+  /* Container dos imóveis */
+.grid-imoveis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Cada imóvel */
+.imovel {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.imovel img {
+  width: 100%;       /* ocupa toda a largura da coluna */
+  height: auto;      /* mantém proporção */
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.imovel:hover {
+  transform: translateY(-5px);
+}
+
+.imovel:hover img {
+  transform: scale(1.05);
+  filter: brightness(85%);
+}
+
+.imovel p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #B8860B; /* bronze */
+  margin: 0;
+}
+
+/* Sessão de imóveis em destaque */
+.featured-properties {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  position: relative;
+}
+
+.featured-properties::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #DAA520, #B8860B);
+  margin-bottom: 20px;
+}
+
 .featured-properties h2 {
-  color: #DAA520; /* dourado */
+  color: #DAA520;
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;
-  font-family: 'Playfair Display', serif; /* fonte sofisticada */
+  font-family: 'Playfair Display', serif;
 }
 
 /* Links lado a lado no desktop */
@@ -393,7 +420,7 @@ body {
 
 /* Estilo dos links */
 .links-imoveis a {
-  color: #B8860B; /* bronze escuro */
+  color: #B8860B;
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
@@ -402,10 +429,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover elegante */
 .links-imoveis a:hover {
-  background-color: #DAA520; /* dourado */
-  color: #fff; /* branco no hover */
+  background-color: #DAA520;
+  color: #fff;
 }
 
 /* Responsivo para celular */
@@ -424,5 +450,3 @@ body {
     background-color: #fff;
   }
 }
-
-
