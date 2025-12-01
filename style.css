@@ -307,16 +307,18 @@ body {
   height: auto;      /* mantém proporção */
   display: block;    /* evita espaçamento extra */
   margin: 0 auto;    /* centraliza */
-
-  .featured-properties {
+/* Sessão de imóveis em destaque */
+.featured-properties {
   text-align: center;
   padding: 40px 20px;
-  background-color: #fff;
+  background-color: #fff; /* fundo neutro */
   position: relative;
 }
 
-/* Faixa decorativa dourada ou bronze */
-.faixa-decorativa {
+/* Faixa decorativa dourada */
+.featured-properties::before {
+  content: "";
+  display: block;
   width: 100%;
   height: 6px;
   background: linear-gradient(to right, #DAA520, #B8860B);
@@ -324,12 +326,13 @@ body {
 }
 
 /* Título centralizado e dourado */
-.titulo-destaque {
+.featured-properties h2 {
   color: #DAA520; /* dourado */
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;
+  font-family: 'Playfair Display', serif; /* fonte sofisticada */
 }
 
 /* Links lado a lado no desktop */
@@ -353,8 +356,8 @@ body {
 
 /* Hover elegante */
 .links-imoveis a:hover {
-  background-color: #DAA520;
-  color: #fff;
+  background-color: #DAA520; /* dourado */
+  color: #fff; /* branco no hover */
 }
 
 /* Responsivo para celular */
