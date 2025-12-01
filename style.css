@@ -289,6 +289,21 @@ body {
   font-size: 0.9rem;
   color: #000000; /* créditos em preto */
 }
+/* Todas as imagens dos imóveis */
+.imovel img {
+  max-width: 300px;   /* largura máxima no desktop */
+  height: auto;       /* mantém proporção */
+  border-radius: 8px; /* cantos arredondados para elegância */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* sombra leve */
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+  .imovel img {
+    max-width: 100%;  /* ocupa toda a largura da tela no celular */
+    height: auto;
+  }
+}
 
 /* Responsivo para celular */
 @media (max-width: 768px) {
@@ -376,3 +391,4 @@ body {
     background-color: #fff;
   }
 }
+
