@@ -182,6 +182,39 @@ body {
 .imovel:hover::after {
   opacity: 1;
 }
+/* Container dos imóveis */
+.grid-imoveis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Cada imóvel */
+.imovel {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Imagem do imóvel */
+.imovel img {
+  width: 100%;       /* ocupa toda a largura da coluna */
+  height: auto;      /* mantém proporção */
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Título do imóvel */
+.imovel p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #B8860B; /* bronze */
+  margin: 0;
+}
 
 /* Títulos */
 .titulo-dourado-centralizado {
@@ -391,4 +424,5 @@ body {
     background-color: #fff;
   }
 }
+
 
