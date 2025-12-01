@@ -307,44 +307,40 @@ body {
   height: auto;      /* mantém proporção */
   display: block;    /* evita espaçamento extra */
   margin: 0 auto;    /* centraliza */
-.featured-properties {
-  background-color: #000; /* fundo preto */
-  text-align: center;     /* centraliza todo o conteúdo */
-  padding: 40px 20px;
+
+
+  .featured-properties {
+  text-align: center;
+  margin: 40px 0;
 }
 
 .featured-properties h2 {
-  color: #d4af37; /* dourado */
-  font-family: 'Playfair Display', serif;
+  color: #DAA520; /* dourado */
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-.featured-properties ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.links-imoveis {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* espaço entre os links */
+  flex-wrap: wrap; /* permite quebrar linha se tiver muitos links */
 }
 
-.featured-properties ul li {
-  display: inline-block;   /* coloca os links lado a lado */
-  margin: 0 20px;
-}
-
-.featured-properties ul li a {
-  color: #d4af37;          /* links dourados */
+.links-imoveis a {
+  color: #B8860B; /* bronze dourado escuro */
+  text-decoration: none; /* remove sublinhado azul */
   font-weight: bold;
-  text-decoration: none;
   font-size: 18px;
   transition: color 0.3s ease;
 }
 
-.featured-properties ul li a:hover {
-  color: #fff;             /* branco ao passar o mouse */
+.links-imoveis a:hover {
+  color: #FFD700; /* efeito hover em dourado mais claro */
 }
 
-
 </style>
+
 
 
 
