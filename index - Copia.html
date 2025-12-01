@@ -6,7 +6,190 @@
   <title>Imóveis de Alto Padrão em São José e Florianópolis | Flavia Capacia Corretora</title>
   <meta name="description" content="Imóveis de luxo e médio padrão em São José, Kobrasol, Campinas e Florianópolis. Apartamentos, coberturas, casas e studios com financiamento facilitado." />
   <link rel="canonical" href="https://www.flaviacapaciacorretora.site/index.html" />
-  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Fonte elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- CSS embutido -->
+  <style>
+    :root {
+      --fundo-branco: #ffffff;
+      --texto-bronze: #4B3A2F;
+      --bronze-claro: #7A5C45;
+      --fonte-padrao: 'Playfair Display', serif;
+      --dourado: #b08d57;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--fundo-branco);
+      color: var(--texto-bronze);
+      font-family: var(--fonte-padrao);
+      line-height: 1.6;
+    }
+
+    /* Cabeçalho */
+    .site-header {
+      background-color: var(--fundo-branco);
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-area img { max-width: 170px; height: auto; }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--texto-bronze);
+      font-weight: bold;
+    }
+
+    /* Ícones sociais */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .social-icons .icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons .icon:hover { transform: scale(1.1); }
+
+    /* Hero */
+    .hero img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+    }
+
+    /* Grid de imóveis */
+    .featured-properties {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+
+    .featured-properties h2 {
+      color: var(--dourado);
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .grid-imoveis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .imovel {
+      text-align: center;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .imovel img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .imovel:hover { transform: translateY(-5px); }
+    .imovel:hover img { transform: scale(1.05); filter: brightness(85%); }
+
+    .imovel h3 { font-size: 20px; margin: 10px 0; }
+    .imovel p { font-size: 16px; color: var(--bronze-claro); }
+
+    /* Links antes do rodapé */
+    .links-imoveis {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+
+    .links-imoveis a {
+      color: #B8860B; /* bronze escuro */
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .links-imoveis a:hover {
+      background-color: var(--dourado);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .links-imoveis { flex-direction: column; align-items: center; gap: 20px; }
+      .links-imoveis a { width: 100%; max-width: 300px; text-align: center; border: 1px solid #B8860B; background-color: #fff; }
+    }
+
+    /* Rodapé */
+    .site-footer {
+      background: #ffffff;
+      color: #000000;
+      padding: 40px 20px;
+      font-family: var(--fonte-padrao);
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo img { width: 180px; transition: transform 0.7s ease; }
+    .footer-logo img:hover { transform: scale(1.05); }
+
+    .footer-contact h3, .footer-social h3 { color: var(--dourado); margin-bottom: 10px; }
+    .footer-contact a, .footer-social a { color: var(--dourado); text-decoration: none; }
+    .footer-contact a:hover, .footer-social a:hover { color: #333; }
+
+    .footer-contact p { color: var(--dourado); font-size: 16px; margin: 6px 0; }
+
+    .footer-social ul { list-style: none; padding: 0; }
+    .footer-social li { margin-bottom: 8px; }
+
+    .footer-credit {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #000000;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,7 +198,6 @@
   <div class="logo-area">
     <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo" />
   </div>
-
   <nav class="main-nav">
     <ul>
       <li><a href="index.html">Início</a></li>
@@ -25,107 +207,44 @@
       <li><a href="contato.html">Contato</a></li>
     </ul>
   </nav>
-
-  <div class="social-icons">
-    <a href="https://www.instagram.com/flacapacciacorretora" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="icon" />
-    </a>
-    <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" class="icon" />
-    </a>
-    <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" class="icon" />
-    </a>
-    <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="icon" />
-    </a>
-  </div>
 </header>
+
 <section id="hero" class="hero">
   <img src="img/capasite.webp" alt="Interior moderno e luxuoso" />
 </section>
 
-<!-- Destaques 
-<section class="destaques-section">
-  <h2 class="section-title">Imóveis em Destaque</h2>
-  <div class="slider-container">
-    <div class="slider">
-      <div class="slide"><img src="img/imagens/imagem1.jpg" alt="Apartamento no Centro"><p>Apartamento na  - R$ 450.000</p></div>
-      <div class="slide"><img src="img/imagens/imagem4.jpg" alt="Casa com piscina"><p>Casa com piscina - R$ 780.000</p></div>
-      <div class="slide"><img src="img/imagens/imagem5.jpg" alt="Apartamento mobiliado"><p>Apartamento mobiliado - R$ 620.000</p></div>
-    </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-  </div>
-</section -->
-
-<section id="imoveis" class="imoveis-section">
-  <h2 class="section-title" style="text-align:center; color:var(--dourado); font-family:'Playfair Display', serif;">
-    Imóveis Disponíveis Aqui
-  </h2>
-</section>
-  <!-- Imóveis fixos -->
-  
-
-
-    <section class="featured-properties">
-      
-  <h2 class="titulo-dourado-centralizado">Imóveis em Destaque</h2>
+<section class="featured-properties">
+  <h3>Imóveis em Destaque</h3>
   <div class="grid-imoveis">
-                                     <!-- v439-->
     <div class="imovel">
       <img src="img/imagens/imagem3.jpg" alt="Apartamento na Agronômica">
-      <h3>Apartamento na Agronômica</h3>
+      <h2>Apartamento na Agronômica</h2>
       <p>2 quartos • 1 suíte • vaga de garagem</p>
     </div>
-                                        <!-- v440-->
     <div class="imovel">
       <img src="img/sacada-1.jpeg" alt="Apartamento no Kobrasol">
-      <h3>Apartamento no Kobrasol</h3>
+      <h2>Apartamento no Kobrasol</h2>
       <p>3 quartos • 1 suíte • vaga de garagem</p>
     </div>
-    <!-- Você pode adicionar mais imóveis aqui -->
-    
-                               <!-- v441-->
-       <div class="imovel">
-      <img src="img/imagens/imagem3.jpg" alt="Apartamento no Campeche">
-      <h3>Apartamento no Campeche</h3>
-      <p>2 quartos • 1 suíte • vaga de garagem</p>
-    </div>
-      
-                                    <!-- v    -->
-       <div class="imovel">
+    <div class="imovel">
       <img src="img/imagens/imagem2.jpg" alt="Cobertura na Tindade">
-      <h3>Cobertura na Tindade</h3>
-      <p>2 quartos • 1 suíte • vaga de garagem</p>
+      <h2>Cobertura na Tindade></h2>
+      <p>3 quartos • 1 suíte • vaga de garagem</p>
     </div>
-     
                                             <!-- v    -->
       
            <div class="imovel">
       <img src="img/imagens/imagem1.jpg" alt="Studio Centro ">
-      <h3>Studio Centro</h3>
+      <h2>Studio Centro</h2>
       <p>1 suíte • vaga de garagem</p>
-    </div>
-      
- </section>
-
-    <!-- Imóveis dinâmicos
-<iframe 
-  src="https://script.google.com/macros/s/AKfycbxaFO6Lw6PmjzfS3r6eTWowTFDyrlZFt5avZzfTLCtBIXYSBwO4zqvW0FNwHPHQsXPp/exec"
-  width="100%" height="1300" frameborder="0" style="border:none;">
-</iframe> -->
-
-
-<!-- Tecimob -->
-<section id="imoveis-tecimob" class="imoveis-section">
-  <h2 class="titulo-dourado-centralizado">Aqui Você encontra o imóvel que procura!!</h2>
-  <div id="lista-imoveis-tecimob"></div>
+          <h2>Cobertura na Tindade</h2>
+           </div>
 </section>
-<!-- <section class="cta-banner">
-  <h2>Locação Segura e Descomplicada</h2>
-  <p>Conheça nosso processo de locação, garantias e vantagens para proprietários e inquilinos.</p>
-</section> -->
+  
+      
+ 
+      
+
 
 <!-- Botão Whatsapp flutuante -->
 <a href="https://wa.me/5548999600601" 
@@ -189,6 +308,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
