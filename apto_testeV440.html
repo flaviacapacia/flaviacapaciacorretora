@@ -7,9 +7,10 @@
 
   <!-- Meta description para SEO -->
   <meta name="description" content="Apartamento à venda no Kobrasol em São José SC. Imóvel amplo com 3 dormitórios, suíte com hidromassagem, sacada com churrasqueira e vista panorâmica. Excelente oportunidade para morar ou investir. Código V440." />
+  <meta name="google-site-verification" content="CODIGO_UNICO_DO_GOOGLE" />
 
   <!-- Open Graph para redes sociais -->
-  <meta property="og:title" content="Apartamento amplo no Kobrasol São José SC | Código V440" />
+  <meta property="og:title" content="Apartamento amplo no Kobrasol em São José SC | Código V440" />
   <meta property="og:description" content="Descubra este apartamento no Kobrasol em São José SC: 3 dormitórios, suíte com hidro, sacada com churrasqueira e vaga coberta. Ideal para famílias e investidores." />
   <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
   <meta property="og:url" content="https://www.flaviacapaciacorretora.site/apartamento-venda-kobrasol-V440.html" />
@@ -23,15 +24,12 @@
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-</head>
-
-<!-- Swiper CSS -->
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-  </head>
-
+</head>
+  
+  <!-- CSS interno -->
   <style>
+  
     :root {
       --fundo-branco: #ffffff;
       --texto-bronze: #4B3A2F;
@@ -496,6 +494,72 @@ body {
   border-radius: 8px;
   font-size: 1rem;
 }
+/* Section de links antes do rodapé */
+.featured-properties {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.featured-properties h2 {
+  color: var(--dourado);
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Links de imóveis */
+.links-imoveis {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.links-imoveis a {
+  color: #B8860B; /* bronze escuro */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.links-imoveis a:hover {
+  background-color: var(--dourado);
+  color: #fff;
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+  .links-imoveis {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .links-imoveis a {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid #B8860B;
+    background-color: #fff;
+  }
+}
+
+/* Logo no rodapé que abre imagem */
+.footer-logo img {
+  width: 180px;
+  transition: transform 0.7s ease;
+  cursor: pointer;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.05);
+  filter: brightness(90%);
+}
 
 
 /* Responsividade */
@@ -541,18 +605,11 @@ body {
   </div>
 </header>
 
-<section id="hero" class="hero">
-  <img src="img/hero-interior.webp" alt="Viva o Melhor de Florianópolis" />
-</section>
-<p class="hero-legenda">Viva o Melhor de Florianópolis</p>
-
-
-</header>
 
 <main class="imovel-page">
   <h1>Oportunidade exclusiva em São José – Kobrasol</h1>
-  <p class="preco">Valor de venda: R$ 1.150.000,00</p>
-  <div class="info-extra">Código: V999 | IPTU: R$ 200,00 | Condomínio: R$ 850,00</div>
+  <p class="preco">Valor de venda: R$ 940.000,00</p>
+  <div class="info-extra">Código: V440 | IPTU: R$ 1311,00 | Condomínio: R$ 1035,00</div>
 
   <section class="descricao">
     <p>
@@ -601,22 +658,16 @@ body {
   <section class="galeria-grid">
     <h2>Fotos do Imóvel</h2>
     <div class="grid-fotos">
-      <img src="img/sacada-1.jpeg" alt="sacada com vista panorâmica" loading="lazy"/>
-      <img src="img/sala-1.jpeg" alt="sala ampla" loading="lazy"/>
-      <img src="img/sacada-2.jpeg" alt="sacada com churrasqueira" loading="lazy"/>
-      <img src="img/sala-2.jpeg" alt="sala em 3 ambientes" loading="lazy"/>
-      <img src="img/entrado-predio.jpeg" alt="Ventrada paisagismo" loading="lazy"/>
-      <img src="img/hall-entrada-predio.jpeg" alt="hall espaçoso" loading="lazy"/>
+      <img src="img/sacada-1.jpeg" alt="Sala ampla com vista panorâmica" loading="lazy"/>
+      <img src="img/sala-1.jpeg" alt="Suíte com hidromassagem" loading="lazy"/>
+      <img src="img/sacada-2.jpeg" alt="Cozinha planejada com armários" loading="lazy"/>
+      <img src="img/sala-2.jpeg" alt="Sacada com churrasqueira" loading="lazy"/>
+      <img src="img/entrado-predio.jpeg" alt="Vista livre e panorâmica" loading="lazy"/>
+      <img src="img/hall-entrada-predio.jpeg" alt="Banheiro moderno com armários" loading="lazy"/>
     </div>
-    <div class="grid-fotos fotos-extras" style="display:none;">
-      <img src="img/quarto2.webp" alt="Segundo quarto decorado" loading="lazy"/>
-      <img src="img/quarto3.webp" alt="Dormitório adicional" loading="lazy"/>
-      <img src="img/area-servico.webp" alt="Área de serviço completa" loading="lazy"/>
-      <img src="img/dependencia.webp" alt="Dependência de empregada" loading="lazy"/>
-    </div>
+
   </section>
 </main>
-
 
   <!-- Botão faixa -->
  <div class="faixa-botao">
@@ -682,7 +733,7 @@ body {
       });
   });
 </script>
-
+</section>
 <!-- Script do Swiper -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -701,49 +752,59 @@ body {
    target="_blank">
    💬 Fale pelo WhatsApp
 </a>
+<!-- Section de links antes do rodapé -->
+<section class="featured-properties">
+  <h2 class="titulo-dourado-centralizado">Mais Imóveis</h2>
+  <div class="links-imoveis">
+    <a href="apartamento-venda-kobrasol-v440.html">Apartamento no Kobrasol</a>
+    <a href="apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a>
+    <a href="cobertura-campinas-v441.html">Cobertura em Campinas</a>
+    <a href="studio-sao-jose-v442.html">Studio em São José</a>
+    <a href="casa-palhoca-v443.html">Casa na Palhoça</a>
+  </div>
+</section>
 
-<!-- Footer -->
-<footer class="site-footer" id="contato">
+<!-- Rodapé -->
+<footer class="site-footer">
   <div class="footer-container">
-    
-    <!-- Logo com link -->
-    <div class="footer-logo">
-      <a href="index.html">
-        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:220,h:220,mx" 
-             alt="Logo Flavia Imóveis"/>
-      </a>
-    </div>
-
-    <!-- Contato -->
+    <!-- Coluna esquerda: Contato -->
     <div class="footer-contact">
       <h3>Contato</h3>
       <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
       <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <p>Florianópolis • Palhoça <br> São José</p>
+      <p>Florianópolis • São José • Palhoça</p>
     </div>
 
-    <!-- Redes sociais -->
+    <!-- Coluna central: Logo que abre a foto da sacada -->
+    <div class="footer-logo">
+      <a href="img/sacada-1.jpeg" target="_blank">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" 
+             alt="Logo Flavia Imóveis"/>
+      </a>
+    </div>
+
+    <!-- Coluna direita: Redes sociais -->
     <div class="footer-social">
       <h3>Redes Sociais</h3>
       <ul>
         <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
         <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
-        <li><a href="https://youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
       </ul>
     </div>
   </div>
 
   <!-- Créditos -->
   <div class="footer-credit">
-    Feito com 💛 <strong>Capacia Group</strong> 💛
+    <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+    Feito com 💛 por <strong>Capacia Group</strong>
   </div>
 </footer>
 
-<!-- Script adicional -->
-<script src="../assets/script.js"></script>
-</body>
-</html>
+
+
+
 
 
 
