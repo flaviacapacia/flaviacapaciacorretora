@@ -213,27 +213,30 @@ body {
 .whatsapp-btn-fixed:hover {
   background: #128C7E;
 }
+Rodapé */  
 
-/* Rodapé */
 .site-footer {
-  background: #ffffff;
-  color: #000000;
+  background: #ffffff; /* fundo branco */
+  color: #000000;      /* texto preto */
   padding: 40px 20px;
-  font-family: var(--fonte-padrao);
+  font-family: 'Playfair Display', serif;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* distribui colunas */
   align-items: center;
-  max-width: 900px;
+  max-width: 650px;
   margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 20px;
+}
+
+.footer-logo {
+  margin: 0 auto;      /* centraliza horizontalmente */
+  text-align: center;  /* garante alinhamento interno */
 }
 
 .footer-logo img {
-  width: 180px;
+  width: 180px; /* logo maior */
   transition: transform 0.7s ease;
 }
 
@@ -241,6 +244,7 @@ body {
   transform: scale(1.05);
 }
 
+/* Contato e Redes sociais em dourado */
 .footer-contact h3,
 .footer-social h3 {
   color: var(--dourado);
@@ -255,11 +259,11 @@ body {
 
 .footer-contact a:hover,
 .footer-social a:hover {
-  color: #333;
+  color: #333; /* efeito hover em preto */
 }
 
 .footer-contact p {
-  color: var(--dourado);
+  color: var(--dourado); /* cidades também em dourado */
   font-size: 16px;
   margin: 6px 0;
 }
@@ -277,7 +281,20 @@ body {
   text-align: center;
   margin-top: 20px;
   font-size: 0.9rem;
-  color: #000000;
+  color: #000000; /* créditos em preto */
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-logo img {
+    margin: 0 auto;
+  }
 }
 
   </style>
@@ -307,41 +324,47 @@ body {
 </section>
 
 <section class="featured-properties">
-  <h3>Imóveis em Destaque</h3>
-  
- <div class="imovel">
-  <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-agronomica-v439.html">
-    <img src="img/sala1.webp" alt="Apartamento na Agronômica">
-    <h2>Apartamento na Agronômica</h2>
-    <p>2 quartos • 1 suíte • vaga de garagem</p>
-  </a>
-</div>
+  <h2 class="titulo-dourado-centralizado">Imóveis em Destaque</h2>
+  <div class="grid-imoveis">
 
-<div class="imovel">
-  <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-kobrasol-v440.html">
-    <img src="img/sacada-1.jpeg" alt="Apartamento no Kobrasol">
-    <h2>Apartamento no Kobrasol</h2>
-    <p>3 quartos • 1 suíte • vaga de garagem</p>
-  </a>
-</div>
+    <!-- v439 -->
+    <div class="imovel">
+      <a href="apartamento-venda-agronomica-v439.html">
+        <img src="img/sala1.webp" alt="Apartamento na Agronômica">
+        <h3>Apartamento na Agronômica</h3>
+        <p>2 quartos • 1 suíte • vaga de garagem</p>
+      </a>
+    </div>
 
-<div class="imovel">
-  <a href="https://www.flaviacapaciacorretora.site/cobertura-tindade-v441.html">
-    <img src="img/imagens/imagem2.jpg" alt="Cobertura na Trindade">
-    <h2>Cobertura na Trindade</h2>
-    <p>3 quartos • 1 suíte • vaga de garagem</p>
-  </a>
-</div>
+    <!-- v440 -->
+    <div class="imovel">
+      <a href="apartamento-venda-kobrasol-v440.html">
+        <img src="img/sacada-1.jpeg" alt="Apartamento no Kobrasol">
+        <h3>Apartamento no Kobrasol</h3>
+        <p>3 quartos • 1 suíte • vaga de garagem</p>
+      </a>
+    </div>
 
-<div class="imovel">
-  <a href="https://www.flaviacapaciacorretora.site/studio-centro-v442.html">
-    <img src="img/imagens/imagem1.jpg" alt="Studio Centro">
-    <h2>Studio Centro</h2>
-    <p>1 suíte • vaga de garagem</p>
-  </a>
-</div>
+    <!-- v441 -->
+    <div class="imovel">
+      <a href="cobertura-tindade-v441.html">
+        <img src="img/imagens/imagem2.jpg" alt="Cobertura na Trindade">
+        <h3>Cobertura na Trindade</h3>
+        <p>3 quartos • 1 suíte • vaga de garagem</p>
+      </a>
+    </div>
 
-</section>  
+    <!-- v442 -->
+    <div class="imovel">
+      <a href="studio-centro-v442.html">
+        <img src="img/imagens/imagem1.jpg" alt="Studio Centro">
+        <h3>Studio Centro</h3>
+        <p>1 suíte • vaga de garagem</p>
+      </a>
+    </div>
+
+  </div>
+</section>
 
 
 <!-- Botão Whatsapp flutuante -->
@@ -361,78 +384,48 @@ body {
     <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a>
   </div>
 </section>
- 
-
+ <!-- Footer -->
+<footer class="site-footer" id="contato">
   <div class="footer-container">
-    <!-- Coluna esquerda: Contato -->
-    <div class="footer-contact">
-      <h3>Contato</h3>
-      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
-      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <p>Florianópolis • São José</p>
-      <p> Palhoça </p>
-      </div>
     
-
-    <!-- Coluna central: Logo -->
+    <!-- Logo com link -->
     <div class="footer-logo">
       <a href="index.html">
-        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" 
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:220,h:220,mx" 
              alt="Logo Flavia Imóveis"/>
       </a>
     </div>
 
-    <!-- Coluna direita: Redes sociais -->
+    <!-- Contato -->
+    <div class="footer-contact">
+      <h3>Contato</h3>
+      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
+      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+      <p>Florianópolis • Palhoça <br> São José</p>
+    </div>
+
+    <!-- Redes sociais -->
     <div class="footer-social">
       <h3>Redes Sociais</h3>
       <ul>
         <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
         <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+        <li><a href="https://linkedin.com/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+        <li><a href="https://youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
       </ul>
     </div>
   </div>
 
   <!-- Créditos -->
   <div class="footer-credit">
- 
- <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados.</p>
-    Feito com 💛 por <strong>Capacia Group</strong> 💛
-  </div>
+    Feito com 💛 <strong>Capacia Group</strong> 💛
   </div>
 </footer>
-  
-<script src="script.js"></script>
+
+<!-- Script adicional -->
+<script src="../assets/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
