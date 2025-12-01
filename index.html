@@ -146,6 +146,15 @@
       background-color: var(--dourado);
       color: #fff;
     }
+.imovel a {
+  text-decoration: none;
+  color: inherit; /* mantém cores do h3 e p */
+  display: block; /* faz o link ocupar todo o card */
+}
+
+.imovel a:hover h3 {
+  color: var(--dourado); /* título muda para dourado no hover */
+}
 
     @media (max-width: 768px) {
       .links-imoveis { flex-direction: column; align-items: center; gap: 20px; }
@@ -328,6 +337,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
