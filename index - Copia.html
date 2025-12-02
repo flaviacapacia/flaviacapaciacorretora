@@ -168,43 +168,69 @@
     }
 
     .whatsapp-btn-fixed:hover { background: #128C7E; }
+/* Rodapé */
+.site-footer {
+  background: #ffffff;
+  color: #000000;
+  padding: 30px 15px; /* Reduzido */
+  font-family: var(--fonte-padrao);
+}
 
-    /* Rodapé */
-    .site-footer {
-      background: #ffffff;
-      color: #000000;
-      padding: 40px 20px;
-      font-family: var(--fonte-padrao);
-    }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alinha ao topo */
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduzido */
+}
 
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 900px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+.footer-logo img {
+  width: 160px; /* Leve redução opcional */
+  transition: transform 0.7s ease;
+}
+.footer-logo img:hover {
+  transform: scale(1.05);
+}
 
-    .footer-logo img { width: 180px; transition: transform 0.7s ease; }
-    .footer-logo img:hover { transform: scale(1.05); }
+.footer-contact h3,
+.footer-social h3 {
+  color: var(--dourado);
+  margin-bottom: 6px; /* Reduzido */
+}
 
-    .footer-contact h3, .footer-social h3 { color: var(--dourado); margin-bottom: 10px; }
-    .footer-contact a, .footer-social a { color: var(--dourado); text-decoration: none; }
-    .footer-contact a:hover, .footer-social a:hover { color: #333; }
+.footer-contact a,
+.footer-social a {
+  color: var(--dourado);
+  text-decoration: none;
+}
+.footer-contact a:hover,
+.footer-social a:hover {
+  color: #333;
+}
 
-    .footer-contact p { color: var(--dourado); font-size: 16px; margin: 6px 0; }
+.footer-contact p {
+  color: var(--dourado);
+  font-size: 15px; /* Leve ajuste */
+  margin: 4px 0; /* Reduzido */
+}
 
-    .footer-social ul { list-style: none; padding: 0; }
-    .footer-social li { margin-bottom: 8px; }
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-social li {
+  margin-bottom: 6px; /* Reduzido */
+}
 
-    .footer-credit {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #000000;
-    }
+.footer-credit {
+  text-align: center;
+  margin-top: 10px; /* Reduzido */
+  font-size: 0.85rem;
+  color: #000000;
+}
+
   </style>
 </head>
 
@@ -326,6 +352,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
