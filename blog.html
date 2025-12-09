@@ -169,6 +169,49 @@
       background-color: var(--preto-suave);
       color: var(--bronze-medio);
       margin-top: 10px;
+      -post {
+  margin: 20px 0;
+}
+.blog-post {
+  margin: 20px 0;
+}
+.post-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.post-img img {
+  width: 250px;   /* tamanho médio fixo */
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.post-img img:hover {
+  transform: scale(1.05);
+}
+
+.post-content h2 {
+  margin: 0;
+  color: #b08d57; /* bronze médio */
+}
+
+.post-content h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-content h2 a:hover {
+  text-decoration: underline;
+}
+
+.post-content p {
+  margin-top: 8px;
+  color: #333;
+}
     }
   </style>
 </head>
@@ -188,17 +231,51 @@
     </header>
 
     <!-- Conteúdo do Blog -->
-    <main>
-      <section class="blog-post">
-        <h2>Título da Postagem</h2>
-        <p>Este é um exemplo de conteúdo do blog. Você pode adicionar textos, imagens e links conforme necessário.</p>
-      </section>
+   <main>
+  <section class="blog-post">
 
-      <section class="blog-post">
-        <h2>Outra Postagem</h2>
-        <p>Mais conteúdo aqui. O layout mantém a largura fixa e usa dourado bronze médio como cor principal.</p>
-      </section>
-    </main>
+    <!-- Post 1 -->
+    <div class="post-item">
+      <a href="cfl-campeche.html" class="post-img">
+        <img src="img/imagens/terreno-demarcado.webp" alt="Imagem da Postagem">
+      </a>
+      <div class="post-content">
+        <h2><a href="artigo-exemplo.html">Construtora CFL chega ao sul da ilha com projeto exclusivo no Campeche</a></h2>
+        <p>
+        <p><strong>Breve lançamento:</strong> o <em>La Mare</em> chega para redefinir o estilo de vida no sul da Ilha. Localizado no Campeche, bairro que une natureza preservada e crescimento urbano planejado, o projeto combina exclusividade, sofisticação e bem-estar.</p>
+
+        </p>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="post-item">
+      <a href="artigo-mercado.html" class="post-img">
+        <img src="img/imagens/mercado.webp" alt="Mercado Imobiliário">
+      </a>
+      <div class="post-content">
+        <h2><a href="artigo-mercado.html">Mercado Imobiliário em Florianópolis</a></h2>
+        <p>
+          Veja como a valorização da Beira-Mar Norte está impactando os preços dos imóveis na região.
+        </p>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="post-item">
+      <a href="artigo-airbnb.html" class="post-img">
+        <img src="img/imagens/airbnb.webp" alt="Investimento em Airbnb">
+      </a>
+      <div class="post-content">
+        <h2><a href="artigo-airbnb.html">Investimento em Airbnb</a></h2>
+        <p>
+          Descubra como apartamentos no Centro e Kobrasol podem gerar alta rentabilidade com locações curtas.
+        </p>
+      </div>
+    </div>
+
+  </section>
+</main>
 
     <!-- Imóveis em destaque -->
     <section class="featured-properties">
@@ -242,3 +319,4 @@
         Feito com 💛 por <strong>Capacia Group</strong> 💛
       </div>
     </footer>
+
