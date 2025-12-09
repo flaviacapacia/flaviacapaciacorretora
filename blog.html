@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,7 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Flavia Capacia Corretora</title>
   <style>
-    /* Reset básico */
+    :root {
+      --bronze-medio: #b08d57; /* dourado bronze médio */
+      --preto-suave: #1a1a1a;  /* preto mais suave */
+      --fundo-claro: #f9f9f9;  /* tom claro para reduzir o excesso de preto */
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,17 +20,19 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #000000, #1a1a1a);
-      color: #FFD700; /* dourado */
+      background-color: var(--fundo-claro);
+      color: var(--bronze-medio);
       display: flex;
       justify-content: center;
     }
 
     .container {
-      max-width: 1000px; /* largura fixa */
+      max-width: 1000px;
       width: 100%;
-      background-color: #000; /* fundo preto */
+      background-color: var(--preto-suave);
       padding: 20px;
+      border: 2px solid var(--bronze-medio);
+      border-radius: 8px;
     }
 
     /* Cabeçalho */
@@ -32,12 +40,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #FFD700;
+      padding: 15px 0;
+      border-bottom: 2px solid var(--bronze-medio);
     }
 
     header img {
-      height: 50px;
+      height: 80px; /* logo maior */
     }
 
     nav {
@@ -46,11 +54,11 @@
 
     nav ul {
       list-style: none;
-      display: none; /* menu escondido */
+      display: none;
       position: absolute;
       right: 0;
-      background-color: #111;
-      border: 1px solid #FFD700;
+      background-color: var(--preto-suave);
+      border: 1px solid var(--bronze-medio);
       padding: 10px;
     }
 
@@ -60,19 +68,19 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #FFD700;
+      color: var(--bronze-medio);
     }
 
     nav button {
       background: none;
-      border: 1px solid #FFD700;
-      color: #FFD700;
+      border: 1px solid var(--bronze-medio);
+      color: var(--bronze-medio);
       padding: 5px 10px;
       cursor: pointer;
     }
 
     nav button:hover {
-      background-color: #FFD700;
+      background-color: var(--bronze-medio);
       color: #000;
     }
 
@@ -80,35 +88,34 @@
     .blog-post {
       margin: 20px 0;
       padding: 15px;
-      border: 1px solid #FFD700;
-      background-color: #111;
+      border: 1px solid var(--bronze-medio);
+      background-color: #fff;
+      color: #333;
     }
 
     .blog-post h2 {
       margin-bottom: 10px;
-    }
-
-    .blog-post p {
-      line-height: 1.6;
+      color: var(--bronze-medio);
     }
 
     /* Imóveis em destaque */
     .featured-properties {
       margin: 30px 0;
       padding: 20px;
-      border: 1px solid #FFD700;
-      background-color: #111;
+      border: 1px solid var(--bronze-medio);
+      background-color: #fff;
     }
 
     .featured-properties h2 {
       margin-bottom: 15px;
       text-align: center;
+      color: var(--bronze-medio);
     }
 
     .links-imoveis a {
       display: block;
       margin: 5px 0;
-      color: #FFD700;
+      color: var(--bronze-medio);
       text-decoration: none;
     }
 
@@ -120,37 +127,48 @@
     .footer-container {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       padding: 20px;
-      border-top: 1px solid #FFD700;
-      background-color: #111;
+      border-top: 2px solid var(--bronze-medio);
+      background-color: var(--fundo-claro);
       margin-top: 30px;
     }
 
     .footer-contact, .footer-logo, .footer-social {
       flex: 1;
       padding: 10px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      width: 120px; /* logo menor */
     }
 
     .footer-contact a, .footer-social a {
-      color: #FFD700;
+      color: var(--bronze-medio);
       text-decoration: none;
+      font-weight: bold;
     }
 
+    /* Redes sociais em linha */
     .footer-social ul {
       list-style: none;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
     }
 
     .footer-social li {
-      margin: 5px 0;
+      margin: 0;
     }
 
     .footer-credit {
       text-align: center;
       padding: 10px;
-      border-top: 1px solid #FFD700;
-      background-color: #000;
+      border-top: 1px solid var(--bronze-medio);
+      background-color: var(--preto-suave);
+      color: var(--bronze-medio);
       margin-top: 10px;
     }
   </style>
@@ -173,13 +191,14 @@
     <!-- Conteúdo do Blog -->
     <main>
       <section class="blog-post">
-        <h2>Título da Postagem</h2>
+        <h2>Construtora CFL chega ao Campeche com projeto exclusivo
+        </h2>
         <p>Este é um exemplo de conteúdo do blog. Você pode adicionar textos, imagens e links conforme necessário.</p>
       </section>
 
       <section class="blog-post">
         <h2>Outra Postagem</h2>
-        <p>Mais conteúdo aqui. O layout mantém a largura fixa e usa dourado e preto como cores principais.</p>
+        <p>Mais conteúdo aqui. O layout mantém a largura fixa e usa dourado bronze médio como cor principal.</p>
       </section>
     </main>
 
@@ -200,8 +219,7 @@
           <h3>Contato</h3>
           <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
           <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-          <p>Florianópolis • São José</p>
-          <p>Palhoça</p>
+          <p>Florianópolis • São José • Palhoça</p>
         </div>
 
         <div class="footer-logo">
@@ -226,13 +244,4 @@
         Feito com 💛 por <strong>Capacia Group</strong> 💛
       </div>
     </footer>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-</body>
-</html>
+ 
