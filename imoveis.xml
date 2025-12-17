@@ -1,0 +1,48 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<imoveis>
+  <imovel>
+    <id>439</id>
+    <titulo>Apartamento na Agronômica</titulo>
+    <descricao>Apartamento amplo na Agronômica, excelente localização e vista privilegiada.</descricao>
+    <preco>850000</preco>
+    <cidade>Florianópolis</cidade>
+    <bairro>Agronômica</bairro>
+    <link>https://www.flaviacapaciacorretora.site/apartamento-venda-agronomica-v439.html</link>
+    <imagem>https://www.flaviacapaciacorretora.site/img/imagens/agronomica.webp</imagem>
+  </imovel>
+
+  <imovel>
+    <id>447</id>
+    <titulo>Apartamento no Centro</titulo>
+    <descricao>Apartamento no Centro de Florianópolis, próximo à Beira-Mar Norte.</descricao>
+    <preco>2600000</preco>
+    <cidade>Florianópolis</cidade>
+    <bairro>Centro</bairro>
+    <link>https://www.flaviacapaciacorretora.site/apartamento-venda-centro-v447.html</link>
+    <imagem>https://www.flaviacapaciacorretora.site/img/imagens/centro.webp</imagem>
+  </imovel>
+
+  <imovel>
+    <id>441</id>
+    <titulo>Apartamento Nossa Sra do Rosário</titulo>
+    <descricao>Apartamento no bairro Nossa Senhora do Rosário, excelente opção para famílias.</descricao>
+    <preco>650000</preco>
+    <cidade>São José</cidade>
+    <bairro>Nossa Sra do Rosário</bairro>
+    <link>https://www.flaviacapaciacorretora.site/apartamento-venda-floresta-v441.html</link>
+    <imagem>https://www.flaviacapaciacorretora.site/img/imagens/floresta.webp</imagem>
+  </imovel>
+
+  <imovel>
+    <id>440</id>
+    <titulo>Apartamento no Kobrasol</titulo>
+    <descricao>Apartamento moderno no Kobrasol, próximo a comércio e serviços.</descricao>
+    <preco>720000</preco>
+    <cidade>São José</cidade>
+    <bairro>Kobrasol</bairro>
+    <link>https://www.flaviacapaciacorretora.site/apartamento-venda-kobrasol-v440.html</link>
+    <imagem>https://www.flaviacapaciacorretora.site/img/imagens/kobrasol.webp</imagem>
+  </imovel>
+</imoveis>
+
