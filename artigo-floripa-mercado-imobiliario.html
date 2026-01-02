@@ -94,10 +94,17 @@
       margin-top: 20px;
     }
     .article img {
-      width: 100%;
-      height: auto;
+      width: 280px;
       border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: block;
+      transition: transform 0.3s ease;
+      object-fit: cover;
       margin-bottom: 20px;
+    }
+    .article img:hover {
+      transform: scale(1.03);
+    }
     }
     .article h1 {
       color: var(--bronze-medio);

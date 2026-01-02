@@ -215,7 +215,65 @@ body {
 .whatsapp-btn-fixed:hover {
   background: #128C7E;
 }
-Rodapé */  
+
+/* Seção Blog */
+.blog-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.blog-section h2 {
+  color: var(--dourado);
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.blog-posts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-post {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  text-align: left;
+}
+
+.blog-post h3 {
+  color: var(--texto-bronze);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.blog-post h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-post h3 a:hover {
+  color: var(--dourado);
+}
+
+.blog-post p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsividade para blog */
+@media (max-width: 768px) {
+  .blog-posts {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Rodapé */  
     /* Rodapé */
     .site-footer {
       background: #ffffff;
@@ -231,13 +289,21 @@ Rodapé */
       max-width: 900px;
       margin: 0 auto;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 10px; /* reduzido para aproximar */
+    }
+
+    .footer-logo {
+      margin: 0 auto; /* centraliza */
+      text-align: center;
     }
 
     .footer-logo img { width: 180px; transition: transform 0.7s ease; }
     .footer-logo img:hover { transform: scale(1.05); }
 
-    .footer-contact h3, .footer-social h3 { color: var(--dourado); margin-bottom: 10px; }
+    .footer-contact, .footer-logo, .footer-social {
+      flex: 1;
+      text-align: center;
+    }
     .footer-contact a, .footer-social a { color: var(--dourado); text-decoration: none; }
     .footer-contact a:hover, .footer-social a:hover { color: #333; }
 
@@ -372,6 +438,26 @@ Rodapé */
   </div>
 </section>
   
+
+
+<!-- Seção Blog -->
+<section class="blog-section">
+  <h2>Blog Imobiliário</h2>
+  <div class="blog-posts">
+    <article class="blog-post">
+      <h3><a href="artigo-airbnb.html">Como Lucrar com Airbnb em Florianópolis</a></h3>
+      <p>Descubra dicas para maximizar seus rendimentos alugando imóveis na ilha da magia.</p>
+    </article>
+    <article class="blog-post">
+      <h3><a href="artigo-cfl-campeche.html">CFL Lança Empreendimento no Campeche</a></h3>
+      <p>Conheça o novo projeto da CFL com vista para o mar e alto padrão.</p>
+    </article>
+    <article class="blog-post">
+      <h3><a href="artigo-floripa-mercado-imobiliario.html">Mercado Imobiliário de Florianópolis</a></h3>
+      <p>Análise completa do mercado imobiliário na capital catarinense.</p>
+    </article>
+  </div>
+</section>
 
 
   <div class="footer-container">

@@ -53,15 +53,36 @@
   <!-- Imóvel Centro -->
   <url>
     <loc>https://www.flaviacapaciacorretora.site/apartamento-venda-centro-v447.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <priority>0.9</priority>
   </url>
 
-  <!-- Imóvel Floresta -->
+  <!-- Página Blog -->
   <url>
-    <loc>https://www.flaviacapaciacorretora.site/apartamento-venda-floresta-v441.html</loc>
-    <lastmod>2025-12-13</lastmod>
-    <priority>0.9</priority>
+    <loc>https://www.flaviacapaciacorretora.site/blog.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigo Airbnb -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.site/artigo-airbnb.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Artigo CFL Campeche -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.site/artigo-cfl-campeche.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Artigo Mercado Imobiliário -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.site/artigo-floripa-mercado-imobiliario.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
