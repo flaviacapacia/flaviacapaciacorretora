@@ -10,32 +10,52 @@
 <body>
 <!-- ...restante do conteúdo igual ao contato.html, incluindo o formulário e scripts... -->
 <!-- CÓPIA EXATA DO ARQUIVO contato.html PARA TESTE -->
+<script>
+  // Script do formulário: envia para backend Flask e exibe mensagem inline
+  const form = document.getElementById("contatoForm");
+  const button = document.getElementById("button");
+  // Cria elemento para mensagens
+  let msgDiv = document.createElement('div');
+  msgDiv.id = 'form-msg';
+  msgDiv.style.margin = '10px 0';
+  form.appendChild(msgDiv);
 
-<!-- INÍCIO DO FORMULÁRIO E SCRIPTS (cópia do contato.html) -->
-<section class="form-contato">
-  <form id="contatoForm">
-    <h2>Quer saber mais sobre comprar ou vender imóveis?</h2>
-    <p>Preencha seus dados ou fale direto pelo WhatsApp</p>
-    <div class="field">
-      <label for="nome">Nome</label>
-      <input type="text" name="nome" id="nome" required>
-    </div>
-    <div class="field">
-      <label for="telefone">Telefone</label>
-      <input type="tel" name="telefone" id="telefone" required>
-    </div>
-    <div class="field">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
-    </div>
-    <div class="field">
-      <label for="mensagem">Mensagem</label>
-      <textarea name="mensagem" id="mensagem"></textarea>
-    </div>
-    <input type="submit" id="button" value="Quero mais informações">
-  </form>
-  <script>
-    const form = document.getElementById("contatoForm");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    button.value = "Enviando...";
+    button.disabled = true;
+    msgDiv.textContent = '';
+
+    const formData = new FormData(this);
+    const data = {
+      nome: formData.get("nome"),
+      telefone: formData.get("telefone"),
+      email: formData.get("email"),
+      mensagem: formData.get("mensagem"),
+      data: new Date().toLocaleString("pt-BR")
+    };
+
+    fetch("http://localhost:5000/salvar-contato", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+      msgDiv.textContent = "Mensagem enviada com sucesso!";
+      msgDiv.style.color = 'green';
+      button.value = "Quero mais informações";
+      button.disabled = false;
+      form.reset();
+    })
+    .catch(err => {
+      msgDiv.textContent = "Erro ao enviar. Tente novamente.";
+      msgDiv.style.color = 'red';
+      button.value = "Quero mais informações";
+      button.disabled = false;
+    });
+  });
+</script>
     const button = document.getElementById("button");
     form.addEventListener("submit", function(e) {
       e.preventDefault();
