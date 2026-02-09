@@ -23,7 +23,6 @@
   <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
 </head>
 
-
 <style>
   
 /* Responsivo */
@@ -219,48 +218,53 @@ form {
 
   <input type="submit" id="button" value="Quero mais informações">
 </form>
-<!-- Script do formulário -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Script do formulário: envia para backend Flask (Excel) e exibe mensagem inline -->
 <script>
-  // Inicializa com sua chave pública
-  emailjs.init("EkOcMAMTiFekZj6mJ");
-
-  // Captura o envio do formulário
   const form = document.getElementById("contatoForm");
   const button = document.getElementById("button");
+  let msgDiv = document.createElement('div');
+  msgDiv.id = 'form-msg';
+  msgDiv.style.margin = '10px 0';
+  form.appendChild(msgDiv);
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
-
     button.value = "Enviando...";
+    button.disabled = true;
+    msgDiv.textContent = '';
 
-    emailjs.sendForm("service_m5n014j", "template_r19ih3n", this)
-      .then(() => {
-        alert("Mensagem enviada com sucesso!");
-        button.value = "Enviar Email";
-        form.reset();
-      })
-      .catch((err) => {
-        console.error("Erro:", err);
-        alert("Erro ao enviar. Veja o console para detalhes.");
-        button.value = "Enviar Email";
-      });
-  });
-</script>
+    const formData = new FormData(this);
+    const data = {
+      nome: formData.get("nome"),
+      telefone: formData.get("telefone"),
+      email: formData.get("email"),
+      mensagem: formData.get("mensagem"),
+      data: new Date().toLocaleString("pt-BR")
+    };
 
-<!-- Script do Swiper -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    var swiper = new Swiper(".swiper", {
-      slidesPerView: 6,
-      spaceBetween: 10,
-      pagination: { el: ".swiper-pagination", clickable: true },
-      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+    fetch("http://localhost:5000/salvar-contato", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+      msgDiv.textContent = "Mensagem enviada com sucesso!";
+      msgDiv.style.color = 'green';
+      button.value = "Quero mais informações";
+      button.disabled = false;
+      form.reset();
+    })
+    .catch(err => {
+      msgDiv.textContent = "Erro ao enviar. Tente novamente.";
+      msgDiv.style.color = 'red';
+      button.value = "Quero mais informações";
+      button.disabled = false;
     });
   });
 </script>
 
-
+</section>
 
 <section class="cta-banner">
   <h2>Seu imóvel a um clique de você</h2>
@@ -314,11 +318,3 @@ form {
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
