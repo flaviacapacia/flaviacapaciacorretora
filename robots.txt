@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.flaviacapaciacorretora.site/sitemap.xml
+Sitemap: https://www.flaviacapaciacorretora.com/sitemap.xml
+
