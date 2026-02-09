@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato Teste | Flavia Capacia Corretora</title>
+  <meta name="description" content="Página de teste do formulário de contato." />
+  <link rel="stylesheet" href="flaviacapaciacorretora/style.css"/>
+</head>
+<body>
+<!-- ...restante do conteúdo igual ao contato.html, incluindo o formulário e scripts... -->
+<!-- CÓPIA EXATA DO ARQUIVO contato.html PARA TESTE -->
+
+<!-- INÍCIO DO FORMULÁRIO E SCRIPTS (cópia do contato.html) -->
+<section class="form-contato">
+  <form id="contatoForm">
+    <h2>Quer saber mais sobre comprar ou vender imóveis?</h2>
+    <p>Preencha seus dados ou fale direto pelo WhatsApp</p>
+    <div class="field">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" required>
+    </div>
+    <div class="field">
+      <label for="telefone">Telefone</label>
+      <input type="tel" name="telefone" id="telefone" required>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <div class="field">
+      <label for="mensagem">Mensagem</label>
+      <textarea name="mensagem" id="mensagem"></textarea>
+    </div>
+    <input type="submit" id="button" value="Quero mais informações">
+  </form>
+  <script>
+    const form = document.getElementById("contatoForm");
+    const button = document.getElementById("button");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      button.value = "Enviando...";
+      button.disabled = true;
+      const formData = new FormData(this);
+      const data = {
+        nome: formData.get("nome"),
+        telefone: formData.get("telefone"),
+        email: formData.get("email"),
+        mensagem: formData.get("mensagem"),
+        data: new Date().toLocaleString("pt-BR")
+      };
+      fetch("http://localhost:5000/salvar-contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        const WHATSAPP_NUMBER = "5548999600601";
+        const textoWhats = `Olá! 👋 Tenho interesse.\nNome: ${data.nome}\nTelefone: ${data.telefone}\nEmail: ${data.email}\n\nMensagem:\n${data.mensagem}`;
+        const linkWhats = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(textoWhats)}`;
+        window.open(linkWhats, "_blank");
+        alert("Mensagem salva com sucesso! WhatsApp será aberto para envio.");
+        button.value = "Quero mais informações";
+        button.disabled = false;
+        form.reset();
+      })
+      .catch(err => {
+        console.error("Erro:", err);
+        alert("Erro ao salvar no servidor. Tentando abrir WhatsApp localmente.");
+        const WHATSAPP_NUMBER = "5548999600601";
+        const textoWhats = `Olá! 👋 Tenho interesse.\nNome: ${data.nome}\nTelefone: ${data.telefone}\nEmail: ${data.email}\n\nMensagem:\n${data.mensagem}`;
+        const linkWhats = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(textoWhats)}`;
+        window.open(linkWhats, "_blank");
+        button.value = "Quero mais informações";
+        button.disabled = false;
+      });
+    });
+  </script>
+</section>
+<!-- ...demais seções e rodapé iguais ao contato.html... -->
+</body>
+</html>
