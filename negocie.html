@@ -143,54 +143,54 @@
   </style>
 </head>
   <script>
-document.querySelector("#negocie").addEventListener("submit", async function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("negocie");
+  const msg = document.getElementById("mensagem");
+  if (!form) return;
 
-  const form = e.target;
-  const formData = new FormData(form);
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  // Dica: se quiser limitar tamanho total (ex.: 10MB)
-  const files = document.getElementById("files").files;
-  let totalSize = 0;
-  for (const f of files) totalSize += f.size;
-  if (totalSize > 10 * 1024 * 1024) {
-    document.getElementById("mensagem").innerText = "⚠️ As imagens ultrapassam 10MB no total.";
-    return;
-  }
+    const formData = new FormData(form);
 
-  try {
-    const response = await fetch("http://localhost:5000/api/imoveis", {
-      method: "POST",
-      body: formData // sem headers de Content-Type; o browser define corretamente
-    });
+    const data = {
+      Proprietario: formData.get("Proprietario"),
+      Contato: formData.get("Contato"),
+      VendaOuAluguel: formData.get("VendaOuAluguel"),
+      Tipo: formData.get("Tipo"),
+      Valor: formData.get("Valor"),
+      ValorCondominio: formData.get("ValorCondominio"),
+      ValorIPTU: formData.get("ValorIPTU"),
+      Endereco: formData.get("Endereco"),
+      Condominio: formData.get("Condominio"),
+      Descricao: formData.get("Descricao"),
+      ImagemUrl: formData.get("ImagemUrl"),
+      Data: new Date().toLocaleString("pt-BR")
+    };
 
-    if (response.ok) {
-      document.getElementById("mensagem").innerText = "✅ Imóvel enviado com sucesso!";
-      form.reset();
-    } else {
-      const text = await response.text();
-      document.getElementById("mensagem").innerText = "⚠️ Erro ao enviar: " + text;
+    try {
+      const response = await fetch("http://localhost:5000/salvar-negocie", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        msg.innerText = "✅ Imovel enviado com sucesso!";
+        form.reset();
+      } else {
+        const text = await response.text();
+        msg.innerText = "⚠️ Erro ao enviar: " + text;
+      }
+    } catch (error) {
+      console.error(error);
+      msg.innerText = "❌ Erro de conexao com o servidor.";
     }
-  } catch (error) {
-    console.error(error);
-    document.getElementById("mensagem").innerText = "❌ Erro de conexão com o servidor.";
-  }
+  });
 });
 </script>
 
 
-<body>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Imóveis em Floripa FC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
-</head>
 <body>
 
 <header class="site-header">
