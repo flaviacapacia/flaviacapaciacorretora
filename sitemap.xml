@@ -85,4 +85,25 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- FAQ -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/faq.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Guia de Bairros -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/guia-bairros.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Guia de Compra de Imóvel -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/guia-compra-imovel.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>

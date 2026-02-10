@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Guia de Bairros de Florianópolis | Flavia Capacia Corretora</title>
+  <meta name="description" content="Conheça os melhores bairros de Florianópolis e São José para morar e investir. Guia completo com infraestrutura, valores e características." />
+  <meta name="keywords" content="bairros Florianópolis, bairros São José, onde morar Florianópolis, Campeche, Agronômica, Kobrasol, Centro" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Guia de Bairros - Florianópolis e São José" />
+  <meta property="og:description" content="Descubra o bairro ideal para você em Florianópolis" />
+  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
+  <meta property="og:url" content="https://www.flaviacapaciacorretora.com/guia-bairros.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --fundo-branco: #ffffff;
+      --texto-bronze: #4B3A2F;
+      --bronze-medio: #b08d57;
+      --cinza-borda: #e5e5e5;
+      --fonte-padrao: 'Playfair Display', serif;
+      --verde-destaque: #2d7a3e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      color: var(--texto-bronze);
+      font-family: var(--fonte-padrao);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      background-color: var(--fundo-branco);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* Cabeçalho */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--bronze-medio);
+      margin-bottom: 30px;
+    }
+    header img { height: 54px; }
+
+    nav { position: relative; }
+    nav button {
+      background: none;
+      border: 1px solid var(--bronze-medio);
+      color: var(--bronze-medio);
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    nav button:hover {
+      background-color: var(--bronze-medio);
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background-color: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      min-width: 160px;
+      z-index: 10;
+    }
+    nav ul li { margin: 6px 0; }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--texto-bronze);
+      font-weight: bold;
+    }
+    nav ul li a:hover { color: var(--bronze-medio); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      color: var(--bronze-medio);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Grid de Bairros */
+    .bairros-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .bairro-card {
+      background: white;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .bairro-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .bairro-header {
+      background: linear-gradient(135deg, var(--bronze-medio) 0%, #8b7355 100%);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .bairro-header h2 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+
+    .bairro-header .cidade {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .bairro-content {
+      padding: 20px;
+    }
+
+    .bairro-tag {
+      display: inline-block;
+      background-color: var(--verde-destaque);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .bairro-content p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    .info-list {
+      list-style: none;
+      margin: 15px 0;
+    }
+
+    .info-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--cinza-borda);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      font-weight: bold;
+      color: var(--texto-bronze);
+    }
+
+    .info-value {
+      color: #666;
+    }
+
+    .destaques {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    .destaques h3 {
+      color: var(--bronze-medio);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .destaques ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .destaques li {
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .destaques li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--verde-destaque);
+      font-weight: bold;
+    }
+
+    .btn-contato {
+      display: block;
+      text-align: center;
+      background-color: var(--bronze-medio);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-contato:hover {
+      background-color: #8b7355;
+    }
+
+    /* CTA Box */
+    .cta-box {
+      background: linear-gradient(135deg, #f9f9f9 0%, #fff 100%);
+      border: 2px solid var(--bronze-medio);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cta-box h2 {
+      color: var(--bronze-medio);
+      margin-bottom: 15px;
+    }
+
+    .cta-box p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #25D366;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+    }
+
+    /* Rodapé */
+    footer {
+      margin-top: 40px;
+      border-top: 2px solid var(--bronze-medio);
+      padding-top: 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      color: var(--bronze-medio);
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: var(--texto-bronze);
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: var(--bronze-medio);
+    }
+
+    .footer-social ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-credit {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--cinza-borda);
+      color: #666;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .bairros-grid {
+        grid-template-columns: 1fr;
+      }
+      .container { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header>
+      <a href="index.html" aria-label="Página inicial">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" />
+      </a>
+      <nav>
+        <button type="button" onclick="toggleMenu()">Menu</button>
+        <ul id="menu" aria-label="Menu principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="guia-bairros.html">Guia de Bairros</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <div class="hero">
+        <h1>🏘️ Guia Completo de Bairros</h1>
+        <p>Descubra os melhores bairros de Florianópolis e São José para morar, investir e realizar seus sonhos. Cada região tem suas características únicas!</p>
+      </div>
+
+      <!-- Grid de Bairros -->
+      <div class="bairros-grid">
+        
+        <!-- Campeche -->
+        <div class="bairro-card">
+          <div class="bairro-header">
+            <h2>Campeche</h2>
+            <p class="cidade">Florianópolis - Sul da Ilha</p>
+          </div>
+          <div class="bairro-content">
+            <span class="bairro-tag">🏖️ PRAIA & NATUREZA</span>
+            <p>Um dos bairros mais charmosos de Florianópolis, o Campeche une tranquilidade, natureza preservada e infraestrutura em crescimento. Ideal para quem busca qualidade de vida!</p>
+            
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Perfil:</span>
+                <span class="info-value">Famílias, investidores</span>
+              </li>
+              <li>
+                <span class="info-label">Valorização:</span>
+                <span class="info-value">Alta (10-12% ao ano)</span>
+              </li>
+              <li>
+                <span class="info-label">Apto 2 quartos:</span>
+                <span class="info-value">R$ 450-700 mil</span>
+              </li>
+              <li>
+                <span class="info-label">Aluguel médio:</span>
+                <span class="info-value">R$ 2.000-3.500</span>
+              </li>
+            </ul>
+
+            <div class="destaques">
+              <h3>✨ Destaques</h3>
+              <ul>
+                <li>Praia extensa e preservada</li>
+                <li>Proximidade com Lagoa da Conceição</li>
+                <li>Crescimento de comércio local</li>
+                <li>Ciclovias e áreas verdes</li>
+                <li>Novo projeto La Mare CFL</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20conhecer%20imóveis%20no%20Campeche." target="_blank" class="btn-contato">
+              Ver imóveis no Campeche
+            </a>
+          </div>
+        </div>
+
+        <!-- Agronômica -->
+        <div class="bairro-card">
+          <div class="bairro-header">
+            <h2>Agronômica</h2>
+            <p class="cidade">Florianópolis - Centro</p>
+          </div>
+          <div class="bairro-content">
+            <span class="bairro-tag">🏢 URBANO & COMPLETO</span>
+            <p>Bairro central e tradicional, a Agronômica oferece infraestrutura completa, com fácil acesso a todos os pontos de Florianópolis. Perfeito para profissionais e executivos.</p>
+            
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Perfil:</span>
+                <span class="info-value">Executivos, estudantes</span>
+              </li>
+              <li>
+                <span class="info-label">Valorização:</span>
+                <span class="info-value">Média-alta (7-9% ao ano)</span>
+              </li>
+              <li>
+                <span class="info-label">Apto 2 quartos:</span>
+                <span class="info-value">R$ 500-800 mil</span>
+              </li>
+              <li>
+                <span class="info-label">Aluguel médio:</span>
+                <span class="info-value">R$ 1.800-3.200</span>
+              </li>
+            </ul>
+
+            <div class="destaques">
+              <h3>✨ Destaques</h3>
+              <ul>
+                <li>Próximo à Beira-Mar Norte</li>
+                <li>Comércio e serviços completos</li>
+                <li>Transporte público eficiente</li>
+                <li>Hospitais e clínicas de qualidade</li>
+                <li>Ótima opção para Airbnb</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20conhecer%20imóveis%20na%20Agronômica." target="_blank" class="btn-contato">
+              Ver imóveis na Agronômica
+            </a>
+          </div>
+        </div>
+
+        <!-- Centro de Florianópolis -->
+        <div class="bairro-card">
+          <div class="bairro-header">
+            <h2>Centro</h2>
+            <p class="cidade">Florianópolis</p>
+          </div>
+          <div class="bairro-content">
+            <span class="bairro-tag">🏛️ HISTÓRICO & CENTRAL</span>
+            <p>O coração de Florianópolis! O Centro oferece praticidade total, com fácil acesso a tudo. Ideal para quem busca conveniência e boa rentabilidade com locação.</p>
+            
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Perfil:</span>
+                <span class="info-value">Investidores, executivos</span>
+              </li>
+              <li>
+                <span class="info-label">Valorização:</span>
+                <span class="info-value">Estável (5-7% ao ano)</span>
+              </li>
+              <li>
+                <span class="info-label">Apto 2 quartos:</span>
+                <span class="info-value">R$ 400-650 mil</span>
+              </li>
+              <li>
+                <span class="info-label">Aluguel médio:</span>
+                <span class="info-value">R$ 1.500-2.800</span>
+              </li>
+            </ul>
+
+            <div class="destaques">
+              <h3>✨ Destaques</h3>
+              <ul>
+                <li>Infraestrutura completa</li>
+                <li>Centro comercial e financeiro</li>
+                <li>Alta demanda para locação</li>
+                <li>Excelente para Airbnb executivo</li>
+                <li>Revitalização em andamento</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20conhecer%20imóveis%20no%20Centro%20de%20Floripa." target="_blank" class="btn-contato">
+              Ver imóveis no Centro
+            </a>
+          </div>
+        </div>
+
+        <!-- Kobrasol (São José) -->
+        <div class="bairro-card">
+          <div class="bairro-header">
+            <h2>Kobrasol</h2>
+            <p class="cidade">São José</p>
+          </div>
+          <div class="bairro-content">
+            <span class="bairro-tag">💼 NEGÓCIOS & VIDA</span>
+            <p>Um dos bairros mais valorizados de São José! Kobrasol é sinônimo de desenvolvimento, com empresas de tecnologia, shoppings e ótima infraestrutura.</p>
+            
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Perfil:</span>
+                <span class="info-value">Famílias, profissionais</span>
+              </li>
+              <li>
+                <span class="info-label">Valorização:</span>
+                <span class="info-value">Alta (9-11% ao ano)</span>
+              </li>
+              <li>
+                <span class="info-label">Apto 2 quartos:</span>
+                <span class="info-value">R$ 350-600 mil</span>
+              </li>
+              <li>
+                <span class="info-label">Aluguel médio:</span>
+                <span class="info-value">R$ 1.400-2.500</span>
+              </li>
+            </ul>
+
+            <div class="destaques">
+              <h3>✨ Destaques</h3>
+              <ul>
+                <li>Próximo a empresas de tecnologia</li>
+                <li>Shopping Itaguaçu e São José</li>
+                <li>Hospitais e escolas de qualidade</li>
+                <li>Fácil acesso à BR-101</li>
+                <li>Ótimo custo-benefício</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20conhecer%20imóveis%20no%20Kobrasol." target="_blank" class="btn-contato">
+              Ver imóveis no Kobrasol
+            </a>
+          </div>
+        </div>
+
+        <!-- Jurerê Internacional -->
+        <div class="bairro-card">
+          <div class="bairro-header">
+            <h2>Jurerê Internacional</h2>
+            <p class="cidade">Florianópolis - Norte da Ilha</p>
+          </div>
+          <div class="bairro-content">
+            <span class="bairro-tag">💎 LUXO & EXCLUSIVIDADE</span>
+            <p>O bairro mais sofisticado de Florianópolis! Jurerê Internacional é referência em alto padrão, com infraestrutura de primeiro mundo e beach clubs renomados.</p>
+            
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Perfil:</span>
+                <span class="info-value">Alto padrão, investidores</span>
+              </li>
+              <li>
+                <span class="info-label">Valorização:</span>
+                <span class="info-value">Alta (10-15% ao ano)</span>
+              </li>
+              <li>
+                <span class="info-label">Apto 2 quartos:</span>
+                <span class="info-value">R$ 800 mil - 2 milhões</span>
+              </li>
+              <li>
+                <span class="info-label">Aluguel médio:</span>
+                <span class="info-value">R$ 3.500-8.000</span>
+              </li>
+            </ul>
+
+            <div class="destaques">
+              <h3>✨ Destaques</h3>
+              <ul>
+                <li>Beach clubs e restaurantes</li>
+                <li>Infraestrutura completa</li>
+                <li>Segurança 24h</li>
+                <li>Alta rentabilidade no verão</li>
+                <li>Excelente para temporada</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20conhecer%20imóveis%20em%20Jurerê." target="_blank" class="btn-contato">
+              Ver imóveis em Jurerê
+            </a>
+          </div>
+        </div>
+
+        <!-- Trindade -->
+        <div class="bairro-card">
+          <div class="bairro-header">
+            <h2>Trindade</h2>
+            <p class="cidade">Florianópolis</p>
+          </div>
+          <div class="bairro-content">
+            <span class="bairro-tag">🎓 UNIVERSITÁRIO & JOVEM</span>
+            <p>Bairro universitário por excelência! A Trindade abriga a UFSC e tem infraestrutura voltada para estudantes e jovens profissionais. Alta demanda para locação!</p>
+            
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Perfil:</span>
+                <span class="info-value">Estudantes, investidores</span>
+              </li>
+              <li>
+                <span class="info-label">Valorização:</span>
+                <span class="info-value">Média (6-8% ao ano)</span>
+              </li>
+              <li>
+                <span class="info-label">Apto 2 quartos:</span>
+                <span class="info-value">R$ 400-650 mil</span>
+              </li>
+              <li>
+                <span class="info-label">Aluguel médio:</span>
+                <span class="info-value">R$ 1.600-2.800</span>
+              </li>
+            </ul>
+
+            <div class="destaques">
+              <h3>✨ Destaques</h3>
+              <ul>
+                <li>Próximo à UFSC</li>
+                <li>Comércio diversificado</li>
+                <li>Transporte público eficiente</li>
+                <li>Demanda constante por locação</li>
+                <li>Ambiente jovem e dinâmico</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20conhecer%20imóveis%20na%20Trindade." target="_blank" class="btn-contato">
+              Ver imóveis na Trindade
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Final -->
+      <div class="cta-box">
+        <h2>🏡 Encontre seu bairro ideal!</h2>
+        <p>Cada bairro tem suas vantagens. Vamos conversar para encontrar a melhor opção para você, seja para morar ou investir!</p>
+        <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20ajuda%20para%20escolher%20o%20melhor%20bairro%20para%20mim." target="_blank" class="btn-whatsapp">
+          📲 Falar com a Flavia
+        </a>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <a href="index.html">
+            <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" style="width: 120px;" />
+          </a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p><a href="mailto:flavia.capacia@creci.gov.br">flavia.capacia@creci.gov.br</a></p>
+          <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+          <p>Florianópolis, SC</p>
+        </div>
+
+        <div class="footer-section footer-social">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-credit">
+        <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+        <p>Feito com 💛 por <strong>Capacia Group</strong> 💛</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      const isVisible = window.getComputedStyle(menu).display === "block";
+      menu.style.display = isVisible ? "none" : "block";
+    }
+
+    // Fechar o menu ao clicar fora
+    document.addEventListener("click", function (e) {
+      const menu = document.getElementById("menu");
+      const nav = document.querySelector("nav");
+      if (!nav.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
