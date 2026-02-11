@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Guia Completo: Como Comprar seu Imóvel em Florianópolis | Flavia Capacia</title>
+  <meta name="description" content="Guia completo passo a passo para comprar seu imóvel em Florianópolis. Aprenda sobre financiamento, documentação e evite armadilhas." />
+  <meta name="keywords" content="comprar imóvel Florianópolis, financiamento imobiliário, primeira compra, documentação imóvel" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Guia: Como Comprar seu Imóvel em Florianópolis" />
+  <meta property="og:description" content="Passo a passo completo para realizar o sonho da casa própria" />
+  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
+  <meta property="og:url" content="https://www.flaviacapaciacorretora.com/guia-compra-imovel.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --fundo-branco: #ffffff;
+      --texto-bronze: #4B3A2F;
+      --bronze-medio: #b08d57;
+      --cinza-borda: #e5e5e5;
+      --fonte-padrao: 'Playfair Display', serif;
+      --verde-sucesso: #2d7a3e;
+      --azul-info: #2563eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      color: var(--texto-bronze);
+      font-family: var(--fonte-padrao);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background-color: var(--fundo-branco);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* Cabeçalho */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--bronze-medio);
+      margin-bottom: 30px;
+    }
+    header img { height: 54px; }
+
+    nav { position: relative; }
+    nav button {
+      background: none;
+      border: 1px solid var(--bronze-medio);
+      color: var(--bronze-medio);
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    nav button:hover {
+      background-color: var(--bronze-medio);
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background-color: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      min-width: 160px;
+      z-index: 10;
+    }
+    nav ul li { margin: 6px 0; }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--texto-bronze);
+      font-weight: bold;
+    }
+    nav ul li a:hover { color: var(--bronze-medio); }
+
+    /* Artigo */
+    article {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: var(--bronze-medio);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--cinza-borda);
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-left: 4px solid var(--bronze-medio);
+      border-radius: 4px;
+    }
+
+    h2 {
+      color: var(--bronze-medio);
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--cinza-borda);
+    }
+
+    h3 {
+      color: var(--texto-bronze);
+      font-size: 1.4rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .step-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+      border: 2px solid var(--bronze-medio);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .step-number {
+      display: inline-block;
+      background: var(--bronze-medio);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-right: 15px;
+    }
+
+    .step-title {
+      display: inline-block;
+      color: var(--bronze-medio);
+      font-size: 1.5rem;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+
+    .checklist {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .checklist ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      padding: 10px 0;
+      padding-left: 30px;
+      position: relative;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .checklist li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--verde-sucesso);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .alert-box {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .alert-box strong {
+      color: #856404;
+    }
+
+    .info-box {
+      background-color: #d1ecf1;
+      border-left: 4px solid #0c5460;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .info-box strong {
+      color: #0c5460;
+    }
+
+    .tip-box {
+      background-color: #d4edda;
+      border-left: 4px solid #28a745;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .tip-box strong {
+      color: #155724;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--bronze-medio) 0%, #8b7355 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cta-box h2 {
+      color: white;
+      border: none;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+
+    .cta-box p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #25D366;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+    }
+
+    /* Rodapé */
+    footer {
+      margin-top: 40px;
+      border-top: 2px solid var(--bronze-medio);
+      padding-top: 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      color: var(--bronze-medio);
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: var(--texto-bronze);
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: var(--bronze-medio);
+    }
+
+    .footer-social ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-credit {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--cinza-borda);
+      color: #666;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      .container { padding: 20px; }
+      .step-number { width: 35px; height: 35px; line-height: 35px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header>
+      <a href="index.html" aria-label="Página inicial">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" />
+      </a>
+      <nav>
+        <button type="button" onclick="toggleMenu()">Menu</button>
+        <ul id="menu" aria-label="Menu principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="guia-bairros.html">Guia de Bairros</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <h1>🏡 Guia Completo: Como Comprar seu Imóvel em Florianópolis</h1>
+        
+        <div class="article-meta">
+          📅 Publicado em 10 de fevereiro de 2026 | ⏱️ Leitura: 12 minutos
+        </div>
+
+        <p class="intro">
+          Comprar um imóvel é uma das decisões mais importantes da vida. Este guia foi criado para você que quer realizar o sonho da casa própria ou fazer um investimento inteligente em Florianópolis. Vamos te mostrar o caminho completo, desde a escolha do imóvel até a assinatura da escritura!
+        </p>
+
+        <!-- Passo 1 -->
+        <div class="step-box">
+          <span class="step-number">1</span>
+          <span class="step-title">Defina seu Objetivo e Orçamento</span>
+          
+          <p style="margin-top: 20px;">Antes de sair procurando imóveis, é fundamental saber exatamente o que você quer e quanto pode investir.</p>
+
+          <h3>Perguntas essenciais:</h3>
+          <div class="checklist">
+            <ul>
+              <li>O imóvel é para morar ou investir?</li>
+              <li>Quantos quartos você precisa?</li>
+              <li>Qual a localização ideal? (trabalho, escola, família)</li>
+              <li>Prefere apartamento ou casa?</li>
+              <li>Qual seu orçamento máximo?</li>
+              <li>Você tem entrada ou vai usar FGTS?</li>
+            </ul>
+          </div>
+
+          <div class="tip-box">
+            <strong>💡 Dica da Flavia:</strong> A prestação do financiamento não deve ultrapassar 30% da sua renda mensal. Calcule sempre com uma margem de segurança!
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="step-box">
+          <span class="step-number">2</span>
+          <span class="step-title">Pesquise e Visite Imóveis</span>
+          
+          <p style="margin-top: 20px;">Agora é hora de conhecer as opções disponíveis no mercado. Não tenha pressa!</p>
+
+          <h3>Como fazer uma boa pesquisa:</h3>
+          <p>• <strong>Use sites especializados:</strong> Vivareal, ZAP Imóveis, OLX</p>
+          <p>• <strong>Contate corretores de confiança:</strong> Eles conhecem oportunidades que nem sempre estão anunciadas</p>
+          <p>• <strong>Visite pelo menos 5 imóveis:</strong> Isso te dá parâmetro de comparação</p>
+          <p>• <strong>Vá em diferentes horários:</strong> Veja o imóvel de manhã e à tarde para avaliar iluminação e barulho</p>
+
+          <h3>Durante a visita, observe:</h3>
+          <div class="checklist">
+            <ul>
+              <li>Estado de conservação (paredes, piso, teto)</li>
+              <li>Infiltrações e manchas de umidade</li>
+              <li>Funcionamento de portas e janelas</li>
+              <li>Instalações elétricas e hidráulicas</li>
+              <li>Iluminação natural</li>
+              <li>Barulho externo e vizinhança</li>
+              <li>Área comum do prédio (se for apartamento)</li>
+            </ul>
+          </div>
+
+          <div class="alert-box">
+            <strong>⚠️ Atenção:</strong> Nunca faça uma visita sozinho(a). Leve alguém de confiança que possa te ajudar a avaliar o imóvel com olhar crítico.
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="step-box">
+          <span class="step-number">3</span>
+          <span class="step-title">Verifique a Documentação do Imóvel</span>
+          
+          <p style="margin-top: 20px;">Antes de fazer uma proposta, certifique-se de que o imóvel está em ordem!</p>
+
+          <h3>Documentos essenciais para verificar:</h3>
+          <div class="checklist">
+            <ul>
+              <li><strong>Matrícula atualizada:</strong> Obtida no Cartório de Registro de Imóveis</li>
+              <li><strong>IPTU:</strong> Verificar se está em dia</li>
+              <li><strong>Certidões negativas:</strong> Ônus, penhoras, alienações</li>
+              <li><strong>Condomínio:</strong> Taxas em dia (se for apartamento)</li>
+              <li><strong>Certidão de propriedade:</strong> Confirma que o vendedor é o dono</li>
+              <li><strong>Habite-se:</strong> Alvará de conclusão da obra</li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <strong>📌 Importante:</strong> Um advogado especializado pode fazer essa análise por você. É um investimento pequeno que evita dores de cabeça enormes!
+          </div>
+        </div>
+
+        <!-- Passo 4 -->
+        <div class="step-box">
+          <span class="step-number">4</span>
+          <span class="step-title">Faça uma Proposta</span>
+          
+          <p style="margin-top: 20px;">Encontrou o imóvel ideal? Hora de formalizar seu interesse!</p>
+
+          <h3>Como fazer uma proposta:</h3>
+          <p>• <strong>Proposta por escrito:</strong> Sempre formalize no papel</p>
+          <p>• <strong>Valor e condições:</strong> Especifique o valor oferecido e forma de pagamento</p>
+          <p>• <strong>Prazo de validade:</strong> Geralmente 7 dias</p>
+          <p>• <strong>Sinal:</strong> Pode ser solicitado um sinal de 1% a 5% do valor</p>
+
+          <div class="tip-box">
+            <strong>💡 Dica da Flavia:</strong> Não tenha medo de negociar! O vendedor muitas vezes aceita propostas menores, especialmente se o imóvel está há muito tempo no mercado.
+          </div>
+
+          <h3>O que pode ser negociado:</h3>
+          <p>• Preço final do imóvel</p>
+          <p>• Inclusão de móveis planejados</p>
+          <p>• Prazo para entrega das chaves</p>
+          <p>• Quem paga o ITBI (imposto de transmissão)</p>
+          <p>• Custos de cartório</p>
+        </div>
+
+        <!-- Passo 5 -->
+        <div class="step-box">
+          <span class="step-number">5</span>
+          <span class="step-title">Solicite o Financiamento</span>
+          
+          <p style="margin-top: 20px;">Se você vai financiar, esse é o momento de procurar o banco.</p>
+
+          <h3>Documentos necessários:</h3>
+          <div class="checklist">
+            <ul>
+              <li>RG, CPF e certidão de nascimento/casamento</li>
+              <li>Comprovante de residência</li>
+              <li>Comprovante de renda (3 últimos holerites ou IR)</li>
+              <li>Extratos bancários dos últimos 3 meses</li>
+              <li>Carteira de trabalho</li>
+              <li>Extrato do FGTS (se for usar)</li>
+            </ul>
+          </div>
+
+          <h3>Processo de aprovação:</h3>
+          <p><strong>1. Análise de crédito:</strong> O banco avalia seu perfil (7 a 15 dias)</p>
+          <p><strong>2. Avaliação do imóvel:</strong> Engenheiro do banco vistoria o imóvel</p>
+          <p><strong>3. Aprovação:</strong> Banco libera o financiamento</p>
+          <p><strong>4. Assinatura do contrato:</strong> Você assume o compromisso de pagamento</p>
+
+          <div class="info-box">
+            <strong>📌 Bancos que financiam em Florianópolis:</strong> Caixa Econômica Federal, Banco do Brasil, Itaú, Santander, Bradesco, Sicoob, Sicredi.
+          </div>
+        </div>
+
+        <!-- Passo 6 -->
+        <div class="step-box">
+          <span class="step-number">6</span>
+          <span class="step-title">Assine o Contrato de Compra e Venda</span>
+          
+          <p style="margin-top: 20px;">Com o financiamento aprovado, é hora de oficializar a compra!</p>
+
+          <h3>O que acontece nesta etapa:</h3>
+          <p>• <strong>Escritura pública:</strong> Feita em cartório com presença do comprador, vendedor e testemunhas</p>
+          <p>• <strong>Pagamento:</strong> Transferência bancária ou cheque administrativo</p>
+          <p>• <strong>Quitação de dívidas:</strong> IPTU, condomínio e outras pendências são quitadas</p>
+          <p>• <strong>Entrega das chaves:</strong> Normalmente ocorre no mesmo dia</p>
+
+          <h3>Custos envolvidos:</h3>
+          <div class="checklist">
+            <ul>
+              <li><strong>ITBI:</strong> 2% do valor do imóvel (varia por cidade)</li>
+              <li><strong>Cartório:</strong> R$ 2.000 a R$ 5.000 (depende do valor do imóvel)</li>
+              <li><strong>Registro:</strong> R$ 1.000 a R$ 3.000</li>
+            </ul>
+          </div>
+
+          <div class="alert-box">
+            <strong>⚠️ Atenção:</strong> Guarde todos os documentos originais em local seguro! Você vai precisar deles para comprovar a propriedade.
+          </div>
+        </div>
+
+        <!-- Passo 7 -->
+        <div class="step-box">
+          <span class="step-number">7</span>
+          <span class="step-title">Registre o Imóvel no seu Nome</span>
+          
+          <p style="margin-top: 20px;">O último passo é registrar a escritura no Cartório de Registro de Imóveis.</p>
+
+          <p>Apenas após o registro, você é oficialmente o proprietário do imóvel! Esse processo leva de 15 a 30 dias.</p>
+
+          <div class="tip-box">
+            <strong>💡 Dica da Flavia:</strong> Enquanto o registro não sai, já comece a planejar a mudança e possíveis reformas!
+          </div>
+        </div>
+
+        <h2>⚠️ Cuidados para não cair em armadilhas</h2>
+        
+        <p>Infelizmente, o mercado imobiliário tem seus riscos. Aqui estão os principais cuidados:</p>
+
+        <div class="alert-box">
+          <strong>🚨 Nunca faça isso:</strong>
+          <ul style="margin-top: 10px; padding-left: 20px;">
+            <li>Pagar entrada sem contrato assinado</li>
+            <li>Comprar imóvel sem verificar a documentação</li>
+            <li>Confiar apenas na palavra do vendedor</li>
+            <li>Assinar contratos sem ler completamente</li>
+            <li>Fazer negócios sem corretor ou advogado</li>
+          </ul>
+        </div>
+
+        <h2>💰 Dicas para economizar na compra</h2>
+
+        <p><strong>1. Negocie o preço:</strong> Sempre há margem de negociação</p>
+        <p><strong>2. Use o FGTS:</strong> Pode cobrir toda a entrada</p>
+        <p><strong>3. Compare taxas de juros:</strong> Faça simulações em vários bancos</p>
+        <p><strong>4. Escolha o SAC:</strong> Sistema que reduz as parcelas com o tempo</p>
+        <p><strong>5. Compre na planta:</strong> Imóveis em construção são mais baratos</p>
+        <p><strong>6. Antecipe parcelas:</strong> Sempre que possível, amortize o saldo devedor</p>
+
+        <h2>📊 Mercado de Florianópolis em 2026</h2>
+
+        <p>Florianópolis continua sendo um dos melhores investimentos do Brasil:</p>
+
+        <p>• <strong>Valorização média:</strong> 8% a 12% ao ano</p>
+        <p>• <strong>Alta demanda:</strong> Crescimento populacional constante</p>
+        <p>• <strong>Infraestrutura:</strong> Novos projetos de mobilidade e urbanização</p>
+        <p>• <strong>Qualidade de vida:</strong> Uma das melhores cidades para se viver no Brasil</p>
+        <p>• <strong>Turismo:</strong> Economia forte e diversificada</p>
+
+        <div class="info-box">
+          <strong>📈 Projeção:</strong> Especialistas preveem que Florianópolis continuará em alta nos próximos 5 anos, especialmente bairros como Campeche, Kobrasol e Agronômica.
+        </div>
+
+        <!-- CTA Final -->
+        <div class="cta-box">
+          <h2>🏡 Pronto para comprar seu imóvel?</h2>
+          <p>Não faça essa jornada sozinho(a)! Tenho anos de experiência no mercado de Florianópolis e posso te ajudar em cada etapa do processo.</p>
+          <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20li%20o%20guia%20de%20compra%20e%20quero%20sua%20ajuda%20para%20comprar%20meu%20imóvel!" target="_blank" class="btn-whatsapp">
+            📲 Falar com a Flavia agora
+          </a>
+        </div>
+
+      </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <a href="index.html">
+            <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" style="width: 120px;" />
+          </a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p><a href="mailto:flavia.capacia@creci.gov.br">flavia.capacia@creci.gov.br</a></p>
+          <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+          <p>Florianópolis, SC</p>
+        </div>
+
+        <div class="footer-section footer-social">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-credit">
+        <p>&copy; 2026 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+        <p>Feito com 💛 por <strong>Capacia Group</strong> 💛</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      const isVisible = window.getComputedStyle(menu).display === "block";
+      menu.style.display = isVisible ? "none" : "block";
+    }
+
+    // Fechar o menu ao clicar fora
+    document.addEventListener("click", function (e) {
+      const menu = document.getElementById("menu");
+      const nav = document.querySelector("nav");
+      if (!nav.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

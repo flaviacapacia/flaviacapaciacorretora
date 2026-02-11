@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Guia de Investimento em Imóveis para Renda | Flavia Capacia Corretora</title>
+  <meta name="description" content="Como investir em imóveis para locação e Airbnb em Florianópolis. Guia completo com cálculos de rentabilidade, melhores bairros e dicas essenciais." />
+  <meta name="keywords" content="investimento imobiliário, Airbnb Florianópolis, locação por temporada, rentabilidade imóveis" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Guia de Investimento em Imóveis para Renda" />
+  <meta property="og:description" content="Aprenda a investir em imóveis e gerar renda passiva em Florianópolis" />
+  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
+  <meta property="og:url" content="https://www.flaviacapaciacorretora.com/guia-investimento.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --fundo-branco: #ffffff;
+      --texto-bronze: #4B3A2F;
+      --bronze-medio: #b08d57;
+      --cinza-borda: #e5e5e5;
+      --fonte-padrao: 'Playfair Display', serif;
+      --verde-sucesso: #2d7a3e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      color: var(--texto-bronze);
+      font-family: var(--fonte-padrao);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background-color: var(--fundo-branco);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* Cabeçalho */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--bronze-medio);
+      margin-bottom: 30px;
+    }
+    header img { height: 54px; }
+
+    nav { position: relative; }
+    nav button {
+      background: none;
+      border: 1px solid var(--bronze-medio);
+      color: var(--bronze-medio);
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    nav button:hover {
+      background-color: var(--bronze-medio);
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background-color: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      min-width: 160px;
+      z-index: 10;
+    }
+    nav ul li { margin: 6px 0; }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--texto-bronze);
+      font-weight: bold;
+    }
+    nav ul li a:hover { color: var(--bronze-medio); }
+
+    /* Conteúdo */
+    h1 {
+      color: var(--bronze-medio);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--cinza-borda);
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-left: 4px solid var(--bronze-medio);
+      border-radius: 4px;
+    }
+
+    h2 {
+      color: var(--bronze-medio);
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--cinza-borda);
+    }
+
+    h3 {
+      color: var(--texto-bronze);
+      font-size: 1.4rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .calculator-box {
+      background: linear-gradient(135deg, #e8f5e9 0%, #fff 100%);
+      border: 2px solid var(--verde-sucesso);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .calculator-box h3 {
+      color: var(--verde-sucesso);
+      margin-top: 0;
+    }
+
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .calc-row:last-child {
+      border-bottom: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--verde-sucesso);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .comparison-table th {
+      background: var(--bronze-medio);
+      color: white;
+      padding: 15px;
+      text-align: left;
+    }
+
+    .comparison-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--cinza-borda);
+    }
+
+    .comparison-table tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .tip-box {
+      background-color: #d4edda;
+      border-left: 4px solid #28a745;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .tip-box strong {
+      color: #155724;
+    }
+
+    .alert-box {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .alert-box strong {
+      color: #856404;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--bronze-medio) 0%, #8b7355 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cta-box h2 {
+      color: white;
+      border: none;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #25D366;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+    }
+
+    ul, ol {
+      margin: 20px 0;
+      padding-left: 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Rodapé */
+    footer {
+      margin-top: 40px;
+      border-top: 2px solid var(--bronze-medio);
+      padding-top: 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      color: var(--bronze-medio);
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: var(--texto-bronze);
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: var(--bronze-medio);
+    }
+
+    .footer-social ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    .footer-credit {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--cinza-borda);
+      color: #666;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      .container { padding: 20px; }
+      .comparison-table { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header>
+      <a href="index.html" aria-label="Página inicial">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" />
+      </a>
+      <nav>
+        <button type="button" onclick="toggleMenu()">Menu</button>
+        <ul id="menu" aria-label="Menu principal">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="guia-bairros.html">Guia de Bairros</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <h1>💰 Guia de Investimento em Imóveis para Renda</h1>
+        
+        <div class="article-meta">
+          📅 Publicado em 10 de fevereiro de 2026 | ⏱️ Leitura: 10 minutos
+        </div>
+
+        <p class="intro">
+          Investir em imóveis para geração de renda é uma das formas mais seguras e rentáveis de fazer seu dinheiro trabalhar para você. Em Florianópolis, com o mercado turístico aquecido e a demanda constante por locações, as oportunidades são ainda maiores. Vamos te mostrar como começar!
+        </p>
+
+        <h2>📊 Por que investir em imóveis para renda?</h2>
+
+        <p><strong>Vantagens do investimento imobiliário:</strong></p>
+        <ul>
+          <li><strong>Renda passiva mensal:</strong> Receba aluguel todos os meses</li>
+          <li><strong>Valorização do imóvel:</strong> O patrimônio cresce com o tempo</li>
+          <li><strong>Proteção contra inflação:</strong> Aluguéis são corrigidos anualmente</li>
+          <li><strong>Diversificação:</strong> Menos risco que investir apenas em ações</li>
+          <li><strong>Benefícios fiscais:</strong> Possibilidade de dedução no IR</li>
+        </ul>
+
+        <div class="tip-box">
+          <strong>💡 Fato:</strong> Em Florianópolis, a rentabilidade média de um imóvel para locação tradicional é de 0,4% a 0,6% ao mês, enquanto para Airbnb pode chegar a 1% a 2% ao mês!
+        </div>
+
+        <h2>🎯 Tipos de Investimento Imobiliário</h2>
+
+        <h3>1. Locação Tradicional (Longo Prazo)</h3>
+        <p><strong>Como funciona:</strong> Você aluga o imóvel por 12, 24 ou 30 meses com contrato formal.</p>
+        
+        <p><strong>Vantagens:</strong></p>
+        <ul>
+          <li>Renda estável e previsível</li>
+          <li>Menos trabalho de gestão</li>
+          <li>Menor desgaste do imóvel</li>
+          <li>Inquilino paga condomínio e IPTU</li>
+        </ul>
+
+        <p><strong>Desvantagens:</strong></p>
+        <ul>
+          <li>Rentabilidade menor</li>
+          <li>Risco de inadimplência</li>
+          <li>Burocracia para desocupação</li>
+        </ul>
+
+        <p><strong>Melhor para:</strong> Investidores que buscam estabilidade e pouca gestão ativa.</p>
+
+        <h3>2. Airbnb e Locação por Temporada</h3>
+        <p><strong>Como funciona:</strong> Você aluga o imóvel por diárias ou semanas para turistas.</p>
+        
+        <p><strong>Vantagens:</strong></p>
+        <ul>
+          <li>Rentabilidade muito maior (2x a 3x mais)</li>
+          <li>Flexibilidade para usar o imóvel quando quiser</li>
+          <li>Preços ajustados conforme demanda</li>
+          <li>Alta temporada gera receita excelente</li>
+        </ul>
+
+        <p><strong>Desvantagens:</strong></p>
+        <ul>
+          <li>Requer gestão ativa ou empresa terceirizada</li>
+          <li>Maior desgaste do imóvel</li>
+          <li>Custos com limpeza e manutenção</li>
+          <li>Sazonalidade em algumas regiões</li>
+        </ul>
+
+        <p><strong>Melhor para:</strong> Investidores dispostos a gerir ou pagar pela gestão, buscando alta rentabilidade.</p>
+
+        <h2>💵 Simulação de Rentabilidade</h2>
+
+        <div class="calculator-box">
+          <h3>📈 Exemplo: Apartamento de 2 quartos no Centro de Florianópolis</h3>
+          <p><strong>Valor do imóvel:</strong> R$ 500.000</p>
+
+          <p><strong>Cenário 1: Locação Tradicional</strong></p>
+          <div class="calc-row">
+            <span>Aluguel mensal:</span>
+            <span>R$ 2.500</span>
+          </div>
+          <div class="calc-row">
+            <span>Condomínio e IPTU (pago pelo inquilino):</span>
+            <span>R$ 0</span>
+          </div>
+          <div class="calc-row">
+            <span>Vacância estimada (5%):</span>
+            <span>- R$ 125</span>
+          </div>
+          <div class="calc-row">
+            <span>Manutenção anual (2%):</span>
+            <span>- R$ 833/ano (R$ 69/mês)</span>
+          </div>
+          <div class="calc-row">
+            <span>Receita líquida mensal:</span>
+            <span>R$ 2.306</span>
+          </div>
+          <div class="calc-row">
+            <span><strong>Rentabilidade mensal:</strong></span>
+            <span><strong>0,46% ao mês (5,5% ao ano)</strong></span>
+          </div>
+
+          <p style="margin-top: 30px;"><strong>Cenário 2: Airbnb</strong></p>
+          <div class="calc-row">
+            <span>Diária média:</span>
+            <span>R$ 250</span>
+          </div>
+          <div class="calc-row">
+            <span>Ocupação média (65%):</span>
+            <span>20 dias/mês</span>
+          </div>
+          <div class="calc-row">
+            <span>Receita bruta mensal:</span>
+            <span>R$ 5.000</span>
+          </div>
+          <div class="calc-row">
+            <span>Custos (limpeza, gestão, taxas):</span>
+            <span>- R$ 1.500</span>
+          </div>
+          <div class="calc-row">
+            <span>Condomínio e IPTU:</span>
+            <span>- R$ 600</span>
+          </div>
+          <div class="calc-row">
+            <span>Receita líquida mensal:</span>
+            <span>R$ 2.900</span>
+          </div>
+          <div class="calc-row">
+            <span><strong>Rentabilidade mensal:</strong></span>
+            <span><strong>0,58% ao mês (7% ao ano)</strong></span>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <strong>💡 Dica da Flavia:</strong> Na alta temporada (dezembro a março), a rentabilidade do Airbnb pode dobrar! Um bom Airbnb pode render até R$ 8.000 a R$ 10.000/mês nesses meses.
+        </div>
+
+        <h2>🏆 Melhores Bairros para Investir em Florianópolis</h2>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Bairro</th>
+              <th>Tipo Ideal</th>
+              <th>Rentabilidade</th>
+              <th>Perfil de Inquilino</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Canasvieiras</strong></td>
+              <td>Airbnb</td>
+              <td>0,8% - 2% ao mês</td>
+              <td>Turistas (famílias)</td>
+            </tr>
+            <tr>
+              <td><strong>Ingleses</strong></td>
+              <td>Airbnb</td>
+              <td>0,8% - 1,8% ao mês</td>
+              <td>Turistas (jovens)</td>
+            </tr>
+            <tr>
+              <td><strong>Centro Floripa</strong></td>
+              <td>Ambos</td>
+              <td>0,5% - 1% ao mês</td>
+              <td>Executivos/Turistas</td>
+            </tr>
+            <tr>
+              <td><strong>Kobrasol</strong></td>
+              <td>Locação tradicional</td>
+              <td>0,5% - 0,7% ao mês</td>
+              <td>Profissionais/Famílias</td>
+            </tr>
+            <tr>
+              <td><strong>Agronômica</strong></td>
+              <td>Ambos</td>
+              <td>0,4% - 0,8% ao mês</td>
+              <td>Estudantes/Executivos</td>
+            </tr>
+            <tr>
+              <td><strong>Campeche</strong></td>
+              <td>Airbnb</td>
+              <td>0,6% - 1,2% ao mês</td>
+              <td>Turistas/Famílias</td>
+            </tr>
+            <tr>
+              <td><strong>Trindade</strong></td>
+              <td>Locação tradicional</td>
+              <td>0,5% - 0,6% ao mês</td>
+              <td>Estudantes universitários</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>✅ Checklist: Como Começar a Investir</h2>
+
+        <h3>Passo 1: Defina seu perfil</h3>
+        <ul>
+          <li>Quanto você pode investir? (entrada + custos iniciais)</li>
+          <li>Quer gestão ativa (Airbnb) ou passiva (locação)?</li>
+          <li>Qual seu objetivo: renda mensal ou valorização?</li>
+          <li>Pretende usar financiamento?</li>
+        </ul>
+
+        <h3>Passo 2: Escolha o imóvel certo</h3>
+        <ul>
+          <li><strong>Localização:</strong> Proximidade com praia, centro, universidades</li>
+          <li><strong>Estado de conservação:</strong> Evite reformas caras no início</li>
+          <li><strong>Metragem:</strong> Apartamentos de 1 a 2 quartos têm maior demanda</li>
+          <li><strong>Infraestrutura:</strong> Wi-Fi, ar-condicionado, mobília (para Airbnb)</li>
+        </ul>
+
+        <h3>Passo 3: Calcule todos os custos</h3>
+        <ul>
+          <li>Valor do imóvel + ITBI (2%) + escritura (R$ 3.000 a R$ 5.000)</li>
+          <li>Mobília e decoração (R$ 15.000 a R$ 30.000 para Airbnb)</li>
+          <li>Condomínio, IPTU, seguro</li>
+          <li>Fundo de emergência (6 meses de despesas)</li>
+        </ul>
+
+        <h3>Passo 4: Formalize tudo</h3>
+        <ul>
+          <li>Contrato de locação registrado em cartório</li>
+          <li>Seguro contra incêndio e danos</li>
+          <li>Vistoria de entrada e saída</li>
+          <li>Cadastro no Airbnb (se for o caso)</li>
+        </ul>
+
+        <div class="alert-box">
+          <strong>⚠️ Cuidado:</strong> Nunca compre um imóvel apenas pela rentabilidade prometida! Avalie também a valorização esperada, localização e demanda real.
+        </div>
+
+        <h2>🚀 Gestão do Airbnb: Faça você ou terceirize?</h2>
+
+        <p><strong>Opção 1: Gestão própria</strong></p>
+        <p>Você cuida de tudo: anúncios, fotos, check-in/check-out, limpeza, manutenção.</p>
+        <p><strong>Vantagem:</strong> Maior margem de lucro<br><strong>Desvantagem:</strong> Muito trabalho</p>
+
+        <p><strong>Opção 2: Empresa de gestão</strong></p>
+        <p>Uma empresa cuida de tudo por você. Você só recebe o valor líquido.</p>
+        <p><strong>Vantagem:</strong> Mãos livres, profissionalismo<br><strong>Desvantagem:</strong> Taxa de 15% a 30% da receita</p>
+
+        <div class="tip-box">
+          <strong>💡 Dica da Flavia:</strong> Se você mora longe ou tem outro emprego, vale a pena terceirizar! O retorno ainda é excelente mesmo pagando a taxa de gestão.
+        </div>
+
+        <h2>📈 Projeção de Retorno em 5 Anos</h2>
+
+        <p>Vamos simular um investimento de R$ 500.000 em um apartamento:</p>
+
+        <p><strong>Cenário conservador (locação tradicional):</strong></p>
+        <ul>
+          <li>Rentabilidade: 5,5% ao ano (renda) + 8% ao ano (valorização)</li>
+          <li>Após 5 anos: R$ 735.000 (imóvel) + R$ 150.000 (aluguéis recebidos)</li>
+          <li><strong>Lucro total: R$ 385.000 (77% de retorno)</strong></li>
+        </ul>
+
+        <p><strong>Cenário otimista (Airbnb):</strong></p>
+        <ul>
+          <li>Rentabilidade: 9% ao ano (renda) + 8% ao ano (valorização)</li>
+          <li>Após 5 anos: R$ 735.000 (imóvel) + R$ 270.000 (receita Airbnb)</li>
+          <li><strong>Lucro total: R$ 505.000 (101% de retorno)</strong></li>
+        </ul>
+
+        <h2>🎁 Benefícios Fiscais</h2>
+
+        <p>Você pode deduzir do Imposto de Renda:</p>
+        <ul>
+          <li>Condomínio e IPTU</li>
+          <li>Despesas com reformas e manutenção</li>
+          <li>Comissão da imobiliária</li>
+          <li>Depreciação do imóvel (4% ao ano)</li>
+        </ul>
+
+        <div class="tip-box">
+          <strong>💡 Importante:</strong> Consulte um contador para otimizar sua declaração de IR e pagar menos impostos legalmente!
+        </div>
+
+        <h2>❌ Erros comuns a evitar</h2>
+
+        <ol>
+          <li><strong>Não fazer as contas:</strong> Calcule TODOS os custos antes de comprar</li>
+          <li><strong>Comprar pelo "feeling":</strong> Use dados e pesquisa de mercado</li>
+          <li><strong>Ignorar a localização:</strong> Imóvel mal localizado = baixa rentabilidade</li>
+          <li><strong>Não ter reserva de emergência:</strong> Sempre tenha 6 meses guardados</li>
+          <li><strong>Subestimar custos do Airbnb:</strong> Limpeza, manutenção e gestão custam!</li>
+          <li><strong>Não diversificar:</strong> Não coloque todo seu patrimônio em um único imóvel</li>
+        </ol>
+
+        <!-- CTA Final -->
+        <div class="cta-box">
+          <h2>🏡 Pronto para investir?</h2>
+          <p>Tenho as melhores oportunidades de investimento em Florianópolis! Vamos conversar e encontrar o imóvel ideal para gerar renda para você.</p>
+          <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20investir%20em%20imóveis%20para%20gerar%20renda!" target="_blank" class="btn-whatsapp">
+            📲 Falar com a Flavia
+          </a>
+        </div>
+
+      </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <a href="index.html">
+            <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" style="width: 120px;" />
+          </a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p><a href="mailto:flavia.capacia@creci.gov.br">flavia.capacia@creci.gov.br</a></p>
+          <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+          <p>Florianópolis, SC</p>
+        </div>
+
+        <div class="footer-section footer-social">
+          <h3>Redes Sociais</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-credit">
+        <p>&copy; 2026 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+        <p>Feito com 💛 por <strong>Capacia Group</strong> 💛</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      const isVisible = window.getComputedStyle(menu).display === "block";
+      menu.style.display = isVisible ? "none" : "block";
+    }
+
+    // Fechar o menu ao clicar fora
+    document.addEventListener("click", function (e) {
+      const menu = document.getElementById("menu");
+      const nav = document.querySelector("nav");
+      if (!nav.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
