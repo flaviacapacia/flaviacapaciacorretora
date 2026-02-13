@@ -1,0 +1,11 @@
+# .htaccess to handle 301 redirects and force HTTPS
+
+RewriteEngine On
+
+# Redirect from old domain to new domain
+RewriteCond %{HTTP_HOST} ^flaviacapaciacorretora\.site [NC]
+RewriteRule ^(.*)$ https://flaviacapaciacorretora.com/$1 [L,R=301]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
