@@ -1,6 +1,73 @@
-# Sistema de Contatos - Flavia Capacia Corretora
+# Flávia Capacia Corretora - Projetos
 
 ## 📋 Descrição
+
+Repositório com projetos para Flávia Capacia Corretora:
+
+1. **🤖 Bot Google Ads com IA** - Sistema inteligente de geração automática de anúncios (Branch: `copilot/create-ads-generation-bot`)
+2. **📝 Sistema de Contatos** - Captura contatos do site e salva em CSV
+
+---
+
+## 📥 Como Baixar Este Projeto
+
+### Primeira Vez (Clone)
+
+```bash
+git clone https://github.com/flaviacapacia/flaviacapaciacorretora.git
+cd flaviacapaciacorretora
+```
+
+### Atualizar (Pull)
+
+```bash
+cd flaviacapaciacorretora
+git pull origin copilot/create-ads-generation-bot
+```
+
+### Scripts Automáticos
+
+**Linux/Mac:**
+```bash
+./atualizar.sh
+```
+
+**Windows:**
+```
+atualizar.bat
+```
+
+📖 **Guia completo:** [COMO_BAIXAR.md](COMO_BAIXAR.md)
+
+---
+
+## 🤖 Bot Google Ads com IA
+
+Sistema completo para geração automática de anúncios Google Ads usando Inteligência Artificial (Mistral AI).
+
+### Como Usar
+
+```bash
+# Mudar para a branch do bot
+git checkout copilot/create-ads-generation-bot
+
+# Acessar a pasta do projeto
+cd bot-google-ads
+
+# Ler a documentação
+cat README.md
+```
+
+### Documentação Completa
+
+- **[bot-google-ads/README.md](bot-google-ads/README.md)** - Visão geral
+- **[bot-google-ads/GUIA_DE_USO.md](bot-google-ads/GUIA_DE_USO.md)** - Tutorial completo
+- **[bot-google-ads/ARQUITETURA.md](bot-google-ads/ARQUITETURA.md)** - Detalhes técnicos
+
+---
+
+## 📝 Sistema de Contatos
+
 Sistema para capturar contatos do site e salvar em **planilha CSV**, preparado para futura integração com **Django/SQL**.
 
 ## 🚀 Como usar

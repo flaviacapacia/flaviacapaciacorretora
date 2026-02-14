@@ -1,0 +1,77 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║         📥 GUIA RÁPIDO: Como Baixar para seu PC                     ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════════
+🎯 OPÇÃO 1: PRIMEIRA VEZ (Clone)
+═══════════════════════════════════════════════════════════════════════
+
+1. Abra o Terminal/CMD
+2. Execute:
+
+   git clone https://github.com/flaviacapacia/flaviacapaciacorretora.git
+   cd flaviacapaciacorretora
+   git checkout copilot/create-ads-generation-bot
+
+✅ Pronto! Projeto baixado em: flaviacapaciacorretora/
+
+
+═══════════════════════════════════════════════════════════════════════
+🔄 OPÇÃO 2: JÁ TEM O PROJETO? (Pull/Atualizar)
+═══════════════════════════════════════════════════════════════════════
+
+1. Abra o Terminal/CMD na pasta do projeto
+2. Execute:
+
+   git checkout copilot/create-ads-generation-bot
+   git pull origin copilot/create-ads-generation-bot
+
+✅ Pronto! Projeto atualizado!
+
+
+═══════════════════════════════════════════════════════════════════════
+🚀 OPÇÃO 3: SCRIPT AUTOMÁTICO
+═══════════════════════════════════════════════════════════════════════
+
+Linux/Mac:     ./atualizar.sh
+Windows:       atualizar.bat
+
+✅ O script faz tudo automaticamente!
+
+
+═══════════════════════════════════════════════════════════════════════
+📂 DEPOIS DE BAIXAR
+═══════════════════════════════════════════════════════════════════════
+
+Bot Google Ads → cd bot-google-ads/
+Documentação   → cat bot-google-ads/README.md
+Tutorial       → cat bot-google-ads/GUIA_DE_USO.md
+
+
+═══════════════════════════════════════════════════════════════════════
+❓ NÃO TEM GIT?
+═══════════════════════════════════════════════════════════════════════
+
+Instale:
+• Windows: https://git-scm.com/download/win
+• Mac: brew install git
+• Linux: sudo apt-get install git
+
+
+═══════════════════════════════════════════════════════════════════════
+💡 LINKS ÚTEIS
+═══════════════════════════════════════════════════════════════════════
+
+📖 Guia Completo:    COMO_BAIXAR.md
+🌐 Repositório:      https://github.com/flaviacapacia/flaviacapaciacorretora
+📦 Branch do Bot:    copilot/create-ads-generation-bot
+
+
+═══════════════════════════════════════════════════════════════════════
+
+           ✨ É RÁPIDO E FÁCIL! ✨
+
+═══════════════════════════════════════════════════════════════════════
