@@ -12,8 +12,6 @@ O projeto **Bot Google Ads com IA** foi **separado e movido** para um repositór
 
 **[github.com/flaviacapacia/bot-google-ads-ia](https://github.com/flaviacapacia/bot-google-ads-ia)**
 
-> ⚠️ **Nota:** Se o link acima não funcionar, o usuário precisa atualizar com a URL correta do novo repositório.
-
 ---
 
 ## 📦 O Que Foi Movido?
