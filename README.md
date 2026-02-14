@@ -41,6 +41,51 @@ atualizar.bat
 
 ---
 
+## 📱 Como Visualizar as Interfaces
+
+### Opção 1: Página de Início
+
+Abra o arquivo `start.html` no navegador para escolher qual interface visualizar:
+
+```bash
+# Abrir diretamente
+open start.html        # Mac
+xdg-open start.html    # Linux
+start start.html       # Windows
+```
+
+### Opção 2: Scripts Automáticos
+
+**Linux/Mac:**
+```bash
+./visualizar.sh
+```
+
+**Windows:**
+```
+visualizar.bat
+```
+
+### Opção 3: Manual
+
+**Site Principal:**
+```bash
+python3 -m http.server 8080
+# Acesse: http://localhost:8080
+```
+
+**Dashboard React:**
+```bash
+cd bot-google-ads/dashboard
+npm install
+npm run dev
+# Acesse: http://localhost:3000
+```
+
+📖 **Guia completo:** [COMO_VISUALIZAR.md](COMO_VISUALIZAR.md)
+
+---
+
 ## 🤖 Bot Google Ads com IA
 
 Sistema completo para geração automática de anúncios Google Ads usando Inteligência Artificial (Mistral AI).
