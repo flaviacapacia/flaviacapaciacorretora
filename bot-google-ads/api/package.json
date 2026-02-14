@@ -1,0 +1,26 @@
+{
+  "name": "flavia-ads-api",
+  "version": "1.0.0",
+  "description": "API Node.js para gerenciamento de imóveis e anúncios Google Ads",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": ["real-estate", "google-ads", "api"],
+  "author": "Flavia Capacia Corretora",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.2",
+    "mssql": "^10.0.1",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
