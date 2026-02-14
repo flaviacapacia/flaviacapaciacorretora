@@ -9,6 +9,27 @@ Repositório com projetos para Flávia Capacia Corretora:
 
 ---
 
+## 🚀 COMECE AQUI - Para Iniciantes
+
+**Não sabe como abrir o projeto?** Siga estas instruções super simples:
+
+### 📄 Opção 1: Arquivo LAUNCHER (MAIS FÁCIL)
+
+1. Baixe o projeto (botão verde "Code" → "Download ZIP")
+2. Extraia o arquivo ZIP na Área de Trabalho
+3. Entre na pasta e dê **duplo clique** em: **`LAUNCHER.html`**
+4. ✅ Pronto! Tudo será explicado visualmente!
+
+### 📖 Opção 2: Leia o Guia Simples
+
+Abra o arquivo **`LEIA_PRIMEIRO.txt`** para instruções em texto puro (3 passos).
+
+### 📚 Opção 3: Guia Detalhado
+
+Leia **`COMO_ABRIR_HTML.md`** para guia completo com todos os métodos.
+
+---
+
 ## 📥 Como Baixar Este Projeto
 
 ### Primeira Vez (Clone)

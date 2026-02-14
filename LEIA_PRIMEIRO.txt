@@ -1,0 +1,78 @@
+═══════════════════════════════════════════════════════════════
+  🚀 COMO ABRIR O PROJETO - SUPER SIMPLES! 🚀
+═══════════════════════════════════════════════════════════════
+
+
+📋 APENAS 3 PASSOS:
+
+1️⃣  BAIXAR
+   • Vá para: https://github.com/flaviacapacia/flaviacapaciacorretora
+   • Clique no botão verde "Code"
+   • Clique em "Download ZIP"
+   • Salve na Área de Trabalho
+
+
+2️⃣  EXTRAIR
+   • Vá até o arquivo ZIP que você baixou
+   • Clique com botão direito
+   • Escolha "Extrair aqui" ou "Extrair tudo"
+   • Uma pasta será criada
+
+
+3️⃣  ABRIR
+   • Entre na pasta extraída
+   • Procure o arquivo: LAUNCHER.html
+   • Dê DUPLO CLIQUE nele
+   • Pronto! Abrirá no navegador automaticamente!
+
+
+═══════════════════════════════════════════════════════════════
+
+🎯 ALTERNATIVA RÁPIDA (Se já tem os arquivos):
+
+   Dê duplo clique em qualquer arquivo abaixo:
+   
+   • LAUNCHER.html  ← MELHOR OPÇÃO (Este explica tudo!)
+   • start.html     ← Página de escolha
+   • index.html     ← Site da imobiliária
+
+
+═══════════════════════════════════════════════════════════════
+
+❓ NÃO FUNCIONOU?
+
+   Tente este método:
+   
+   1. Abra o Google Chrome (ou Firefox/Edge)
+   2. Arraste o arquivo LAUNCHER.html para dentro do navegador
+   3. Pronto!
+
+
+═══════════════════════════════════════════════════════════════
+
+💡 IMPORTANTE:
+
+   ✅ Você PRECISA baixar os arquivos primeiro
+   ✅ Não tente abrir direto do GitHub
+   ✅ Extraia TODOS os arquivos do ZIP
+   ✅ Mantenha os arquivos juntos na mesma pasta
+
+
+═══════════════════════════════════════════════════════════════
+
+🆘 PRECISA DE MAIS AJUDA?
+
+   Abra estes arquivos para instruções detalhadas:
+   
+   • COMO_ABRIR_HTML.md  ← Guia completo com imagens
+   • COMO_VISUALIZAR.md  ← Outras formas de visualizar
+   • README.md           ← Informações sobre o projeto
+
+
+═══════════════════════════════════════════════════════════════
+
+✨ É SUPER FÁCIL! ✨
+
+Qualquer pessoa consegue abrir, mesmo sem conhecimento técnico!
+
+═══════════════════════════════════════════════════════════════

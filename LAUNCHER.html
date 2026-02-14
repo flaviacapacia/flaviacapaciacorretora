@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Clique Aqui para Começar - Flávia Capacia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .emoji-big {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+
+        .big-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 25px 60px;
+            font-size: 1.8rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-bottom: 30px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .big-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .steps {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .steps h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .step-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .download-section {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .download-section h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .download-btn {
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .help-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .help-box h4 {
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        .help-box p {
+            color: #1565c0;
+            line-height: 1.6;
+        }
+
+        .code-box {
+            background: #2d2d2d;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .video-placeholder {
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .big-button {
+                padding: 20px 40px;
+                font-size: 1.4rem;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji-big">🚀</div>
+        
+        <h1>Bem-vindo ao Projeto!</h1>
+        <p class="subtitle">Clique no botão abaixo para começar</p>
+
+        <a href="start.html" class="big-button">
+            🎯 CLIQUE AQUI PARA COMEÇAR
+        </a>
+
+        <div class="help-box">
+            <h4>❓ Não conseguiu abrir o projeto?</h4>
+            <p>Se você está no GitHub, primeiro precisa <strong>baixar os arquivos</strong> para o seu computador!</p>
+        </div>
+
+        <div class="steps">
+            <h2>📋 Como Usar Este Projeto (3 Passos Simples)</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>📥 Baixe o Projeto</h3>
+                    <p>No GitHub, clique no botão verde <strong>"Code"</strong> e depois em <strong>"Download ZIP"</strong>. Salve na sua área de trabalho ou pasta Documentos.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>📂 Extraia os Arquivos</h3>
+                    <p>Clique com botão direito no arquivo ZIP baixado e escolha <strong>"Extrair aqui"</strong> ou <strong>"Extrair tudo"</strong>. Uma pasta será criada com todos os arquivos.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>🌐 Abra no Navegador</h3>
+                    <p>Entre na pasta extraída e dê <strong>duplo clique</strong> no arquivo <strong>LAUNCHER.html</strong> (este arquivo) ou <strong>start.html</strong>. Ele abrirá automaticamente no seu navegador!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h3>🎁 Downloads Rápidos</h3>
+            <p>Clique nos botões abaixo para baixar arquivos específicos:</p>
+            
+            <div class="download-buttons">
+                <button class="download-btn" onclick="downloadFile('start.html')">
+                    📄 Baixar start.html
+                </button>
+                <button class="download-btn" onclick="downloadFile('inicializar.html')">
+                    🚀 Baixar inicializar.html
+                </button>
+                <button class="download-btn" onclick="downloadFile('index.html')">
+                    🏠 Baixar index.html (Site)
+                </button>
+            </div>
+        </div>
+
+        <div class="help-box">
+            <h4>💡 Dica Rápida: Como Abrir Arquivo HTML</h4>
+            <p><strong>Opção 1:</strong> Duplo clique no arquivo .html<br>
+            <strong>Opção 2:</strong> Arraste o arquivo para dentro do navegador (Chrome, Firefox, Edge)<br>
+            <strong>Opção 3:</strong> Botão direito no arquivo → "Abrir com" → Escolha seu navegador</p>
+        </div>
+
+        <div class="steps" style="background: #f0f8ff;">
+            <h2>🖥️ Se Você Já Tem os Arquivos no Seu PC</h2>
+            
+            <div class="step">
+                <div class="step-number">✓</div>
+                <div class="step-content">
+                    <h3>Windows</h3>
+                    <p>Vá até a pasta onde você baixou o projeto e dê <strong>duplo clique</strong> em qualquer arquivo .html (LAUNCHER.html, start.html ou index.html)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">✓</div>
+                <div class="step-content">
+                    <h3>Mac</h3>
+                    <p>Abra o Finder, navegue até a pasta do projeto e dê <strong>duplo clique</strong> em qualquer arquivo .html</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">✓</div>
+                <div class="step-content">
+                    <h3>Linux</h3>
+                    <p>Abra o gerenciador de arquivos, vá até a pasta do projeto e dê <strong>duplo clique</strong> ou clique com botão direito → "Abrir com Navegador Web"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-box">
+$ Localização dos arquivos principais:
+  
+  📄 LAUNCHER.html ← Você está aqui!
+  📄 start.html ← Página de escolha de interfaces
+  📄 inicializar.html ← Guia de inicialização
+  📄 index.html ← Site principal da imobiliária
+  📁 bot-google-ads/ ← Sistema de anúncios com IA
+        </div>
+
+        <div class="help-box" style="background: #d4edda; border-left-color: #28a745;">
+            <h4>✅ Tudo Certo! O que fazer agora?</h4>
+            <p>Se você conseguiu abrir esta página, <strong>clique no botão roxo grande no topo</strong> para acessar a página de escolha de interfaces e começar a usar o projeto!</p>
+        </div>
+
+        <div class="help-box" style="background: #f8d7da; border-left-color: #dc3545;">
+            <h4>❌ Ainda com Problemas?</h4>
+            <p>Se você está vendo esta página no GitHub (navegador web, mas com a URL github.com), você precisa primeiro <strong>baixar os arquivos</strong> para o seu computador seguindo o Passo 1 acima!</p>
+        </div>
+
+        <a href="start.html" class="big-button" style="margin-top: 30px;">
+            🎯 COMEÇAR AGORA
+        </a>
+    </div>
+
+    <script>
+        function downloadFile(filename) {
+            // Verifica se o arquivo existe
+            fetch(filename)
+                .then(response => {
+                    if (response.ok) {
+                        // Cria um link temporário para download
+                        const link = document.createElement('a');
+                        link.href = filename;
+                        link.download = filename;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        
+                        alert(`✅ Download iniciado: ${filename}\n\nO arquivo será salvo na sua pasta de Downloads.\nDepois de baixar, dê duplo clique nele para abrir!`);
+                    } else {
+                        alert(`⚠️ Arquivo não encontrado: ${filename}\n\nVocê precisa primeiro baixar o projeto completo do GitHub.`);
+                    }
+                })
+                .catch(() => {
+                    alert(`📥 Para baixar este arquivo:\n\n1. Vá para o GitHub do projeto\n2. Clique no botão verde "Code"\n3. Clique em "Download ZIP"\n4. Extraia o ZIP na sua área de trabalho\n5. Abra a pasta e dê duplo clique em ${filename}`);
+                });
+        }
+
+        // Detecta se está no GitHub
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hostname.includes('github')) {
+                const warning = document.createElement('div');
+                warning.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #ff4444;
+                    color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    max-width: 300px;
+                    font-weight: bold;
+                `;
+                warning.innerHTML = `
+                    ⚠️ ATENÇÃO!<br><br>
+                    Você está no GitHub.<br>
+                    Baixe o projeto primeiro!<br><br>
+                    Clique em "Code" → "Download ZIP"
+                `;
+                document.body.appendChild(warning);
+            }
+        });
+    </script>
+</body>
+</html>
