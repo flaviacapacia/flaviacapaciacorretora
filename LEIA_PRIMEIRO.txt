@@ -3,7 +3,49 @@
 ═══════════════════════════════════════════════════════════════
 
 
-📋 APENAS 3 PASSOS:
+⚠️  NÃO ENCONTROU O BOTÃO DE DOWNLOAD? ⚠️
+
+SIGA ESTES PASSOS EXATOS:
+
+1. Abra seu navegador (Chrome, Firefox, Edge...)
+
+2. Cole este link na barra de endereços:
+   https://github.com/flaviacapacia/flaviacapaciacorretora
+
+3. Você verá uma página com código. Procure um botão
+   VERDE escrito "Code" no canto superior direito
+
+4. Clique no botão verde "Code"
+
+5. Um menu vai aparecer com 3 opções
+
+6. Clique na ÚLTIMA opção: "Download ZIP"
+   (tem um ícone de seta para baixo 📥)
+
+7. O download vai começar automaticamente!
+
+8. Vá para sua pasta "Downloads"
+
+9. Você vai ver um arquivo tipo:
+   flaviacapaciacorretora-copilot-create-ads-generation-bot.zip
+
+10. Clique com botão DIREITO nele
+
+11. Escolha "Extrair aqui" ou "Extract here"
+
+12. Pronto! Agora dê duplo clique em LAUNCHER.html
+
+
+═══════════════════════════════════════════════════════════════
+
+🔗 LINK DIRETO DO ZIP (Cole no navegador):
+
+https://github.com/flaviacapacia/flaviacapaciacorretora/archive/refs/heads/copilot/create-ads-generation-bot.zip
+
+
+═══════════════════════════════════════════════════════════════
+
+📋 APENAS 3 PASSOS (Resumo):
 
 1️⃣  BAIXAR
    • Vá para: https://github.com/flaviacapacia/flaviacapaciacorretora
