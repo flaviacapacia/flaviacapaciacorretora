@@ -1,11 +1,28 @@
 # Flávia Capacia Corretora - Projetos
 
+---
+
+## ⚠️ 🚀 BOT GOOGLE ADS FOI MOVIDO PARA REPOSITÓRIO PRÓPRIO!
+
+O projeto **Bot Google Ads com IA** agora tem seu próprio repositório independente!
+
+### 👉 **[CLIQUE AQUI PARA ACESSAR O BOT](https://github.com/flaviacapacia/bot-google-ads-ia)**
+
+🎯 **Novo Repositório:** [github.com/flaviacapacia/bot-google-ads-ia](https://github.com/flaviacapacia/bot-google-ads-ia)
+
+📖 **Leia sobre a migração:** [MIGRACAO.md](MIGRACAO.md)
+
+---
+
 ## 📋 Descrição
 
-Repositório com projetos para Flávia Capacia Corretora:
+Este repositório contém:
 
-1. **🤖 Bot Google Ads com IA** - Sistema inteligente de geração automática de anúncios (Branch: `copilot/create-ads-generation-bot`)
+1. **🏠 Site da Imobiliária** - Site institucional HTML/CSS/JS
 2. **📝 Sistema de Contatos** - Captura contatos do site e salva em CSV
+3. **📚 Documentação** - Guias e tutoriais em português
+
+**Nota:** O Bot Google Ads foi separado e está em: [github.com/flaviacapacia/bot-google-ads-ia](https://github.com/flaviacapacia/bot-google-ads-ia)
 
 ---
 
