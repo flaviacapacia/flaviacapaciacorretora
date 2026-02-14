@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicializar Projeto - Flávia Capacia Corretora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-right: 15px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .steps {
+            margin: 20px 0;
+        }
+
+        .step {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .command {
+            background: #2d2d2d;
+            color: #00ff00;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            font-size: 0.9rem;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .command-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .copy-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #764ba2;
+        }
+
+        .copy-button.copied {
+            background: #4CAF50;
+        }
+
+        .big-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 15px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .big-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .big-button.secondary {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        }
+
+        .big-button.tertiary {
+            background: linear-gradient(135deg, #FF6B6B 0%, #EE5A6F 100%);
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .status.info {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status.warning {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .status-icon {
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        .info-box {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .info-box-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-box-title::before {
+            content: "💡";
+            margin-right: 8px;
+        }
+
+        .url-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 6px;
+            margin: 5px 5px 5px 0;
+            transition: background 0.3s ease;
+        }
+
+        .url-link:hover {
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .prerequisites {
+            list-style: none;
+            padding: 0;
+        }
+
+        .prerequisites li {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+        }
+
+        .prerequisites li::before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        .os-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .os-tab {
+            flex: 1;
+            padding: 10px;
+            background: #f0f0f0;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .os-tab:hover {
+            background: #e0e0e0;
+        }
+
+        .os-tab.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .os-content {
+            display: none;
+        }
+
+        .os-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="start.html" class="back-button">← Voltar para início</a>
+
+        <div class="header">
+            <h1>🚀 Inicializar Projeto</h1>
+            <p>Guia interativo para iniciar os servidores do projeto</p>
+        </div>
+
+        <div class="main-grid">
+            <!-- Site Principal -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🏠</div>
+                    <div>
+                        <div class="card-title">Site Principal</div>
+                        <div class="card-subtitle">Servidor HTTP para HTML estático</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">Pré-requisitos</div>
+                    <ul class="prerequisites">
+                        <li>Python 3 instalado</li>
+                    </ul>
+                </div>
+
+                <!-- OS Tabs -->
+                <div class="os-tabs">
+                    <div class="os-tab active" onclick="switchOS('site', 'python')">
+                        🐍 Python
+                    </div>
+                    <div class="os-tab" onclick="switchOS('site', 'node')">
+                        🟢 Node.js
+                    </div>
+                </div>
+
+                <!-- Python Content -->
+                <div id="site-python" class="os-content active">
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                Abra o terminal na pasta do projeto
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                Execute o comando:
+                            </div>
+                            <div class="command-header">
+                                <span>Terminal</span>
+                                <button class="copy-button" onclick="copyCommand('site-cmd-python')">
+                                    Copiar
+                                </button>
+                            </div>
+                            <div class="command" id="site-cmd-python">python3 -m http.server 8080</div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                Acesse no navegador:
+                            </div>
+                            <a href="http://localhost:8080" target="_blank" class="url-link">
+                                http://localhost:8080
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node Content -->
+                <div id="site-node" class="os-content">
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                Abra o terminal na pasta do projeto
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                Execute o comando:
+                            </div>
+                            <div class="command-header">
+                                <span>Terminal</span>
+                                <button class="copy-button" onclick="copyCommand('site-cmd-node')">
+                                    Copiar
+                                </button>
+                            </div>
+                            <div class="command" id="site-cmd-node">npx http-server -p 8080</div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                Acesse no navegador:
+                            </div>
+                            <a href="http://localhost:8080" target="_blank" class="url-link">
+                                http://localhost:8080
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status info">
+                    <span class="status-icon">ℹ️</span>
+                    <span>Pressione Ctrl+C no terminal para parar o servidor</span>
+                </div>
+
+                <button class="big-button" onclick="openLocalhost(8080)">
+                    🌐 Abrir Site (localhost:8080)
+                </button>
+            </div>
+
+            <!-- Dashboard React -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🤖</div>
+                    <div>
+                        <div class="card-title">Dashboard React</div>
+                        <div class="card-subtitle">Bot Google Ads com IA</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">Pré-requisitos</div>
+                    <ul class="prerequisites">
+                        <li>Node.js 18+ instalado</li>
+                        <li>npm ou yarn</li>
+                    </ul>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-number">1</span>
+                            Navegue para a pasta do dashboard
+                        </div>
+                        <div class="command-header">
+                            <span>Terminal</span>
+                            <button class="copy-button" onclick="copyCommand('dash-cmd-1')">
+                                Copiar
+                            </button>
+                        </div>
+                        <div class="command" id="dash-cmd-1">cd bot-google-ads/dashboard</div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-number">2</span>
+                            Instale as dependências (primeira vez)
+                        </div>
+                        <div class="command-header">
+                            <span>Terminal</span>
+                            <button class="copy-button" onclick="copyCommand('dash-cmd-2')">
+                                Copiar
+                            </button>
+                        </div>
+                        <div class="command" id="dash-cmd-2">npm install</div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-number">3</span>
+                            Inicie o servidor de desenvolvimento
+                        </div>
+                        <div class="command-header">
+                            <span>Terminal</span>
+                            <button class="copy-button" onclick="copyCommand('dash-cmd-3')">
+                                Copiar
+                            </button>
+                        </div>
+                        <div class="command" id="dash-cmd-3">npm run dev</div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-number">4</span>
+                            Acesse no navegador:
+                        </div>
+                        <a href="http://localhost:3000" target="_blank" class="url-link">
+                            http://localhost:3000
+                        </a>
+                    </div>
+                </div>
+
+                <div class="status warning">
+                    <span class="status-icon">⚠️</span>
+                    <span>A API precisa estar rodando para funcionalidade completa</span>
+                </div>
+
+                <button class="big-button secondary" onclick="openLocalhost(3000)">
+                    🚀 Abrir Dashboard (localhost:3000)
+                </button>
+            </div>
+
+            <!-- Scripts Automáticos -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚡</div>
+                    <div>
+                        <div class="card-title">Scripts Automáticos</div>
+                        <div class="card-subtitle">Inicialize com um comando</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">Use os scripts prontos!</div>
+                    <p style="color: #666; margin-top: 8px;">
+                        Os scripts verificam instalações, iniciam servidores e abrem o navegador automaticamente.
+                    </p>
+                </div>
+
+                <!-- OS Tabs -->
+                <div class="os-tabs">
+                    <div class="os-tab active" onclick="switchOS('script', 'linux')">
+                        🐧 Linux/Mac
+                    </div>
+                    <div class="os-tab" onclick="switchOS('script', 'windows')">
+                        🪟 Windows
+                    </div>
+                </div>
+
+                <!-- Linux/Mac Content -->
+                <div id="script-linux" class="os-content active">
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                Torne o script executável (primeira vez)
+                            </div>
+                            <div class="command-header">
+                                <span>Terminal</span>
+                                <button class="copy-button" onclick="copyCommand('script-linux-1')">
+                                    Copiar
+                                </button>
+                            </div>
+                            <div class="command" id="script-linux-1">chmod +x visualizar.sh</div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                Execute o script
+                            </div>
+                            <div class="command-header">
+                                <span>Terminal</span>
+                                <button class="copy-button" onclick="copyCommand('script-linux-2')">
+                                    Copiar
+                                </button>
+                            </div>
+                            <div class="command" id="script-linux-2">./visualizar.sh</div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                Escolha a opção no menu interativo
+                            </div>
+                            <div style="padding: 10px; background: #f8f9fa; border-radius: 6px; margin-top: 10px;">
+                                <div style="color: #666;">1 - Site Principal</div>
+                                <div style="color: #666;">2 - Dashboard React</div>
+                                <div style="color: #666;">3 - Sistema Completo (Docker)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="./visualizar.sh" download class="big-button">
+                        📥 Baixar visualizar.sh
+                    </a>
+                </div>
+
+                <!-- Windows Content -->
+                <div id="script-windows" class="os-content">
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                Clique duplo no arquivo
+                            </div>
+                            <div style="padding: 10px; background: #f8f9fa; border-radius: 6px; margin-top: 10px;">
+                                <code>visualizar.bat</code>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                Ou execute via terminal
+                            </div>
+                            <div class="command-header">
+                                <span>CMD</span>
+                                <button class="copy-button" onclick="copyCommand('script-win-cmd')">
+                                    Copiar
+                                </button>
+                            </div>
+                            <div class="command" id="script-win-cmd">visualizar.bat</div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                Escolha a opção no menu
+                            </div>
+                            <div style="padding: 10px; background: #f8f9fa; border-radius: 6px; margin-top: 10px;">
+                                <div style="color: #666;">1 - Site Principal</div>
+                                <div style="color: #666;">2 - Dashboard React</div>
+                                <div style="color: #666;">3 - Sistema Completo (Docker)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="./visualizar.bat" download class="big-button">
+                        📥 Baixar visualizar.bat
+                    </a>
+                </div>
+
+                <div class="status success">
+                    <span class="status-icon">✅</span>
+                    <span>Scripts fazem tudo automaticamente!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentação -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div>
+                    <div class="card-title">Documentação Completa</div>
+                    <div class="card-subtitle">Guias detalhados e instruções</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                <a href="COMO_VISUALIZAR.md" class="url-link" style="display: block; text-align: center;">
+                    📖 Como Visualizar
+                </a>
+                <a href="COMO_BAIXAR.md" class="url-link" style="display: block; text-align: center;">
+                    📥 Como Baixar
+                </a>
+                <a href="bot-google-ads/README.md" class="url-link" style="display: block; text-align: center;">
+                    🤖 Docs Bot
+                </a>
+                <a href="bot-google-ads/GUIA_DE_USO.md" class="url-link" style="display: block; text-align: center;">
+                    📋 Guia de Uso
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyCommand(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = '✓ Copiado!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                alert('Erro ao copiar: ' + err);
+            });
+        }
+
+        function switchOS(section, os) {
+            // Remove active from all tabs in this section
+            const tabs = document.querySelectorAll(`#${section}-${os}`).length > 0 
+                ? document.querySelectorAll('.os-tab')
+                : [];
+            
+            document.querySelectorAll('.os-tab').forEach(tab => {
+                if (tab.textContent.includes(os === 'python' ? '🐍' : 
+                                            os === 'node' ? '🟢' : 
+                                            os === 'linux' ? '🐧' : '🪟')) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            // Hide all content in this section
+            document.querySelectorAll(`.os-content[id^="${section}-"]`).forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show selected content
+            const selectedContent = document.getElementById(`${section}-${os}`);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+        }
+
+        function openLocalhost(port) {
+            const url = `http://localhost:${port}`;
+            const newWindow = window.open(url, '_blank');
+            
+            if (!newWindow) {
+                alert(
+                    `⚠️ Pop-up bloqueado!\n\n` +
+                    `Abra manualmente:\n${url}\n\n` +
+                    `Ou permita pop-ups neste site.`
+                );
+            } else {
+                // Check if server is running after a delay
+                setTimeout(() => {
+                    if (confirm(
+                        `🌐 Navegador aberto em ${url}\n\n` +
+                        `O servidor está rodando?\n\n` +
+                        `Clique OK se sim, ou Cancelar para ver as instruções.`
+                    )) {
+                        return;
+                    } else {
+                        alert(
+                            `📝 Para iniciar o servidor:\n\n` +
+                            (port === 8080 
+                                ? `Site Principal:\npython3 -m http.server 8080`
+                                : `Dashboard React:\ncd bot-google-ads/dashboard\nnpm run dev`) +
+                            `\n\nOu use os scripts automáticos:\n./visualizar.sh (Linux/Mac)\nvisualizar.bat (Windows)`
+                        );
+                    }
+                }, 1000);
+            }
+        }
+
+        // Auto-detect OS and set appropriate tab
+        window.addEventListener('DOMContentLoaded', () => {
+            const isWindows = navigator.platform.toLowerCase().includes('win');
+            const isMac = navigator.platform.toLowerCase().includes('mac');
+            
+            // Set script OS tab based on detection
+            if (isWindows) {
+                switchOS('script', 'windows');
+            } else {
+                switchOS('script', 'linux');
+            }
+        });
+    </script>
+</body>
+</html>
