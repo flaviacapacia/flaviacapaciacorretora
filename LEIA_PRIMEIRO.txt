@@ -1,0 +1,120 @@
+═══════════════════════════════════════════════════════════════
+  🚀 COMO ABRIR O PROJETO - SUPER SIMPLES! 🚀
+═══════════════════════════════════════════════════════════════
+
+
+⚠️  NÃO ENCONTROU O BOTÃO DE DOWNLOAD? ⚠️
+
+SIGA ESTES PASSOS EXATOS:
+
+1. Abra seu navegador (Chrome, Firefox, Edge...)
+
+2. Cole este link na barra de endereços:
+   https://github.com/flaviacapacia/flaviacapaciacorretora
+
+3. Você verá uma página com código. Procure um botão
+   VERDE escrito "Code" no canto superior direito
+
+4. Clique no botão verde "Code"
+
+5. Um menu vai aparecer com 3 opções
+
+6. Clique na ÚLTIMA opção: "Download ZIP"
+   (tem um ícone de seta para baixo 📥)
+
+7. O download vai começar automaticamente!
+
+8. Vá para sua pasta "Downloads"
+
+9. Você vai ver um arquivo tipo:
+   flaviacapaciacorretora-copilot-create-ads-generation-bot.zip
+
+10. Clique com botão DIREITO nele
+
+11. Escolha "Extrair aqui" ou "Extract here"
+
+12. Pronto! Agora dê duplo clique em LAUNCHER.html
+
+
+═══════════════════════════════════════════════════════════════
+
+🔗 LINK DIRETO DO ZIP (Cole no navegador):
+
+https://github.com/flaviacapacia/flaviacapaciacorretora/archive/refs/heads/copilot/create-ads-generation-bot.zip
+
+
+═══════════════════════════════════════════════════════════════
+
+📋 APENAS 3 PASSOS (Resumo):
+
+1️⃣  BAIXAR
+   • Vá para: https://github.com/flaviacapacia/flaviacapaciacorretora
+   • Clique no botão verde "Code"
+   • Clique em "Download ZIP"
+   • Salve na Área de Trabalho
+
+
+2️⃣  EXTRAIR
+   • Vá até o arquivo ZIP que você baixou
+   • Clique com botão direito
+   • Escolha "Extrair aqui" ou "Extrair tudo"
+   • Uma pasta será criada
+
+
+3️⃣  ABRIR
+   • Entre na pasta extraída
+   • Procure o arquivo: LAUNCHER.html
+   • Dê DUPLO CLIQUE nele
+   • Pronto! Abrirá no navegador automaticamente!
+
+
+═══════════════════════════════════════════════════════════════
+
+🎯 ALTERNATIVA RÁPIDA (Se já tem os arquivos):
+
+   Dê duplo clique em qualquer arquivo abaixo:
+   
+   • LAUNCHER.html  ← MELHOR OPÇÃO (Este explica tudo!)
+   • start.html     ← Página de escolha
+   • index.html     ← Site da imobiliária
+
+
+═══════════════════════════════════════════════════════════════
+
+❓ NÃO FUNCIONOU?
+
+   Tente este método:
+   
+   1. Abra o Google Chrome (ou Firefox/Edge)
+   2. Arraste o arquivo LAUNCHER.html para dentro do navegador
+   3. Pronto!
+
+
+═══════════════════════════════════════════════════════════════
+
+💡 IMPORTANTE:
+
+   ✅ Você PRECISA baixar os arquivos primeiro
+   ✅ Não tente abrir direto do GitHub
+   ✅ Extraia TODOS os arquivos do ZIP
+   ✅ Mantenha os arquivos juntos na mesma pasta
+
+
+═══════════════════════════════════════════════════════════════
+
+🆘 PRECISA DE MAIS AJUDA?
+
+   Abra estes arquivos para instruções detalhadas:
+   
+   • COMO_ABRIR_HTML.md  ← Guia completo com imagens
+   • COMO_VISUALIZAR.md  ← Outras formas de visualizar
+   • README.md           ← Informações sobre o projeto
+
+
+═══════════════════════════════════════════════════════════════
+
+✨ É SUPER FÁCIL! ✨
+
+Qualquer pessoa consegue abrir, mesmo sem conhecimento técnico!
+
+═══════════════════════════════════════════════════════════════

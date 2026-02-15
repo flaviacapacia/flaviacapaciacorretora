@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📥 Download Direto - Flávia Capacia Corretora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .download-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .big-button {
+            display: block;
+            width: 100%;
+            padding: 25px;
+            margin: 20px 0;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .big-button.primary {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .big-button.secondary {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .big-button.tertiary {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .big-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .diagram {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 2px solid #e5e7eb;
+        }
+
+        .steps {
+            margin: 30px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: start;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .step-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .alert {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid;
+        }
+
+        .alert.info {
+            background: #dbeafe;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+
+        .alert.warning {
+            background: #fef3c7;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+
+        .alert.success {
+            background: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+
+        .alert.danger {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+
+        .method-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #e5e7eb;
+        }
+
+        .method-box h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .code-box {
+            background: #1f2937;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 10px 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .big-button {
+                font-size: 1.2em;
+                padding: 20px;
+            }
+
+            .step {
+                flex-direction: column;
+            }
+
+            .step-number {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📥 Download Direto do Projeto</h1>
+            <p>Não encontrou o botão ZIP? Use os links diretos abaixo!</p>
+            <div style="margin-top: 20px;">
+                <a href="LAUNCHER.html" class="back-link">← Voltar para Início</a>
+                <a href="ONDE_BAIXAR_ZIP.md" class="back-link">📖 Ver Guia Completo</a>
+            </div>
+        </div>
+
+        <!-- Download Buttons -->
+        <div class="download-section">
+            <h2 style="color: #667eea; margin-bottom: 20px; font-size: 2em;">🎯 Baixar Agora (Um Clique!)</h2>
+            
+            <a href="https://github.com/flaviacapacia/flaviacapaciacorretora/archive/refs/heads/copilot/create-ads-generation-bot.zip" 
+               class="big-button primary"
+               onclick="alert('✅ Download iniciando! O arquivo será salvo na sua pasta Downloads.')">
+                📥 BAIXAR PROJETO COMPLETO (ZIP)
+            </a>
+
+            <button class="big-button secondary" onclick="copyZipLink()">
+                📋 COPIAR LINK DO ZIP
+            </button>
+
+            <a href="https://github.com/flaviacapacia/flaviacapaciacorretora" 
+               target="_blank"
+               class="big-button tertiary">
+                🔗 ABRIR NO GITHUB
+            </a>
+        </div>
+
+        <!-- Visual Diagram -->
+        <div class="download-section">
+            <h2 style="color: #667eea; margin-bottom: 20px;">📸 Onde Está o Botão no GitHub?</h2>
+            
+            <div class="alert info">
+                <strong>👀 PROCURE POR ISSO:</strong><br>
+                Um botão VERDE escrito "Code" no canto superior direito da página do GitHub
+            </div>
+
+            <div class="diagram">
+┌─────────────────────────────────────────────────────────────────┐
+│  GitHub Repository - flaviacapacia/flaviacapaciacorretora       │
+│                                                                 │
+│  ┌────────────────────────────────────────────────────────────┐│
+│  │                                                            ││
+│  │  ← Code ┐  ⭐ Star   📋 Fork   📁 Files                   ││
+│  │         │                                                  ││
+│  │         └──────→ 👈 CLIQUE AQUI PRIMEIRO!                 ││
+│  │                                                            ││
+│  └────────────────────────────────────────────────────────────┘│
+│                                                                 │
+│  Depois que clicar, vai aparecer um menu:                      │
+│                                                                 │
+│  ┌────────────────────────┐                                    │
+│  │  Clone                 │                                    │
+│  │  🔗 HTTPS              │                                    │
+│  │  📋 Copy URL           │                                    │
+│  │  ─────────────────     │                                    │
+│  │  🖥️ Open Desktop       │                                    │
+│  │  ─────────────────     │                                    │
+│  │  📥 Download ZIP       │ 👈 DEPOIS CLIQUE AQUI!            │
+│  └────────────────────────┘                                    │
+│                                                                 │
+│  O arquivo baixado terá um nome tipo:                          │
+│  flaviacapaciacorretora-copilot-create-ads-generation-bot.zip  │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+            </div>
+        </div>
+
+        <!-- Step by Step -->
+        <div class="download-section">
+            <h2 style="color: #667eea; margin-bottom: 20px;">📋 Passo a Passo Visual</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>🌐 Vá para o GitHub</h3>
+                        <p>Abra seu navegador e acesse:</p>
+                        <div class="code-box">https://github.com/flaviacapacia/flaviacapaciacorretora</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>👆 Procure o Botão Verde "Code"</h3>
+                        <p>No canto superior direito da página, você vai ver um botão VERDE com a palavra <strong>"Code"</strong>. Clique nele!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>📥 Clique em "Download ZIP"</h3>
+                        <p>Um menu pequeno vai aparecer. Role até o final e clique na opção <strong>"Download ZIP"</strong> (é a última opção do menu).</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>💾 Salve na Área de Trabalho</h3>
+                        <p>Escolha salvar na <strong>Área de Trabalho</strong> ou pasta <strong>Downloads</strong>. Aguarde o download terminar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert success">
+                <strong>✅ Download Concluído!</strong><br>
+                Agora vá para a pasta onde salvou, extraia o ZIP e abra LAUNCHER.html
+            </div>
+        </div>
+
+        <!-- Alternative Methods -->
+        <div class="download-section">
+            <h2 style="color: #667eea; margin-bottom: 20px;">💡 Métodos Alternativos</h2>
+
+            <div class="method-box">
+                <h3>🔗 Método 1: Link Direto (Mais Fácil)</h3>
+                <p>Cole este link no seu navegador:</p>
+                <div class="code-box">https://github.com/flaviacapacia/flaviacapaciacorretora/archive/refs/heads/copilot/create-ads-generation-bot.zip</div>
+                <p style="margin-top: 10px;">O download vai começar automaticamente!</p>
+            </div>
+
+            <div class="method-box">
+                <h3>📦 Método 2: Via Releases</h3>
+                <p>1. Vá para: <a href="https://github.com/flaviacapacia/flaviacapaciacorretora/releases" target="_blank">Releases</a></p>
+                <p>2. Procure pela versão mais recente</p>
+                <p>3. Baixe o arquivo ZIP em "Assets"</p>
+            </div>
+
+            <div class="method-box">
+                <h3>⚡ Método 3: Com Git (Avançado)</h3>
+                <p>Se você tem Git instalado, pode clonar:</p>
+                <div class="code-box">git clone https://github.com/flaviacapacia/flaviacapaciacorretora.git
+cd flaviacapaciacorretora
+git checkout copilot/create-ads-generation-bot</div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="download-section">
+            <h2 style="color: #667eea; margin-bottom: 20px;">❓ Ainda Não Conseguiu?</h2>
+
+            <div class="alert warning">
+                <strong>⚠️ Problemas Comuns e Soluções:</strong>
+                <ul>
+                    <li><strong>Não vejo o botão "Code":</strong> Você está logado no GitHub? Tente fazer login ou usar outro navegador.</li>
+                    <li><strong>Download não inicia:</strong> Desative bloqueadores de pop-up e permita downloads do GitHub.</li>
+                    <li><strong>Arquivo muito grande:</strong> O projeto completo tem alguns MB. Use WiFi se possível.</li>
+                    <li><strong>ZIP corrompido:</strong> Baixe novamente usando o link direto acima.</li>
+                </ul>
+            </div>
+
+            <div class="alert danger">
+                <strong>🚨 Última Alternativa:</strong><br>
+                Se nada funcionar, use o botão de "COPIAR LINK" acima, cole no navegador e pressione Enter. O download deve iniciar imediatamente!
+            </div>
+        </div>
+
+        <!-- After Download -->
+        <div class="download-section">
+            <h2 style="color: #667eea; margin-bottom: 20px;">🎁 Depois de Baixar</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Vá para a pasta Downloads</h3>
+                        <p>Abra o Explorador de Arquivos e vá para a pasta <strong>Downloads</strong> ou onde salvou o arquivo.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Encontre o arquivo ZIP</h3>
+                        <p>Procure por um arquivo com nome parecido com:<br>
+                        <code>flaviacapaciacorretora-copilot-create-ads-generation-bot.zip</code></p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Extraia os arquivos</h3>
+                        <p>Clique com <strong>botão direito</strong> no arquivo ZIP → <strong>"Extrair aqui"</strong> ou <strong>"Extract here"</strong></p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Abra a pasta extraída</h3>
+                        <p>Entre na pasta que foi criada após a extração.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Dê duplo clique em LAUNCHER.html</h3>
+                        <p>Pronto! O projeto vai abrir no seu navegador e você pode começar a usar! 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="download-section" style="text-align: center;">
+            <h2 style="color: #667eea; margin-bottom: 20px;">🔗 Links Úteis</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                <a href="https://github.com/flaviacapacia/flaviacapaciacorretora" target="_blank" class="back-link">
+                    🏠 Repositório GitHub
+                </a>
+                <a href="https://github.com/flaviacapacia/flaviacapaciacorretora/releases" target="_blank" class="back-link">
+                    📦 Releases
+                </a>
+                <a href="https://github.com/flaviacapacia/flaviacapaciacorretora/issues" target="_blank" class="back-link">
+                    💬 Suporte (Issues)
+                </a>
+                <a href="LAUNCHER.html" class="back-link">
+                    🚀 Voltar ao Início
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyZipLink() {
+            const zipUrl = 'https://github.com/flaviacapacia/flaviacapaciacorretora/archive/refs/heads/copilot/create-ads-generation-bot.zip';
+            
+            navigator.clipboard.writeText(zipUrl).then(() => {
+                alert('✅ Link copiado!\n\nCole no navegador e pressione Enter para baixar.\n\n' + zipUrl);
+            }).catch(() => {
+                prompt('📋 Copie este link:', zipUrl);
+            });
+        }
+
+        // Detecta se está no GitHub
+        if (window.location.hostname.includes('github')) {
+            const warning = document.createElement('div');
+            warning.className = 'alert danger';
+            warning.style.position = 'fixed';
+            warning.style.top = '20px';
+            warning.style.left = '20px';
+            warning.style.right = '20px';
+            warning.style.zIndex = '9999';
+            warning.style.maxWidth = '600px';
+            warning.style.margin = '0 auto';
+            warning.innerHTML = `
+                <strong>⚠️ ATENÇÃO!</strong><br>
+                Você está visualizando este arquivo no GitHub.<br>
+                Para usar, você precisa <strong>baixar o projeto primeiro</strong>!<br>
+                Clique no botão verde "Code" → "Download ZIP"
+            `;
+            document.body.insertBefore(warning, document.body.firstChild);
+        }
+    </script>
+</body>
+</html>

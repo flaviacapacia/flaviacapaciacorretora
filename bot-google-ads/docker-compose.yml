@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # Node.js API
+  api:
+    build: ./api
+    container_name: flavia-ads-api
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_PORT=${DB_PORT}
+      - BOT_URL=http://bot:8000
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+    depends_on:
+      - bot
+    networks:
+      - flavia-network
+    restart: unless-stopped
+
+  # Python Bot (FastAPI + Mistral AI)
+  bot:
+    build: ./bot
+    container_name: flavia-ads-bot
+    ports:
+      - "8000:8000"
+    environment:
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY}
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_PORT=${DB_PORT}
+      - BLOG_URL=${BLOG_URL}
+      - SITE_URL=${SITE_URL}
+      - GOOGLE_ADS_CUSTOMER_ID=${GOOGLE_ADS_CUSTOMER_ID}
+      - GOOGLE_ADS_DEVELOPER_TOKEN=${GOOGLE_ADS_DEVELOPER_TOKEN}
+    volumes:
+      - ./bot:/app
+    networks:
+      - flavia-network
+    restart: unless-stopped
+
+  # React Dashboard
+  dashboard:
+    build: ./dashboard
+    container_name: flavia-ads-dashboard
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:3001
+    volumes:
+      - ./dashboard:/app
+      - /app/node_modules
+    depends_on:
+      - api
+    networks:
+      - flavia-network
+    restart: unless-stopped
+
+networks:
+  flavia-network:
+    driver: bridge

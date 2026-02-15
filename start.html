@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha a Interface - Flávia Capacia Corretora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #333;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .card-features li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .card-features li:before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .card-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-button:hover {
+            opacity: 0.9;
+        }
+
+        .docs {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .docs h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .docs-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .docs-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .docs-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 Flávia Capacia Corretora</h1>
+            <p>Escolha qual interface você deseja visualizar</p>
+        </div>
+
+        <div class="cards">
+            <!-- Botão de Inicialização -->
+            <a href="inicializar.html" class="card" style="grid-column: 1 / -1; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <div class="card-icon">🚀</div>
+                <div class="card-title" style="color: white;">Inicializar Projeto</div>
+                <div class="card-description" style="color: rgba(255,255,255,0.9);">
+                    Guia interativo para iniciar servidores e visualizar interfaces
+                </div>
+                <ul class="card-features" style="color: rgba(255,255,255,0.9);">
+                    <li style="color: white;">Comandos prontos para copiar</li>
+                    <li style="color: white;">Scripts automáticos</li>
+                    <li style="color: white;">Instruções passo a passo</li>
+                    <li style="color: white;">Suporte Windows, Mac e Linux</li>
+                </ul>
+                <button class="card-button" style="background: white; color: #667eea;">🎯 Começar Agora</button>
+            </a>
+
+            <!-- Site Principal -->
+            <a href="index.html" class="card">
+                <div class="card-icon">🏠</div>
+                <div class="card-title">Site Principal</div>
+                <div class="card-description">
+                    Site institucional da imobiliária com portfólio de imóveis
+                </div>
+                <ul class="card-features">
+                    <li>Página inicial moderna</li>
+                    <li>Catálogo de imóveis</li>
+                    <li>Blog e artigos</li>
+                    <li>Formulário de contato</li>
+                </ul>
+                <button class="card-button">Abrir Site Principal</button>
+            </a>
+
+            <!-- Dashboard React -->
+            <div class="card" onclick="showDashboardInfo()">
+                <div class="card-icon">🤖</div>
+                <div class="card-title">Dashboard React</div>
+                <div class="card-description">
+                    Sistema de geração de anúncios Google Ads com IA
+                </div>
+                <ul class="card-features">
+                    <li>Geração automática com IA</li>
+                    <li>Gestão de anúncios</li>
+                    <li>Análise de performance</li>
+                    <li>Interface moderna</li>
+                </ul>
+                <button class="card-button">Ver Instruções</button>
+            </div>
+        </div>
+
+        <!-- Documentação -->
+        <div class="docs">
+            <h3>📚 Documentação e Guias</h3>
+            <div class="docs-links">
+                <a href="COMO_VISUALIZAR.md" class="docs-link">📖 Como Visualizar</a>
+                <a href="COMO_BAIXAR.md" class="docs-link">📥 Como Baixar</a>
+                <a href="bot-google-ads/README.md" class="docs-link">🤖 Docs Bot</a>
+                <a href="bot-google-ads/GUIA_DE_USO.md" class="docs-link">📋 Guia de Uso</a>
+                <a href="README.md" class="docs-link">📄 README</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDashboardInfo() {
+            alert(
+                '🤖 Dashboard React - Bot Google Ads\n\n' +
+                'Para visualizar o dashboard, você precisa:\n\n' +
+                '1. Ter Node.js instalado\n' +
+                '2. Executar os comandos:\n\n' +
+                '   cd bot-google-ads/dashboard\n' +
+                '   npm install\n' +
+                '   npm run dev\n\n' +
+                '3. Acessar: http://localhost:3000\n\n' +
+                '💡 Ou use os scripts automáticos:\n' +
+                '   • Linux/Mac: ./visualizar.sh\n' +
+                '   • Windows: visualizar.bat\n\n' +
+                '📖 Leia COMO_VISUALIZAR.md para mais detalhes!'
+            );
+        }
+    </script>
+</body>
+</html>

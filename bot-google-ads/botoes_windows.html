@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões Windows - Bot Google Ads IA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            margin: 20px 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 30px 20px;
+            border-radius: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            grid-column: span 2;
+            font-size: 1.3em;
+            padding: 40px;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+        }
+
+        .btn-info {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .icon {
+            font-size: 2em;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: #856404;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box li {
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+
+        .info-box code {
+            background: #e9ecef;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .btn-primary {
+                grid-column: span 1;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Bot Google Ads IA</h1>
+        <p class="subtitle">Controles para Windows</p>
+
+        <div class="alert">
+            <strong>⚠️ Importante:</strong> Esta página ajuda você a executar os scripts. 
+            Clique nos botões abaixo e confirme a execução quando o Windows perguntar.
+        </div>
+
+        <div class="button-grid">
+            <a href="MENU_WINDOWS.bat" class="btn btn-primary" download>
+                <span class="icon">🎯</span>
+                <span>MENU PRINCIPAL</span>
+                <small>Acesso completo a tudo</small>
+            </a>
+
+            <a href="iniciar_tudo.bat" class="btn" download>
+                <span class="icon">🚀</span>
+                <span>Iniciar Tudo</span>
+                <small>Sistema completo</small>
+            </a>
+
+            <a href="abrir_admin.bat" class="btn btn-info" download>
+                <span class="icon">📊</span>
+                <span>Abrir Admin</span>
+                <small>Painel no navegador</small>
+            </a>
+
+            <a href="iniciar_bot.bat" class="btn" download>
+                <span class="icon">🤖</span>
+                <span>Bot Python</span>
+                <small>Apenas o bot IA</small>
+            </a>
+
+            <a href="iniciar_api.bat" class="btn" download>
+                <span class="icon">🌐</span>
+                <span>API Node.js</span>
+                <small>Apenas a API</small>
+            </a>
+
+            <a href="iniciar_dashboard.bat" class="btn" download>
+                <span class="icon">⚛️</span>
+                <span>Dashboard</span>
+                <small>Interface React</small>
+            </a>
+
+            <a href="parar_tudo.bat" class="btn btn-danger" download>
+                <span class="icon">🛑</span>
+                <span>Parar Tudo</span>
+                <small>Encerrar servidores</small>
+            </a>
+        </div>
+
+        <div class="info-box">
+            <h3>📋 Como Usar</h3>
+            <ul>
+                <li><strong>1.</strong> Baixe esta pasta completa do GitHub</li>
+                <li><strong>2.</strong> Clique duas vezes em <code>INICIAR.bat</code> ou <code>MENU_WINDOWS.bat</code></li>
+                <li><strong>3.</strong> Escolha a opção desejada no menu</li>
+                <li><strong>4.</strong> Aguarde os servidores iniciarem</li>
+                <li><strong>5.</strong> O navegador abrirá automaticamente!</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>🔗 URLs do Sistema</h3>
+            <ul>
+                <li>📊 <strong>Dashboard:</strong> <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+                <li>🌐 <strong>API:</strong> <a href="http://localhost:3001" target="_blank">http://localhost:3001</a></li>
+                <li>🤖 <strong>Bot:</strong> <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></li>
+                <li>📚 <strong>Bot Docs:</strong> <a href="http://localhost:8000/docs" target="_blank">http://localhost:8000/docs</a></li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>💡 Dicas Rápidas</h3>
+            <ul>
+                <li>✅ Use <strong>MENU_WINDOWS.bat</strong> para acesso fácil a todas funcionalidades</li>
+                <li>✅ <strong>iniciar_tudo.bat</strong> inicia os 3 componentes de uma vez</li>
+                <li>✅ <strong>abrir_admin.bat</strong> abre o painel mesmo se já estiver rodando</li>
+                <li>✅ <strong>parar_tudo.bat</strong> encerra todos os processos de uma vez</li>
+                <li>✅ Configure as chaves de API no menu "Configurações"</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>⚙️ Requisitos</h3>
+            <ul>
+                <li>✔️ Node.js 18+ (<a href="https://nodejs.org" target="_blank">Baixar</a>)</li>
+                <li>✔️ Python 3.8+ (<a href="https://python.org" target="_blank">Baixar</a>)</li>
+                <li>✔️ Windows 10/11</li>
+                <li>✔️ Chave da API Mistral (configure no .env)</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-success">
+            <strong>✨ Pronto para começar!</strong><br>
+            Clique duas vezes em <strong>INICIAR.bat</strong> e comece a gerar anúncios com IA!
+        </div>
+    </div>
+
+    <script>
+        // Adiciona funcionalidade de copiar URLs
+        document.querySelectorAll('.info-box a[href^="http"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (e.ctrlKey) {
+                    e.preventDefault();
+                    navigator.clipboard.writeText(this.href);
+                    alert('✓ URL copiada: ' + this.href);
+                }
+            });
+        });
+
+        // Alerta ao clicar nos botões de scripts
+        document.querySelectorAll('a[href$=".bat"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const scriptName = this.href.split('/').pop();
+                console.log('Executando: ' + scriptName);
+            });
+        });
+    </script>
+</body>
+</html>
