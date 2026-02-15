@@ -1,0 +1,79 @@
+# 🎯 INSTRUÇÕES SUPER SIMPLES - Copiar Scripts Windows
+
+## O QUE FAZER AGORA (3 Passos)
+
+### ✅ PASSO 1: Copiar Arquivos
+
+**Duplo clique em:**
+```
+atualizar_scripts_windows.bat
+```
+
+**Digite quando perguntar:**
+```
+C:\Users\SeuNome\CAMINHO\PARA\bot-google-ads-ia
+```
+(Use o caminho real onde está seu repositório no VS Code)
+
+**Resultado:**
+- 12 arquivos copiados ✅
+- Script oferece executar criar_atalhos.bat
+- Diga "S" para SIM!
+
+---
+
+### ✅ PASSO 2: No VS Code
+
+Os arquivos aparecerão no VS Code!
+
+**No terminal do VS Code:**
+```bash
+git add *.bat *.html GUIA_WINDOWS.md
+git commit -m "Add Windows desktop scripts"
+git push
+```
+
+---
+
+### ✅ PASSO 3: Usar os Atalhos
+
+**Na sua Área de Trabalho você verá:**
+
+- 🚀 **Iniciar Bot Google Ads** ← Duplo clique aqui!
+- 📊 **Painel Admin Bot**
+- 🛑 **Parar Bot Google Ads**
+- 🤖 **Bot Google Ads - Menu**
+- 📚 **Documentação Bot**
+- 🎨 **Botões Bot Google Ads**
+
+---
+
+## 🎊 PRONTO!
+
+Agora basta dar duplo clique em **🚀 Iniciar Bot Google Ads** na sua área de trabalho e tudo funcionará!
+
+---
+
+## ⚡ Alternativa Super Rápida
+
+Se o script não funcionar, copie manualmente:
+
+1. **Abra 2 pastas:**
+   - `flaviacapaciacorretora\bot-google-ads`
+   - `bot-google-ads-ia` (seu VS Code)
+
+2. **Copie todos arquivos .bat e .html de uma para outra**
+
+3. **No bot-google-ads-ia, duplo clique em `criar_atalhos.bat`**
+
+4. **Pronto!**
+
+---
+
+## ❓ Dúvidas?
+
+Leia: **ATUALIZAR_SCRIPTS_WINDOWS.md**
+
+---
+
+**É só isso! Super simples! 🚀**
