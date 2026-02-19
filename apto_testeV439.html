@@ -2,761 +2,936 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="robots" content="noindex">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apartamento lindo no bairro Nossa Senhora do Rosário São José SC | Código V441</title>
-
-  <!-- Meta description para SEO -->
-  <meta name="description" content="Apartamento à venda no bairro Nossa Senhora do Rosário em São José SC. Imóvel com 3 dormitórios, sendo 1 suíte, sacada com churrasqueira e vaga de garagem. Excelente oportunidade para morar ou investir. Código V441." />
-
-  <!-- Open Graph para redes sociais -->
-  <meta property="og:title" content="Apartamento lindo no bairro Nossa Senhora do Rosário em São José SC | Código V441" />
-  <meta property="og:description" content="Descubra este apartamento no bairro Nossa Senhora do Rosário em São José SC: 3 dormitórios, sendo 1 suíte, sacada com churrasqueira e vaga de garagem. Ideal para famílias e investidores." />
+  
+  <title>Flavia Capacia Corretora | Imóveis em Florianópolis e Região</title>
+  <meta name="description" content="Imóveis de alto padrão em Florianópolis, São José e Palhoça. Apartamentos, casas e coberturas com a experiência de Flavia Capacia." />
+  
+  <meta property="og:title" content="Flavia Capacia Corretora | Imóveis em Florianópolis" />
+  <meta property="og:description" content="Encontre seu imóvel dos sonhos na Grande Florianópolis" />
   <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
-  <meta property="og:url" content="https://www.flaviacapaciacorretora.site/apartamento-venda-rosario-V441.html" />
+  <meta property="og:url" content="https://www.flaviacapaciacorretora.com" />
   <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Apartamento lindo no bairro Nossa Senhora do Rosário São José SC | Código V441" />
-  <meta name="twitter:description" content="Apartamento à venda no bairro Nossa Senhora do Rosário em São José SC. Com 3 dormitórios, sendo 1 suíte, sacada com churrasqueira e vaga de garagem. Oportunidade única para morar ou investir." />
-  <meta name="twitter:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-</head>
   
-  <!-- CSS interno -->
+  <link rel="canonical" href="https://www.flaviacapaciacorretora.com/index.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  
   <style>
-  
     :root {
-      --fundo-branco: #ffffff;
-      --texto-bronze: #4B3A2F;
-      --bronze-claro: #7A5C45;
-      --fonte-padrao: 'Playfair Display', serif;
-      --dourado: #b08d57;
+      /* Paleta Gralha Imóveis - Azul Marinho e Vermelho */
+      --azul-escuro: #002855;
+      --azul-principal: #003D73;
+      --azul-medio: #0052A3;
+      --azul-claro: #E8F1F8;
+      --vermelho: #D32F2F;
+      --vermelho-escuro: #B71C1C;
+      --vermelho-hover: #E53935;
+      --cinza-escuro: #2C3E50;
+      --cinza-medio: #546E7A;
+      --cinza-claro: #ECEFF1;
+      --texto-escuro: #263238;
+      --texto-medio: #546E7A;
+      --branco: #FFFFFF;
+      --sombra: rgba(0, 40, 85, 0.1);
+      --sombra-hover: rgba(211, 47, 47, 0.15);
+      --fonte-principal: 'Roboto', sans-serif;
+      --fonte-secundaria: 'Open Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: var(--fundo-branco);
-      color: var(--texto-bronze);
-      font-family: var(--fonte-padrao);
+      font-family: var(--fonte-principal);
+      color: var(--texto-escuro);
       line-height: 1.6;
-      margin: 0;
-      padding: 0;
+      background-color: #F8F9FA;
     }
 
-    /* Header */
-    .site-header {
-      background-color: var(--fundo-branco);
-      padding: 20px;
-      border-bottom: 1px solid #ddd;
+    /* ========== BARRA TOPO ========== */
+    .top-bar {
+      background-color: var(--azul-escuro);
+      color: white;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+
+    .top-bar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .top-bar-contact {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .top-bar-contact a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .top-bar-contact a:hover {
+      opacity: 0.8;
+    }
+
+    /* ========== HEADER PRINCIPAL ========== */
+    .main-header {
+      background-color: var(--branco);
+      box-shadow: 0 2px 10px var(--sombra);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-img {
+      max-width: 160px;
+      height: auto;
+    }
+
+    .nav-menu ul {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--texto-escuro);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      transition: all 0.3s;
+    }
+
+    .nav-menu a:hover {
+      background-color: var(--azul-claro);
+      color: var(--azul-principal);
+    }
+
+    /* ========== HERO BANNER ========== */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-principal) 100%);
+      color: white;
+      padding: 70px 20px;
       text-align: center;
     }
-    .logo-area img { max-width: 170px; height: auto; }
-    .main-nav ul {
-      list-style: none; display: flex; gap: 20px; justify-content: center;
-      flex-wrap: wrap; margin-top: 10px; padding: 0;
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .main-nav a { text-decoration: none; color: var(--texto-bronze); font-weight: bold; }
 
-    .hero { width: 100%; height: 280px; overflow: hidden; }
-    .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
-    .hero-legenda { text-align: center; font-size: 1.2rem; margin: 12px auto; font-weight: bold; } 
-    
-/* Ícones sociais */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
 
-.social-icons .icon {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.3s ease;
-}
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 35px;
+      opacity: 0.95;
+    }
 
-.social-icons .icon:hover {
-  transform: scale(1.1);
-}
+    /* Busca Hero */
+    .hero-search-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      max-width: 750px;
+      margin: 0 auto;
+    }
 
-/* Hero */
-.hero {
-  position: relative;
-  height: 80vh; /* altura controlada */
-  overflow: hidden;
-}
+    .hero-search-box select,
+    .hero-search-box input {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 18px;
+      border: 1px solid #DDD;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: var(--fonte-principal);
+    }
 
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* corta sem distorcer */
-  object-position: center bottom; /* ajusta foco: ponte + pôr do sol */
-}
+    .hero-search-box button {
+      padding: 14px 35px;
+      background-color: var(--vermelho);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
 
-.hero-text {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  text-align: center;
-}
+    .hero-search-box button:hover {
+      background-color: var(--vermelho-hover);
+    }
 
-/* Container do picture */
-picture {
-  display: block;
-  width: 100%;
-  max-width: 1200px; /* limite para não ficar muito esticado */
-  margin: 0 auto;    /* centraliza na página */
-  overflow: hidden;  /* evita que a imagem ultrapasse */
-  border-radius: 12px; /* cantos arredondados */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* sombra suave */
-}
-  .galeria-grid {
-  max-width: 1200px;
-  margin: 40px auto;
-  text-align: center;
-}
+    /* ========== BREADCRUMB ========== */
+    .breadcrumb-bar {
+      background-color: var(--branco);
+      padding: 12px 0;
+      border-bottom: 1px solid #E0E0E0;
+    }
 
-.grid-fotos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin: 20px 0;
-}
+    .breadcrumb-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      font-size: 13px;
+      color: var(--texto-medio);
+    }
 
-.grid-fotos img {
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+    .breadcrumb-content a {
+      color: var(--azul-medio);
+      text-decoration: none;
+    }
 
-.grid-fotos img:hover {
-  transform: scale(1.05);
-}
+    .breadcrumb-content a:hover {
+      text-decoration: underline;
+    }
 
-/* Botão faixa */
-.faixa-botao {
-  text-align: center;
-  margin: 30px 0;
-}
+    /* ========== CONTAINER PRINCIPAL ========== */
+    .main-content {
+      max-width: 1200px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
 
-.btn-veja-todas {
-  background: linear-gradient(90deg, #b87333, #8b5e3c);
-  color: #fff;
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-.btn-veja-todas:hover {
-  background: linear-gradient(90deg, #8b5e3c, #b87333);
-}
+    .section-header {
+      margin-bottom: 35px;
+    }
 
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--azul-principal);
+      margin-bottom: 8px;
+    }
 
-/* Lightbox */
-.lightbox {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.8);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index: 9999;
-}
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--texto-medio);
+    }
 
-.lightbox img {
-  max-width:90%;
-  max-height:90%;
-  border-radius: 10px;
-}
+    /* ========== BARRA DE FILTROS ========== */
+    .filter-section {
+      background: var(--branco);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px var(--sombra);
+      margin-bottom: 35px;
+    }
 
-/* Formulário */
-.form-contato {
-  background: #f9f9f9;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 600px;
-  margin: 40px auto;
-}
-.form-contato h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.form-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.form-contato input, .form-contato textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-.form-contato button {
-  background: #25D366; /* verde WhatsApp */
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  font-weight: bold;
-}
-.form-contato button:hover {
-  background: #128C7E;
-}
-form {
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 25px;
-  border: 1px solid #b8860b; /* bronze/dourado escuro */
-  border-radius: 10px;
-  background-color: #fff;
-  font-family: system-ui, sans-serif, Arial;
-}
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      align-items: end;
+    }
 
-.field {
-  margin-bottom: 20px;
-}
+    .filter-item label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--texto-medio);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-.field label {
-  display: block;
-  font-size: 14px;
-  color: #2c3e50;
-  margin-bottom: 6px;
-}
+    .filter-item select,
+    .filter-item input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #DDD;
+      border-radius: 6px;
+      font-size: 14px;
+    }
 
-.field input,
-.field textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
+    .filter-btn {
+      padding: 11px 30px;
+      background-color: var(--vermelho);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
 
- Botão principal 
-#button {
-  width: 100%;
-  padding: 12px;
-  background-color: #b8860b;  bronze/dourado escuro
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+    .filter-btn:hover {
+      background-color: var(--vermelho-hover);
+    }
 
-#button:hover {
-  background-color: #996515; /* tom mais escuro para hover */
-}
+    /* ========== GRID IMÓVEIS ========== */
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 50px;
+    }
 
-/* Imagem dentro do picture */
-picture img {
-  width: 100%;
-  height: auto;       /* mantém proporção */
-  display: block;
-  object-fit: cover;  /* corta se necessário sem distorcer */
-  transition: transform 0.3s ease; /* animação suave */
-}
+    .property-card {
+      background: var(--branco);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px var(--sombra);
+      transition: all 0.3s;
+      position: relative;
+    }
 
-/* Efeito ao passar o mouse */
-picture img:hover {
-  transform: scale(1.05); /* zoom leve */
-  cursor: pointer;
-}
+    .property-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px var(--sombra-hover);
+    }
 
-    /* Conteúdo */
-    .imovel-page { padding: 30px 20px; max-width: 900px; margin: auto; }
-    .imovel-page h1 { color: var(--dourado); text-align: center; margin-bottom: 15px; }
-    .preco { font-size: 1.4rem; color: var(--bronze-claro); font-weight: bold; text-align: center; margin-bottom: 10px; }
-    .info-extra { text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+    .property-tag {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--vermelho);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 25px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      z-index: 10;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
 
-    /* Galeria com Swiper */
-    .swiper { width: 100%; max-width: 900px; margin: auto; }
-    .swiper-slide img { width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .property-image {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
 
-.swiper {
-  max-height: 350px;
-  margin: auto;
-}
+    .property-card:hover .property-image {
+      transform: scale(1.06);
+    }
 
-.swiper-slide img {
-  width: 100%;
-  max-height: 350px; /* controla a altura máxima */
-  object-fit: cover; /* mantém proporção sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+    .property-details {
+      padding: 22px;
+    }
+
+    .property-type {
+      font-size: 12px;
+      color: var(--azul-medio);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .property-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--texto-escuro);
+      margin-bottom: 10px;
+      line-height: 1.3;
+      min-height: 50px;
+    }
+
+    .property-location {
+      font-size: 13px;
+      color: var(--texto-medio);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .property-features {
+      display: flex;
+      gap: 18px;
+      padding: 16px 0;
+      border-top: 1px solid #E0E0E0;
+      border-bottom: 1px solid #E0E0E0;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--texto-medio);
+    }
+
+    .feature-item strong {
+      color: var(--texto-escuro);
+      font-weight: 600;
+    }
+
+    .property-price {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--vermelho);
+      margin-bottom: 18px;
+    }
+
+    .property-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-details {
+      flex: 1;
+      padding: 13px;
+      background-color: var(--azul-principal);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
+
+    .btn-details:hover {
+      background-color: var(--azul-medio);
+    }
+
+    .btn-whats {
+      padding: 13px 22px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-whats:hover {
+      background-color: #128C7E;
+    }
+
+    /* ========== WHATSAPP FLUTUANTE ========== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background-color: #25D366;
+      color: white;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 5px 18px rgba(37, 211, 102, 0.5);
+      z-index: 998;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.12);
+    }
+
+    /* ========== FOOTER ========== */
+    .main-footer {
+      background: linear-gradient(135deg, var(--azul-escuro), var(--azul-principal));
+      color: white;
+      padding: 55px 20px 25px;
+      margin-top: 70px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 45px;
+      margin-bottom: 35px;
+    }
+
+    .footer-column h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      color: white;
+    }
+
+    .footer-logo {
+      max-width: 180px;
+      margin-bottom: 18px;
+    }
+
+    .footer-column p {
+      line-height: 1.9;
+      opacity: 0.92;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    .footer-column a:hover {
+      color: var(--vermelho-hover);
+    }
+
+    .footer-contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .social-icons a {
+      width: 42px;
+      height: 42px;
+      background-color: rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      font-size: 18px;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--vermelho);
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    /* ========== SEÇÕES OCULTAS (PARA USO FUTURO) ========== */
+    .hidden-section {
+      display: none;
+    }
+
+    /* ========== RESPONSIVO ========== */
     @media (max-width: 768px) {
-  .swiper-slide img {
-    max-height: 280px;
-  }
-}
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
 
+      .nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-    /* Captacao */
-    .captacao { text-align: center; padding: 30px 20px; background: #fdfdfd; border-radius: 8px; margin: 40px auto; max-width: 700px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .form-captacao { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-    .form-captacao input { padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
-    .form-captacao button { background: var(--dourado); color: white; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .form-captacao button:hover { background: var(--bronze-claro); }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
 
-    /* WhatsApp fixo */
-    .whatsapp-btn-fixed {
-      position: fixed; bottom: 20px; right: 20px;
-      background: #25D366; color: #fff; padding: 12px 18px;
-      border-radius: 50px; text-decoration: none; font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      .hero-search-box {
+        flex-direction: column;
+      }
+
+      .properties-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-grid {
+        grid-template-columns: 1fr;
+      }
     }
-    .whatsapp-btn-fixed:hover { background: #128C7E; }
-/* Rodapé */  
-
-.site-footer {
-  background: #ffffff; /* fundo branco */
-  color: #000000;      /* texto preto */
-  padding: 40px 20px;
-  font-family: 'Playfair Display', serif;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between; /* distribui colunas */
-  align-items: center;
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.footer-logo {
-  margin: 0 auto;      /* centraliza horizontalmente */
-  text-align: center;  /* garante alinhamento interno */
-}
-
-.footer-logo img {
-  width: 180px; /* logo maior */
-  transition: transform 0.7s ease;
-}
-
-.footer-logo img:hover {
-  transform: scale(1.05);
-}
-
-/* Contato e Redes sociais em dourado */
-.footer-contact h3,
-.footer-social h3 {
-  color: var(--dourado);
-  margin-bottom: 10px;
-}
-
-.footer-contact a,
-.footer-social a {
-  color: var(--dourado);
-  text-decoration: none;
-}
-
-.footer-contact a:hover,
-.footer-social a:hover {
-  color: #333; /* efeito hover em preto */
-}
-
-.footer-contact p {
-  color: var(--dourado); /* cidades também em dourado */
-  font-size: 16px;
-  margin: 6px 0;
-}
-
-.footer-social ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-social li {
-  margin-bottom: 8px;
-}
-
-.footer-credit {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #000000; /* créditos em preto */
-}
-
-/* Responsivo para celular */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .footer-logo img {
-    margin: 0 auto;
-  }
-}
-
-.lightbox {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.8);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.lightbox img {
-  max-width:90%;
-  max-height:90%;
-}
-    /* Layout base */
-body {
-  background-color: var(--fundo-branco);
-  color: var(--texto-bronze);
-  font-family: var(--fonte-padrao);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-
-/* Header */
-.site-header {
-  background-color: var(--fundo-branco);
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-.logo-area img { max-width: 170px; height: auto; }
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  padding: 0;
-}
-.main-nav a { text-decoration: none; color: var(--texto-bronze); font-weight: bold; }
-
-/* Galeria */
-.galeria-grid {
-  max-width: 1200px;
-  margin: 40px auto;
-  text-align: center;
-}
-.grid-fotos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin: 20px 0;
-}
-.grid-fotos img {
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.grid-fotos img:hover { transform: scale(1.05); }
-
-
-/* Formulário */
-.form-contato {
-  background: #f9f9f9;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 600px;
-  margin: 40px auto;
-}
-.form-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.form-contato input, .form-contato textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1; /* ocupa todo o espaço disponível */
-}
-
-footer {
- 
-  padding: 20px;
-  text-align: center;
-}
-
-
-/* Responsividade */
-@media (max-width: 992px) {
-  .grid-fotos { grid-template-columns: repeat(2, 1fr); }
-  .footer-container { flex-direction: column; text-align: center; }
-}
-@media (max-width: 600px) {
-  .grid-fotos { grid-template-columns: 1fr; }
-  .main-nav ul { flex-direction: column; gap: 10px; }
-  .form-contato { padding: 20px; }
-}
-
- </style>
+  </style>
+</head>
 <body>
 
-<header class="site-header">
-  <div class="logo-area">
-    <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" />
+  <!-- ========== BARRA TOPO ========== -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <div class="top-bar-contact">
+        <a href="mailto:flavia.capacia@creci.gov">📧 flavia.capacia@creci.gov</a>
+        <a href="tel:+5548999600601">📱 (48) 99960-0601</a>
+      </div>
+      <div>📍 Florianópolis • São José • Palhoça</div>
+    </div>
   </div>
-  <nav class="main-nav">
-    <ul>
-      <li><a href="../index.html">Início</a></li>
-      <li><a href="../sobre.html">Sobre</a></li>
-      <li><a href="../negocie.html">Negocie</a></li>
-      <li><a href="../financie.html">Financie</a></li>
-      <li><a href="../contato.html">Contato</a></li>
-    </ul>
-  </nav>
-   <div class="social-icons">
-    <a href="https://www.instagram.com/flacapacciacorretora" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="icon" />
-    </a>
-    <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" class="icon" />
-    </a>
-    <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" class="icon" />
-    </a>
-    <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="icon" />
-    </a>
+
+  <!-- ========== HEADER PRINCIPAL ========== -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Flavia Capacia Corretora" class="logo-img">
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#comprar">Comprar</a></li>
+          <li><a href="#alugar">Alugar</a></li>
+          <li><a href="#lancamentos">Lançamentos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== BREADCRUMB ========== -->
+  <div class="breadcrumb-bar">
+    <div class="breadcrumb-content">
+      <a href="index.html">Início</a> > <span>Imóveis à venda</span>
+    </div>
   </div>
-</header>
 
-<main class="imovel-page">
-  <h1>Oportunidade exclusiva em São José – Bairro Nossa Senhora do Rosário</h1>
-  <p class="preco">Valor de venda: R$ 540.000,00</p>
-  <div class="info-extra">Código: V441 | IPTU: R$ 890,00 | Condomínio: R$ 650,00</div>
-
-  <section class="descricao">
-    <p>
-      Apartamento lindo à venda no bairro Nossa Senhora do Rosário, região tranquila e bem localizada de São José. 
-      São 3 dormitórios, sendo 1 suíte, ambientes bem distribuídos, área de serviço, sacada com churrasqueira e 
-      vaga de garagem coberta. O imóvel oferece conforto, praticidade e excelente padrão de acabamento, ideal para 
-      quem busca qualidade de vida em um dos bairros mais valorizados da cidade.
-    </p>
-  </section>
-
-  <section class="detalhes">
-    <h2>Destaques do imóvel</h2>
-    <ul>
-      <li>3 dormitórios, sendo 1 suíte</li>
-      <li>Sacada com churrasqueira</li>
-      <li>Ambientes bem iluminados e ventilados</li>
-      <li>Área de serviço independente</li>
-      <li>Banheiros modernos</li>
-      <li>Vaga de garagem coberta</li>
-    </ul>
-  </section>
-
-  <section class="investimento">
-    <h2>Por que investir no bairro Nossa Senhora do Rosário</h2>
-    <ul>
-      <li>Bairro residencial tranquilo e seguro</li>
-      <li>Próximo a escolas, supermercados e serviços essenciais</li>
-      <li>Fácil acesso ao centro de São José e à BR-101</li>
-      <li>Ideal para famílias que buscam conforto e praticidade</li>
-      <li>Ótimo potencial de valorização imobiliária</li>
-    </ul>
-  </section>
-
-  <section class="seo-texto">
-    <h2>Quem vai se encantar com este apartamento</h2>
-    <p>
-      Este apartamento no bairro Nossa Senhora do Rosário é perfeito para famílias que desejam viver em um 
-      ambiente tranquilo, mas sem abrir mão da proximidade com o centro de São José e de toda a infraestrutura 
-      necessária para o dia a dia. Com 3 dormitórios, suíte, sacada com churrasqueira e vaga de garagem, 
-      o imóvel combina praticidade e conforto em uma localização estratégica. Se você busca um lar moderno e 
-      acolhedor, esta é a oportunidade ideal.
-    </p>
-  </section>
-
-  <section class="galeria-grid">
-    <h2>Fotos do Imóvel</h2>
-    <div class="grid-fotos">
-      <img src="img/imagens/v441-sala-1.webp" alt="Sala ampla e iluminada" loading="lazy"/>
-      <img src="img/imagens/v441-sala-2.webp" alt="Suíte confortável e moderna" loading="lazy"/>
-      <img src="img/imagens/v441-sala-3.webp" alt="Cozinha planejada" loading="lazy"/>
-      <img src="img/imagens/v441-sala-4.webp" alt="Sacada com churrasqueira" loading="lazy"/>
-      <img src="img/imagens/v441-quarto-1.webp" alt="qaurtos com armarios " loading="lazy"/>
-      <img src="img/imagens/v441-sala-1.webp" alt="sala com iluminacao " loading="lazy"/>
+  <!-- ========== HERO BANNER ========== -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>Encontre seu imóvel dos sonhos</h1>
+      <p>Imóveis de alto padrão em Florianópolis, São José e Palhoça</p>
+      <div class="hero-search-box">
+        <select>
+          <option>Tipo de Imóvel</option>
+          <option>Apartamento</option>
+          <option>Casa</option>
+          <option>Cobertura</option>
+          <option>Studio</option>
+          <option>Terreno</option>
+        </select>
+        <select>
+          <option>Finalidade</option>
+          <option>Comprar</option>
+          <option>Alugar</option>
+        </select>
+        <input type="text" placeholder="Bairro ou cidade">
+        <button>🔍 Buscar</button>
+      </div>
     </div>
   </section>
-</main>
 
-
-  <!-- Botão faixa -->
- <div class="faixa-botao">
-  <a href="https://wa.me/5548999600601" target="_blank" class="btn-veja-todas">
-    Veja todas as fotos 
-  </a>
-</div>
-
-<!-- Formulário de contato -->
-  
-<section class="form-contato">
- 
-  <form id="contatoForm">
-  <h2>Quero mais informações</h2> <!-- título do formulário -->
-
-  <div class="field">
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" required>
-  </div>
-
-  <div class="field">
-    <label for="telefone">Telefone</label>
-    <input type="tel" name="telefone" id="telefone" required>
-  </div>
-
-  <div class="field">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" required>
-  </div>
-
-  <div class="field">
-    <label for="mensagem">Mensagem</label>
-    <textarea name="mensagem" id="mensagem"></textarea>
-  </div>
-
-  <input type="submit" id="button" value="Quero mais informações">
-</form>
-<!-- Script do formulário -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  // Inicializa com sua chave pública
-  emailjs.init("EkOcMAMTiFekZj6mJ");
-
-  // Captura o envio do formulário
-  const form = document.getElementById("contatoForm");
-  const button = document.getElementById("button");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    button.value = "Enviando...";
-
-    emailjs.sendForm("service_m5n014j", "template_r19ih3n", this)
-      .then(() => {
-        alert("Mensagem enviada com sucesso!");
-        button.value = "Enviar Email";
-        form.reset();
-      })
-      .catch((err) => {
-        console.error("Erro:", err);
-        alert("Erro ao enviar. Veja o console para detalhes.");
-        button.value = "Enviar Email";
-      });
-  });
-</script>
-</section>
-<!-- Script do Swiper -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    var swiper = new Swiper(".swiper", {
-      slidesPerView: 6,
-      spaceBetween: 10,
-      pagination: { el: ".swiper-pagination", clickable: true },
-      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
-    });
-  });
-</script>
-
-<!-- Botão Whatsapp flutuante -->
-<a href="https://wa.me/5548999600601" 
-   class="whatsapp-btn-fixed" 
-   target="_blank">
-   💬 Fale pelo WhatsApp
-</a>
-
-<!-- Footer -->
-<footer class="site-footer" id="contato">
-  <div class="footer-container">
+  <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+  <main class="main-content">
     
-    <!-- Logo com link -->
-    <div class="footer-logo">
-      <a href="index.html">
-        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:220,h:220,mx" 
-             alt="Logo Flavia Imóveis"/>
-      </a>
+    <div class="section-header">
+      <h2 class="section-title">Imóveis em Destaque</h2>
+      <p class="section-subtitle">Confira nossa seleção especial de imóveis de alto padrão</p>
     </div>
 
-    <!-- Contato -->
-    <div class="footer-contact">
-      <h3>Contato</h3>
-      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
-      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <p>Florianópolis • Palhoça <br> São José</p>
+    <!-- FILTROS -->
+    <div class="filter-section">
+      <div class="filter-grid">
+        <div class="filter-item">
+          <label>Cidade</label>
+          <select>
+            <option>Todas</option>
+            <option>Florianópolis</option>
+            <option>São José</option>
+            <option>Palhoça</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label>Bairro</label>
+          <select>
+            <option>Todos</option>
+            <option>Agronômica</option>
+            <option>Centro</option>
+            <option>Kobrasol</option>
+            <option>Trindade</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label>Quartos</label>
+          <select>
+            <option>Todos</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4+</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label>Valor Mínimo</label>
+          <input type="text" placeholder="R$ 0">
+        </div>
+        <div class="filter-item">
+          <label>Valor Máximo</label>
+          <input type="text" placeholder="R$ 0">
+        </div>
+        <div class="filter-item">
+          <button class="filter-btn">Filtrar</button>
+        </div>
+      </div>
     </div>
 
-    <!-- Redes sociais -->
-    <div class="footer-social">
-      <h3>Redes Sociais</h3>
-      <ul>
-        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
-        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
-        <li><a href="https://youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
-      </ul>
+    <!-- GRID DE IMÓVEIS -->
+    <div class="properties-grid">
+      
+      <!-- IMÓVEL 1 -->
+      <article class="property-card">
+        <span class="property-tag">Destaque</span>
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Agronômica">
+        <div class="property-details">
+          <div class="property-type">Apartamento</div>
+          <h3 class="property-title">Apartamento na Agronômica</h3>
+          <div class="property-location">
+            📍 Agronômica - Florianópolis/SC
+          </div>
+          <div class="property-features">
+            <div class="feature-item">🛏️ <strong>2</strong> Quartos</div>
+            <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
+            <div class="feature-item">🚗 <strong>1</strong> Vaga</div>
+          </div>
+          <div class="property-price">R$ 520.000</div>
+          <div class="property-actions">
+            <a href="apartamento-venda-agronomica-v439.html" class="btn-details">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento na Agronômica" class="btn-whats" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 2 -->
+      <article class="property-card">
+        <span class="property-tag">Lançamento</span>
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Kobrasol">
+        <div class="property-details">
+          <div class="property-type">Apartamento</div>
+          <h3 class="property-title">Apartamento no Kobrasol</h3>
+          <div class="property-location">
+            📍 Kobrasol - São José/SC
+          </div>
+          <div class="property-features">
+            <div class="feature-item">🛏️ <strong>3</strong> Quartos</div>
+            <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
+            <div class="feature-item">🚗 <strong>1</strong> Vaga</div>
+          </div>
+          <div class="property-price">R$ 420.000</div>
+          <div class="property-actions">
+            <a href="apartamento-venda-kobrasol-v440.html" class="btn-details">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento no Kobrasol" class="btn-whats" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 3 -->
+      <article class="property-card">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Centro">
+        <div class="property-details">
+          <div class="property-type">Apartamento</div>
+          <h3 class="property-title">Apartamento Centro</h3>
+          <div class="property-location">
+            📍 Centro - Florianópolis/SC
+          </div>
+          <div class="property-features">
+            <div class="feature-item">🛏️ <strong>3</strong> Quartos</div>
+            <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
+            <div class="feature-item">🚗 <strong>2</strong> Vagas</div>
+          </div>
+          <div class="property-price">R$ 650.000</div>
+          <div class="property-actions">
+            <a href="apartamento-venda-centro-v447.html" class="btn-details">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento no Centro" class="btn-whats" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 4 -->
+      <article class="property-card">
+        <span class="property-tag">Oportunidade</span>
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Trindade">
+        <div class="property-details">
+          <div class="property-type">Apartamento</div>
+          <h3 class="property-title">Apartamento Trindade</h3>
+          <div class="property-location">
+            📍 Trindade - Florianópolis/SC
+          </div>
+          <div class="property-features">
+            <div class="feature-item">🛏️ <strong>1</strong> Quarto</div>
+            <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
+            <div class="feature-item">🚗 <strong>1</strong> Vaga</div>
+          </div>
+          <div class="property-price">R$ 380.000</div>
+          <div class="property-actions">
+            <a href="apartamento-venda-trindade-v448.html" class="btn-details">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento na Trindade" class="btn-whats" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 5 -->
+      <article class="property-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=300&fit=crop" class="property-image" alt="Casa Ratones">
+        <div class="property-details">
+          <div class="property-type">Casa</div>
+          <h3 class="property-title">Casa em Ratones</h3>
+          <div class="property-location">
+            📍 Ratones - Florianópolis/SC
+          </div>
+          <div class="property-features">
+            <div class="feature-item">🛏️ <strong>4</strong> Quartos</div>
+            <div class="feature-item">🚿 <strong>2</strong> Suítes</div>
+            <div class="feature-item">🚗 <strong>2</strong> Vagas</div>
+          </div>
+          <div class="property-price">R$ 950.000</div>
+          <div class="property-actions">
+            <a href="apartamento-venda-ratones-v449.html" class="btn-details">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse na casa em Ratones" class="btn-whats" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 6 -->
+      <article class="property-card">
+        <span class="property-tag">Exclusivo</span>
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Nossa Sra do Rosário">
+        <div class="property-details">
+          <div class="property-type">Apartamento</div>
+          <h3 class="property-title">Apartamento Nossa Sra do Rosário</h3>
+          <div class="property-location">
+            📍 Floresta - São José/SC
+          </div>
+          <div class="property-features">
+            <div class="feature-item">🛏️ <strong>3</strong> Quartos</div>
+            <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
+            <div class="feature-item">🔥 Churrasqueira</div>
+          </div>
+          <div class="property-price">R$ 480.000</div>
+          <div class="property-actions">
+            <a href="apartamento-venda-floresta-v441.html" class="btn-details">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento Nossa Sra do Rosário" class="btn-whats" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
     </div>
+
+  </main>
+
+  <!-- ========== WHATSAPP FLUTUANTE ========== -->
+  <a href="https://wa.me/5548999600601?text=Olá! Vim pelo site e gostaria de mais informações sobre os imóveis" class="whatsapp-float" target="_blank">
+    💬
+  </a>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="main-footer">
+    <div class="footer-grid">
+      
+      <div class="footer-column">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Flavia Capacia" class="footer-logo">
+        <p>Imóveis de alto padrão em Florianópolis e Grande Florianópolis. Mais de 10 anos de experiência no mercado imobiliário.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">📘</a>
+          <a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">📷</a>
+          <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">💼</a>
+          <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">▶️</a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Navegação</h3>
+        <a href="index.html">Início</a>
+        <a href="#comprar">Comprar Imóvel</a>
+        <a href="#alugar">Alugar Imóvel</a>
+        <a href="#lancamentos">Lançamentos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <div class="footer-contact-row">
+          <span>📧</span>
+          <a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a>
+        </div>
+        <div class="footer-contact-row">
+          <span>📱</span>
+          <a href="tel:+5548999600601">(48) 99960-0601</a>
+        </div>
+        <div class="footer-contact-row">
+          <span>📍</span>
+          <span>Florianópolis • São José • Palhoça</span>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Horário de Atendimento</h3>
+        <p>Segunda a Sexta: 9h às 18h</p>
+        <p>Sábado: 9h às 14h</p>
+        <p>Domingo: Fechado</p>
+        <p style="margin-top: 18px;"><strong>Atendimento via WhatsApp 24h</strong></p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados • CRECI</p>
+      <p>Desenvolvido com 💛 por Capacia Group</p>
+    </div>
+  </footer>
+
+  <!-- ========== SEÇÕES PREPARADAS MAS OCULTAS (PARA USO FUTURO) ========== -->
+  <!-- 
+  <div class="hidden-section">
+    Seção "Por Bairros" - Preparada para ativação futura
+    Seção "Por Região" - Preparada para ativação futura
+    Seção "Construtoras" - EXCLUÍDA conforme solicitação
   </div>
+  -->
 
-  <!-- Créditos -->
-  <div class="footer-credit">
-    Feito com 💛 <strong>Capacia Group</strong> 💛
-  </div>
-</footer>
-
-<!-- Scripts no final do body -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="../assets/script.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
