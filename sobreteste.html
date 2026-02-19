@@ -4,35 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>FloripaMoradia | Elizete Colella Corretora - Imóveis em Florianópolis</title>
-  <meta name="description" content="Imóveis em Pedra Branca, Palhoça e Grande Florianópolis. Apartamentos, casas e terrenos com a corretora Elizete Colella." />
+  <title>Sobre Nós | FloripaMoradia - Elizete Colella Corretora</title>
+  <meta name="description" content="Conheça a FloripaMoradia e Elizete Colella, corretora especializada em imóveis em Pedra Branca, Palhoça e Grande Florianópolis." />
   
-  <meta property="og:title" content="FloripaMoradia | Elizete Colella Corretora" />
-  <meta property="og:description" content="Encontre seu imóvel em Pedra Branca, Palhoça e Grande Florianópolis" />
-  <meta property="og:url" content="https://floripamoradia.com.br" />
-  <meta property="og:type" content="website" />
-  
-  <link rel="canonical" href="https://floripamoradia.com.br/index.html" />
+  <link rel="canonical" href="https://floripamoradia.com.br/sobre.html" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   
   <style>
     :root {
-      /* Paleta Azul Marinho - igual arquivo sobre Flavia Capacia */
       --azul-escuro: #002855;
       --azul-principal: #003D73;
       --azul-medio: #0052A3;
       --azul-claro: #E8F1F8;
       --vermelho: #D32F2F;
-      --vermelho-escuro: #B71C1C;
       --vermelho-hover: #E53935;
-      --cinza-escuro: #2C3E50;
-      --cinza-medio: #546E7A;
-      --cinza-claro: #ECEFF1;
       --texto-escuro: #263238;
       --texto-medio: #546E7A;
       --branco: #FFFFFF;
+      --cinza-claro: #ECEFF1;
       --sombra: rgba(0, 40, 85, 0.1);
-      --sombra-hover: rgba(211, 47, 47, 0.15);
       --fonte-principal: 'Roboto', sans-serif;
       --fonte-secundaria: 'Open Sans', sans-serif;
     }
@@ -46,7 +36,7 @@
       background-color: #F8F9FA;
     }
 
-    /* ========== BARRA TOPO ========== */
+    /* BARRA TOPO */
     .top-bar {
       background-color: var(--azul-escuro);
       color: white;
@@ -79,7 +69,7 @@
 
     .top-bar-contact a:hover { opacity: 0.8; }
 
-    /* ========== HEADER PRINCIPAL ========== */
+    /* HEADER */
     .main-header {
       background-color: var(--branco);
       box-shadow: 0 2px 10px var(--sombra);
@@ -124,21 +114,18 @@
       font-size: 24px;
       font-weight: 700;
       color: var(--azul-principal);
-      font-family: var(--fonte-secundaria);
       letter-spacing: -0.5px;
     }
 
     .logo-subtitle {
       font-size: 12px;
       color: var(--texto-medio);
-      font-weight: 400;
     }
 
     .nav-menu ul {
       display: flex;
       list-style: none;
       gap: 8px;
-      align-items: center;
     }
 
     .nav-menu a {
@@ -149,119 +136,16 @@
       padding: 10px 16px;
       border-radius: 5px;
       text-transform: uppercase;
-      letter-spacing: 0.3px;
       transition: all 0.3s;
     }
 
-    .nav-menu a:hover {
+    .nav-menu a:hover,
+    .nav-menu a.active {
       background-color: var(--azul-claro);
       color: var(--azul-principal);
     }
 
-    /* ========== HERO COM IMAGEM ========== */
-    .hero-image-section {
-      position: relative;
-      height: 500px;
-      background: linear-gradient(rgba(0, 40, 85, 0.6), rgba(0, 40, 85, 0.6)), 
-                  url('https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1600&h=800&fit=crop') center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
-
-    .hero-image-content {
-      max-width: 1200px;
-      padding: 0 20px;
-      width: 100%;
-    }
-
-    .hero-image-content h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    }
-
-    .hero-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .hero-tab {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 2px solid white;
-      color: white;
-      padding: 12px 35px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-transform: uppercase;
-    }
-
-    .hero-tab.active,
-    .hero-tab:hover {
-      background-color: white;
-      color: var(--azul-principal);
-    }
-
-    .hero-search-advanced {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .search-input-main {
-      width: 100%;
-      padding: 16px 20px;
-      border: 2px solid #DDD;
-      border-radius: 8px;
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
-
-    .search-filters {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .search-filters select,
-    .search-filters input {
-      padding: 12px 16px;
-      border: 1px solid #DDD;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    .search-btn-main {
-      width: 100%;
-      padding: 16px;
-      background-color: var(--vermelho);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 16px;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: background-color 0.3s;
-    }
-
-    .search-btn-main:hover {
-      background-color: var(--vermelho-hover);
-    }
-
-    /* ========== BREADCRUMB ========== */
+    /* BREADCRUMB */
     .breadcrumb-bar {
       background-color: var(--branco);
       padding: 12px 0;
@@ -281,236 +165,152 @@
       text-decoration: none;
     }
 
-    .breadcrumb-content a:hover {
-      text-decoration: underline;
+    /* HERO SOBRE */
+    .hero-sobre {
+      background: linear-gradient(135deg, var(--azul-escuro), var(--azul-principal));
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
     }
 
-    /* ========== CONTAINER PRINCIPAL ========== */
-    .main-content {
+    .hero-sobre h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-sobre p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* CONTEÚDO SOBRE */
+    .sobre-content {
       max-width: 1200px;
-      margin: 45px auto;
+      margin: 60px auto;
       padding: 0 20px;
     }
 
-    .section-header {
-      margin-bottom: 35px;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--azul-principal);
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      font-size: 16px;
-      color: var(--texto-medio);
-    }
-
-    /* ========== FILTROS AVANÇADOS - PREPARADO PARA API ========== */
-    .filter-section {
-      /* display: none; */ /* Descomente para ocultar após integração API */
-      background: var(--branco);
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px var(--sombra);
-      margin-bottom: 35px;
-    }
-
-    .filter-grid {
+    .sobre-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 18px;
-      align-items: end;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 60px;
     }
 
-    .filter-item label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--texto-medio);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .filter-item select,
-    .filter-item input {
+    .sobre-image {
       width: 100%;
-      padding: 11px 14px;
-      border: 1px solid #DDD;
-      border-radius: 6px;
-      font-size: 14px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px var(--sombra);
     }
 
-    .filter-btn {
-      padding: 11px 30px;
-      background-color: var(--vermelho);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: 700;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: background-color 0.3s;
+    .sobre-text h2 {
+      font-size: 2.5rem;
+      color: var(--azul-principal);
+      margin-bottom: 20px;
     }
 
-    .filter-btn:hover {
-      background-color: var(--vermelho-hover);
+    .sobre-text p {
+      font-size: 1.1rem;
+      color: var(--texto-medio);
+      margin-bottom: 15px;
+      line-height: 1.8;
     }
 
-    /* ========== GRID IMÓVEIS - PREPARADO PARA API ========== */
-    .properties-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 28px;
+    /* VALORES */
+    .valores-section {
+      background-color: var(--cinza-claro);
+      padding: 60px 20px;
+    }
+
+    .valores-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .valores-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--azul-principal);
       margin-bottom: 50px;
     }
 
-    .property-card {
-      background: var(--branco);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px var(--sombra);
-      transition: all 0.3s;
-      position: relative;
+    .valores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
     }
 
-    .property-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px var(--sombra-hover);
-    }
-
-    .property-tag {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background-color: var(--vermelho);
-      color: white;
-      padding: 6px 14px;
-      border-radius: 25px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      z-index: 10;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    }
-
-    .property-image {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
+    .valor-card {
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--sombra);
+      text-align: center;
       transition: transform 0.3s;
     }
 
-    .property-card:hover .property-image {
-      transform: scale(1.06);
+    .valor-card:hover {
+      transform: translateY(-10px);
     }
 
-    .property-details {
-      padding: 22px;
+    .valor-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
     }
 
-    .property-type {
-      font-size: 12px;
-      color: var(--azul-medio);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
+    .valor-card h3 {
+      font-size: 1.5rem;
+      color: var(--azul-principal);
+      margin-bottom: 15px;
     }
 
-    .property-title {
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--texto-escuro);
-      margin-bottom: 10px;
-      line-height: 1.3;
-      min-height: 50px;
-    }
-
-    .property-location {
-      font-size: 13px;
+    .valor-card p {
       color: var(--texto-medio);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      line-height: 1.7;
     }
 
-    .property-features {
-      display: flex;
-      gap: 18px;
-      padding: 16px 0;
-      border-top: 1px solid #E0E0E0;
-      border-bottom: 1px solid #E0E0E0;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--texto-medio);
-    }
-
-    .feature-item strong {
-      color: var(--texto-escuro);
-      font-weight: 600;
-    }
-
-    .property-price {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--vermelho);
-      margin-bottom: 18px;
-    }
-
-    .property-actions {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn-details {
-      flex: 1;
-      padding: 13px;
-      background-color: var(--azul-principal);
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--azul-principal), var(--azul-medio));
       color: white;
+      padding: 60px 20px;
       text-align: center;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      transition: background-color 0.3s;
     }
 
-    .btn-details:hover {
-      background-color: var(--azul-medio);
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
 
-    .btn-whats {
-      padding: 13px 22px;
-      background-color: #25D366;
+    .cta-section p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 18px 40px;
+      background-color: var(--vermelho);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 700;
-      transition: background-color 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      text-transform: uppercase;
     }
 
-    .btn-whats:hover {
-      background-color: #128C7E;
+    .cta-btn:hover {
+      background-color: var(--vermelho-hover);
+      transform: scale(1.05);
     }
 
-    /* ========== WHATSAPP FLUTUANTE ========== */
+    /* WHATSAPP FLUTUANTE */
     .whatsapp-float {
       position: fixed;
       bottom: 28px;
@@ -535,12 +335,11 @@
       transform: scale(1.12);
     }
 
-    /* ========== FOOTER ========== */
+    /* FOOTER */
     .main-footer {
       background: linear-gradient(135deg, var(--azul-escuro), var(--azul-principal));
       color: white;
       padding: 55px 20px 25px;
-      margin-top: 70px;
     }
 
     .footer-grid {
@@ -554,4 +353,148 @@
 
     .footer-column h3 {
       font-size: 19px;
-      font*
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .footer-logo-text {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .footer-column p {
+      line-height: 1.9;
+      opacity: 0.92;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .footer-column a:hover {
+      color: var(--vermelho-hover);
+    }
+
+    .footer-contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .social-icons a {
+      width: 42px;
+      height: 42px;
+      background-color: rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--vermelho);
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-sobre h1 {
+        font-size: 2rem;
+      }
+
+      .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .valores-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA TOPO -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <div class="top-bar-contact">
+        <a href="mailto:elizete.colella@creci.org.br">📧 elizete.colella@creci.org.br</a>
+        <a href="tel:+5548994287000">📱 (48) 99428-7000</a>
+      </div>
+      <div>📍 Pedra Branca - Palhoça/SC</div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-section">
+        <div class="logo-icon">🏡</div>
+        <div class="logo-text-container">
+          <div class="logo-text">FloripaMoradia</div>
+          <div class="logo-subtitle">Elizete Colella - Corretora CRECI</div>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html" class="active">Sobre</a></li>
+          <li><a href="negocie.html">Negocie seu Imóvel</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="breadcrumb-content">
+      <a href="index.html">Início</a> > <span>Sobre Nós</span>
+    </div>
+  </div>
+
+  <!-- HERO SOBRE -->
+  <section class="hero-sobre">
+    <h1>Sobre a FloripaMoradia</h1>
+    <p>Realizando sonhos e conectando pessoas aos seus lares ideais em Florianópolis</p>
+  </section>
+
+  <!-- CONTEÚDO SOBRE -->
+  <section class="sobre-content">
+    
+    <div class="sobre-grid">
+      <img src="https://images*
