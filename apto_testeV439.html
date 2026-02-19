@@ -140,70 +140,106 @@
       color: var(--azul-principal);
     }
 
-    /* ========== HERO BANNER ========== */
-    .hero-banner {
-      background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-principal) 100%);
+    /* ========== HERO COM IMAGEM DE FUNDO ========== */
+    .hero-image-section {
+      position: relative;
+      height: 500px;
+      background: linear-gradient(rgba(0, 40, 85, 0.6), rgba(0, 40, 85, 0.6)), 
+                  url('https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1600&h=800&fit=crop') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      padding: 70px 20px;
       text-align: center;
     }
 
-    .hero-content {
+    .hero-image-content {
+      max-width: 1200px;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .hero-image-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .hero-tab {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      color: white;
+      padding: 12px 35px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+    }
+
+    .hero-tab.active,
+    .hero-tab:hover {
+      background-color: white;
+      color: var(--azul-principal);
+    }
+
+    .hero-search-advanced {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
       max-width: 900px;
       margin: 0 auto;
     }
 
-    .hero-content h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    .search-input-main {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid #DDD;
+      border-radius: 8px;
+      font-size: 15px;
+      margin-bottom: 18px;
     }
 
-    .hero-content p {
-      font-size: 1.3rem;
-      margin-bottom: 35px;
-      opacity: 0.95;
-    }
-
-    /* Busca Hero */
-    .hero-search-box {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
-      display: flex;
+    .search-filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 12px;
-      flex-wrap: wrap;
-      max-width: 750px;
-      margin: 0 auto;
+      margin-bottom: 18px;
     }
 
-    .hero-search-box select,
-    .hero-search-box input {
-      flex: 1;
-      min-width: 200px;
-      padding: 14px 18px;
+    .search-filters select,
+    .search-filters input {
+      padding: 12px 16px;
       border: 1px solid #DDD;
       border-radius: 6px;
       font-size: 14px;
-      font-family: var(--fonte-principal);
     }
 
-    .hero-search-box button {
-      padding: 14px 35px;
+    .search-btn-main {
+      width: 100%;
+      padding: 16px;
       background-color: var(--vermelho);
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 700;
+      font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s;
       text-transform: uppercase;
-      font-size: 14px;
+      transition: background-color 0.3s;
     }
 
-    .hero-search-box button:hover {
+    .search-btn-main:hover {
       background-color: var(--vermelho-hover);
     }
 
@@ -454,6 +490,119 @@
       background-color: #128C7E;
     }
 
+    /* ========== SEÇÃO LANÇAMENTOS ========== */
+    .lancamentos-section {
+      background-color: var(--cinza-claro);
+      padding: 60px 20px;
+      margin-top: 60px;
+    }
+
+    .lancamentos-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .lancamentos-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .lancamentos-header h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--azul-principal);
+      margin-bottom: 12px;
+    }
+
+    .lancamentos-header p {
+      font-size: 17px;
+      color: var(--texto-medio);
+    }
+
+    .lancamentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 35px;
+    }
+
+    .lancamento-card {
+      background: var(--branco);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px var(--sombra);
+      transition: all 0.3s;
+    }
+
+    .lancamento-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px var(--sombra-hover);
+    }
+
+    .lancamento-image {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .lancamento-info {
+      padding: 28px;
+    }
+
+    .lancamento-badge {
+      display: inline-block;
+      background-color: var(--vermelho);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .lancamento-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--texto-escuro);
+      margin-bottom: 12px;
+    }
+
+    .lancamento-location {
+      font-size: 14px;
+      color: var(--texto-medio);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lancamento-description {
+      font-size: 14px;
+      color: var(--texto-medio);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .lancamento-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: var(--azul-principal);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
+
+    .lancamento-btn:hover {
+      background-color: var(--azul-medio);
+    }
+
     /* ========== WHATSAPP FLUTUANTE ========== */
     .whatsapp-float {
       position: fixed;
@@ -566,11 +715,6 @@
       opacity: 0.85;
     }
 
-    /* ========== SEÇÕES OCULTAS (PARA USO FUTURO) ========== */
-    .hidden-section {
-      display: none;
-    }
-
     /* ========== RESPONSIVO ========== */
     @media (max-width: 768px) {
       .header-container {
@@ -583,15 +727,20 @@
         justify-content: center;
       }
 
-      .hero-content h1 {
-        font-size: 2.2rem;
+      .hero-image-content h1 {
+        font-size: 2rem;
       }
 
-      .hero-search-box {
+      .hero-tabs {
         flex-direction: column;
       }
 
-      .properties-grid {
+      .search-filters {
+        grid-template-columns: 1fr;
+      }
+
+      .properties-grid,
+      .lancamentos-grid {
         grid-template-columns: 1fr;
       }
 
@@ -633,37 +782,52 @@
     </div>
   </header>
 
+  <!-- ========== HERO COM IMAGEM DE FUNDO ========== -->
+  <section class="hero-image-section">
+    <div class="hero-image-content">
+      <h1>Encontre o seu imóvel na Grande Florianópolis</h1>
+      
+      <div class="hero-tabs">
+        <button class="hero-tab active">Venda</button>
+        <button class="hero-tab">Lançamentos</button>
+        <button class="hero-tab">Aluguel</button>
+      </div>
+
+      <div class="hero-search-advanced">
+        <input type="text" class="search-input-main" placeholder="Digite a cidade, bairro ou condomínio...">
+        
+        <div class="search-filters">
+          <select>
+            <option>🏠 Tipo de Imóvel</option>
+            <option>Apartamento</option>
+            <option>Casa</option>
+            <option>Cobertura</option>
+            <option>Studio</option>
+            <option>Terreno</option>
+          </select>
+          
+          <select>
+            <option>🛏️ Dormitórios(s)</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4+</option>
+          </select>
+          
+          <input type="text" placeholder="Digite o código...">
+        </div>
+
+        <button class="search-btn-main">🔍 Buscar</button>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== BREADCRUMB ========== -->
   <div class="breadcrumb-bar">
     <div class="breadcrumb-content">
       <a href="index.html">Início</a> > <span>Imóveis à venda</span>
     </div>
   </div>
-
-  <!-- ========== HERO BANNER ========== -->
-  <section class="hero-banner">
-    <div class="hero-content">
-      <h1>Encontre seu imóvel dos sonhos</h1>
-      <p>Imóveis de alto padrão em Florianópolis, São José e Palhoça</p>
-      <div class="hero-search-box">
-        <select>
-          <option>Tipo de Imóvel</option>
-          <option>Apartamento</option>
-          <option>Casa</option>
-          <option>Cobertura</option>
-          <option>Studio</option>
-          <option>Terreno</option>
-        </select>
-        <select>
-          <option>Finalidade</option>
-          <option>Comprar</option>
-          <option>Alugar</option>
-        </select>
-        <input type="text" placeholder="Bairro ou cidade">
-        <button>🔍 Buscar</button>
-      </div>
-    </div>
-  </section>
 
   <!-- ========== CONTEÚDO PRINCIPAL ========== -->
   <main class="main-content">
@@ -862,6 +1026,68 @@
 
   </main>
 
+  <!-- ========== SEÇÃO LANÇAMENTOS ========== -->
+  <section class="lancamentos-section" id="lancamentos">
+    <div class="lancamentos-content">
+      <div class="lancamentos-header">
+        <h2>Lançamentos Exclusivos</h2>
+        <p>Conheça os empreendimentos mais aguardados de Florianópolis</p>
+      </div>
+
+      <div class="lancamentos-grid">
+        
+        <!-- LANÇAMENTO 1 -->
+        <article class="lancamento-card">
+          <img src="https://gralha2.inforcedata.com.br/api/image/76402473.jpg" alt="Um Milano" class="lancamento-image">
+          <div class="lancamento-info">
+            <span class="lancamento-badge">Pré-Lançamento</span>
+            <h3 class="lancamento-title">Um Milano</h3>
+            <div class="lancamento-location">
+              📍 Beira-Mar Norte - Florianópolis/SC
+            </div>
+            <p class="lancamento-description">
+              Apartamentos de 231 a 452m² com 3 e 4 suítes. Alto padrão à beira-mar com vista privilegiada.
+            </p>
+            <a href="apartamento-um-milano-v450.html" class="lancamento-btn">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- LANÇAMENTO 2 -->
+        <article class="lancamento-card">
+          <img src="https://gralha2.inforcedata.com.br/api/image/76413761.jpg" alt="Connect 233" class="lancamento-image">
+          <div class="lancamento-info">
+            <span class="lancamento-badge">Lançamento</span>
+            <h3 class="lancamento-title">Connect 233</h3>
+            <div class="lancamento-location">
+              📍 Centro - Florianópolis/SC
+            </div>
+            <p class="lancamento-description">
+              Studios e apartamentos de 23 a 85m². Perfeito para investimento e moradia no coração da cidade.
+            </p>
+            <a href="apartamento-connect-233-v451.html" class="lancamento-btn">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- LANÇAMENTO 3 -->
+        <article class="lancamento-card">
+          <img src="https://gralha2.inforcedata.com.br/api/image/76467398.jpg" alt="ARKKI" class="lancamento-image">
+          <div class="lancamento-info">
+            <span class="lancamento-badge">Em Obras</span>
+            <h3 class="lancamento-title">ARKKI</h3>
+            <div class="lancamento-location">
+              📍 Centro - Florianópolis/SC
+            </div>
+            <p class="lancamento-description">
+              Apartamentos de 82 a 146m² com 2 e 3 suítes. Arquitetura moderna e localização privilegiada.
+            </p>
+            <a href="apartamento-arkki-v452.html" class="lancamento-btn">Saiba Mais</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ========== WHATSAPP FLUTUANTE ========== -->
   <a href="https://wa.me/5548999600601?text=Olá! Vim pelo site e gostaria de mais informações sobre os imóveis" class="whatsapp-float" target="_blank">
     💬
@@ -923,15 +1149,6 @@
       <p>Desenvolvido com 💛 por Capacia Group</p>
     </div>
   </footer>
-
-  <!-- ========== SEÇÕES PREPARADAS MAS OCULTAS (PARA USO FUTURO) ========== -->
-  <!-- 
-  <div class="hidden-section">
-    Seção "Por Bairros" - Preparada para ativação futura
-    Seção "Por Região" - Preparada para ativação futura
-    Seção "Construtoras" - EXCLUÍDA conforme solicitação
-  </div>
-  -->
 
 </body>
 </html>
