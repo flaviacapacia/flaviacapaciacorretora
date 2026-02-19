@@ -1,6 +1,5 @@
 import os
-from mistralai.client import MistralClient
-from mistralai.models.chat_completion import ChatMessage
+from mistralai import Mistral
 from typing import Dict, Any, List
 
 class AIEngine:
@@ -9,7 +8,7 @@ class AIEngine:
         if not api_key:
             raise ValueError("MISTRAL_API_KEY não encontrada nas variáveis de ambiente")
         
-        self.client = MistralClient(api_key=api_key)
+        self.client = Mistral(api_key=api_key)
         self.model = "mistral-small-latest"  # Modelo gratuito
 
     def generate_ads(
@@ -28,13 +27,13 @@ class AIEngine:
         
         try:
             # Chama a API Mistral
-            response = self.client.chat(
+            response = self.client.chat.complete(
                 model=self.model,
                 messages=[
-                    ChatMessage(role="system", content="""Você é um especialista em marketing imobiliário e Google Ads. 
+                    {"role": "system", "content": """Você é um especialista em marketing imobiliário e Google Ads. 
                     Sua missão é criar anúncios altamente persuasivos e otimizados para conversão.
-                    Responda SEMPRE em formato JSON válido."""),
-                    ChatMessage(role="user", content=prompt)
+                    Responda SEMPRE em formato JSON válido."""},
+                    {"role": "user", "content": prompt}
                 ],
                 temperature=0.7,
                 max_tokens=2000

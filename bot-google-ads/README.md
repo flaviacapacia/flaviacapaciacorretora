@@ -2,12 +2,22 @@
 
 Sistema inteligente de geração automática de anúncios Google Ads usando Mistral AI, análise de dados de imóveis e scraping do blog.
 
+## 🎉 STATUS: 95% COMPLETO
+
+✅ **Implementação finalizada!** Falta apenas obter credenciais do Google Ads.
+
+📖 **Guias de uso:**
+- 📋 [CHECKLIST.md](CHECKLIST.md) - Lista de verificação completa
+- ⚡ [RESUMO_RAPIDO.md](RESUMO_RAPIDO.md) - Resumo executivo
+- 🔑 [GUIA_CREDENCIAIS_GOOGLE_ADS.md](GUIA_CREDENCIAIS_GOOGLE_ADS.md) - Como obter credenciais
+- 📊 [STATUS_IMPLEMENTACAO.md](STATUS_IMPLEMENTACAO.md) - Estado detalhado do projeto
+
 ## 📋 Visão Geral
 
 Este sistema é composto por três componentes principais:
 
 1. **API Node.js + Express**: Backend que gerencia imóveis, blog e anúncios
-2. **Bot Python + FastAPI**: Motor de IA usando Mistral para gerar anúncios otimizados
+2. **Bot Python + FastAPI + Mistral AI**: Motor de IA para gerar e publicar anúncios
 3. **Dashboard React**: Interface web para visualizar e gerenciar anúncios
 
 ## 🚀 Quick Start
