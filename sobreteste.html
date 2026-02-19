@@ -1,191 +1,964 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Imóveis em Pedra Branca e Palhoça | Elizete Colella Corretora - FloripaMoradia</title>
+  <meta name="description" content="Imóveis em Pedra Branca, Palhoça e Grande Florianópolis. Apartamentos, casas e terrenos com a corretora Elizete Colella." />
+  
+  <meta property="og:title" content="FloripaMoradia | Elizete Colella Corretora" />
+  <meta property="og:description" content="Encontre seu imóvel em Pedra Branca, Palhoça e região com a FloripaMoradia" />
+  <meta property="og:url" content="https://floripamoradia.com.br" />
+  <meta property="og:type" content="website" />
+  
+  <link rel="canonical" href="https://floripamoradia.com.br/index.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  
+  <style>
+    :root {
+      /* Cores exatas do site Gralha Imóveis */
+      --cor-principal: #00529B;
+      --cor-secundaria: #0082CA;
+      --cor-destaque: #003D73;
+      --cor-hover: #0066A8;
+      --cor-laranja: #FF6B35;
+      --cor-laranja-escuro: #E65525;
+      --texto-escuro: #2C3E50;
+      --texto-medio: #5A6C7D;
+      --texto-claro: #7F8C8D;
+      --fundo-branco: #ffffff;
+      --fundo-cinza-claro: #F8F9FA;
+      --fundo-azul-claro: #E8F4FD;
+      --borda-clara: #DEE2E6;
+      --sombra: rgba(0, 0, 0, 0.08);
+      --sombra-hover: rgba(0, 82, 155, 0.15);
+      --fonte-principal: 'Open Sans', sans-serif;
+      --fonte-secundaria: 'Roboto', sans-serif;
+    }
 
-  <title>Imóveis em Floripa FC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--fundo-cinza-claro);
+      color: var(--texto-escuro);
+      font-family: var(--fonte-principal);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* HEADER */
+    .header-top {
+      background-color: var(--cor-destaque);
+      color: white;
+      padding: 10px 0;
+      font-size: 13px;
+    }
+
+    .header-top-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .header-contact {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .header-contact a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity 0.3s ease;
+    }
+
+    .header-contact a:hover {
+      opacity: 0.8;
+    }
+
+    .site-header {
+      background-color: var(--fundo-branco);
+      padding: 20px 0;
+      box-shadow: 0 2px 8px var(--sombra);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .logo-text-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--cor-principal);
+      font-family: var(--fonte-secundaria);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-subtitle {
+      font-size: 12px;
+      color: var(--texto-medio);
+      font-weight: 400;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--texto-escuro);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .main-nav a:hover {
+      background-color: var(--fundo-azul-claro);
+      color: var(--cor-principal);
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      background-color: var(--fundo-branco);
+      padding: 15px 0;
+      border-bottom: 1px solid var(--borda-clara);
+    }
+
+    .breadcrumb-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      font-size: 13px;
+      color: var(--texto-medio);
+    }
+
+    .breadcrumb a {
+      color: var(--cor-principal);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--cor-hover);
+      text-decoration: underline;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      background: linear-gradient(135deg, var(--cor-destaque) 0%, var(--cor-principal) 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      font-family: var(--fonte-secundaria);
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .hero-search {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero-search input,
+    .hero-search select {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 16px;
+      border: 1px solid var(--borda-clara);
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: var(--fonte-principal);
+    }
+
+    .hero-search button {
+      padding: 12px 30px;
+      background-color: var(--cor-laranja);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .hero-search button:hover {
+      background-color: var(--cor-laranja-escuro);
+    }
+
+    /* CONTAINER PRINCIPAL */
+    .main-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--cor-principal);
+      margin-bottom: 10px;
+      font-family: var(--fonte-secundaria);
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--texto-medio);
+      margin-bottom: 30px;
+    }
+
+    /* FILTROS */
+    .filters-bar {
+      background-color: var(--fundo-branco);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px var(--sombra);
+      margin-bottom: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-group {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .filter-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--texto-medio);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .filter-group select,
+    .filter-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--borda-clara);
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: var(--fonte-principal);
+    }
+
+    .filter-btn {
+      padding: 10px 25px;
+      background-color: var(--cor-laranja);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    .filter-btn:hover {
+      background-color: var(--cor-laranja-escuro);
+    }
+
+    /* GRID DE IMÓVEIS */
+    .imoveis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .imovel-card {
+      background-color: var(--fundo-branco);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px var(--sombra);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .imovel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px var(--sombra-hover);
+    }
+
+    .imovel-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--cor-laranja);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .imovel-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .imovel-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .imovel-info {
+      padding: 20px;
+    }
+
+    .imovel-tipo {
+      font-size: 12px;
+      color: var(--cor-principal);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .imovel-titulo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--texto-escuro);
+      margin-bottom: 10px;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .imovel-localizacao {
+      font-size: 13px;
+      color: var(--texto-medio);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .imovel-detalhes {
+      display: flex;
+      gap: 15px;
+      padding: 15px 0;
+      border-top: 1px solid var(--borda-clara);
+      border-bottom: 1px solid var(--borda-clara);
+      margin-bottom: 15px;
+    }
+
+    .detalhe-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: var(--texto-medio);
+    }
+
+    .detalhe-item strong {
+      color: var(--texto-escuro);
+      font-weight: 600;
+    }
+
+    .imovel-preco {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--cor-laranja);
+      margin-bottom: 15px;
+    }
+
+    .imovel-footer {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-detalhes {
+      flex: 1;
+      padding: 12px;
+      background-color: var(--cor-principal);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .btn-detalhes:hover {
+      background-color: var(--cor-hover);
+    }
+
+    .btn-whatsapp {
+      padding: 12px 20px;
+      background-color: #25D366;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+    }
+
+    /* WHATSAPP FLUTUANTE */
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-fixed:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: linear-gradient(135deg, var(--cor-destaque), var(--cor-principal));
+      color: white;
+      padding: 50px 20px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--cor-laranja);
+    }
+
+    .footer-logo-text {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-section p {
+      line-height: 1.8;
+      opacity: 0.9;
+      font-size: 14px;
+    }
+
+    .footer-section a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+      font-size: 14px;
+    }
+
+    .footer-section a:hover {
+      color: var(--cor-laranja);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background-color: var(--cor-laranja);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-search {
+        flex-direction: column;
+      }
+
+      .hero-search input,
+      .hero-search select {
+        width: 100%;
+      }
+
+      .imoveis-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filters-bar {
+        flex-direction: column;
+      }
+
+      .filter-group {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
-<style>
-.sobre-container {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-.texto-sobre p {
-  padding: 12px;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  border-left: 3px solid #d4af37; /* toque de profundidade */
-}
-  .sobre-foto {
-  margin-top: 40px; /* empurra a foto mais para baixo */
-  text-align: center;
-}
-
-.sobre-foto img {
-  width: 180px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  display: block;
-  margin: 0 auto;
-}
-
-.frase-impacto {
-  margin-top: 12px;
-  font-style: italic;
-  color: #cd7f32; /* tom bronze */
-  font-weight: 600;
-}
-
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .sobre-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .texto-sobre p {
-    text-align: left;
-    font-size: 1rem;
-  }
-}
-.hero {
-  position: relative;
-  width: 100%;
-  height: 400px; /* altura padrão no desktop */
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* cobre toda a área sem distorcer */
-  object-position: center; /* centraliza o foco da imagem */
-  display: block;
-}
-
-/* Responsivo para celular */
-@media (max-width: 768px) {
-  .hero {
-    height: 250px; /* altura menor no mobile */
-  }
-}
-
-</style>
-
 <body>
 
-<header class="site-header">
-  <div class="logo-area">
-    <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
-  </div>
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="sobre.html" class="active">Sobre</a></li>
-      <li><a href="negocie.html">Negocie</a></li>
-      <li><a href="financie.html">Financie</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
-</header>
-
-<div class="social-icons">
-  <a href="https://www.instagram.com/flacapacciacorretora" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="icon"/>
-  </a>
-  <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" class="icon"/>
-  </a>
-  <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" class="icon"/>
-  </a>
-  <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="icon"/>
-  </a>
-</div>
-
-<section id="hero" class="hero">
-  <img src="img/capasite.webp" alt="Capa modernoa e luxuosa" />
-</section>
-
-<main>
-  <!-- Seção Sobre dividida -->
-  <section id="sobre" class="sobre-section">
-    <div class="sobre-container">
-      <!-- Lado esquerdo: foto + frase -->
-      <div class="sobre-foto">
-        <img src="img/sobre.webp" alt="Flavia Capacia">
-        <p class="frase-impacto">Transformando sonhos em imóveis de sucesso</p>
+  <!-- HEADER TOP -->
+  <div class="header-top">
+    <div class="header-top-content">
+      <div class="header-contact">
+        <a href="mailto:elizete.colella@creci.org.br">📧 elizete.colella@creci.org.br</a>
+        <a href="tel:+5548994287000">📱 (48) 99428-7000</a>
       </div>
+      <div>📍 Pedra Branca - Palhoça/SC</div>
+    </div>
+  </div>
 
-      <!-- Lado direito: texto limpo -->
-      <div class="texto-sobre">
-        <h2 class="titulo-dourado">Sobre Flavia Capacia</h2>
-        <p>Apaixonada pela corretagem de imóveis, Flavia Capacia é a profissional por trás de grandes realizações na Grande Florianópolis.</p>
-        <p>Com mais de 10 anos de experiência, destaca-se pela conduta ética, compromisso e transparência, conquistando a confiança de clientes e parceiros.</p>
-        <p>Determinada a unir as necessidades de venda e a realização de compra, Flavia busca sempre entregar o melhor, concretizando sonhos e fechando negócios de sucesso.</p>
+  <!-- HEADER PRINCIPAL -->
+  <header class="site-header">
+    <div class="header-content">
+      <div class="logo-area">
+        <div class="logo-icon">🏡</div>
+        <div class="logo-text-container">
+          <div class="logo-text">FloripaMoradia</div>
+          <div class="logo-subtitle">Elizete Colella - Corretora CRECI</div>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#comprar">Comprar</a></li>
+          <li><a href="#alugar">Alugar</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-content">
+      <a href="index.html">Início</a> > <span>Imóveis à venda</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Encontre seu imóvel dos sonhos</h1>
+      <p>Apartamentos, Casas e Terrenos em Pedra Branca, Palhoça e Região</p>
+      <div class="hero-search">
+        <select>
+          <option>Tipo de Imóvel</option>
+          <option>Apartamento</option>
+          <option>Casa</option>
+          <option>Terreno</option>
+          <option>Cobertura</option>
+        </select>
+        <select>
+          <option>Finalidade</option>
+          <option>Comprar</option>
+          <option>Alugar</option>
+        </select>
+        <input type="text" placeholder="Bairro ou cidade">
+        <button>🔍 Buscar</button>
       </div>
     </div>
   </section>
-</main>
 
-<section class="cta-banner">
-  <h2>Seu imóvel a um clique de você</h2>
-</section>
-
-<!-- Rodapé -->
-<footer class="site-footer" id="contato">
-  <div class="footer-container">
-    <!-- Coluna esquerda: Contato -->
-    <div class="footer-contact">
-      <h3>Contato</h3>
-      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
-      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <p>Florianópolis • São José</p>
-      <p> Palhoça </p>
-      </div>
+  <!-- CONTAINER PRINCIPAL -->
+  <main class="main-container">
     
+    <h2 class="section-title">Imóveis em Destaque</h2>
+    <p class="section-subtitle">Confira nossa seleção especial de imóveis em Pedra Branca, Palhoça e região</p>
 
-    <!-- Coluna central: Logo -->
-    <div class="footer-logo">
-      <a href="index.html">
-        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" 
-             alt="Logo Flavia Imóveis"/>
-      </a>
+    <!-- FILTROS -->
+    <div class="filters-bar">
+      <div class="filter-group">
+        <label>Cidade</label>
+        <select>
+          <option>Todas</option>
+          <option>Palhoça</option>
+          <option>São José</option>
+          <option>Florianópolis</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Bairro</label>
+        <select>
+          <option>Todos</option>
+          <option>Pedra Branca</option>
+          <option>Kobrasol</option>
+          <option>Jardim Eldorado</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Quartos</label>
+        <select>
+          <option>Todos</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Valor mínimo</label>
+        <input type="text" placeholder="R$ 0">
+      </div>
+      <div class="filter-group">
+        <label>Valor máximo</label>
+        <input type="text" placeholder="R$ 0">
+      </div>
+      <button class="filter-btn">Filtrar</button>
     </div>
 
-    <!-- Coluna direita: Redes sociais -->
-    <div class="footer-social">
-      <h3>Redes Sociais</h3>
-      <ul>
-        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
-        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
-      </ul>
+    <!-- GRID DE IMÓVEIS -->
+    <div class="imoveis-grid">
+      
+      <!-- IMÓVEL 1 -->
+      <article class="imovel-card">
+        <span class="imovel-badge">Destaque</span>
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop" alt="Apartamento Pedra Branca">
+        <div class="imovel-info">
+          <div class="imovel-tipo">Apartamento</div>
+          <h3 class="imovel-titulo">Apartamento 2 Quartos com Suíte</h3>
+          <div class="imovel-localizacao">
+            📍 Pedra Branca - Palhoça/SC
+          </div>
+          <div class="imovel-detalhes">
+            <div class="detalhe-item">🛏️ <strong>2</strong> Quartos</div>
+            <div class="detalhe-item">🚿 <strong>1</strong> Suíte</div>
+            <div class="detalhe-item">🚗 <strong>1</strong> Vaga</div>
+          </div>
+          <div class="imovel-preco">R$ 450.000</div>
+          <div class="imovel-footer">
+            <a href="#" class="btn-detalhes">Ver Detalhes</a>
+            <a href="https://wa.me/5548994287000?text=Olá! Tenho interesse no apartamento em Pedra Branca" class="btn-whatsapp" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 2 -->
+      <article class="imovel-card">
+        <span class="imovel-badge">Lançamento</span>
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=300&fit=crop" alt="Casa Palhoça">
+        <div class="imovel-info">
+          <div class="imovel-tipo">Casa</div>
+          <h3 class="imovel-titulo">Casa 3 Quartos com 2 Suítes</h3>
+          <div class="imovel-localizacao">
+            📍 Jardim Eldorado - Palhoça/SC
+          </div>
+          <div class="imovel-detalhes">
+            <div class="detalhe-item">🛏️ <strong>3</strong> Quartos</div>
+            <div class="detalhe-item">🚿 <strong>2</strong> Suítes</div>
+            <div class="detalhe-item">🚗 <strong>2</strong> Vagas</div>
+          </div>
+          <div class="imovel-preco">R$ 720.000</div>
+          <div class="imovel-footer">
+            <a href="#" class="btn-detalhes">Ver Detalhes</a>
+            <a href="https://wa.me/5548994287000?text=Olá! Tenho interesse na casa em Jardim Eldorado" class="btn-whatsapp" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 3 -->
+      <article class="imovel-card">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop" alt="Apartamento Kobrasol">
+        <div class="imovel-info">
+          <div class="imovel-tipo">Apartamento</div>
+          <h3 class="imovel-titulo">Apartamento 3 Quartos Kobrasol</h3>
+          <div class="imovel-localizacao">
+            📍 Kobrasol - São José/SC
+          </div>
+          <div class="imovel-detalhes">
+            <div class="detalhe-item">🛏️ <strong>3</strong> Quartos</div>
+            <div class="detalhe-item">🚿 <strong>1</strong> Suíte</div>
+            <div class="detalhe-item">🚗 <strong>1</strong> Vaga</div>
+          </div>
+          <div class="imovel-preco">R$ 380.000</div>
+          <div class="imovel-footer">
+            <a href="#" class="btn-detalhes">Ver Detalhes</a>
+            <a href="https://wa.me/5548994287000?text=Olá! Tenho interesse no apartamento em Kobrasol" class="btn-whatsapp" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 4 - IMAGEM CORRIGIDA -->
+      <article class="imovel-card">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop" alt="Apartamento Centro">
+        <div class="imovel-info">
+          <div class="imovel-tipo">Apartamento</div>
+          <h3 class="imovel-titulo">Apartamento 2 Dorms Centro Palhoça</h3>
+          <div class="imovel-localizacao">
+            📍 Centro - Palhoça/SC
+          </div>
+          <div class="imovel-detalhes">
+            <div class="detalhe-item">🛏️ <strong>2</strong> Quartos</div>
+            <div class="detalhe-item">🚿 <strong>1</strong> Suíte</div>
+            <div class="detalhe-item">🚗 <strong>1</strong> Vaga</div>
+          </div>
+          <div class="imovel-preco">R$ 320.000</div>
+          <div class="imovel-footer">
+            <a href="#" class="btn-detalhes">Ver Detalhes</a>
+            <a href="https://wa.me/5548994287000?text=Olá! Tenho interesse no apartamento no Centro" class="btn-whatsapp" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 5 -->
+      <article class="imovel-card">
+        <span class="imovel-badge">Oportunidade</span>
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=300&fit=crop" alt="Casa Jardim Eldorado">
+        <div class="imovel-info">
+          <div class="imovel-tipo">Casa</div>
+          <h3 class="imovel-titulo">Casa 4 Quartos Amplo Quintal</h3>
+          <div class="imovel-localizacao">
+            📍 Jardim Eldorado - Palhoça/SC
+          </div>
+          <div class="imovel-detalhes">
+            <div class="detalhe-item">🛏️ <strong>4</strong> Quartos</div>
+            <div class="detalhe-item">🚿 <strong>2</strong> Suítes</div>
+            <div class="detalhe-item">🚗 <strong>3</strong> Vagas</div>
+          </div>
+          <div class="imovel-preco">R$ 850.000</div>
+          <div class="imovel-footer">
+            <a href="#" class="btn-detalhes">Ver Detalhes</a>
+            <a href="https://wa.me/5548994287000?text=Olá! Tenho interesse na casa em Jardim Eldorado" class="btn-whatsapp" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMÓVEL 6 -->
+      <article class="imovel-card">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=300&fit=crop" alt="Terreno Pedra Branca">
+        <div class="imovel-info">
+          <div class="imovel-tipo">Terreno</div>
+          <h3 class="imovel-titulo">Terreno 450m² Área Nobre</h3>
+          <div class="imovel-localizacao">
+            📍 Pedra Branca - Palhoça/SC
+          </div>
+          <div class="imovel-detalhes">
+            <div class="detalhe-item">📐 <strong>450m²</strong></div>
+            <div class="detalhe-item">✅ Escriturado</div>
+          </div>
+          <div class="imovel-preco">R$ 380.000</div>
+          <div class="imovel-footer">
+            <a href="#" class="btn-detalhes">Ver Detalhes</a>
+            <a href="https://wa.me/5548994287000?text=Olá! Tenho interesse no terreno em Pedra Branca" class="btn-whatsapp" target="_blank">💬</a>
+          </div>
+        </div>
+      </article>
+
     </div>
-  </div>
 
-  <!-- Créditos -->
-  <div class="footer-credit">
-    Feito com 💛 por <strong>Capacia Group</strong> 💛
-  </div>
-</footer>
+  </main>
 
-<script src="script.js"></script>
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5548994287000?text=Olá! Vim pelo site FloripaMoradia e gostaria de mais informações" class="whatsapp-fixed" target="_blank">
+    💬
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      
+      <div class="footer-section">
+        <div class="footer-logo-text">🏡 FloripaMoradia</div>
+        <p>Elizete Colella - Corretora CRECI</p>
+        <p style="margin-top: 15px;">Imóveis em Pedra Branca, Palhoça e Grande Florianópolis. Sua casa dos sonhos está aqui!</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/floripamoradia" target="_blank">📘</a>
+          <a href="https://www.instagram.com/floripamoradia" target="_blank">📷</a>
+          <a href="https://www.linkedin.com/in/elizetecolella" target="_blank">💼</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Navegação</h3>
+        <a href="index.html">Início</a>
+        <a href="#comprar">Comprar Imóvel</a>
+        <a href="#alugar">Alugar Imóvel</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <div class="footer-contact-item">
+          <span>📧</span>
+          <a href="mailto:elizete.colella@creci.org.br">elizete.colella@creci.org.br</a>
+        </div>
+        <div class="footer-contact-item">
+          <span>📱</span>
+          <a href="tel:+5548994287000">(48) 99428-7000</a>
+        </div>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>Pedra Branca - Palhoça/SC</span>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Horário de Atendimento</h3>
+        <p>Segunda a Sexta: 9h às 18h</p>
+        <p>Sábado: 9h às 13h</p>
+        <p>Domingo: Fechado</p>
+        <p style="margin-top: 15px;"><strong>Atendimento via WhatsApp 24h</strong></p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 FloripaMoradia - Elizete Colella Corretora CRECI - Todos os direitos reservados</p>
+      <p>Desenvolvido com 💙 por Capacia Group</p>
+    </div>
+  </footer>
+
 </body>
 </html>
-
