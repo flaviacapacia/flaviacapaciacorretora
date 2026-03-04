@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste de Porta CRM</title>
+</head>
+<body>
+  <h1>Teste de Conexão com o CRM</h1>
+  <p id="status">Testando conexão...</p>
+  <script>
+    const API_BASE = 'http://localhost:8080';
+    fetch(API_BASE + '/api/status')
+      .then(resp => resp.json())
+      .then(data => {
+        document.getElementById('status').textContent = 'Conexão bem-sucedida! Versão: ' + (data.version || 'desconhecida');
+      })
+      .catch(err => {
+        document.getElementById('status').textContent = 'Erro ao conectar: ' + err;
+      });
+  </script>
+</body>
+</html>

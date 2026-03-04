@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Imobiliário - TESTE | Login e Publicação</title>
+  <style>
+    :root {
+      --bg: #f5f2ef;
+      --card: #ffffff;
+      --text: #1b1714;
+      --muted: #6b615a;
+      --bronze: #6a4a36;
+      --bronze-soft: #8d6a54;
+      --border: #e8dfd6;
+      --danger: #b42318;
+      --success: #137333;
+      --test: #ff6b00;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .test-banner {
+      background: var(--test);
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.9rem;
+      margin-bottom: 18px;
+    }
+
+    .sub {
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+    }
+
+    .hidden { display: none !important; }
+
+    .login-wrap {
+      max-width: 430px;
+      margin: 70px auto;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 6px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid #d7cbbf;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      background: #fff;
+      color: var(--text);
+    }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      line-height: 1.2;
+      cursor: pointer;
+      color: #fff;
+      background: var(--bronze);
+    }
+
+    button:hover { background: #4f3729; }
+    button.secondary { background: var(--bronze-soft); }
+    button.secondary:hover { background: #765540; }
+    button.danger { background: var(--danger); }
+    button.danger:hover { background: #8a1c12; }
+
+    .status {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      display: none;
+    }
+
+    .status.success {
+      display: block;
+      color: #0f5132;
+      background: #d1e7dd;
+      border: 1px solid #badbcc;
+    }
+
+    .status.error {
+      display: block;
+      color: #842029;
+      background: #f8d7da;
+      border: 1px solid #f5c2c7;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: #f8f4f0;
+      color: var(--text);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .pill.ok { background: var(--success); }
+    .pill.wait { background: var(--bronze-soft); }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .username {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .private-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border: 1px dashed #d7cbbf;
+      border-radius: 8px;
+      background: #faf7f4;
+      font-size: 0.88rem;
+      color: var(--muted);
+      white-space: pre-line;
+    }
+
+    .doc-list {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      white-space: pre-line;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tr { border: 1px solid var(--border); margin-bottom: 10px; border-radius: 8px; overflow: hidden; }
+      td { border: none; border-bottom: 1px solid var(--border); }
+      td:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="test-banner">🧪 MODO TESTE - ÁREA DE TRABALHO 🧪</div>
+  <div class="page">
+    <section id="loginView" class="login-wrap card">
+      <h1>Entrar no CRM (TESTE)</h1>
+      <p class="sub">Faça login para cadastrar imóveis e publicar páginas automaticamente.</p>
+
+      <label for="loginUser">Usuário</label>
+      <input id="loginUser" type="text" placeholder="admin" autocomplete="username" />
+
+      <label for="loginPass">Senha</label>
+      <input id="loginPass" type="password" placeholder="••••••" autocomplete="current-password" />
+
+      <div class="actions">
+        <button id="btnLogin" type="button" class="btn-sm">Entrar</button>
+      </div>
+      <div id="loginStatus" class="status"></div>
+    </section>
+
+    <section id="crmView" class="hidden">
+      <div class="topbar card">
+        <div>
+          <h1 style="text-align:left; margin:0;">CRM Imobiliário - TESTE</h1>
+          <div class="username" id="currentUser"></div>
+        </div>
+        <div class="actions" style="margin-top:0;">
+          <button id="btnImportarExistentes" type="button" class="secondary btn-sm">Importar Imóveis Existentes</button>
+          <button id="btnReload" type="button" class="secondary btn-sm">Atualizar Lista</button>
+          <button id="btnLogout" type="button" class="danger btn-sm">Sair</button>
+        </div>
+      </div>
+
+      <section class="card">
+        <h2>Comandos do Servidor (temporário)</h2>
+        <p class="sub">Use estes botões para diagnóstico e execução rápida sem terminal.</p>
+        <div class="actions">
+          <button id="btnServerStatus" type="button" class="secondary btn-sm">Status do Servidor</button>
+          <button id="btnServerImport" type="button" class="secondary btn-sm">Importar Existentes</button>
+          <button id="btnServerMigracao" type="button" class="secondary btn-sm">Gerar Pacote Migração</button>
+        </div>
+        <div id="serverCmdStatus" class="status"></div>
+        <div id="serverInfo" class="private-box">Status do servidor ainda não consultado.</div>
+      </section>
+
+      <section class="card">
+        <h2>Fluxo automático (Link / Texto / Documento)</h2>
+        <p class="sub">1) Captar informações e preencher planilha de autorização. 2) Gerar cadastro no formulário. 3) Publicar no botão da lista. Aceita texto livre, link, caminho de arquivo e caminho de pasta.</p>
+
+        <label for="capturaFonte">Fonte para captação</label>
+        <textarea id="capturaFonte" placeholder="Cole texto livre, link, caminho de arquivo (.pdf/.docx/.txt) ou caminho de pasta"></textarea>
+        <input id="capturaArquivoInput" type="file" class="hidden" multiple accept=".pdf,.docx,.txt,image/*" />
+        <input id="capturaPastaInput" type="file" class="hidden" multiple webkitdirectory directory />
+
+        <div class="actions">
+          <button id="btnAddArquivoFonte" type="button" class="secondary btn-sm">Adicionar Arquivo</button>
+          <button id="btnAddPastaFonte" type="button" class="secondary btn-sm">Adicionar Pasta</button>
+          <button id="btnCaptar" type="button" class="secondary btn-sm">Captar Informações</button>
+          <button id="btnCaptarGerar" type="button" class="secondary btn-sm">Captar + Gerar Registro</button>
+          <button id="btnAplicarDraft" type="button" class="btn-sm">Gerar Registro CRM</button>
+          <button id="btnLimparDraft" type="button" class="danger btn-sm">Limpar Captura</button>
+          <button id="btnExtracaoBot" type="button" class="secondary btn-sm">Extração Automática do Bot</button>
+        </div>
+        <div id="captureStatus" class="status"></div>
+        <div id="privatePreview" class="private-box">Dados privados: nenhum dado captado ainda.</div>
+
+        <label for="planilhaInfo">Informações da Planilha (editável)</label>
+        <textarea id="planilhaInfo" placeholder="Campos da planilha de autorização aparecerão aqui"></textarea>
+      </section>
+
+      <section class="card">
+        <h2>Upload de Documentação</h2>
+        <p class="sub">Faça upload de documentos relacionados ao imóvel (PDFs, imagens, etc.)</p>
+        
+        <label for="docsInput">Selecionar arquivos</label>
+        <input id="docsInput" type="file" multiple accept=".pdf,.doc,.docx,.txt,image/*" />
+        
+        <div class="actions">
+          <button id="btnUploadDocs" type="button" class="secondary btn-sm">Enviar Documentos</button>
+        </div>
+        <div id="docsStatus" class="status"></div>
+        <div id="docsList" class="doc-list">Nenhum arquivo enviado.</div>
+      </section>
+
+      <section class="card">
+        <h2>Cadastro de imóvel</h2>
+        <p class="sub">Depois de cadastrar, use "Publicar" para gerar a página HTML no site.</p>
+
+        <form id="propertyForm">
+          <div class="grid">
+            <!-- Campos ocultos para compatibilidade com preenchimento automático -->
+            <input id="codigo" type="hidden" />
+            <input id="titulo" type="hidden" />
+            <input id="tipo" type="hidden" />
+            <input id="negocio" type="hidden" />
+            <input id="fotos" type="hidden" />
+            <input id="fonteUrl" type="hidden" />
+            <div><label for="veiculoCaptacao">VEÍCULO DE CAPTAÇÃO</label><input id="veiculoCaptacao" type="text" /></div>
+            <div><label for="agenciador">AGENCIADOR</label><input id="agenciador" type="text" /></div>
+            <div><label for="agendamento">Agendamento</label><input id="agendamento" type="text" /></div>
+            <div><label for="gerente">GERENTE</label><input id="gerente" type="text" /></div>
+            <div><label for="nome">NOME (PF/PJ)</label><input id="nome" type="text" /></div>
+            <div><label for="cpfCnpj">CPF / CNPJ</label><input id="cpfCnpj" type="text" /></div>
+            <div><label for="email">E-MAIL</label><input id="email" type="email" /></div>
+            <div><label for="rgInscrEstadual">RG / INSCR. ESTADUAL</label><input id="rgInscrEstadual" type="text" /></div>
+            <div><label for="orgaoEmissor">ÓRGÃO EMISSOR</label><input id="orgaoEmissor" type="text" /></div>
+            <div><label for="dataNascimento">DATA NASCIMENTO</label><input id="dataNascimento" type="date" /></div>
+            <div><label for="celular">CELULAR</label><input id="celular" type="text" /></div>
+            <div><label for="residencial">RESIDENCIAL</label><input id="residencial" type="text" /></div>
+            <div><label for="comercial">COMERCIAL</label><input id="comercial" type="text" /></div>
+            <div><label for="ramal">RAMAL</label><input id="ramal" type="text" /></div>
+            <div><label for="profissao">PROFISSÃO</label><input id="profissao" type="text" /></div>
+            <div><label for="estadoCivil">ESTADO CIVIL</label><input id="estadoCivil" type="text" /></div>
+            <div><label for="regimeCasamento">REGIME DE CASAMENTO</label><input id="regimeCasamento" type="text" /></div>
+            <div><label for="nacionalidade">NACIONALIDADE</label><input id="nacionalidade" type="text" /></div>
+            <div><label for="endereco">ENDEREÇO</label><input id="endereco" type="text" /></div>
+            <div><label for="numero">NÚMERO</label><input id="numero" type="text" /></div>
+            <div><label for="complementoBloco">COMP./BLOCO</label><input id="complementoBloco" type="text" /></div>
+            <div><label for="uf">UF</label><input id="uf" type="text" /></div>
+            <div><label for="cep">CEP</label><input id="cep" type="text" /></div>
+            <div><label for="bairro">BAIRRO</label><input id="bairro" type="text" /></div>
+            <div><label for="cidade">CIDADE</label><input id="cidade" type="text" /></div>
+            <div><label for="nomeConjuge">NOME DO CÔNJUGE</label><input id="nomeConjuge" type="text" /></div>
+            <div><label for="cpfConjuge">CPF (cônjuge)</label><input id="cpfConjuge" type="text" /></div>
+            <div><label for="rgConjuge">RG (cônjuge)</label><input id="rgConjuge" type="text" /></div>
+            <div><label for="emissorConjuge">EMISSOR (cônjuge)</label><input id="emissorConjuge" type="text" /></div>
+            <div><label for="dataNascimentoConjuge">DATA NASCIMENTO (cônjuge)</label><input id="dataNascimentoConjuge" type="date" /></div>
+            <div><label for="profissaoConjuge">PROFISSÃO (cônjuge)</label><input id="profissaoConjuge" type="text" /></div>
+            <div><label for="emailConjuge">E-MAIL (cônjuge)</label><input id="emailConjuge" type="email" /></div>
+            <div><label for="nacionalidadeConjuge">NACIONALIDADE (cônjuge)</label><input id="nacionalidadeConjuge" type="text" /></div>
+            <div><label for="celularConjuge">CELULAR (cônjuge)</label><input id="celularConjuge" type="text" /></div>
+            <div><label for="residencialConjuge">RESIDENCIAL (cônjuge)</label><input id="residencialConjuge" type="text" /></div>
+            <div><label for="categoria">CATEGORIA</label><input id="categoria" type="text" /></div>
+            <div><label for="situacao">SITUAÇÃO</label><input id="situacao" type="text" /></div>
+            <div><label for="ocupacao">OCUPAÇÃO</label><input id="ocupacao" type="text" /></div>
+            <div><label for="estadoImovel">ESTADO DO IMÓVEL</label><input id="estadoImovel" type="text" /></div>
+            <!-- Adicione os demais campos do modelo seguindo o mesmo padrão -->
+            <div><label for="nomeCondominio">NOME DO CONDOMÍNIO</label><input id="nomeCondominio" type="text" /></div>
+            <div><label for="enderecoImovel">ENDEREÇO (imóvel)</label><input id="enderecoImovel" type="text" /></div>
+            <div><label for="numeroImovel">NÚMERO (imóvel)</label><input id="numeroImovel" type="text" /></div>
+            <div><label for="complementoBlocoImovel">COMP./BLOCO (imóvel)</label><input id="complementoBlocoImovel" type="text" /></div>
+            <div><label for="cepImovel">CEP (imóvel)</label><input id="cepImovel" type="text" /></div>
+            <div><label for="bairroImovel">BAIRRO (imóvel)</label><input id="bairroImovel" type="text" /></div>
+            <div><label for="cidadeImovel">CIDADE (imóvel)</label><input id="cidadeImovel" type="text" /></div>
+            <div><label for="andarImovel">ANDAR DO IMÓVEL</label><input id="andarImovel" type="text" /></div>
+            <div><label for="anoConstrucao">ANO CONSTRUÇÃO</label><input id="anoConstrucao" type="text" /></div>
+            <div><label for="dataEntrega">DATA DA ENTREGA</label><input id="dataEntrega" type="date" /></div>
+            <div><label for="imediacoes">IMEDIAÇÕES</label><input id="imediacoes" type="text" /></div>
+            <div><label for="rip">RIP</label><input id="rip" type="text" /></div>
+            <div><label for="inscricaoImobiliaria">INSCRIÇÃO IMOBILIÁRIA</label><input id="inscricaoImobiliaria" type="text" /></div>
+            <div><label for="matriculaImovel">NÚMERO DE MATRÍCULA DO IMÓVEL</label><input id="matriculaImovel" type="text" /></div>
+            <div><label for="dormitorios">DORMITÓRIOS</label><input id="dormitorios" type="number" min="0" /></div>
+            <div><label for="suites">SUÍTES</label><input id="suites" type="number" min="0" /></div>
+            <div><label for="vagas">VAGAS</label><input id="vagas" type="number" min="0" /></div>
+            <div><label for="areaTotal">ÁREA TOTAL (M²)</label><input id="areaTotal" type="number" step="0.01" min="0" /></div>
+            <div><label for="areaPrivativa">ÁREA PRIVATIVA (M²)</label><input id="areaPrivativa" type="number" step="0.01" min="0" /></div>
+            <div><label for="dimensoesTerreno">DIMENSÕES DO TERRENO</label><input id="dimensoesTerreno" type="text" placeholder="Frente, Fundos, Lat. Direita, Lat. Esquerda" /></div>
+            <div><label for="totalTerreno">TOTAL TERRENO (m²)</label><input id="totalTerreno" type="number" step="0.01" min="0" /></div>
+            <div><label for="topografia">TOPOGRAFIA</label><input id="topografia" type="text" /></div>
+            <div><label for="valorVenda">VENDA (R$)</label><input id="valorVenda" type="text" /></div>
+            <div><label for="valorCondominio">CONDOMÍNIO (R$)</label><input id="valorCondominio" type="text" /></div>
+            <div><label for="valorIptu">IPTU (R$)</label><input id="valorIptu" type="text" /></div>
+            <div><label for="valorForo">FORO ANUAL (R$)</label><input id="valorForo" type="text" /></div>
+            <div><label for="viabilidade">VIABILIDADE</label><input id="viabilidade" type="text" /></div>
+            <div><label for="exclusividade">EXCLUSIVIDADE</label><input id="exclusividade" type="text" placeholder="Sim/Não" /></div>
+            <div><label for="prazoAutorizacao">PRAZO DE AUTORIZAÇÃO</label><input id="prazoAutorizacao" type="text" /></div>
+            <div><label for="posicao">POSIÇÃO</label><input id="posicao" type="text" /></div>
+            <div><label for="orientacao">ORIENTAÇÃO</label><input id="orientacao" type="text" /></div>
+            <div><label for="comodosMobilia">CÔMODOS COM MOBÍLIA</label><input id="comodosMobilia" type="text" /></div>
+            <div><label for="acabamentoPiso">ACABAMENTO DE PISO</label><input id="acabamentoPiso" type="text" /></div>
+            <div><label for="tituloAnuncio">TÍTULO DO ANÚNCIO</label><input id="tituloAnuncio" type="text" /></div>
+            <div><label for="descricaoApartamento">DESCRIÇÃO DO APARTAMENTO</label><textarea id="descricaoApartamento"></textarea></div>
+            <div><label for="ambientesDiferenciais">AMBIENTES E DIFERENCIAIS</label><input id="ambientesDiferenciais" type="text" placeholder="Adega, Churrasqueira, Lavabo, etc." /></div>
+            <div><label for="vagasGaragem">INFORMAÇÕES SOBRE VAGAS DE GARAGEM</label><input id="vagasGaragem" type="text" /></div>
+            <div><label for="perfilConstrucao">PERFIL DE CONSTRUÇÃO</label><input id="perfilConstrucao" type="text" /></div>
+            <div><label for="estadoEmpreendimento">ESTADO DO EMPREENDIMENTO</label><input id="estadoEmpreendimento" type="text" /></div>
+            <div><label for="tipoFachada">TIPO DE FACHADA</label><input id="tipoFachada" type="text" /></div>
+            <div><label for="chaves">CHAVES</label><input id="chaves" type="text" /></div>
+            <div><label for="aquecimentoAgua">AQUECIMENTO DE ÁGUA</label><input id="aquecimentoAgua" type="text" /></div>
+            <div><label for="numAndares">Nº DE ANDARES</label><input id="numAndares" type="number" min="0" /></div>
+            <div><label for="imoveisPorAndar">IMÓVEIS POR ANDAR</label><input id="imoveisPorAndar" type="number" min="0" /></div>
+            <div><label for="totalImoveis">TOTAL DE IMÓVEIS</label><input id="totalImoveis" type="number" min="0" /></div>
+            <div><label for="qtdeElevadores">QTDE DE ELEVADORES</label><input id="qtdeElevadores" type="number" min="0" /></div>
+            <div><label for="telefoneZelador">TELEFONE: ZELADOR/PORTARIA</label><input id="telefoneZelador" type="text" /></div>
+            <div><label for="descricaoCondominio">DESCRIÇÃO DO CONDOMÍNIO</label><textarea id="descricaoCondominio"></textarea></div>
+            <div><label for="fgtsData">IMÓVEL ADQUIRIDO COM FGTS NOS ÚLTIMOS 3 ANOS (DATA)</label><input id="fgtsData" type="date" /></div>
+            <div><label for="situacaoFinanceira">SITUAÇÃO FINANCEIRA</label><input id="situacaoFinanceira" type="text" placeholder="Quitado, Financiado, etc." /></div>
+            <div><label for="poupanca">POUPANÇA (R$)</label><input id="poupanca" type="text" /></div>
+            <div><label for="saldoDevedor">SALDO DEVEDOR</label><input id="saldoDevedor" type="text" /></div>
+            <div><label for="numPrestacoes">Nº DE PRESTAÇÕES</label><input id="numPrestacoes" type="number" min="0" /></div>
+            <div><label for="prazoRemanescente">PRAZO REMANESCENTE</label><input id="prazoRemanescente" type="text" /></div>
+            <div><label for="agenteFinanceiro">AGENTE FINANCEIRO</label><input id="agenteFinanceiro" type="text" /></div>
+            <div><label for="estudaPermuta">ESTUDA PERMUTA</label><input id="estudaPermuta" type="text" placeholder="VALOR, BAIRRO, CIDADE, DORMITÓRIOS, SUÍTES, GARAGENS" /></div>
+            <div><label for="observacoes">OBSERVAÇÕES</label><textarea id="observacoes"></textarea></div>
+            <div><label for="motivoVenda">MOTIVO DA VENDA</label><input id="motivoVenda" type="text" /></div>
+            <div><label for="expectativaPrazoVenda">EXPECTATIVA DO PRAZO DE VENDA</label><input id="expectativaPrazoVenda" type="text" /></div>
+            <div><label for="avaliacaoCorretor">AVALIAÇÃO DO CORRETOR</label><input id="avaliacaoCorretor" type="text" /></div>
+            <!-- Fim dos campos do modelo de autorização -->
+            <div class="full">
+              <label for="imagens">Imagens do Imóvel (URLs, separadas por vírgula ou uma por linha)</label>
+              <textarea id="imagens" placeholder="https://.../foto1.jpg, https://.../foto2.jpg"></textarea>
+              <div id="imagensPreview" class="doc-list">Nenhuma imagem para pré-visualizar.</div>
+            </div>
+            <div class="full">
+              <label for="uploadImagens">Upload de Imagens</label>
+              <input id="uploadImagens" type="file" multiple accept="image/*" />
+            </div>
+            <div class="full">
+              <label for="documentacao">Documentação (PDF, DOC, TXT, imagens)</label>
+              <input id="documentacao" type="file" multiple accept=".pdf,.doc,.docx,.txt,image/*" />
+            </div>
+            <div class="full">
+              <label for="linkVideo">Link para vídeo do imóvel (YouTube, etc.)</label>
+              <input id="linkVideo" type="url" placeholder="https://youtube.com/..." />
+            </div>
+            <div class="full">
+              <label for="linkMaps">Link para localização no Google Maps</label>
+              <input id="linkMaps" type="url" placeholder="https://maps.google.com/..." />
+            </div>
+            <div class="full">
+              <label for="descricaoImovel">Descrição detalhada do imóvel</label>
+              <textarea id="descricaoImovel" placeholder="Descreva o imóvel, diferenciais, etc."></textarea>
+            </div>
+          </div>
+          
+          <div class="actions">
+            <button type="submit" class="btn-sm">Cadastrar Imóvel</button>
+            <button type="button" class="secondary btn-sm" onclick="resetPropertyForm()">Limpar Formulário</button>
+          </div>
+        </form>
+        <div id="formStatus" class="status"></div>
+      </section>
+
+      <section class="card">
+        <h2>Imóveis cadastrados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Código</th>
+              <div class="card" id="docsPreviewCard">
+                <h3>Visualizar Documentos Anexados</h3>
+                <div id="docsPreviewList" class="doc-list">Nenhum documento disponível.</div>
+              </div>
+              <th>Título</th>
+              <th>Bairro</th>
+              <th>Valor</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="propertiesBody"></tbody>
+        </table>
+      </section>
+    </section>
+  </div>
+
+  <script>
+    function buildApiBaseCandidates() {
+      const origin = window.location.origin;
+      const candidates = [];
+      if (origin && origin !== 'null') {
+        candidates.push(origin);
+      }
+      candidates.push('http://localhost:8080');
+      candidates.push('http://127.0.0.1:8080');
+      candidates.push('http://localhost:8081');
+      candidates.push('http://127.0.0.1:8081');
+      return [...new Set(candidates)];
+    }
+
+    const API_BASE_CANDIDATES = buildApiBaseCandidates();
+    const API_BASE = API_BASE_CANDIDATES[0];
+    const TOKEN_KEY = 'crmToken';
+    const USER_KEY = 'crmUser';
+
+    const loginView = document.getElementById('loginView');
+    const crmView = document.getElementById('crmView');
+    const currentUser = document.getElementById('currentUser');
+
+    const loginUser = document.getElementById('loginUser');
+    const loginPass = document.getElementById('loginPass');
+    const loginStatus = document.getElementById('loginStatus');
+
+    const propertyForm = document.getElementById('propertyForm');
+    const formStatus = document.getElementById('formStatus');
+    const propertiesBody = document.getElementById('propertiesBody');
+    const captureStatus = document.getElementById('captureStatus');
+    const capturaFonte = document.getElementById('capturaFonte');
+    const capturaArquivoInput = document.getElementById('capturaArquivoInput');
+    const capturaPastaInput = document.getElementById('capturaPastaInput');
+    const privatePreview = document.getElementById('privatePreview');
+    const docsStatus = document.getElementById('docsStatus');
+    const docsList = document.getElementById('docsList');
+    const docsPreviewList = document.getElementById('docsPreviewList');
+    const planilhaInfo = document.getElementById('planilhaInfo');
+    const imagensPreview = document.getElementById('imagensPreview');
+    const serverCmdStatus = document.getElementById('serverCmdStatus');
+    const serverInfo = document.getElementById('serverInfo');
+
+    let capturedDraft = null;
+    let uploadedDocs = [];
+
+    // Função para buscar e listar arquivos da pasta documentacao
+    async function listarDocumentosAnexados() {
+      try {
+        const docs = await api('/api/documentacao/list');
+        if (!docs || docs.length === 0) {
+          docsPreviewList.textContent = 'Nenhum documento disponível.';
+          return;
+        }
+
+        // Limpa lista antes de renderizar
+        docsPreviewList.innerHTML = '';
+
+        docs.forEach(doc => {
+          const ext = doc.split('.').pop().toLowerCase();
+          const link = document.createElement('a');
+          link.href = `/documentacao/${doc}`;
+          link.target = '_blank';
+
+          if (ext === 'pdf') {
+            link.textContent = `📄 ${doc}`;
+          } else if (["png","jpg","jpeg","webp"].includes(ext)) {
+            const img = document.createElement('img');
+            img.src = `/documentacao/${doc}`;
+            img.style = 'max-width:120px;max-height:80px;margin:4px;';
+            img.alt = doc;
+            link.appendChild(img);
+          } else {
+            link.textContent = doc;
+          }
+
+          docsPreviewList.appendChild(link);
+          docsPreviewList.appendChild(document.createElement('br'));
+        });
+      } catch (e) {
+        docsPreviewList.textContent = `Erro ao buscar documentos: ${e.message}`;
+      }
+    }
+
+    // Chama a função ao carregar o CRM
+    document.addEventListener('DOMContentLoaded', listarDocumentosAnexados);
+
+    // Botões e eventos
+    function bindClick(buttonId, handler, label) {
+      const button = document.getElementById(buttonId);
+      if (!button) {
+        console.warn(`[BTN] ${buttonId} não encontrado (${label}).`);
+        return;
+      }
+      button.addEventListener('click', handler);
+    }
+
+    // [BOTÃO 01] Login
+    bindClick('btnLogin', login, 'Login');
+    // [BOTÃO 02] Logout
+    bindClick('btnLogout', logout, 'Logout');
+    // [BOTÃO 03] Atualizar Lista
+    bindClick('btnReload', loadProperties, 'Atualizar Lista');
+    // [BOTÃO 04] Importar Imóveis Existentes
+    bindClick('btnImportarExistentes', importarExistentes, 'Importar Imóveis Existentes');
+    // [BOTÃO 05] Status do Servidor
+    bindClick('btnServerStatus', consultarStatusServidor, 'Status do Servidor');
+    // [BOTÃO 06] Importar Existentes (Painel)
+    bindClick('btnServerImport', importarExistentesViaPainel, 'Importar Existentes (Painel)');
+    // [BOTÃO 07] Gerar Pacote Migração
+    bindClick('btnServerMigracao', gerarPacoteMigracaoViaPainel, 'Gerar Pacote Migração');
+    // [BOTÃO 08] Adicionar Arquivo
+    bindClick('btnAddArquivoFonte', () => capturaArquivoInput.click(), 'Adicionar Arquivo');
+    // [BOTÃO 09] Adicionar Pasta
+    bindClick('btnAddPastaFonte', () => capturaPastaInput.click(), 'Adicionar Pasta');
+    // [BOTÃO 10] Captar Informações (FLUXO PRINCIPAL)
+    // Possível erro: campo "Fonte para captação" vazio ou API /api/imoveis/captar indisponível.
+    bindClick('btnCaptar', capturarInformacoes, 'Captar Informações');
+    // [BOTÃO 11] Captar + Gerar Registro
+    // Possível erro: captação falha e não gera draft; nesse caso não aplica no formulário.
+    bindClick('btnCaptarGerar', capturarEGerarRegistro, 'Captar + Gerar Registro');
+    // [BOTÃO 12] Gerar Registro CRM
+    // Possível erro: clicar antes de captar; exige capturedDraft preenchido.
+    bindClick('btnAplicarDraft', aplicarDraftNoFormulario, 'Gerar Registro CRM');
+    // [BOTÃO 13] Limpar Captura
+    bindClick('btnLimparDraft', limparCaptura, 'Limpar Captura');
+    // [BOTÃO 14] Enviar Documentos
+    bindClick('btnUploadDocs', subirDocumentacao, 'Enviar Documentos');
+    // [BOTÃO 15] Extração Automática do Bot (UNIFICADO COM BOTÃO 10)
+    // Regra: bot e captação manual usam o mesmo fluxo para evitar divergência.
+    bindClick('btnExtracaoBot', capturarInformacoes, 'Extração Automática do Bot (mesmo fluxo de Captar Informações)');
+
+    capturaArquivoInput.addEventListener('change', () => subirFonteArquivos(capturaArquivoInput.files));
+    capturaPastaInput.addEventListener('change', () => subirFonteArquivos(capturaPastaInput.files));
+    propertyForm.addEventListener('submit', onSubmitForm);
+
+    checkSession();
+
+    // Funções auxiliares
+    function getToken() {
+      return localStorage.getItem(TOKEN_KEY) || '';
+    }
+
+    function setStatus(element, type, message) {
+      element.className = `status ${type}`;
+      element.textContent = message;
+    }
+
+    function clearStatus(element) {
+      element.className = 'status';
+      element.textContent = '';
+    }
+
+    function extractFirstEmail(value) {
+      const match = String(value || '').match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i);
+      return match ? match[1].trim() : '';
+    }
+
+    function normalizeDraftValue(value, { asEmail = false } = {}) {
+      let text = String(value ?? '').trim();
+      if (!text || text.toUpperCase() === 'NÃO INFORMADO') {
+        return '';
+      }
+      if (asEmail) {
+        return extractFirstEmail(text);
+      }
+      return text;
+    }
+
+    function setFirstExistingValue(ids, value, options = {}) {
+      const normalized = normalizeDraftValue(value, options);
+      for (const id of ids) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.value = normalized;
+          return true;
+        }
+      }
+      return false;
+    }
+
+    async function api(path, options = {}) {
+      const token = getToken();
+      const headers = { ...options.headers };
+
+      if (token) headers.Authorization = `Bearer ${token}`;
+      if (options.body && !headers['Content-Type']) {
+        headers['Content-Type'] = 'application/json';
+      }
+
+      let response = null;
+      let lastFetchError = null;
+      for (const base of API_BASE_CANDIDATES) {
+        try {
+          response = await fetch(`${base}${path}`, {
+            ...options,
+            headers,
+          });
+          break;
+        } catch (error) {
+          lastFetchError = error;
+        }
+      }
+
+      if (!response) {
+        throw new Error(lastFetchError?.message || 'Falha no fetch: servidor CRM offline. Execute open-crm.bat para iniciar automaticamente e abrir o CRM.');
+      }
+
+      const rawText = await response.text();
+      let data = null;
+      if (rawText) {
+        try {
+          data = JSON.parse(rawText);
+        } catch {
+          data = { message: rawText };
+        }
+      }
+
+      if (!response.ok) {
+        const message = data?.error || data?.message || `Erro HTTP ${response.status}`;
+        throw new Error(message);
+      }
+
+      return data;
+    }
+
+    function getImageUrlsFromForm() {
+      const imagensValue = document.getElementById('imagens')?.value || '';
+      const fotosValue = document.getElementById('fotos')?.value || '';
+      const raw = `${imagensValue}\n${fotosValue}`;
+      const urls = raw
+        .split(/[\n,;]+/)
+        .map(item => item.trim())
+        .filter(Boolean)
+        .filter(item => /^https?:\/\//i.test(item));
+      return [...new Set(urls)];
+    }
+
+    function renderImagensPreview() {
+      if (!imagensPreview) return;
+      const urls = getImageUrlsFromForm();
+      if (!urls.length) {
+        imagensPreview.textContent = 'Nenhuma imagem para pré-visualizar.';
+        return;
+      }
+
+      imagensPreview.innerHTML = '';
+      urls.forEach((url, index) => {
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.style.display = 'inline-block';
+        link.style.margin = '4px';
+
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = `imagem-${index + 1}`;
+        img.style.maxWidth = '120px';
+        img.style.maxHeight = '80px';
+        img.style.borderRadius = '6px';
+        img.style.border = '1px solid #d7cbbf';
+        img.loading = 'lazy';
+
+        link.appendChild(img);
+        imagensPreview.appendChild(link);
+      });
+    }
+
+    function toggleView(view) {
+      loginView.classList.toggle('hidden', view !== 'login');
+      crmView.classList.toggle('hidden', view !== 'crm');
+    }
+
+    function showCRM() {
+      toggleView('crm');
+      currentUser.textContent = `Usuário: ${localStorage.getItem(USER_KEY) || 'admin'}`;
+    }
+
+    function showLogin() {
+      toggleView('login');
+    }
+
+    async function checkSession() {
+      const token = getToken();
+      if (!token) {
+        showLogin();
+        return;
+      }
+
+      try {
+        await loadProperties();
+        await consultarStatusServidor(true);
+        showCRM();
+      } catch {
+        localStorage.removeItem(TOKEN_KEY);
+        localStorage.removeItem(USER_KEY);
+        showLogin();
+      }
+    }
+
+    async function login() {
+      clearStatus(loginStatus);
+      const username = loginUser.value.trim();
+      const password = loginPass.value.trim();
+
+      if (!username || !password) {
+        setStatus(loginStatus, 'error', 'Informe usuário e senha.');
+        return;
+      }
+
+      try {
+        const data = await api('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }),
+        });
+
+        localStorage.setItem(TOKEN_KEY, data.token);
+        localStorage.setItem(USER_KEY, data.username || username);
+
+        showCRM();
+        await loadProperties();
+      } catch (error) {
+        setStatus(loginStatus, 'error', error.message);
+      }
+    }
+
+    async function logout() {
+      try {
+        await api('/api/logout', { method: 'POST' });
+      } catch (_) {
+      }
+
+      localStorage.removeItem(TOKEN_KEY);
+      localStorage.removeItem(USER_KEY);
+      showLogin();
+    }
+
+    function readForm() {
+      const fotosField = document.getElementById('fotos')?.value.trim() || document.getElementById('imagens')?.value.trim() || '';
+      
+      return {
+        codigo: document.getElementById('codigo')?.value.trim() || '',
+        titulo: document.getElementById('titulo')?.value.trim() || '',
+        tipo: document.getElementById('tipo')?.value.trim() || 'Apartamento',
+        negocio: document.getElementById('negocio')?.value || 'Venda',
+        valor: (
+          document.getElementById('valorVenda')?.value.trim() || 
+          document.getElementById('valor')?.value.trim() || 
+          'Consulte valores'
+        ),
+        endereco: document.getElementById('endereco')?.value.trim() || document.getElementById('enderecoImovel')?.value.trim() || '',
+        bairro: document.getElementById('bairro')?.value.trim() || document.getElementById('bairroImovel')?.value.trim() || '',
+        cidade: document.getElementById('cidade')?.value.trim() || document.getElementById('cidadeImovel')?.value.trim() || 'Florianópolis/SC',
+        condominio: document.getElementById('condominio')?.value.trim() || document.getElementById('valorCondominio')?.value.trim() || '',
+        descricao: (
+          document.getElementById('descricao')?.value.trim() || 
+          document.getElementById('descricaoImovel')?.value.trim() ||
+          document.getElementById('descricaoApartamento')?.value.trim() ||
+          ''
+        ),
+        fotos: fotosField,
+        fonteUrl: document.getElementById('fonteUrl')?.value.trim() || '',
+      };
+    }
+
+    function normalizeCurrencyBR(value) {
+      const raw = String(value || '').trim();
+      if (!raw) return '';
+      const only = raw.replace(/[^0-9,\.]/g, '');
+      if (!only) return '';
+      let normalized = only;
+      if (only.includes(',') && only.includes('.')) {
+        normalized = only.replace(/\./g, '').replace(',', '.');
+      } else if (only.includes(',') && !only.includes('.')) {
+        normalized = only.replace(',', '.');
+      }
+      const num = Number.parseFloat(normalized);
+      if (!Number.isFinite(num)) return '';
+      return `R$ ${num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    function parseCityUF(value) {
+      const text = String(value || '').trim();
+      if (!text) return { cidade: 'Florianópolis', uf: 'SC' };
+      const parts = text.split('/').map(item => item.trim()).filter(Boolean);
+      if (parts.length >= 2) return { cidade: parts[0], uf: parts[1].toUpperCase() };
+      const match = text.match(/(.+?)\s*-\s*([A-Za-z]{2})$/);
+      if (match) return { cidade: match[1].trim(), uf: match[2].toUpperCase() };
+      return { cidade: text, uf: 'SC' };
+    }
+
+    function parsePlanilhaInfo(text) {
+      const result = {};
+      const lines = String(text || '').split(/\r?\n/);
+      for (const line of lines) {
+        const idx = line.indexOf(':');
+        if (idx <= 0) continue;
+        const key = line.slice(0, idx).trim();
+        const value = line.slice(idx + 1).trim();
+        if (key) result[key] = value;
+      }
+      return result;
+    }
+
+    function collectAuthFormData() {
+      const raw = {
+        veiculo_captacao: document.getElementById('veiculoCaptacao')?.value,
+        agenciador: document.getElementById('agenciador')?.value,
+        gerente: document.getElementById('gerente')?.value,
+        proprietario_nome: document.getElementById('nome')?.value,
+        proprietario: document.getElementById('nome')?.value,
+        cpf: document.getElementById('cpfCnpj')?.value,
+        documento: document.getElementById('cpfCnpj')?.value,
+        email: document.getElementById('email')?.value,
+        telefone: document.getElementById('celular')?.value,
+        telefone_proprietario: document.getElementById('celular')?.value,
+        endereco: document.getElementById('endereco')?.value,
+        bairro: document.getElementById('bairro')?.value,
+        cidade: document.getElementById('cidade')?.value,
+        uf: document.getElementById('uf')?.value,
+        cep: document.getElementById('cep')?.value,
+        tipo_imovel: document.getElementById('tipo')?.value,
+        valor_venda: document.getElementById('valorVenda')?.value,
+        condominio: document.getElementById('valorCondominio')?.value,
+        area_privativa: document.getElementById('areaPrivativa')?.value,
+        area_total: document.getElementById('areaTotal')?.value,
+        dormitorios: document.getElementById('dormitorios')?.value,
+        suites: document.getElementById('suites')?.value,
+        vagas: document.getElementById('vagas')?.value,
+        matricula: document.getElementById('matriculaImovel')?.value,
+        observacoes: document.getElementById('observacoes')?.value,
+        observacoes_internas: document.getElementById('observacoes')?.value,
+        descricao: (
+          document.getElementById('descricaoImovel')?.value ||
+          document.getElementById('descricaoApartamento')?.value ||
+          ''
+        ),
+        fotos: document.getElementById('imagens')?.value || document.getElementById('fotos')?.value,
+        link_referencia: document.getElementById('fonteUrl')?.value,
+      };
+
+      const normalized = {};
+      for (const [key, value] of Object.entries(raw)) {
+        const isEmail = key === 'email';
+        const clean = normalizeDraftValue(value, { asEmail: isEmail });
+        if (clean) {
+          normalized[key] = clean;
+        }
+      }
+      return normalized;
+    }
+
+    function collectAllFormFields() {
+      const result = {};
+      const skipIds = new Set([
+        'capturaFonte',
+        'capturaArquivoInput',
+        'capturaPastaInput',
+        'planilhaInfo',
+        'docsInput',
+        'documentacao',
+        'uploadImagens',
+      ]);
+
+      const controls = propertyForm.querySelectorAll('input, textarea, select');
+      controls.forEach(control => {
+        const id = control.id;
+        if (!id || skipIds.has(id)) return;
+        const type = String(control.type || '').toLowerCase();
+        if (type === 'file') return;
+
+        if (type === 'checkbox') {
+          result[id] = control.checked ? 'Sim' : 'Não';
+          return;
+        }
+
+        result[id] = String(control.value || '').trim();
+      });
+
+      return result;
+    }
+
+    function buildValidatedTitle(payload, planilha = {}) {
+      const tipo = String(payload.tipo || planilha.tipo_imovel || 'Apartamento').trim();
+      const dormitorios = String(planilha.dormitorios || planilha.quartos || '').match(/\d{1,2}/)?.[0] || '';
+      const dormChunk = dormitorios ? ` com ${dormitorios} dormitório${Number(dormitorios) > 1 ? 's' : ''}` : '';
+      const bairro = String(payload.bairro || planilha.bairro || 'Florianópolis').trim();
+      const cidadeUf = parseCityUF(payload.cidade || planilha.cidade || 'Florianópolis/SC');
+      return `${tipo} à Venda${dormChunk} em ${bairro} ${cidadeUf.cidade} ${cidadeUf.uf}`.replace(/\s+/g, ' ').trim();
+    }
+
+    async function onSubmitForm(event) {
+      event.preventDefault();
+      clearStatus(formStatus);
+
+      const payload = readForm();
+      if (capturedDraft?.dadosPrivados) {
+        payload.dadosPrivados = capturedDraft.dadosPrivados;
+      }
+      if (capturedDraft?.dadosCaptura) {
+        payload.dadosCaptura = capturedDraft.dadosCaptura;
+      }
+
+      // Se vem de um link, adicionar código e link nas informações de proprietário
+      const fonteUrl = payload.fonteUrl?.trim();
+      const codigo = payload.codigo?.trim();
+      if (fonteUrl && codigo && /^https?:\/\//.test(fonteUrl)) {
+        if (!payload.dadosPrivados) payload.dadosPrivados = {};
+        // Adicionar informações de origem
+        if (!payload.dadosPrivados.observacoes_internas) {
+          payload.dadosPrivados.observacoes_internas = `Imóvel capturado de: ${fonteUrl}`;
+        } else {
+          payload.dadosPrivados.observacoes_internas += `\nOrigem: ${fonteUrl}`;
+        }
+      }
+
+      const authFormData = collectAuthFormData();
+      const editPlanilha = parsePlanilhaInfo(planilhaInfo.value);
+      payload.dadosPlanilha = {
+        ...(capturedDraft?.dadosPlanilha || {}),
+        ...authFormData,
+        ...editPlanilha,
+      };
+      payload.dadosPrivados = {
+        ...(capturedDraft?.dadosPrivados || {}),
+        proprietario: authFormData.proprietario_nome || authFormData.proprietario || capturedDraft?.dadosPrivados?.proprietario || '',
+        documento: authFormData.documento || authFormData.cpf || capturedDraft?.dadosPrivados?.documento || '',
+        telefone_proprietario: authFormData.telefone_proprietario || authFormData.telefone || capturedDraft?.dadosPrivados?.telefone_proprietario || '',
+        email_proprietario: authFormData.email || capturedDraft?.dadosPrivados?.email_proprietario || '',
+        matricula: authFormData.matricula || capturedDraft?.dadosPrivados?.matricula || '',
+        observacoes_internas: authFormData.observacoes_internas || capturedDraft?.dadosPrivados?.observacoes_internas || '',
+      };
+      payload.documentacao = uploadedDocs;
+
+      if (payload.condominio) {
+        const condominioFmt = normalizeCurrencyBR(payload.condominio);
+        payload.condominio = condominioFmt || payload.condominio;
+      }
+      if (payload.valor) {
+        const valorFmt = normalizeCurrencyBR(payload.valor);
+        payload.valor = valorFmt || payload.valor;
+      }
+
+      payload.titulo = buildValidatedTitle(payload, payload.dadosPlanilha || {});
+      document.getElementById('titulo').value = payload.titulo;
+
+      payload.bairro = String(payload.bairro || payload.dadosPlanilha?.bairro || 'Florianópolis').trim();
+      payload.cidade = String(payload.cidade || payload.dadosPlanilha?.cidade || 'Florianópolis/SC').trim();
+      payload.descricao = String(
+        payload.descricao ||
+        payload.dadosPlanilha?.descricao ||
+        payload.dadosPlanilha?.observacoes ||
+        'Imóvel cadastrado sem descrição detalhada.'
+      ).trim();
+
+      try {
+        console.log('Enviando payload:', payload);
+        const result = await api('/api/imoveis', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+        });
+        
+        console.log('Resposta do servidor:', result);
+
+        propertyForm.reset();
+        document.getElementById('cidade').value = 'Florianópolis/SC';
+        document.getElementById('tipo').value = 'Apartamento';
+        limparCaptura(false);
+        uploadedDocs = [];
+        renderDocumentacao();
+        setStatus(formStatus, 'success', `✅ Imóvel cadastrado com sucesso! ID: ${result.id}. Agora você pode publicar a página.`);
+        await loadProperties();
+      } catch (error) {
+        console.error('Erro ao cadastrar:', error);
+        setStatus(formStatus, 'error', `❌ Erro ao cadastrar: ${error.message}`);
+      }
+    }
+
+    function renderPlanilha(campos = {}) {
+      const entries = Object.entries(campos || {});
+      if (!entries.length) {
+        planilhaInfo.value = '';
+        return;
+      }
+      planilhaInfo.value = entries.map(([k, v]) => `${k}: ${v}`).join('\n');
+    }
+
+    function atualizarPreviewPrivado(privados = {}) {
+      const linhas = [];
+      if (privados.proprietario) linhas.push(`Proprietário: ${privados.proprietario}`);
+      if (privados.documento) linhas.push(`Documento: ${privados.documento}`);
+      if (privados.telefone_proprietario) linhas.push(`Telefone: ${privados.telefone_proprietario}`);
+      if (privados.email_proprietario) linhas.push(`E-mail: ${privados.email_proprietario}`);
+      if (privados.matricula) linhas.push(`Matrícula: ${privados.matricula}`);
+      if (privados.observacoes_internas) linhas.push(`Obs. internas: ${privados.observacoes_internas}`);
+
+      privatePreview.textContent = linhas.length
+        ? `Dados privados (não publicados no anúncio):\n${linhas.join('\n')}`
+        : 'Dados privados: nenhum dado captado ainda.';
+    }
+
+    async function capturarInformacoes() {
+      clearStatus(captureStatus);
+      const rawFonte = capturaFonte.value.trim();
+      const fontes = rawFonte
+        .split(/\r?\n/)
+        .map(item => item.trim())
+        .filter(Boolean);
+
+      if (!fontes.length) {
+        // [ERRO BOTÃO 10/15] Sem fonte de entrada não há como montar payload de captação.
+        setStatus(captureStatus, 'error', 'Informe uma fonte para captação (link, texto ou arquivo).');
+        return;
+      }
+
+      const ehCaminhoOuLink = (value) => {
+        const item = String(value || '').trim();
+        if (!item) return false;
+        if (/^https?:\/\//i.test(item)) return true;
+        if (/^[a-zA-Z]:[\\/]/.test(item)) return true;
+        if (item.startsWith('./') || item.startsWith('../') || item.startsWith('.\\') || item.startsWith('..\\') || item.startsWith('\\\\')) return true;
+        if (item.includes('\\') || item.includes('/')) return true;
+        if (/\.(pdf|docx|txt|md|csv|xlsx?)$/i.test(item)) return true;
+        return false;
+      };
+
+      const todasLinhasTextoLivre = fontes.every(item => !ehCaminhoOuLink(item) && !item.startsWith('text:'));
+      const fontesPayload = todasLinhasTextoLivre ? [rawFonte] : fontes;
+
+      try {
+        const result = await api('/api/imoveis/captar', {
+          method: 'POST',
+          body: JSON.stringify({ fontes: fontesPayload }),
+        });
+
+        capturedDraft = result.draft || null;
+        atualizarPreviewPrivado(capturedDraft?.dadosPrivados || {});
+        renderPlanilha(capturedDraft?.dadosPlanilha || {});
+        const modo = result.modo === 'fallback-js' ? 'fallback (sem Python)' : 'python';
+        const aviso = result.aviso ? ` Aviso: ${result.aviso}` : '';
+        setStatus(captureStatus, 'success', `Captação concluída em ${modo}. Linha planilha: ${result.linha}. Clique em "Gerar Registro CRM".${aviso}`);
+      } catch (error) {
+        // [ERRO BOTÃO 10/15] Falha de backend, token inválido ou endpoint indisponível.
+        setStatus(captureStatus, 'error', error.message);
+      }
+    }
+
+    async function capturarEGerarRegistro() {
+      await capturarInformacoes();
+      if (capturedDraft) {
+        aplicarDraftNoFormulario();
+      } else {
+        // [ERRO BOTÃO 11] Captação não retornou draft válido.
+        setStatus(formStatus, 'error', 'Não foi possível gerar registro: a captação não retornou dados.');
+      }
+    }
+
+    function aplicarDraftNoFormulario() {
+      clearStatus(formStatus);
+      if (!capturedDraft) {
+        // [ERRO BOTÃO 12] Sem draft previamente captado.
+        setStatus(formStatus, 'error', 'Capture informações antes de gerar o registro CRM.');
+        return;
+      }
+
+      const planilha = capturedDraft?.dadosPlanilha || {};
+
+      setFirstExistingValue(['codigo'], capturedDraft.codigo);
+      setFirstExistingValue(['titulo'], capturedDraft.titulo);
+      setFirstExistingValue(['tipo'], capturedDraft.tipo || planilha.tipo_imovel || 'Apartamento');
+      setFirstExistingValue(['negocio'], capturedDraft.negocio || planilha.negocio || 'Venda');
+      setFirstExistingValue(['bairro', 'bairroImovel'], capturedDraft.bairro || planilha.bairro);
+      setFirstExistingValue(['cidade', 'cidadeImovel'], capturedDraft.cidade || planilha.cidade || 'Florianópolis/SC');
+      setFirstExistingValue(['valorVenda', 'valor'], capturedDraft.valor || planilha.valor_venda || planilha.valor);
+      setFirstExistingValue(['endereco', 'enderecoImovel'], capturedDraft.endereco || planilha.endereco);
+      setFirstExistingValue(['valorCondominio', 'condominio'], capturedDraft.condominio || planilha.condominio);
+      setFirstExistingValue(['descricaoImovel', 'descricaoApartamento', 'descricao'], capturedDraft.descricao || planilha.descricao);
+      setFirstExistingValue(['fotos', 'imagens'], (capturedDraft.fotos || []).join('\n'));
+      setFirstExistingValue(['fonteUrl'], capturedDraft.fonteUrl || planilha.link_referencia);
+      renderImagensPreview();
+
+      setFirstExistingValue(['veiculoCaptacao'], planilha.veiculo_captacao);
+      setFirstExistingValue(['agenciador'], planilha.agenciador);
+      setFirstExistingValue(['gerente'], planilha.gerente);
+      setFirstExistingValue(['nome'], planilha.proprietario_nome || planilha.proprietario);
+      setFirstExistingValue(['cpfCnpj'], planilha.cpf || planilha.documento);
+      setFirstExistingValue(['email'], planilha.email, { asEmail: true });
+      setFirstExistingValue(['rgInscrEstadual'], planilha.rg);
+      setFirstExistingValue(['orgaoEmissor'], planilha.orgao_emissor);
+      setFirstExistingValue(['celular'], planilha.telefone || planilha.telefone_proprietario || planilha.celular);
+      setFirstExistingValue(['residencial'], planilha.residencial);
+      setFirstExistingValue(['comercial'], planilha.comercial);
+      setFirstExistingValue(['ramal'], planilha.ramal);
+      setFirstExistingValue(['profissao'], planilha.profissao);
+      setFirstExistingValue(['estadoCivil'], planilha.estado_civil);
+      setFirstExistingValue(['regimeCasamento'], planilha.regime_casamento);
+      setFirstExistingValue(['nacionalidade'], planilha.nacionalidade);
+      setFirstExistingValue(['numero'], planilha.numero);
+      setFirstExistingValue(['complementoBloco'], planilha.complemento);
+      setFirstExistingValue(['uf'], planilha.uf);
+      setFirstExistingValue(['cep'], planilha.cep);
+      setFirstExistingValue(['nomeConjuge'], planilha.nome_conjuge);
+      setFirstExistingValue(['cpfConjuge'], planilha.cpf_conjuge);
+      setFirstExistingValue(['rgConjuge'], planilha.rg_conjuge);
+      setFirstExistingValue(['emissorConjuge'], planilha.emissor_conjuge);
+      setFirstExistingValue(['profissaoConjuge'], planilha.profissao_conjuge);
+      setFirstExistingValue(['emailConjuge'], planilha.email_conjuge, { asEmail: true });
+      setFirstExistingValue(['nacionalidadeConjuge'], planilha.nacionalidade_conjuge);
+      setFirstExistingValue(['celularConjuge'], planilha.celular_conjuge);
+      setFirstExistingValue(['residencialConjuge'], planilha.residencial_conjuge);
+      setFirstExistingValue(['categoria'], planilha.categoria);
+      setFirstExistingValue(['situacao'], planilha.situacao);
+      setFirstExistingValue(['ocupacao'], planilha.ocupacao);
+      setFirstExistingValue(['estadoImovel'], planilha.estado_imovel);
+      setFirstExistingValue(['matriculaImovel'], planilha.matricula);
+      setFirstExistingValue(['dormitorios'], planilha.dormitorios || planilha.quartos);
+      setFirstExistingValue(['suites'], planilha.suites);
+      setFirstExistingValue(['vagas'], planilha.vagas);
+      setFirstExistingValue(['areaTotal'], planilha.area_total);
+      setFirstExistingValue(['areaPrivativa'], planilha.area_privativa);
+      setFirstExistingValue(['observacoes'], planilha.observacoes || planilha.observacoes_internas);
+
+      const payloadTmp = readForm();
+      document.getElementById('titulo').value = buildValidatedTitle(payloadTmp, capturedDraft?.dadosPlanilha || {});
+
+      atualizarPreviewPrivado(capturedDraft?.dadosPrivados || {});
+      renderPlanilha(capturedDraft?.dadosPlanilha || {});
+      setStatus(formStatus, 'success', 'Registro preenchido automaticamente. Revise os dados e clique em "Cadastrar Imóvel".');
+    }
+
+    function renderDocumentacao() {
+      if (!uploadedDocs.length) {
+        docsList.textContent = 'Nenhum arquivo enviado.';
+        return;
+      }
+      docsList.textContent = uploadedDocs.map(item => `${item.original} → ${item.url}`).join('\n');
+    }
+
+    function fileToDataUrl(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(new Error('Falha ao ler arquivo local.'));
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function subirDocumentacao() {
+      clearStatus(docsStatus);
+      const input = document.getElementById('docsInput');
+      const files = Array.from(input.files || []);
+      if (!files.length) {
+        setStatus(docsStatus, 'error', 'Selecione ao menos um PDF ou imagem.');
+        return;
+      }
+
+      try {
+        const payloadFiles = [];
+        for (const file of files) {
+          const data = await fileToDataUrl(file);
+          payloadFiles.push({ name: file.name, data });
+        }
+
+        const result = await api('/api/uploads', {
+          method: 'POST',
+          body: JSON.stringify({ files: payloadFiles }),
+        });
+
+        uploadedDocs = [...uploadedDocs, ...(result.files || [])];
+        renderDocumentacao();
+        await listarDocumentosAnexados();
+        input.value = '';
+        setStatus(docsStatus, 'success', `${(result.files || []).length} arquivo(s) enviado(s) com sucesso.`);
+      } catch (error) {
+        setStatus(docsStatus, 'error', error.message);
+      }
+    }
+
+    function appendFontesNoCampo(urls = []) {
+      const existentes = capturaFonte.value
+        .split(/\r?\n/)
+        .map(item => item.trim())
+        .filter(Boolean);
+
+      const merged = [...existentes];
+      for (const url of urls) {
+        if (!merged.includes(url)) {
+          merged.push(url);
+        }
+      }
+      capturaFonte.value = merged.join('\n');
+    }
+
+    async function subirFonteArquivos(fileList) {
+      clearStatus(captureStatus);
+      const files = Array.from(fileList || []);
+      if (!files.length) {
+        return;
+      }
+
+      try {
+        const payloadFiles = [];
+        for (const file of files) {
+          const data = await fileToDataUrl(file);
+          payloadFiles.push({ name: file.webkitRelativePath || file.name, data });
+        }
+
+        const result = await api('/api/uploads', {
+          method: 'POST',
+          body: JSON.stringify({ files: payloadFiles }),
+        });
+
+        const urls = (result.files || []).map(item => {
+          if (!item?.url) return '';
+          if (/^https?:\/\//i.test(item.url)) return item.url;
+          return `${API_BASE}${item.url}`;
+        }).filter(Boolean);
+        appendFontesNoCampo(urls);
+        setStatus(captureStatus, 'success', `${urls.length} arquivo(s) adicionados na fonte de captação.`);
+      } catch (error) {
+        setStatus(captureStatus, 'error', error.message);
+      } finally {
+        capturaArquivoInput.value = '';
+        capturaPastaInput.value = '';
+      }
+    }
+
+    async function importarExistentes() {
+      clearStatus(formStatus);
+      try {
+        const result = await api('/api/imoveis/importar-existentes', { method: 'POST' });
+        setStatus(formStatus, 'success', result.message || 'Importação concluída.');
+        await loadProperties();
+      } catch (error) {
+        setStatus(formStatus, 'error', error.message);
+      }
+    }
+
+    async function consultarStatusServidor(silencioso = false) {
+      if (!silencioso) clearStatus(serverCmdStatus);
+      try {
+        const result = await api('/api/status');
+        serverInfo.textContent = [
+          `Versão: ${result.version || '-'}`,
+          `Iniciado em: ${result.startedAt || '-'}`,
+          `Agora: ${result.now || '-'}`,
+          `Python: ${result.python || '-'}`,
+          `Diretório: ${result.rootDir || '-'}`,
+        ].join('\n');
+        if (!silencioso) {
+          setStatus(serverCmdStatus, 'success', 'Servidor online e respondendo normalmente.');
+        }
+      } catch (error) {
+        if (!silencioso) {
+          setStatus(serverCmdStatus, 'error', error.message);
+        }
+      }
+    }
+
+    async function importarExistentesViaPainel() {
+      clearStatus(serverCmdStatus);
+      try {
+        const result = await api('/api/imoveis/importar-existentes', { method: 'POST' });
+        setStatus(serverCmdStatus, 'success', result.message || 'Importação concluída.');
+        await loadProperties();
+      } catch (error) {
+        setStatus(serverCmdStatus, 'error', error.message);
+      }
+    }
+
+    async function gerarPacoteMigracaoViaPainel() {
+      clearStatus(serverCmdStatus);
+      try {
+        const result = await api('/api/comandos/preparar-migracao', { method: 'POST' });
+        const msg = result?.message || 'Pacote de migração gerado com sucesso.';
+        setStatus(serverCmdStatus, 'success', msg);
+        if (result?.url) {
+          const downloadUrl = `${API_BASE}${result.url}`;
+          serverInfo.textContent = `Pacote gerado: ${result.arquivo || '-'}\nDownload: ${downloadUrl}`;
+          window.open(downloadUrl, '_blank', 'noopener');
+        }
+      } catch (error) {
+        setStatus(serverCmdStatus, 'error', error.message);
+      }
+    }
+
+    function limparCaptura(limparFonte = true) {
+      capturedDraft = null;
+      if (limparFonte) capturaFonte.value = '';
+      atualizarPreviewPrivado({});
+      renderPlanilha({});
+      renderImagensPreview();
+      clearStatus(captureStatus);
+    }
+
+    async function loadProperties() {
+      const items = await api('/api/imoveis');
+      renderProperties(items);
+    }
+
+    function resetPropertyForm() {
+      propertyForm.reset();
+      renderImagensPreview();
+      clearStatus(formStatus);
+    }
+
+    function renderProperties(items) {
+      propertiesBody.innerHTML = '';
+
+      if (!items.length) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td colspan="7">Nenhum imóvel cadastrado.</td>`;
+        propertiesBody.appendChild(tr);
+        return;
+      }
+
+      items.forEach(item => {
+        const tr = document.createElement('tr');
+        const status = item.publicado
+          ? '<span class="pill ok">Publicado</span>'
+          : '<span class="pill wait">Pendente</span>';
+
+        const linkPublicado = item.urlPublicada
+          ? `<button class="secondary btn-sm" onclick="window.open('${item.urlPublicada}', '_blank', 'noopener')">Abrir Página</button>`
+          : '';
+        const btnAbrirCadastro = `<button class="secondary btn-sm" onclick="editProperty(${item.id})">Abrir Cadastro CRM</button>`;
+
+        tr.innerHTML = `
+          <td>${item.id}</td>
+          <td>${item.codigo || '-'}</td>
+          <td>${escapeHtml(item.titulo || '-')}</td>
+          <td>${escapeHtml(item.bairro || '-')}</td>
+          <td>${escapeHtml(item.valor || '-')}</td>
+          <td>${status}</td>
+          <td>
+            <div class="actions" style="margin-top:0;">
+              ${btnAbrirCadastro}
+              ${item.publicado ? '' : `<button class="secondary btn-sm" onclick="publishPage(${item.id})">Publicar</button>`}
+              <button class="secondary btn-sm" onclick="generateExcel(${item.id})">Gerar Excel</button>
+              <button class="secondary btn-sm" onclick="generatePDF(${item.id})">Gerar PDF</button>
+              <button class="secondary btn-sm" onclick="editProperty(${item.id})">Corrigir</button>
+              <button class="secondary btn-sm" onclick="republishProperty(${item.id})">Republicar</button>
+              <button class="danger btn-sm" onclick="deleteProperty(${item.id})">Excluir</button>
+            </div>
+              ${linkPublicado}
+          </td>
+        `;
+        propertiesBody.appendChild(tr);
+      });
+    }
+
+    // Geração de Excel
+    async function generateExcel(id) {
+      try {
+        const result = await api(`/api/imoveis/${id}/excel`, { method: 'POST' });
+        if (result && result.url) {
+          window.open(result.url, '_blank', 'noopener');
+        } else {
+          alert('Erro ao gerar arquivo Excel.');
+        }
+      } catch (error) {
+        alert('Erro ao gerar Excel: ' + error.message);
+      }
+    }
+
+    // Geração de PDF
+    async function generatePDF(id) {
+      try {
+        const result = await api(`/api/imoveis/${id}/pdf`, { method: 'POST' });
+        if (result && result.url) {
+          window.open(result.url, '_blank', 'noopener');
+        } else {
+          alert('Erro ao gerar arquivo PDF.');
+        }
+      } catch (error) {
+        alert('Erro ao gerar PDF: ' + error.message);
+      }
+    }
+
+    // Editar imóvel
+    async function editProperty(id) {
+      try {
+        const item = await api(`/api/imoveis/${id}`);
+        if (!item) {
+          alert('Imóvel não encontrado.');
+          return;
+        }
+        // Preenche o formulário com os dados do imóvel
+        for (const [key, value] of Object.entries(item)) {
+          const input = document.getElementById(key);
+          if (input) {
+            if (input.tagName === 'TEXTAREA') {
+              input.value = value || '';
+            } else {
+              input.value = value || '';
+            }
+          }
+        }
+
+        if (item.dadosPlanilha && typeof item.dadosPlanilha === 'object') {
+          for (const [key, value] of Object.entries(item.dadosPlanilha)) {
+            const input = document.getElementById(key);
+            if (!input) continue;
+            input.value = value == null ? '' : String(value);
+          }
+          renderPlanilha(item.dadosPlanilha);
+        }
+
+        renderImagensPreview();
+
+        setStatus(formStatus, 'success', 'Dados carregados para edição. Faça as alterações e salve.');
+      } catch (error) {
+        alert('Erro ao carregar imóvel: ' + error.message);
+      }
+    }
+
+    // Republicar imóvel
+    async function republishProperty(id) {
+      try {
+        const result = await api(`/api/imoveis/${id}/republicar`, { method: 'POST' });
+        if (result && result.url) {
+          window.open(result.url, '_blank', 'noopener');
+          await loadProperties();
+        } else {
+          alert('Erro ao republicar imóvel.');
+        }
+      } catch (error) {
+        alert('Erro ao republicar: ' + error.message);
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    async function publishPage(id) {
+      clearStatus(formStatus);
+      try {
+        const result = await api(`/api/imoveis/${id}/publicar`, { method: 'POST' });
+        setStatus(formStatus, 'success', `Página publicada com sucesso: ${result.url}`);
+        await loadProperties();
+      } catch (error) {
+        setStatus(formStatus, 'error', error.message);
+      }
+    }
+
+    async function deleteProperty(id) {
+      if (!confirm('Deseja realmente excluir este imóvel?')) {
+        return;
+      }
+
+      clearStatus(formStatus);
+      try {
+        await api(`/api/imoveis/${id}`, { method: 'DELETE' });
+        setStatus(formStatus, 'success', 'Imóvel excluído com sucesso.');
+        await loadProperties();
+      } catch (error) {
+        setStatus(formStatus, 'error', error.message);
+      }
+    }
+
+    async function incorporarInformacoes(id) {
+      clearStatus(formStatus);
+      const fontesTexto = capturaFonte.value.trim();
+      const fontes = fontesTexto
+        .split(/\r?\n/)
+        .map(item => item.trim())
+        .filter(Boolean);
+
+      const isLikelyPathOrUrl = (value) => {
+        const item = String(value || '').trim();
+        if (!item) return false;
+        if (/^https?:\/\//i.test(item)) return true;
+        if (/^[a-zA-Z]:[\\/]/.test(item)) return true;
+        if (item.startsWith('./') || item.startsWith('../') || item.startsWith('.\\') || item.startsWith('..\\') || item.startsWith('\\\\')) return true;
+        if (item.includes('\\') || item.includes('/')) return true;
+        if (/\.(pdf|docx|txt|md|csv|xlsx?|html?)$/i.test(item)) return true;
+        return false;
+      };
+
+      let finalFontes = fontes;
+      if (!finalFontes.length) {
+        setStatus(formStatus, 'error', 'Preencha o campo "Fonte para captação" acima com link, texto, arquivo ou pasta antes de clicar em "Adicionar Informações".');
+        capturaFonte.focus();
+        return;
+      } else if (finalFontes.every(item => !isLikelyPathOrUrl(item) && !item.startsWith('text:'))) {
+        finalFontes = [fontesTexto];
+      }
+
+      try {
+        const result = await api(`/api/imoveis/${id}/incorporar`, {
+          method: 'POST',
+          body: JSON.stringify({ fontes: finalFontes }),
+        });
+        const aviso = result.aviso ? ` Aviso: ${result.aviso}` : '';
+        setStatus(formStatus, 'success', `${result.message || 'Informações incorporadas.'}${aviso}`);
+        await loadProperties();
+      } catch (error) {
+        setStatus(formStatus, 'error', error.message);
+      }
+    }
+
+    window.publishPage = publishPage;
+    window.generateExcel = generateExcel;
+    window.generatePDF = generatePDF;
+    window.editProperty = editProperty;
+    window.republishProperty = republishProperty;
+    window.deleteProperty = deleteProperty;
+    window.incorporarInformacoes = incorporarInformacoes;
+    window.resetPropertyForm = resetPropertyForm;
+
+    document.getElementById('imagens')?.addEventListener('input', renderImagensPreview);
+    document.getElementById('fotos')?.addEventListener('input', renderImagensPreview);
+    renderImagensPreview();
+
+    async function acionarExtracaoBot() {
+      // Mantido por compatibilidade: agora usa exatamente o mesmo fluxo do BOTÃO 10.
+      return capturarInformacoes();
+    }
+  </script>
+</body>
+</html>
