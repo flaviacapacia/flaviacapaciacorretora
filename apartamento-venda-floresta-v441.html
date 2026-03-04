@@ -1251,387 +1251,58 @@ footer {
 </div>
 
 
-
-<!-- Formulário de contato -->
-
-  
-
-<section class="form-contato">
-
- 
-
-  <form id="contatoForm">
-
-  <h2>Quero mais informações</h2> <!-- título do formulário -->
-
-
-
-  <div class="field">
-
-    <label for="nome">Nome</label>
-
-    <input type="text" name="nome" id="nome" required>
-
-  </div>
-
-
-
-  <div class="field">
-
-    <label for="telefone">Telefone</label>
-
-    <input type="tel" name="telefone" id="telefone" required>
-
-  </div>
-
-
-
-  <div class="field">
-
-    <label for="email">Email</label>
-
-    <input type="email" name="email" id="email" required>
-
-  </div>
-
-
-
-  <div class="field">
-
-    <label for="mensagem">Mensagem</label>
-
-    <textarea name="mensagem" id="mensagem"></textarea>
-
-  </div>
-
-
-
-  <input type="submit" id="button" value="Quero mais informações">
-
-</form>
-
-<!-- Script do formulário - Salva em CSV + envia para WhatsApp -->
-
-<script>
-
-  const form = document.getElementById("contatoForm");
-
-  const button = document.getElementById("button");
-
-  const WHATSAPP_NUMBER = "5548999600601"; // Número da Flavia
-
-
-
-  form.addEventListener("submit", function(e) {
-
-    e.preventDefault();
-
-
-
-    button.value = "Processando...";
-
-    button.disabled = true;
-
-
-
-    const nome = document.getElementById("nome").value;
-
-    const telefone = document.getElementById("telefone").value;
-
-    const email = document.getElementById("email").value;
-
-    const mensagem = document.getElementById("mensagem").value;
-
-
-
-    const data = {
-
-      nome: nome,
-
-      telefone: telefone,
-
-      email: email,
-
-      mensagem: mensagem,
-
-      data: new Date().toLocaleString("pt-BR")
-
-    };
-
-
-
-    // 1️⃣ Salvar em CSV via backend Python
-
-    fetch("http://localhost:5000/salvar-contato", {
-
-      method: "POST",
-
-      headers: {
-
-        "Content-Type": "application/json"
-
-      },
-
-      body: JSON.stringify(data)
-
-    })
-
-    .then(response => response.json())
-
-    .then(result => {
-
-      console.log("✅ Contato salvo em CSV");
-
-      // 2️⃣ Abrir WhatsApp após salvar
-
-      abrirWhatsApp(nome, telefone, email, mensagem);
-
-    })
-
-    .catch(err => {
-
-      console.warn("⚠️ Backend offline, abrindo WhatsApp mesmo assim...", err);
-
-      // Abrir WhatsApp mesmo se backend falhar
-
-      abrirWhatsApp(nome, telefone, email, mensagem);
-
-    });
-
-
-
-    function abrirWhatsApp(nome, telefone, email, mensagem) {
-
-      const textoWhatsApp = `Olá! 👋\n\nNome: ${nome}\nTelefone: ${telefone}\nEmail: ${email}\n\nMensagem:\n${mensagem}`;
-
-      const linkWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(textoWhatsApp)}`;
-
-      
-
-      // Abrir WhatsApp em nova aba
-
-      window.open(linkWhatsApp, "_blank");
-
-      
-
-      // Limpar e resetar formulário
-
-      setTimeout(() => {
-
-        alert("✅ Seu contato foi salvo! WhatsApp está abrindo...");
-
-        button.value = "Quero mais informações";
-
-        button.disabled = false;
-
-        form.reset();
-
-      }, 500);
-
-    }
-
-  });
-
-</script>
-
-</section>
-
-<!-- Script do Swiper -->
-
-<script>
-
-  document.addEventListener("DOMContentLoaded", () => {
-
-    var swiper = new Swiper(".swiper", {
-
-      slidesPerView: 6,
-
-      spaceBetween: 10,
-
-      pagination: { el: ".swiper-pagination", clickable: true },
-
-      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
-
-    });
-
-  });
-
-</script>
-
-
-
-<!-- Botão Whatsapp flutuante -->
-
-<a href="https://wa.me/5548999600601" 
-
-   class="whatsapp-btn-fixed" 
-
-   target="_blank">
-
-   💬 Fale pelo WhatsApp
-
-</a>
-
-
-
-<!-- Footer -->
-
-<footer class="site-footer" id="contato">
-
-  <div class="footer-container">
-
-    
-
-    <!-- Logo com link -->
-
-    <div class="footer-logo">
-
-      <a href="index.html">
-
-        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:220,h:220,mx" 
-
-             alt="Logo Flavia Imóveis"/>
-
-      </a>
-
-    </div>
-
-
-
-    <!-- Contato -->
-
-    <div class="footer-contact">
-
-      <h3>Contato</h3>
-
-      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
-
-      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-
-      <p>Florianópolis • Palhoça <br> São José</p>
-
-    </div>
-
-
-
-    <!-- Redes sociais -->
-
-    <div class="footer-social">
-
-      <h3>Redes Sociais</h3>
-
+    <section class="lead-box">
+      <p>Gostou deste imóvel em Ratones? Fale com a corretora para agendar visita.</p>
+      <a class="btn-whatsapp" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20informações%20sobre%20o%20imóvel%20V449." target="_blank" rel="noopener noreferrer">📲 Falar no WhatsApp</a>
+    </section>
+
+    <section class="outros-imoveis">
+      <h2>Imóveis em destaque</h2>
       <ul>
-
-        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
-
-        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
-
-        <li><a href="https://linkedin.com/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
-
-        <li><a href="https://youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
-
+        <li><a href="apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a></li>
+        <li><a href="apartamento-venda-kobrasol-v440.html">Apartamento no Kobrasol</a></li>
+        <li><a href="apartamento-venda-floresta-v441.html">Apartamento na Floresta</a></li>
+        <li><a href="apartamento-venda-centro-v447.html">Apartamento no Centro</a></li>
+        <li><a href="apartamento-venda-trindade-v448.html">Apartamento na Trindade</a></li>
+        <li><a href="apartamento-venda-ratones-v449.html">Casa em Ratones</a></li>
       </ul>
+    </section>
+  </main>
 
+  <footer class="site-footer" id="contato">
+    <div class="footer-container">
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
+        <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+        <p>Florianópolis • São José</p>
+        <p>Palhoça</p>
+      </div>
+
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis"/>
+        </a>
+      </div>
+
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <ul>
+          <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
     </div>
 
-  </div>
-
-
-
-  <!-- Créditos -->
-
-  <div class="footer-credit">
-
-    Feito com 💛 <strong>Capacia Group</strong> 💛
-
-  </div>
-
-</footer>
-
-
-
-<!-- Scripts no final do body -->
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-// contact-backend-handler
-document.addEventListener("DOMContentLoaded", () => {
-  const forms = document.querySelectorAll('form#contatoForm, form.form-captacao');
-  if (!forms.length) return;
-
-  forms.forEach((form) => {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-
-      const submitEl = form.querySelector('input[type="submit"], button[type="submit"]');
-      if (submitEl) submitEl.disabled = true;
-
-      let msgEl = form.querySelector(".form-msg");
-      if (!msgEl) {
-        msgEl = document.createElement("div");
-        msgEl.className = "form-msg";
-        msgEl.style.marginTop = "10px";
-        msgEl.style.fontSize = "0.95rem";
-        form.appendChild(msgEl);
-      }
-      msgEl.textContent = "Enviando...";
-      msgEl.style.color = "#333";
-
-      const formData = new FormData(form);
-      const data = {
-        nome: formData.get("nome") || "",
-        telefone: formData.get("telefone") || "",
-        email: formData.get("email") || "",
-        mensagem: formData.get("mensagem") || "",
-        data: new Date().toLocaleString("pt-BR")
-      };
-
-      fetch("http://localhost:5000/salvar-contato", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      })
-        .then((resp) => {
-          if (!resp.ok) throw new Error("request-failed");
-          return resp.json().catch(() => ({}));
-        })
-        .then(() => {
-          msgEl.textContent = "Contato enviado com sucesso.";
-          msgEl.style.color = "green";
-          form.reset();
-        })
-        .catch(() => {
-          msgEl.textContent = "Erro ao enviar. Tente novamente.";
-          msgEl.style.color = "red";
-        })
-        .finally(() => {
-          if (submitEl) submitEl.disabled = false;
-        });
-    }, true);
-  });
-});
-</script>
+    <div class="footer-credit">
+      <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+      Feito com 💛 por <strong>Capacia Group</strong> 💛
+    </div>
+  </footer>
 </body>
-
-
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
