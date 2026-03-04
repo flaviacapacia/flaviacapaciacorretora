@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apartamento à venda em Campinas - Portal do Sol | Código VXXX</title>
+  <meta name="description" content="Apartamento reformado, 2 dormitórios, 43m², vaga rotativa, desocupado, bairro Campinas, São José. Ótima opção para morar ou investir." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --fundo-branco: #ffffff;
+      --texto-bronze: #4B3A2F;
+      --bronze-claro: #7A5C45;
+      --dourado: #b08d57;
+      --borda: #e8dfd6;
+      --fonte-padrao: 'Playfair Display', serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--fundo-branco); color: var(--texto-bronze); font-family: var(--fonte-padrao); line-height: 1.6; }
+    .site-header { background: #fff; border-bottom: 1px solid #ddd; padding: 18px 20px; text-align: center; }
+    .logo-area img { max-width: 170px; height: auto; }
+    .imovel-page { max-width: 1050px; margin: 0 auto; padding: 30px 18px; }
+    h1 { text-align: center; color: var(--dourado); margin: 0; font-size: 2rem; }
+    .preco { margin: 8px 0 2px; text-align: center; font-size: 1.55rem; color: var(--bronze-claro); font-weight: 700; }
+    .codigo { text-align: center; margin: 0 0 28px; color: #6d635b; font-size: 0.95rem; }
+    .card { background: #fff; border: 1px solid var(--borda); border-radius: 12px; padding: 18px; margin-bottom: 18px; }
+    .card h2 { margin: 0 0 12px; color: var(--texto-bronze); font-size: 1.3rem; }
+    .detalhes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px 12px; }
+    .detalhes li { border-bottom: 1px solid #f3ede7; padding: 6px 0; }
+    .descricao p { margin: 0 0 12px; }
+    .grid-fotos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+    .grid-fotos img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--borda); transition: transform 0.28s ease; }
+        /* Lightbox overlay */
+        .lightbox-overlay {
+          position: fixed;
+          top: 0; left: 0; width: 100vw; height: 100vh;
+          background: rgba(0,0,0,0.8);
+          display: none;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+        }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-img {
+          max-width: 90vw;
+          max-height: 90vh;
+          border-radius: 12px;
+          box-shadow: 0 0 24px #0008;
+          background: #fff;
+        }
+        .lightbox-close {
+          position: absolute;
+          top: 32px;
+          right: 48px;
+          font-size: 2.5rem;
+          color: #fff;
+          cursor: pointer;
+          z-index: 10000;
+          background: none;
+          border: none;
+        }
+    .grid-fotos img:hover { transform: scale(1.02); }
+    .lead-box { text-align: center; padding: 24px 18px; border: 1px solid var(--borda); border-radius: 12px; margin-top: 24px; background: #fcfbfa; }
+    .btn-whatsapp { display: inline-block; margin-top: 10px; text-decoration: none; background: var(--dourado); color: #fff; font-weight: 700; padding: 12px 18px; border-radius: 8px; }
+    .site-footer { background: #ffffff; color: #000000; padding: 40px 20px; font-family: var(--fonte-padrao); margin-top: 34px; border-top: 1px solid #ddd; }
+    .footer-container { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; max-width: 1000px; margin: 0 auto; gap: 20px; }
+    .footer-contact, .footer-logo, .footer-social { text-align: center; }
+    .footer-logo img { width: 180px; transition: transform 0.7s ease; }
+    .footer-logo img:hover { transform: scale(1.05); }
+    .footer-contact h3, .footer-social h3 { color: var(--dourado); margin-bottom: 10px; }
+    .footer-contact a, .footer-social a { color: var(--dourado); text-decoration: none; overflow-wrap: anywhere; }
+    .footer-contact a:hover, .footer-social a:hover { color: var(--dourado); text-decoration: underline; background: none; }
+    .footer-contact p { color: var(--dourado); font-size: 16px; margin: 6px 0; }
+    .footer-social ul { list-style: none; padding: 0; margin: 0; }
+    .footer-social li { margin-bottom: 8px; }
+    .footer-credit { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #000000; }
+    @media (max-width: 900px) { .footer-container { grid-template-columns: 1fr; gap: 20px; } }
+    @media (max-width: 560px) { .grid-fotos { grid-template-columns: 1fr; } .grid-fotos img { height: 250px; } .footer-container { grid-template-columns: 1fr; gap: 20px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo" />
+    </div>
+  </header>
+  <main class="imovel-page">
+    <h1>Apartamento à venda em Campinas - Portal do Sol</h1>
+    <p class="preco">Consulte valor</p>
+    <p class="codigo">Código: VXXX</p>
+    <section class="card">
+      <h2>Resumo do imóvel</h2>
+      <ul class="detalhes">
+        <li><strong>Categoria:</strong> Apartamento</li>
+        <li><strong>Tipo:</strong> Venda - apartamento em condomínio</li>
+        <li><strong>Bairro:</strong> Campinas</li>
+        <li><strong>Cidade:</strong> São José/SC</li>
+        <li><strong>Endereço:</strong> Portal do Sol, 4º andar</li>
+        <li><strong>Área útil:</strong> 43 m²</li>
+        <li><strong>Quartos:</strong> 2</li>
+        <li><strong>Banheiros:</strong> 1</li>
+        <li><strong>Vagas na garagem:</strong> Rotativa e descoberta</li>
+        <li><strong>Características:</strong> Todo reformado, elétrica nova, desocupado</li>
+        <li><strong>Condomínio:</strong> Sem elevador</li>
+      </ul>
+    </section>
+    <section class="card descricao">
+      <h2>Descrição completa</h2>
+      <p>Apartamento no Portal do Sol, 4º andar, com 43 m² de área privativa, totalmente reformado, elétrica nova, desocupado, vaga rotativa e descoberta. Ideal para quem busca qualidade de vida em Campinas, bairro tradicional de São José, com excelente localização, próximo a comércios, serviços, escolas e transporte. Ótima opção para investidores, pois a locação está em alta na região.</p>
+      <p>O bairro Campinas é reconhecido pela infraestrutura completa, segurança, lazer e fácil acesso ao centro de São José e Florianópolis. Excelente para morar ou investir!</p>
+    </section>
+    <section class="card">
+      <h2>Galeria de fotos</h2>
+      <div class="grid-fotos">
+        <img src="img/portaldosol1.jpeg" alt="Portal do Sol 1" loading="eager" class="lightbox-thumb" />
+        <img src="img/portaldosol2.jpeg" alt="Portal do Sol 2" loading="lazy" class="lightbox-thumb" />
+        <img src="img/portaldosol3.jpeg" alt="Portal do Sol 3" loading="lazy" class="lightbox-thumb" />
+        <img src="img/portaldosol4.jpeg" alt="Portal do Sol 4" loading="lazy" class="lightbox-thumb" />
+        <img src="img/portaldosol5.jpeg" alt="Portal do Sol 5" loading="lazy" class="lightbox-thumb" />
+        <img src="img/portaldosol6.jpeg" alt="Portal do Sol 6" loading="lazy" class="lightbox-thumb" />
+        <img src="img/portaldosol7.jpeg" alt="Portal do Sol 7" loading="lazy" class="lightbox-thumb" />
+        <img src="img/portaldosol8.jpeg" alt="Portal do Sol 8" loading="lazy" class="lightbox-thumb" />
+        <img src="img/portaldosol9.jpeg" alt="Portal do Sol 9" loading="lazy" class="lightbox-thumb" />
+        <img src="img/portaldosol10.jpeg" alt="Portal do Sol 10" loading="lazy" class="lightbox-thumb" />
+      </div>
+    </section>
+    <section class="lead-box">
+          <!-- Lightbox overlay -->
+          <div class="lightbox-overlay" id="lightboxOverlay">
+            <button class="lightbox-close" id="lightboxClose" title="Fechar">&times;</button>
+            <img src="" alt="Imagem ampliada" class="lightbox-img" id="lightboxImg" />
+          </div>
+      <p>Gostou deste imóvel em Campinas? Fale com a corretora para agendar visita.</p>
+      <a class="btn-whatsapp" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20informações%20sobre%20o%20imóvel%20VXXX." target="_blank" rel="noopener noreferrer">📲 Falar no WhatsApp</a>
+    </section>
+  </main>
+  <footer class="site-footer" id="contato">
+    <div class="footer-container">
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
+        <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+        <p>Florianópolis • São José</p>
+        <p>Palhoça</p>
+      </div>
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis"/>
+        </a>
+      </div>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <ul>
+          <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-credit">
+      <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+      Feito com 💛 por <strong>Capacia Group</strong> 💛
+    </div>
+  </footer>
+<script>
+  // Lightbox functionality
+  document.querySelectorAll('.lightbox-thumb').forEach(function(img) {
+    img.addEventListener('click', function() {
+      var overlay = document.getElementById('lightboxOverlay');
+      var lightboxImg = document.getElementById('lightboxImg');
+      lightboxImg.src = img.src;
+      overlay.classList.add('active');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightboxOverlay').classList.remove('active');
+    document.getElementById('lightboxImg').src = '';
+  });
+  document.getElementById('lightboxOverlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.classList.remove('active');
+      document.getElementById('lightboxImg').src = '';
+    }
+  });
+</script>
+</body>
+</html>
