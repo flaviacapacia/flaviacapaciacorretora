@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apartamento à venda em Campinas - Morada do Sol | Código V457</title>
-  <meta name="description" content="Apartamento reformado, 2 dormitórios, 43m², vaga rotativa, desocupado, bairro Campinas, São José. Ótima opção para morar ou investir." />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <meta name="description" content="Apartamento reformado, 2 dormitórios, amplo, 43m², vaga de garagem, desocupado, bairro Campinas, São José. Ótima opção para morar ou investir." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --fundo-branco: #ffffff;
@@ -13,10 +13,10 @@
       --bronze-claro: #7A5C45;
       --dourado: #b08d57;
       --borda: #e8dfd6;
-      --fonte-padrao: 'Playfair Display', serif;
+      --fonte-padrao: 'Inter', 'Playfair Display', Arial, sans-serif;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--fundo-branco); color: var(--texto-bronze); font-family: var(--fonte-padrao); line-height: 1.6; }
+    body { margin: 0; background: var(--fundo-branco); color: var(--texto-bronze); font-family: var(--fonte-padrao); line-height: 1.6; font-variant-numeric: tabular-nums; }
     .site-header { background: #fff; border-bottom: 1px solid #ddd; padding: 18px 20px; text-align: center; }
     .logo-area img { max-width: 170px; height: auto; }
     .imovel-page { max-width: 1050px; margin: 0 auto; padding: 30px 18px; }
@@ -85,7 +85,7 @@
     </div>
   </header>
   <main class="imovel-page">
-    <h1>Apartamento à venda em Campinas - Portal do Sol</h1>
+    <h1>Apartament o à venda em Campinas - Morada do Sol</h1>
     <p class="preco">R$355.000,00</p>
     <p class="codigo">Código: V457</p>
     <section class="card">
@@ -134,30 +134,204 @@
     <p>Fale com a corretora, solicite sua simulação e agende sua visita!</p>
   </section>
 </article>
-
+    </section>
     <section class="card">
       <h2>Galeria de fotos</h2>
-      <div class="grid-fotos">
-        <img src="img/portaldosol1.jpeg" alt="Portal do Sol 1" loading="eager" class="lightbox-thumb" />
-        <img src="img/portaldosol2.jpeg" alt="Portal do Sol 2" loading="lazy" class="lightbox-thumb" />
-        <img src="img/portaldosol3.jpeg" alt="Portal do Sol 3" loading="lazy" class="lightbox-thumb" />
-        <img src="img/portaldosol4.jpeg" alt="Portal do Sol 4" loading="lazy" class="lightbox-thumb" />
-        <img src="img/portaldosol5.jpeg" alt="Portal do Sol 5" loading="lazy" class="lightbox-thumb" />
-        <img src="img/portaldosol6.jpeg" alt="Portal do Sol 6" loading="lazy" class="lightbox-thumb" />
-        <img src="img/portaldosol7.jpeg" alt="Portal do Sol 7" loading="lazy" class="lightbox-thumb" />
-        <img src="img/portaldosol8.jpeg" alt="Portal do Sol 8" loading="lazy" class="lightbox-thumb" />
-        <img src="img/portaldosol9.jpeg" alt="Portal do Sol 9" loading="lazy" class="lightbox-thumb" />
-        <img src="img/portaldosol10.jpeg" alt="Portal do Sol 10" loading="lazy" class="lightbox-thumb" />
+      <style>
+        .zoom-gallery {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 22px;
+        }
+        .zoom-container {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 1/1;
+          min-width: 0;
+          min-height: 0;
+          overflow: hidden;
+          border-radius: 14px;
+          border: 2px solid var(--dourado);
+          cursor: zoom-in;
+          background: #fff;
+        }
+        .zoom-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s;
+        }
+        .zoom-container:hover img {
+          transform: scale(1.5);
+          z-index: 2;
+        }
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0;
+          top: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0,0,0,0.8);
+          justify-content: center;
+          align-items: center;
+        }
+        .modal.active {
+          display: flex;
+        }
+        .modal-content {
+          position: relative;
+          background: #fff;
+          padding: 24px;
+          border-radius: 18px;
+          box-shadow: 0 0 24px #0005;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .modal-content img {
+          width: 480px;
+          height: 480px;
+          object-fit: cover;
+          border-radius: 14px;
+          margin-bottom: 16px;
+        }
+        .carousel-controls {
+          display: flex;
+          gap: 18px;
+          justify-content: center;
+          margin-top: 8px;
+        }
+        .carousel-btn {
+          background: var(--dourado);
+          color: #fff;
+          border: none;
+          padding: 10px 22px;
+          border-radius: 10px;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: bold;
+          box-shadow: 0 2px 8px #b08d5733;
+          transition: background 0.2s;
+        }
+        .carousel-btn:hover {
+          background: #7A5C45;
+        }
+        .close-btn {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: var(--dourado);
+          color: #fff;
+          border: none;
+          border-radius: 50%;
+          width: 38px;
+          height: 38px;
+          font-size: 22px;
+          cursor: pointer;
+          font-weight: bold;
+          box-shadow: 0 2px 8px #b08d5733;
+          transition: background 0.2s;
+        }
+        .close-btn:hover {
+          background: #7A5C45;
+        }
+        @media (max-width: 900px) {
+          .zoom-gallery {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .modal-content img {
+            width: 320px;
+            height: 320px;
+          }
+        }
+        @media (max-width: 600px) {
+          .zoom-gallery {
+            grid-template-columns: 1fr;
+          }
+          .modal-content img {
+            width: 98vw;
+            height: 60vw;
+          }
+        }
+      </style>
+      <div class="zoom-gallery">
+        <div class="zoom-container" onclick="openModal(0)">
+          <img src="img/portaldosol1.jpeg" alt="Portal do Sol 1" />
+        </div>
+        <div class="zoom-container" onclick="openModal(1)">
+          <img src="img/portaldosol2.jpeg" alt="Portal do Sol 2" />
+        </div>
+        <div class="zoom-container" onclick="openModal(2)">
+          <img src="img/portaldosol3.jpeg" alt="Portal do Sol 3" />
+        </div>
+        <div class="zoom-container" onclick="openModal(3)">
+          <img src="img/portaldosol11.jpeg" alt="Portal do Sol 4" />
+        </div>
+        <div class="zoom-container" onclick="openModal(4)">
+          <img src="img/portaldosol5.jpeg" alt="Portal do Sol 5" />
+        </div>
+        <div class="zoom-container" onclick="openModal(5)">
+          <img src="img/portaldosol6.jpeg" alt="Portal do Sol 6" />
+        </div>
+        <div class="zoom-container" onclick="openModal(6)">
+          <img src="img/portaldosol7.jpeg" alt="Portal do Sol 7" />
+        </div>
+        <div class="zoom-container" onclick="openModal(7)">
+          <img src="img/portaldosol8.jpeg" alt="Portal do Sol 8" />
+        </div>
+        <div class="zoom-container" onclick="openModal(8)">
+          <img src="img/portaldosol9.jpeg" alt="Portal do Sol 9" />
+        </div>
       </div>
-    </section>
-    <section class="lead-box">
-          <!-- Lightbox overlay -->
-          <div class="lightbox-overlay" id="lightboxOverlay">
-            <button class="lightbox-close" id="lightboxClose" title="Fechar">&times;</button>
-            <img src="" alt="Imagem ampliada" class="lightbox-img" id="lightboxImg" />
+      <div id="imageModal" class="modal">
+        <div class="modal-content">
+          <button class="close-btn" onclick="closeModal()">&times;</button>
+          <img id="modalImage" src="" alt="Imagem ampliada" />
+          <div class="carousel-controls">
+            <button class="carousel-btn" onclick="prevImage()">Anterior</button>
+            <button class="carousel-btn" onclick="nextImage()">Próxima</button>
           </div>
-      <p>Gostou deste imóvel em Campinas? Fale com a corretora para agendar visita.</p>
-      <a class="btn-whatsapp" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20informações%20sobre%20o%20imóvel%20VXXX." target="_blank" rel="noopener noreferrer">📲 Falar no WhatsApp</a>
+        </div>
+      </div>
+      <script>
+        const images = [
+          "img/portaldosol1.jpeg",
+          "img/portaldosol2.jpeg",
+          "img/portaldosol3.jpeg",
+          "img/portaldosol11.jpeg",
+          "img/portaldosol5.jpeg",
+          "img/portaldosol6.jpeg",
+          "img/portaldosol7.jpeg",
+          "img/portaldosol8.jpeg",
+          "img/portaldosol9.jpeg"
+        ];
+        let currentIndex = 0;
+
+        function openModal(index) {
+          currentIndex = index;
+          document.getElementById('modalImage').src = images[currentIndex];
+          document.getElementById('imageModal').classList.add('active');
+        }
+
+        function closeModal() {
+          document.getElementById('imageModal').classList.remove('active');
+        }
+
+        function prevImage() {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          document.getElementById('modalImage').src = images[currentIndex];
+        }
+
+        function nextImage() {
+          currentIndex = (currentIndex + 1) % images.length;
+          document.getElementById('modalImage').src = images[currentIndex];
+        }
+      </script>
+      <div style="text-align:center; margin-top:18px;">
+        <a class="btn-whatsapp" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20informações%20sobre%20o%20imóvel%20VXXX." target="_blank" rel="noopener noreferrer">📲 Falar no WhatsApp</a>
+      </div>
     </section>
   </main>
   <footer class="site-footer" id="contato">
@@ -189,28 +363,5 @@
       Feito com 💛 por <strong>Capacia Group</strong> 💛
     </div>
   </footer>
-<script>
-  // Lightbox functionality
-  document.querySelectorAll('.lightbox-thumb').forEach(function(img) {
-    img.addEventListener('click', function() {
-      var overlay = document.getElementById('lightboxOverlay');
-      var lightboxImg = document.getElementById('lightboxImg');
-      lightboxImg.src = img.src;
-      overlay.classList.add('active');
-    });
-  });
-  document.getElementById('lightboxClose').addEventListener('click', function() {
-    document.getElementById('lightboxOverlay').classList.remove('active');
-    document.getElementById('lightboxImg').src = '';
-  });
-  document.getElementById('lightboxOverlay').addEventListener('click', function(e) {
-    if (e.target === this) {
-      this.classList.remove('active');
-      document.getElementById('lightboxImg').src = '';
-    }
-  });
-</script>
 </body>
 </html>
-
-
