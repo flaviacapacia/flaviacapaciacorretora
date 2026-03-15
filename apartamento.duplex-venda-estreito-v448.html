@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>APARTAMENTO À VENDA DUPLEX COM 3 DORMITORIOS NO BALNEARIO DO ESTREITO EM FLORIANOPOLIS /SC | V448</title>
   <meta name="description" content="Adega x Churrasqueira x Espera para split Lavabo Sala de TV OUTROS AMBIENTES DA UNIDADE: Água quente Copa Estar Íntimo x Living Sauna 2 Salas: x Alarme Copa Coz" />
-  <meta property="og:title" content="APARTAMENTO À VENDA DUPLEX COM 3 DORMITORIOS NO BALNEARIO DO ESTREITO EM FLORIANOPOLIS /SC | V500" />
+  <meta property="og:title" content="APARTAMENTO À VENDA DUPLEX COM 3 DORMITORIOS NO BALNEARIO DO ESTREITO EM FLORIANOPOLIS /SC | V448" />
   <meta property="og:description" content="Adega x Churrasqueira x Espera para split Lavabo Sala de TV OUTROS AMBIENTES DA UNIDADE: Água quente Copa Estar Íntimo x Living Sauna 2 Salas: x Alarme Copa Coz" />
   <meta property="og:image" content="12.0 sacada mesanino.jpg" alt="12.0 sacada mesanino"" />
   <meta property="og:type" content="website" />
@@ -191,6 +191,18 @@
           .modal-content img {
             width: 98vw;
             height: 60vw;
+            #modalImage {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+#modalImage.zoomed {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+
           }
         }
       </style> 
@@ -220,23 +232,23 @@
   <h2>Resumo do imóvel</h2>
   <ul class="detalhes">
     <li><strong>Categoria:</strong> Apartamento</li>
-    <li><strong>Tipo:</strong> Venda - Duplex</li>
+    <li><strong>Tipo:</strong> Duplex</li>
     <li><strong>Bairro:</strong> Balneário do Estreito</li>
     <li><strong>Cidade:</strong> Florianópolis/SC</li>
-     <li><strong>Área total:</strong>214,00</li>
-     <li><strong>Área privativa:</strong>152,00</li>
+     <li><strong>Área total:</strong> 214,00</li>
+     <li><strong>Área privativa:</strong> 152,00</li>
     <li><strong>Quartos:</strong> 3</li>
     <li><strong>Suítes:</strong> 1</li>
     <li><strong>Banheiros:</strong> 3</li>
     <li><strong>Vagas na garagem:</strong> 2 (com hobby box)</li>
     <li><strong>Condomínio:</strong> R$980,00</li>
-    <li><strong>Detalhes:</strong> Sala ampla com mezanino, sacada com churrasqueira, cozinha americana, área de serviço, piscina e salão de festas</li>
+   
   </ul>
 </section>
 
     
    <section class="card">
-  <h2>Descrição profissional do imóvel</h2>
+  <h2>Descrição do imóvel</h2>
   <article>
     <p>
       Apartamento Duplex à venda com 3 dormitórios no Balneário do Estreito em Florianópolis/SC. Este imóvel combina espaço, modernidade e lazer em um só lugar, ideal para quem busca qualidade de vida e valorização patrimonial.
@@ -247,6 +259,7 @@
     <p>
       O duplex conta ainda com 3 banheiros bem distribuídos, área de serviço funcional, sacada adicional e vaga de garagem dupla com hobby box para armazenamento extra. O condomínio oferece infraestrutura completa, incluindo salão de festas para celebrações especiais e piscina para relaxar e aproveitar os dias de sol.
     </p>
+      <h3>Sobre o bairro</h3>
     <p>
       O Balneário do Estreito é um dos bairros mais valorizados de Florianópolis, com excelente infraestrutura de comércio, serviços, escolas e lazer. Sua localização estratégica garante fácil acesso ao centro da cidade e às principais vias da região, tornando-o uma escolha segura tanto para moradia quanto para investimento.
     </p>
@@ -271,9 +284,7 @@
     <div class="zoom-container" onclick="openModal(3)">
       <img src="1.0 sala.jpg" alt="1.0 sala" />
     </div>
-    <div class="zoom-container" onclick="openModal(4)">
-      <img src="1.1 sala.jpg" alt="1.1 sala" />
-    </div>
+   
     <div class="zoom-container" onclick="openModal(5)">
       <img src="1.1 sala.jpg" alt="1.1 sala" />
     </div>
@@ -319,7 +330,6 @@
     "12.1 sacada mesanino.jpg",
     "12.8 sacada mesanino.jpg",
     "1.0 sala.jpg",
-    "1.1 sala.jpg",
     "1.1 sala.jpg",
     "3.0 cozinha.jpg",
     "2.0 sacada.jpg",
