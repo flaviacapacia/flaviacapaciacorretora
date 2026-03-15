@@ -283,19 +283,13 @@
     <div class="zoom-container" onclick="openModal(7)">
       <img src="2.0 sacada.jpg" alt="2.0 sacada" />
     </div>
-    <div class="zoom-container" onclick="openModal(8)">
-      <img src="2.3 sacada.jpg" alt="2.3 sacada" />
-    </div>
-    <div class="zoom-container" onclick="openModal(9)">
+      <div class="zoom-container" onclick="openModal(9)">
       <img src="4.0 area de serviço.jpg" alt="4.0 area de serviço" />
     </div>
     <div class="zoom-container" onclick="openModal(10)">
       <img src="7.0 quarto 2.jpg" alt="7.0 quarto 2" />
     </div>
-    <div class="zoom-container" onclick="openModal(11)">
-      <img src="6.0 quarto 1.jpg" alt="6.0 quarto 1" />
-    </div>
-    <div class="zoom-container" onclick="openModal(12)">
+     <div class="zoom-container" onclick="openModal(12)">
       <img src="11.0 sala mesanino.jpg" alt="11.0 sala mesanino" />
     </div>
     <div class="zoom-container" onclick="openModal(13)">
@@ -304,14 +298,58 @@
     <div class="zoom-container" onclick="openModal(14)">
       <img src="11.4 sala mesanino.jpg" alt="11.4 sala mesanino" />
     </div>
-    <div class="zoom-container" onclick="openModal(15)">
-      <img src="14.5 salao de festas.jpg" alt="14.5 salao de festas" />
-    </div>
+ 
     <div class="zoom-container" onclick="openModal(16)">
       <img src="14.0 piscina.jpg" alt="14.0 piscina" />
     </div>
   </div>
 </section>
+<script>
+  const images = [
+    "12.0 sacada mesanino.jpg",
+    "12.1 sacada mesanino.jpg",
+    "12.8 sacada mesanino.jpg",
+    "1.0 sala.jpg",
+    "1.1 sala.jpg",
+    "1.1 sala.jpg",
+    "3.0 cozinha.jpg",
+    "2.0 sacada.jpg",
+    "4.0 area de serviço.jpg",
+    "7.0 quarto 2.jpg",
+   "11.0 sala mesanino.jpg",
+    "11.3 sala mesanino.jpg",
+    "11.4 sala mesanino.jpg",
+      "14.0 piscina.jpg"
+  ];
+
+  let currentIndex = 0;
+
+  function openModal(index) {
+    currentIndex = index;
+    document.getElementById('modalImage').src = images[currentIndex];
+    document.getElementById('imageModal').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('imageModal').classList.remove('active');
+    document.getElementById('modalImage').classList.remove('zoomed');
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('modalImage').src = images[currentIndex];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('modalImage').src = images[currentIndex];
+  }
+
+  // Controle de zoom ao clicar na imagem
+  document.getElementById('modalImage').addEventListener('click', function () {
+    this.classList.toggle('zoomed');
+  });
+</script>
 
 
      <section>
