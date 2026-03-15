@@ -75,137 +75,124 @@
     .footer-social li { margin-bottom: 8px; }
     .footer-credit { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #000000; }
     @media (max-width: 900px) { .footer-container { grid-template-columns: 1fr; gap: 20px; } .outros-imoveis ul { grid-template-columns: repeat(2, minmax(180px, 1fr)); } .zoom-gallery { grid-template-columns: repeat(2, 1fr); } .modal-content img { width: 320px; height: 320px; } }
-    @.zoom-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.zoom-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 2px solid var(--dourado);
-  cursor: zoom-in;
-  background: #fff;
-}
-
-.zoom-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.zoom-container:hover img {
-  transform: scale(1.5);
-  z-index: 2;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal.active {
-  display: flex;
-}
-
-.modal-content {
-  position: relative;
-  background: #fff;
-  padding: 24px;
-  border-radius: 18px;
-  box-shadow: 0 0 24px #0005;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal-content img {
-  width: 480px;
-  height: 480px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 16px;
-}
-
-.carousel-controls {
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-  margin-top: 8px;
-}
-
-.carousel-btn {
-  background: var(--dourado);
-  color: #fff;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  box-shadow: 0 2px 8px #b08d5733;
-  transition: background 0.2s;
-}
-
-.carousel-btn:hover {
-  background: #7A5C45;
-}
-
-.close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: var(--dourado);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  font-size: 22px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 2px 8px #b08d5733;
-  transition: background 0.2s;
-}
-
-.close-btn:hover {
-  background: #7A5C45;
-}
-
-@media (max-width: 900px) {
-  .zoom-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .modal-content img {
-    width: 320px;
-    height: 320px;
-  }
-}
-
-@media (max-width: 600px) {
-  .zoom-gallery {
-    grid-template-columns: 1fr;
-  }
-  .modal-content img {
-    width: 98vw;
-    height: 60vw;
-  }
-}
-
+    @media (max-width: 560px) { .footer-container { grid-template-columns: 1fr; gap: 20px; } .outros-imoveis ul { grid-template-columns: 1fr; } .zoom-gallery { grid-template-columns: 1fr; } .modal-content img { width: 98vw; height: 60vw; } }
+        .zoom-gallery {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 22px;
+        }
+        .zoom-container {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 1/1;
+          min-width: 0;
+          min-height: 0;
+          overflow: hidden;
+          border-radius: 14px;
+          border: 2px solid var(--dourado);
+          cursor: zoom-in;
+          background: #fff;
+        }
+        .zoom-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s;
+        }
+        .zoom-container:hover img {
+          transform: scale(1.5);
+          z-index: 2;
+        }
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0;
+          top: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0,0,0,0.8);
+          justify-content: center;
+          align-items: center;
+        }
+        .modal.active {
+          display: flex;
+        }
+        .modal-content {
+          position: relative;
+          background: #fff;
+          padding: 24px;
+          border-radius: 18px;
+          box-shadow: 0 0 24px #0005;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .modal-content img {
+          width: 480px;
+          height: 480px;
+          object-fit: cover;
+          border-radius: 14px;
+          margin-bottom: 16px;
+        }
+        .carousel-controls {
+          display: flex;
+          gap: 18px;
+          justify-content: center;
+          margin-top: 8px;
+        }
+        .carousel-btn {
+          background: var(--dourado);
+          color: #fff;
+          border: none;
+          padding: 10px 22px;
+          border-radius: 10px;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: bold;
+          box-shadow: 0 2px 8px #b08d5733;
+          transition: background 0.2s;
+        }
+        .carousel-btn:hover {
+          background: #7A5C45;
+        }
+        .close-btn {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: var(--dourado);
+          color: #fff;
+          border: none;
+          border-radius: 50%;
+          width: 38px;
+          height: 38px;
+          font-size: 22px;
+          cursor: pointer;
+          font-weight: bold;
+          box-shadow: 0 2px 8px #b08d5733;
+          transition: background 0.2s;
+        }
+        .close-btn:hover {
+          background: #7A5C45;
+        }
+        @media (max-width: 900px) {
+          .zoom-gallery {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .modal-content img {
+            width: 320px;
+            height: 320px;
+          }
+        }
+        @media (max-width: 600px) {
+          .zoom-gallery {
+            grid-template-columns: 1fr;
+          }
+          .modal-content img {
+            width: 98vw;
+            height: 60vw;
+          }
+        }
       </style> 
 </head>
 <body>
@@ -243,13 +230,13 @@
     <li><strong>Banheiros:</strong> 3</li>
     <li><strong>Vagas na garagem:</strong> 2 (com hobby box)</li>
     <li><strong>Condomínio:</strong> R$980,00</li>
-
+    <li><strong>Detalhes:</strong> Sala ampla com mezanino, sacada com churrasqueira, cozinha americana, área de serviço, piscina e salão de festas</li>
   </ul>
 </section>
 
     
    <section class="card">
-  <h2>Descrição do Imóvel</h2>
+  <h2>Descrição profissional do imóvel</h2>
   <article>
     <p>
       Apartamento Duplex à venda com 3 dormitórios no Balneário do Estreito em Florianópolis/SC. Este imóvel combina espaço, modernidade e lazer em um só lugar, ideal para quem busca qualidade de vida e valorização patrimonial.
@@ -260,7 +247,6 @@
     <p>
       O duplex conta ainda com 3 banheiros bem distribuídos, área de serviço funcional, sacada adicional e vaga de garagem dupla com hobby box para armazenamento extra. O condomínio oferece infraestrutura completa, incluindo salão de festas para celebrações especiais e piscina para relaxar e aproveitar os dias de sol.
     </p>
-      <h3>Sobre o Bairro</h3>
     <p>
       O Balneário do Estreito é um dos bairros mais valorizados de Florianópolis, com excelente infraestrutura de comércio, serviços, escolas e lazer. Sua localização estratégica garante fácil acesso ao centro da cidade e às principais vias da região, tornando-o uma escolha segura tanto para moradia quanto para investimento.
     </p>
@@ -270,7 +256,7 @@
   </article>
 </section>
 
-<section class="card">
+ <section class="card">
   <h2>Galeria de fotos</h2>
   <div class="zoom-gallery">
     <div class="zoom-container" onclick="openModal(0)">
@@ -297,19 +283,13 @@
     <div class="zoom-container" onclick="openModal(7)">
       <img src="2.0 sacada.jpg" alt="2.0 sacada" />
     </div>
-    <div class="zoom-container" onclick="openModal(8)">
-      <img src="2.3 sacada.jpg" alt="2.3 sacada" />
-    </div>
-    <div class="zoom-container" onclick="openModal(9)">
+      <div class="zoom-container" onclick="openModal(9)">
       <img src="4.0 area de serviço.jpg" alt="4.0 area de serviço" />
     </div>
     <div class="zoom-container" onclick="openModal(10)">
       <img src="7.0 quarto 2.jpg" alt="7.0 quarto 2" />
     </div>
-    <div class="zoom-container" onclick="openModal(11)">
-      <img src="6.0 quarto 1.jpg" alt="6.0 quarto 1" />
-    </div>
-    <div class="zoom-container" onclick="openModal(12)">
+     <div class="zoom-container" onclick="openModal(12)">
       <img src="11.0 sala mesanino.jpg" alt="11.0 sala mesanino" />
     </div>
     <div class="zoom-container" onclick="openModal(13)">
@@ -318,27 +298,18 @@
     <div class="zoom-container" onclick="openModal(14)">
       <img src="11.4 sala mesanino.jpg" alt="11.4 sala mesanino" />
     </div>
-    <div class="zoom-container" onclick="openModal(15)">
-      <img src="14.5 salao de festas.jpg" alt="14.5 salao de festas" />
-    </div>
+ 
     <div class="zoom-container" onclick="openModal(16)">
+      <img src="15.0 salao de festas.jpg" alt="15.0 salao de festas" />
+    </div>
+     <div class="zoom-container" onclick="openModal(16)">
       <img src="14.0 piscina.jpg" alt="14.0 piscina" />
+    </div>
+     <div class="zoom-container" onclick="openModal(16)">
+      <img src="14.3 salao de festas.jpg" alt="14.3 salao de festas" />
     </div>
   </div>
 </section>
-
-<!-- Modal do carrossel -->
-<div id="imageModal" class="modal" onclick="closeModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <button class="close-btn" onclick="closeModal()">×</button>
-    <img id="modalImage" src="" alt="Imagem ampliada" />
-    <div class="carousel-controls">
-      <button class="carousel-btn" onclick="prevImage()">‹ Anterior</button>
-      <button class="carousel-btn" onclick="nextImage()">Próximo ›</button>
-    </div>
-  </div>
-</div>
-
 <script>
   const images = [
     "12.0 sacada mesanino.jpg",
@@ -349,28 +320,27 @@
     "1.1 sala.jpg",
     "3.0 cozinha.jpg",
     "2.0 sacada.jpg",
-    "2.3 sacada.jpg",
     "4.0 area de serviço.jpg",
     "7.0 quarto 2.jpg",
-    "6.0 quarto 1.jpg",
-    "11.0 sala mesanino.jpg",
+   "11.0 sala mesanino.jpg",
     "11.3 sala mesanino.jpg",
     "11.4 sala mesanino.jpg",
-    "14.5 salao de festas.jpg",
-    "14.0 piscina.jpg"
+      "15..jpg"
+      "14.0 piscina.jpg"
+      "14.3 salao de festas.jpg"
   ];
 
   let currentIndex = 0;
 
   function openModal(index) {
     currentIndex = index;
-    const modalImage = document.getElementById('modalImage');
-    modalImage.src = images[currentIndex];
+    document.getElementById('modalImage').src = images[currentIndex];
     document.getElementById('imageModal').classList.add('active');
   }
 
   function closeModal() {
     document.getElementById('imageModal').classList.remove('active');
+    document.getElementById('modalImage').classList.remove('zoomed');
   }
 
   function prevImage() {
@@ -382,8 +352,12 @@
     currentIndex = (currentIndex + 1) % images.length;
     document.getElementById('modalImage').src = images[currentIndex];
   }
-</script>
 
+  // Controle de zoom ao clicar na imagem
+  document.getElementById('modalImage').addEventListener('click', function () {
+    this.classList.toggle('zoomed');
+  });
+</script>
 
 
      <section>
