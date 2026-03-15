@@ -75,8 +75,7 @@
     .footer-social li { margin-bottom: 8px; }
     .footer-credit { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #000000; }
     @media (max-width: 900px) { .footer-container { grid-template-columns: 1fr; gap: 20px; } .outros-imoveis ul { grid-template-columns: repeat(2, minmax(180px, 1fr)); } .zoom-gallery { grid-template-columns: repeat(2, 1fr); } .modal-content img { width: 320px; height: 320px; } }
-    @media (max-width: 560px) { .footer-container { grid-template-columns: 1fr; gap: 20px; } .outros-imoveis ul { grid-template-columns: 1fr; } .zoom-gallery { grid-template-columns: 1fr; } .modal-content img { width: 98vw; height: 60vw; } }
-       .zoom-gallery {
+    @.zoom-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
@@ -86,8 +85,6 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1/1;
-  min-width: 0;
-  min-height: 0;
   overflow: hidden;
   border-radius: 14px;
   border: 2px solid var(--dourado);
@@ -107,6 +104,7 @@
   z-index: 2;
 }
 
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -206,19 +204,6 @@
     width: 98vw;
     height: 60vw;
   }
-}
-
-/* Zoom no modal */
-#modalImage {
-  max-width: 90%;
-  max-height: 90%;
-  transition: transform 0.3s ease;
-  cursor: zoom-in;
-}
-
-#modalImage.zoomed {
-  transform: scale(1.5);
-  cursor: zoom-out;
 }
 
       </style> 
