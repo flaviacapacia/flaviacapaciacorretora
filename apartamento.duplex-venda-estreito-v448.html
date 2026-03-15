@@ -145,97 +145,94 @@
       </article>
     </section>
 
-    <section class="card">
-      <h2>Galeria de fotos</h2>
-      <div class="zoom-gallery">
-        
-  <div class="zoom-container" onclick="openModal(0)">
-    <img src="img/12.0 sacada mesanino" alt="12.0 sacada mesanino" />
+  <section class="card">
+  <h2>Galeria de fotos</h2>
+  <div class="zoom-gallery">
+    <div class="zoom-container" onclick="openModal(0)">
+      <img src="img/12.0 sacada mesanino" alt="12.0 sacada mesanino" />
+    </div>
+    <div class="zoom-container" onclick="openModal(1)">
+      <img src="img/12.1 sacada mesanino" alt="12.1 sacada mesanino" />
+    </div>
+    <div class="zoom-container" onclick="openModal(2)">
+      <img src="img/12.8 sacada mesanino" alt="12.8 sacada mesanino" />
+    </div>
+    <div class="zoom-container" onclick="openModal(3)">
+      <img src="img/1.0 sala" alt="1.0 sala" />
+    </div>
+    <div class="zoom-container" onclick="openModal(4)">
+      <img src="img/1.1 sala" alt="1.1 sala" />
+    </div>
+    <div class="zoom-container" onclick="openModal(5)">
+      <img src="img/1.1 sala" alt="1.1 sala" />
+    </div>
+    <div class="zoom-container" onclick="openModal(6)">
+      <img src="img/3.0 cozinha" alt="3.0 cozinha" />
+    </div>
+    <div class="zoom-container" onclick="openModal(7)">
+      <img src="img/2.0 sacada" alt="2.0 sacada" />
+    </div>
+    <div class="zoom-container" onclick="openModal(8)">
+      <img src="img/2.3 sacada" alt="2.3 sacada" />
+    </div>
+    <div class="zoom-container" onclick="openModal(9)">
+      <img src="img/4.0 area de serviço" alt="4.0 area de serviço" />
+    </div>
+    <div class="zoom-container" onclick="openModal(10)">
+      <img src="img/7.0 quarto 2" alt="7.0 quarto 2" />
+    </div>
+    <div class="zoom-container" onclick="openModal(11)">
+      <img src="img/6.0 quarto 1" alt="6.0 quarto 1" />
+    </div>
+    <div class="zoom-container" onclick="openModal(12)">
+      <img src="img/11.0 sala mesanino" alt="11.0 sala mesanino" />
+    </div>
+    <div class="zoom-container" onclick="openModal(13)">
+      <img src="img/11.3 sala mesanino" alt="11.3 sala mesanino" />
+    </div>
+    <div class="zoom-container" onclick="openModal(14)">
+      <img src="img/11.4 sala mesanino" alt="11.4 sala mesanino" />
+    </div>
+    <div class="zoom-container" onclick="openModal(15)">
+      <img src="img/14.5 salao de festas" alt="14.5 salao de festas" />
+    </div>
+    <div class="zoom-container" onclick="openModal(16)">
+      <img src="img/14.0 piscina" alt="14.0 piscina" />
+    </div>
   </div>
-  <div class="zoom-container" onclick="openModal(1)">
-    <img src="img/12.1 sacada mesanino" alt="12.1 sacada mesanino" />
-  </div>
-  <div class="zoom-container" onclick="openModal(2)">
-    <img src="img/12.8 sacada mesanino" alt="12.8 sacada mesanino" />
-  </div>
-  <div class="zoom-container" onclick="openModal(3)">
-    <img src="img/1.0 sala" alt="1.0 sala" />
-  </div>
-  <div class="zoom-container" onclick="openModal(4)">
-    <img src="img/1.1 sala" alt="1.1 sala" />
-  </div>
-  <div class="zoom-container" onclick="openModal(5)">
-    <img src="img/1.1 sala" alt="1.1 sala" />
-  </div>
-  <div class="zoom-container" onclick="openModal(6)">
-    <img src="img/3.0 cozinha" alt="3.0 cozinha" />
-  </div>
-  <div class="zoom-container" onclick="openModal(7)">
-    <img src="img/2.0 sacada" alt="2.0 sacada" />
-  </div>
-  <div class="zoom-container" onclick="openModal(8)">
-    <img src="img/2.3 sacada" alt="2.3 sacada" />
-  </div>
-  <div class="zoom-container" onclick="openModal(9)">
-    <img src="img/4.0 area de serviço" alt="4.0 area de serviço" />
-  </div>
-  <div class="zoom-container" onclick="openModal(10)">
-    <img src="img/7.0 quarto 2" alt="7.0 quarto 2" />
-  </div>
-  <div class="zoom-container" onclick="openModal(11)">
-    <img src="img/6.0 quarto 1" alt="6.0 quarto 1" />
-  </div>
-  <div class="zoom-container" onclick="openModal(12)">
-    <img src="img/11.0 sala mesanino" alt="11.0 sala mesanino" />
-  </div>
-  <div class="zoom-container" onclick="openModal(13)">
-    <img src="img/11.3 sala mesanino" alt="11.3 sala mesanino" />
-  </div>
-  <div class="zoom-container" onclick="openModal(14)">
-    <img src="img/11.4 sala mesanino" alt="11.4 sala mesanino" />
-  </div>
-  <div class="zoom-container" onclick="openModal(15)">
-    <img src="img/14.5 salao de festas" alt="14.5 salao de festas" />
-  </div>
-  <div class="zoom-container" onclick="openModal(16)">
-    <img src="img/14.0 piscina" alt="14.0 piscina" />
-  </div>
-</div>
-       
-      <div id="imageModal" class="modal" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-          <button class="close-btn" onclick="closeModal()">×</button>
-          <img id="modalImage" src="" alt="Imagem ampliada" />
-          <div class="carousel-controls">
-            <button class="carousel-btn" onclick="prevImage()">‹ Anterior</button>
-            <button class="carousel-btn" onclick="nextImage()">Próximo ›</button>
-          </div>
-        </div>
-      <script>
-        const images = [
-    <script>
-  const images = [
-    "img/12.0 sacada mesanino",
-    "img/12.1 sacada mesanino",
-    "img/12.8 sacada mesanino",
-    "img/1.0 sala",
-    "img/1.1 sala",
-    "img/1.1 sala",
-    "img/3.0 cozinha",
-    "img/2.0 sacada",
-    "img/2.3 sacada",
-    "img/4.0 area de serviço",
-    "img/7.0 quarto 2",
-    "img/6.0 quarto 1",
-    "img/11.0 sala mesanino",
-    "img/11.3 sala mesanino",
-    "img/11.4 sala mesanino",
-    "img/14.5 salao de festas",
-    "img/14.0 piscina",
-  ];
-</script>
 
-        ];
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <img id="modalImage" src="" alt="Imagem ampliada" />
+      <div class="carousel-controls">
+        <button class="carousel-btn" onclick="prevImage()">‹ Anterior</button>
+        <button class="carousel-btn" onclick="nextImage()">Próximo ›</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      "img/12.0 sacada mesanino",
+      "img/12.1 sacada mesanino",
+      "img/12.8 sacada mesanino",
+      "img/1.0 sala",
+      "img/1.1 sala",
+      "img/1.1 sala",
+      "img/3.0 cozinha",
+      "img/2.0 sacada",
+      "img/2.3 sacada",
+      "img/4.0 area de serviço",
+      "img/7.0 quarto 2",
+      "img/6.0 quarto 1",
+      "img/11.0 sala mesanino",
+      "img/11.3 sala mesanino",
+      "img/11.4 sala mesanino",
+      "img/14.5 salao de festas",
+      "img/14.0 piscina"
+    ];
+       
         let currentIndex = 0;
 
         function openModal(index) {
