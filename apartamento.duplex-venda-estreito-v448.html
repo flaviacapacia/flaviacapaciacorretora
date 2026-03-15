@@ -191,8 +191,22 @@
           .modal-content img {
             width: 98vw;
             height: 60vw;
+            .modalImage {
+          #modalImage {
+          max-width: 90%;
+          max-height: 90%;
+          transition: transform 0.3s ease;
+          cursor: zoom-in;
           }
+
+         #modalImage.zoomed {
+         transform: scale(1.5);
+         cursor: zoom-out;
         }
+
+
+          
+        
       </style> 
 </head>
 <body>
@@ -314,19 +328,24 @@
     "1.1 sala.jpg",
     "3.0 cozinha.jpg",
     "2.0 sacada.jpg",
+    "2.3 sacada.jpg",
     "4.0 area de serviço.jpg",
     "7.0 quarto 2.jpg",
-   "11.0 sala mesanino.jpg",
+    "6.0 quarto 1.jpg",
+    "11.0 sala mesanino.jpg",
     "11.3 sala mesanino.jpg",
     "11.4 sala mesanino.jpg",
-      "14.0 piscina.jpg"
+    "14.5 salao de festas.jpg",
+    "14.0 piscina.jpg"
   ];
 
   let currentIndex = 0;
 
   function openModal(index) {
     currentIndex = index;
-    document.getElementById('modalImage').src = images[currentIndex];
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = images[currentIndex];
+    modalImage.classList.remove('zoomed');
     document.getElementById('imageModal').classList.add('active');
   }
 
@@ -345,11 +364,12 @@
     document.getElementById('modalImage').src = images[currentIndex];
   }
 
-  // Controle de zoom ao clicar na imagem
+  // Zoom ao clicar
   document.getElementById('modalImage').addEventListener('click', function () {
     this.classList.toggle('zoomed');
   });
 </script>
+
 
 
      <section>
