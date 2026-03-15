@@ -335,59 +335,67 @@
       </style>
   <div class="zoom-gallery">
     <div class="zoom-container" onclick="openModal(0)">
-      <img src="12.0 sacada mesanino.jpg" alt="12.0 sacada mesanino" />
+      <img src="12.0 sacada mesanino.jpg" alt="duplex estreito foto 1" />
     </div>
     <div class="zoom-container" onclick="openModal(1)">
-      <img src="12.1 sacada mesanino.jpg" alt="12.1 sacada mesanino" />
+      <img src="12.1 sacada mesanino.jpg" alt="duplex estreito foto 2" />
     </div>
     <div class="zoom-container" onclick="openModal(2)">
-      <img src="12.8 sacada mesanino.jpg" alt="12.8 sacada mesanino" />
+      <img src="12.8 sacada mesanino.jpg" alt="duplex estreito foto 3" />
     </div>
     <div class="zoom-container" onclick="openModal(3)">
-      <img src="1.0 sala.jpg" alt="1.0 sala" />
+      <img src="1.0 sala.jpg" alt="duplex estreito foto 4" />
     </div>
    
     <div class="zoom-container" onclick="openModal(4)">
-      <img src="1.1 sala.jpg" alt="1.1 sala" />
+      <img src="1.1 sala.jpg" alt="duplex estreito foto 5" />
     </div>
     <div class="zoom-container" onclick="openModal(5)">
-      <img src="3.0 cozinha.jpg" alt="3.0 cozinha" />
+      <img src="3.0 cozinha.jpg" alt="duplex estreito foto 6 />
     </div>
     <div class="zoom-container" onclick="openModal(6)">
-      <img src="2.0 sacada.jpg" alt="2.0 sacada" />
+      <img src="2.0 sacada.jpg" alt="duplex estreito foto 7" />
     </div>
       <div class="zoom-container" onclick="openModal(7)">
-      <img src="4.0 area de serviço.jpg" alt="4.0 area de serviço" />
+      <img src="4.0 area de serviço.jpg" alt="duplex estreito foto 8" />
     </div>
     <div class="zoom-container" onclick="openModal(8)">
-      <img src="7.0 quarto 2.jpg" alt="7.0 quarto 2" />
+      <img src="7.0 quarto 2.jpg" alt="duplex estreito foto 9" />
     </div>
      <div class="zoom-container" onclick="openModal(9)">
-      <img src="11.0 sala mesanino.jpg" alt="11.0 sala mesanino" />
+      <img src="11.0 sala mesanino.jpg" alt="duplex estreito foto 10" />
     </div>
     <div class="zoom-container" onclick="openModal(10)">
-      <img src="11.3 sala mesanino.jpg" alt="11.3 sala mesanino" />
+      <img src="11.3 sala mesanino.jpg" alt="duplex estreito foto 11" />
     </div>
     <div class="zoom-container" onclick="openModal(11)">
-      <img src="11.4 sala mesanino.jpg" alt="11.4 sala mesanino" />
+      <img src="11.4 sala mesanino.jpg" alt="duplex estreito foto 12" />
     </div>
  
     <div class="zoom-container" onclick=openModal(12)">
-      <img src="15..jpg" alt="15." />
+      <img src="15..jpg" alt="duplex estreito foto 13" />
     </div>     
     
     <div class="zoom-container" onclick="openModal(13)">
-          <img src="14.0 piscina.jpg" alt="14.0 piscina" />
+          <img src="14.0 piscina.jpg" alt="duplex estreito foto 14 />
     </div>
 
      <div class="zoom-container" onclick="openModal(14)">
-      <img src="14.3 salao de festas.jpg" alt="14.3 salao de festas" />
+      <img src="14.3 salao de festas.jpg" alt="duplex estreito foto 15 />
     </div>
   </div>
-  </div>
-</section>
-<script>
-  const images = [
+  <div id="imageModal" class="modal">
+          <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <img id="modalImage" src="" alt="Imagem ampliada" />
+            <div class="carousel-controls">
+              <button class="carousel-btn" onclick="prevImage()">Anterior</button>
+              <button class="carousel-btn" onclick="nextImage()">Próxima</button>
+            </div>
+          </div>
+        </div>
+        <script>
+          const images = [
     "12.0 sacada mesanino.jpg",
     "12.1 sacada mesanino.jpg",
     "12.8 sacada mesanino.jpg",
@@ -404,8 +412,7 @@
       "14.0 piscina.jpg",
       "14.3 salao de festas.jpg"
   ];
-
-  let currentIndex = 0;
+ let currentIndex = 0;
 
           function openModal(index) {
             currentIndex = index;
