@@ -4,120 +4,103 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Título da página -->
   <title>Contato | Flavia Capacia Corretora - Imóveis de Alto Padrão | Florianópolis</title>
-
-  <!-- Meta description para SEO -->
   <meta name="description" content="Entre em contato com Flavia Capacia, Corretora Gralha Imóveis. Atendimento exclusivo para imóveis de luxo e Alto padrão em São José e Florianópolis." />
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://www.flaviacapaciacorretora.com/contato.html" />
 
   <!-- Fonte elegante -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
-
-  <!-- CSS principal -->
   <link rel="stylesheet" href="style.css"/>
-
-  <!-- Open Graph (para redes sociais) -->
-  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
 </head>
 
 <style>
-/* Responsivo */
-@media (max-width: 768px) {
-  .sobre-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .texto-sobre p {
-    text-align: left;
-    font-size: 1rem;
-  }
-}
-.hero {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-@media (max-width: 768px) {
-  .hero { height: 250px; }
+/* Layout geral */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #fff;
+  color: #2c3e50;
 }
 
+/* Cabeçalho */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  border-bottom: 2px solid #b8860b;
+}
+.site-header .logo { height: 70px; }
+.main-nav ul { list-style: none; display: flex; gap: 20px; }
+.main-nav a { text-decoration: none; color: #2c3e50; font-weight: bold; }
+.main-nav a.active { color: #b8860b; }
+
+/* Hero */
+.hero { width: 100%; height: 400px; overflow: hidden; }
+.hero img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+@media (max-width: 768px) { .hero { height: 250px; } }
+
 /* Formulário */
-.form-contato {
-  background: #f9f9f9;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+form {
   max-width: 600px;
   margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #b8860b;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.form-contato h2 { text-align: center; margin-bottom: 20px; }
-.form-contato form { display: flex; flex-direction: column; gap: 15px; }
-.form-contato input, .form-contato textarea {
-  padding: 12px;
+form input, form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
 }
-.form-contato button {
-  background: #25D366;
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  font-weight: bold;
-}
-.form-contato button:hover { background: #128C7E; }
-
-form {
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 25px;
-  border: 1px solid #b8860b;
-  border-radius: 10px;
-  background-color: #fff;
-  font-family: system-ui, sans-serif, Arial;
-}
-.field { margin-bottom: 20px; }
-.field label { display: block; font-size: 14px; color: #2c3e50; margin-bottom: 6px; }
-.field input, .field textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-/* Botão principal corrigido */
 #button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background-color: #b8860b; /* dourado */
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 #button:hover { background-color: #996515; }
+
+/* Rodapé */
+.site-footer {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-top: 2px solid #b8860b;
+}
+.footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; }
+.footer-contact, .footer-social, .footer-logo { flex: 1; margin: 10px; }
+.footer-credit { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #555; }
+
+/* Ícones sociais */
+.social-icons { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+.social-icons img { width: 30px; height: 30px; }
+
+/* Botão WhatsApp fixo */
+.whatsapp-btn-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.whatsapp-btn-fixed:hover { background: #128C7E; }
 </style>
-
-
 
 <body>
 
@@ -128,41 +111,25 @@ form {
   <nav class="main-nav">
     <ul>
       <li><a href="index.html">Início</a></li>
-      <li><a href="sobre.html" class="active">Sobre</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
       <li><a href="negocie.html">Negocie</a></li>
       <li><a href="financie.html">Financie</a></li>
-      <li><a href="contato.html">Contato</a></li>
+      <li><a href="contato.html" class="active">Contato</a></li>
     </ul>
   </nav>
 </header>
 
-<div class="social-icons">
-  <a href="https://www.instagram.com/flacapacciacorretora" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="icon"/>
-  </a>
-  <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" class="icon"/>
-  </a>
-  <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" class="icon"/>
-  </a>
-  <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="icon"/>
-  </a>
-</div>
-
 <section id="hero" class="hero">
-  <img src="img/capasite.webp" alt="Capa modernoa e luxuosa" />
+  <img src="img/capasite.webp" alt="Capa moderna e luxuosa" />
 </section>
 
 <main>
-
- <h1>Formulário de Contato</h1>
+  <h1 style="text-align:center;">Formulário de Contato</h1>
   <form id="contatoForm">
-    <input type="text" name="nome" placeholder="Seu nome" required><br>
-    <input type="text" name="telefone" placeholder="Telefone"><br>
-    <input type="email" name="email" placeholder="Email" required><br>
-    <textarea name="mensagem" placeholder="Mensagem"></textarea><br>
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="text" name="telefone" placeholder="Telefone">
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="mensagem" placeholder="Mensagem"></textarea>
     <input type="submit" id="button" value="Quero mais informações">
   </form>
 
@@ -189,7 +156,8 @@ form {
         data: new Date().toLocaleString("pt-BR")
       };
 
-      fetch("http://localhost:8080/salvar-contato", {
+      // ⚠️ Troque esta URL pela URL pública da sua API no Google Cloud Run/App Engine
+      fetch("https://SEU-ENDPOINT-PUBLICO/salvar-contato", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -210,56 +178,24 @@ form {
       });
     });
   </script>
+</main>
 
-<section class="cta-banner">
-  <h2>Seu imóvel a um clique de você</h2>
-</section>
+<a href="https://wa.me/5548999600601" class="whatsapp-btn-fixed" target="_blank">💬 Fale pelo WhatsApp</a>
 
-<!-- Botão Whatsapp flutuante -->
-<a href="https://wa.me/5548999600601" 
-   class="whatsapp-btn-fixed" 
-   target="_blank">
-   💬 Fale pelo WhatsApp
-</a>
-<!-- Rodapé -->
 <footer class="site-footer" id="contato">
   <div class="footer-container">
-    <!-- Coluna esquerda: Contato -->
     <div class="footer-contact">
       <h3>Contato</h3>
       <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
       <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <p>Florianópolis • São José</p>
-      <p> Palhoça </p>
-      </div>
-    
-
-    <!-- Coluna central: Logo -->
+      <p>Florianópolis • São José • Palhoça</p>
+    </div>
     <div class="footer-logo">
       <a href="index.html">
-        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" 
-             alt="Logo Flavia Imóveis"/>
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis"/>
       </a>
     </div>
-
-    <!-- Coluna direita: Redes sociais -->
     <div class="footer-social">
       <h3>Redes Sociais</h3>
       <ul>
-        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
-        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Créditos -->
-  <div class="footer-credit">
-    Feito com 💛 por <strong>Capacia Group</strong> 💛
-  </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank
