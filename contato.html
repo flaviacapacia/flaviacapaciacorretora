@@ -24,7 +24,6 @@
 </head>
 
 <style>
-  
 /* Responsivo */
 @media (max-width: 768px) {
   .sobre-container {
@@ -40,25 +39,19 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 400px; /* altura padrão no desktop */
+  height: 400px;
   overflow: hidden;
 }
-
 .hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* cobre toda a área sem distorcer */
-  object-position: center; /* centraliza o foco da imagem */
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
-
-/* Responsivo para celular */
 @media (max-width: 768px) {
-  .hero {
-    height: 250px; /* altura menor no mobile */
-  }
+  .hero { height: 250px; }
 }
-
 
 /* Formulário */
 .form-contato {
@@ -69,15 +62,8 @@
   max-width: 600px;
   margin: 40px auto;
 }
-.form-contato h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.form-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+.form-contato h2 { text-align: center; margin-bottom: 20px; }
+.form-contato form { display: flex; flex-direction: column; gap: 15px; }
 .form-contato input, .form-contato textarea {
   padding: 12px;
   border: 1px solid #ccc;
@@ -85,7 +71,7 @@
   font-size: 1rem;
 }
 .form-contato button {
-  background: #25D366; /* verde WhatsApp */
+  background: #25D366;
   color: #fff;
   padding: 12px;
   border: none;
@@ -94,32 +80,20 @@
   cursor: pointer;
   font-weight: bold;
 }
-.form-contato button:hover {
-  background: #128C7E;
-}
+.form-contato button:hover { background: #128C7E; }
+
 form {
   max-width: 500px;
   margin: 30px auto;
   padding: 25px;
-  border: 1px solid #b8860b; /* bronze/dourado escuro */
+  border: 1px solid #b8860b;
   border-radius: 10px;
   background-color: #fff;
   font-family: system-ui, sans-serif, Arial;
 }
-
-.field {
-  margin-bottom: 20px;
-}
-
-.field label {
-  display: block;
-  font-size: 14px;
-  color: #2c3e50;
-  margin-bottom: 6px;
-}
-
-.field input,
-.field textarea {
+.field { margin-bottom: 20px; }
+.field label { display: block; font-size: 14px; color: #2c3e50; margin-bottom: 6px; }
+.field input, .field textarea {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #ccc;
@@ -128,12 +102,11 @@ form {
   box-sizing: border-box;
 }
 
- Botão principal 
+/* Botão principal corrigido */
 #button {
   width: 100%;
   padding: 12px;
-  background-color: :root {
-  --dourado: #b8860b;  bronze/dourado escuro
+  background-color: #b8860b; /* dourado */
   color: white;
   border: none;
   border-radius: 6px;
@@ -141,12 +114,10 @@ form {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-#button:hover {
-  background-color: #996515; /* tom mais escuro para hover */
-}
-
+#button:hover { background-color: #996515; }
 </style>
+
+
 
 <body>
 
