@@ -10,11 +10,9 @@
 
   <!-- Fonte elegante -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <style>
-/* Layout geral */
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -43,26 +41,26 @@ body {
 
 /* Formulário */
 form {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 30px;
-  border: 1px solid #b8860b;
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 40px;
+  border: 2px solid #b8860b;
   border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 form input, form textarea {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 #button {
   width: 100%;
-  padding: 14px;
-  background-color: #b8860b; /* dourado */
+  padding: 16px;
+  background-color: #b8860b;
   color: white;
   border: none;
   border-radius: 8px;
@@ -156,7 +154,7 @@ form input, form textarea {
         data: new Date().toLocaleString("pt-BR")
       };
 
-      // ⚠️ Troque esta URL pela URL pública da sua API no Google Cloud Run/App Engine
+      // ⚠️ Substitua pela URL pública gerada no Cloud Run
       fetch("https://SEU-ENDPOINT-PUBLICO/salvar-contato", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -198,4 +196,6 @@ form input, form textarea {
     <div class="footer-social">
       <h3>Redes Sociais</h3>
       <ul>
-        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank
+        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+        <li><a href="https
