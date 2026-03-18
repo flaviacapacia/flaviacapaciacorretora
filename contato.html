@@ -186,85 +186,59 @@ form {
 
 <main>
 
-
-<!-- Formulário de contato -->
-  
-<section class="form-contato">
- 
+ <h1>Formulário de Contato</h1>
   <form id="contatoForm">
-  <h2>Quer saber mais sobre  comprar ou vender imóveis?</h2> <!-- título do formulário -->
-      <p>Preencha seus dados ou fale direto pelo WhatsApp</p>
-    
+    <input type="text" name="nome" placeholder="Seu nome" required><br>
+    <input type="text" name="telefone" placeholder="Telefone"><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <textarea name="mensagem" placeholder="Mensagem"></textarea><br>
+    <input type="submit" id="button" value="Quero mais informações">
+  </form>
 
-  <div class="field">
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" required>
-  </div>
+  <script>
+    const form = document.getElementById("contatoForm");
+    const button = document.getElementById("button");
+    let msgDiv = document.createElement('div');
+    msgDiv.id = 'form-msg';
+    msgDiv.style.margin = '10px 0';
+    form.appendChild(msgDiv);
 
-  <div class="field">
-    <label for="telefone">Telefone</label>
-    <input type="tel" name="telefone" id="telefone" required>
-  </div>
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      button.value = "Enviando...";
+      button.disabled = true;
+      msgDiv.textContent = '';
 
-  <div class="field">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" required>
-  </div>
+      const formData = new FormData(this);
+      const data = {
+        nome: formData.get("nome"),
+        telefone: formData.get("telefone"),
+        email: formData.get("email"),
+        mensagem: formData.get("mensagem"),
+        data: new Date().toLocaleString("pt-BR")
+      };
 
-  <div class="field">
-    <label for="mensagem">Mensagem</label>
-    <textarea name="mensagem" id="mensagem"></textarea>
-  </div>
-
-  <input type="submit" id="button" value="Quero mais informações">
-</form>
-<!-- Script do formulário: envia para backend Flask (Excel) e exibe mensagem inline -->
-<script>
-  const form = document.getElementById("contatoForm");
-  const button = document.getElementById("button");
-  let msgDiv = document.createElement('div');
-  msgDiv.id = 'form-msg';
-  msgDiv.style.margin = '10px 0';
-  form.appendChild(msgDiv);
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    button.value = "Enviando...";
-    button.disabled = true;
-    msgDiv.textContent = '';
-
-    const formData = new FormData(this);
-    const data = {
-      nome: formData.get("nome"),
-      telefone: formData.get("telefone"),
-      email: formData.get("email"),
-      mensagem: formData.get("mensagem"),
-      data: new Date().toLocaleString("pt-BR")
-    };
-
-    fetch("http://localhost:5000/salvar-contato", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(result => {
-      msgDiv.textContent = "Mensagem enviada com sucesso!";
-      msgDiv.style.color = 'green';
-      button.value = "Quero mais informações";
-      button.disabled = false;
-      form.reset();
-    })
-    .catch(err => {
-      msgDiv.textContent = "Erro ao enviar. Tente novamente.";
-      msgDiv.style.color = 'red';
-      button.value = "Quero mais informações";
-      button.disabled = false;
+      fetch("http://localhost:8080/salvar-contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        msgDiv.textContent = "Mensagem enviada com sucesso!";
+        msgDiv.style.color = 'green';
+        button.value = "Quero mais informações";
+        button.disabled = false;
+        form.reset();
+      })
+      .catch(err => {
+        msgDiv.textContent = "Erro ao enviar. Tente novamente.";
+        msgDiv.style.color = 'red';
+        button.value = "Quero mais informações";
+        button.disabled = false;
+      });
     });
-  });
-</script>
-
-</section>
+  </script>
 
 <section class="cta-banner">
   <h2>Seu imóvel a um clique de você</h2>
