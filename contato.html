@@ -120,18 +120,17 @@ form input, form textarea {
 <section id="hero" class="hero">
   <img src="img/capasite.webp" alt="Capa moderna e luxuosa" />
 </section>
-
 <main>
   <h1 style="text-align:center;">Formulário de Contato</h1>
-<form action="https://formulario-site-1028879773485.southamerica-east1.run.app/contato" 
-      method="POST">
-  <input type="text" name="nome" placeholder="Seu nome" required>
-  <input type="email" name="email" placeholder="Seu email" required>
-  <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-  <button type="submit">Enviar</button>
-</form>
 
-
+  <form id="contatoForm" 
+        action="https://formulario-site-1028879773485.southamerica-east1.run.app/contato" 
+        method="POST">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu email" required>
+    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+    <button id="button" type="submit">Enviar</button>
+  </form>
 
   <script>
     const form = document.getElementById("contatoForm");
@@ -143,38 +142,36 @@ form input, form textarea {
 
     form.addEventListener("submit", function(e) {
       e.preventDefault();
-      button.value = "Enviando...";
+      button.textContent = "Enviando...";
       button.disabled = true;
       msgDiv.textContent = '';
 
       const formData = new FormData(this);
       const data = {
         nome: formData.get("nome"),
-        telefone: formData.get("telefone"),
         email: formData.get("email"),
         mensagem: formData.get("mensagem"),
         data: new Date().toLocaleString("pt-BR")
       };
 
-      // ⚠️ Substitua pela URL pública gerada no Cloud Run
-     fetch("https://SEU-ENDPOINT-PUBLICO/salvar-contato", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(data)
-})
-
-      .then(response => response.json())
+      fetch("https://formulario-site-1028879773485.southamerica-east1.run.app/contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.text())
       .then(result => {
         msgDiv.textContent = "Mensagem enviada com sucesso!";
         msgDiv.style.color = 'green';
-        button.value = "Quero mais informações";
+        button.textContent = "Enviar";
         button.disabled = false;
         form.reset();
       })
       .catch(err => {
+        console.error("Erro:", err);
         msgDiv.textContent = "Erro ao enviar. Tente novamente.";
         msgDiv.style.color = 'red';
-        button.value = "Quero mais informações";
+        button.textContent = "Enviar";
         button.disabled = false;
       });
     });
