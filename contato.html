@@ -157,11 +157,12 @@ form input, form textarea {
       };
 
       // ⚠️ Substitua pela URL pública gerada no Cloud Run
-      fetch("https://SEU-ENDPOINT-PUBLICO/salvar-contato", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      })
+     fetch("https://SEU-ENDPOINT-PUBLICO/salvar-contato", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data)
+})
+
       .then(response => response.json())
       .then(result => {
         msgDiv.textContent = "Mensagem enviada com sucesso!";
