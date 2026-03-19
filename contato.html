@@ -127,6 +127,7 @@ form input, form textarea {
         action="https://formulario-site-1028879773485.southamerica-east1.run.app/contato" 
         method="POST">
     <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="tel" name="telefone" placeholder="Seu telefone" required>
     <input type="email" name="email" placeholder="Seu email" required>
     <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
     <button id="button" type="submit">Enviar</button>
@@ -149,6 +150,7 @@ form input, form textarea {
       const formData = new FormData(this);
       const data = {
         nome: formData.get("nome"),
+        telefone: formData.get("telefone"),
         email: formData.get("email"),
         mensagem: formData.get("mensagem"),
         data: new Date().toLocaleString("pt-BR")
@@ -177,6 +179,7 @@ form input, form textarea {
     });
   </script>
 </main>
+
 
 <a href="https://wa.me/5548999600601" class="whatsapp-btn-fixed" target="_blank">💬 Fale pelo WhatsApp</a>
 
