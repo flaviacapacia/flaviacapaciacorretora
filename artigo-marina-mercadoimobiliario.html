@@ -178,6 +178,7 @@
     }
     .links-imoveis a:hover { text-decoration: underline; }
 
+
     /* Rodapé */
     footer { margin-top: 24px; }
     .footer-container {
@@ -216,6 +217,33 @@
       margin-top: 10px;
       border-radius: 10px;
     }
+    /* Container que envolve título e imagem */
+.titulo-imagem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Responsividade: no celular vira coluna */
+@media (max-width: 768px) {
+  .titulo-imagem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .titulo-imagem h1 {
+    font-size: 22px; /* reduz tamanho para caber melhor */
+    margin-bottom: 10px;
+  }
+
+  .titulo-imagem img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 
   </style>
 </head>
@@ -238,14 +266,13 @@
 
     <!-- Artigo -->
     <main class="article">
-      <div class="article-header">
-        <img src="img/marina2.jpeg" alt="Vista da Beira-Mar Norte em Florianópolis" />
-        <div class="article-text">
-          <h1>Entre mares e investimentos </h1>
-            <h1>A nova tessitura do mercado imobiliário em Florianópolis</h1>
-
-          
-          <p>Florianópolis sempre foi celebrada por suas praias e pela aura cosmopolita que mistura tradição açoriana e inovação tecnológica. </p>
+  <div class="article-header">
+    <div class="titulo-imagem">
+      <h1>Entre mares e investimentos</h1>
+      <img src="img/marina2.jpeg" alt="Marina em Floripa">
+    </div>
+    <div class="article-text">
+            <p>Florianópolis sempre foi celebrada por suas praias e pela aura cosmopolita que mistura tradição açoriana e inovação tecnológica. </p>
             <p>Mas há um movimento silencioso, quase imperceptível aos olhos menos atentos, que vem redesenhando o mercado imobiliário da cidade.</p>
         </div>
       </div>
@@ -301,13 +328,13 @@
       </div>
     </main>
 
-    <!-- Imóveis em destaque -->
+ <!-- Imóveis em destaque -->
     <section class="featured-properties">
       <h2>Imóveis em destaque</h2>
       <div class="links-imoveis">
-        <a href="https://www.flaviacapaciacorretora.com/apartamento-venda-kobrasol-v440.html">Apartamento no Kobrasol</a>
-        <a href="https://www.flaviacapaciacorretora.com/apartamento-venda-floresta-v441.html">Apartamento Nossa Sra do Rosário</a>
-        <a href="https://www.flaviacapaciacorretora.com/apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a>
+        <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-kobrasol-v440.html">Apartamento no Kobrasol</a>
+        <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-floresta-v441.html">Apartamento Nossa Sra do Rosário</a>
+        <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a>
       </div>
     </section>
 
