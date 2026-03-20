@@ -235,6 +235,57 @@
     }
     .links-imoveis a:hover { text-decoration: underline; }
 
+    /* Outros imóveis */
+    .outros-imoveis {
+      padding: 30px 18px;
+      margin-top: 20px;
+      background: #fff;
+    }
+    .outros-imoveis h2 {
+      margin: 0 0 24px;
+      text-align: center;
+      color: #d4af37;
+      font-size: 2rem;
+    }
+    .outros-imoveis ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+      gap: 16px 26px;
+      justify-items: center;
+    }
+    .outros-imoveis li {
+      margin: 0;
+      text-align: center;
+    }
+    .outros-imoveis a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s, text-decoration 0.3s;
+    }
+    .outros-imoveis a:hover {
+      background-color: #d4af37;
+      color: #fff;
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .outros-imoveis ul {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+      }
+    }
+    @media (max-width: 560px) {
+      .outros-imoveis ul {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Rodapé */
     footer { margin-top: 24px; }
     .footer-container {
@@ -456,7 +507,6 @@
   </script>
 </body>
 </html>
-
 
 
 
