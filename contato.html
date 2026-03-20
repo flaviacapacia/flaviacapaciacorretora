@@ -32,19 +32,6 @@
     .detalhes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px 12px; }
     .detalhes li { border-bottom: 1px solid #f3ede7; padding: 6px 0; }
     .descricao p { margin: 0 0 12px; }
-    .zoom-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .zoom-container { position: relative; width: 100%; aspect-ratio: 1/1; min-width: 0; min-height: 0; overflow: hidden; border-radius: 14px; border: 2px solid var(--dourado); cursor: zoom-in; background: #fff; }
-    .zoom-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .zoom-container:hover img { transform: scale(1.5); z-index: 2; }
-    .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
-    .modal.active { display: flex; }
-    .modal-content { position: relative; background: #fff; padding: 24px; border-radius: 18px; box-shadow: 0 0 24px #0005; display: flex; flex-direction: column; align-items: center; }
-    .modal-content img { width: 480px; height: 480px; object-fit: cover; border-radius: 14px; margin-bottom: 16px; }
-    .carousel-controls { display: flex; gap: 18px; justify-content: center; margin-top: 8px; }
-    .carousel-btn { background: var(--dourado); color: #fff; border: none; padding: 10px 22px; border-radius: 10px; cursor: pointer; font-size: 18px; font-weight: bold; box-shadow: 0 2px 8px #b08d5733; transition: background 0.2s; }
-    .carousel-btn:hover { background: #7A5C45; }
-    .close-btn { position: absolute; top: 8px; right: 8px; background: var(--dourado); color: #fff; border: none; border-radius: 50%; width: 38px; height: 38px; font-size: 22px; cursor: pointer; font-weight: bold; box-shadow: 0 2px 8px #b08d5733; transition: background 0.2s; }
-    .close-btn:hover { background: #7A5C45; }
     .btn-whatsapp { display: inline-block; margin-top: 10px; text-decoration: none; background: var(--dourado); color: #fff; font-weight: 700; padding: 12px 18px; border-radius: 8px; }
     .outros-imoveis { padding: 30px 18px; margin-top: 20px; background: #fff; }
     .outros-imoveis h2 { margin: 0 0 24px; text-align: center; color: var(--dourado); font-size: 2rem; }
@@ -87,24 +74,12 @@
   </header>
 <body>
 
-<header class="site-header">
-  <div class="logo-area">
-    <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
-  </div>
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-      <li><a href="negocie.html">Negocie</a></li>
-      <li><a href="financie.html">Financie</a></li>
-      <li><a href="contato.html" class="active">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+
 
 <section id="hero" class="hero">
   <img src="img/capasite.webp" alt="Capa moderna e luxuosa" />
 </section>
+  
 <main>
   <h1 style="text-align:center;">Formulário de Contato</h1>
 
