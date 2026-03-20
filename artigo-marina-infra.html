@@ -88,27 +88,31 @@
       border-radius: 6px;
     }
     #menu li a:hover { color: var(--bronze-medio); background: #fafafa; }
+.article {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start; /* alinha imagem e texto no topo */
+  gap: 20px; /* espaço entre imagem e texto */
+}
 
-    /* Artigo */
-    .article {
-      margin-top: 20px;
-    }
-    .article img {
-      width: 280px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      display: block;
-      transition: transform 0.3s ease;
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-    .article img:hover {
-      transform: scale(1.03);
-    }
-    .article h1 {
-      color: var(--bronze-medio);
-      margin-bottom: 15px;
-    }
+.article img {
+  width: 400px; /* aumenta a largura da imagem */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.article img:hover {
+  transform: scale(1.03);
+}
+
+.article h1 {
+  color: var(--bronze-medio);
+  margin: 0; /* remove espaço extra */
+  max-width: 600px; /* controla largura do texto */
+}
+
     .article h2 {
       color: var(--bronze-medio);
       margin: 20px 0 10px;
@@ -225,10 +229,11 @@
     </header>
 
     <!-- Artigo -->
-    <main class="article">
-      <img src="img/marina1.jpeg" alt="Construção da Marina na Beira-Mar Norte em Florianópolis" style="max-height: 300px; object-fit: contain;" />
-      <h1>Florianópolis e o avanço da infraestrutura urbana: impactos no setor imobiliário</h1>
-      
+  <main class="article">
+  <img src="img/marina1.jpeg" alt="Construção da Marina na Beira-Mar Norte em Florianópolis" />
+  <h1>Florianópolis e o avanço da infraestrutura urbana: impactos no setor imobiliário</h1>
+
+
       <p>Florianópolis vive um momento de transformação. Projetos de mobilidade, revitalização de áreas estratégicas e investimentos em infraestrutura urbana estão redesenhando a cidade. A expansão da malha viária e a modernização de espaços públicos não apenas melhoram a qualidade de vida dos moradores, mas também criam um ambiente favorável para novos empreendimentos imobiliários.</p>
 
       <h2>Conectividade e acessibilidade</h2>
