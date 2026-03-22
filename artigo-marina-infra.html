@@ -165,18 +165,52 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
     .featured-properties h2 {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       text-align: center;
       color: var(--bronze-medio);
+      font-size: 1.3em;
     }
-    .links-imoveis a {
+    .featured-properties ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .featured-properties li {
+      margin: 0;
+    }
+    .featured-properties a {
       display: block;
-      margin: 6px 0;
-      color: var(--bronze-medio);
+      padding: 12px 14px;
+      color: #fff;
+      background-color: var(--bronze-medio);
       text-decoration: none;
       font-weight: bold;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
     }
-    .links-imoveis a:hover { text-decoration: underline; }
+    .featured-properties a:hover {
+      background-color: #9a7a48;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(176, 141, 87, 0.3);
+    }
+    
+    /* Responsividade para celular */
+    @media (max-width: 768px) {
+      .featured-properties {
+        padding: 16px;
+        margin: 20px 0;
+      }
+      .featured-properties ul {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .featured-properties a {
+        padding: 14px 12px;
+        font-size: 0.95em;
+      }
+    }
 
     /* Rodapé */
     footer { margin-top: 24px; }
@@ -264,7 +298,7 @@
       </div>
     </main>
 
-     <section class="outros-imoveis">
+     <section class="featured-properties">
       <h2>Imóveis em destaque</h2>
       <ul>
         <li><a href="apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a></li>
