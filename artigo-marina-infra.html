@@ -165,49 +165,27 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
     .featured-properties h2 {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       text-align: center;
       color: var(--bronze-medio);
-      font-size: 1.3em;
     }
-    .featured-properties ul {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .featured-properties li {
-      margin: 0;
-    }
-    .featured-properties a {
+    .links-imoveis a {
       display: block;
-      padding: 12px 14px;
-      color: #fff;
-      background-color: var(--bronze-medio);
+      margin: 6px 0;
+      color: var(--bronze-medio);
       text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.3s ease;
     }
-    .featured-properties a:hover {
-      background-color: #9a7a48;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(176, 141, 87, 0.3);
-    }
+    .links-imoveis a:hover { text-decoration: underline; }
     
     /* Responsividade para celular */
     @media (max-width: 768px) {
       .featured-properties {
-        padding: 16px;
-        margin: 20px 0;
+        padding: 15px;
+        margin: 15px 0;
       }
-      .featured-properties ul {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-      .featured-properties a {
-        padding: 14px 12px;
+      .links-imoveis a {
+        margin: 5px 0;
         font-size: 0.95em;
       }
     }
@@ -300,14 +278,14 @@
 
      <section class="featured-properties">
       <h2>Imóveis em destaque</h2>
-      <ul>
-        <li><a href="apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a></li>
-        <li><a href="apartamento-venda-kobrasol-v440.html">Apartamento no Kobrasol</a></li>
-        <li><a href="apartamento-venda-floresta-v441.html">Apartamento na Floresta</a></li>
-        <li><a href="apartamento-venda-centro-v447.html">Apartamento no Centro</a></li>
-        <li><a href="apartamento-venda-palmas-v456.html">Apartamento em Palmas</a></li>
-        <li><a href="apartamento-venda-ratones-v449.html">Casa em Ratones</a></li>
-      </ul>
+      <div class="links-imoveis">
+        <a href="apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a>
+        <a href="apartamento-venda-kobrasol-v440.html">Apartamento no Kobrasol</a>
+        <a href="apartamento-venda-floresta-v441.html">Apartamento na Floresta</a>
+        <a href="apartamento-venda-centro-v447.html">Apartamento no Centro</a>
+        <a href="apartamento-venda-palmas-v456.html">Apartamento em Palmas</a>
+        <a href="apartamento-venda-ratones-v449.html">Casa em Ratones</a>
+      </div>
 
     <!-- Rodapé -->
     <footer>
