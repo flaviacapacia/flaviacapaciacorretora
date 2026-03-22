@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contrução da Marina na Beira Mar Norte em Florianópolis - Blog Flavia Capacia Corretora</title>
+  <title>Florianópolis e o avanço da infraestrutura urbana - Blog Flavia Capacia Corretora</title>
 
   <!-- SEO -->
-  <meta name="description" content="Análise do mercado imobiliário em Florianópolis: valorização da Beira-Mar Norte e oportunidades de investimento." />
-  <meta name="keywords" content="mercado imobiliário Florianópolis, imóveis Beira-Mar Norte, valorização, corretora Flavia Capacia" />
+  <meta name="description" content="Florianópolis vive um momento de transformação com projetos de mobilidade e infraestrutura que impactam o mercado imobiliário." />
+  <meta name="keywords" content="infraestrutura Florianópolis, mobilidade urbana, mercado imobiliário, investimento, Marina Beira-Mar Norte" />
   <meta name="author" content="Flavia Capacia Corretora" />
 
   <style>
@@ -121,14 +121,14 @@
       color: var(--bronze-medio);
       margin-bottom: 15px;
     }
+    .article h2 {
+      color: var(--bronze-medio);
+      margin: 20px 0 10px;
+    }
     .article p {
       margin-bottom: 15px;
       line-height: 1.6;
       color: var(--cinza-texto);
-    }
-    .article h2 {
-      color: var(--bronze-medio);
-      margin: 20px 0 10px;
     }
 
     /* Caixa de lead */
@@ -169,15 +169,150 @@
       text-align: center;
       color: var(--bronze-medio);
     }
+    .links-imoveis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
     .links-imoveis a {
       display: block;
-      margin: 6px 0;
+      margin: 0;
+      padding: 10px;
       color: var(--bronze-medio);
       text-decoration: none;
       font-weight: bold;
+      text-align: center;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 6px;
+      transition: all 0.3s ease;
     }
-    .links-imoveis a:hover { text-decoration: underline; }
-
+    .links-imoveis a:hover { 
+      background-color: var(--bronze-medio);
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    /* Responsividade para celular */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        padding: 15px;
+        border-radius: 8px;
+      }
+      /* Cabeçalho */
+      header {
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+      header img {
+        height: 45px;
+      }
+      #menu-toggle {
+        padding: 6px 10px;
+        font-size: 0.9em;
+      }
+      /* Artigo */
+      .article-header {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+      .article img {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 auto;
+        max-height: 300px;
+      }
+      .article h1 {
+        font-size: 1.2em;
+        margin-bottom: 12px;
+      }
+      .article h2 {
+        font-size: 1.05em;
+        margin: 15px 0 8px;
+      }
+      .article p {
+        margin-bottom: 12px;
+        font-size: 0.95em;
+        line-height: 1.5;
+      }
+      /* Lead Box */
+      .lead-box {
+        padding: 12px;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      .lead-box p {
+        width: 100%;
+        text-align: center;
+      }
+      .btn-whatsapp {
+        width: 100%;
+        padding: 12px 10px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      /* Imóveis em destaque */
+      .featured-properties {
+        padding: 15px;
+        margin: 15px 0;
+      }
+      .links-imoveis {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .links-imoveis a {
+        padding: 12px 10px;
+        font-size: 0.95em;
+      }
+      /* Footer */
+      .footer-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+      }
+      .footer-contact,
+      .footer-logo,
+      .footer-social {
+        flex: 1 1 100%;
+        padding: 8px 0;
+      }
+      .footer-logo img {
+        width: 80px;
+      }
+      .footer-social ul {
+        gap: 10px;
+      }
+      footer {
+        margin-top: 15px;
+      }
+    }
+    
+    /* Extra pequeno (até 480px) */
+    @media (max-width: 480px) {
+      body {
+        padding: 8px;
+      }
+      .container {
+        padding: 10px;
+      }
+      header img {
+        height: 40px;
+      }
+      #menu-toggle {
+        padding: 5px 8px;
+        font-size: 0.85em;
+      }
+      .article h1 {
+        font-size: 1.1em;
+      }
+      .article h2 {
+        font-size: 1em;
+      }
+    }
 
     /* Rodapé */
     footer { margin-top: 24px; }
@@ -207,6 +342,7 @@
       display: flex;
       justify-content: center;
       gap: 15px;
+      flex-wrap: wrap;
     }
     .footer-credit {
       text-align: center;
@@ -217,67 +353,6 @@
       margin-top: 10px;
       border-radius: 10px;
     }
-    /* Container que envolve título e imagem */
-.titulo-imagem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-/* Responsividade: no celular vira coluna */
-@media (max-width: 768px) {
-  .titulo-imagem {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .titulo-imagem h1 {
-    font-size: 22px; /* reduz tamanho para caber melhor */
-    margin-bottom: 10px;
-  }
-
-  .titulo-imagem img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-/* Imagens responsivas */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Container título + imagem */
-.titulo-imagem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-/* No celular, título e imagem ficam em coluna */
-@media (max-width: 768px) {
-  .titulo-imagem {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .titulo-imagem h1 {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-
-  .titulo-imagem img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
   </style>
 </head>
 <body>
@@ -299,61 +374,25 @@ img {
 
     <!-- Artigo -->
     <main class="article">
-  <div class="article-header">
-    <div class="titulo-imagem">
-      <h1>Entre mares e investimentos</h1>
-      <img src="img/marina2.jpeg" alt="Marina em Floripa">
-    </div>
-    <div class="article-text">
-            <p>Florianópolis sempre foi celebrada por suas praias e pela aura cosmopolita que mistura tradição açoriana e inovação tecnológica. </p>
-            <p>Mas há um movimento silencioso, quase imperceptível aos olhos menos atentos, que vem redesenhando o mercado imobiliário da cidade.</p>
+      <div class="article-header">
+        <img src="img/marina1.jpeg" alt="Construção da Marina na Beira-Mar Norte em Florianópolis" style="max-height: 300px; object-fit: contain;" />
+        <div class="article-text">
+          <h1>O avanço da infraestrutura urbana em Florianópolis e os impactos no setor imobiliário</h1>
+          
+          <p>Florianópolis vive um momento de transformação. Projetos de mobilidade, revitalização de áreas estratégicas e investimentos em infraestrutura urbana estão redesenhando a cidade. A expansão da malha viária e a modernização de espaços públicos não apenas melhoram a qualidade de vida dos moradores, mas também criam um ambiente favorável para novos empreendimentos imobiliários.</p>
         </div>
       </div>
 
-      <!-- Botão para expandir/collapse -->
-      <div id="collapse-content" style="display: none;">
-        <h2>Uma reconfiguração profunda</h2>
-        <p>Não se trata apenas da valorização óbvia de imóveis próximos ao mar ou da expansão de bairros já consagrados como Jurerê Internacional. O que está acontecendo é uma reconfiguração mais profunda: a cidade está se tornando um polo de desejo para investidores que buscam não apenas retorno financeiro, mas também um estilo de vida conectado à natureza e à inovação.</p>
-        
-        <h2>Novos perfis de compradores</h2>
-        <p>Os anúncios falam de metros quadrados, suítes e vagas de garagem. Mas por trás deles há uma narrativa maior: a chegada de novos perfis de compradores — jovens profissionais do setor tecnológico, famílias que migram de grandes centros em busca de qualidade de vida, e investidores internacionais atentos ao potencial turístico e cultural da ilha.</p>
-        
-        <h2>Infraestrutura e valorização</h2>
-        <p>Outro detalhe pouco explorado nos anúncios é o impacto da infraestrutura em curso. A proximidade com o Aeroporto Hercílio Luz, a ligação estratégica com a BR-101 e os projetos de mobilidade urbana criam uma malha de acessibilidade que amplia o alcance da cidade. Isso significa que imóveis antes considerados "distantes" agora entram no radar de valorização.</p>
-        
-        <h2>Arquitetura sustentável</h2>
-        <p>Há também uma mudança no olhar arquitetônico: empreendimentos mais sustentáveis, com integração de áreas verdes e soluções inteligentes de energia, começam a se destacar. Essa tendência não é apenas estética, mas responde a uma demanda crescente por consciência ambiental e bem-estar.</p>
-        
-        <h2>Investir em Florianópolis</h2>
-        <p>O mercado imobiliário de Florianópolis, portanto, não é apenas um reflexo da beleza natural da ilha. É um organismo vivo, pulsando com as transformações sociais, econômicas e culturais que atravessam o Brasil. Quem observa com atenção percebe que investir aqui é participar de uma narrativa maior: a de uma cidade que se reinventa, sem perder sua essência.</p>
-      </div>
-  
-  <!-- Botões para expandir/recolher -->
-  <button id="read-more-btn" class="btn-collapse">Leia mais</button>
-  <button id="read-less-btn" class="btn-collapse" style="display: none;">Leia menos</button>
+      <h2>Conectividade e acessibilidade</h2>
+      <p>A proximidade com o Aeroporto Internacional Hercílio Luz, a conexão facilitada pela BR-101 e a valorização de bairros como Jurerê, Campeche e Centro reforçam o potencial da capital catarinense como destino de investimentos.</p>
+      
+      <h2>Valorização imobiliária</h2>
+      <p>Cada obra de infraestrutura agrega valor ao entorno, impulsionando a procura por imóveis residenciais e comerciais. A construção da Marina na Beira-Mar Norte é um exemplo de projeto que transforma a paisagem e atrai novos investidores para a região.</p>
+      
+      <h2>Natureza, inovação e desenvolvimento</h2>
+      <p>Esse movimento consolida Florianópolis como uma cidade que alia natureza exuberante, inovação e desenvolvimento urbano, atraindo tanto investidores nacionais quanto internacionais.</p>
 
-<!-- Script de controle para expandir/contrair -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const collapseContent = document.getElementById('collapse-content');
-    const readMoreBtn = document.getElementById('read-more-btn');
-    const readLessBtn = document.getElementById('read-less-btn');
-
-    readMoreBtn.addEventListener('click', function () {
-      collapseContent.style.display = 'block';
-      readMoreBtn.style.display = 'none';
-      readLessBtn.style.display = 'inline-block';
-    });
-
-    readLessBtn.addEventListener('click', function () {
-      collapseContent.style.display = 'none';
-      readMoreBtn.style.display = 'inline-block';
-      readLessBtn.style.display = 'none';
-    });
-  });
-</script>
-
-          <!-- Caixa de lead -->
+      <!-- Caixa de lead -->
       <div class="lead-box">
         <p>Quer uma avaliação do seu imóvel?</p>
         <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20uma%20avaliação%20do%20meu%20imóvel%20em%20Florianópolis." 
@@ -361,15 +400,16 @@ img {
       </div>
     </main>
 
- <!-- Imóveis em destaque -->
-    <section class="featured-properties">
+     <section class="featured-properties">
       <h2>Imóveis em destaque</h2>
       <div class="links-imoveis">
-        <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-kobrasol-v440.html">Apartamento no Kobrasol</a>
-        <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-floresta-v441.html">Apartamento Nossa Sra do Rosário</a>
-        <a href="https://www.flaviacapaciacorretora.site/apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a>
+        <a href="apartamento-venda-agronomica-v439.html">Apartamento na Agronômica</a>
+        <a href="apartamento-venda-kobrasol-v440.html">Apartamento no Kobrasol</a>
+        <a href="apartamento-venda-floresta-v441.html">Apartamento na Floresta</a>
+        <a href="apartamento-venda-centro-v447.html">Apartamento no Centro</a>
+        <a href="apartamento-venda-palmas-v456.html">Apartamento em Palmas</a>
+        <a href="apartamento-venda-ratones-v449.html">Casa em Ratones</a>
       </div>
-    </section>
 
     <!-- Rodapé -->
     <footer>
@@ -425,13 +465,11 @@ img {
         }
       }
 
-      // Clique no botão
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
         toggleMenu();
       });
 
-      // Fechar ao clicar fora
       document.addEventListener('click', function (e) {
         const nav = btn.parentElement;
         if (!nav.contains(e.target)) {
@@ -439,7 +477,6 @@ img {
         }
       });
 
-      // Fechar com Esc
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
           closeMenu();
@@ -449,4 +486,3 @@ img {
   </script>
 </body>
 </html>
-
