@@ -178,7 +178,26 @@
       color: #fff;
     }
 
-    /* Lista dinâmica (API) */
+    .whatsapp-btn-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+
+    .whatsapp-btn-fixed:hover {
+      background: #128C7E;
+    }
+
+    /* Seção de imóveis vindos da API */
     .imoveis-api {
       padding: 40px 20px;
       background-color: #ffffff;
@@ -228,25 +247,6 @@
 
     .imoveis-api .imovel-card a:hover h3 {
       color: var(--dourado);
-    }
-
-    .whatsapp-btn-fixed {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: background 0.3s ease;
-      z-index: 1000;
-    }
-
-    .whatsapp-btn-fixed:hover {
-      background: #128C7E;
     }
 
     .blog-section {
@@ -468,9 +468,9 @@
     </div>
   </section>
 
-  <!-- Nova seção: imóveis vindos da API do CRM -->
-  <section class="imoveis-api" id="imoveis-api">
-    <h2>Imóveis Disponíveis</h2>
+  <!-- Container solicitado para listar imóveis da API -->
+  <section class="imoveis-api">
+    <h1>Imóveis Disponíveis</h1>
     <p class="status" id="imoveis-status">Carregando imóveis…</p>
     <div id="lista-imoveis" class="grid-imoveis"></div>
   </section>
@@ -567,6 +567,7 @@
     </div>
   </footer>
 
+  <!-- Script solicitado: integração com API do CRM -->
   <script>
     const API_URL = "https://crm-app-1028879773485.southamerica-east1.run.app";
 
@@ -610,27 +611,25 @@
 
         statusEl.textContent = `${imoveis.length} imóvel(is) encontrado(s).`;
 
-        const cardsHtml = imoveis.map((imovel) => {
+        imoveis.forEach(imovel => {
           const titulo = escaparHtml(imovel?.titulo || "Imóvel");
           const descricao = escaparHtml(imovel?.descricao || "");
           const preco = formatarPrecoBRL(imovel?.preco);
           const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "";
           const id = encodeURIComponent(imovel?.id ?? "");
 
-          return `
+          const card = `
             <div class="imovel-card">
-              <a href="detalhes.html?id=${id}">
-                <h3>${titulo}</h3>
-                ${imagem ? `<img src="${imagem}" alt="Foto do imóvel">` : ""}
-                ${descricao ? `<p>${descricao}</p>` : ""}
-                ${preco ? `<p><strong>Preço:</strong> ${preco}</p>` : ""}
-                <p><strong>Ver detalhes</strong></p>
-              </a>
+              <h3>${titulo}</h3>
+              ${imagem ? `<img src="${imagem}" alt="Foto do imóvel">` : ""}
+              ${descricao ? `<p>${descricao}</p>` : ""}
+              ${preco ? `<p><strong>Preço:</strong> ${preco}</p>` : ""}
+              <a href="detalhes.html?id=${id}">Ver detalhes</a>
             </div>
           `;
-        }).join("");
 
-        listaEl.innerHTML = cardsHtml;
+          listaEl.innerHTML += card;
+        });
       } catch (err) {
         console.error(err);
         statusEl.textContent = "Não foi possível carregar os imóveis agora. Tente novamente mais tarde.";
@@ -639,5 +638,7 @@
 
     carregarImoveis();
   </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
