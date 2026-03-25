@@ -468,12 +468,12 @@
     </div>
   </section>
 
-  <!-- Container solicitado para listar imóveis da API -->
-  <section class="imoveis-api">
-    <h1>Imóveis Disponíveis</h1>
-    <p class="status" id="imoveis-status">Carregando imóveis…</p>
-    <div id="lista-imoveis" class="grid-imoveis"></div>
-  </section>
+  <!-- Container para imóveis da API -->
+<section class="imoveis-api">
+  <h2 class="titulo-dourado-centralizado">Outros Imóveis Disponíveis</h2>
+  <p class="status" id="imoveis-status">Carregando imóveis…</p>
+  <div id="lista-imoveis" class="grid-imoveis"></div>
+</section>
 
   <a href="https://wa.me/5548999600601" class="whatsapp-btn-fixed" target="_blank">💬 Fale pelo WhatsApp</a>
 
@@ -567,78 +567,80 @@
     </div>
   </footer>
 
-  <!-- Script solicitado: integração com API do CRM -->
-  <script>
-    const API_URL = "https://crm-app-1028879773485.southamerica-east1.run.app";
+ <!-- Script solicitado: integração com API do CRM -->
+<script>
+  const API_URL = "https://crm-app-1028879773485.southamerica-east1.run.app";
 
-    function formatarPrecoBRL(valor) {
-      if (valor === null || valor === undefined || valor === "") return "";
-      const numero = Number(valor);
-      if (Number.isNaN(numero)) return String(valor);
-      return numero.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-    }
+  function formatarPrecoBRL(valor) {
+    if (!valor) return "";
+    const numero = Number(valor);
+    if (Number.isNaN(numero)) return String(valor);
+    return numero.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  }
 
-    function escaparHtml(str) {
-      return String(str ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
+  function escaparHtml(str) {
+    return String(str ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
 
-    async function carregarImoveis() {
-      const statusEl = document.querySelector('#imoveis-status');
-      const listaEl = document.querySelector('#lista-imoveis');
+  async function carregarImoveis() {
+    const statusEl = document.querySelector('#imoveis-status');
+    const listaEl = document.querySelector('#lista-imoveis');
 
-      if (!statusEl || !listaEl) return;
+    if (!statusEl || !listaEl) return;
 
-      try {
-        statusEl.textContent = "Carregando imóveis…";
-        listaEl.innerHTML = "";
+    try {
+      statusEl.textContent = "Carregando imóveis…";
+      listaEl.innerHTML = "";
 
-        const response = await fetch(`${API_URL}/api/imoveis/publicos`);
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
+      const response = await fetch(`${API_URL}/api/imoveis/publicos`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-        const imoveis = await response.json();
-
-        if (!Array.isArray(imoveis) || imoveis.length === 0) {
-          statusEl.textContent = "Nenhum imóvel disponível no momento.";
-          return;
-        }
-
-        statusEl.textContent = `${imoveis.length} imóvel(is) encontrado(s).`;
-
-        imoveis.forEach(imovel => {
-          const titulo = escaparHtml(imovel?.titulo || "Imóvel");
-          const descricao = escaparHtml(imovel?.descricao || "");
-          const preco = formatarPrecoBRL(imovel?.preco);
-          const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "";
-          const id = encodeURIComponent(imovel?.id ?? "");
-
-          const card = `
-            <div class="imovel-card">
-              <h3>${titulo}</h3>
-              ${imagem ? `<img src="${imagem}" alt="Foto do imóvel">` : ""}
-              ${descricao ? `<p>${descricao}</p>` : ""}
-              ${preco ? `<p><strong>Preço:</strong> ${preco}</p>` : ""}
-              <a href="detalhes.html?id=${id}">Ver detalhes</a>
-            </div>
-          `;
-
-          listaEl.innerHTML += card;
-        });
-      } catch (err) {
-        console.error(err);
-        statusEl.textContent = "Não foi possível carregar os imóveis agora. Tente novamente mais tarde.";
+      const imoveis = await response.json();
+      if (!Array.isArray(imoveis) || imoveis.length === 0) {
+        statusEl.textContent = "Nenhum imóvel disponível no momento.";
+        return;
       }
+
+      statusEl.textContent = `${imoveis.length} imóvel(is) encontrado(s).`;
+
+      imoveis.forEach(imovel => {
+        const titulo = escaparHtml(imovel?.titulo || "Imóvel");
+        const preco = formatarPrecoBRL(imovel?.preco);
+        const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "img/placeholder.jpg";
+        const url = escaparHtml(imovel?.url || `detalhes.html?id=${encodeURIComponent(imovel?.id ?? "")}`);
+
+        const quartos = imovel?.quartos ? `${imovel.quartos} quartos` : "";
+        const suites = imovel?.suites ? `${imovel.suites} suítes` : "";
+        const vagas = imovel?.vagas ? `${imovel.vagas} vagas` : "";
+
+        const descricao = [quartos, suites, vagas].filter(Boolean).join(" • ");
+
+        const card = `
+          <div class="imovel">
+            <a href="${url}">
+              <img src="${imagem}" alt="${titulo}">
+              <h3>${titulo}</h3>
+              <p>${descricao}</p>
+              ${preco ? `<p><strong>${preco}</strong></p>` : ""}
+            </a>
+          </div>
+        `;
+
+        listaEl.innerHTML += card;
+      });
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = "Não foi possível carregar os imóveis agora. Tente novamente mais tarde.";
     }
+  }
 
-    carregarImoveis();
-  </script>
-
+  carregarImoveis();
+</script>
   <script src="script.js"></script>
 </body>
 </html>
