@@ -567,7 +567,7 @@
     </div>
   </footer>
 
- <!-- Script solicitado: integração com API do CRM -->
+ <!-- Script: integração com API do CRM -->
 <script>
   const API_URL = "https://crm-app-1028879773485.southamerica-east1.run.app";
 
@@ -612,7 +612,9 @@
         const titulo = escaparHtml(imovel?.titulo || "Imóvel");
         const preco = formatarPrecoBRL(imovel?.preco);
         const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "img/placeholder.jpg";
-        const url = escaparHtml(imovel?.url || `detalhes.html?id=${encodeURIComponent(imovel?.id ?? "")}`);
+
+        // 🔹 Aqui está o ajuste: usar o código do imóvel
+        const url = `detalhes.html?id=${encodeURIComponent(imovel?.codigo ?? "")}`;
 
         const quartos = imovel?.quartos ? `${imovel.quartos} quartos` : "";
         const suites = imovel?.suites ? `${imovel.suites} suítes` : "";
@@ -641,6 +643,7 @@
 
   carregarImoveis();
 </script>
+
   <script src="script.js"></script>
 </body>
 </html>
