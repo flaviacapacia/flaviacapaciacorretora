@@ -43,87 +43,87 @@
     <p class="status" id="status">Carregando…</p>
     <div id="detalhes" class="card"></div>
   </main>
+<script>
+  const API_URL = "https://crm-app-1028879773485.southamerica-east1.run.app";
 
-  <script>
-    const API_URL = "https://crm-app-1028879773485.southamerica-east1.run.app";
+  function formatarPrecoBRL(valor){
+    if(valor === null || valor === undefined || valor === "") return "";
+    const n = Number(valor);
+    if(Number.isNaN(n)) return String(valor);
+    return n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  }
 
-    function formatarPrecoBRL(valor){
-      if(valor === null || valor === undefined || valor === "") return "";
-      const n = Number(valor);
-      if(Number.isNaN(n)) return String(valor);
-      return n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  function escaparHtml(str){
+    return String(str ?? "")
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
+  async function carregarDetalhes(){
+    const statusEl = document.querySelector("#status");
+    const detalhesEl = document.querySelector("#detalhes");
+
+    const params = new URLSearchParams(window.location.search);
+    const codigo = params.get("id"); // agora 'id' será o código (ex.: V500)
+
+    if(!codigo){
+      statusEl.textContent = "Código do imóvel não informado na URL. Ex.: detalhes.html?id=V500";
+      detalhesEl.innerHTML = "";
+      return;
     }
 
-    function escaparHtml(str){
-      return String(str ?? "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
+    try{
+      statusEl.textContent = "Carregando…";
+      const resp = await fetch(`${API_URL}/api/imoveis/publicos?codigo=${encodeURIComponent(codigo)}`);
+      if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
+
+      const imovel = await resp.json();
+
+      const titulo = escaparHtml(imovel?.titulo || "Imóvel");
+      const descricao = escaparHtml(imovel?.descricao || "");
+      const preco = formatarPrecoBRL(imovel?.preco);
+      const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "";
+
+      const area = imovel?.area ?? "";
+      const quartos = imovel?.quartos ?? "";
+      const suites = imovel?.suites ?? "";
+      const vagas = imovel?.vagas ?? "";
+      const bairro = imovel?.bairro ?? "";
+      const cidade = imovel?.cidade ?? "";
+
+      statusEl.textContent = "";
+
+      detalhesEl.innerHTML = `
+        <h2 style="margin:0;color:var(--texto-bronze)">${titulo}</h2>
+        ${imagem ? `<img class="foto" src="${imagem}" alt="Foto do imóvel">` : ""}
+        ${descricao ? `<p>${descricao}</p>` : ""}
+        ${preco ? `<p><strong>Preço:</strong> ${preco}</p>` : ""}
+
+        <div class="grid">
+          ${area !== "" ? `<div class="item"><strong>Área:</strong> ${escaparHtml(area)} m²</div>` : ""}
+          ${quartos !== "" ? `<div class="item"><strong>Quartos:</strong> ${escaparHtml(quartos)}</div>` : ""}
+          ${suites !== "" ? `<div class="item"><strong>Suítes:</strong> ${escaparHtml(suites)}</div>` : ""}
+          ${vagas !== "" ? `<div class="item"><strong>Vagas:</strong> ${escaparHtml(vagas)}</div>` : ""}
+          ${(bairro || cidade) ? `<div class="item"><strong>Localização:</strong> ${escaparHtml([bairro,cidade].filter(Boolean).join(", "))}</div>` : ""}
+        </div>
+
+        <div class="acoes">
+          <a class="btn" href="index.html">Voltar</a>
+          <a class="btn btn-whats" href="https://wa.me/5548999600601" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        </div>
+      `;
+    }catch(e){
+      console.error(e);
+      statusEl.textContent = "Não foi possível carregar os detalhes deste imóvel agora. Tente novamente mais tarde.";
+      detalhesEl.innerHTML = "";
     }
+  }
 
-    async function carregarDetalhes(){
-      const statusEl = document.querySelector("#status");
-      const detalhesEl = document.querySelector("#detalhes");
+  carregarDetalhes();
+</script>
 
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get("id");
-
-      if(!id){
-        statusEl.textContent = "ID do imóvel não informado na URL. Ex.: detalhes.html?id=123";
-        detalhesEl.innerHTML = "";
-        return;
-      }
-
-      try{
-        statusEl.textContent = "Carregando…";
-        const resp = await fetch(`${API_URL}/api/imoveis/publico/${encodeURIComponent(id)}`);
-        if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
-
-        const imovel = await resp.json();
-
-        const titulo = escaparHtml(imovel?.titulo || "Imóvel");
-        const descricao = escaparHtml(imovel?.descricao || "");
-        const preco = formatarPrecoBRL(imovel?.preco);
-        const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "";
-
-        const area = imovel?.area ?? "";
-        const quartos = imovel?.quartos ?? "";
-        const suites = imovel?.suites ?? "";
-        const vagas = imovel?.vagas ?? "";
-        const bairro = imovel?.bairro ?? "";
-        const cidade = imovel?.cidade ?? "";
-
-        statusEl.textContent = "";
-
-        detalhesEl.innerHTML = `
-          <h2 style="margin:0;color:var(--texto-bronze)">${titulo}</h2>
-          ${imagem ? `<img class="foto" src="${imagem}" alt="Foto do imóvel">` : ""}
-          ${descricao ? `<p>${descricao}</p>` : ""}
-          ${preco ? `<p><strong>Preço:</strong> ${preco}</p>` : ""}
-
-          <div class="grid">
-            ${area !== "" ? `<div class="item"><strong>Área:</strong> ${escaparHtml(area)} m²</div>` : ""}
-            ${quartos !== "" ? `<div class="item"><strong>Quartos:</strong> ${escaparHtml(quartos)}</div>` : ""}
-            ${suites !== "" ? `<div class="item"><strong>Suítes:</strong> ${escaparHtml(suites)}</div>` : ""}
-            ${vagas !== "" ? `<div class="item"><strong>Vagas:</strong> ${escaparHtml(vagas)}</div>` : ""}
-            ${(bairro || cidade) ? `<div class="item"><strong>Localização:</strong> ${escaparHtml([bairro,cidade].filter(Boolean).join(", "))}</div>` : ""}
-          </div>
-
-          <div class="acoes">
-            <a class="btn" href="index.html">Voltar</a>
-            <a class="btn btn-whats" href="https://wa.me/5548999600601" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          </div>
-        `;
-      }catch(e){
-        console.error(e);
-        statusEl.textContent = "Não foi possível carregar os detalhes deste imóvel agora. Tente novamente mais tarde.";
-        detalhesEl.innerHTML = "";
-      }
-    }
-
-    carregarDetalhes();
-  </script>
 </body>
 </html>
