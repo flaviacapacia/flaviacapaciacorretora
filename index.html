@@ -573,9 +573,7 @@
 
   function formatarPrecoBRL(valor) {
     if (!valor) return "";
-    const numero = Number(valor);
-    if (Number.isNaN(numero)) return String(valor);
-    return numero.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    return String(valor); // já vem formatado da API
   }
 
   function escaparHtml(str) {
@@ -607,38 +605,41 @@
       }
 
       statusEl.textContent = `${imoveis.length} imóvel(is) encontrado(s).`;
-imoveis.forEach(imovel => {
-  const titulo = escaparHtml(imovel?.titulo || "Imóvel");
-  const preco = formatarPrecoBRL(imovel?.preco);
-  const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "img/placeholder.jpg";
 
-  // 🔹 Aqui você cola o trecho do slug
-  const slug = `${imovel.titulo.toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]/g, "")}-${imovel.codigo.toLowerCase()}.html`;
+      imoveis.forEach(imovel => {
+        const titulo = escaparHtml(imovel?.titulo_anuncio || "Imóvel");
+        const preco = formatarPrecoBRL(imovel?.valor_venda);
+        const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] 
+          ? imovel.imagens[0] 
+          : "img/placeholder.jpg";
 
-  const url = slug;
+        // usa o arquivoPublicado da API para montar o link
+        const url = imovel?.arquivoPublicado || "#";
 
-  const quartos = imovel?.quartos ? `${imovel.quartos} quartos` : "";
-  const suites = imovel?.suites ? `${imovel.suites} suítes` : "";
-  const vagas = imovel?.vagas ? `${imovel.vagas} vagas` : "";
+        const descricao = escaparHtml(imovel?.descricao_apartamento || "");
 
-  const descricao = [quartos, suites, vagas].filter(Boolean).join(" • ");
+        const card = `
+          <div class="imovel">
+            <a href="${url}">
+              <img src="${imagem}" alt="${titulo}">
+              <h3>${titulo}</h3>
+              <p>${descricao}</p>
+              ${preco ? `<p><strong>${preco}</strong></p>` : ""}
+            </a>
+          </div>
+        `;
 
-  const card = `
-    <div class="imovel">
-      <a href="${url}">
-        <img src="${imagem}" alt="${titulo}">
-        <h3>${titulo}</h3>
-        <p>${descricao}</p>
-        ${preco ? `<p><strong>${preco}</strong></p>` : ""}
-      </a>
-    </div>
-  `;
+        listaEl.innerHTML += card;
+      });
+    } catch (erro) {
+      statusEl.textContent = "Erro ao carregar imóveis.";
+      console.error(erro);
+    }
+  }
 
-  listaEl.innerHTML += card;
-});
-      </script>
+  carregarImoveis();
+</script>
+
 
   <script src="script.js"></script>
 </body>
