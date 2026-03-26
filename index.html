@@ -567,7 +567,7 @@
     </div>
   </footer>
 
- <!-- Script: integração com API do CRM -->
+<!-- Script: integração com API do CRM -->
 <script>
   const API_URL = "https://crm-app-1028879773485.southamerica-east1.run.app";
 
@@ -613,7 +613,7 @@
         const preco = formatarPrecoBRL(imovel?.preco);
         const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "img/placeholder.jpg";
 
-        // 🔹 Aqui está o ajuste: usar o código do imóvel
+        // 🔹 Usar o código do imóvel para o link
         const url = `detalhes.html?id=${encodeURIComponent(imovel?.codigo ?? "")}`;
 
         const quartos = imovel?.quartos ? `${imovel.quartos} quartos` : "";
@@ -622,12 +622,13 @@
 
         const descricao = [quartos, suites, vagas].filter(Boolean).join(" • ");
 
+        // 🔹 Card com o mesmo estilo do index
         const card = `
           <div class="imovel">
             <a href="${url}">
               <img src="${imagem}" alt="${titulo}">
               <h3>${titulo}</h3>
-              <p>${descricao}</p>
+              ${descricao ? `<p>${descricao}</p>` : ""}
               ${preco ? `<p><strong>${preco}</strong></p>` : ""}
             </a>
           </div>
