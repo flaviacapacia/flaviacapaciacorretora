@@ -25,9 +25,7 @@
 
     function formatarPrecoBRL(valor){
       if(!valor) return "";
-      const n = Number(valor);
-      if(Number.isNaN(n)) return String(valor);
-      return n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+      return String(valor); // já vem formatado da API
     }
 
     function escaparHtml(str){
@@ -44,31 +42,35 @@
       const detalhesEl = document.querySelector("#detalhes");
 
       const params = new URLSearchParams(window.location.search);
-      const codigo = params.get("id"); // Ex.: V500
+      const arquivo = params.get("id"); // Ex.: studio-venda-florianopolis-sc-plantas-inteligentes-v505.html
 
-      if(!codigo){
-        statusEl.textContent = "Código do imóvel não informado na URL.";
+      if(!arquivo){
+        statusEl.textContent = "Imóvel não informado na URL.";
         return;
       }
 
       try{
         statusEl.textContent = "Carregando…";
-        const resp = await fetch(`${API_URL}/api/imoveis/publicos?codigo=${encodeURIComponent(codigo)}`);
+        const resp = await fetch(`${API_URL}/api/imoveis/publicados`);
         if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
-        const imovel = await resp.json();
+        const imoveis = await resp.json();
+        const imovel = imoveis.find(i => i.urlPublicada === `/${arquivo}` || i.urlPublicada === `/${arquivo}`);
+
+        if(!imovel){
+          statusEl.textContent = "Imóvel não encontrado.";
+          return;
+        }
 
         const titulo = escaparHtml(imovel?.titulo || "Imóvel");
         const descricao = escaparHtml(imovel?.descricao || "");
-        const preco = formatarPrecoBRL(imovel?.preco);
-        const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] ? imovel.imagens[0] : "";
+        const valor = formatarPrecoBRL(imovel?.valor);
+        const imagem = Array.isArray(imovel?.fotos) && imovel.fotos.length > 0 ? imovel.fotos[0] : "";
 
-        const area = imovel?.area ?? "";
-        const quartos = imovel?.quartos ?? "";
-        const suites = imovel?.suites ?? "";
-        const vagas = imovel?.vagas ?? "";
         const bairro = imovel?.bairro ?? "";
         const cidade = imovel?.cidade ?? "";
+        const tipo = imovel?.tipo ?? "";
+        const endereco = imovel?.endereco ?? "";
 
         statusEl.textContent = "";
 
@@ -83,15 +85,13 @@
         // 🔹 Renderizar conteúdo
         detalhesEl.innerHTML = `
           <h2 style="margin:0;color:#a67c52">${titulo}</h2>
-          ${imagem ? `<img class="foto" src="${imagem}" alt="Foto do imóvel">` : ""}
+          ${imagem ? `<img class="foto" src="${imagem}" alt="Foto do imóvel" onerror="this.src='https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png'">` : ""}
           ${descricao ? `<p>${descricao}</p>` : ""}
-          ${preco ? `<p><strong>Preço:</strong> ${preco}</p>` : ""}
+          ${valor ? `<p><strong>Valor:</strong> ${valor}</p>` : ""}
 
           <div class="grid">
-            ${area ? `<div class="item"><strong>Área:</strong> ${escaparHtml(area)} m²</div>` : ""}
-            ${quartos ? `<div class="item"><strong>Quartos:</strong> ${escaparHtml(quartos)}</div>` : ""}
-            ${suites ? `<div class="item"><strong>Suítes:</strong> ${escaparHtml(suites)}</div>` : ""}
-            ${vagas ? `<div class="item"><strong>Vagas:</strong> ${escaparHtml(vagas)}</div>` : ""}
+            ${tipo ? `<div class="item"><strong>Tipo:</strong> ${escaparHtml(tipo)}</div>` : ""}
+            ${endereco ? `<div class="item"><strong>Endereço:</strong> ${escaparHtml(endereco)}</div>` : ""}
             ${(bairro || cidade) ? `<div class="item"><strong>Localização:</strong> ${escaparHtml([bairro,cidade].filter(Boolean).join(", "))}</div>` : ""}
           </div>
 
