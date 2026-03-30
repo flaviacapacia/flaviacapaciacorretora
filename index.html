@@ -465,6 +465,27 @@
           <p>4 quartos • suíte • 2 vagas</p>
         </a>
       </div>
+      <div class="imovel">
+        <a href="apartamento-venda-florianopolis-v505.html">
+          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Apartamento à venda no bairro florianopolis sc plantas inteligentes em Florianópolis/SC">
+          <h3>Apartamento à venda no bairro florianopolis sc plantas inteligentes em Florianópolis/SC</h3>
+          <p>Apartamento • florianopolis</p>
+        </a>
+      </div>
+      <div class="imovel">
+        <a href="studio-venda-campeche-v506.html">
+          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Studio à venda em Campeche">
+          <h3>Studio à venda em Campeche</h3>
+          <p>Studio • Campeche • R$ 1.690.000,00</p>
+        </a>
+      </div>
+      <div class="imovel">
+        <a href="apartamento-venda-florianopolis-sc-com-o-nosso-crm-v508.html">
+          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Apartamento para venda em Florianópolis SC">
+          <h3>Apartamento para venda em Florianópolis SC</h3>
+          <p>Apartamento • Florianópolis SC Com o nosso CRM</p>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -563,7 +584,7 @@
 
     <div class="footer-credit">
       <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados.</p>
-      Feito com 💛 por <strong>Capacia Group</strong> 💛
+      Feito com 💛 por <strong>Sistema de Inteligencia Imobiliaria</strong> 💛
     </div>
   </footer>
 
@@ -607,24 +628,52 @@
       statusEl.textContent = `${imoveis.length} imóvel(is) encontrado(s).`;
 
       imoveis.forEach(imovel => {
-        const titulo = escaparHtml(imovel?.titulo_anuncio || "Imóvel");
-        const preco = formatarPrecoBRL(imovel?.valor_venda);
-        const imagem = Array.isArray(imovel?.imagens) && imovel.imagens[0] 
-          ? imovel.imagens[0] 
-          : "img/placeholder.jpg";
+        const titulo = escaparHtml(imovel?.titulo || imovel?.titulo_anuncio || "Imóvel");
+        const preco = formatarPrecoBRL(imovel?.valor || imovel?.valor_venda);
+        let imagem = "img/placeholder.jpg";
+        if (Array.isArray(imovel?.fotos) && imovel.fotos.length > 0) {
+          imagem = imovel.fotos[0].startsWith('/') ? API_URL + imovel.fotos[0] : imovel.fotos[0];
+        }
 
-        // usa o arquivoPublicado da API para montar o link
-        const url = imovel?.arquivoPublicado || "#";
+        // Força o caminho relativo para evitar Erro 404 ao clicar no Cloud Run
+        let url = "#";
+        if (imovel?.arquivoPublicado) {
+          url = `/${imovel.arquivoPublicado}`;
+        } else if (imovel?.urlPublicada) {
+          try { url = new URL(imovel.urlPublicada).pathname; } 
+          catch(e) { url = imovel.urlPublicada.startsWith('/') ? imovel.urlPublicada : `/${imovel.urlPublicada}`; }
+        }
 
-        const descricao = escaparHtml(imovel?.descricao_apartamento || "");
+        // Monta informações como "Bairro • Metragem • Suítes/Dormitórios"
+        const bairro = escaparHtml(imovel?.bairro || imovel?.local || "");
+        const metragem = imovel?.metragem || imovel?.area || "";
+        const suites = imovel?.suites || "";
+        const dormitoios = imovel?.dormitorios || imovel?.quartos || "";
+        const vagas = imovel?.vagas || "";
+        
+        let infoTexto = [];
+        if (bairro) infoTexto.push(bairro);
+        if (metragem) infoTexto.push(`${metragem}m²`);
+        
+        // Prioridade: suites > dormitórios > quartos
+        if (suites) {
+          infoTexto.push(`${suites} suíte${suites > 1 ? 's' : ''}`);
+        } else if (dormitoios) {
+          infoTexto.push(`${dormitoios} dormitório${dormitoios > 1 ? 's' : ''}`);
+        } else if (imovel?.quartos) {
+          infoTexto.push(`${imovel.quartos} quarto${imovel.quartos > 1 ? 's' : ''}`);
+        }
+        
+        if (vagas) infoTexto.push(`${vagas} vaga${vagas > 1 ? 's' : ''}`);
+        
+        const infos = infoTexto.length > 0 ? infoTexto.join(" • ") : "";
 
         const card = `
           <div class="imovel">
             <a href="${url}">
               <img src="${imagem}" alt="${titulo}">
               <h3>${titulo}</h3>
-              <p>${descricao}</p>
-              ${preco ? `<p><strong>${preco}</strong></p>` : ""}
+              <p>${infos}</p>
             </a>
           </div>
         `;
