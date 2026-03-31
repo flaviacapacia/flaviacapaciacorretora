@@ -17,16 +17,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   
   <style>
+:root {
+  /* Paleta - Dourado, Bronze e Neutros */
+  --dourado: #C9A227;        /* destaque principal */
+  --dourado-claro: #F5E6A1;  /* variação suave para fundos */
 
-    :root {
-      --fundo-branco: #ffffff;
-      --texto-bronze: #4B3A2F;
-      --bronze-claro: #7A5C45;
-      --fonte-padrao: 'Playfair Display', serif;
-      --dourado: #b08d57;
-    }
+  --bronze: #CD7F32;         /* acento secundário */
+  --bronze-escuro: #8C4A2F;  /* versão mais profunda */
 
-    * {
+  --branco: #FFFFFF;         /* base clara */
+  --off-white: #F9F9F9;      /* alternativa suave */
+
+  --cinza-escuro: #2C3E50;   /* contraste forte */
+  --cinza-medio: #7A7A7A;    /* texto secundário */
+  --cinza-claro: #ECEFF1;    /* fundo neutro */
+
+  --texto-escuro: #1C1C1C;
+  --texto-medio: #555555;
+
+  --sombra: rgba(0, 0, 0, 0.1);
+  --sombra-hover: rgba(0, 0, 0, 0.2);
+
+  --fonte-principal: 'Roboto', sans-serif;
+  --fonte-secundaria: 'Open Sans', sans-serif;
+}
+
+      * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -124,8 +140,8 @@
     }
 
     .nav-menu a:hover {
-      background-color: var(--azul-claro);
-      color: var(--azul-principal);
+      background-color:#F5E6A1;
+      color: #F5E6A1;
     }
 
     /* ========== HERO COM IMAGEM DE FUNDO ========== */
@@ -877,7 +893,7 @@
       <!-- IMÓVEL 1 -->
       <article class="property-card">
         <span class="property-tag">Destaque</span>
-        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Agronômica">
+        <img src=""img/sala1.webp"=crop" class="property-image" alt="Apartamento Agronômica">
         <div class="property-details">
           <div class="property-type">Apartamento</div>
           <h3 class="property-title">Apartamento na Agronômica</h3>
@@ -889,7 +905,7 @@
             <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
             <div class="feature-item">🚗 <strong>1</strong> Vaga</div>
           </div>
-          <div class="property-price">R$ 520.000</div>
+          <div class="property-price">R$ 780.000</div>
           <div class="property-actions">
             <a href="apartamento-venda-agronomica-v439.html" class="btn-details">Ver Detalhes</a>
             <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento na Agronômica" class="btn-whats" target="_blank">💬</a>
@@ -900,7 +916,7 @@
       <!-- IMÓVEL 2 -->
       <article class="property-card">
         <span class="property-tag">Lançamento</span>
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Kobrasol">
+        <img src=""img/imagens/sacada-1.webp"=crop" class="property-image" alt="Apartamento Kobrasol">
         <div class="property-details">
           <div class="property-type">Apartamento</div>
           <h3 class="property-title">Apartamento no Kobrasol</h3>
@@ -912,7 +928,7 @@
             <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
             <div class="feature-item">🚗 <strong>1</strong> Vaga</div>
           </div>
-          <div class="property-price">R$ 420.000</div>
+          <div class="property-price">R$ 940.000</div>
           <div class="property-actions">
             <a href="apartamento-venda-kobrasol-v440.html" class="btn-details">Ver Detalhes</a>
             <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento no Kobrasol" class="btn-whats" target="_blank">💬</a>
@@ -922,7 +938,7 @@
 
       <!-- IMÓVEL 3 -->
       <article class="property-card">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Centro">
+        <img src=""img/imagens/01sala_035.jpg"=crop" class="property-image" alt="Apartamento Centro">
         <div class="property-details">
           <div class="property-type">Apartamento</div>
           <h3 class="property-title">Apartamento Centro</h3>
@@ -934,7 +950,7 @@
             <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
             <div class="feature-item">🚗 <strong>2</strong> Vagas</div>
           </div>
-          <div class="property-price">R$ 650.000</div>
+          <div class="property-price">R$ 2.250.000</div>
           <div class="property-actions">
             <a href="apartamento-venda-centro-v447.html" class="btn-details">Ver Detalhes</a>
             <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento no Centro" class="btn-whats" target="_blank">💬</a>
@@ -945,29 +961,29 @@
       <!-- IMÓVEL 4 -->
       <article class="property-card">
         <span class="property-tag">Oportunidade</span>
-        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=300&fit=crop" class="property-image" alt="Apartamento Trindade">
+        <img src="img/portaldosol1.jpeg"=crop" class="property-image" alt="Apartamento Campinas">
         <div class="property-details">
           <div class="property-type">Apartamento</div>
-          <h3 class="property-title">Apartamento Trindade</h3>
+          <h3 class="property-title">Apartamento Campinas/h3>
           <div class="property-location">
-            📍 Trindade - Florianópolis/SC
+            📍 Campinas - Florianópolis/SC
           </div>
           <div class="property-features">
             <div class="feature-item">🛏️ <strong>1</strong> Quarto</div>
             <div class="feature-item">🚿 <strong>1</strong> Suíte</div>
             <div class="feature-item">🚗 <strong>1</strong> Vaga</div>
           </div>
-          <div class="property-price">R$ 380.000</div>
+          <div class="property-price"> Consultar valor</div>
           <div class="property-actions">
-            <a href="apartamento-venda-trindade-v448.html" class="btn-details">Ver Detalhes</a>
-            <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento na Trindade" class="btn-whats" target="_blank">💬</a>
+            <a href="apartamento-venda-campins-v457.html" class="btn-details">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá! Tenho interesse no apartamento em Campinas" class="btn-whats" target="_blank">💬</a>
           </div>
         </div>
       </article>
 
       <!-- IMÓVEL 5 -->
       <article class="property-card">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=300&fit=crop" class="property-image" alt="Casa Ratones">
+        <img src="https://img.olx.com.br/images/24/240529711589713.jpg"=crop" class="property-image" alt="Casa Ratones">
         <div class="property-details">
           <div class="property-type">Casa</div>
           <h3 class="property-title">Casa em Ratones</h3>
