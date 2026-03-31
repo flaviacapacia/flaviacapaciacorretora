@@ -16,7 +16,7 @@
   <link rel="canonical" href="https://www.flaviacapaciacorretora.com/index.html" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
  <style> 
- :root {
+:root {
   /* Paleta - Dourado, Bronze e Neutros */
   --dourado: #C9A227;        
   --dourado-claro: #F5E6A1;  
@@ -25,7 +25,7 @@
   --bronze-escuro: #8C4A2F;  
 
   --branco: #FFFFFF;         
-  --off-white: #FAFAF7;      
+  --off-white: #F9F9F9;      
 
   --cinza-escuro: #2C3E50;   
   --cinza-medio: #7A7A7A;    
@@ -98,7 +98,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--texto-escuro); /* letras escuras */
+  color: var(--texto-escuro);
   text-align: center;
 }
 
@@ -129,10 +129,23 @@ body {
   color: var(--texto-escuro);
 }
 
-/* ========== BOTÕES WHATSAPP ========== */
+/* ========== BOTÕES PRINCIPAIS ========== */
+.search-btn-main,
+.filter-btn,
+.btn-details {
+  background-color: var(--bronze);
+  color: var(--branco);
+}
+.search-btn-main:hover,
+.filter-btn:hover,
+.btn-details:hover {
+  background-color: var(--bronze-escuro);
+}
+
+/* ========== BOTÃO WHATSAPP ========== */
 .btn-whats {
   padding: 13px 22px;
-  background-color: var(--bronze);
+  background-color: #25D366; /* verde padrão WhatsApp */
   color: var(--branco);
   text-decoration: none;
   border-radius: 6px;
@@ -141,10 +154,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 15px;
 }
-
+.btn-whats i {
+  font-size: 18px; /* ícone mais moderno e proporcional */
+  margin-right: 8px;
+}
 .btn-whats:hover {
-  background-color: var(--bronze-escuro);
+  background-color: #128C7E; /* verde escuro WhatsApp */
 }
 
 /* WhatsApp flutuante */
@@ -152,7 +169,7 @@ body {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  background-color: var(--bronze);
+  background-color: #25D366; /* verde padrão */
   color: var(--branco);
   width: 62px;
   height: 62px;
@@ -160,16 +177,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 28px; /* ícone mais clean */
   box-shadow: 0 5px 18px rgba(0,0,0,0.2);
   z-index: 998;
   text-decoration: none;
   transition: all 0.3s;
 }
-
 .whatsapp-float:hover {
-  background-color: var(--dourado-claro);
-  color: var(--texto-escuro);
+  background-color: #128C7E;
   transform: scale(1.12);
 }
 
@@ -207,6 +222,7 @@ body {
   background-color: var(--dourado-claro);
   color: var(--texto-escuro);
 }
+
 </style>
 </head>
 <body>
