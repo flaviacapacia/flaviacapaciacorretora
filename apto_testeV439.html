@@ -126,84 +126,85 @@
       gap: 8px;
       align-items: center;
     }
+.nav-menu a {
+  text-decoration: none;
+  color: var(--texto-escuro);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all 0.3s;
+}
 
-    .nav-menu a {
-      text-decoration: none;
-      color: var(--texto-escuro);
-      font-weight: 600;
-      font-size: 14px;
-      padding: 10px 16px;
-      border-radius: 5px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      transition: all 0.3s;
-    }
+.nav-menu a:hover {
+  background-color: var(--dourado); /* fundo dourado */
+  color: var(--branco);             /* texto branco para contraste */
+}
 
-    .nav-menu a:hover {
-      background-color:#F5E6A1;
-      color: #F5E6A1;
-    }
 
-    /* ========== HERO COM IMAGEM DE FUNDO ========== */
-    .hero-image-section {
-      position: relative;
-      height: 500px;
-      background: linear-gradient(rgba(0, 40, 85, 0.6), rgba(0, 40, 85, 0.6)), 
+   /* ========== HERO COM IMAGEM DE FUNDO ========== */
+.hero-image-section {
+  position: relative;
+  height: 500px;
+  background: linear-gradient(rgba(201, 162, 39, 0.6), rgba(201, 162, 39, 0.6)), 
               url('img/capasite.webp') center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  text-align: center;
+}
 
-    .hero-image-content {
-      max-width: 1200px;
-      padding: 0 20px;
-      width: 100%;
-    }
+.hero-image-content {
+  max-width: 1200px;
+  padding: 0 20px;
+  width: 100%;
+}
 
-    .hero-image-content h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    }
+.hero-image-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  color: var(--dourado); /* título em dourado */
+}
 
-    .hero-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
+.hero-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
 
-    .hero-tab {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 2px solid white;
-      color: white;
-      padding: 12px 35px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-transform: uppercase;
-    }
+.hero-tab {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--dourado);
+  color: var(--branco);
+  padding: 12px 35px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
 
-    .hero-tab.active,
-    .hero-tab:hover {
-      background-color: white;
-      color: var(--azul-principal);
-    }
+.hero-tab.active,
+.hero-tab:hover {
+  background-color: var(--dourado);
+  color: var(--branco);
+}
 
-    .hero-search-advanced {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      max-width: 900px;
-      margin: 0 auto;
-    }
+.hero-search-advanced {
+  background: var(--branco);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  max-width: 900px;
+  margin: 0 auto;
+}
 
     .search-input-main {
       width: 100%;
