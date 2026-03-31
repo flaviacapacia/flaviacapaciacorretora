@@ -19,18 +19,18 @@
 <style>
 :root {
   /* Paleta - Dourado, Bronze e Neutros */
-  --dourado: #C9A227;        /* destaque principal */
-  --dourado-claro: #F5E6A1;  /* variação suave para fundos */
+  --dourado: #C9A227;        
+  --dourado-claro: #F5E6A1;  
 
-  --bronze: #CD7F32;         /* acento secundário */
-  --bronze-escuro: #8C4A2F;  /* versão mais profunda */
+  --bronze: #CD7F32;         
+  --bronze-escuro: #8C4A2F;  
 
-  --branco: #FFFFFF;         /* base clara */
-  --off-white: #F9F9F9;      /* alternativa suave */
+  --branco: #FFFFFF;         
+  --off-white: #F9F9F9;      
 
-  --cinza-escuro: #2C3E50;   /* contraste forte */
-  --cinza-medio: #7A7A7A;    /* texto secundário */
-  --cinza-claro: #ECEFF1;    /* fundo neutro */
+  --cinza-escuro: #2C3E50;   
+  --cinza-medio: #7A7A7A;    
+  --cinza-claro: #ECEFF1;    
 
   --texto-escuro: #1C1C1C;
   --texto-medio: #555555;
@@ -42,6 +42,7 @@
   --fonte-secundaria: 'Open Sans', sans-serif;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -52,111 +53,209 @@ body {
   font-family: var(--fonte-principal);
   color: var(--texto-escuro);
   line-height: 1.6;
-  background-color: #F8F9FA;
+  background-color: var(--off-white);
 }
 
 /* ========== BARRA TOPO ========== */
 .top-bar {
-  background-color: var(--azul-escuro);
-  color: white;
+  background-color: var(--branco);
+  color: var(--texto-escuro);
   padding: 8px 0;
   font-size: 13px;
 }
 
-/* ... todo o restante do CSS que você me enviou ... */
-
-/* ========== FOOTER ========== */
-.main-footer {
-  background: var(--branco); /* fundo branco */
-  color: var(--texto-escuro); /* texto escuro para contraste */
-  padding: 55px 20px 25px;
-  margin-top: 70px;
+/* ========== HEADER PRINCIPAL ========== */
+.main-header {
+  background-color: var(--branco);
+  box-shadow: 0 2px 10px var(--sombra);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.footer-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 45px;
-  margin-bottom: 35px;
-}
-
-.footer-column h3 {
-  font-size: 19px;
-  font-weight: 700;
-  margin-bottom: 22px;
-  color: var(--dourado); /* títulos em dourado suave */
-}
-
-.footer-logo {
-  max-width: 180px;
-  margin-bottom: 18px;
-}
-
-.footer-column p {
-  line-height: 1.9;
-  opacity: 0.92;
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: var(--bronze-escuro); /* texto em bronze escuro */
-}
-
-.footer-column a {
-  color: var(--texto-escuro); /* links escuros por padrão */
+.nav-menu a {
   text-decoration: none;
-  display: block;
-  margin-bottom: 12px;
-  transition: color 0.3s;
+  color: var(--texto-escuro);
+  font-weight: 600;
   font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all 0.3s;
 }
 
-.footer-column a:hover {
-  color: var(--dourado); /* links dourados no hover */
+.nav-menu a:hover {
+  background-color: var(--dourado-claro);
+  color: var(--texto-escuro);
 }
 
-.footer-contact-row {
+/* ========== HERO COM IMAGEM DE FUNDO ========== */
+.hero-image-section {
+  position: relative;
+  height: 500px;
+  background: linear-gradient(rgba(245, 236, 220, 0.25), rgba(245, 236, 220, 0.25)), 
+              url('img/capasite.webp') center/cover;
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-  color: var(--bronze-escuro);
+  justify-content: center;
+  color: var(--texto-escuro);
+  text-align: center;
 }
 
-.social-icons {
+.hero-image-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  color: var(--texto-escuro);
+}
+
+.hero-tab {
+  background-color: rgba(0,0,0,0.05);
+  border: 2px solid var(--dourado-claro);
+  color: var(--texto-escuro);
+  padding: 12px 35px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.hero-tab.active,
+.hero-tab:hover {
+  background-color: var(--dourado-claro);
+  color: var(--texto-escuro);
+}
+
+/* ========== BOTÕES PRINCIPAIS ========== */
+.search-btn-main,
+.filter-btn,
+.btn-details {
+  background-color: var(--bronze);
+  color: var(--branco);
+}
+.search-btn-main:hover,
+.filter-btn:hover,
+.btn-details:hover {
+  background-color: var(--bronze-escuro);
+}
+
+/* ========== BOTÃO WHATSAPP ========== */
+.btn-whats {
+  padding: 13px 22px;
+  background-color: #25D366; /* verde padrão WhatsApp */
+  color: var(--branco);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background-color 0.3s;
   display: flex;
-  gap: 16px;
-  margin-top: 18px;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+.btn-whats i {
+  font-size: 18px; /* ícone proporcional */
+  margin-right: 8px;
+}
+.btn-whats:hover {
+  background-color: #128C7E; /* verde escuro WhatsApp */
 }
 
-.social-icons a {
-  width: 42px;
-  height: 42px;
-  background-color: rgba(0,0,0,0.05); /* discreto sobre branco */
+/* WhatsApp flutuante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background-color: #25D366; /* verde padrão */
+  color: var(--branco);
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 24px; /* ícone mais clean */
+  box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+  z-index: 998;
+  text-decoration: none;
   transition: all 0.3s;
-  font-size: 18px;
-  color: var(--bronze-escuro); /* ícones em bronze escuro */
+}
+.whatsapp-float:hover {
+  background-color: #128C7E;
+  transform: scale(1.12);
 }
 
-.social-icons a:hover {
-  background-color: var(--dourado); /* hover dourado */
-  color: var(--branco); /* ícone branco sobre dourado */
-  transform: translateY(-4px);
+/* ========== FOOTER ========== */
+.main-footer {
+  background: var(--branco);
+  color: var(--texto-escuro);
+  padding: 55px 20px 25px;
+  margin-top: 70px;
 }
 
+.footer-column h3 {
+  color: var(--dourado-claro);
+}
+
+.footer-column p,
 .footer-bottom {
-  text-align: center;
-  padding-top: 32px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  font-size: 13px;
-  opacity: 0.85;
   color: var(--bronze-escuro);
 }
 
+.footer-column a {
+  color: var(--texto-escuro);
+}
+
+.footer-column a:hover {
+  color: var(--dourado-claro);
+}
+
+.social-icons a {
+  color: var(--bronze-escuro);
+  background-color: rgba(0,0,0,0.05);
+}
+
+.social-icons a:hover {
+  background-color: var(--dourado-claro);
+  color: var(--texto-escuro);
+}
+    /* ========== RESPONSIVO ========== */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-image-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-tabs {
+        flex-direction: column;
+      }
+
+      .search-filters {
+        grid-template-columns: 1fr;
+      }
+
+      .properties-grid,
+      .lancamentos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 </style>
 </head>
 <body>
