@@ -128,7 +128,7 @@
     }
 .nav-menu a {
   text-decoration: none;
-  color: var(--texto-escuro);
+  color:--texto-escuro: #1C1C1C;;
   font-weight: 600;
   font-size: 14px;
   padding: 10px 16px;
@@ -169,7 +169,7 @@
   font-weight: 700;
   margin-bottom: 30px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  color: var(--dourado); /* título em dourado */
+  color: --texto-escuro: #1C1C1C;
 }
 
 .hero-tabs {
@@ -635,8 +635,8 @@
     }
 /* ========== FOOTER ========== */
 .main-footer {
-  background: linear-gradient(135deg, var(--bronze-escuro), var(--dourado));
-  color: var(--branco);
+  background: var(--branco); /* fundo branco */
+  color: var(--texto-escuro); /* texto escuro para contraste */
   padding: 55px 20px 25px;
   margin-top: 70px;
 }
@@ -654,7 +654,7 @@
   font-size: 19px;
   font-weight: 700;
   margin-bottom: 22px;
-  color: var(--dourado); /* títulos em dourado */
+  color: var(--dourado); /* títulos em dourado suave */
 }
 
 .footer-logo {
@@ -671,7 +671,7 @@
 }
 
 .footer-column a {
-  color: var(--branco);
+  color: var(--texto-escuro); /* links escuros por padrão */
   text-decoration: none;
   display: block;
   margin-bottom: 12px;
@@ -680,7 +680,7 @@
 }
 
 .footer-column a:hover {
-  color: var(--dourado); /* links em dourado no hover */
+  color: var(--dourado); /* links dourados no hover */
 }
 
 .footer-contact-row {
@@ -700,25 +700,26 @@
 .social-icons a {
   width: 42px;
   height: 42px;
-  background-color: rgba(255,255,255,0.12);
+  background-color: rgba(0,0,0,0.05); /* discreto sobre branco */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
   font-size: 18px;
-  color: var(--branco);
+  color: var(--bronze-escuro); /* ícones em bronze escuro */
 }
 
 .social-icons a:hover {
-  background-color: var(--dourado);
+  background-color: var(--dourado); /* hover dourado */
+  color: var(--branco); /* ícone branco sobre dourado */
   transform: translateY(-4px);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 32px;
-  border-top: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(0,0,0,0.1);
   font-size: 13px;
   opacity: 0.85;
   color: var(--bronze-escuro);
