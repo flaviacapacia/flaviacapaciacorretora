@@ -130,6 +130,66 @@
   }
 }
 
+    .site-footer {
+      background: #ffffff;
+      color: #000000;
+      padding: 40px 20px;
+      font-family: var(--fonte-padrao);
+      margin-top: 34px;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .footer-contact, .footer-logo, .footer-social { text-align: center; }
+
+    .footer-logo img { width: 180px; transition: transform 0.7s ease; }
+    .footer-logo img:hover { transform: scale(1.05); }
+
+    .footer-contact h3, .footer-social h3 { color: var(--dourado); margin-bottom: 10px; }
+
+    .footer-contact a, .footer-social a {
+      color: var(--dourado);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-contact a:hover, .footer-social a:hover {
+      color: var(--dourado);
+      text-decoration: underline;
+      background: none;
+    }
+
+    .footer-contact p { color: var(--dourado); font-size: 16px; margin: 6px 0; }
+
+    .footer-social ul { list-style: none; padding: 0; margin: 0; }
+    .footer-social li { margin-bottom: 8px; }
+
+    .footer-credit {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #000000;
+    }
+
+    @media (max-width: 900px) {
+      .footer-container { grid-template-columns: 1fr; gap: 20px; }
+      .outros-imoveis ul { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .footer-container { grid-template-columns: 1fr; gap: 20px; }
+      .outros-imoveis ul { grid-template-columns: 1fr; }
+      .hero img { height: 220px; }
+    }
+  </style>
 </style>
 
 <body>
@@ -199,49 +259,39 @@
    target="_blank">
    💬 Fale pelo WhatsApp
 </a>
-<!-- Rodapé -->
-<footer class="site-footer" id="contato">
-  <div class="footer-container">
-    <!-- Coluna esquerda: Contato -->
-    <div class="footer-contact">
-      <h3>Contato</h3>
-      <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
-      <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-      <p>Florianópolis • São José</p>
-      <p> Palhoça </p>
+  <footer class="site-footer" id="contato">
+    <div class="footer-container">
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <p><a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a></p>
+        <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+        <p>Florianópolis - São José</p>
+        <p>Palhoça</p>
       </div>
-    
 
-    <!-- Coluna central: Logo -->
-    <div class="footer-logo">
-      <a href="index.html">
-        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" 
-             alt="Logo Flavia Imóveis"/>
-      </a>
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis"/>
+        </a>
+      </div>
+
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <ul>
+          <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Coluna direita: Redes sociais -->
-    <div class="footer-social">
-      <h3>Redes Sociais</h3>
-      <ul>
-        <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
-        <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
-      </ul>
+    <div class="footer-credit">
+      <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+      Feito com por <strong>Capacia Group</strong>
     </div>
-  </div>
-
-  <!-- Créditos -->
-  <div class="footer-credit">
-    Feito com 💛 por <strong>Capacia Group</strong> 💛
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  </footer>
 </body>
 </html>
-
-
 
 
