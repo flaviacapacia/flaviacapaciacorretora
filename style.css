@@ -434,3 +434,302 @@
 .btn-favorito.favorito {
   color: red;
 }
+/* paginas de imoveis*/
+
+/* Barra de Cookies */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 9999;
+}
+
+.cookie-banner button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cookie-banner .accept {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.cookie-banner .reject {
+  background: #f44336;
+  color: #fff;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.imovel-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px; /* margem interna mais ampla */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.imovel-page h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--dourado);
+}
+
+.preco {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--bronze-claro);
+  text-align: center;
+}
+
+.codigo {
+  font-size: 0.95rem;
+  color: #777;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Cartões */
+.card {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px; /* mais respiro */
+  margin-bottom: 25px;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #34495e;
+  border-left: 4px solid var(--dourado);
+  padding-left: 8px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.8);
+}
+
+.modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 6px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.carousel-controls {
+  margin-top: 15px;
+}
+
+.carousel-btn {
+  background: var(--dourado);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  margin: 0 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.carousel-btn:hover {
+  background: var(--bronze-claro);
+}
+
+/* Galeria */
+.zoom-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.zoom-container {
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #f7f3ee;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.zoom-container img {
+  width: 100%;
+  height: 240px; /* altura maior para equilibrar com mapa/form */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.zoom-container:hover img {
+  transform: scale(1.05);
+}
+
+.video-container {
+  width: 100%;
+}
+
+/* Vídeo */
+.video-thumbnail {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Make video container sticky on larger viewports */
+@media (min-width: 800px) {
+  .video-container {
+    position: sticky;
+    top: 20px;
+  }
+}
+
+/* Mapa responsivo */
+.map-container {
+  position: relative;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* ÍCONES DE RESUMO */
+.resumo-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+  padding: 25px;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--texto-bronze);
+}
+
+.icon-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+/* Diferenciais */
+.imovel-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.imovel-lista li {
+  background: #ffffff;
+  border: 1px solid #e8dfd6;
+  border-radius: 20px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.diferencial-card {
+  background: #ffffff;
+  border: 1px solid #e8dfd6;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.diferencial-card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  /* Container principal */
+  .imovel-page {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: left; /* textos alinhados à esquerda */
+  }
