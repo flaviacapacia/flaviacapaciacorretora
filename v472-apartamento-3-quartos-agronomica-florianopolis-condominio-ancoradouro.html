@@ -22,19 +22,36 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Apartamento 3 quartos Agronômica Florianópolis - Condomínio Ancoradouro",
-  "description": "Apartamento mobiliado na Agronômica, em Florianópolis, com face principal norte e vista para o mar. Possui piso em porcelanato, armários planejados em todos os ambientes.",
   "image": "img/v472/anco1.jpeg",
   "sku": "v472",
-  "brand": {
-    "@type": "Brand",
-    "name": "Flavia Capacia Corretora"
-  },
+  "brand": { "@type": "Brand", "name": "Flavia Capacia Corretora" },
   "offers": {
     "@type": "Offer",
-    "url": "/static/v472-apartamento-3-quartos-agronomica-florianopolis-condominio-ancoradouro.html",
+    "url": "/v472-apartamento-3-quartos-agronomica-florianopolis-condominio-ancoradouro.html",
     "priceCurrency": "BRL",
     "price": "2995000",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+    "itemOffered": {
+      "@type": "Apartment",
+      "name": "Apartamento Agronômica",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Florianópolis",
+        "addressRegion": "SC",
+        "addressCountry": { "@type": "Country", "name": "BR" }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "2"
+      },
+      "review": {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Cliente" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Apartamento amplo e com vista para o mar."
+      }
+    }
   }
 }
 </script>
