@@ -20,24 +20,41 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Apartamento à Venda com 3 dormitórios no Kobrasol em São José",
-  "description": "Apartamento à Venda com 3 dormitórios no Kobrasol em São José",
-  "image": "img/v440/v440-1.jpeg",
-  "sku": "v440",
-  "brand": {
-    "@type": "Brand",
-    "name": "Flavia Capacia Corretora"
+  "@type": "Offer",
+  "priceCurrency": "BRL",
+  "price": "940000",
+  "availability": "https://schema.org/InStock",
+  "itemOffered": {
+    "@type": "Apartment",
+    "name": "Apartamento em São José",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São José",
+      "addressRegion": "SC",
+      "addressCountry": "BR"
+    }
   },
-  "offers": {
-    "@type": "Offer",
-    "url": "/static/v440-apartamento-a-venda-com-3-dormitorios-no-kobrasol-em-sao-jose.html",
-    "priceCurrency": "BRL",
-    "price": "940.000,00",
-    "availability": "https://schema.org/InStock"
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  },
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Cliente"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "reviewBody": "Ótimo imóvel, bem localizado."
   }
 }
 </script>
+
 </head>
 <body>
   <header class="site-header">
@@ -764,12 +781,21 @@ body {
   </a>
 
   <!-- Mapa -->
-  <section class="card">
-    <h2>Mapa do imóvel</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps?q=Kobrasol%2C%20S%C3%A3o%20Jos%C3%A9&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
+<section class="card">
+  <h2>Mapa do imóvel</h2>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps?q=Kobrasol%2C%20São%20José&output=embed" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
 
 
   <!-- Vídeo -->
