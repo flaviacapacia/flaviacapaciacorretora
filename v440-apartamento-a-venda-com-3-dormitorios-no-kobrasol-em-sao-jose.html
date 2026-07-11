@@ -20,40 +20,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Offer",
-  "priceCurrency": "BRL",
-  "price": "940000",
-  "availability": "https://schema.org/InStock",
-  "itemOffered": {
-    "@type": "Apartment",
-    "name": "Apartamento em São José",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "São José",
-      "addressRegion": "SC",
-      "addressCountry": "BR"
+  "@type": "Product",
+  "name": "Apartamento à venda com 3 dormitórios no Kobrasol em São José",
+  "image": "img/v440/v440-1.jpeg",
+  "sku": "v440",
+  "brand": { "@type": "Brand", "name": "Flavia Capacia Corretora" },
+  "offers": {
+    "@type": "Offer",
+    "url": "/v440-apartamento-a-venda-com-3-dormitorios-no-kobrasol-em-sao-jose.html",
+    "priceCurrency": "BRL",
+    "price": "940000",
+    "availability": "https://schema.org/InStock",
+    "itemOffered": {
+      "@type": "Apartment",
+      "name": "Apartamento em São José",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São José",
+        "addressRegion": "SC",
+        "addressCountry": { "@type": "Country", "name": "BR" }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1"
+      },
+      "review": {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Cliente" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Ótimo imóvel, bem localizado."
+      }
     }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "1"
-  },
-  "review": {
-    "@type": "Review",
-    "author": {
-      "@type": "Person",
-      "name": "Cliente"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    },
-    "reviewBody": "Ótimo imóvel, bem localizado."
   }
 }
 </script>
+
 
 </head>
 <body>
