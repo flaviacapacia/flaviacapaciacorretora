@@ -36,67 +36,33 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Imóvel Kobrasol -->
+  <!-- Imóveis -->
   <url>
-    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-kobrasol-v440.html</loc>
+    <loc>https://www.flaviacapaciacorretora.com/v440-apartamento-a-venda-com-3-dormitorios-no-kobrasol-em-sao-jose.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>0.9</priority>
   </url>
 
-   <url>
-    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-palmas-v456.html</loc>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v456-apartamento-a-venda-em-palmas-governador-celso-ramos-sc.html</loc>
     <lastmod>2026-06-02</lastmod>
     <priority>0.9</priority>
   </url>
-  <!-- Imóvel Agronômica -->
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-agronomica-v439.html</loc>
-    <lastmod>2025-11-30</lastmod>
-    <priority>0.9</priority>
-  </url>
 
-  <!-- Imóvel Centro -->
   <url>
-    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-centro-v447.html</loc>
-    <lastmod>2025-11-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Página Blog -->
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/blog.html</loc>
-    <lastmod>2025-11-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Artigo Airbnb -->
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/artigo-airbnb.html</loc>
-    <lastmod>2025-11-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Artigo CFL Campeche -->
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/artigo-cfl-campeche.html</loc>
-    <lastmod>2025-11-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Artigo Mercado Imobiliário -->
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/artigo-floripa-mercado-imobiliario.html</loc>
-    <lastmod>2025-11-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-
-   <url>
-    <loc>https://www.flaviacapaciacorretora.com/artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html</loc>
+    <loc>https://www.flaviacapaciacorretora.com/v465-apartamento-a-venda-com-02-suites-e-sacada-em-florianopolis.html</loc>
     <lastmod>2026-06-02</lastmod>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://www.flaviacapaciacorretora.com/v478-casa-tipo-sobrado-a-venda-com-02-suites-e-quintal-e-passagem-lateral-em-sao-jose.html</loc>
+    <loc>https://www.flaviacapaciacorretora.com/v472-apartamento-3-quartos-agronomica-florianopolis-condominio-ancoradouro.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v476-apartamento-a-venda-com-2-dormitorios-e-suite-em-sao-jose.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -108,8 +74,53 @@
   </url>
 
   <url>
-    <loc>https://www.flaviacapaciacorretora.com/v476-apartamento-a-venda-com-2-dormitorios-e-suite-em-sao-jose.html</loc>
+    <loc>https://www.flaviacapaciacorretora.com/v478-casa-tipo-sobrado-a-venda-com-02-suites-e-quintal-e-passagem-lateral-em-sao-jose.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Outras páginas -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-agronomica-v439.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-centro-v447.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog e artigos -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/blog.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/artigo-airbnb.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/artigo-cfl-campeche.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/artigo-floripa-mercado-imobiliario.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
