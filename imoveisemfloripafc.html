@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flávia Capacia | Corretora de Imóveis</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Flávia Capacia - Corretora de Imóveis em Florianópolis. Consultoria personalizada para compra e venda de imóveis exclusivos.">
+  <meta name="keywords" content="corretora de imóveis, imóveis em Floripa, consultoria imobiliária, Flávia Capacia">
+  <meta name="author" content="Flávia Capacia">
+
+  <!-- Favicon -->
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* VARIABLES & RESET */
+    :root {
+      --bg-black: #0B0B0C;
+      --card-bg: #141416;
+      --text-white: #FFFFFF;
+      --text-muted: #D1D1D6;
+      --pink-lilas: rgb(232, 16, 239);
+      --gold-primary: #D4AF37;
+      --gold-hover: #F3E5AB;
+      --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      --pink-gradient: linear-gradient(135deg, rgb(222, 22, 132) 0%, #F15700 50%, #FCCC63 100%);
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3 {
+      font-family: var(--font-title);
+    }
+
+    .highlight-pink {
+      color: var(--pink-lilas);
+    }
+
+    .highlight-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* BUTTONS */
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #000;
+      font-weight: 700;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5% 8%;
+      background: radial-gradient(circle at top right, rgba(216, 131, 255, 0.15), transparent 40%);
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-subtitle {
+      color: var(--pink-lilas);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-avatar-container {
+      position: relative;
+    }
+
+    .hero-avatar {
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--pink-lilas);
+      box-shadow: 0 0 30px rgba(216, 131, 255, 0.3);
+    }
+
+    /* PROPERTY CARDS */
+    .featured {
+      padding: 80px 8%;
+      background-color: #000000;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(216, 131, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--pink-lilas);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    .card-price {
+      color: var(--pink-lilas);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    /* FORM SECTION */
+    .contact-section {
+      padding: 80px 8%;
+      background: linear-gradient(180deg, #000000 0%, var(--bg-black) 100%);
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-container {
+      background-color: var(--card-bg);
+      padding: 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 550px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(216, 131, 255, 0.3);
+      background-color: #0B0B0C;
+      color: #FFF;
+      font-family: var(--font-body);
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--pink-lilas);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+        padding-top: 120px;
+      }
+      .hero-avatar {
+        width: 260px;
+        height: 260px;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+    }
+     /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .footer-links {
+      margin-top: 10px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {color: var(--pink-lilas);}
+ 
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Imóveis em Floripa FC</p>
+      <h1 class="hero-title">Flávia Capacia Corretora</h1>
+      <p class="hero-description">Encontrando as propriedades mais exclusivas e os melhores investimentos para o seu estilo de vida.</p>
+      <a href="#contato" class="btn-gold">Agendar Consultoria</a>
+    </div>
+    <div class="hero-avatar-container">
+      <!-- Mude o src para a URL da sua foto -->
+      <img src="img/imagens/flavia_sobre.jpg" alt="Flávia Capacia" class="hero-avatar">
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="featured">
+    <h2 class="section-title">Imóveis em <span class="highlight-pink">Destaque</span></h2>
+    <div class="grid">
+      <div class="card">
+        <img src="img/v448/12.1 sacada mesanino.jpg" class="card-img" alt="Imóvel">
+        <div class="card-body">
+          <p class="card-price">R$ 2.000.000</p>
+          <h3 class="card-title">Cobertura Duplex no Estreito</h3>
+          <button class="btn-gold" style="width: 100%; margin-top: 10px;" onclick="enviarWhatsapp('Duplex v448')">Tenho Interesse</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/v472/anco1.jpeg" class="card-img" alt="Imóvel">
+        <div class="card-body">
+          <p class="card-price">R$ 2.295.000</p>
+          <h3 class="card-title">Apartamento na Agronômica</h3>
+          <button class="btn-gold" style="width: 100%; margin-top: 10px;" onclick="enviarWhatsapp('Apto v472 na agronomica')">Tenho Interesse</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO DE CONTATO -->
+  <section class="contact-section" id="contato">
+    <div class="form-container">
+      <h2 style="margin-bottom: 20px; text-align: center;">Fale <span class="highlight-pink">Comigo</span></h2>
+      <form id="leadForm">
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="form-group">
+          <label for="telefone">WhatsApp</label>
+          <input type="tel" id="telefone" required placeholder="(00) 00000-0000">
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" rows="4" placeholder="Como posso te ajudar?"></textarea>
+        </div>
+        <button type="submit" class="btn-gold" style="width: 100%;">Enviar para WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- INTEGRACÃO FIREBASE (OPCIONAL) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // Insira suas credenciais do Firebase aqui caso deseje salvar em banco
+    const firebaseConfig = {
+      apiKey: "SUA_API_KEY",
+      authDomain: "SEU_PROJETO.firebaseapp.com",
+      projectId: "SEU_PROJETO",
+      storageBucket: "SEU_PROJETO.appspot.com",
+      messagingSenderId: "123456789",
+      appId: "SUA_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Salvar Lead no Firebase (disparado pelo form se configurado)
+    window.salvarLeadFirebase = async function(nome, telefone, mensagem) {
+      try {
+        await addDoc(collection(db, "leads"), {
+          nome: nome,
+          telefone: telefone,
+          mensagem: mensagem,
+          data: new Date()
+        });
+      } catch (e) {
+        console.error("Erro ao salvar no Firebase: ", e);
+      }
+    }
+  </script>
+
+  <!-- LÓGICA WHATSAPP -->
+  <script>
+    const SEU_NUMERO_WHATSAPP = "5548999600601"; // Digite seu número com DDD aqui
+
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      // Executa Firebase se configurado
+      if (typeof window.salvarLeadFirebase === 'function') {
+        window.salvarLeadFirebase(nome, telefone, mensagem);
+      }
+
+      // Redireciona para o WhatsApp
+      const texto = `Olá Flávia, meu nome é *${nome}* (${telefone}). ${mensagem}`;
+      const url = `https://wa.me/${5548999600601}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    });
+
+    function enviarWhatsapp(imovel) {
+      const texto = `Olá Flávia, gostaria de receber mais informações sobre o imóvel: *${imovel}*.`;
+      const url = `https://wa.me/${SEU_NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Capacia. Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="https://instagram.com/flaviacapaciacorretora" target="_blank">Instagram</a>
+      <a href="https://www.flaviacapaciacorretora.com" target="_blank">Site Oficial</a>
+    </div>
+  </footer>
+
+
+</body>
+</html>
