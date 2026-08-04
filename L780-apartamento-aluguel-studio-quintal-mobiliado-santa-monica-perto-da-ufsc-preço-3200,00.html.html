@@ -100,32 +100,17 @@
     .secao { padding: 60px 5%; }
     .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; }
 
-    /* === ÁREA DO REELS (PROPORÇÃO 9:16) === */
+    /* === REELS DO FACEBOOK (PROPORÇÃO 9:16) === */
     .reels-container {
       display: flex;
       justify-content: center;
       margin-bottom: 30px;
     }
     .reels-box {
-      width: 100%;
-      max-width: 320px;
-      aspect-ratio: 9 / 16;
-      background: var(--card-bg);
       border-radius: 20px;
       border: 2px solid var(--pink-lilas);
       overflow: hidden;
       box-shadow: 0 0 25px rgba(232,16,239,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-    .reels-box video, .reels-box iframe {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: none;
     }
 
     .galeria {
@@ -138,11 +123,13 @@
       height: 200px;
       border-radius: 12px;
       border: 1px solid rgba(232,16,239,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
+      overflow: hidden;
       transition: 0.3s;
+    }
+    .foto-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .foto-card:hover { transform: translateY(-5px); border-color: var(--gold-primary); }
 
@@ -281,28 +268,30 @@
   <div class="container">
     <h2 class="section-title">Reels do <span class="highlight-gold">Imóvel</span></h2>
     
-    <!-- === COLOQUE SEU REELS AQUI === -->
+    <!-- === REELS DO FACEBOOK JÁ INSERIDO === -->
     <div class="reels-container">
       <div class="reels-box">
-        <!-- Opção 1: Se tiver o arquivo de vídeo -->
-        <!-- <video controls autoplay muted loop>
-          <source src="seu-video-reels.mp4" type="video/mp4">
-        </video> -->
-
-        <!-- Opção 2: Se for link do Instagram Reels (copie o código de incorporação) -->
-        <!-- <iframe src="LINK-DO-REELS-AQUI" allowfullscreen></iframe> -->
-
-        <i class="fab fa-instagram fa-2x"></i><br>Coloque aqui o seu Reels
+        <iframe 
+          src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3965884083711856%2F&show_text=false&width=267&t=0" 
+          width="267" 
+          height="476" 
+          style="border:none;overflow:hidden" 
+          scrolling="no" 
+          frameborder="0" 
+          allowfullscreen="true" 
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
       </div>
     </div>
 
     <h3 style="text-align:center; margin-bottom:20px; color:var(--text-muted);">Fotos do Espaço</h3>
     <div class="galeria">
-      <div class="foto-card"><i class="fas fa-image"></i> Ambiente Interno</div>
-      <div class="foto-card"><i class="fas fa-image"></i> Quintal Exclusivo</div>
-      <div class="foto-card"><i class="fas fa-image"></i> Varanda</div>
-      <div class="foto-card"><i class="fas fa-image"></i> Área de Serviço</div>
+      <div class="foto-card"><img src="img/studio/studio (1).jpg" alt="Studio - Ambiente interno"></div>
+      <div class="foto-card"><img src="img/studio/studio (2).jpg" alt="Studio - Quintal"></div>
+      <div class="foto-card"><img src="img/studio/studio (3).jpg" alt="Studio - Varanda"></div>
+      <div class="foto-card"><img src="img/studio/studio (4).jpg" alt="Studio - Área de serviço"></div>
     </div>
+    <p style="text-align:center; margin-top:10px; color:var(--text-muted); font-size:0.9rem;">*Apenas adicione suas fotos na pasta <strong>img/studio/</strong> com esses nomes ou ajuste os nomes no código*</p>
   </div>
 </section>
 
