@@ -127,5 +127,19 @@
     <lastmod>2026-07-02</lastmod>
     <priority>0.6</priority>
   </url>
+  
+  <!-- Página de Contato -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/contato.fc</loc>
+    <lastmod>2026-08-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Imóvel: Studio Santa Mônica -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/L780-apartamento-aluguel-studio-quintal-mobiliado-santa-monica-perto-da-ufsc.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <priority>0.7</priority>
+  </url>
 
 </urlset>
