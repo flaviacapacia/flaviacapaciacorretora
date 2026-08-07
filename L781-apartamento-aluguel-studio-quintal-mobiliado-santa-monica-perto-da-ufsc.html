@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Mobiliado com Sacada | Santa Mônica - Florianópolis | R$3.000,00</title>
+
+  <!-- SEO OTIMIZADO -->
+  <meta name="description" content="Studio 27m², sacada, mobiliado e equipado no bairro Santa Mônica, Florianópolis. Próximo à UFSC, Angelone e Shopping Vila Romana. Aluguel R$3.000,00.">
+  <meta name="keywords" content="studio aluguel Santa Mônica Florianópolis, studio com sacada, mobiliado próximo UFSC, aluguel anual Florianópolis">
+  <meta name="author" content="Flávia Capacia">
+  
+  <meta property="og:title" content="Studio Mobiliado com Sacada – Santa Mônica | Flávia Capacia">
+  <meta property="og:description" content="Studio completo com sacada exclusiva, 27m², pronto para morar. R$3.000,00/mês.">
+  <meta property="og:image" content="https://www.flaviacapaciacorretora.com/img/img/apto-sacada (1).jpeg">
+  <meta property="og:url" content="https://www.flaviacapaciacorretora.com/L781-apartamento-aluguel-studio-quintal-mobiliado-santa-monica-perto-da-ufsc.html">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-black: #0B0B0C;
+      --card-bg: #141416;
+      --text-white: #FFFFFF;
+      --text-muted: #D1D1D6;
+      --pink-lilas: rgb(232, 16, 239);
+      --gold-primary: #D4AF37;
+      --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-title); }
+    .highlight-pink { color: var(--pink-lilas); }
+    .highlight-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #000;
+      font-weight: 700;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--pink-lilas);
+      color: var(--pink-lilas);
+    }
+    .btn-outline:hover { background: rgba(232,16,239,0.1); }
+    .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(11,11,12,0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 999;
+      border-bottom: 1px solid rgba(232,16,239,0.15);
+    }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    .logo { font-size: 22px; font-weight: 800; color: var(--gold-primary); }
+    nav a { color: var(--text-muted); margin-left: 20px; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: var(--pink-lilas); }
+
+    .hero {
+      min-height: auto;
+      padding: 160px 5% 60px;
+      text-align: center;
+      background: radial-gradient(circle at top center, rgba(232,16,239,0.12), transparent 50%);
+    }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 15px; line-height: 1.2; }
+    .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 20px; }
+    .valor { font-size: 3rem; margin: 20px 0; }
+
+    .secao { padding: 60px 5%; }
+    .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+
+    /* === REELS DO FACEBOOK (PROPORÇÃO 9:16) === */
+    .reels-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .reels-box {
+      border-radius: 20px;
+      border: 2px solid var(--pink-lilas);
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(232,16,239,0.2);
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 20px;
+    }
+    .foto-card {
+      background: var(--card-bg);
+      height: 200px;
+      border-radius: 12px;
+      border: 1px solid rgba(232,16,239,0.2);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .foto-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .foto-card:hover { transform: translateY(-5px); border-color: var(--gold-primary); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 15px;
+    }
+    .info-item {
+      background: var(--card-bg);
+      padding: 18px;
+      border-radius: 10px;
+      border-left: 3px solid var(--pink-lilas);
+    }
+    .info-item strong { color: var(--gold-primary); }
+
+    .condicoes-box {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+    .condicoes-box h3 { color: var(--gold-primary); margin-bottom: 20px; }
+    .condicoes-box ul { list-style: none; margin-top: 15px; }
+    .condicoes-box li { padding: 6px 0; }
+    .condicoes-box li i { color: var(--pink-lilas); margin-right: 8px; }
+
+    .mapa-box iframe {
+      width: 100%;
+      height: 380px;
+      border-radius: 16px;
+      border: 1px solid rgba(232,16,239,0.2);
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 35px 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+    .form-container h3 { text-align: center; margin-bottom: 25px; font-size: 1.8rem; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; margin-bottom: 6px; color: var(--text-muted); font-weight: 500; }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      border: 1px solid rgba(232,16,239,0.3);
+      background: #0B0B0C;
+      color: #fff;
+      font-family: var(--font-body);
+    }
+    .form-group input:focus { outline: none; border-color: var(--gold-primary); }
+
+    .botoes-redes {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .btn-rede {
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: none;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-rede:hover { transform: translateY(-2px); }
+    .google { background: #db4437; }
+    .facebook { background: #4267b2; }
+    .instagram { background: #e1306c; }
+
+    footer { padding: 40px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); }
+    .footer-links { margin-top: 15px; }
+    .footer-links a { color: var(--text-muted); margin: 0 12px; text-decoration: none; }
+    .footer-links a:hover { color: var(--pink-lilas); }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    .whatsapp-float img { width: 32px; height: 32px; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .valor { font-size: 2.2rem; }
+      nav a { margin: 0 8px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">Flávia Capacia</div>
+    <nav>
+      <a href="https://www.flaviacapaciacorretora.com">Outros Imóveis</a>
+      <a href="https://instagram.com/flaviacapaciacorretora" target="_blank">Me siga no Instagram</a>
+      <a href="https://wa.me/5548999600601" target="_blank">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Studio Mobiliado com Sacada <span class="highlight-pink">Santa Mônica</span></h1>
+    <p>Apartamento com sacada, completo, equipado e com localização privilegiada no bairro Santa Mônica em Florianópolis</p>
+    <div class="valor highlight-gold">R$ 3.000,00 / mês</div>
+    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+      <a href="#agendar" class="btn-gold">Agendar Visita</a>
+      <a href="#detalhes" class="btn-gold btn-outline">Ver Detalhes</a>
+    </div>
+  </div>
+</section>
+
+<section class="secao" id="midia">
+  <div class="container">
+    <h2 class="section-title">Reels do <span class="highlight-gold">Imóvel</span></h2>
+    
+    <!-- === REELS DO FACEBOOK JÁ INSERIDO === -->
+    <div class="reels-container">
+      <div class="reels-box">
+        <iframe 
+          src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3965884083711856%2F&show_text=false&width=267&t=0" 
+          width="267" 
+          height="476" 
+          style="border:none;overflow:hidden" 
+          scrolling="no" 
+          frameborder="0" 
+          allowfullscreen="true" 
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+      </div>
+    </div>
+
+    <h3 style="text-align:center; margin-bottom:20px; color:var(--text-muted);">Fotos do Espaço</h3>
+    <div class="galeria">
+    
+       <div class="foto-card"><img src="img/apto-sacada (10).jpeg" alt="Studio - Sacada"></div>
+        <div class="foto-card"><img src="img/apto-sacada (18).jpeg" alt="Studio - Ambiente interno"></div>
+
+       <div class="foto-card"><img src="img/apto-sacada (11).jpeg" alt="Studio - Varanda"></div>
+       <div class="foto-card"><img src="img/apto-sacada (1).jpeg" alt="Studio - Sacada"></div>
+      <div class="foto-card"><img src="img/apto-sacada (2).jpeg" alt="Studio - Varanda"></div>
+      <div class="foto-card"><img src="img/apto-sacada (3).jpeg" alt="Studio - Área de serviço"></div>
+     
+      <div class="foto-card"><img src="img/apto-sacada (5).jpeg" alt="Studio - Quintal"></div>
+      <div class="foto-card"><img src="img/apto-sacada (6).jpeg" alt="Studio - Varanda"></div>
+        <div class="foto-card"><img src="img/apto-sacada (7).jpeg" alt="Studio - Área de serviço"></div>
+      <div class="foto-card"><img src="img/apto-sacada (8).jpeg" alt="Studio - Ambiente interno"></div>
+        <div class="foto-card"><img src="img/apto-sacada (9).jpeg" alt="Studio - Ambiente interno"></div>
+     
+        <div class="foto-card"><img src="img/apto-sacada (12).jpeg" alt="Studio - Ambiente interno"></div>
+         <div class="foto-card"><img src="img/apto-sacada (13).jpeg" alt="Studio - Área de serviço"></div>
+      <div class="foto-card"><img src="img/apto-sacada (14).jpeg" alt="Studio - Ambiente interno"></div>
+        <div class="foto-card"><img src="img/apto-sacada (15).jpeg" alt="Studio - Ambiente interno"></div>
+      <div class="foto-card"><img src="img/apto-sacada (16).jpeg" alt="Studio - Sacada"></div>
+        <div class="foto-card"><img src="img/apto-sacada (17).jpeg" alt="Studio - Varanda"></div>
+       
+  </div>
+</section>
+
+<section class="secao" id="detalhes" style="background:#000;">
+  <div class="container">
+    <h2 class="section-title">Todos os <span class="highlight-pink">Detalhes</span></h2>
+    <div class="info-grid">
+      <div class="info-item"><strong>Tipo:</strong> Studio – 1 dormitório</div>
+      <div class="info-item"><strong>Área:</strong> 30 m²</div>
+      <div class="info-item"><strong>Andar:</strong> Térreo</div>
+      <div class="info-item"><strong>Quintal:</strong> Exclusivo</div>
+      <div class="info-item"><strong>Varanda:</strong> Sim</div>
+      <div class="info-item"><strong>Mobiliado:</strong> Completo</div>
+      <div class="info-item"><strong>Equipado:</strong> Ar-condicionado + Lava e Seca (coletivo)</div>
+      <div class="info-item"><strong>Estacionamento:</strong> Na rua</div>
+      <div class="info-item"><strong>Endereço:</strong> Travessia Cirineu Martins Cardoso</div>
+      <div class="info-item"><strong>Inclusos:</strong> Internet + IPTU</div>
+      <div class="info-item"><strong>Água:</strong> R$ 50,00 fixo/mês</div>
+      <div class="info-item"><strong>Próximo:</strong> UFSC, Angelone, Shopping Vila Romana</div>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="container">
+    <h2 class="section-title">Condições de <span class="highlight-gold">Locação</span></h2>
+    <div class="condicoes-box">
+      <p><strong>Valor mensal:</strong> R$ 3.000,00</p>
+      <p><strong>Contrato:</strong> Aluguel anual + 2 cauções (valor integral do aluguel)</p>
+      <p><strong>1 aluguel</strong> Primeiro aluguel é pago com 30 dias </p>
+
+      <p><strong>Negociação:</strong> Diretamente com o proprietário, contrato formal</p>
+      <br>
+      <h4>Requisitos Obrigatórios:</h4>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Renda familiar comprovada</li>
+        <li><i class="fas fa-check-circle"></i> Sem restrições no SPC e Serasa</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="secao" style="background:#000;">
+  <div class="container mapa-box">
+    <h2 class="section-title">Localização <span class="highlight-pink">Exata</span></h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.78945!2d-48.5182345!3d-27.5953421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d6766f1b7e4b8d%3A0x7a5f9c3b4e1d2f0a!2sTravessia%20Cirineu%20Martins%20Cardoso%20-%20Santa%20M%C3%B4nica%2C%20Florian%C3%B3polis%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1722799999999" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="secao" id="agendar">
+  <div class="container">
+    <div class="form-container">
+      <h3>Agende Sua <span class="highlight-pink">Visita</span></h3>
+      <p style="text-align:center; margin-bottom:20px; color:var(--text-muted);">Preencha os dados abaixo que eu entro em contato em até 24h.</p>
+
+      <div class="botoes-redes">
+        <button class="btn-rede google"><i class="fab fa-google"></i> Google</button>
+        <button class="btn-rede facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+        <button class="btn-rede instagram"><i class="fab fa-instagram"></i> Instagram</button>
+      </div>
+
+      <form id="leadForm">
+        <div class="form-group">
+          <label>Nome Completo *</label>
+          <input type="text" id="nome" required>
+        </div>
+        <div class="form-group">
+          <label>Quando pretende se mudar? *</label>
+          <input type="text" placeholder="Ex: Imediato / Até 30 dias" required>
+        </div>
+        <div class="form-group">
+          <label>Quantas pessoas irão morar? *</label>
+          <input type="number" min="1" required>
+        </div>
+        <div class="form-group">
+          <label>Renda familiar mensal aproximada? *</label>
+          <input type="text" placeholder="Ex: R$ 6.000,00" required>
+        </div>
+        <div class="form-group">
+          <label>Qual empresa trabalha? *</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>Seu WhatsApp *</label>
+          <input type="tel" id="telefone" required placeholder="(48) 9 XXXX-XXXX">
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email">
+        </div>
+        <button type="submit" class="btn-gold" style="width:100%; margin-top:10px;">Enviar e Agendar Visita</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h3>Flávia Capacia • Corretora de Imóveis</h3>
+    <p>Atendimento em Florianópolis, São José e Palhoça</p>
+    <div class="footer-links">
+      <a href="https://www.flaviacapaciacorretora.com">Site Oficial</a>
+      <a href="https://instagram.com/flaviacapaciacorretora" target="_blank">Instagram</a>
+      <a href="https://wa.me/5548999600601" target="_blank">WhatsApp</a>
+    </div>
+    <p style="margin-top:15px;">&copy; 2026 Flávia Capacia. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5548999600601" target="_blank" class="whatsapp-float">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="Falar no WhatsApp">
+</a>
+
+<script>
+const SEU_NUMERO = "5548999600601";
+
+document.getElementById('leadForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value;
+  const tel = document.getElementById('telefone').value;
+
+  const texto = `Olá Flávia! Me chamo ${nome}, meu WhatsApp é ${tel}.%0AQuero agendar visita no Studio com Quintal – Santa Mônica, R$3.200,00.`;
+  window.open(`https://wa.me/${SEU_NUMERO}?text=${encodeURIComponent(texto)}`, '_blank');
+});
+</script>
+
+</body>
+</html>
