@@ -288,22 +288,19 @@
 
     <h3 style="text-align:center; margin-bottom:20px; color:var(--text-muted);">Fotos do Espaço</h3>
     <div class="galeria">
-    <div class="foto-card"><img src="img/apto-sacada (10).jpeg" alt="Studio - Sacada"></div>
-        <div class="foto-card"><img src="img/apto-sacada (18).jpeg" alt="Studio - Ambiente interno"></div>
-
-       <div class="foto-card"><img src="img/apto-sacada (11).jpeg" alt="Studio - Sacada"></div>
-       <div class="foto-card"><img src="img/apto-sacada (1).jpeg" alt="Studio - Sacada"></div>
+      <div class="foto-card"><img src="img/apto-sacada (10).jpeg" alt="Studio - Sacada"></div>
+      <div class="foto-card"><img src="img/apto-sacada (18).jpeg" alt="Studio - Ambiente interno"></div>
+      <div class="foto-card"><img src="img/apto-sacada (11).jpeg" alt="Studio - Sacada"></div>
+      <div class="foto-card"><img src="img/apto-sacada (1).jpeg" alt="Studio - Sacada"></div>
       <div class="foto-card"><img src="img/apto-sacada (2).jpeg" alt="Studio - Varanda"></div>
       <div class="foto-card"><img src="img/apto-sacada (3).jpeg" alt="Studio - Área de serviço"></div>
-     
       <div class="foto-card"><img src="img/apto-sacada (5).jpeg" alt="Studio - Quintal"></div>
       <div class="foto-card"><img src="img/apto-sacada (6).jpeg" alt="Studio - Varanda"></div>
-        <div class="foto-card"><img src="img/apto-sacada (7).jpeg" alt="Studio - Área de serviço"></div>
+      <div class="foto-card"><img src="img/apto-sacada (7).jpeg" alt="Studio - Área de serviço"></div>
       <div class="foto-card"><img src="img/apto-sacada (8).jpeg" alt="Studio - Ambiente interno"></div>
-        <div class="foto-card"><img src="img/apto-sacada (9).jpeg" alt="Studio - Ambiente interno"></div>
-     
-        <div class="foto-card"><img src="img/apto-sacada (12).jpeg" alt="Studio - Ambiente interno"></div>
-         <div class="foto-card"><img src="img/apto-sacada (13).jpeg" alt="Studio - Área de serviço"></div>
+      <div class="foto-card"><img src="img/apto-sacada (9).jpeg" alt="Studio - Ambiente interno"></div>
+      <div class="foto-card"><img src="img/apto-sacada (12).jpeg" alt="Studio - Ambiente interno"></div>
+      <div class="foto-card"><img src="img/apto-sacada (13).jpeg" alt="Studio - Área de serviço"></div>
       <div class="foto-card"><img src="img/apto-sacada (14).jpeg" alt="Studio - Ambiente interno"></div>
     </div>
 
@@ -335,9 +332,9 @@
       <div class="info-item"><strong>Sacada:</strong> Exclusiva</div>
       <div class="info-item"><strong>Mobiliado:</strong> Pronto para morar</div>
       <div class="info-item"><strong>Equipado:</strong> Ar-condicionado + Lava e Seca de uso coletivo</div>
-      <div class="info-item"><strong>Estacionamento:</strong> Sem vaga é possivel estacional na rua </div>
-      <div class="info-item"><strong>Endereço:</strong> Travessia Cirineu Martins Cardoso n°40</div>
-         <div class="info-item"><strong>Luz</strong>Individual</div>
+      <div class="info-item"><strong>Estacionamento:</strong> Sem vaga, é possível estacionar na rua</div>
+      <div class="info-item"><strong>Endereço:</strong> Travessia Cirineu Martins Cardoso nº 40</div>
+      <div class="info-item"><strong>Luz:</strong> Individual</div>
       <div class="info-item"><strong>Inclusos:</strong> Internet + IPTU</div>
       <div class="info-item"><strong>Água:</strong> R$ 50,00 média/mês</div>
       <div class="info-item"><strong>Próximo:</strong> UFSC, Beira Mar Norte, Angeloni, Shopping Villa Romana</div>
@@ -350,9 +347,9 @@
     <h2 class="section-title">Condições de <span class="highlight-gold">Locação</span></h2>
     <div class="condicoes-box">
       <p><strong>Valor mensal:</strong> R$ 3.000,00</p>
-      <p><strong>Contrato:</strong> Aluguel anual + 2 cauções (valor integral do aluguel)- Podendo ser parcelado mediante avaliação</p>
+      <p><strong>Contrato:</strong> Aluguel anual + 2 cauções (valor integral do aluguel) — podendo ser parcelado mediante avaliação</p>
       <p><strong>Pagamento:</strong> Primeiro aluguel é pago em 30 dias de acordo com a data do contrato</p>
-      <p><strong>Negociação:</strong> Diretamente com o proprietário, contrato formal registrado rm cartório</p>
+      <p><strong>Negociação:</strong> Diretamente com o proprietário, contrato formal registrado em cartório</p>
       <br>
       <h4>Requisitos Obrigatórios:</h4>
       <ul>
@@ -383,19 +380,19 @@
         </div>
         <div class="form-group">
           <label>Quando pretende se mudar? *</label>
-          <input type="text" placeholder="Ex: Imediato / Até 30 dias" required>
+          <input type="text" id="mudanca" placeholder="Ex: Imediato / Até 30 dias" required>
         </div>
         <div class="form-group">
           <label>Quantas pessoas irão morar? *</label>
-          <input type="number" min="1" required>
+          <input type="number" id="pessoas" min="1" required>
         </div>
         <div class="form-group">
           <label>Renda familiar mensal aproximada? *</label>
-          <input type="text" placeholder="Ex: R$ 6.000,00" required>
+          <input type="text" id="renda" placeholder="Ex: R$ 6.000,00" required>
         </div>
         <div class="form-group">
           <label>Qual empresa trabalha? *</label>
-          <input type="text" required>
+          <input type="text" id="empresa" required>
         </div>
         <div class="form-group">
           <label>Seu WhatsApp *</label>
@@ -403,7 +400,7 @@
         </div>
         <div class="form-group">
           <label>E-mail</label>
-          <input type="email">
+          <input type="email" id="email">
         </div>
         <button type="submit" class="btn-gold" style="width:100%; margin-top:10px;">Enviar e Agendar Visita</button>
       </form>
@@ -420,7 +417,7 @@
       <a href="https://instagram.com/flaviacapaciacorretora" target="_blank">Instagram</a>
       <a href="https://wa.me/5548999600601" target="_blank">WhatsApp</a>
     </div>
-    <p style="margin-top:15px;">&copy; 2026 Agile Suite Sites. Todos os direitos reservados.</p>
+    <p style="margin-top:15px;">&copy; 2026 Flávia Capacia - Todos os direitos reservados.</p>
   </div>
 </footer>
 
@@ -433,11 +430,21 @@ const SEU_NUMERO = "5548999600601";
 
 document.getElementById('leadForm').addEventListener('submit', e => {
   e.preventDefault();
+  
+  // Captura TODOS os campos do formulário
   const nome = document.getElementById('nome').value;
-  const tel = document.getElementById('telefone').value;
+  const mudanca = document.getElementById('mudanca').value;
+  const pessoas = document.getElementById('pessoas').value;
+  const renda = document.getElementById('renda').value;
+  const empresa = document.getElementById('empresa').value;
+  const telefone = document.getElementById('telefone').value;
+  const email = document.getElementById('email').value || "Não informado";
 
-  const texto = `Olá Flávia! Me chamo ${nome}, meu WhatsApp é ${tel}.%0AQuero agendar visita no Studio com Sacada – Santa Mônica, R$3.000,00.`;
-  window.open(`https://wa.me/${SEU_NUMERO}?text=${encodeURIComponent(texto)}`, '_blank');
+  // Monta a mensagem com TODAS as informações
+  const mensagem = `Olá Flávia! 🏠%0A%0AQuero agendar visita no Studio com Sacada – Santa Mônica (R$ 3.000,00/mês).%0A%0A📋 Dados do interessado:%0ANome: ${nome}%0AQuando pretende se mudar: ${mudanca}%0AQuantidade de moradores: ${pessoas} pessoa(s)%0ARenda mensal: ${renda}%0AEmpresa: ${empresa}%0AWatsApp: ${telefone}%0AE-mail: ${email}%0A%Aguardo retorno!`;
+
+  // Abre o WhatsApp com a mensagem completa
+  window.open(`https://wa.me/${SEU_NUMERO}?text=${encodeURIComponent(mensagem)}`, '_blank');
 });
 </script>
 
