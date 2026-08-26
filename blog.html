@@ -88,7 +88,7 @@
       border-radius: 8px;
       padding: 10px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      min-width: 160px;
+      min-width: 240px;
       z-index: 10;
     }
     nav ul li { margin: 6px 0; }
@@ -99,7 +99,7 @@
     }
     nav ul li a:hover { color: var(--bronze-medio); }
 
-    /* === NOVO: DOIS ARTIGOS LADO A LADO === */
+    /* === DOIS ARTIGOS LADO A LADO === */
     .dois-artigos-lado {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -114,6 +114,7 @@
       width: 100%;
       height: 220px;
       object-fit: cover;
+      object-position: center;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       margin-bottom: 15px;
@@ -157,11 +158,13 @@
     }
     .blog-foto img {
       width: 280px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       display: block;
       transition: transform 0.3s ease;
-      object-fit: cover;
     }
     .blog-foto img:hover {
       transform: scale(1.03);
@@ -209,28 +212,6 @@
       transition: background 0.3s ease;
     }
     .btn-whatsapp:hover { background-color: #128C7E; }
-
-    .featured-properties {
-      margin: 28px 0;
-      padding: 20px;
-      border: 1px solid var(--cinza-borda);
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    }
-    .featured-properties h2 {
-      margin-bottom: 15px;
-      text-align: center;
-      color: var(--bronze-medio);
-    }
-    .links-imoveis a {
-      display: block;
-      margin: 6px 0;
-      color: var(--bronze-medio);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .links-imoveis a:hover { text-decoration: underline; }
 
     .outros-imoveis {
       padding: 30px 18px;
@@ -322,7 +303,7 @@
     @media (max-width: 768px) {
       .blog-container { flex-direction: column; align-items: center; text-align: center; }
       .blog-texto p { text-align: left; font-size: 1rem; }
-      .blog-foto img { width: 100%; max-width: 280px; margin-bottom: 20px; }
+      .blog-foto img { width: 100%; max-width: 280px; margin-bottom: 20px; height: 200px; }
       nav ul { right: 0; left: auto; }
       .outros-imoveis ul { grid-template-columns: 1fr; }
     }
@@ -341,15 +322,15 @@
           <li><a href="index.html">Início</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="servicos.html">Serviços</a></li>
-          <li><a href="bairro-kobrasol-sao-jose.html">Kobrasol / São José</a></li>
-          <li><a href="bairro-centro-florianopolis.html">Centro de Florianópolis</a></li>
+          <li><a href="artigo-bairros-kobrasol-imoveis-investir-guia-completo.html">Guia Kobrasol</a></li>
+          <li><a href="artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html">Guia Centro de Floripa</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </header>
 
 <!-- ================================================== -->
-<!-- ✅ DOIS NOVOS ARTIGOS — LADO A LADO NO TOPO ✅ -->
+<!-- ✅ DOIS ARTIGOS EM DESTAQUE — LADO A LADO ✅ -->
 <!-- ================================================== -->
 <section class="blog-section" style="padding-top:0; margin-top:0;">
   <h2 style="text-align:center; color:var(--bronze-medio); margin-bottom:30px; font-size:1.8em;">Bairros em Destaque</h2>
@@ -357,52 +338,52 @@
   <div class="dois-artigos-lado">
     <!-- Artigo 1: Kobrasol / São José -->
     <article class="artigo-card">
-      <a href="bairro-kobrasol-sao-jose.html" aria-label="Kobrasol — Viver e Investir em São José">
+      <a href="artigo-bairros-kobrasol-imoveis-investir-guia-completo.html" aria-label="Guia Completo Kobrasol">
         <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=90" alt="Apartamentos de Alto Padrão em Kobrasol — São José SC" />
       </a>
-      <h3><a href="bairro-kobrasol-sao-jose.html">Kobrasol: Viver e Investir no Coração de São José</a></h3>
-      <p>Localização estratégica, comércio completo, mobilidade e valorização constante. Descubra por que Kobrasol é o bairro mais procurado da Grande Florianópolis.</p>
+      <h3><a href="artigo-bairros-kobrasol-imoveis-investir-guia-completo.html">Kobrasol: Guia Completo para Morar e Investir</a></h3>
+      <p>Tudo sobre o bairro mais procurado da Grande Florianópolis: infraestrutura, imóveis, preços e dicas de investimento.</p>
       <div class="lead-box" style="margin-top:auto; border-left:none; padding:0;">
-        <a href="bairro-kobrasol-sao-jose.html" class="btn-whatsapp" style="width:100%; text-align:center;">📖 Ler Artigo Completo</a>
+        <a href="artigo-bairros-kobrasol-imoveis-investir-guia-completo.html" class="btn-whatsapp" style="width:100%; text-align:center;">📖 Ler Guia Completo</a>
       </div>
     </article>
 
     <!-- Artigo 2: Centro de Florianópolis -->
     <article class="artigo-card">
-      <a href="bairro-centro-florianopolis.html" aria-label="Centro de Florianópolis — Imóveis de Alto Padrão">
+      <a href="artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html" aria-label="Guia Completo Centro de Florianópolis">
         <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=90" alt="Imóveis de Alto Padrão — Centro de Florianópolis" />
       </a>
-      <h3><a href="bairro-centro-florianopolis.html">Centro de Florianópolis: Imóveis e Valorização</a></h3>
-      <p>O coração histórico e nobre da capital. Ruas Vitor Konder e Alves de Brito — exclusividade, tradição e patrimônio de valorização constante.</p>
+      <h3><a href="artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html">Centro de Floripa: Imóveis e Valorização</a></h3>
+      <p>Guia completo do coração da capital: ruas nobres, imóveis de alto padrão, valorização e oportunidades.</p>
       <div class="lead-box" style="margin-top:auto; border-left:none; padding:0;">
-        <a href="bairro-centro-florianopolis.html" class="btn-whatsapp" style="width:100%; text-align:center;">📖 Ler Artigo Completo</a>
+        <a href="artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html" class="btn-whatsapp" style="width:100%; text-align:center;">📖 Ler Guia Completo</a>
       </div>
     </article>
   </div>
 </section>
 
 <!-- ================================================== -->
-<!-- ✅ DEMAIS ARTIGOS ABAIXO (mantidos como estavam) ✅ -->
+<!-- ✅ DEMAIS ARTIGOS — com imagem Padronizada ✅ -->
 <!-- ================================================== -->
 <section class="blog-section">
   <!-- Post 0.8 -->
   <div class="blog-container">
     <div class="blog-foto">
-      <a href="artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html" aria-label="O Novo Luxo é Viver: A Revolução do Wellness Real Estate e o Fenômeno Florianópolis">
-        <img src="img/imagens/foto-wellness.jpeg" alt="O Novo Luxo é Viver: A Revolução do Wellness Real Estate e o Fenômeno Florianópolis" />
+      <a href="artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html" aria-label="O Novo Luxo é Viver: A Revolução do Wellness Real Estate">
+        <img src="img/imagens/foto-wellness.jpeg" alt="O Novo Luxo é Viver: A Revolução do Wellness Real Estate" />
       </a>
     </div>
     <div class="blog-texto">
-      <h3><a href="artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html">O Novo Luxo é Viver: A Revolução do Wellness Real Estate e o Fenômeno Florianópolis</a></h3>
+      <h3><a href="artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html">O Novo Luxo é Viver: A Revolução do Wellness Real Estate</a></h3>
       <p>Florianópolis: O Epicentro Perfeito para o Bem-Estar Premium</p>
       <div class="lead-box">
         <p>Quer saber mais sobre o mercado imobiliário de Florianópolis?</p>
-        <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20uma%20avaliação%20do%20meu%20imóvel%20em%20Florianópolis." target="_blank" class="btn-whatsapp">📲 Solicitar avaliação</a>
+        <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20uma%20avaliação%20do%20meu%20imóvel." target="_blank" class="btn-whatsapp">📲 Solicitar avaliação</a>
       </div>
     </div>
   </div>
 
-  <!-- Post 0.9 -->
+  <!-- Post 0.9 — ✅ IMAGEM AJUSTADA E PADRONIZADA -->
   <div class="blog-container">
     <div class="blog-foto">
       <a href="artigo-campinas-kobrasol-investir-morar-qualidade-de-vida-apartamentos-sao-jose.html" aria-label="Campinas e Kobrasol - artigo completo">
@@ -546,7 +527,7 @@
         </div>
       </div>
       <div class="footer-credit">
-        <p>&copy; 2026 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+        <p>&copy; 2026 Flavia Capacia Corretora — Todos os direitos reservados.</p>
         Feito com 💛 por <strong>Capacia Group</strong> 💛
       </div>
     </footer>
@@ -556,16 +537,12 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      const isVisible = window.getComputedStyle(menu).display === "block";
-      menu.style.display = isVisible ? "none" : "block";
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
     document.addEventListener("click", function (e) {
       const menu = document.getElementById("menu");
-      const btn = document.querySelector("nav button");
       const nav = document.querySelector("nav");
-      if (!nav.contains(e.target)) {
-        menu.style.display = "none";
-      }
+      if (!nav.contains(e.target)) menu.style.display = "none";
     });
   </script>
 </body>
