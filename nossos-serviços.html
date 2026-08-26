@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serviços — Flávia Capacia Corretora | Imóveis na Grande Florianópolis</title>
+  <meta name="description" content="Serviços completos de intermediação imobiliária: compra, venda, avaliação, lançamentos, permuta, financiamento e assessoria jurídica em Florianópolis e São José SC." />
+  <meta name="keywords" content="corretora de imóveis Florianópolis, avaliação de imóvel, comprar apartamento Floripa, vender imóvel São José, lançamentos imobiliários, permuta imóvel" />
+  <meta name="author" content="Flavia Capacia Corretora" />
+  <style>
+    :root {
+      --bronze-medio: #b08d57;
+      --fundo-claro: #ffffff;
+      --cinza-borda: #e5e5e5;
+      --cinza-texto: #333333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: var(--cinza-texto);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      background-color: var(--fundo-claro);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid var(--cinza-borda);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--bronze-medio);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    header img { height: 54px; }
+    nav { position: relative; }
+    #menu-toggle {
+      background: none;
+      border: 1px solid var(--bronze-medio);
+      color: var(--bronze-medio);
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    #menu-toggle:hover { background-color: var(--bronze-medio); color: #fff; }
+    #menu {
+      list-style: none;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background-color: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      min-width: 180px;
+      z-index: 100;
+    }
+    #menu.open { display: block; }
+    #menu li { margin: 6px 0; }
+    #menu li a {
+      text-decoration: none;
+      color: var(--cinza-texto);
+      font-weight: bold;
+      display: block;
+      padding: 6px 8px;
+      border-radius: 6px;
+    }
+    #menu li a:hover { color: var(--bronze-medio); background: #fafafa; }
+    .page-title {
+      text-align: center;
+      color: var(--bronze-medio);
+      margin: 20px 0 30px;
+      font-size: 1.8em;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--bronze-medio);
+    }
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 10px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .service-card h2 {
+      color: var(--bronze-medio);
+      margin-bottom: 12px;
+      font-size: 1.2em;
+    }
+    .service-card p {
+      line-height: 1.7;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+    .service-card ul {
+      margin: 10px 0 10px 25px;
+      line-height: 1.7;
+    }
+    .service-card ul li { margin-bottom: 6px; }
+    .lead-box {
+      margin-top: 30px;
+      background: #fafafa;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 10px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .lead-box p { margin: 0; font-weight: bold; color: var(--cinza-texto); flex: 1; min-width: 250px; font-size: 1.05em; }
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #25D366;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-whatsapp:hover { background-color: #128C7E; }
+    footer { margin-top: 30px; }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-top: 2px solid var(--bronze-medio);
+      background-color: #fff;
+      border-radius: 10px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .footer-contact, .footer-logo, .footer-social {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      min-width: 220px;
+    }
+    .footer-logo img { width: 120px; }
+    .footer-contact a, .footer-social a {
+      color: var(--bronze-medio);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer-social ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .footer-credit {
+      text-align: center;
+      padding: 12px;
+      border-top: 1px solid var(--cinza-borda);
+      background-color: #fff;
+      color: var(--bronze-medio);
+      margin-top: 15px;
+      border-radius: 10px;
+      font-size: 0.95em;
+    }
+    .service-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 2px solid #d4af37;
+    }
+    @media (max-width: 768px) {
+      body { padding: 10px; }
+      .service-img { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" aria-label="Página inicial">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" />
+      </a>
+      <nav>
+        <button id="menu-toggle" type="button">Menu</button>
+        <ul id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="bairro-kobrasol-sao-jose.html">Kobrasol / São José</a></li>
+          <li><a href="bairro-centro-florianopolis.html">Centro de Florianópolis</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1 class="page-title">Nossos Serviços</h1>
+
+    <!-- Serviço 1: Compra e Venda -->
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=90" alt="Casa de Luxo — Compra e Venda de Imóveis de Alto Padrão" class="service-img" />
+      <h2>🏠 Compra e Venda de Imóveis</h2>
+      <p>Intermediação especializada na compra e venda de apartamentos, casas e imóveis de alto padrão em Florianópolis, São José e Palhoça. Assessoria completa desde a avaliação comercial até a assinatura da escritura.</p>
+      <ul>
+        <li>✅ Divulgação multiplataforma do seu imóvel</li>
+        <li>✅ Fotos profissionais e apresentação qualificada</li>
+        <li>✅ Negociação estratégica para o melhor preço</li>
+        <li>✅ Acompanhamento completo até a entrega das chaves</li>
+      </ul>
+    </div>
+
+    <!-- Serviço 2: Avaliação -->
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=90" alt="Arquitetura de Alto Padrão — Avaliação Mercadológica" class="service-img" />
+      <h2>📋 Avaliação e Avaliação Mercadológica</h2>
+      <p>Laudo de avaliação fundamentado com base em dados reais do mercado local. Definição do valor justo de venda ou locação com análise por bairro, metragem, características e tendências de valorização.</p>
+      <ul>
+        <li>✅ Valor de mercado atualizado por região</li>
+        <li>✅ Comparativo com imóveis semelhantes vendidos</li>
+        <li>✅ Laudo com valor justo para venda ou financiamento</li>
+        <li>✅ Orientação sobre o melhor preço e prazo de negociação</li>
+      </ul>
+    </div>
+
+    <!-- Serviço 3: Lançamentos e Permuta -->
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c05?w=1200&q=90" alt="Empreendimento de Luxo — Lançamentos Imobiliários" class="service-img" />
+      <h2>🏗️ Lançamentos e Permuta de Imóveis</h2>
+      <p>Acesso antecipado a lançamentos imobiliários das melhores construtoras e incorporadoras da região. E você também pode usar seu imóvel como entrada em um novo empreendimento com condições especiais.</p>
+      <ul>
+        <li>✅ Condições exclusivas em lançamentos</li>
+        <li>✅ Permuta: seu imóvel usado como entrada</li>
+        <li>✅ Plantas e localização privilegiada</li>
+        <li>✅ Antecedência para escolher as melhores unidades</li>
+      </ul>
+    </div>
+
+    <!-- Serviço 4: Consultoria e Documentação -->
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=90" alt="Interior de Alto Padrão — Consultoria Imobiliária" class="service-img" />
+      <h2>📄 Consultoria e Assessoria Jurídica</h2>
+      <p>Orientação completa para compradores e vendedores: documentação, financiamento imobiliário, uso do FGTS, análise de condomínio e IPTU, orientações sobre ITBI e registro de imóvel.</p>
+      <ul>
+        <li>✅ Lista completa de documentos necessários</li>
+        <li>✅ Simulação de financiamento e uso do FGTS</li>
+        <li>✅ Acompanhamento de contrato e certidões</li>
+        <li>✅ Suporte até o registro em cartório</li>
+      </ul>
+    </div>
+
+    <!-- Serviço 5: Investimento e Locação -->
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=90" alt="Mansão de Luxo à Beira-Mar — Investimento Imobiliário" class="service-img" />
+      <h2>💰 Investimento e Locação de Imóveis</h2>
+      <p>Análise de rentabilidade e valorização para investimento. Seja locação tradicional ou por temporada (Airbnb), indicamos os melhores bairros e tipos de imóveis com maior retorno.</p>
+      <ul>
+        <li>✅ Estudo de rentabilidade por bairro</li>
+        <li>✅ Locação tradicional e por temporada</li>
+        <li>✅ Imóveis com alta valorização garantida</li>
+        <li>✅ Oportunidades exclusivas antes do mercado</li>
+      </ul>
+    </div>
+
+    <!-- Caixa de Contato -->
+    <div class="lead-box">
+      <p>Precisa de um dos nossos serviços? Fale comigo e receba atendimento personalizado!</p>
+      <a href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20solicitar%20um%20serviço%20de%20imóvel." target="_blank" class="btn-whatsapp">Solicitar Atendimento</a>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <a href="index.html"><img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" /></a>
+        </div>
+        <div class="footer-contact">
+          <h3 style="color: var(--bronze-medio);">Contato</h3>
+          <p><a href="mailto:flavia.capacia@creci.gov.br">flavia.capacia@creci.gov.br</a></p>
+          <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+          <p>Florianópolis / São José</p>
+        </div>
+        <div class="footer-social">
+          <ul>
+            <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-credit">
+        <p>&copy; 2026 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Script do Menu -->
+  <script>
+    (function(){
+      const btn = document.getElementById('menu-toggle'), menu = document.getElementById('menu');
+      btn.addEventListener('click', e => { e.stopPropagation(); menu.classList.toggle('open'); });
+      document.addEventListener('click', e => { if (!btn.parentElement.contains(e.target)) menu.classList.remove('open'); });
+    })();
+  </script>
+</body>
+</html>
