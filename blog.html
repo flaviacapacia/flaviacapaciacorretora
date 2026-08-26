@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <!-- SEO -->
   <title>Blog | Flavia Capacia Corretora - Imóveis de Alto Padrão em Florianópolis</title>
   <meta name="description" content="Blog imobiliário em Florianópolis: lançamentos, dicas e oportunidades com Flavia Capacia Corretora." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.flaviacapaciacorretora.site/blog" />
-
   <!-- Open Graph (Facebook / WhatsApp) -->
   <meta property="og:title" content="Blog | Flavia Capacia Corretora" />
   <meta property="og:description" content="Conteúdos e oportunidades do mercado imobiliário na Grande Florianópolis." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.flaviacapaciacorretora.site/blog" />
   <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
-
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blog | Flavia Capacia Corretora" />
   <meta name="twitter:description" content="Dicas e novidades do mercado imobiliário em Florianópolis e região." />
   <meta name="twitter:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
-
   <!-- Google / Schema.org -->
   <meta itemprop="name" content="Blog | Flavia Capacia Corretora" />
   <meta itemprop="description" content="Blog imobiliário em Florianópolis: lançamentos, dicas e oportunidades com Flavia Capacia Corretora." />
   <meta itemprop="image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
-
   <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
@@ -40,9 +35,7 @@
       --cinza-borda: #e5e5e5;
       --cinza-texto: #333333;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: Arial, sans-serif;
       background-color: #ffffff;
@@ -51,7 +44,6 @@
       justify-content: center;
       padding: 20px;
     }
-
     .container {
       max-width: 1000px;
       width: 100%;
@@ -61,7 +53,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       border: 1px solid var(--cinza-borda);
     }
-
     /* Cabeçalho */
     header {
       display: flex;
@@ -72,7 +63,6 @@
       margin-bottom: 20px;
     }
     header img { height: 54px; }
-
     nav { position: relative; }
     nav button {
       background: none;
@@ -87,7 +77,6 @@
       background-color: var(--bronze-medio);
       color: #fff;
     }
-
     nav ul {
       list-style: none;
       display: none;
@@ -109,114 +98,106 @@
       font-weight: bold;
     }
     nav ul li a:hover { color: var(--bronze-medio); }
-.blog-section {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 20px;
-  background-color: #ffffff; /* força branco dentro do blog */
-  border-radius: 12px;
-}
 
-.blog-container {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  justify-content: center;
-  margin-bottom: 50px;
-}
+    /* === NOVO: DOIS ARTIGOS LADO A LADO === */
+    .dois-artigos-lado {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    .artigo-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .artigo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+      border: 2px solid #d4af37;
+    }
+    .artigo-card img:hover { transform: scale(1.02); }
+    .artigo-card h3 {
+      color: #d4af37;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .artigo-card h3 a {
+      text-decoration: none;
+      color: #d4af37;
+    }
+    .artigo-card h3 a:hover { text-decoration: underline; }
+    .artigo-card p {
+      line-height: 1.6;
+      color: var(--cinza-texto);
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
 
-.blog-foto img {
-  width: 280px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  display: block;
-  transition: transform 0.3s ease;
-  object-fit: cover;
-}
-
-.blog-foto img:hover {
-  transform: scale(1.03);
-}
-
-.blog-texto h3 {
-  color: #d4af37; /* dourado */
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-}
-
-.blog-texto h3 a {
-  text-decoration: none;
-  color: #d4af37;
-}
-
-.blog-texto h3 a:hover {
-  text-decoration: underline;
-}
-
-.blog-texto p {
-  padding: 12px;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  border-left: 3px solid #d4af37;
-  color: var(--cinza-texto);
-}
-
-/* Caixa de ação (WhatsApp, CTA) */
-.lead-box {
-  margin-top: 15px;
-  padding: 12px;
-  background: #ffffff;
-  border-left: 3px solid #cd7f32; /* bronze */
-  border-radius: 8px;
-}
-
-.btn-whatsapp {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 10px 16px;
-  background: #25d366; /* verde WhatsApp */
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.btn-whatsapp:hover {
-  background: #ffffff;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .blog-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .blog-texto p {
-    text-align: left;
-    font-size: 1rem;
-  }
-  .blog-foto img {
-    width: 200px;
-    margin-bottom: 20px;
-  }
-}
-
-    /* Caixa de lead */
-    .lead-box {
-      margin-top: 10px;
-      background: #fafafa;
-      border: 1px solid var(--cinza-borda);
-      border-radius: 10px;
+    .blog-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+    }
+    .blog-container {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 50px;
+      padding-top: 30px;
+      border-top: 1px dashed #ddd;
+    }
+    .blog-foto img {
+      width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: block;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+    .blog-foto img:hover {
+      transform: scale(1.03);
+    }
+    .blog-texto h3 {
+      color: #d4af37;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+    .blog-texto h3 a {
+      text-decoration: none;
+      color: #d4af37;
+    }
+    .blog-texto h3 a:hover {
+      text-decoration: underline;
+    }
+    .blog-texto p {
       padding: 12px;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      border-left: 3px solid #d4af37;
+      color: var(--cinza-texto);
+    }
+    .lead-box {
+      margin-top: 15px;
+      padding: 12px;
+      background: #ffffff;
+      border-left: 3px solid #cd7f32;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
     }
-    .lead-box p { margin: 0; font-weight: bold; color: var(--cinza-texto); }
+    .lead-box p { margin: 0; font-weight: bold; color: var(--cinza-texto); border: none; padding: 0; }
     .btn-whatsapp {
       display: inline-block;
       background-color: #25D366;
@@ -225,10 +206,10 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.3s ease;
     }
     .btn-whatsapp:hover { background-color: #128C7E; }
 
-    /* Imóveis em destaque */
     .featured-properties {
       margin: 28px 0;
       padding: 20px;
@@ -251,7 +232,6 @@
     }
     .links-imoveis a:hover { text-decoration: underline; }
 
-    /* Outros imóveis */
     .outros-imoveis {
       padding: 30px 18px;
       margin-top: 20px;
@@ -272,10 +252,7 @@
       gap: 16px 26px;
       justify-items: center;
     }
-    .outros-imoveis li {
-      margin: 0;
-      text-align: center;
-    }
+    .outros-imoveis li { margin: 0; text-align: center; }
     .outros-imoveis a {
       color: #d4af37;
       text-decoration: none;
@@ -284,26 +261,17 @@
       display: inline-block;
       padding: 10px 16px;
       border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s, text-decoration 0.3s;
+      transition: background-color 0.3s, color 0.3s;
     }
     .outros-imoveis a:hover {
       background-color: #d4af37;
       color: #fff;
       text-decoration: underline;
     }
-    @media (max-width: 900px) {
-      .outros-imoveis ul {
-        grid-template-columns: repeat(2, minmax(180px, 1fr));
-      }
-    }
-    @media (max-width: 560px) {
-      .outros-imoveis ul {
-        grid-template-columns: 1fr;
-      }
-    }
 
-    /* Rodapé */
     footer { margin-top: 24px; }
+    .footer-logo { text-align: center; margin-bottom: 10px; }
+    .footer-logo img { width: 120px; }
     .footer-container {
       display: flex;
       justify-content: space-between;
@@ -312,44 +280,51 @@
       border-top: 2px solid var(--bronze-medio);
       background-color: #fff;
       border-radius: 10px;
+      flex-wrap: wrap;
+      gap: 15px;
     }
-    .footer-contact, .footer-logo, .footer-social {
+    .footer-contact, .footer-social {
       flex: 1;
       padding: 10px;
       text-align: center;
+      min-width: 220px;
     }
-    .footer-logo img { width: 120px; }
+    .footer-contact h3 { color: var(--bronze-medio); margin-bottom: 10px; }
     .footer-contact a, .footer-social a {
       color: var(--bronze-medio);
       text-decoration: none;
       font-weight: bold;
     }
-
-   .footer-social ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;   /* Permite quebrar em várias linhas */
-}
-
-
+    .footer-social ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
     .footer-credit {
       text-align: center;
-      padding: 10px;
+      padding: 12px;
       border-top: 1px solid var(--cinza-borda);
       background-color: #fff;
       color: var(--bronze-medio);
-      margin-top: 10px;
+      margin-top: 15px;
       border-radius: 10px;
+      font-size: 0.95em;
     }
 
-    /* Responsividade */
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .dois-artigos-lado { grid-template-columns: 1fr; }
+      .outros-imoveis ul { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
+    }
     @media (max-width: 768px) {
-      .post-item { flex-direction: column; }
-      .post-img img { width: 100%; }
+      .blog-container { flex-direction: column; align-items: center; text-align: center; }
+      .blog-texto p { text-align: left; font-size: 1rem; }
+      .blog-foto img { width: 100%; max-width: 280px; margin-bottom: 20px; }
       nav ul { right: 0; left: auto; }
+      .outros-imoveis ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -365,12 +340,51 @@
         <ul id="menu" aria-label="Menu principal">
           <li><a href="index.html">Início</a></li>
           <li><a href="blog.html">Blog</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="bairro-kobrasol-sao-jose.html">Kobrasol / São José</a></li>
+          <li><a href="bairro-centro-florianopolis.html">Centro de Florianópolis</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </header>
-<section class="blog-section">
 
+<!-- ================================================== -->
+<!-- ✅ DOIS NOVOS ARTIGOS — LADO A LADO NO TOPO ✅ -->
+<!-- ================================================== -->
+<section class="blog-section" style="padding-top:0; margin-top:0;">
+  <h2 style="text-align:center; color:var(--bronze-medio); margin-bottom:30px; font-size:1.8em;">Bairros em Destaque</h2>
+
+  <div class="dois-artigos-lado">
+    <!-- Artigo 1: Kobrasol / São José -->
+    <article class="artigo-card">
+      <a href="bairro-kobrasol-sao-jose.html" aria-label="Kobrasol — Viver e Investir em São José">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=90" alt="Apartamentos de Alto Padrão em Kobrasol — São José SC" />
+      </a>
+      <h3><a href="bairro-kobrasol-sao-jose.html">Kobrasol: Viver e Investir no Coração de São José</a></h3>
+      <p>Localização estratégica, comércio completo, mobilidade e valorização constante. Descubra por que Kobrasol é o bairro mais procurado da Grande Florianópolis.</p>
+      <div class="lead-box" style="margin-top:auto; border-left:none; padding:0;">
+        <a href="bairro-kobrasol-sao-jose.html" class="btn-whatsapp" style="width:100%; text-align:center;">📖 Ler Artigo Completo</a>
+      </div>
+    </article>
+
+    <!-- Artigo 2: Centro de Florianópolis -->
+    <article class="artigo-card">
+      <a href="bairro-centro-florianopolis.html" aria-label="Centro de Florianópolis — Imóveis de Alto Padrão">
+        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=90" alt="Imóveis de Alto Padrão — Centro de Florianópolis" />
+      </a>
+      <h3><a href="bairro-centro-florianopolis.html">Centro de Florianópolis: Imóveis e Valorização</a></h3>
+      <p>O coração histórico e nobre da capital. Ruas Vitor Konder e Alves de Brito — exclusividade, tradição e patrimônio de valorização constante.</p>
+      <div class="lead-box" style="margin-top:auto; border-left:none; padding:0;">
+        <a href="bairro-centro-florianopolis.html" class="btn-whatsapp" style="width:100%; text-align:center;">📖 Ler Artigo Completo</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================================================== -->
+<!-- ✅ DEMAIS ARTIGOS ABAIXO (mantidos como estavam) ✅ -->
+<!-- ================================================== -->
+<section class="blog-section">
   <!-- Post 0.8 -->
   <div class="blog-container">
     <div class="blog-foto">
@@ -425,7 +439,7 @@
     </div>
   </div>
 
-  <!-- Post 2 (já estava correto) -->
+  <!-- Post 2 -->
   <div class="blog-container">
     <div class="blog-foto">
       <a href="artigo-marina-mercadoimobiliario.html" aria-label="Entre mares e investimentos: a nova tessitura do mercado imobiliário em Florianópolis">
@@ -441,8 +455,6 @@
       </div>
     </div>
   </div>
-
-</section>
 
   <!-- Post 3 -->
   <div class="blog-container">
@@ -495,18 +507,16 @@
     </div>
   </div>
 </section>
-   </article>
-     </section>
-    </main>
 
-     <section class="outros-imoveis">
-      <h2>Imóveis em destaque</h2>
+    <!-- Imóveis em Destaque -->
+    <section class="outros-imoveis">
+      <h2>Imóveis em Destaque</h2>
       <ul>
-           <li><a href="v465-apartamento-venda-saco-dos-limoes-florianopolis-2-quartos-sendo-2-suites-sacada-vaga.html">Apartamento no Saco dos Limões</a></li>
+        <li><a href="v465-apartamento-venda-saco-dos-limoes-florianopolis-2-quartos-sendo-2-suites-sacada-vaga.html">Apartamento no Saco dos Limões</a></li>
         <li><a href="apartamento-venda-centro-v447.html">Apartamento na Vitor Konder</a></li>
         <li><a href="v448-apartamento-duplex-cobertura-220m2-3dormitorios-sacada+churrasqueira+vista+academia.html">Duplex no Estreito</a></li>
         <li><a href="apartamento-venda-centro-v450.html">Apartamento Novo no Centro</a></li>
-        <li><a href="v460-apartamento-venda-3dormitorios-beira-mar-norte+marina+110m2+vaga+florianopolis.html">Beira Mar e Marina </a></li>
+        <li><a href="v460-apartamento-venda-3dormitorios-beira-mar-norte+marina+110m2+vaga+florianopolis.html">Beira Mar e Marina</a></li>
         <li><a href="v456-apartamento-venda-palmas-sacada-praia-celso-ramos+3dormitorios+suite.html">Apartamento em Palmas</a></li>
       </ul>
     </section>
@@ -518,15 +528,15 @@
           <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" />
         </a>
       </div>
-
       <div class="footer-container">
         <div class="footer-contact">
-          <h3 style="color: var(--bronze-medio);">Contato</h3>
+          <h3>Contato</h3>
           <p><a href="mailto:flavia.capacia@creci.gov.br">flavia.capacia@creci.gov.br</a></p>
           <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
-          <p>Florianópolis</p>
+          <p>Florianópolis / São José</p>
         </div>
         <div class="footer-social">
+          <h3>Redes Sociais</h3>
           <ul>
             <li><a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a></li>
             <li><a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a></li>
@@ -535,9 +545,8 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-credit">
-        <p>&copy; 2025 Flavia Capacia Corretora - Todos os direitos reservados.</p>
+        <p>&copy; 2026 Flavia Capacia Corretora - Todos os direitos reservados.</p>
         Feito com 💛 por <strong>Capacia Group</strong> 💛
       </div>
     </footer>
@@ -550,8 +559,6 @@
       const isVisible = window.getComputedStyle(menu).display === "block";
       menu.style.display = isVisible ? "none" : "block";
     }
-
-    // Fechar o menu ao clicar fora
     document.addEventListener("click", function (e) {
       const menu = document.getElementById("menu");
       const btn = document.querySelector("nav button");
@@ -563,9 +570,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
