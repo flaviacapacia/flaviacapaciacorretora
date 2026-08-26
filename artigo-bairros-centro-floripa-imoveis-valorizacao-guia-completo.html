@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro de Florianópolis: Imóveis, Valorização e Guia Completo - Flávia Capacia Corretora</title>
+  <meta name="description" content="Centro de Florianópolis: bairro histórico, imóveis de alto padrão, ruas Vitor Konder e Alves de Brito, valorização e oportunidades de investimento. Guia completo com preços e dicas." />
+  <meta name="keywords" content="imóveis Centro Florianópolis, apartamento Vitor Konder, comprar apartamento Centro Floripa, imóveis alto padrão Centro, valorização Centro Floripa" />
+  <meta name="author" content="Flavia Capacia Corretora" />
+  <style>
+    :root {
+      --bronze-medio: #b08d57;
+      --fundo-claro: #ffffff;
+      --cinza-borda: #e5e5e5;
+      --cinza-texto: #333333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: var(--cinza-texto);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      background-color: var(--fundo-claro);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid var(--cinza-borda);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--bronze-medio);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    header img { height: 54px; }
+    nav { position: relative; }
+    #menu-toggle {
+      background: none;
+      border: 1px solid var(--bronze-medio);
+      color: var(--bronze-medio);
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    #menu-toggle:hover { background-color: var(--bronze-medio); color: #fff; }
+    #menu {
+      list-style: none;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background-color: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      min-width: 180px;
+      z-index: 100;
+    }
+    #menu.open { display: block; }
+    #menu li { margin: 6px 0; }
+    #menu li a {
+      text-decoration: none;
+      color: var(--cinza-texto);
+      font-weight: bold;
+      display: block;
+      padding: 6px 8px;
+      border-radius: 6px;
+    }
+    #menu li a:hover { color: var(--bronze-medio); background: #fafafa; }
+    .article { margin-top: 20px; }
+    .article-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .article img {
+      width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: block;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      flex: 0 0 320px;
+      max-height: 300px;
+      border: 2px solid #d4af37;
+    }
+    .article img:hover { transform: scale(1.03); }
+    .article-text { flex: 1; min-width: 280px; }
+    .article h1 { color: var(--bronze-medio); margin-bottom: 15px; font-size: 1.6em; }
+    .article h2 { color: var(--bronze-medio); margin: 24px 0 12px; font-size: 1.25em; }
+    .article p { margin-bottom: 15px; line-height: 1.7; text-align: justify; }
+    .article ul { margin: 15px 0 15px 25px; line-height: 1.7; }
+    .article ul li { margin-bottom: 8px; }
+    .article strong { color: var(--bronze-medio); }
+    .quote {
+      border-left: 3px solid var(--bronze-medio);
+      padding-left: 18px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #555;
+      background: #faf8f2;
+      padding: 15px 18px;
+      border-radius: 0 8px 8px 0;
+    }
+    .lead-box {
+      margin-top: 30px;
+      background: #fafafa;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .lead-box p { margin: 0; font-weight: bold; color: var(--cinza-texto); flex: 1; min-width: 250px; }
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #25D366;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .btn-whatsapp:hover { background-color: #128C7E; }
+    .featured-properties {
+      margin: 30px 0;
+      padding: 20px;
+      border: 1px solid var(--cinza-borda);
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .featured-properties h2 { margin-bottom: 18px; text-align: center; color: var(--bronze-medio); }
+    .links-imoveis { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .links-imoveis a {
+      display: block;
+      margin: 0;
+      padding: 12px 10px;
+      color: var(--bronze-medio);
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    .links-imoveis a:hover { background-color: var(--bronze-medio); color: #fff; text-decoration: none; }
+    footer { margin-top: 30px; }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-top: 2px solid var(--bronze-medio);
+      background-color: #fff;
+      border-radius: 10px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .footer-contact, .footer-logo, .footer-social {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      min-width: 220px;
+    }
+    .footer-logo img { width: 120px; }
+    .footer-contact a, .footer-social a {
+      color: var(--bronze-medio);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer-social ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .footer-credit {
+      text-align: center;
+      padding: 12px;
+      border-top: 1px solid var(--cinza-borda);
+      background-color: #fff;
+      color: var(--bronze-medio);
+      margin-top: 15px;
+      border-radius: 10px;
+      font-size: 0.95em;
+    }
+    @media (max-width: 768px) {
+      body { padding: 10px; }
+      .article-header { flex-direction: column; }
+      .article img { width: 100%; flex: auto; }
+      .links-imoveis { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" aria-label="Página inicial">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Imóveis" />
+      </a>
+      <nav>
+        <button id="menu-toggle" type="button">Menu</button>
+        <ul id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="bairro-kobrasol-sao-jose.html">Kobrasol / São José</a></li>
+          <li><a href="bairro-centro-florianopolis.html">Centro de Florianópolis</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="article">
+      <div class="article-header">
+        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=90" alt="Imóveis de Alto Padrão — Centro de Florianópolis" />
+        <div class="article-text">
+          <h1>Centro de Florianópolis: Imóveis, Valorização e Guia Completo</h1>
+          <p>O Centro de Florianópolis é muito mais que o coração comercial da capital: é um dos bairros mais nobres, históricos e valorizados da cidade. Ruas como Vitor Konder e Alves de Brito representam o que há de mais exclusivo em moradia, unindo tradição, infraestrutura e localização privilegiada.</p>
+          <p>Investir em um imóvel no Centro de Florianópolis é garantir patrimônio de valorização constante em uma das regiões mais seguras e completas da capital catarinense.</p>
+        </div>
+      </div>
+
+      <h2>Viver no Centro de Florianópolis</h2>
+      <p>A localização é o grande diferencial. Tudo o que você precisa está a poucos passos: Beiramar Shopping, Hippo Supermercados, restaurantes, escolas, hospitais, bancos e serviços em geral. A mobilidade é excelente, com acesso a todas as regiões da cidade.</p>
+      <ul>
+        <li>✅ <strong>Localização premium:</strong> Ruas Vitor Konder, Alves de Brito e arredores</li>
+        <li>✅ <strong>Infraestrutura completa:</strong> Comércio, serviços e lazer ao redor</li
