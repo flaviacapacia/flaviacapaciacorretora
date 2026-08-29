@@ -1,222 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imóveis Cadastrados — Flávia Capacia Corretora | Florianópolis e Região</title>
+  <meta name="description" content="Lista completa de imóveis à venda em Florianópolis, São José, Palhoça e região. Casas, apartamentos, studios e lançamentos." />
+  <meta name="keywords" content="imóveis à venda, apartamentos Florianópolis, casas São José, imóveis Palhoça, corretora Flávia Capacia" />
+  <meta name="author" content="Flávia Capacia">
+
+  <meta property="og:title" content="Imóveis Cadastrados — Flávia Capacia Corretora">
+  <meta property="og:description" content="Confira todos os imóveis disponíveis em Florianópolis e região. Casas, apartamentos e oportunidades exclusivas.">
+  <meta property="og:url" content="https://www.flaviacapaciacorretora.com/imoveis-cadastrados.html">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-black: #0B0B0C;
+      --card-bg: #141416;
+      --text-white: #FFFFFF;
+      --text-muted: #D1D1D6;
+      --pink-lilas: rgb(232, 16, 239);
+      --gold-primary: #D4AF37;
+      --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: var(--font-title); }
+    .highlight-pink { color: var(--pink-lilas); }
+    .highlight-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #000;
+      font-weight: 700;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--pink-lilas);
+      color: var(--pink-lilas);
+    }
+
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(11,11,12,0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 999;
+      border-bottom: 1px solid rgba(232,16,239,0.15);
+    }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    .logo { font-size: 22px; font-weight: 800; color: var(--gold-primary); }
+    nav a { color: var(--text-muted); margin-left: 20px; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: var(--pink-lilas); }
+
+    .pagina-cabecalho {
+      padding: 140px 5% 40px;
+      text-align: center;
+    }
+    .pagina-cabecalho h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .pagina-cabecalho p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .filtros {
+      padding: 20px 5% 40px;
+      background: #000;
+    }
+    .filtros-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .filtro-grupo label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .filtro-grupo select, .filtro-grupo input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(232,16,239,0.3);
+      background: var(--card-bg);
+      color: #fff;
+      font-family: var(--font-body);
+    }
+
+    .lista-imoveis {
+      padding: 40px 5% 80px;
+    }
+    .contagem {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--text-muted);
+    }
+    .grid-imoveis {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 30px;
+    }
+
+    .card-imovel {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(232,16,239,0.2);
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .card-imovel:hover {
+      transform: translateY(-8px);
+      border-color: var(--pink-lilas);
+      box-shadow: 0 12px 30px rgba(232,16,239,0.12);
+    }
+    .card-imovel.destaque {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 1px var(--gold-primary), 0 12px 30px rgba(212,175,55,0.15);
+    }
+    .card-imovel.destaque::before {
+      content: "Destaque";
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--gold-gradient);
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      z-index: 10;
+    }
+
+    .card-imagem {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #1a1a1f;
+    }
+    .card-corpo {
+      padding: 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-tipo {
+      font-size: 13px;
+      color: var(--pink-lilas);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .card-titulo {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-white);
+    }
+    .card-local {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .card-dados {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .card-valor {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold-primary);
+      margin-bottom: 16px;
+    }
+    .card-botoes {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .card-botoes a {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-ver {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold-primary);
+      border: 1px solid rgba(212,175,55,0.35);
+    }
+    .btn-ver:hover { background: rgba(212,175,55,0.25); }
+    .btn-whats {
+      background: #25D366;
+      color: #fff;
+    }
+    .btn-whats:hover { background: #1fb859; }
+
+    .sem-resultado {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 40px 5%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--text-muted);
+    }
+    .voltar-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--pink-lilas);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .voltar-link:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .pagina-cabecalho h1 { font-size: 1.8rem; }
+      .grid-imoveis { grid-template-columns: 1fr; }
+      nav a { margin-left: 10px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">Flávia Capacia</div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="imoveis-cadastrados.html" style="color:var(--gold-primary)">Imóveis</a>
+      <a href="index.html#servicos">Soluções</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagina-cabecalho">
+  <div class="container">
+    <a href="index.html" class="voltar-link">← Voltar para Página Inicial</a>
+    <h1>Imóveis à Venda em <span class="highlight-pink">Florianópolis</span> e Região</h1>
+    <p>Casas, apartamentos, studios e oportunidades em São José, Palhoça e Governador Celso Ramos</p>
+  </div>
+</section>
+
+<section class="filtros">
+  <div class="filtros-grid">
+    <div class="filtro-grupo">
+      <label>Filtrar por Cidade</label>
+      <select id="filtroCidade">
+        <option value="">Todas as Cidades</option>
+        <option value="Florianópolis">Florianópolis</option>
+        <option value="São José">São José</option>
+        <option value="Palhoça">Palhoça</option>
+        <option value="Governador Celso Ramos">Governador Celso Ramos</option>
+      </select>
+    </div>
+    <div class="filtro-grupo">
+      <label>Tipo de Imóvel</label>
+      <select id="filtroTipo">
+        <option value="">Todos os Tipos</option>
+        <option value="Apartamento">Apartamento</option>
+        <option value="Casa">Casa</option>
+      </select>
+    </div>
+    <div class="filtro-grupo">
+      <label>Até o Valor</label>
+      <select id="filtroValor">
+        <option value="">Qualquer Valor</option>
+        <option value="500000">Até R$ 500.000</option>
+        <option value="1000000">Até R$ 1.000.000</option>
+        <option value="1500000">Até R$ 1.500.000</option>
+        <option value="2500000">Até R$ 2.500.000</option>
+      </select>
+    </div>
+    <div class="filtro-grupo">
+      <label>Quantidade de Quartos</label>
+      <select id="filtroQuartos">
+        <option value="">Qualquer Quantidade</option>
+        <option value="1">1 Quarto</option>
+        <option value="2">2 Quartos</option>
+        <option value="3">3 Quartos</option>
+        <option value="4">4 Quartos ou mais</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<section class="lista-imoveis">
+  <div class="container">
+    <div class="contagem" id="contagemResultados">Exibindo 16 imóveis</div>
+    <div class="grid-imoveis" id="gradeImoveis">
+
+      <!-- === IMÓVEL v466 === -->
+      <div class="card-imovel destaque" data-cidade="Palhoça" data-tipo="Casa" data-valor="998000" data-quartos="3">
+        <img src="img/v466/1.0-piscina.jpeg" alt="Casa com piscina na Praia" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Casa • v466</span>
+          <h3 class="card-titulo">Casa com piscina na Praia</h3>
+          <p class="card-local">📍 Praia, Palhoça</p>
+          <p class="card-dados">3 Quartos • 1 Suíte • 2 Vagas</p>
+          <p class="card-valor">R$ 998.000</p>
+          <div class="card-botoes">
+            <a href="v466-casa-a-venda-com-03-dormitorios-e-piscina-na-praia-em-palhoca-sc.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Casa com piscina na Praia — Código: v466" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v469 === -->
+      <div class="card-imovel" data-cidade="Palhoça" data-tipo="Casa" data-valor="320000" data-quartos="2">
+        <img src="img/v469/1.14casa.jpeg" alt="Casa em condomínio" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Casa • v469</span>
+          <h3 class="card-titulo">Casa em condomínio</h3>
+          <p class="card-local">📍 Condomínio, Palhoça</p>
+          <p class="card-dados">2 Quartos • 1 Banheiro • 1 Vaga</p>
+          <p class="card-valor">R$ 320.000</p>
+          <div class="card-botoes">
+            <a href="v469-casa-a-venda-em-condominio-com-02-dormitorios-em-palhoca.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Casa em condomínio — Código: v469" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v450 === -->
+      <div class="card-imovel destaque" data-cidade="Florianópolis" data-tipo="Apartamento" data-valor="928000" data-quartos="2">
+        <img src="img/v450/v450-capa (1).jpeg" alt="Apartamento Centro Kuboo" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Apartamento • v450</span>
+          <h3 class="card-titulo">Apartamento Centro Kuboo</h3>
+          <p class="card-local">📍 Centro, Florianópolis</p>
+          <p class="card-dados">2 Quartos • 1 Suíte • 1 Vaga</p>
+          <p class="card-valor">R$ 928.000</p>
+          <div class="card-botoes">
+            <a href="apartamento-venda-centro-florianopolis-v450.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Apartamento Centro Kuboo — Código: v450" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v440 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Apartamento" data-valor="940000" data-quartos="3">
+        <img src="img/v440/sacada-1.jpeg" alt="Apartamento no Kobrasol" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Apartamento • v440</span>
+          <h3 class="card-titulo">Apartamento no Kobrasol</h3>
+          <p class="card-local">📍 Kobrasol, São José</p>
+          <p class="card-dados">3 Quartos • 1 Suíte • 1 Vaga</p>
+          <p class="card-valor">R$ 940.000</p>
+          <div class="card-botoes">
+            <a href="v440-apartamento-a-venda-com-3-dormitorios-no-kobrasol-em-sao-jose.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Apartamento no Kobrasol — Código: v440" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v463 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Casa" data-valor="735000" data-quartos="3">
+        <img src="img/v463/8.1fachada.jpeg" alt="Casa Forquilhas" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Casa • v463</span>
+          <h3 class="card-titulo">Casa Forquilhas</h3>
+          <p class="card-local">📍 Forquilhas, São José</p>
+          <p class="card-dados">3 Quartos • 1 Suíte • 2 Vagas</p>
+          <p class="card-valor">R$ 735.000</p>
+          <div class="card-botoes">
+            <a href="v463-casa-a-venda-com-03-dormitorios-no-bairro-forquilhas-em-sao-jose-sc.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Casa Forquilhas — Código: v463" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v474 === -->
+      <div class="card-imovel destaque" data-cidade="Governador Celso Ramos" data-tipo="Apartamento" data-valor="890000" data-quartos="3">
+        <img src="img/v474/v4745.jpeg" alt="Apartamento à venda na Praia de Palmas" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Apartamento • v474</span>
+          <h3 class="card-titulo">Apartamento na Praia de Palmas</h3>
+          <p class="card-local">📍 Praia de Palmas, Gov. Celso Ramos</p>
+          <p class="card-dados">3 Quartos • 1 Suíte • 1 Vaga • Sacada</p>
+          <p class="card-valor">R$ 890.000</p>
+          <div class="card-botoes">
+            <a href="v474-apartamento-a-venda-com-3-dormitorios-sacada-na-praia-de-palmas-sc.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Apartamento na Praia de Palmas — Código: v474" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v447 === -->
+      <div class="card-imovel destaque" data-cidade="Florianópolis" data-tipo="Apartamento" data-valor="2250000" data-quartos="3">
+        <img src="img/v447/01sala_035.jpg" alt="Apartamento Centro" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Apartamento • v447</span>
+          <h3 class="card-titulo">Apartamento Centro — Vitor Konder</h3>
+          <p class="card-local">📍 Centro, Florianópolis</p>
+          <p class="card-dados">3 Quartos • 1 Suíte • 2 Vagas</p>
+          <p class="card-valor">R$ 2.250.000</p>
+          <div class="card-botoes">
+            <a href="apartamento-venda-centro-v447.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Apartamento Centro — Código: v447" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v457 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Apartamento" data-valor="318000" data-quartos="1">
+        <img src="img/v457/v457-1.jpeg" alt="Apartamento Campinas" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Apartamento • v457</span>
+          <h3 class="card-titulo">Apartamento Campinas — Morada do Sol</h3>
+          <p class="card-local">📍 Campinas, São José</p>
+          <p class="card-dados">1 Quarto • 1 Suíte • 1 Vaga</p>
+          <p class="card-valor">R$ 318.000</p>
+          <div class="card-botoes">
+            <a href="v457-apartamento-a-venda-em-campinas-02-quartos-morada-do-sol.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Apartamento Campinas — Código: v457" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v471 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Apartamento" data-valor="649000" data-quartos="2">
+        <img src="img/v471/v47118.jpeg" alt="Apartamento Bela Vista" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Apartamento • v471</span>
+          <h3 class="card-titulo">Apartamento Bela Vista</h3>
+          <p class="card-local">📍 Bela Vista, São José</p>
+          <p class="card-dados">2 Quartos • 1 Suíte • 1 Vaga</p>
+          <p class="card-valor">R$ 649.000</p>
+          <div class="card-botoes">
+            <a href="v476-apartamento-a-venda-com-2-dormitorios-e-suite-em-sao-jose.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Apartamento Bela Vista — Código: v471" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v441 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Apartamento" data-valor="850000" data-quartos="3">
+        <img src="img/v441/sala1.jpeg" alt="Apartamento Nossa Sra do Rosário" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Apartamento • v441</span>
+          <h3 class="card-titulo">Apartamento Nossa Sra. do Rosário</h3>
+          <p class="card-local">📍 Floresta, São José</p>
+          <p class="card-dados">3 Quartos • 1 Suíte • Churrasqueira</p>
+          <p class="card-valor">R$ 850.000</p>
+          <div class="card-botoes">
+            <a href="apartamento-venda-floresta-v441.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Apartamento Nossa Sra. do Rosário — Código: v441" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v449 === -->
+      <div class="card-imovel destaque" data-cidade="Florianópolis" data-tipo="Casa" data-valor="1450000" data-quartos="4">
+        <img src="img/v449/casav4491.jpg" alt="Casa à venda em Ratones" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Casa • v449</span>
+          <h3 class="card-titulo">Casa em Ratones — 355m²</h3>
+          <p class="card-local">📍 Ratones, Florianópolis — Norte da Ilha</p>
+          <p class="card-dados">4 Quartos • 1 Suíte • 3 Vagas • 355m²</p>
+          <p class="card-valor">R$ 1.450.000</p>
+          <div class="card-botoes">
+            <a href="v449-casa-venda-norte-da-ilha-ratones-florianopolis-355m2-4quartos.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Casa em Ratones — Código: v449" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v475 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Casa" data-valor="590000" data-quartos="2">
+        <img src="img/v475/v475 (7).jpeg" alt="Casa à venda em São José" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Casa • v475</span>
+          <h3 class="card-titulo">Casa com Área Gourmet e Hidro</h3>
+          <p class="card-local">📍 São José</p>
+          <p class="card-dados">2 Quartos • 2 Vagas • Área gourmet com hidro</p>
+          <p class="card-valor">R$ 590.000</p>
+          <div class="card-botoes">
+            <a href="v475-casa-a-venda-com-2-dormitorios-area-gourmet-com-hidro-em-sao-jose-sc.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Casa com Área Gourmet — Código: v475" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v468 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Casa" data-valor="890000" data-quartos="3">
+        <img src="img/v468/1.1casa.jpeg" alt="Casa Unifamiliar Forquilhas" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Casa • v468</span>
+          <h3 class="card-titulo">Casa Unifamiliar em Forquilhas</h3>
+          <p class="card-local">📍 Forquilhas, São José</p>
+          <p class="card-dados">3 Quartos • 1 Suíte • 2 Vagas</p>
+          <p class="card-valor">R$ 890.000</p>
+          <div class="card-botoes">
+            <a href="v468-casa-unifamiliar-a-venda-em-forquilhas.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Casa Unifamiliar Forquilhas — Código: v468" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v467 === -->
+      <div class="card-imovel destaque" data-cidade="Palhoça" data-tipo="Apartamento" data-valor="430000" data-quartos="2">
+        <img src="img/v467/1.1sala.jpeg" alt="Apartamento Palhoça" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Apartamento • v467</span>
+          <h3 class="card-titulo">Apartamento em Nova Palhoça</h3>
+          <p class="card-local">📍 Nova Palhoça, Palhoça</p>
+          <p class="card-dados">2 Quartos • 1 Suíte • 1 Vaga</p>
+          <p class="card-valor">R$ 430.000</p>
+          <div class="card-botoes">
+            <a href="v467-apartamento-com-02-dormitorios-em-palhoca-sc.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Apartamento Nova Palhoça — Código: v467" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v478 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Casa" data-valor="540000" data-quartos="2">
+        <img src="img/v478/v478-1.jpeg" alt="Sobrado com 2 suítes" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Casa • v478</span>
+          <h3 class="card-titulo">Sobrado com 2 Suítes e Quintal</h3>
+          <p class="card-local">📍 São José</p>
+          <p class="card-dados">2 Quartos • 2 Suítes • 1 Vaga • Quintal</p>
+          <p class="card-valor">R$ 540.000</p>
+          <div class="card-botoes">
+            <a href="v478-casa-tipo-sobrado-a-venda-com-02-suites-e-quintal-e-passagem-lateral-em-sao-jose.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Sobrado com 2 Suítes — Código: v478" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === IMÓVEL v477 === -->
+      <div class="card-imovel destaque" data-cidade="São José" data-tipo="Casa" data-valor="560000" data-quartos="2">
+        <img src="img/v477/v477-1.jpeg" alt="Sobrado com 2 suítes" class="card-imagem" loading="lazy">
+        <div class="card-corpo">
+          <span class="card-tipo">Casa • v477</span>
+          <h3 class="card-titulo">Sobrado com 2 Suítes — Quintal Amplo</h3>
+          <p class="card-local">📍 São José</p>
+          <p class="card-dados">2 Quartos • 2 Suítes • 1 Vaga • Quintal</p>
+          <p class="card-valor">R$ 560.000</p>
+          <div class="card-botoes">
+            <a href="v477-casa-tipo-sobrado-venda-com-02-suites-e-quintal-em-em-sao-jose.html" target="_blank" class="btn-ver">Ver Detalhes</a>
+            <a href="https://wa.me/5548999600601?text=Olá Flávia! Tenho interesse no imóvel: Sobrado com 2 Suítes — Código: v477" target="_blank" class="btn-whats">Tenho Interesse</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h3>Flávia Capacia • Corretora de Imóveis</h3>
+    <p>Centro / Edifício Hoepcke — Florianópolis/SC</p>
+    <p style="margin-top:10px;">&copy; 2026 Flávia Capacia. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
 <script>
-const SEU_NUMERO = "5548999600601";
-const LINK_WHATSAPP = "https://wa.me/" + SEU_NUMERO;
-const ARQUIVO_CONHECIMENTO = "conhecimento.json";
+// Filtrar imóveis sem precisar de arquivo externo
+document.addEventListener("DOMContentLoaded", function() {
+  const filtroCidade = document.getElementById("filtroCidade");
+  const filtroTipo = document.getElementById("filtroTipo");
+  const filtroValor = document.getElementById("filtroValor");
+  const filtroQuartos = document.getElementById("filtroQuartos");
+  const todosCards = document.querySelectorAll(".card-imovel");
+  const contagem = document.getElementById("contagemResultados");
 
-// 🧠 DADOS CARREGADOS DO ARQUIVO
-let baseConhecimento = {};
+  function aplicarFiltros() {
+    const cidadeEscolhida = filtroCidade.value;
+    const tipoEscolhido = filtroTipo.value;
+    const valorMaximo = filtroValor.value ? parseInt(filtroValor.value) : null;
+    const quartosEscolhidos = filtroQuartos.value;
 
-// 📊 ESTADO DA CONVERSA
-let estado = {
-  assunto: null,
-  etapa: 0,
-  respostas: [],
-  perfil: { bairro: "", valor: "" }
-};
+    let visiveis = 0;
 
-// ✅ CARREGAR CONHECIMENTO DO ARQUIVO
-async function carregarConhecimento() {
-  try {
-    const resposta = await fetch(ARQUIVO_CONHECIMENTO);
-    baseConhecimento = await resposta.json();
-    console.log("✅ Conhecimento carregado");
-  } catch (erro) {
-    console.log("⚠️ Erro ao carregar, usando padrão");
-    baseConhecimento = {
-      repo_base: "https://github.com/flaviacapacia/flaviacapaciacorretora/blob/main/",
-      site_base: "https://flaviacapaciacorretora.com/",
-      imoveis_cadastrados: []
-    };
-  }
-}
+    todosCards.forEach(card => {
+      const cidade = card.dataset.cidade;
+      const tipo = card.dataset.tipo;
+      const valor = parseInt(card.dataset.valor);
+      const quartos = parseInt(card.dataset.quartos);
 
-// 🔍 BUSCAR IMÓVEIS NO GITHUB
-function buscarImoveisNoPerfil(perfil) {
-  const bairro = (perfil.bairro || "").toLowerCase();
-  const imoveis = baseConhecimento.imoveis_cadastrados || [];
-  const repoBase = baseConhecimento.repo_base || "";
-  const siteBase = baseConhecimento.site_base || "";
+      let mostrar = true;
+      if (cidadeEscolhida && cidade !== cidadeEscolhida) mostrar = false;
+      if (tipoEscolhido && tipo !== tipoEscolhido) mostrar = false;
+      if (valorMaximo && valor > valorMaximo) mostrar = false;
+      if (quartosEscolhidos) {
+        const qtd = parseInt(quartosEscolhidos);
+        if (qtd === 4 && quartos < 4) mostrar = false;
+        if (qtd < 4 && quartos !== qtd) mostrar = false;
+      }
 
-  // Filtra imóveis pelo bairro informado
-  const encontrados = imoveis.filter(imovel => {
-    const bairroImovel = (imovel.bairro || "").toLowerCase();
-    return bairroImovel.includes(bairro) || bairro.includes(bairroImovel);
-  });
+      card.style.display = mostrar ? "flex" : "none";
+      if (mostrar) visiveis++;
+    });
 
-  if (encontrados.length === 0) {
-    return "Encontrei ótimas opções para você! Vou te encaminhar com os detalhes.";
+    contagem.textContent = visiveis === 0
+      ? "Nenhum imóvel encontrado com os filtros selecionados."
+      : `Exibindo ${visiveis} imóvel${visiveis !== 1 ? 's' : ''}`;
   }
 
-  // Monta lista com links diretos
-  let lista = "Encontrei imóveis compatíveis com o seu perfil:\n\n";
-  encontrados.forEach(imovel => {
-    const linkSite = `${siteBase}${imovel.arquivo}`;
-    lista += `🏠 ${imovel.titulo}\n🔗 Ver detalhes e fotos: ${linkSite}\n\n`;
-  });
-
-  return lista;
-}
-
-// === ABRIR E FECHAR AGENTE ===
-const botao = document.getElementById('botaoAgente');
-const janela = document.getElementById('janelaAgente');
-const fechar = document.getElementById('fecharAgente');
-
-botao.addEventListener('click', () => janela.classList.toggle('aberta'));
-fechar.addEventListener('click', () => {
-  janela.classList.remove('aberta');
-  estado = { assunto: null, etapa: 0, respostas: [], perfil: { bairro: "", valor: "" } };
+  filtroCidade.addEventListener("change", aplicarFiltros);
+  filtroTipo.addEventListener("change", aplicarFiltros);
+  filtroValor.addEventListener("change", aplicarFiltros);
+  filtroQuartos.addEventListener("change", aplicarFiltros);
 });
-
-// === ADICIONAR MENSAGEM NA TELA ===
-function adicionarMensagem(texto, tipo = 'assistente') {
-  const caixa = document.getElementById('caixaMensagens');
-  const div = document.createElement('div');
-  div.className = 'mensagem ' + tipo;
-  div.innerHTML = texto.replace(/\n/g, '<br>');
-  caixa.appendChild(div);
-  caixa.scrollTop = caixa.scrollHeight;
-}
-
-// === MONTAR RESUMO E ENVIAR COM LINKS ===
-async function finalizarColeta() {
-  const fluxo = baseConhecimento[estado.assunto];
-  if (!fluxo) return;
-
-  // Monta resumo das respostas
-  const resumo = [];
-  fluxo.perguntas.forEach((pergunta, indice) => {
-    resumo.push(`${pergunta}\n→ ${estado.respostas[indice] || "Não informado"}`);
-  });
-
-  // Busca imóveis compatíveis
-  const listaImoveis = buscarImoveisNoPerfil(estado.perfil);
-
-  // Texto completo para WhatsApp
-  const textoCompleto = `Olá Flávia! Tenho interesse em: ${fluxo.descricao.split(".")[0]}.
-
-${resumo.join("\n\n")}
-
----
-${listaImoveis}
-Por favor, me envie mais informações e condições. Obrigado(a)!`;
-
-  // Mostra mensagem final com botão
-  adicionarMensagem(`✅ Perfil coletado! Encontrei opções compatíveis com o que você procura. Clique abaixo para ver os imóveis e falar comigo diretamente.
-    <br><a href="${LINK_WHATSAPP}?text=${encodeURIComponent(textoCompleto)}" target="_blank" class="link-whatsapp">📋 Ver Imóveis e Detalhes</a>`);
-
-  // Reinicia conversa
-  estado = { assunto: null, etapa: 0, respostas: [], perfil: { bairro: "", valor: "" } };
-}
-
-// === PROCESSAR RESPOSTA DO CLIENTE ===
-function processarResposta(respostaTexto) {
-  const fluxo = baseConhecimento[estado.assunto];
-  if (!fluxo) return;
-
-  estado.respostas.push(respostaTexto);
-  estado.etapa++;
-
-  // Guarda bairro e valor para busca
-  const texto = respostaTexto.toLowerCase();
-  if (texto.includes("são josé") || texto.includes("sao jose")) {
-    estado.perfil.bairro = "São José";
-  } else if (estado.etapa === 1) {
-    estado.perfil.bairro = respostaTexto;
-  }
-  if (texto.includes("mil") || texto.includes("R$") || texto.includes("até")) {
-    estado.perfil.valor = respostaTexto;
-  }
-
-  // Faz próxima pergunta ou finaliza
-  if (estado.etapa < fluxo.perguntas.length) {
-    setTimeout(() => {
-      adicionarMensagem(`<strong>${fluxo.perguntas[estado.etapa]}</strong>`);
-    }, 700);
-  } else {
-    setTimeout(finalizarColeta, 700);
-  }
-}
-
-// === INICIAR FLUXO ===
-function iniciarFluxo(chave) {
-  if (chave === 'atendimento') {
-    adicionarMensagem(`Claro! Fale diretamente comigo pelo WhatsApp.
-      <br><a href="${LINK_WHATSAPP}" target="_blank" class="link-whatsapp">💬 Falar Agora</a>`);
-    return;
-  }
-
-  estado.assunto = chave;
-  const fluxo = baseConhecimento[chave];
-  if (!fluxo) return;
-
-  estado.etapa = 0;
-  estado.respostas = [];
-  estado.perfil = { bairro: "", valor: "" };
-
-  adicionarMensagem(`${fluxo.descricao}<br><br><strong>${fluxo.perguntas[0]}</strong>`);
-}
-
-// === CLIQUE NAS OPÇÕES ===
-document.querySelectorAll('.agente-opcao').forEach(botao => {
-  botao.addEventListener('click', () => {
-    const opcao = botao.dataset.opcao;
-    const textos = {
-      studio: "Quero saber sobre studios",
-      airbnb: "Quero imóveis para Airbnb",
-      lancamento: "Quero lançamentos na planta",
-      troca: "Quero trocar meu imóvel",
-      casasjose: "Busco casa em São José",
-      atendimento: "Quero falar com a Flávia"
-    };
-    adicionarMensagem(textos[opcao] || opcao, 'usuario');
-    setTimeout(() => iniciarFluxo(opcao), 600);
-  });
-});
-
-// === CAMPO DE DIGITAÇÃO ===
-document.getElementById('enviarMensagem').addEventListener('click', () => {
-  const texto = document.getElementById('entradaUsuario').value.trim();
-  if (!texto) return;
-
-  adicionarMensagem(texto, 'usuario');
-  document.getElementById('entradaUsuario').value = '';
-
-  // Reconhece busca por São José digitada livremente
-  if (texto.toLowerCase().includes("são josé") || texto.toLowerCase().includes("sao jose")) {
-    estado.assunto = "casasjose";
-    estado.perfil.bairro = "São José";
-  }
-
-  if (estado.assunto) {
-    processarResposta(texto);
-  } else {
-    setTimeout(() => {
-      adicionarMensagem("Escolha uma das opções acima ou me diga o que você procura! Ex: 'busco casa em São José'");
-    }, 600);
-  }
-});
-
-// === ENVIAR COM TECLA ENTER ===
-document.getElementById('entradaUsuario').addEventListener('keypress', e => {
-  if (e.key === 'Enter') document.getElementById('enviarMensagem').click();
-});
-
-// === FORMULÁRIO E BOTÕES DE IMÓVEIS ===
-document.getElementById('leadForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const nome = document.getElementById('nome').value;
-  const tel = document.getElementById('telefone').value;
-  const assunto = document.getElementById('assunto').value;
-  const msg = document.getElementById('mensagem').value;
-  const texto = `Olá Flávia! Me chamo ${nome}, meu WhatsApp é ${tel}.%0AQuero saber sobre: ${assunto}.%0A${msg}`;
-  window.open(`${LINK_WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank');
-});
-
-function enviarWhatsapp(imovel) {
-  window.open(`${LINK_WHATSAPP}?text=${encodeURIComponent(`Olá Flávia, gostaria de mais detalhes sobre: ${imovel}`)}`, '_blank');
-}
-
-// 🚀 INICIAR CARREGANDO O CONHECIMENTO
-carregarConhecimento();
 </script>
+
+</body>
+</html>
