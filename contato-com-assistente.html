@@ -505,45 +505,71 @@
 <script>
 const SEU_NUMERO = "5548999600601";
 const LINK_WHATSAPP = "https://wa.me/" + SEU_NUMERO;
+const ARQUIVO_CONHECIMENTO = "conhecimento.json";
 
-// === RESPOSTAS DO AGENTE ===
-const respostas = {
-  studio: {
-    texto: "Tenho excelentes opções de studios com ótimo retorno mensal em Florianópolis. Posso enviar uma lista com as melhores oportunidades e valores. Quer receber?",
-    acao: "sim"
-  },
-  airbnb: {
-    texto: "Conheço os melhores locais para aluguel por temporada em Floripa. Indico regiões com alta demanda e lucratividade garantida. Posso te enviar as sugestões?",
-    acao: "sim"
-  },
-  lancamento: {
-    texto: "Tenho acesso antecipado a lançamentos exclusivos nas melhores regiões de Florianópolis, com condições especiais. Quer saber quais estão disponíveis agora?",
-    acao: "sim"
-  },
-  troca: {
-    texto: "Facilitamos a troca: avaliamos seu imóvel atual e ele pode ser usado como parte do pagamento. Não precisa vender primeiro! Quer entender como funciona?",
-    acao: "sim"
-  },
-  atendimento: {
-    texto: "Vou passar você diretamente para a Flávia. É só clicar abaixo e falar com ela pelo WhatsApp.",
-    acao: "whatsapp"
-  },
-  padrao: {
-    texto: "Entendi! Vou ajudar você com isso. Para conversarmos melhor, clique abaixo e fale diretamente comigo pelo WhatsApp.",
-    acao: "whatsapp"
-  }
+// 🧠 DADOS CARREGADOS DO ARQUIVO
+let baseConhecimento = {};
+
+// 📊 ESTADO DA CONVERSA
+let estado = {
+  assunto: null,
+  etapa: 0,
+  respostas: [],
+  perfil: { bairro: "", valor: "" }
 };
+
+// ✅ CARREGAR CONHECIMENTO DO ARQUIVO
+async function carregarConhecimento() {
+  try {
+    const resposta = await fetch(ARQUIVO_CONHECIMENTO);
+    baseConhecimento = await resposta.json();
+    console.log("✅ Conhecimento carregado");
+  } catch (erro) {
+    console.log("⚠️ Erro ao carregar, usando padrão");
+    baseConhecimento = {
+      repo_base: "https://github.com/flaviacapacia/flaviacapaciacorretora/blob/main/",
+      site_base: "https://flaviacapaciacorretora.com/",
+      imoveis_cadastrados: []
+    };
+  }
+}
+
+// 🔍 BUSCAR IMÓVEIS NO GITHUB
+function buscarImoveisNoPerfil(perfil) {
+  const bairro = (perfil.bairro || "").toLowerCase();
+  const imoveis = baseConhecimento.imoveis_cadastrados || [];
+  const repoBase = baseConhecimento.repo_base || "";
+  const siteBase = baseConhecimento.site_base || "";
+
+  // Filtra imóveis pelo bairro informado
+  const encontrados = imoveis.filter(imovel => {
+    const bairroImovel = (imovel.bairro || "").toLowerCase();
+    return bairroImovel.includes(bairro) || bairro.includes(bairroImovel);
+  });
+
+  if (encontrados.length === 0) {
+    return "Encontrei ótimas opções para você! Vou te encaminhar com os detalhes.";
+  }
+
+  // Monta lista com links diretos
+  let lista = "Encontrei imóveis compatíveis com o seu perfil:\n\n";
+  encontrados.forEach(imovel => {
+    const linkSite = `${siteBase}${imovel.arquivo}`;
+    lista += `🏠 ${imovel.titulo}\n🔗 Ver detalhes e fotos: ${linkSite}\n\n`;
+  });
+
+  return lista;
+}
 
 // === ABRIR E FECHAR AGENTE ===
 const botao = document.getElementById('botaoAgente');
 const janela = document.getElementById('janelaAgente');
 const fechar = document.getElementById('fecharAgente');
 
-botao.addEventListener('click', () => {
-  janela.classList.toggle('aberta');
-});
+botao.addEventListener('click', () => janela.classList.toggle('aberta'));
 fechar.addEventListener('click', () => {
   janela.classList.remove('aberta');
+  estado = { assunto: null, etapa: 0, respostas: [], perfil: { bairro: "", valor: "" } };
 });
 
 // === ADICIONAR MENSAGEM NA TELA ===
@@ -551,44 +577,133 @@ function adicionarMensagem(texto, tipo = 'assistente') {
   const caixa = document.getElementById('caixaMensagens');
   const div = document.createElement('div');
   div.className = 'mensagem ' + tipo;
-  div.innerHTML = texto;
+  div.innerHTML = texto.replace(/\n/g, '<br>');
   caixa.appendChild(div);
   caixa.scrollTop = caixa.scrollHeight;
 }
 
-// === RESPOSTA POR OPÇÃO ===
+// === MONTAR RESUMO E ENVIAR COM LINKS ===
+async function finalizarColeta() {
+  const fluxo = baseConhecimento[estado.assunto];
+  if (!fluxo) return;
+
+  // Monta resumo das respostas
+  const resumo = [];
+  fluxo.perguntas.forEach((pergunta, indice) => {
+    resumo.push(`${pergunta}\n→ ${estado.respostas[indice] || "Não informado"}`);
+  });
+
+  // Busca imóveis compatíveis
+  const listaImoveis = buscarImoveisNoPerfil(estado.perfil);
+
+  // Texto completo para WhatsApp
+  const textoCompleto = `Olá Flávia! Tenho interesse em: ${fluxo.descricao.split(".")[0]}.
+
+${resumo.join("\n\n")}
+
+---
+${listaImoveis}
+Por favor, me envie mais informações e condições. Obrigado(a)!`;
+
+  // Mostra mensagem final com botão
+  adicionarMensagem(`✅ Perfil coletado! Encontrei opções compatíveis com o que você procura. Clique abaixo para ver os imóveis e falar comigo diretamente.
+    <br><a href="${LINK_WHATSAPP}?text=${encodeURIComponent(textoCompleto)}" target="_blank" class="link-whatsapp">📋 Ver Imóveis e Detalhes</a>`);
+
+  // Reinicia conversa
+  estado = { assunto: null, etapa: 0, respostas: [], perfil: { bairro: "", valor: "" } };
+}
+
+// === PROCESSAR RESPOSTA DO CLIENTE ===
+function processarResposta(respostaTexto) {
+  const fluxo = baseConhecimento[estado.assunto];
+  if (!fluxo) return;
+
+  estado.respostas.push(respostaTexto);
+  estado.etapa++;
+
+  // Guarda bairro e valor para busca
+  const texto = respostaTexto.toLowerCase();
+  if (texto.includes("são josé") || texto.includes("sao jose")) {
+    estado.perfil.bairro = "São José";
+  } else if (estado.etapa === 1) {
+    estado.perfil.bairro = respostaTexto;
+  }
+  if (texto.includes("mil") || texto.includes("R$") || texto.includes("até")) {
+    estado.perfil.valor = respostaTexto;
+  }
+
+  // Faz próxima pergunta ou finaliza
+  if (estado.etapa < fluxo.perguntas.length) {
+    setTimeout(() => {
+      adicionarMensagem(`<strong>${fluxo.perguntas[estado.etapa]}</strong>`);
+    }, 700);
+  } else {
+    setTimeout(finalizarColeta, 700);
+  }
+}
+
+// === INICIAR FLUXO ===
+function iniciarFluxo(chave) {
+  if (chave === 'atendimento') {
+    adicionarMensagem(`Claro! Fale diretamente comigo pelo WhatsApp.
+      <br><a href="${LINK_WHATSAPP}" target="_blank" class="link-whatsapp">💬 Falar Agora</a>`);
+    return;
+  }
+
+  estado.assunto = chave;
+  const fluxo = baseConhecimento[chave];
+  if (!fluxo) return;
+
+  estado.etapa = 0;
+  estado.respostas = [];
+  estado.perfil = { bairro: "", valor: "" };
+
+  adicionarMensagem(`${fluxo.descricao}<br><br><strong>${fluxo.perguntas[0]}</strong>`);
+}
+
+// === CLIQUE NAS OPÇÕES ===
 document.querySelectorAll('.agente-opcao').forEach(botao => {
   botao.addEventListener('click', () => {
     const opcao = botao.dataset.opcao;
-    responder(opcao);
+    const textos = {
+      studio: "Quero saber sobre studios",
+      airbnb: "Quero imóveis para Airbnb",
+      lancamento: "Quero lançamentos na planta",
+      troca: "Quero trocar meu imóvel",
+      casasjose: "Busco casa em São José",
+      atendimento: "Quero falar com a Flávia"
+    };
+    adicionarMensagem(textos[opcao] || opcao, 'usuario');
+    setTimeout(() => iniciarFluxo(opcao), 600);
   });
 });
-
-// === GERAR RESPOSTA ===
-function responder(chave) {
-  const resposta = respostas[chave] || respostas.padrao;
-  let conteudo = resposta.texto;
-  
-  if (resposta.acao === 'sim') {
-    conteudo += `<div class="agente-opcoes" style="margin-top:10px;">
-      <a href="${LINK_WHATSAPP}?text=Olá! Tenho interesse e gostaria de mais informações." target="_blank" class="agente-opcao">Sim, quero saber mais</a>
-      <span class="agente-opcao" onclick="adicionarMensagem('Sem problemas! Quando precisar, é só chamar. 😊')">Talvez depois</span>
-    </div>`;
-  } else if (resposta.acao === 'whatsapp') {
-    conteudo += `<br><a href="${LINK_WHATSAPP}" target="_blank" class="link-whatsapp">Falar pelo WhatsApp</a>`;
-  }
-  
-  adicionarMensagem(conteudo);
-}
 
 // === CAMPO DE DIGITAÇÃO ===
 document.getElementById('enviarMensagem').addEventListener('click', () => {
   const texto = document.getElementById('entradaUsuario').value.trim();
-  if (texto) {
-    adicionarMensagem(`"${texto}" — estou analisando...`, 'usuario');
-    setTimeout(() => responder('padrao'), 600);
-    document.getElementById('entradaUsuario').value = '';
+  if (!texto) return;
+
+  adicionarMensagem(texto, 'usuario');
+  document.getElementById('entradaUsuario').value = '';
+
+  // Reconhece busca por São José digitada livremente
+  if (texto.toLowerCase().includes("são josé") || texto.toLowerCase().includes("sao jose")) {
+    estado.assunto = "casasjose";
+    estado.perfil.bairro = "São José";
   }
+
+  if (estado.assunto) {
+    processarResposta(texto);
+  } else {
+    setTimeout(() => {
+      adicionarMensagem("Escolha uma das opções acima ou me diga o que você procura! Ex: 'busco casa em São José'");
+    }, 600);
+  }
+});
+
+// === ENVIAR COM TECLA ENTER ===
+document.getElementById('entradaUsuario').addEventListener('keypress', e => {
+  if (e.key === 'Enter') document.getElementById('enviarMensagem').click();
 });
 
 // === FORMULÁRIO E BOTÕES DE IMÓVEIS ===
@@ -605,6 +720,9 @@ document.getElementById('leadForm').addEventListener('submit', e => {
 function enviarWhatsapp(imovel) {
   window.open(`${LINK_WHATSAPP}?text=${encodeURIComponent(`Olá Flávia, gostaria de mais detalhes sobre: ${imovel}`)}`, '_blank');
 }
+
+// 🚀 INICIAR CARREGANDO O CONHECIMENTO
+carregarConhecimento();
 </script>
 </body>
 </html>
