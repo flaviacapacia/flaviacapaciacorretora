@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flávia Capacia | Imóveis em Florianópolis, Investimentos e Troca</title>
+  <meta name="description" content="Procurando imóvel em Floripa? Studios para investir, Airbnb, apartamentos na planta e troca facilitada com seu imóvel. Atendimento rápido e transparente com Flávia Capacia.">
+  <meta name="keywords" content="imóveis em Florianópolis, studio para investimento em Floripa, imóvel para alugar Airbnb, apartamento na planta SC, trocar imóvel Floripa, corretora que entende">
+  <meta name="author" content="Flávia Capacia">
+  
+  <meta property="og:title" content="Flavia Capacia Corretora - Imóveis em Floripa FC">
+  <meta property="og:description" content="Ajudo você a encontrar o imóvel ideal em Florianópolis, São José e região. Atendimento exclusivo e transparente.">
+  <meta property="og:image" content="https://www.flaviacapaciacorretora.com/img/imagens/flavia_sobre.jpg">
+  <meta property="og:url" content="https://www.flaviacapaciacorretora.com/contato.fc.html">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-black: #0B0B0C;
+      --card-bg: #141416;
+      --text-white: #FFFFFF;
+      --text-muted: #D1D1D6;
+      --pink-lilas: rgb(232, 16, 239);
+      --gold-primary: #D4AF37;
+      --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --agent-bg: #1A1A1F;
+      --agent-border: rgba(232,16,239,0.35);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: var(--font-title); }
+    .highlight-pink { color: var(--pink-lilas); }
+    .highlight-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #000;
+      font-weight: 700;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--pink-lilas);
+      color: var(--pink-lilas);
+    }
+    .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(11,11,12,0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 999;
+      border-bottom: 1px solid rgba(232,16,239,0.15);
+    }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    .logo { font-size: 22px; font-weight: 800; color: var(--gold-primary); }
+    nav a { color: var(--text-muted); margin-left: 20px; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: var(--pink-lilas); }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 160px 5% 80px;
+      background: radial-gradient(circle at top right, rgba(216, 131, 255, 0.15), transparent 40%);
+    }
+    .hero-content { max-width: 580px; }
+    .hero-subtitle { color: var(--pink-lilas); font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
+    .hero-title { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; }
+    .hero-description { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; }
+    .hero-avatar {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--pink-lilas);
+      box-shadow: 0 0 30px rgba(232,16,239,0.25);
+    }
+    .servicos { padding: 70px 5%; background: #000; }
+    .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 45px; }
+    .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 20px; }
+    .servico-card {
+      background: var(--card-bg);
+      padding: 25px 20px;
+      border-radius: 12px;
+      border-left: 4px solid var(--pink-lilas);
+      transition: 0.3s;
+    }
+    .servico-card:hover { transform: translateY(-5px); border-color: var(--gold-primary); }
+    .servico-card h3 { margin-bottom: 10px; color: var(--gold-primary); }
+    .destaques { padding: 70px 5%; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 30px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(232,16,239,0.2);
+      transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-8px); border-color: var(--pink-lilas); }
+    .card-img { width: 100%; height: 220px; object-fit: cover; }
+    .card-body { padding: 24px; }
+    .card-price { color: var(--pink-lilas); font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .depoimentos { padding: 70px 5%; background: #000; }
+    .depo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 25px; }
+    .depo-card { background: var(--card-bg); padding: 25px; border-radius: 12px; border-left: 4px solid var(--gold-primary); }
+    .depo-nome { margin-top: 12px; color: var(--gold-primary); font-weight: 600; }
+    .mapa { padding: 70px 5%; text-align: center; }
+    .mapa iframe { width: 100%; max-width: 900px; height: 350px; border-radius: 12px; border: none; }
+    .contato { padding: 70px 5%; background: linear-gradient(180deg, #000 0%, var(--bg-black) 100%); }
+    .form-container {
+      max-width: 550px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 35px 25px;
+      border-radius: 20px;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; margin-bottom: 6px; color: var(--text-muted); }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      border: 1px solid rgba(232,16,239,0.3);
+      background: #0B0B0C;
+      color: #fff;
+    }
+    footer { padding: 40px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); }
+    .footer-links { margin-top: 15px; }
+    .footer-links a { color: var(--text-muted); margin: 0 12px; text-decoration: none; }
+    .footer-links a:hover { color: var(--pink-lilas); }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 998;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .whatsapp-float img { width: 32px; height: 32px; }
+
+    /* === ESTILOS DO AGENTE === */
+    .agente-container {
+      position: fixed;
+      bottom: 100px;
+      right: 25px;
+      z-index: 999;
+    }
+    .agente-botao {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      border: none;
+      cursor: pointer;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(212,175,55,0.4);
+      transition: transform 0.3s ease;
+    }
+    .agente-botao:hover { transform: scale(1.1); }
+    .agente-janela {
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      width: 340px;
+      max-height: 520px;
+      background: var(--agent-bg);
+      border: 1px solid var(--agent-border);
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .agente-janela.aberta { display: flex; }
+    .agente-cabecalho {
+      background: linear-gradient(135deg, rgba(232,16,239,0.25), rgba(212,175,55,0.25));
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--agent-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .agente-cabecalho h4 { color: var(--gold-primary); font-size: 15px; }
+    .agente-fechar {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .agente-mensagens {
+      padding: 16px;
+      overflow-y: auto;
+      max-height: 380px;
+      flex: 1;
+    }
+    .mensagem {
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 90%;
+    }
+    .mensagem.assistente {
+      background: rgba(232,16,239,0.12);
+      border-left: 3px solid var(--pink-lilas);
+      color: #fff;
+    }
+    .agente-opcoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .agente-opcao {
+      padding: 7px 12px;
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 16px;
+      font-size: 13px;
+      cursor: pointer;
+      color: var(--gold-primary);
+      transition: all 0.2s;
+    }
+    .agente-opcao:hover {
+      background: rgba(212,175,55,0.3);
+    }
+    .agente-input {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .agente-input input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--agent-border);
+      background: #0B0B0C;
+      color: #fff;
+      font-size: 14px;
+    }
+    .agente-input button {
+      padding: 10px 16px;
+      border-radius: 20px;
+      border: none;
+      background: var(--gold-gradient);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .link-whatsapp {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: #25D366;
+      color: #fff !important;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .agente-janela { width: 300px; right: 0; }
+      .hero { text-align: center; justify-content: center; padding-top: 140px; }
+      .hero-title { font-size: 2.2rem; }
+      .hero-avatar { width: 260px; height: 260px; }
+      nav a { margin: 0 8px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container header-content">
+    <div class="logo">Flávia Capacia</div>
+    <nav>
+      <a href="#servicos">Soluções</a>
+      <a href="#destaques">Imóveis</a>
+      <a href="#depoimentos">Clientes</a>
+      <a href="#contato">Falar Agora</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-subtitle">Imóveis em Floripa FC</p>
+    <h1 class="hero-title">Encontre o imóvel ou o investimento que você quer com quem conhece Floripa</h1>
+    <p class="hero-description">Sou a Flávia Capacia, trabalho com studios para investimento, imóveis para Airbnb, lançamentos na planta e facilito a troca com seu imóvel atual.</p>
+    <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:10px;">
+      <a href="#contato" class="btn-gold">Receber Oportunidades</a>
+      <a href="#destaques" class="btn-gold btn-outline">Ver Imóveis</a>
+    </div>
+  </div>
+  <img src="img/imagens/flavia_sobre.jpg" alt="Flávia Capacia Corretora" class="hero-avatar">
+</section>
+
+<section class="servicos" id="servicos">
+  <div class="container">
+    <h2 class="section-title">Como posso ajudar você</h2>
+    <div class="servicos-grid">
+      <div class="servico-card">
+        <h3>Studios para Investidores</h3>
+        <p>As melhores opções com retorno mensal acima da média em Floripa.</p>
+      </div>
+      <div class="servico-card">
+        <h3>Imóveis para Airbnb</h3>
+        <p>Locais com alta demanda e lucratividade garantida.</p>
+      </div>
+      <div class="servico-card">
+        <h3>Apartamentos na Planta</h3>
+        <p>Lançamentos exclusivos e condições que cabem no bolso.</p>
+      </div>
+      <div class="servico-card">
+        <h3>Seu Imóvel como Parte</h3>
+        <p>Não precisa vender primeiro: avaliamos seu imóvel como parte do pagamento.</p>
+      </div>
+      <div class="servico-card">
+        <h3>Upgrade de Imóvel</h3>
+        <p>Troque por um imóvel maior, melhor ou em outra região com facilidade.</p>
+      </div>
+      <div class="servico-card">
+        <h3>Toda Florianópolis</h3>
+        <p>Atendo em todas as regiões: Centro, Estreito, Agronômica, Praias e mais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="destaques" id="destaques">
+  <div class="container">
+    <h2 class="section-title">Oportunidades em <span class="highlight-pink">Destaque</span></h2>
+    <div class="grid">
+      <div class="card">
+        <img src="img/v448/12.1 sacada mesanino.jpg" class="card-img" alt="Cobertura Duplex no Estreito">
+        <div class="card-body">
+          <p class="card-price">R$ 2.000.000</p>
+          <h3>Cobertura Duplex no Estreito</h3>
+          <button class="btn-gold" style="width:100%; margin-top:10px;" onclick="enviarWhatsapp('Cobertura Duplex Estreito')">Quero Saber Mais</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/v472/anco1.jpeg" class="card-img" alt="Apartamento na Agronômica">
+        <div class="card-body">
+          <p class="card-price">R$ 2.995.000</p>
+          <h3>Apartamento na Agronômica</h3>
+          <button class="btn-gold" style="width:100%; margin-top:10px;" onclick="enviarWhatsapp('Apartamento Agronômica')">Quero Saber Mais</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="depoimentos" id="depoimentos">
+  <div class="container">
+    <h2 class="section-title">O que meus clientes dizem</h2>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <p>"A Flávia me apresentou studios que realmente valem a pena para investir. Sem enrolação e sempre atenciosa."</p>
+        <p class="depo-nome">— Rodrigo, investidor</p>
+      </div>
+      <div class="depo-card">
+        <p>"Consegui usar meu apartamento como parte do pagamento e fiz um upgrade que eu queria há anos. Muito obrigada!"</p>
+        <p class="depo-nome">— Mariana, Florianópolis</p>
+      </div>
+      <div class="depo-card">
+        <p>"Indicou o imóvel perfeito para alugar no Airbnb e cuida de tudo. Recomendo muito."</p>
+        <p class="depo-nome">— Pedro, São José</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mapa">
+  <div class="container">
+    <h2 class="section-title">Onde Atendo</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.2!2d-48.54!3d-27.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDM1JzI1LjIiUyA0OcKwMzInMjQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+    <p style="margin-top:15px; color:var(--text-muted);">Centro / Edifício Hoepcke — Florianópolis/SC</p>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="form-container">
+    <h2 style="margin-bottom:20px; text-align:center;">Solicite <span class="highlight-pink">Oportunidades</span></h2>
+    <p style="text-align:center; margin-bottom:15px; color:var(--text-muted);">Preencha abaixo que eu entro em contato com você em até 24h.</p>
+    <form id="leadForm">
+      <div class="form-group">
+        <label>Nome Completo</label>
+        <input type="text" id="nome" required placeholder="Seu nome">
+      </div>
+      <div class="form-group">
+        <label>Seu WhatsApp</label>
+        <input type="tel" id="telefone" required placeholder="(48) 9 XXXX-XXXX">
+      </div>
+      <div class="form-group">
+        <label>O que você procura?</label>
+        <select id="assunto">
+          <option>Escolha uma opção</option>
+          <option>Studio para investir</option>
+          <option>Imóvel para Airbnb</option>
+          <option>Apartamento na planta</option>
+          <option>Trocar meu imóvel atual</option>
+          <option>Quero comprar pela primeira vez</option>
+          <option>Outro objetivo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Uma mensagem rápida</label>
+        <input type="text" id="mensagem" placeholder="Ex: Até quanto pretende investir?">
+      </div>
+      <button type="submit" class="btn-gold" style="width:100%;">Receber Contato e Oportunidades</button>
+    </form>
+    <div style="text-align:center; margin-top:25px;">
+      <a href="https://instagram.com/flaviacapaciacorretora" target="_blank" class="btn-gold btn-outline">Me Seguir no Instagram</a>
+      <a href="https://wa.me/5548999600601" target="_blank" class="btn-gold">Falar Direto no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h3>Flávia Capacia • Corretora de Imóveis</h3>
+    <p>Centro / Edifício Hoepcke — Florianópolis/SC</p>
+    <div class="footer-links">
+      <a href="https://instagram.com/flaviacapaciacorretora" target="_blank">Instagram</a>
+      <a href="https://www.flaviacapaciacorretora.com" target="_blank">Site de Imóveis</a>
+    </div>
+    <p style="margin-top:15px;">&copy; 2026 Flávia Capacia. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5548999600601" target="_blank" class="whatsapp-float">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="Falar no WhatsApp">
+</a>
+
+<!-- === AGENTE DE ATENDIMENTO === -->
+<div class="agente-container">
+  <button class="agente-botao" id="botaoAgente" title="Posso Ajudar?">💬</button>
+  <div class="agente-janela" id="janelaAgente">
+    <div class="agente-cabecalho">
+      <h4>Assistente Flávia Capacia</h4>
+      <button class="agente-fechar" id="fecharAgente">&times;</button>
+    </div>
+    <div class="agente-mensagens" id="caixaMensagens">
+      <div class="mensagem assistente">
+        Olá! Em que posso ajudar você hoje?
+        <div class="agente-opcoes">
+          <span class="agente-opcao" data-opcao="studio">Studios para investir</span>
+          <span class="agente-opcao" data-opcao="airbnb">Imóveis para Airbnb</span>
+          <span class="agente-opcao" data-opcao="lancamento">Lançamentos na planta</span>
+          <span class="agente-opcao" data-opcao="troca">Trocar meu imóvel</span>
+          <span class="agente-opcao" data-opcao="atendimento">Falar com a Flávia</span>
+        </div>
+      </div>
+    </div>
+    <div class="agente-input">
+      <input type="text" id="entradaUsuario" placeholder="Digite sua pergunta...">
+      <button id="enviarMensagem">Enviar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SEU_NUMERO = "5548999600601";
+const LINK_WHATSAPP = "https://wa.me/" + SEU_NUMERO;
+
+// === RESPOSTAS DO AGENTE ===
+const respostas = {
+  studio: {
+    texto: "Tenho excelentes opções de studios com ótimo retorno mensal em Florianópolis. Posso enviar uma lista com as melhores oportunidades e valores. Quer receber?",
+    acao: "sim"
+  },
+  airbnb: {
+    texto: "Conheço os melhores locais para aluguel por temporada em Floripa. Indico regiões com alta demanda e lucratividade garantida. Posso te enviar as sugestões?",
+    acao: "sim"
+  },
+  lancamento: {
+    texto: "Tenho acesso antecipado a lançamentos exclusivos nas melhores regiões de Florianópolis, com condições especiais. Quer saber quais estão disponíveis agora?",
+    acao: "sim"
+  },
+  troca: {
+    texto: "Facilitamos a troca: avaliamos seu imóvel atual e ele pode ser usado como parte do pagamento. Não precisa vender primeiro! Quer entender como funciona?",
+    acao: "sim"
+  },
+  atendimento: {
+    texto: "Vou passar você diretamente para a Flávia. É só clicar abaixo e falar com ela pelo WhatsApp.",
+    acao: "whatsapp"
+  },
+  padrao: {
+    texto: "Entendi! Vou ajudar você com isso. Para conversarmos melhor, clique abaixo e fale diretamente comigo pelo WhatsApp.",
+    acao: "whatsapp"
+  }
+};
+
+// === ABRIR E FECHAR AGENTE ===
+const botao = document.getElementById('botaoAgente');
+const janela = document.getElementById('janelaAgente');
+const fechar = document.getElementById('fecharAgente');
+
+botao.addEventListener('click', () => {
+  janela.classList.toggle('aberta');
+});
+fechar.addEventListener('click', () => {
+  janela.classList.remove('aberta');
+});
+
+// === ADICIONAR MENSAGEM NA TELA ===
+function adicionarMensagem(texto, tipo = 'assistente') {
+  const caixa = document.getElementById('caixaMensagens');
+  const div = document.createElement('div');
+  div.className = 'mensagem ' + tipo;
+  div.innerHTML = texto;
+  caixa.appendChild(div);
+  caixa.scrollTop = caixa.scrollHeight;
+}
+
+// === RESPOSTA POR OPÇÃO ===
+document.querySelectorAll('.agente-opcao').forEach(botao => {
+  botao.addEventListener('click', () => {
+    const opcao = botao.dataset.opcao;
+    responder(opcao);
+  });
+});
+
+// === GERAR RESPOSTA ===
+function responder(chave) {
+  const resposta = respostas[chave] || respostas.padrao;
+  let conteudo = resposta.texto;
+  
+  if (resposta.acao === 'sim') {
+    conteudo += `<div class="agente-opcoes" style="margin-top:10px;">
+      <a href="${LINK_WHATSAPP}?text=Olá! Tenho interesse e gostaria de mais informações." target="_blank" class="agente-opcao">Sim, quero saber mais</a>
+      <span class="agente-opcao" onclick="adicionarMensagem('Sem problemas! Quando precisar, é só chamar. 😊')">Talvez depois</span>
+    </div>`;
+  } else if (resposta.acao === 'whatsapp') {
+    conteudo += `<br><a href="${LINK_WHATSAPP}" target="_blank" class="link-whatsapp">Falar pelo WhatsApp</a>`;
+  }
+  
+  adicionarMensagem(conteudo);
+}
+
+// === CAMPO DE DIGITAÇÃO ===
+document.getElementById('enviarMensagem').addEventListener('click', () => {
+  const texto = document.getElementById('entradaUsuario').value.trim();
+  if (texto) {
+    adicionarMensagem(`"${texto}" — estou analisando...`, 'usuario');
+    setTimeout(() => responder('padrao'), 600);
+    document.getElementById('entradaUsuario').value = '';
+  }
+});
+
+// === FORMULÁRIO E BOTÕES DE IMÓVEIS ===
+document.getElementById('leadForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value;
+  const tel = document.getElementById('telefone').value;
+  const assunto = document.getElementById('assunto').value;
+  const msg = document.getElementById('mensagem').value;
+  const texto = `Olá Flávia! Me chamo ${nome}, meu WhatsApp é ${tel}.%0AQuero saber sobre: ${assunto}.%0A${msg}`;
+  window.open(`${LINK_WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank');
+});
+
+function enviarWhatsapp(imovel) {
+  window.open(`${LINK_WHATSAPP}?text=${encodeURIComponent(`Olá Flávia, gostaria de mais detalhes sobre: ${imovel}`)}`, '_blank');
+}
+</script>
+</body>
+</html>
