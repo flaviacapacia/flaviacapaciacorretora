@@ -1,0 +1,73 @@
+{
+  "apresentacao": "Tenho excelentes opções de studios, imóveis para Airbnb e lançamentos nas melhores regiões de Florianópolis e São José.",
+  
+  "repo_base": "https://github.com/flaviacapacia/flaviacapaciacorretora/blob/main/",
+  "site_base": "https://flaviacapaciacorretora.com/",
+
+  "studios": {
+    "descricao": "Studios com ótimo retorno mensal, ideais para investimento. Regiões disponíveis: Centro, Agronômica, Estreito, Kobrasol e São José.",
+    "perguntas": [
+      "Até qual valor você está buscando?",
+      "Prefere algo pronto ou em lançamento na planta?",
+      "Tem preferência por algum bairro? Quais outros bairros poderia considerar?",
+      "É para morar ou investir? O que é mais importante para você no imóvel?",
+      "Até qual valor máximo você consegue chegar?",
+      "Quanto deseja pagar de entrada e qual valor máximo de parcela mensal?"
+    ]
+  },
+
+  "airbnb": {
+    "descricao": "Imóveis em regiões de alta demanda turística, com lucratividade garantida. Praias, regiões centrais e São José.",
+    "perguntas": [
+      "Até qual valor você está buscando?",
+      "Tem preferência por praias, centro ou outra região? Quais outros bairros posso enviar opções?",
+      "É para morar também ou só investimento em Airbnb?",
+      "Até qual valor máximo você consegue chegar?",
+      "Quanto deseja pagar de entrada e qual valor máximo de parcela mensal?"
+    ]
+  },
+
+  "lancamento": {
+    "descricao": "Lançamentos na planta com condições especiais e entrega prevista. Regiões: Florianópolis e São José.",
+    "perguntas": [
+      "Tem preferência por algum bairro? Quais outros bairros poderia considerar?",
+      "Até qual valor máximo você deseja investir?",
+      "Quanto pretende pagar de entrada?",
+      "Qual valor máximo de parcela mensal cabe no orçamento?"
+    ]
+  },
+
+  "troca": {
+    "descricao": "Facilitamos a troca: avaliamos seu imóvel atual e ele pode ser usado como parte do pagamento. Não precisa vender primeiro.",
+    "perguntas": [
+      "Quais bairros você tem interesse no novo imóvel? Quais outros bairros posso enviar opções?",
+      "Qual o valor aproximado do seu imóvel atual?",
+      "Qual o valor restante que precisará de financiamento?",
+      "Qual será a forma de pagamento do valor restante?"
+    ]
+  },
+
+  "casasjose": {
+    "descricao": "Casas em São José e regiões próximas. Diversos tamanhos e faixas de valor.",
+    "perguntas": [
+      "Tem bairro preferido em São José? Quais outros bairros posso enviar opções?",
+      "É para morar ou investir? O que é mais importante para você no imóvel?",
+      "Até qual valor máximo você consegue chegar?",
+      "Quanto deseja pagar de entrada e qual valor máximo de parcela mensal?"
+    ]
+  },
+
+  "imoveis_cadastrados": [
+    {
+      "arquivo": "v477-casa-tipo-sobrado-venda-com-02-suites-e-quintal-em-em-sao-jose.html",
+      "titulo": "Casa Tipo Sobrado com 2 Suítes e Quintal — São José",
+      "bairro": "São José",
+      "valor": "Sob consulta"
+    }
+  ],
+
+  "bairros_disponiveis": [
+    "Centro", "Estreito", "Agronômica", "Trindade", "Campeche", "Canasvieiras",
+    "Ingleses", "Jurerê", "Beira Mar", "São José", "Kobrasol", "Campinas"
+  ]
+}
