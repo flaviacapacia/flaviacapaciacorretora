@@ -1,107 +1,222 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Imóveis em Floripa FC</title>
-  <meta name="robots" content="noindex">
+<script>
+const SEU_NUMERO = "5548999600601";
+const LINK_WHATSAPP = "https://wa.me/" + SEU_NUMERO;
+const ARQUIVO_CONHECIMENTO = "conhecimento.json";
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:1200,h:630,mx">
-</head>
-<body>
+// 🧠 DADOS CARREGADOS DO ARQUIVO
+let baseConhecimento = {};
 
-  <header class="site-header">
-    <div class="logo-area">
-      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Imóveis" class="logo"/>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="negocie.html">Negocie</a></li>
-        <li><a href="financie.html">Financie</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/flacapacciacorretora" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="icon"/>
-      </a>
-      <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn" class="icon"/>
-      </a>
-      <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" class="icon"/>
-      </a>
-      <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="icon"/>
-      </a>
-    </div>
-  </header>
+// 📊 ESTADO DA CONVERSA
+let estado = {
+  assunto: null,
+  etapa: 0,
+  respostas: [],
+  perfil: { bairro: "", valor: "" }
+};
 
-  <main>
-    <section class="destaques-section">
-      <h2 class="titulo-dourado">Imóveis em Destaque</h2>
-      <div class="slider-container">
-        <div class="slider">
-          <div class="slide">
-            <img src="img/imovel1.jpg" alt="Apartamento no Centro">
-            <p>Apartamento no Centro - R$ 450.000</p>
-          </div>
-          <div class="slide">
-            <img src="img/imovel2.jpg" alt="Casa com piscina">
-            <p>Casa com piscina - R$ 780.000</p>
-          </div>
-          <div class="slide">
-            <img src="img/imovel3.jpg" alt="Cobertura com vista">
-            <p>Cobertura com vista - R$ 1.200.000</p>
-          </div>
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
-    </section>
+// ✅ CARREGAR CONHECIMENTO DO ARQUIVO
+async function carregarConhecimento() {
+  try {
+    const resposta = await fetch(ARQUIVO_CONHECIMENTO);
+    baseConhecimento = await resposta.json();
+    console.log("✅ Conhecimento carregado");
+  } catch (erro) {
+    console.log("⚠️ Erro ao carregar, usando padrão");
+    baseConhecimento = {
+      repo_base: "https://github.com/flaviacapacia/flaviacapaciacorretora/blob/main/",
+      site_base: "https://flaviacapaciacorretora.com/",
+      imoveis_cadastrados: []
+    };
+  }
+}
 
-    <section class="imoveis-section">
-      <h2>Imóveis Cadastrados</h2>
-      <div class="imoveis-grid">
-        <div class="imovel">
-          <img src="img/imovel-default.jpg" alt="Apartamento no Centro">
-          <h3>Apartamento com 2 dormitórios no Centro</h3>
-          <p>Totalmente reformado, mobiliado, com sala para dois ambientes...</p>
-          <strong>R$ 680.000</strong>
-          <a href="https://www.casamineira.com.br/imovel/venda/apartamento-2-quartos-a-venda-no-centro-florianopolis-sc/2999704647" target="_blank">Ver anúncio</a>
-        </div>
+// 🔍 BUSCAR IMÓVEIS NO GITHUB
+function buscarImoveisNoPerfil(perfil) {
+  const bairro = (perfil.bairro || "").toLowerCase();
+  const imoveis = baseConhecimento.imoveis_cadastrados || [];
+  const repoBase = baseConhecimento.repo_base || "";
+  const siteBase = baseConhecimento.site_base || "";
 
-        <div class="imovel">
-          <img src="img/imovel-default.jpg" alt="Casa em Canasvieiras">
-          <h3>Casa duplex com 3 dormitórios em Canasvieiras</h3>
-          <p>198m² construídos, churrasqueira, porcelanato, varanda...</p>
-          <strong>R$ 1.590.000</strong>
-          <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-canasvieiras-florianopolis-sc/2999887429" target="_blank">Ver anúncio</a>
-        </div>
+  // Filtra imóveis pelo bairro informado
+  const encontrados = imoveis.filter(imovel => {
+    const bairroImovel = (imovel.bairro || "").toLowerCase();
+    return bairroImovel.includes(bairro) || bairro.includes(bairroImovel);
+  });
 
-        <div class="imovel">
-          <img src="img/imovel-default.jpg" alt="Casa na Pedra Branca">
-          <h3>Casa alto padrão com piscina na Pedra Branca</h3>
-          <p>Suíte master com hidromassagem, fechadura digital, próxima à Unisul...</p>
-          <strong>R$ 1.690.000</strong>
-          <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-pedra-branca-palhoca-sc/2992650902" target="_blank">Ver anúncio</a>
-        </div>
+  if (encontrados.length === 0) {
+    return "Encontrei ótimas opções para você! Vou te encaminhar com os detalhes.";
+  }
 
-        <div class="imovel">
-          <img src="img/imovel-default.jpg" alt="Casa na Praia do Meio">
-          <h3>Casa Alto Padrão na Praia do Meio – Palhoça</h3>
-          <p>3 dormitórios, churrasqueira em porcelanato, garagem para 3 carros, mobiliada...</p>
-          <strong>R$ 750.000</strong>
-          <a href="https://www.casamineira.com.br/imovel/venda/casa-3-quartos-a-venda-no-praia-do-meio-ens-brito-palhoca-sc/2995684111" target="_blank">Ver anúncio</a>
-        </div>
-      </div>
-    </section>
-  </main>
+  // Monta lista com links diretos
+  let lista = "Encontrei imóveis compatíveis com o seu perfil:\n\n";
+  encontrados.forEach(imovel => {
+    const linkSite = `${siteBase}${imovel.arquivo}`;
+    lista += `🏠 ${imovel.titulo}\n🔗 Ver detalhes e fotos: ${linkSite}\n\n`;
+  });
 
-</body>
-</html>
+  return lista;
+}
 
+// === ABRIR E FECHAR AGENTE ===
+const botao = document.getElementById('botaoAgente');
+const janela = document.getElementById('janelaAgente');
+const fechar = document.getElementById('fecharAgente');
+
+botao.addEventListener('click', () => janela.classList.toggle('aberta'));
+fechar.addEventListener('click', () => {
+  janela.classList.remove('aberta');
+  estado = { assunto: null, etapa: 0, respostas: [], perfil: { bairro: "", valor: "" } };
+});
+
+// === ADICIONAR MENSAGEM NA TELA ===
+function adicionarMensagem(texto, tipo = 'assistente') {
+  const caixa = document.getElementById('caixaMensagens');
+  const div = document.createElement('div');
+  div.className = 'mensagem ' + tipo;
+  div.innerHTML = texto.replace(/\n/g, '<br>');
+  caixa.appendChild(div);
+  caixa.scrollTop = caixa.scrollHeight;
+}
+
+// === MONTAR RESUMO E ENVIAR COM LINKS ===
+async function finalizarColeta() {
+  const fluxo = baseConhecimento[estado.assunto];
+  if (!fluxo) return;
+
+  // Monta resumo das respostas
+  const resumo = [];
+  fluxo.perguntas.forEach((pergunta, indice) => {
+    resumo.push(`${pergunta}\n→ ${estado.respostas[indice] || "Não informado"}`);
+  });
+
+  // Busca imóveis compatíveis
+  const listaImoveis = buscarImoveisNoPerfil(estado.perfil);
+
+  // Texto completo para WhatsApp
+  const textoCompleto = `Olá Flávia! Tenho interesse em: ${fluxo.descricao.split(".")[0]}.
+
+${resumo.join("\n\n")}
+
+---
+${listaImoveis}
+Por favor, me envie mais informações e condições. Obrigado(a)!`;
+
+  // Mostra mensagem final com botão
+  adicionarMensagem(`✅ Perfil coletado! Encontrei opções compatíveis com o que você procura. Clique abaixo para ver os imóveis e falar comigo diretamente.
+    <br><a href="${LINK_WHATSAPP}?text=${encodeURIComponent(textoCompleto)}" target="_blank" class="link-whatsapp">📋 Ver Imóveis e Detalhes</a>`);
+
+  // Reinicia conversa
+  estado = { assunto: null, etapa: 0, respostas: [], perfil: { bairro: "", valor: "" } };
+}
+
+// === PROCESSAR RESPOSTA DO CLIENTE ===
+function processarResposta(respostaTexto) {
+  const fluxo = baseConhecimento[estado.assunto];
+  if (!fluxo) return;
+
+  estado.respostas.push(respostaTexto);
+  estado.etapa++;
+
+  // Guarda bairro e valor para busca
+  const texto = respostaTexto.toLowerCase();
+  if (texto.includes("são josé") || texto.includes("sao jose")) {
+    estado.perfil.bairro = "São José";
+  } else if (estado.etapa === 1) {
+    estado.perfil.bairro = respostaTexto;
+  }
+  if (texto.includes("mil") || texto.includes("R$") || texto.includes("até")) {
+    estado.perfil.valor = respostaTexto;
+  }
+
+  // Faz próxima pergunta ou finaliza
+  if (estado.etapa < fluxo.perguntas.length) {
+    setTimeout(() => {
+      adicionarMensagem(`<strong>${fluxo.perguntas[estado.etapa]}</strong>`);
+    }, 700);
+  } else {
+    setTimeout(finalizarColeta, 700);
+  }
+}
+
+// === INICIAR FLUXO ===
+function iniciarFluxo(chave) {
+  if (chave === 'atendimento') {
+    adicionarMensagem(`Claro! Fale diretamente comigo pelo WhatsApp.
+      <br><a href="${LINK_WHATSAPP}" target="_blank" class="link-whatsapp">💬 Falar Agora</a>`);
+    return;
+  }
+
+  estado.assunto = chave;
+  const fluxo = baseConhecimento[chave];
+  if (!fluxo) return;
+
+  estado.etapa = 0;
+  estado.respostas = [];
+  estado.perfil = { bairro: "", valor: "" };
+
+  adicionarMensagem(`${fluxo.descricao}<br><br><strong>${fluxo.perguntas[0]}</strong>`);
+}
+
+// === CLIQUE NAS OPÇÕES ===
+document.querySelectorAll('.agente-opcao').forEach(botao => {
+  botao.addEventListener('click', () => {
+    const opcao = botao.dataset.opcao;
+    const textos = {
+      studio: "Quero saber sobre studios",
+      airbnb: "Quero imóveis para Airbnb",
+      lancamento: "Quero lançamentos na planta",
+      troca: "Quero trocar meu imóvel",
+      casasjose: "Busco casa em São José",
+      atendimento: "Quero falar com a Flávia"
+    };
+    adicionarMensagem(textos[opcao] || opcao, 'usuario');
+    setTimeout(() => iniciarFluxo(opcao), 600);
+  });
+});
+
+// === CAMPO DE DIGITAÇÃO ===
+document.getElementById('enviarMensagem').addEventListener('click', () => {
+  const texto = document.getElementById('entradaUsuario').value.trim();
+  if (!texto) return;
+
+  adicionarMensagem(texto, 'usuario');
+  document.getElementById('entradaUsuario').value = '';
+
+  // Reconhece busca por São José digitada livremente
+  if (texto.toLowerCase().includes("são josé") || texto.toLowerCase().includes("sao jose")) {
+    estado.assunto = "casasjose";
+    estado.perfil.bairro = "São José";
+  }
+
+  if (estado.assunto) {
+    processarResposta(texto);
+  } else {
+    setTimeout(() => {
+      adicionarMensagem("Escolha uma das opções acima ou me diga o que você procura! Ex: 'busco casa em São José'");
+    }, 600);
+  }
+});
+
+// === ENVIAR COM TECLA ENTER ===
+document.getElementById('entradaUsuario').addEventListener('keypress', e => {
+  if (e.key === 'Enter') document.getElementById('enviarMensagem').click();
+});
+
+// === FORMULÁRIO E BOTÕES DE IMÓVEIS ===
+document.getElementById('leadForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value;
+  const tel = document.getElementById('telefone').value;
+  const assunto = document.getElementById('assunto').value;
+  const msg = document.getElementById('mensagem').value;
+  const texto = `Olá Flávia! Me chamo ${nome}, meu WhatsApp é ${tel}.%0AQuero saber sobre: ${assunto}.%0A${msg}`;
+  window.open(`${LINK_WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank');
+});
+
+function enviarWhatsapp(imovel) {
+  window.open(`${LINK_WHATSAPP}?text=${encodeURIComponent(`Olá Flávia, gostaria de mais detalhes sobre: ${imovel}`)}`, '_blank');
+}
+
+// 🚀 INICIAR CARREGANDO O CONHECIMENTO
+carregarConhecimento();
+</script>
