@@ -1,32 +1,286 @@
-[ 
-{ 
-"titulo": "Apartamento no Centro", 
-"descricao": "3 quartos, 2 banheiros, 90m²", 
-"preco": "R$ 450.000", 
-"imagem": "apto-centro.jpg", 
-"link": "https://www.casamineira.com.br/imovel/123456" 
-}, 
-{ 
-"titulo": "Casa com quintal", 
-"descricao": "2 quartos, 1 suíte, 120m²", 
-"preco": "R$ 600.000", 
-"imagem": "casa-quintal.jpg", 
-"link": "https://www.casamineira.com.br/imovel/789012" 
-} 
-[
-  {
-    "codigo": "0001",
-    "tipo": "Casa",
-    "negocio": "Venda",
-    "valor": "R$ 320.000",
-    "endereco": "Rua X, Centro",
-    "bairro": "Centro",
-    "condominio": "Residencial Sol",
-    "descricao": "Casa com 2 quartos, 1 suíte, quintal amplo.",
-    "fotos": ["link1.jpg", "link2.jpg"],
-    "documentos": "https://drive.google.com/drive/folders/SEU_LINK",
-    "contato": "(48) 99999-0000"
-  }
-]
+{
+  "informacoes_gerais": {
+    "corretora": "Flávia Capacia",
+    "site_base": "https://www.flaviacapaciacorretora.com/",
+    "pagina_imoveis": "imoveis-cadastrados.html",
+    "contato_whatsapp": "https://wa.me/5548999600601"
+  },
 
-] 
+  "imoveis": [
+    {
+      "codigo": "v466",
+      "tipo": "Casa",
+      "titulo": "Casa com piscina na Praia",
+      "cidade": "Palhoça",
+      "bairro": "Praia",
+      "quartos": 3,
+      "suite": 1,
+      "vagas": 2,
+      "valor_numerico": 998000,
+      "valor_formatado": "R$ 998.000",
+      "destaque": true,
+      "imagem": "img/v466/1.0-piscina.jpeg",
+      "pagina": "v466-casa-a-venda-com-03-dormitorios-e-piscina-na-praia-em-palhoca-sc.html"
+    },
+
+    {
+      "codigo": "v469",
+      "tipo": "Casa",
+      "titulo": "Casa em condomínio",
+      "cidade": "Palhoça",
+      "bairro": "Condomínio",
+      "quartos": 2,
+      "banheiros": 1,
+      "vagas": 1,
+      "valor_numerico": 320000,
+      "valor_formatado": "R$ 320.000",
+      "destaque": false,
+      "imagem": "img/v469/1.14casa.jpeg",
+      "pagina": "v469-casa-a-venda-em-condominio-com-02-dormitorios-em-palhoca.html"
+    },
+
+    {
+      "codigo": "v450",
+      "tipo": "Apartamento",
+      "titulo": "Apartamento Centro Kuboo",
+      "cidade": "Florianópolis",
+      "bairro": "Centro",
+      "quartos": 2,
+      "suite": 1,
+      "vagas": 1,
+      "valor_numerico": 928000,
+      "valor_formatado": "R$ 928.000",
+      "destaque": true,
+      "imagem": "img/v450/v450-capa (1).jpeg",
+      "pagina": "apartamento-venda-centro-florianopolis-v450.html"
+    },
+
+    {
+      "codigo": "v440",
+      "tipo": "Apartamento",
+      "titulo": "Apartamento no Kobrasol",
+      "cidade": "São José",
+      "bairro": "Kobrasol",
+      "quartos": 3,
+      "suite": 1,
+      "vagas": 1,
+      "valor_numerico": 940000,
+      "valor_formatado": "R$ 940.000",
+      "destaque": true,
+      "imagem": "img/v440/sacada-1.jpeg",
+      "pagina": "v440-apartamento-a-venda-com-3-dormitorios-no-kobrasol-em-sao-jose.html"
+    },
+
+    {
+      "codigo": "v463",
+      "tipo": "Casa",
+      "titulo": "Casa Forquilhas",
+      "cidade": "São José",
+      "bairro": "Forquilhas",
+      "quartos": 3,
+      "suite": 1,
+      "vagas": 2,
+      "valor_numerico": 735000,
+      "valor_formatado": "R$ 735.000",
+      "destaque": true,
+      "imagem": "img/v463/8.1fachada.jpeg",
+      "pagina": "v463-casa-a-venda-com-03-dormitorios-no-bairro-forquilhas-em-sao-jose-sc.html"
+    },
+
+    {
+      "codigo": "v474",
+      "tipo": "Apartamento",
+      "titulo": "Apartamento à venda na Praia de Palmas",
+      "cidade": "Governador Celso Ramos",
+      "bairro": "Praia de Palmas",
+      "quartos": 3,
+      "suite": 1,
+      "vagas": 1,
+      "diferenciais": ["Sacada"],
+      "valor_numerico": 890000,
+      "valor_formatado": "R$ 890.000",
+      "destaque": true,
+      "imagem": "img/v474/v4745.jpeg",
+      "pagina": "v474-apartamento-a-venda-com-3-dormitorios-sacada-na-praia-de-palmas-sc.html"
+    },
+
+    {
+      "codigo": "v447",
+      "tipo": "Apartamento",
+      "titulo": "Apartamento Centro",
+      "cidade": "Florianópolis",
+      "bairro": "Centro",
+      "endereco_bairro": "Vitor Konder",
+      "quartos": 3,
+      "suite": 1,
+      "vagas": 2,
+      "valor_numerico": 2250000,
+      "valor_formatado": "R$ 2.250.000",
+      "destaque": true,
+      "imagem": "img/v447/01sala_035.jpg",
+      "pagina": "apartamento-venda-centro-v447.html"
+    },
+
+    {
+      "codigo": "v457",
+      "tipo": "Apartamento",
+      "titulo": "Apartamento Campinas",
+      "cidade": "São José",
+      "bairro": "Campinas",
+      "quartos": 1,
+      "suite": 1,
+      "vagas": 1,
+      "valor_numerico": 318000,
+      "valor_formatado": "R$ 318.000",
+      "destaque": true,
+      "imagem": "img/v457/v457-1.jpeg",
+      "pagina": "v457-apartamento-a-venda-em-campinas-02-quartos-morada-do-sol.html"
+    },
+
+    {
+      "codigo": "v471",
+      "tipo": "Apartamento",
+      "titulo": "Apartamento Bela Vista",
+      "cidade": "São José",
+      "bairro": "Bela Vista",
+      "quartos": 2,
+      "suite": 1,
+      "vagas": 1,
+      "valor_numerico": 649000,
+      "valor_formatado": "R$ 649.000",
+      "destaque": true,
+      "imagem": "img/v471/v47118.jpeg",
+      "pagina": "v476-apartamento-a-venda-com-2-dormitorios-e-suite-em-sao-jose.html"
+    },
+
+    {
+      "codigo": "v441",
+      "tipo": "Apartamento",
+      "titulo": "Apartamento Nossa Sra do Rosário",
+      "cidade": "São José",
+      "bairro": "Floresta",
+      "quartos": 3,
+      "suite": 1,
+      "diferenciais": ["Churrasqueira"],
+      "valor_numerico": 850000,
+      "valor_formatado": "R$ 850.000",
+      "destaque": true,
+      "imagem": "img/v441/sala1.jpeg",
+      "pagina": "apartamento-venda-floresta-v441.html"
+    },
+
+    {
+      "codigo": "v449",
+      "tipo": "Casa",
+      "titulo": "Casa à venda em Ratones",
+      "cidade": "Florianópolis",
+      "bairro": "Ratones",
+      "regiao": "Norte da Ilha",
+      "quartos": 4,
+      "suite": 1,
+      "vagas": 3,
+      "area_construida": "355m²",
+      "valor_numerico": 1450000,
+      "valor_formatado": "R$ 1.450.000",
+      "destaque": true,
+      "imagem": "img/v449/casav4491.jpg",
+      "pagina": "v449-casa-venda-norte-da-ilha-ratones-florianopolis-355m2-4quartos.html"
+    },
+
+    {
+      "codigo": "v475",
+      "tipo": "Casa",
+      "titulo": "Casa à venda em São José",
+      "cidade": "São José",
+      "bairro": "São José",
+      "quartos": 2,
+      "suite": 0,
+      "vagas": 2,
+      "diferenciais": ["Área gourmet com hidro"],
+      "valor_numerico": 590000,
+      "valor_formatado": "R$ 590.000",
+      "destaque": true,
+      "imagem": "img/v475/v475 (7).jpeg",
+      "pagina": "v475-casa-a-venda-com-2-dormitorios-area-gourmet-com-hidro-em-sao-jose-sc.html"
+    },
+
+    {
+      "codigo": "v468",
+      "tipo": "Casa",
+      "titulo": "Casa Unifamiliar Forquilhas",
+      "cidade": "São José",
+      "bairro": "Forquilhas",
+      "quartos": 3,
+      "suite": 1,
+      "vagas": 2,
+      "valor_numerico": 890000,
+      "valor_formatado": "R$ 890.000",
+      "destaque": true,
+      "imagem": "img/v468/1.1casa.jpeg",
+      "pagina": "v468-casa-unifamiliar-a-venda-em-forquilhas.html"
+    },
+
+    {
+      "codigo": "v467",
+      "tipo": "Apartamento",
+      "titulo": "Apartamento Palhoça",
+      "cidade": "Palhoça",
+      "bairro": "Nova Palhoça",
+      "quartos": 2,
+      "suite": 1,
+      "vagas": 1,
+      "valor_numerico": 430000,
+      "valor_formatado": "R$ 430.000",
+      "destaque": true,
+      "imagem": "img/v467/1.1sala.jpeg",
+      "pagina": "v467-apartamento-com-02-dormitorios-em-palhoca-sc.html"
+    },
+
+    {
+      "codigo": "v478",
+      "tipo": "Casa",
+      "titulo": "Sobrado com 2 suítes",
+      "cidade": "São José",
+      "bairro": "Sobrado",
+      "quartos": 2,
+      "suite": 2,
+      "vagas": 1,
+      "valor_numerico": 540000,
+      "valor_formatado": "R$ 540.000",
+      "destaque": true,
+      "imagem": "img/v478/v478-1.jpeg",
+      "pagina": "v478-casa-tipo-sobrado-a-venda-com-02-suites-e-quintal-e-passagem-lateral-em-sao-jose.html"
+    },
+
+    {
+      "codigo": "v477",
+      "tipo": "Casa",
+      "titulo": "Sobrado com 2 suítes",
+      "cidade": "São José",
+      "bairro": "Sobrado",
+      "quartos": 2,
+      "suite": 2,
+      "vagas": 1,
+      "valor_numerico": 560000,
+      "valor_formatado": "R$ 560.000",
+      "destaque": true,
+      "imagem": "img/v477/v477-1.jpeg",
+      "pagina": "v477-casa-tipo-sobrado-venda-com-02-suites-e-quintal-em-em-sao-jose.html"
+    }
+  ],
+
+  "estatisticas": {
+    "total_imoveis": 16,
+    "pagina_lista": "https://www.flaviacapaciacorretora.com/imoveis-cadastrados.html",
+    "por_cidade": {
+      "Florianópolis": 3,
+      "São José": 8,
+      "Palhoça": 3,
+      "Governador Celso Ramos": 1
+    },
+    "faixa_valor": {
+      "menor_valor": "R$ 318.000",
+      "maior_valor": "R$ 2.250.000"
+    }
+  }
+}
