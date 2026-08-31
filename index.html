@@ -1131,7 +1131,87 @@ function toggleFavorito(btn) {
       <span style="position:absolute;bottom:8px;right:8px;width:18px;height:18px;background:#25D366;border:2.5px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(34,34,34,0.10);"></span>
     </span>
   </a>
-  
+  <section class="avaliacoes-section" id="avaliacoes">
+  <div class="avaliacoes-content" style="position:relative;">
+    <div class="avaliacoes-header">
+      <h2>O que dizem os clientes</h2>
+      <p>Avaliações reais de quem já comprou, vendeu ou alugou com a Flávia</p>
+    </div>
+    <div class="avaliacoes-grid avaliacoes-slider" style="position:relative;">
+      <article class="avaliacao-card">
+        <div class="avaliacao-stars">★★★★★</div>
+        <p class="avaliacao-texto">"Excelente trabalho! Sempre à disposição para tirar dúvidas e dá suporte em todo o processo. Muito satisfeita."</p>
+        <div class="avaliacao-autor">
+          <strong>Laura Dutra Martins</strong>
+          <span class="avaliacao-meta">Comprou apartamento • Há 8 semanas</span>
+        </div>
+      </article>
+      <article class="avaliacao-card">
+        <div class="avaliacao-stars">★★★★★</div>
+        <p class="avaliacao-texto">"Maravilhosa! Ela me atendeu prontamente, agilizou para que eu conseguisse entrar no imóvel na data que precisava e ainda me mimou com um presente lindo 😍. Super recomendo os serviços da Flávia, a melhor corretora de Florianópolis!"</p>
+        <div class="avaliacao-autor">
+          <strong>Rita de Cássia Oliveira</strong>
+          <span class="avaliacao-meta">Alugou imóvel • Local Guide • Há 25 semanas</span>
+        </div>
+      </article>
+      <article class="avaliacao-card">
+        <div class="avaliacao-stars">★★★★★</div>
+        <p class="avaliacao-texto">"Flávia é ótima. Super atenciosa, competente e carismática com os clientes. Gosto muito do trabalho dela."</p>
+        <div class="avaliacao-autor">
+          <strong>Maria Fernanda</strong>
+          <span class="avaliacao-meta">Proprietária • Locação • Há 25 semanas</span>
+        </div>
+      </article>
+      <article class="avaliacao-card">
+        <div class="avaliacao-stars">★★★★★</div>
+        <p class="avaliacao-texto">"Aspectos positivos: qualidade, profissionalismo e valor."</p>
+        <div class="avaliacao-autor">
+          <strong>Elaine Santos</strong>
+          <span class="avaliacao-meta">23 de jul. de 2020</span>
+        </div>
+      </article>
+      <article class="avaliacao-card">
+        <div class="avaliacao-stars">★★★★★</div>
+        <p class="avaliacao-texto">"Muito atenciosa, me atendeu muito bem."</p>
+        <div class="avaliacao-autor">
+          <strong>Henrique</strong>
+          <span class="avaliacao-meta">6 de abr. de 2023</span>
+        </div>
+      </article>
+      <button class="avaliacoes-arrow avaliacoes-arrow-right" aria-label="Próximas avaliações" style="position:absolute;right:-28px;top:50%;transform:translateY(-50%);background:#fff;border:none;box-shadow:0 2px 8px rgba(34,34,34,0.10);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="14" fill="#fff"/>
+          <path d="M11 9l5 5-5 5" stroke="#8B8B97" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+      <a href="https://www.google.com/search?q=Flavia+Capacia+Corretora+avaliacoes" target="_blank" rel="noopener" style="color:#b08d57;font-weight:600;text-decoration:none;">Ver todas as avaliações no Google →</a>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  (function(){
+    const cards = Array.from(document.querySelectorAll('.avaliacoes-grid .avaliacao-card'));
+    const arrow = document.querySelector('.avaliacoes-arrow-right');
+    let idx = 0;
+    function showCards(idx) {
+      cards.forEach((el,i)=>{
+        el.style.display = (i >= idx && i < idx+3) ? 'flex' : 'none';
+      });
+    }
+    if(cards.length > 0 && arrow) {
+      showCards(0);
+      arrow.addEventListener('click',()=>{
+        idx += 3;
+        if(idx >= cards.length) idx = 0;
+        showCards(idx);
+      });
+    }
+  })();
+</script>
    <section class="blog-section">
     <h2>Blog Imobiliário</h2>
     <div class="blog-posts blog-slider" style="position:relative;">
