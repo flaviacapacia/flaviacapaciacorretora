@@ -1131,6 +1131,30 @@ function toggleFavorito(btn) {
       <span style="position:absolute;bottom:8px;right:8px;width:18px;height:18px;background:#25D366;border:2.5px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(34,34,34,0.10);"></span>
     </span>
   </a>
+
+ 
+
+<script>
+  (function(){
+    const cards = Array.from(document.querySelectorAll('.avaliacoes-grid .avaliacao-card'));
+    const arrow = document.querySelector('.avaliacoes-arrow-right');
+    let idx = 0;
+    function showCards(idx) {
+      cards.forEach((el,i)=>{
+        el.style.display = (i >= idx && i < idx+3) ? 'flex' : 'none';
+      });
+    }
+    if(cards.length > 0 && arrow) {
+      showCards(0);
+      arrow.addEventListener('click',()=>{
+        idx += 3;
+        if(idx >= cards.length) idx = 0;
+        showCards(idx);
+      });
+    }
+  })();
+</script>
+   
   <section class="avaliacoes-section" id="avaliacoes">
   <div class="avaliacoes-content" style="position:relative;">
     <div class="avaliacoes-header">
@@ -1191,27 +1215,6 @@ function toggleFavorito(btn) {
   </div>
 </section>
 
-
-<script>
-  (function(){
-    const cards = Array.from(document.querySelectorAll('.avaliacoes-grid .avaliacao-card'));
-    const arrow = document.querySelector('.avaliacoes-arrow-right');
-    let idx = 0;
-    function showCards(idx) {
-      cards.forEach((el,i)=>{
-        el.style.display = (i >= idx && i < idx+3) ? 'flex' : 'none';
-      });
-    }
-    if(cards.length > 0 && arrow) {
-      showCards(0);
-      arrow.addEventListener('click',()=>{
-        idx += 3;
-        if(idx >= cards.length) idx = 0;
-        showCards(idx);
-      });
-    }
-  })();
-</script>
    <section class="blog-section">
     <h2>Blog Imobiliário</h2>
     <div class="blog-posts blog-slider" style="position:relative;">
