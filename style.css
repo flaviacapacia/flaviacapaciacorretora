@@ -50,6 +50,9 @@ body {
   color: var(--branco);
   text-decoration: none;
   transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .top-bar-contact a:hover {
@@ -194,6 +197,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 14px;
+  width: 100%;
 }
 
 .search-actions {
@@ -313,6 +317,7 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   transition: background 0.3s;
+  width: 100%;
 }
 
 .filter-btn:hover {
@@ -353,6 +358,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   z-index: 10;
+  box-shadow: 0 3px 10px rgba(176, 141, 87, 0.25);
 }
 
 .property-image {
@@ -431,7 +437,7 @@ body {
   letter-spacing: 0.4px;
 }
 
-/* ========== BOTÕES DOS CARDS ========== */
+/* ========== BOTÕES DOS CARDS (CORRIGIDOS) ========== */
 .property-actions {
   display: flex;
   align-items: center;
@@ -472,6 +478,7 @@ body {
   font-weight: 600;
   font-size: 13px;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-whats:hover {
@@ -495,6 +502,7 @@ body {
   font-size: 18px;
   padding: 0;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .btn-icon:hover {
@@ -517,7 +525,7 @@ body {
 .lancamentos-section {
   background: var(--bronze-claro);
   padding: 70px 20px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .lancamentos-content {
@@ -625,7 +633,7 @@ body {
   background: var(--preto);
 }
 
-/* ========== AVALIAÇÕES ========== */
+/* ========== AVALIAÇÕES DOS CLIENTES ========== */
 .avaliacoes-section {
   background: var(--bronze-claro);
   padding: 70px 20px;
@@ -748,6 +756,7 @@ body {
   font-weight: 600;
   text-decoration: none;
   font-size: 15px;
+  transition: color 0.3s;
 }
 
 .avaliacoes-ver-todas a:hover {
@@ -838,7 +847,7 @@ body {
   background: var(--branco);
   color: var(--preto);
   padding: 55px 20px 25px;
-  margin-top: 70px;
+  margin-top: 40px;
 }
 
 .footer-grid {
@@ -921,6 +930,16 @@ body {
 }
 
 /* ========== RESPONSIVO ========== */
+@media (max-width: 1100px) {
+  .avaliacao-card {
+    flex: 0 0 calc(50% - 12px);
+  }
+
+  .avaliacoes-arrow {
+    right: -12px;
+  }
+}
+
 @media (max-width: 900px) {
   .header-container {
     flex-direction: column;
@@ -943,14 +962,6 @@ body {
 
   .search-filters {
     grid-template-columns: 1fr;
-  }
-
-  .avaliacao-card {
-    flex: 0 0 calc(50% - 12px);
-  }
-
-  .avaliacoes-arrow {
-    right: -10px;
   }
 }
 
@@ -976,5 +987,26 @@ body {
 
   .filter-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-image-section {
+    height: auto;
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-actions {
+    flex-direction: column;
+  }
+
+  .btn-details,
+  .btn-whats {
+    width: 100%;
+  }
+
+  .btn-icon {
+    width: 100%;
+    height: 44px;
   }
 }
