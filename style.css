@@ -825,3 +825,24 @@ img { max-width: 100%; height: auto; display: block; }
     height: 46px;
   }
 }
+/* 3 cards por linha no desktop */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 50px;
+}
+
+/* Tablet: 2 por linha */
+@media (max-width: 1100px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celular: 1 por linha */
+@media (max-width: 768px) {
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+}
