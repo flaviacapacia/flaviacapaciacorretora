@@ -1,5 +1,12 @@
-User-agent: Googlebot
+# robots.txt — Flavia Capacia Corretora
+# NÃO bloqueie o Googlebot nas páginas do site.
+
+User-agent: *
 Allow: /
 
+# Sitemap (ajuste a URL se for outra)
 Sitemap: https://www.flaviacapaciacorretora.com/sitemap.xml
 
+# Opcional: não precisa indexar pastas técnicas
+# Disallow: /admin/
+# Disallow: /crm-agile/
