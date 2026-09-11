@@ -381,87 +381,126 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ========== BOTÕES DOS CARDS ========== */
+/* ===== Ações dos cards (Ver Detalhes / WhatsApp / Compartilhar / Favoritar) ===== */
 .property-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+  margin-top: 14px;
 }
 
-.btn-details {
-  flex: 1;
-  min-width: 120px;
-  padding: 12px 16px;
-  background: var(--preto);
-  color: var(--branco);
-  text-align: center;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  transition: all 0.3s ease;
-}
-
-.btn-details:hover {
-  background: var(--bronze);
-}
-
-.btn-whats {
+.property-actions .btn-details,
+.property-actions .btn-whats {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 11px 16px;
-  background: #25D366;
-  color: #fff !important;
-  text-decoration: none;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-size: 13px;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
 
-.btn-whats:hover {
+.property-actions .btn-details {
+  background: #b08d57;
+  color: #fff;
+}
+
+.property-actions .btn-details:hover {
+  background: #967544;
+  transform: translateY(-1px);
+}
+
+.property-actions .btn-whats {
+  background: #25d366;
+  color: #fff;
+}
+
+.property-actions .btn-whats:hover {
   background: #1ebe57;
   transform: translateY(-1px);
 }
 
-/* Botões de ícone (Favorito + Compartilhar) */
-.btn-icon {
-  width: 42px;
-  height: 42px;
+/* Botões ícone: Compartilhar e Favoritar */
+.property-actions .btn-icon,
+.btn-icon.btn-compartilhar,
+.btn-icon.btn-favorito,
+button.btn-compartilhar,
+button.btn-favorito {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid #e0d5c5;
-  background: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  color: var(--bronze);
-  font-size: 18px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
   padding: 0;
+  border-radius: 50%;
+  border: 1px solid #b08d57;
+  background: #fff;
+  color: #b08d57;
+  cursor: pointer;
   line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.btn-icon:hover {
-  border-color: var(--bronze);
-  background: #f9f3e9;
-  transform: translateY(-2px);
+.property-actions .btn-icon:hover,
+.btn-icon.btn-compartilhar:hover,
+.btn-icon.btn-favorito:hover,
+button.btn-compartilhar:hover,
+button.btn-favorito:hover {
+  background: #b08d57;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(176, 141, 87, 0.28);
 }
 
-.btn-favorito.favorito {
-  background: #fff0f0;
-  border-color: #e74c3c;
-  color: #e74c3c;
+.property-actions .btn-icon svg,
+.btn-icon svg,
+button.btn-compartilhar svg,
+button.btn-favorito svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  pointer-events: none; /* clique cai no botão, não no SVG */
 }
 
-.btn-favorito.favorito:hover {
-  background: #ffe5e5;
+/* Favorito ativo */
+.btn-favorito.ativo,
+button.btn-favorito.ativo {
+  background: #b08d57;
+  border-color: #b08d57;
+  color: #fff;
 }
 
+.btn-favorito.ativo svg path,
+button.btn-favorito.ativo svg path {
+  fill: currentColor;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .property-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .property-actions .btn-details,
+  .property-actions .btn-whats {
+    width: 100%;
+  }
+
+  .property-actions .btn-icon,
+  .btn-icon.btn-compartilhar,
+  .btn-icon.btn-favorito {
+    width: 100%;
+    height: 46px;
+    border-radius: 12px;
+  }
+}
 .lancamentos-section {
   background: var(--bronze-claro);
   padding: 70px 20px;
