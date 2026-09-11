@@ -235,16 +235,94 @@ function limparFiltros() {
   cards.forEach(card => card.style.display = 'block');
 }
 
-function compartilhar(link) {
-  navigator.clipboard.writeText(link);
-  alert("Link copiado! Você pode enviar para alguém no WhatsApp ou redes sociais.");
-}
+(function () {
+  function getFavoritos() {
+    try {
+      return JSON.parse(localStorage.getItem('flavia_favoritos') || '[]');
+    } catch (e) {
+      return [];
+    }
+  }
 
-function toggleFavorito(btn) {
-  btn.classList.toggle("favorito");
-}
+  function setFavoritos(list) {
+    localStorage.setItem('flaviac_favoritos', JSON.stringify(list));
+    localStorage.setItem('flavia_favoritos', JSON.stringify(list));
+  }
+
+  function isFav(codigo) {
+    return getFavoritos().includes(String(codigo));
+  }
+
+  function paintFavorito(btn) {
+    const codigo = btn.getAttribute('data-codigo');
+    const ativo = isFav(codigo);
+    btn.classList.toggle('ativo', ativo);
+    btn.setAttribute('aria-pressed', ativo ? 'true' : 'false');
+    const path = btn.querySelector('path');
+    if (path) path.setAttribute('fill', ativo ? 'currentColor' : 'none');
+  }
+
+  window.toggleFavorito = function (btn) {
+    if (!btn || !btn.getAttribute) {
+      btn = (typeof event !== 'undefined' && event && event.currentTarget) ? event.currentTarget : null;
+    }
+    if (!btn) return;
+    const codigo = btn.getAttribute('data-codigo');
+    if (!codigo) return;
+    let list = getFavoritos();
+    if (list.includes(codigo)) list = list.filter((c) => c !== codigo);
+    else list.push(codigo);
+    setFavoritos(list);
+    paintFavorito(btn);
+  };
+
+  window.compartilhar = async function (url, title) {
+    const shareUrl = url || window.location.href;
+    const shareTitle = title || document.title || 'Imóvel — Flavia Capacia Corretora';
+    const shareData = { title: shareTitle, text: shareTitle, url: shareUrl };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        return;
+      }
+    } catch (err) {
+      // usuário cancelou ou API falhou — cai no fallback
+      if (err && err.name === 'AbortError') return;
+    }
+
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(shareUrl);
+        alert('Link copiado: ' + shareUrl);
+        return;
+      }
+    } catch (e) {}
+
+    // fallback final
+    window.prompt('Copie o link do imóvel:', shareUrl);
+  };
+
+  document.addEventListener('click', function (e) {
+    const shareBtn = e.target.closest('.btn-compartilhar');
+    if (shareBtn) {
+      e.preventDefault();
+      compartilhar(
+        shareBtn.getAttribute('data-share-url') || shareBtn.getAttribute('data-url'),
+        shareBtn.getAttribute('data-share-title') || shareBtn.getAttribute('data-title')
+      );
+      return;
+    }
+    const favBtn = e.target.closest('.btn-favorito');
+    if (favBtn) {
+      e.preventDefault();
+      toggleFavorito(favBtn);
+    }
+  });
+
+  document.querySelectorAll('.btn-favorito').forEach(paintFavorito);
+})();
 </script>
-
 
 
 
