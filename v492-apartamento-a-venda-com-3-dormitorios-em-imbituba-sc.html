@@ -321,32 +321,18 @@
       </div>
     </section>
 
-    <div id="galleryModal" class="modal" aria-hidden="true">
-      <div class="modal-content">
-        <button type="button" class="close-btn" id="closeGallery" aria-label="Fechar">&times;</button>
-        <img id="modalMainImg" class="modal-main-img" src="" alt="Foto do imovel" />
-        <div class="modal-counter" id="modalCounter"></div>
-        <div class="carousel-controls">
-          <button type="button" class="carousel-btn" id="prevPhoto">Anterior</button>
-          <button type="button" class="carousel-btn" id="nextPhoto">Proxima</button>
-        </div>
-        <div class="modal-thumbs" id="modalThumbs"></div>
-      </div>
-    </div>
-
-    
     <div id="imageModal" class="modal">
-      <div class="modal-content">
-        <button class="close-btn" onclick="closeModal()">&times;</button>
-      <img id="modalImage" src="img/v492/apartamento-imbituba-permuta-1.jpeg" alt="Imagem ampliada" />
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">&times;</button>
+    <img id="modalImage" src="img/v492/apartamento-imbituba-permuta(1).jpeg" alt="Imagem ampliada" />
 
-          <button class="carousel-btn" onclick="prevImage()">Anterior</button>
-          <button class="carousel-btn" onclick="nextImage()">Próxima</button>
-        </div>
-      </div>
-    </div>
-    <script>
-     const images = [
+    <button class="carousel-btn" onclick="prevImage()">Anterior</button>
+    <button class="carousel-btn" onclick="nextImage()">Próxima</button>
+  </div>
+</div>
+
+<script>
+ const images = [
   "img/v492/apartamento-imbituba-permuta(1).jpeg",
   "img/v492/apartamento-imbituba-permuta(2).jpeg",
   "img/v492/apartamento-imbituba-permuta(3).jpeg",
@@ -372,6 +358,7 @@
   "img/v492/apartamento-imbituba-permuta(23).jpeg",
   "img/v492/capa-apartamento-imbituba-permuta(2).jpeg"
 ];
+
 
       let currentIndex = 0;
 
