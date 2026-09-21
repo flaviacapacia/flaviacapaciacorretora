@@ -437,7 +437,7 @@
     const modal = document.getElementById('imageModal');
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // trava o scroll da página
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
@@ -462,7 +462,6 @@
     updateModal();
   }
 
-  // Teclado
   document.addEventListener('keydown', (event) => {
     const modal = document.getElementById('imageModal');
     if (!modal.classList.contains('active')) return;
@@ -472,13 +471,13 @@
     if (event.key === 'ArrowRight') nextImage();
   });
 
-  // Fechar clicando fora da imagem
   document.getElementById('imageModal').addEventListener('click', (event) => {
     if (event.target.id === 'imageModal') {
       closeModal();
     }
   });
 </script>
+
 
     <section class="card">
       <h2>Descricao do imovel</h2>
