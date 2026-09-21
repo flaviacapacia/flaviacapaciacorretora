@@ -310,98 +310,175 @@
     <h1>Apartamento  à venda com 3 dormitorios em Imbituba/SC</h1>
     <p class="preco">940.000,00</p>
     <p class="codigo">Praia da Vila - Imbituba &nbsp;|&nbsp; Codigo: v492</p>
+<section class="card galeria-section">
+  <h2>Galeria de fotos</h2>
 
-    <section class="card">
-      <h2>Galeria de fotos</h2>
-      <div class="zoom-gallery" id="galeriaGrid">
-        <div class="zoom-container" onclick="openModal(0)"><img src="img/v492/apartamento-imbituba-permuta-1.jpeg" alt="Foto do imóvel 1" /></div><div class="zoom-container" onclick="openModal(1)"><img src="img/v492/apartamento-imbituba-permuta-10.jpeg" alt="Foto do imóvel 2" /></div>
-      </div>
-      <div class="whatsapp-banner">
-        <button type="button" class="btn-ver-todas" id="btnVerTodas">Ver todas as fotos</button>
-      </div>
-    </section>
+  <div class="zoom-gallery" id="galeriaGrid">
+    <!-- As 8 primeiras fotos aparecem no grid. O resto abre no modal -->
+    <div class="zoom-container" onclick="openModal(0)">
+      <img src="img/v492/apartamento-imbituba-permuta(1).jpeg" alt="Foto do imóvel 1" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(1)">
+      <img src="img/v492/apartamento-imbituba-permuta(2).jpeg" alt="Foto do imóvel 2" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(2)">
+      <img src="img/v492/apartamento-imbituba-permuta(3).jpeg" alt="Foto do imóvel 3" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(3)">
+      <img src="img/v492/apartamento-imbituba-permuta(4).jpeg" alt="Foto do imóvel 4" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(4)">
+      <img src="img/v492/apartamento-imbituba-permuta(5).jpeg" alt="Foto do imóvel 5" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(5)">
+      <img src="img/v492/apartamento-imbituba-permuta(6).jpeg" alt="Foto do imóvel 6" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(6)">
+      <img src="img/v492/apartamento-imbituba-permuta(7).jpeg" alt="Foto do imóvel 7" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(7)">
+      <img src="img/v492/apartamento-imbituba-permuta(8).jpeg" alt="Foto do imóvel 8" loading="lazy" />
+    </div>
+  </div>
 
-    <div id="imageModal" class="modal">
+  <div class="whatsapp-banner">
+    <button type="button" class="btn-ver-todas" id="btnVerTodas" onclick="openModal(0)">
+      Ver todas as fotos (24)
+    </button>
+  </div>
+</section>
+
+<section class="card galeria-section">
+  <h2>Galeria de fotos</h2>
+
+  <div class="zoom-gallery" id="galeriaGrid">
+    <!-- As 8 primeiras fotos aparecem no grid. O resto abre no modal -->
+    <div class="zoom-container" onclick="openModal(0)">
+      <img src="img/v492/apartamento-imbituba-permuta(1).jpeg" alt="Foto do imóvel 1" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(1)">
+      <img src="img/v492/apartamento-imbituba-permuta(2).jpeg" alt="Foto do imóvel 2" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(2)">
+      <img src="img/v492/apartamento-imbituba-permuta(3).jpeg" alt="Foto do imóvel 3" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(3)">
+      <img src="img/v492/apartamento-imbituba-permuta(4).jpeg" alt="Foto do imóvel 4" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(4)">
+      <img src="img/v492/apartamento-imbituba-permuta(5).jpeg" alt="Foto do imóvel 5" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(5)">
+      <img src="img/v492/apartamento-imbituba-permuta(6).jpeg" alt="Foto do imóvel 6" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(6)">
+      <img src="img/v492/apartamento-imbituba-permuta(7).jpeg" alt="Foto do imóvel 7" loading="lazy" />
+    </div>
+    <div class="zoom-container" onclick="openModal(7)">
+      <img src="img/v492/apartamento-imbituba-permuta(8).jpeg" alt="Foto do imóvel 8" loading="lazy" />
+    </div>
+  </div>
+
+  <div class="whatsapp-banner">
+    <button type="button" class="btn-ver-todas" id="btnVerTodas" onclick="openModal(0)">
+      Ver todas as fotos (24)
+    </button>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal" aria-hidden="true">
   <div class="modal-content">
-    <button class="close-btn" onclick="closeModal()">&times;</button>
-    <img id="modalImage" src="img/v492/apartamento-imbituba-permuta(1).jpeg" alt="Imagem ampliada" />
-
-    <button class="carousel-btn" onclick="prevImage()">Anterior</button>
-    <button class="carousel-btn" onclick="nextImage()">Próxima</button>
+    <button class="close-btn" onclick="closeModal()" aria-label="Fechar">&times;</button>
+    
+    <img id="modalImage" src="" alt="Imagem ampliada do imóvel" />
+    
+    <div class="modal-controls">
+      <button class="carousel-btn" onclick="prevImage()" aria-label="Foto anterior">‹ Anterior</button>
+      <span id="fotoContador" class="foto-contador">1 / 24</span>
+      <button class="carousel-btn" onclick="nextImage()" aria-label="Próxima foto">Próxima ›</button>
+    </div>
   </div>
 </div>
 
 <script>
- const images = [
-  "img/v492/apartamento-imbituba-permuta(1).jpeg",
-  "img/v492/apartamento-imbituba-permuta(2).jpeg",
-  "img/v492/apartamento-imbituba-permuta(3).jpeg",
-  "img/v492/apartamento-imbituba-permuta(4).jpeg",
-  "img/v492/apartamento-imbituba-permuta(5).jpeg",
-  "img/v492/apartamento-imbituba-permuta(6).jpeg",
-  "img/v492/apartamento-imbituba-permuta(7).jpeg",
-  "img/v492/apartamento-imbituba-permuta(8).jpeg",
-  "img/v492/apartamento-imbituba-permuta(9).jpeg",
-  "img/v492/apartamento-imbituba-permuta(10).jpeg",
-  "img/v492/apartamento-imbituba-permuta(11).jpeg",
-  "img/v492/apartamento-imbituba-permuta(12).jpeg",
-  "img/v492/apartamento-imbituba-permuta(13).jpeg",
-  "img/v492/apartamento-imbituba-permuta(14).jpeg",
-  "img/v492/apartamento-imbituba-permuta(15).jpeg",
-  "img/v492/apartamento-imbituba-permuta(16).jpeg",
-  "img/v492/apartamento-imbituba-permuta(17).jpeg",
-  "img/v492/apartamento-imbituba-permuta(18).jpeg",
-  "img/v492/apartamento-imbituba-permuta(19).jpeg",
-  "img/v492/apartamento-imbituba-permuta(20).jpeg",
-  "img/v492/apartamento-imbituba-permuta(21).jpeg",
-  "img/v492/apartamento-imbituba-permuta(22).jpeg",
-  "img/v492/apartamento-imbituba-permuta(23).jpeg",
-  "img/v492/capa-apartamento-imbituba-permuta(2).jpeg"
-];
+  const images = [
+    "img/v492/apartamento-imbituba-permuta(1).jpeg",
+    "img/v492/apartamento-imbituba-permuta(2).jpeg",
+    "img/v492/apartamento-imbituba-permuta(3).jpeg",
+    "img/v492/apartamento-imbituba-permuta(4).jpeg",
+    "img/v492/apartamento-imbituba-permuta(5).jpeg",
+    "img/v492/apartamento-imbituba-permuta(6).jpeg",
+    "img/v492/apartamento-imbituba-permuta(7).jpeg",
+    "img/v492/apartamento-imbituba-permuta(8).jpeg",
+    "img/v492/apartamento-imbituba-permuta(9).jpeg",
+    "img/v492/apartamento-imbituba-permuta(10).jpeg",
+    "img/v492/apartamento-imbituba-permuta(11).jpeg",
+    "img/v492/apartamento-imbituba-permuta(12).jpeg",
+    "img/v492/apartamento-imbituba-permuta(13).jpeg",
+    "img/v492/apartamento-imbituba-permuta(14).jpeg",
+    "img/v492/apartamento-imbituba-permuta(15).jpeg",
+    "img/v492/apartamento-imbituba-permuta(16).jpeg",
+    "img/v492/apartamento-imbituba-permuta(17).jpeg",
+    "img/v492/apartamento-imbituba-permuta(18).jpeg",
+    "img/v492/apartamento-imbituba-permuta(19).jpeg",
+    "img/v492/apartamento-imbituba-permuta(20).jpeg",
+    "img/v492/apartamento-imbituba-permuta(21).jpeg",
+    "img/v492/apartamento-imbituba-permuta(22).jpeg",
+    "img/v492/apartamento-imbituba-permuta(23).jpeg",
+    "img/v492/capa-apartamento-imbituba-permuta(2).jpeg"
+  ];
 
+  let currentIndex = 0;
 
-      let currentIndex = 0;
+  function openModal(index) {
+    currentIndex = index;
+    updateModal();
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // trava o scroll da página
+  }
 
-      function openModal(index) {
-        currentIndex = index;
-        document.getElementById('modalImage').src = images[currentIndex];
-        document.getElementById('imageModal').classList.add('active');
-      }
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
-      function setModalImage(index) {
-        currentIndex = (index + images.length) % images.length;
-        document.getElementById('modalImage').src = images[currentIndex];
-      }
+  function updateModal() {
+    document.getElementById('modalImage').src = images[currentIndex];
+    document.getElementById('fotoContador').textContent = `${currentIndex + 1} / ${images.length}`;
+  }
 
-      function closeModal() {
-        document.getElementById('imageModal').classList.remove('active');
-      }
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateModal();
+  }
 
-      function prevImage() {
-        setModalImage(currentIndex - 1);
-      }
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateModal();
+  }
 
-      function nextImage() {
-        setModalImage(currentIndex + 1);
-      }
+  // Teclado
+  document.addEventListener('keydown', (event) => {
+    const modal = document.getElementById('imageModal');
+    if (!modal.classList.contains('active')) return;
 
-      document.addEventListener('keydown', (event) => {
-        if (!document.getElementById('imageModal').classList.contains('active')) return;
-        if (event.key === 'Escape') {
-          closeModal();
-        } else if (event.key === 'ArrowLeft') {
-          prevImage();
-        } else if (event.key === 'ArrowRight') {
-          nextImage();
-        }
-      });
+    if (event.key === 'Escape') closeModal();
+    if (event.key === 'ArrowLeft') prevImage();
+    if (event.key === 'ArrowRight') nextImage();
+  });
 
-      document.getElementById('imageModal').addEventListener('click', (event) => {
-        if (event.target.id === 'imageModal') {
-          closeModal();
-        }
-      });
-    </script>
+  // Fechar clicando fora da imagem
+  document.getElementById('imageModal').addEventListener('click', (event) => {
+    if (event.target.id === 'imageModal') {
+      closeModal();
+    }
+  });
+</script>
 
     <section class="card">
       <h2>Descricao do imovel</h2>
