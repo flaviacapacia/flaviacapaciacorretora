@@ -216,7 +216,7 @@
 
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-bottom: 1rem;
     }
@@ -422,23 +422,34 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #25D366;
-      width: 58px;
-      height: 58px;
+      background: #0B0B0C;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 998;
       animation: pulse 2s infinite;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.45);
+      border: 2px solid var(--gold-primary);
+      overflow: hidden;
+      padding: 4px;
     }
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.07); }
     }
-    .whatsapp-float img { width: 30px; height: 30px; }
+    .whatsapp-float img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
 
+    @media (max-width: 900px) {
+      .galeria { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 768px) {
       .hero { padding: 120px 5% 40px; }
       .hero h1 { font-size: 1.55rem; }
@@ -447,6 +458,11 @@
       .form-container { padding: 28px 18px; }
       .btn-gold { width: 100%; max-width: 300px; text-align: center; }
       .hero-cta { flex-direction: column; align-items: center; }
+      .galeria { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .foto-card { height: 160px; }
+    }
+    @media (max-width: 480px) {
+      .galeria { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -505,6 +521,9 @@
       <div class="foto-card" onclick="openModal(3)"><img src="img/v472/anco4.jpeg" alt="Ancoradouro Agronômica - foto 4" loading="lazy" /></div>
       <div class="foto-card" onclick="openModal(4)"><img src="img/v472/anco5.jpeg" alt="Ancoradouro Agronômica - foto 5" loading="lazy" /></div>
       <div class="foto-card" onclick="openModal(5)"><img src="img/v472/anco6.jpeg" alt="Ancoradouro Agronômica - foto 6" loading="lazy" /></div>
+      <div class="foto-card" onclick="openModal(6)"><img src="img/v472/anco7.jpeg" alt="Ancoradouro Agronômica - foto 7" loading="lazy" /></div>
+      <div class="foto-card" onclick="openModal(7)"><img src="img/v472/anco8.jpeg" alt="Ancoradouro Agronômica - foto 8" loading="lazy" /></div>
+      <div class="foto-card" onclick="openModal(8)"><img src="img/v472/anco9.jpeg" alt="Ancoradouro Agronômica - foto 9" loading="lazy" /></div>
     </div>
     <button type="button" class="btn-ver-todas" onclick="openModal(0)">Ver todas as fotos (23)</button>
   </div>
@@ -683,8 +702,8 @@
   </div>
 </footer>
 
-<a href="https://wa.me/5548999600601?text=Olá!%20Tenho%20interesse%20no%20apartamento%20Ancoradouro%20Agronômica%20(v472)." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="30" height="30" />
+<a href="https://wa.me/5548999600601?text=Olá!%20Tenho%20interesse%20no%20apartamento%20Ancoradouro%20Agronômica%20(v472)." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar com Flavia Capacia no WhatsApp">
+  <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:120,h:120,mx" alt="Flavia Capacia WhatsApp" width="54" height="54" />
 </a>
 
 <script>
