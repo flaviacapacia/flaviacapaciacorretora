@@ -5,7 +5,7 @@
   <contato>
     <nome>Flavia Capacia Corretora</nome>
     <telefone>(48) 99960-0601</telefone>
-    <email>flaviacapacia@creci.gov.com</email>
+    <email>flaviacapacia@creci.org.com</email>
     <creci></creci>
   </contato>
 
@@ -198,7 +198,7 @@
     <bairro></bairro>
     <estado>SC</estado>
     <tipo>Casa</tipo>
-    <finalidade>Venda</finality>
+    <finalidade>Venda</finalidade>
     <valor>320000.00</valor>
     <quartos>2</quartos>
     <banheiros>1</banheiros>
