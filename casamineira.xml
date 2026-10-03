@@ -23,7 +23,7 @@
     <quartos>2</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v464-apartamento-kobrasol.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v464-apartamento-kobrasol-2-quartos-1-suite-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v464</contato_whatsapp>
     <destaque>sim</destaque>
@@ -43,7 +43,7 @@
     <quartos>2</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v439-apartamento-agronomica.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v439-apartamento-agronomica-2-quartos-1-suite-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v439</contato_whatsapp>
     <destaque>sim</destaque>
@@ -63,7 +63,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v472-apartamento-agronomica.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v472-apartamento-agronomica-3-quartos-1-suite-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v472</contato_whatsapp>
     <destaque>nao</destaque>
@@ -72,10 +72,10 @@
   <!-- v456 -->
   <imovel>
     <codigo>v456</codigo>
-    <titulo>Apartamento Praia de Palmas — 3 quartos, 1 suíte, Gov. Celso Ramos/SC</titulo>
-    <descricao>Apartamento em Palmas, Governador Celso Ramos. 3 quartos, 1 suíte, 1 vaga.</descricao>
+    <titulo>Apartamento Praia de Palmas — 3 quartos, 1 suíte, Governador Celso Ramos/SC</titulo>
+    <descricao>Apartamento em Praia de Palmas, Governador Celso Ramos. 3 quartos, 1 suíte, 1 vaga.</descricao>
     <cidade>Governador Celso Ramos</cidade>
-    <bairro>Palmas</bairro>
+    <bairro>Praia de Palmas</bairro>
     <estado>SC</estado>
     <tipo>Apartamento</tipo>
     <finalidade>Venda</finalidade>
@@ -83,7 +83,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v456-apartamento-praia-palmas.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v456-apartamento-praia-de-palmas-3-quartos-1-suite-governador-celso-ramos-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v456</contato_whatsapp>
     <destaque>nao</destaque>
@@ -103,7 +103,7 @@
     <quartos>2</quartos>
     <suites>2</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v465-apartamento-saco-dos-limoes.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v465-apartamento-saco-dos-limoes-2-quartos-2-suites-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v465</contato_whatsapp>
     <destaque>nao</destaque>
@@ -113,7 +113,7 @@
   <imovel>
     <codigo>v448</codigo>
     <titulo>Cobertura Duplex Estreito — 3 quartos, 1 suíte, Florianópolis/SC</titulo>
-    <descricao>Duplex Cobertura no Estreito. 3 quartos, 1 suíte, 2 vagas.</descricao>
+    <descricao>Cobertura Duplex no Estreito. 3 quartos, 1 suíte, 2 vagas.</descricao>
     <cidade>Florianópolis</cidade>
     <bairro>Estreito</bairro>
     <estado>SC</estado>
@@ -123,7 +123,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>2</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v448-cobertura-duplex-estreito.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v448-cobertura-duplex-estreito-3-quartos-1-suite-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v448</contato_whatsapp>
     <destaque>nao</destaque>
@@ -133,7 +133,7 @@
   <imovel>
     <codigo>v460</codigo>
     <titulo>Apartamento Beira-Mar Norte — 3 quartos, 2 banheiros, Florianópolis/SC</titulo>
-    <descricao>Apartamento Beira-Mar Norte / Marina. 3 quartos, 2 banheiros, 1 vaga.</descricao>
+    <descricao>Apartamento Beira-Mar Norte. 3 quartos, 2 banheiros, 1 vaga.</descricao>
     <cidade>Florianópolis</cidade>
     <bairro>Beira-Mar Norte</bairro>
     <estado>SC</estado>
@@ -143,7 +143,7 @@
     <quartos>3</quartos>
     <banheiros>2</banheiros>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v460-apartamento-beira-mar-norte.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v460-apartamento-beira-mar-norte-3-quartos-2-banheiros-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v460</contato_whatsapp>
     <destaque>nao</destaque>
@@ -163,7 +163,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>2</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v473-casa-santo-antonio-lisboa.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v473-casa-santo-antonio-de-lisboa-3-dormitorios-1-suite-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v473</contato_whatsapp>
     <destaque>sim</destaque>
@@ -183,7 +183,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>2</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v466-casa-piscina-praia.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v466-casa-piscina-praia-3-dormitorios-1-suite-palhoca-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v466</contato_whatsapp>
     <destaque>nao</destaque>
@@ -193,17 +193,17 @@
   <imovel>
     <codigo>v469</codigo>
     <titulo>Casa em condomínio — 2 dormitórios, Palhoça/SC</titulo>
-    <descricao>Casa em condomínio, Palhoça. 2 dormitórios, 1 banheiro, 1 vaga.</descricao>
+    <descricao>Casa em condomínio fechado, Palhoça. 2 dormitórios, 1 banheiro, 1 vaga.</descricao>
     <cidade>Palhoça</cidade>
     <bairro></bairro>
     <estado>SC</estado>
     <tipo>Casa</tipo>
-    <finalidade>Venda</finalidade>
+    <finalidade>Venda</finality>
     <valor>320000.00</valor>
     <quartos>2</quartos>
     <banheiros>1</banheiros>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v469-casa-condominio.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v469-casa-condominio-2-dormitorios-palhoca-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v469</contato_whatsapp>
     <destaque>nao</destaque>
@@ -212,7 +212,7 @@
   <!-- v450 -->
   <imovel>
     <codigo>v450</codigo>
-    <titulo>Apartamento Centro Kuboo — 1-2 quartos, 1 suíte, Florianópolis/SC</titulo>
+    <titulo>Apartamento Centro Kuboo — 1 a 2 quartos, 1 suíte, Florianópolis/SC</titulo>
     <descricao>Apartamento no Centro, Kuboo. 1 a 2 quartos, 1 suíte, 1 vaga.</descricao>
     <cidade>Florianópolis</cidade>
     <bairro>Centro</bairro>
@@ -223,7 +223,7 @@
     <quartos>2</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v450-apartamento-kuboo.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v450-apartamento-kuboo-centro-2-quartos-1-suite-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v450</contato_whatsapp>
     <destaque>nao</destaque>
@@ -243,7 +243,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v440-apartamento-kobrasol.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v440-apartamento-kobrasol-3-quartos-1-suite-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v440</contato_whatsapp>
     <destaque>nao</destaque>
@@ -263,7 +263,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>2</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v463-casa-forquilhas.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v463-casa-forquilhas-3-quartos-1-suite-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v463</contato_whatsapp>
     <destaque>nao</destaque>
@@ -272,8 +272,8 @@
   <!-- v474 -->
   <imovel>
     <codigo>v474</codigo>
-    <titulo>Apartamento Praia de Palmas — 3 quartos, 1 suíte, Gov. Celso Ramos/SC</titulo>
-    <descricao>Apartamento à venda na Praia de Palmas, Governador Celso Ramos. Sacada, 3 quartos, 1 suíte, 1 vaga.</descricao>
+    <titulo>Apartamento Praia de Palmas — 3 quartos, 1 suíte, Governador Celso Ramos/SC</titulo>
+    <descricao>Apartamento com sacada, Praia de Palmas, Governador Celso Ramos. 3 quartos, 1 suíte, 1 vaga.</descricao>
     <cidade>Governador Celso Ramos</cidade>
     <bairro>Praia de Palmas</bairro>
     <estado>SC</estado>
@@ -283,7 +283,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v474-apartamento-praia-palmas.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v474-apartamento-sacada-praia-de-palmas-3-quartos-1-suite-governador-celso-ramos-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v474</contato_whatsapp>
     <destaque>nao</destaque>
@@ -292,7 +292,7 @@
   <!-- v447 -->
   <imovel>
     <codigo>v447</codigo>
-    <titulo>Apartamento Centro — Vitor Konder, 3 quartos, 1 suíte, Florianópolis/SC</titulo>
+    <titulo>Apartamento Centro Vitor Konder — 3 quartos, 1 suíte, Florianópolis/SC</titulo>
     <descricao>Apartamento no Centro, Vitor Konder. 3 quartos, 1 suíte, 2 vagas.</descricao>
     <cidade>Florianópolis</cidade>
     <bairro>Centro</bairro>
@@ -303,7 +303,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>2</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v447-apartamento-vitor-konder.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v447-apartamento-vitor-konder-centro-3-quartos-1-suite-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v447</contato_whatsapp>
     <destaque>nao</destaque>
@@ -323,7 +323,7 @@
     <quartos>1</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v457-apartamento-campinas.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v457-apartamento-campinas-1-quarto-1-suite-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v457</contato_whatsapp>
     <destaque>nao</destaque>
@@ -343,7 +343,7 @@
     <quartos>2</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v471-apartamento-bela-vista.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v471-apartamento-bela-vista-2-quartos-1-suite-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v471</contato_whatsapp>
     <destaque>nao</destaque>
@@ -352,10 +352,10 @@
   <!-- v441 -->
   <imovel>
     <codigo>v441</codigo>
-    <titulo>Apartamento Nossa Sra do Rosário — 3 quartos, 1 suíte, São José/SC</titulo>
-    <descricao>Apartamento no bairro Floresta / Nossa Sra do Rosário. 3 quartos, 1 suíte, churrasqueira.</descricao>
+    <titulo>Apartamento Nossa Senhora do Rosário — 3 quartos, 1 suíte, São José/SC</titulo>
+    <descricao>Apartamento no bairro Nossa Senhora do Rosário. 3 quartos, 1 suíte, com churrasqueira.</descricao>
     <cidade>São José</cidade>
-    <bairro>Floresta</bairro>
+    <bairro>Nossa Senhora do Rosário</bairro>
     <estado>SC</estado>
     <tipo>Apartamento</tipo>
     <finalidade>Venda</finalidade>
@@ -363,7 +363,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas></vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v441-apartamento-nossa-sra-rosario.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v441-apartamento-nossa-senhora-do-rosario-3-quartos-1-suite-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v441</contato_whatsapp>
     <destaque>nao</destaque>
@@ -373,7 +373,7 @@
   <imovel>
     <codigo>v449</codigo>
     <titulo>Casa em Ratones — 4 quartos, 1 suíte, 3 vagas, 355m², Florianópolis/SC</titulo>
-    <descricao>Casa à venda em Ratones, Norte da Ilha. 4 quartos, 1 suíte, 3 vagas, 355m² de área construída.</descricao>
+    <descricao>Casa em Ratones, Norte da Ilha. 4 quartos, 1 suíte, 3 vagas, 355m² de área construída.</descricao>
     <cidade>Florianópolis</cidade>
     <bairro>Ratones</bairro>
     <estado>SC</estado>
@@ -384,7 +384,7 @@
     <quartos>4</quartos>
     <suites>1</suites>
     <vagas>3</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v449-casa-ratones.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v449-casa-ratones-4-quartos-1-suite-3-vagas-355m2-florianopolis-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v449</contato_whatsapp>
     <destaque>nao</destaque>
@@ -393,8 +393,8 @@
   <!-- v475 -->
   <imovel>
     <codigo>v475</codigo>
-    <titulo>Casa em São José — 2 quartos, área gourmet com hidro, São José/SC</titulo>
-    <descricao>Casa à venda em São José. 2 quartos, área gourmet com hidro, 2 vagas.</descricao>
+    <titulo>Casa em São José — 2 quartos, área gourmet, São José/SC</titulo>
+    <descricao>Casa em São José. 2 quartos, área gourmet com espaço para hidromassagem, 2 vagas.</descricao>
     <cidade>São José</cidade>
     <bairro></bairro>
     <estado>SC</estado>
@@ -404,7 +404,7 @@
     <quartos>2</quartos>
     <suites>0</suites>
     <vagas>2</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v475-casa-sao-jose.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v475-casa-area-gourmet-2-quartos-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v475</contato_whatsapp>
     <destaque>nao</destaque>
@@ -413,8 +413,8 @@
   <!-- v468 -->
   <imovel>
     <codigo>v468</codigo>
-    <titulo>Casa Unifamiliar Forquilhas — 3 quartos, 1 suíte, 2 vagas, São José/SC</titulo>
-    <descricao>Casa unifamiliar em Forquilhas, São José. 3 quartos, 1 suíte, 2 vagas.</descricao>
+    <titulo>Casa Forquilhas — 3 quartos, 1 suíte, 2 vagas, São José/SC</titulo>
+    <descricao>Casa em Forquilhas, São José. 3 quartos, 1 suíte, 2 vagas, excelente localização.</descricao>
     <cidade>São José</cidade>
     <bairro>Forquilhas</bairro>
     <estado>SC</estado>
@@ -424,7 +424,7 @@
     <quartos>3</quartos>
     <suites>1</suites>
     <vagas>2</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v468-casa-forquilhas.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v468-casa-forquilhas-3-quartos-1-suite-2-vagas-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v468</contato_whatsapp>
     <destaque>nao</destaque>
@@ -433,7 +433,7 @@
   <!-- v467 -->
   <imovel>
     <codigo>v467</codigo>
-    <titulo>Apartamento em Nova Palhoça — 2 quartos, 1 suíte, Palhoça/SC</titulo>
+    <titulo>Apartamento Nova Palhoça — 2 quartos, 1 suíte, Palhoça/SC</titulo>
     <descricao>Apartamento em Nova Palhoça. 2 quartos, 1 suíte, 1 vaga.</descricao>
     <cidade>Palhoça</cidade>
     <bairro>Nova Palhoça</bairro>
@@ -444,7 +444,7 @@
     <quartos>2</quartos>
     <suites>1</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v467-apartamento-nova-palhoca.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v467-apartamento-nova-palhoca-2-quartos-1-suite-palhoca-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v467</contato_whatsapp>
     <destaque>nao</destaque>
@@ -454,17 +454,17 @@
   <imovel>
     <codigo>v478</codigo>
     <titulo>Sobrado — 2 quartos, 2 suítes, 1 vaga, São José/SC</titulo>
-    <descricao>Sobrado com 2 suítes em São José. 2 quartos, 2 suítes, 1 vaga.</descricao>
+    <descricao>Sobrado em São José. 2 quartos, 2 suítes, 1 vaga.</descricao>
     <cidade>São José</cidade>
     <bairro></bairro>
     <estado>SC</estado>
-    <tipo>Casa</tipo>
+    <tipo>Sobrado</tipo>
     <finalidade>Venda</finalidade>
     <valor>540000.00</valor>
     <quartos>2</quartos>
     <suites>2</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v478-sobrado.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v478-sobrado-2-quartos-2-suites-1-vaga-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v478</contato_whatsapp>
     <destaque>nao</destaque>
@@ -474,17 +474,17 @@
   <imovel>
     <codigo>v477</codigo>
     <titulo>Sobrado — 2 quartos, 2 suítes, 1 vaga, São José/SC</titulo>
-    <descricao>Sobrado com 2 suítes em São José. 2 quartos, 2 suítes, 1 vaga.</descricao>
+    <descricao>Sobrado em São José. 2 quartos, 2 suítes, 1 vaga.</descricao>
     <cidade>São José</cidade>
     <bairro></bairro>
     <estado>SC</estado>
-    <tipo>Casa</tipo>
+    <tipo>Sobrado</tipo>
     <finalidade>Venda</finalidade>
     <valor>560000.00</valor>
     <quartos>2</quartos>
     <suites>2</suites>
     <vagas>1</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v477-sobrado.html</url>
+    <url>https://www.flaviacapaciacorretora.com/v477-sobrado-2-quartos-2-suites-1-vaga-sao-jose-sc.html</url>
     <imagem></imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v477</contato_whatsapp>
     <destaque>nao</destaque>
@@ -506,8 +506,8 @@
     <suites>4</suites>
     <banheiros>5</banheiros>
     <vagas>4</vagas>
-    <url>https://flaviacapacia.github.io/flaviacapaciacorretora/v491-apartamento-centro.html</url>
-    <imagem>https://flaviacapacia.github.io/flaviacapaciacorretora/img/v491/FSC_01_Fachada.jpg</imagem>
+    <url>https://www.flaviacapaciacorretora.com/v491-apartamento-220m2-4-suites-elevador-privativo-centro-florianopolis-sc.html</url>
+    <imagem>https://www.flaviacapaciacorretora.com/img/v491/FSC_01_Fachada.jpg</imagem>
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v491</contato_whatsapp>
     <destaque>sim</destaque>
   </imovel>
