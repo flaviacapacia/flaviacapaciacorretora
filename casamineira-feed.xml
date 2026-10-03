@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imoveis>
+  <parceiro>Flavia Capacia Corretora</parceiro>
+  <data_geracao>2026-10-03</data_geracao>
+  <contato>
+    <nome>Flavia Capacia Corretora</nome>
+    <telefone>(48) 99960-0601</telefone>
+    <email>flaviacapacia@creci.gov.com</email>
+    <creci></creci>
+  </contato>
+
+  <!-- v464 -->
+  <imovel>
+    <codigo>v464</codigo>
+    <titulo>Apartamento Kobrasol — 2 quartos, 1 suíte, São José/SC</titulo>
+    <descricao>Apartamento no bairro Kobrasol, São José/SC. 2 quartos, 1 suíte, 1 vaga de garagem. Excelente localização.</descricao>
+    <cidade>São José</cidade>
+    <bairro>Kobrasol</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>1330000.00</valor>
+    <quartos>2</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>sim</destaque>
+  </imovel>
+
+  <!-- v439 -->
+  <imovel>
+    <codigo>v439</codigo>
+    <titulo>Apartamento na Agronômica — 2 quartos, 1 suíte, Florianópolis/SC</titulo>
+    <descricao>Apartamento na Agronômica, Florianópolis. 2 quartos, 1 suíte, 1 vaga.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Agronômica</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>790000.00</valor>
+    <quartos>2</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>sim</destaque>
+  </imovel>
+
+  <!-- v472 -->
+  <imovel>
+    <codigo>v472</codigo>
+    <titulo>Apartamento na Agronômica — 3 quartos, 1 suíte, Florianópolis/SC</titulo>
+    <descricao>Apartamento de alto padrão na Agronômica. 3 quartos, 1 suíte, 1 vaga.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Agronômica</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>2995000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v456 -->
+  <imovel>
+    <codigo>v456</codigo>
+    <titulo>Apartamento Praia de Palmas — 3 quartos, 1 suíte, Gov. Celso Ramos/SC</titulo>
+    <descricao>Apartamento em Palmas, Governador Celso Ramos. 3 quartos, 1 suíte, 1 vaga.</descricao>
+    <cidade>Governador Celso Ramos</cidade>
+    <bairro>Palmas</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>1270000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v465 -->
+  <imovel>
+    <codigo>v465</codigo>
+    <titulo>Apartamento no Saco dos Limões — 2 quartos, 2 suítes, Florianópolis/SC</titulo>
+    <descricao>Apartamento no Saco dos Limões, Florianópolis. 2 quartos, 2 suítes, 1 vaga.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Saco dos Limões</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>1690000.00</valor>
+    <quartos>2</quartos>
+    <suites>2</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v448 -->
+  <imovel>
+    <codigo>v448</codigo>
+    <titulo>Cobertura Duplex Estreito — 3 quartos, 1 suíte, Florianópolis/SC</titulo>
+    <descricao>Duplex Cobertura no Estreito. 3 quartos, 1 suíte, 2 vagas.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Estreito</bairro>
+    <estado>SC</estado>
+    <tipo>Cobertura</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>2020000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>2</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v460 -->
+  <imovel>
+    <codigo>v460</codigo>
+    <titulo>Apartamento Beira-Mar Norte — 3 quartos, 2 banheiros, Florianópolis/SC</titulo>
+    <descricao>Apartamento Beira-Mar Norte / Marina. 3 quartos, 2 banheiros, 1 vaga.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Beira-Mar Norte</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>1200000.00</valor>
+    <quartos>3</quartos>
+    <banheiros>2</banheiros>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v473 -->
+  <imovel>
+    <codigo>v473</codigo>
+    <titulo>Casa em Santo Antônio de Lisboa — 3 dormitórios, 1 suíte, Florianópolis/SC</titulo>
+    <descricao>Casa em Santo Antônio de Lisboa. 3 dormitórios, 1 suíte, 2 vagas.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Santo Antônio de Lisboa</bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>1850000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>2</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>sim</destaque>
+  </imovel>
+
+  <!-- v466 -->
+  <imovel>
+    <codigo>v466</codigo>
+    <titulo>Casa com piscina na Praia — 3 dormitórios, 1 suíte, Palhoça/SC</titulo>
+    <descricao>Casa com piscina na Praia, Palhoça. 3 dormitórios, 1 suíte, 2 vagas.</descricao>
+    <cidade>Palhoça</cidade>
+    <bairro>Praia</bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>998000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>2</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v469 -->
+  <imovel>
+    <codigo>v469</codigo>
+    <titulo>Casa em condomínio — 2 dormitórios, Palhoça/SC</titulo>
+    <descricao>Casa em condomínio, Palhoça. 2 dormitórios, 1 banheiro, 1 vaga.</descricao>
+    <cidade>Palhoça</cidade>
+    <bairro></bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>320000.00</valor>
+    <quartos>2</quartos>
+    <banheiros>1</banheiros>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v450 -->
+  <imovel>
+    <codigo>v450</codigo>
+    <titulo>Apartamento Centro Kuboo — 1-2 quartos, 1 suíte, Florianópolis/SC</titulo>
+    <descricao>Apartamento no Centro, Kuboo. 1 a 2 quartos, 1 suíte, 1 vaga.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Centro</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>928000.00</valor>
+    <quartos>2</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v440 -->
+  <imovel>
+    <codigo>v440</codigo>
+    <titulo>Apartamento no Kobrasol — 3 quartos, 1 suíte, São José/SC</titulo>
+    <descricao>Apartamento no Kobrasol, São José. 3 quartos, 1 suíte, 1 vaga.</descricao>
+    <cidade>São José</cidade>
+    <bairro>Kobrasol</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>940000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v463 -->
+  <imovel>
+    <codigo>v463</codigo>
+    <titulo>Casa em Forquilhas — 3 quartos, 1 suíte, São José/SC</titulo>
+    <descricao>Casa em Forquilhas, São José. 3 quartos, 1 suíte, 2 vagas.</descricao>
+    <cidade>São José</cidade>
+    <bairro>Forquilhas</bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>735000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>2</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v474 -->
+  <imovel>
+    <codigo>v474</codigo>
+    <titulo>Apartamento Praia de Palmas — 3 quartos, 1 suíte, Gov. Celso Ramos/SC</titulo>
+    <descricao>Apartamento à venda na Praia de Palmas, Governador Celso Ramos. Sacada, 3 quartos, 1 suíte, 1 vaga.</descricao>
+    <cidade>Governador Celso Ramos</cidade>
+    <bairro>Praia de Palmas</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>890000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v447 -->
+  <imovel>
+    <codigo>v447</codigo>
+    <titulo>Apartamento Centro — Vitor Konder, 3 quartos, 1 suíte, Florianópolis/SC</titulo>
+    <descricao>Apartamento no Centro, Vitor Konder. 3 quartos, 1 suíte, 2 vagas.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Centro</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>2250000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>2</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v457 -->
+  <imovel>
+    <codigo>v457</codigo>
+    <titulo>Apartamento Campinas — 1 quarto, 1 suíte, São José/SC</titulo>
+    <descricao>Apartamento em Campinas, São José. 1 quarto, 1 suíte, 1 vaga. Oportunidade.</descricao>
+    <cidade>São José</cidade>
+    <bairro>Campinas</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>318000.00</valor>
+    <quartos>1</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v471 -->
+  <imovel>
+    <codigo>v471</codigo>
+    <titulo>Apartamento Bela Vista — 2 quartos, 1 suíte, São José/SC</titulo>
+    <descricao>Apartamento no Bela Vista, São José. 2 quartos, 1 suíte, 1 vaga.</descricao>
+    <cidade>São José</cidade>
+    <bairro>Bela Vista</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>649000.00</valor>
+    <quartos>2</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v441 -->
+  <imovel>
+    <codigo>v441</codigo>
+    <titulo>Apartamento Nossa Sra do Rosário — 3 quartos, 1 suíte, São José/SC</titulo>
+    <descricao>Apartamento no bairro Floresta / Nossa Sra do Rosário. 3 quartos, 1 suíte, churrasqueira.</descricao>
+    <cidade>São José</cidade>
+    <bairro>Floresta</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>850000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas></vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v449 -->
+  <imovel>
+    <codigo>v449</codigo>
+    <titulo>Casa em Ratones — 4 quartos, 1 suíte, 3 vagas, 355m², Florianópolis/SC</titulo>
+    <descricao>Casa à venda em Ratones, Norte da Ilha. 4 quartos, 1 suíte, 3 vagas, 355m² de área construída.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Ratones</bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finality>
+    <valor>1450000.00</valor>
+    <area_util>355</area_util>
+    <quartos>4</quartos>
+    <suites>1</suites>
+    <vagas>3</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v475 -->
+  <imovel>
+    <codigo>v475</codigo>
+    <titulo>Casa em São José — 2 quartos, área gourmet com hidro, São José/SC</titulo>
+    <descricao>Casa à venda em São José. 2 quartos, área gourmet com hidro, 2 vagas.</descricao>
+    <cidade>São José</cidade>
+    <bairro></bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>590000.00</valor>
+    <quartos>2</quartos>
+    <suites>0</suites>
+    <vagas>2</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v468 -->
+  <imovel>
+    <codigo>v468</codigo>
+    <titulo>Casa Unifamiliar Forquilhas — 3 quartos, 1 suíte, 2 vagas, São José/SC</titulo>
+    <descricao>Casa unifamiliar em Forquilhas, São José. 3 quartos, 1 suíte, 2 vagas.</descricao>
+    <cidade>São José</cidade>
+    <bairro>Forquilhas</bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>890000.00</valor>
+    <quartos>3</quartos>
+    <suites>1</suites>
+    <vagas>2</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v467 -->
+  <imovel>
+    <codigo>v467</codigo>
+    <titulo>Apartamento em Nova Palhoça — 2 quartos, 1 suíte, Palhoça/SC</titulo>
+    <descricao>Apartamento em Nova Palhoça. 2 quartos, 1 suíte, 1 vaga.</descricao>
+    <cidade>Palhoça</cidade>
+    <bairro>Nova Palhoça</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>430000.00</valor>
+    <quartos>2</quartos>
+    <suites>1</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v478 -->
+  <imovel>
+    <codigo>v478</codigo>
+    <titulo>Sobrado — 2 quartos, 2 suítes, 1 vaga, São José/SC</titulo>
+    <descricao>Sobrado com 2 suítes em São José. 2 quartos, 2 suítes, 1 vaga.</descricao>
+    <cidade>São José</cidade>
+    <bairro></bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>540000.00</valor>
+    <quartos>2</quartos>
+    <suites>2</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v477 -->
+  <imovel>
+    <codigo>v477</codigo>
+    <titulo>Sobrado — 2 quartos, 2 suítes, 1 vaga, São José/SC</titulo>
+    <descricao>Sobrado com 2 suítes em São José. 2 quartos, 2 suítes, 1 vaga.</descricao>
+    <cidade>São José</cidade>
+    <bairro></bairro>
+    <estado>SC</estado>
+    <tipo>Casa</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>560000.00</valor>
+    <quartos>2</quartos>
+    <suites>2</suites>
+    <vagas>1</vagas>
+    <url>https://www.flaviacapaciacorretora.com/</url>
+    <imagem></imagem>
+    <contato_whatsapp>https://wa.me/5548999600601</contato_whatsapp>
+    <destaque>nao</destaque>
+  </imovel>
+
+  <!-- v491 -->
+  <imovel>
+    <codigo>v491</codigo>
+    <titulo>Apartamento Centro — 220m², 4 suítes, elevador privativo, Florianópolis/SC</titulo>
+    <descricao>Apartamento de alto padrão com 220m², 4 suítes, 5 banheiros, 4 vagas e elevador privativo no Centro de Florianópolis.</descricao>
+    <cidade>Florianópolis</cidade>
+    <bairro>Centro</bairro>
+    <estado>SC</estado>
+    <tipo>Apartamento</tipo>
+    <finalidade>Venda</finalidade>
+    <valor>9500000.00</valor>
+    <area_util>220</area_util>
+    <quartos>4</quartos>
+    <suites>4</suites>
+    <banheiros>5</banheiros>
+    <vagas>4</vagas>
+    <url>https://www.flaviacapaciacorretora.com/v491-apartamento-a-venda-o-com-220m2-4-suites-e-elevador-privativo-no-centro-de-florianopolis-sc.html</url>
+    <imagem>https://www.flaviacapaciacorretora.com/img/v491/FSC_01_Fachada%20A_EF2.jpg</imagem>
+    <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v491</contato_whatsapp>
+    <destaque>sim</destaque>
+  </imovel>
+
+</imoveis>
