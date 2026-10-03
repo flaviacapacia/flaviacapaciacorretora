@@ -18,44 +18,4 @@
     <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v464</contato_whatsapp>
     <destaque>sim</destaque>
   </imovel>
-
-  <imovel>
-    <codigo>v439</codigo>
-    <titulo>Apartamento 2 Quartos à Venda, Agronômica - Florianópolis/SC</titulo>
-    <descricao>Apartamento na Agronômica, Florianópolis. 2 quartos, 1 suíte, 1 vaga.</descricao>
-    <cidade>Florianópolis</cidade>
-    <bairro>Agronômica</bairro>
-    <estado>SC</estado>
-    <tipo>Apartamento</tipo>
-    <finalidade>Venda</finalidade>
-    <valor>790000.00</valor>
-    <dormitorios>2</dormitorios>
-    <suites>1</suites>
-    <vagas>1</vagas>
-    <url>https://www.flaviacapaciacorretora.com/v439-apartamento-agronomica-2-quartos-1-suite-florianopolis-sc.html</url>
-    <imagem></imagem>
-    <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v439</contato_whatsapp>
-    <destaque>sim</destaque>
-  </imovel>
-
-  <imovel>
-    <codigo>v491</codigo>
-    <titulo>Apartamento 4 Suítes à Venda, Centro - Florianópolis/SC</titulo>
-    <descricao>Apartamento de alto padrão com 220m², 4 suítes, 5 banheiros, 4 vagas e elevador privativo no Centro de Florianópolis.</descricao>
-    <cidade>Florianópolis</cidade>
-    <bairro>Centro</bairro>
-    <estado>SC</estado>
-    <tipo>Apartamento</tipo>
-    <finalidade>Venda</finalidade>
-    <valor>9500000.00</valor>
-    <area_util>220</area_util>
-    <dormitorios>4</dormitorios>
-    <suites>4</suites>
-    <banheiros>5</banheiros>
-    <vagas>4</vagas>
-    <url>https://www.flaviacapaciacorretora.com/v491-apartamento-220m2-4-suites-elevador-privativo-centro-florianopolis-sc.html</url>
-    <imagem>https://www.flaviacapaciacorretora.com/img/v491/FSC_01_Fachada.jpg</imagem>
-    <contato_whatsapp>https://wa.me/5548999600601?text=Tenho%20interesse%20no%20im%C3%B3vel%20v491</contato_whatsapp>
-    <destaque>sim</destaque>
-  </imovel>
 </imoveis>
