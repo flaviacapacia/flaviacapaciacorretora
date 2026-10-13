@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Apartamento Cobertura 2 dormitórios à venda no Centro de Florianópolis SC" />
   <meta property="og:description" content="Cobertura plana com 168m² privativos, 2 dormitórios, terraço com jacuzzi e área gourmet no Centro de Florianópolis." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image" content="img/v494/cobertura-coutinho.1.jpg" />
 
   <script type="application/ld+json">
   {
@@ -51,6 +51,16 @@
       font-family: var(--fonte-padrao);
       line-height: 1.6;
     }
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; width: 100%;
+      background: rgba(0,0,0,0.85); color: #fff; padding: 14px;
+      text-align: center; font-size: 14px; z-index: 9999;
+    }
+    .cookie-banner button {
+      margin: 4px; padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer;
+    }
+    .cookie-banner .accept { background: #4CAF50; color: #fff; }
+    .cookie-banner .reject { background: #777; color: #fff; }
 
     .site-header {
       background: #fff; border-bottom: 1px solid #ddd;
@@ -172,6 +182,9 @@
       background: var(--bronze-claro);
     }
     .whatsapp-banner { margin-top: 14px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .whatsapp-banner a img.wa-icon {
+      width: 22px; height: 22px; display: inline-block; vertical-align: middle;
+    }
 
     .whatsapp-float {
       position: fixed; bottom: 20px; right: 20px; width: 64px; height: 64px;
@@ -180,6 +193,10 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.2); text-decoration: none; color: #fff;
       overflow: hidden;
     }
+    .whatsapp-float img {
+      width: 36px; height: 36px; object-fit: contain; display: block;
+    }
+    .whatsapp-float:hover { transform: translateY(-2px); }
 
     .site-footer {
       background: #fff; color: #222; padding: 36px 20px; border-top: 1px solid #ddd; margin-top: 20px;
@@ -197,17 +214,38 @@
     .footer-credit { text-align: center; margin-top: 18px; font-size: 0.9rem; color: #666; }
 
     .resumo-icons {
-      display: flex; justify-content: space-around; align-items: center;
-      flex-wrap: wrap; gap: 16px; text-align: center; padding: 10px 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      text-align: center;
+      padding: 10px 0;
     }
     .icon-item {
-      display: flex; flex-direction: column; align-items: center;
-      color: var(--texto-bronze); min-width: 90px; max-width: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--texto-bronze);
+      min-width: 90px;
+      max-width: 120px;
     }
-    .icon-item span { font-size: 0.9rem; font-weight: 600; line-height: 1.25; }
+    .icon-item img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 6px;
+      object-fit: contain;
+      display: block;
+    }
+    .icon-item span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
 
     .imovel-lista {
-      list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px;
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-wrap: wrap; gap: 10px;
     }
     .imovel-lista li {
       background: #fff; border: 1px solid var(--borda); border-radius: 20px;
@@ -239,6 +277,141 @@
     <div class="logo-area">
       <a href="index.html">
         <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:170,h:170,mx" alt="Logo Flavia Capacia Corretora" />
+      </a>
+    </div>
+    <nav class="main-nav" aria-label="Navegacao principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="negocie.html">Anuncie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="imovel-page">
+    <h1>APARTAMENTO COBERTURA 2 DORMITÓRIOS - CENTRO - FLORIANÓPOLIS</h1>
+    <p class="preco">R$ 3.200.000,00</p>
+    <p class="codigo">Rua Presidente Coutinho, CENTRO, FLORIANÓPOLIS &nbsp;|&nbsp; Condomínio: R$ 1.280,00</p>
+
+    <section class="card">
+      <h2>Galeria de fotos</h2>
+      <div class="zoom-gallery" id="galeriaGrid">
+        <div class="zoom-container"><img src="img/v494/cobertura-coutinho.1.jpg" alt="Fachada da Cobertura" /></div>
+        <div class="zoom-container"><img src="img/v494/cobertura-coutinho.2.jpg" alt="Living amplo e integrado" /></div>
+        <script type="application/json" id="galleryAllImages">[
+          {"src":"img/v494/cobertura-coutinho.1.jpg","alt":"Cobertura no Centro"},
+          {"src":"img/v494/cobertura-coutinho.2.jpg","alt":"Living amplo e integrado"},
+          {"src":"img/v494/cobertura-coutinho.3.jpg","alt":"Sala de estar"},
+          {"src":"img/v494/cobertura-coutinho.4.jpg","alt":"Terraço privativo com jacuzzi"},
+          {"src":"img/v494/cobertura-coutinho.5.jpg","alt":"Espaço Gourmet"},
+          {"src":"img/v494/cobertura-coutinho.6.jpg","alt":"Suíte aconchegante"},
+          {"src":"img/v494/cobertura-coutinho.7.jpg","alt":"Dormitório"},
+          {"src":"img/v494/cobertura-coutinho.8.jpg","alt":"Cozinha planejada"},
+          {"src":"img/v494/cobertura-coutinho.9.jpg","alt":"Banheiro da suíte"},
+          {"src":"img/v494/cobertura-coutinho.10.jpg","alt":"Vista do terraço"},
+          {"src":"img/v494/cobertura-coutinho.11.jpg","alt":"Área externa"},
+          {"src":"img/v494/cobertura-coutinho.12.jpg","alt":"Vista panorâmica"},
+          {"src":"img/v494/cobertura-coutinho.13.jpg","alt":"Detalhes do acabamento"}
+        ]</script>
+      </div>
+      <div class="whatsapp-banner">
+        <button type="button" class="btn-ver-todas" id="btnVerTodas">Ver todas as fotos</button>
+      </div>
+    </section>
+
+    <div id="galleryModal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button type="button" class="close-btn" id="closeGallery" aria-label="Fechar">&times;</button>
+        <img id="modalMainImg" class="modal-main-img" src="" alt="Foto do imovel" />
+        <div class="modal-counter" id="modalCounter"></div>
+        <div class="carousel-controls">
+          <button type="button" class="carousel-btn" id="prevPhoto">Anterior</button>
+          <button type="button" class="carousel-btn" id="nextPhoto">Proxima</button>
+        </div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+    </div>
+
+    <section class="card">
+      <h2>Descrição do imóvel</h2>
+      <article>
+        <p>Cobertura plana à venda no Centro de Florianópolis.</p>
+        <p>Com 168,10 m² de área privativa e excelente aproveitamento dos ambientes, conta com 2 dormitórios, lavabo, living integrado, cozinha independente e área de serviço. O destaque fica por conta do espaço externo fechado com churrasqueira a carvão e do terraço privativo com jacuzzi. A unidade possui ainda sol da manhã e da tarde, 2 vagas de garagem e hobby box.</p>
+        <p>O condomínio oferece salão de festas, playground e portaria humana 24 horas.</p>
+        <p>Localizada na Rua Presidente Coutinho, no Centro de Florianópolis, a cobertura está próxima a supermercados, restaurantes, cafés, escolas e ampla rede de comércio e serviços. A poucos minutos da Avenida Beira-Mar Norte e Beiramar Shopping, com fácil acesso às principais regiões da cidade.</p>
+        <p>Agende sua visita!</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Resumo do Imóvel</h2>
+      <div class="resumo-icons" id="resumoIcons">
+        <div class="icon-item"><img src="img/icons/areaprivativa.jpeg" alt="168.1 m²"><span>168,10m² privativos</span></div>
+        <div class="icon-item"><img src="img/icons/quartos.jpeg" alt="2 dormitórios"><span>2 dormitórios</span></div>
+        <div class="icon-item"><img src="img/icons/banheiro.jpeg" alt="3 banheiros"><span>3 banheiros</span></div>
+        <div class="icon-item"><img src="img/icons/vaga.jpeg" alt="2 vagas"><span>2 vagas</span></div>
+        <div class="icon-item"><img src="img/icons/churrasqueira.jpeg" alt="Espaço Gourmet"><span>Churrasqueira & Jacuzzi</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Características e Diferenciais</h2>
+      <ul class="imovel-lista">
+        <li>Cobertura Plana</li>
+        <li>Jacuzzi Privativa</li>
+        <li>Área Gourmet com Churrasqueira</li>
+        <li>Sala Ampla com Lareira</li>
+        <li>Hobbybox</li>
+        <li>Sol da Manhã e Tarde</li>
+        <li>Portaria Humana 24h</li>
+        <li>Salão de Festas</li>
+        <li>Playground</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Condições de pagamento</h2>
+      <article>
+        <p><strong>Preço:</strong> R$ 3.200.000,00</p>
+        <p><strong>Condomínio:</strong> R$ 1.280,00</p>
+        <p><strong>Financiamento:</strong> Aceita financiamento bancário.</p>
+        <p><strong>Consulte:</strong> Fale no WhatsApp para uma proposta personalizada.</p>
+      </article>
+    </section>
+
+    <section class="form-card">
+      <h2>Envie uma mensagem</h2>
+      <p>Retorno o mais breve possível.</p>
+      
+      <form class="contato-form">
+        <input type="text" name="name" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="message" placeholder="Mensagem" required></textarea>
+        <button type="submit">Enviar mensagem</button>
+      </form>
+
+      <div class="whatsapp-banner">
+        <a class="btn-wa" href="https://wa.me/5548999600601?text=Olá%20Flávia,%20gostaria%20de%20informações%20sobre%20a%20cobertura%20na%20Rua%20Presidente%20Coutinho" target="_blank" rel="noopener">
+          <img class="wa-icon" src="img/icons/whatsapp.png" alt="" width="22" height="22" />
+          Conversar com a corretora
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mapa do imóvel</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=Rua+Presidente+Coutinho,+Centro,+Florianopolis&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/5548999600601?text=Olá! Vim pelo site e gostaria de mais informações" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <span style="position:relative;display:flex;align-items:center;justify-content:center;width:82px;height:82px;background:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(34,34,34,0.10);">
+      <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Flavia Capacia" style="width:72px;height:72px;object-fit:contain;display:block;">
+      <span style="position:absolute;bottom:8px;right:8px;width:18
+:/rs=w:170,h:170,mx" alt="Logo Flavia Capacia Corretora" />
       </a>
     </div>
     <nav class="main-nav" aria-label="Navegacao principal">
