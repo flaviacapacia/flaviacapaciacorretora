@@ -266,59 +266,115 @@
     <p class="codigo">Sertão do Imaruim &nbsp;|&nbsp; Código: v483</p>
 
     <section class="card">
-      <h2>Galeria de fotos</h2>
-      <div class="zoom-gallery" id="galeriaGrid">
-        <div class="zoom-container">
-          <img src="img/v489/capa-casa-sertao-do-imaruim.jpeg" alt="Capa – Casa Sertão do Imaruim" />
-        </div>
-        <div class="zoom-container">
-          <img src="img/v489/casa-sertao-do-imaruim%20(1).jpeg" alt="Foto do imóvel 1" />
-        </div>
-        <div class="zoom-container">
-          <img src="img/v489/casa-sertao-do-imaruim%20(2).jpeg" alt="Foto do imóvel 2" />
-        </div>
-      </div>
-      <script type="application/json" id="galleryAllImages">
-      [
-        {"src":"img/v489/capa-casa-sertao-do-imaruim.jpeg","alt":"Capa – Casa Sertão do Imaruim"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(1).jpeg","alt":"Foto do imóvel 1"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(2).jpeg","alt":"Foto do imóvel 2"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(3).jpeg","alt":"Foto do imóvel 3"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(4).jpeg","alt":"Foto do imóvel 4"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(5).jpeg","alt":"Foto do imóvel 5"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(6).jpeg","alt":"Foto do imóvel 6"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(7).jpeg","alt":"Foto do imóvel 7"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(8).jpeg","alt":"Foto do imóvel 8"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(9).jpeg","alt":"Foto do imóvel 9"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(10).jpeg","alt":"Foto do imóvel 10"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(11).jpeg","alt":"Foto do imóvel 11"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(12).jpeg","alt":"Foto do imóvel 12"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(13).jpeg","alt":"Foto do imóvel 13"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(14).jpeg","alt":"Foto do imóvel 14"},
-        {"src":"img/v489/casa-sertao-do-imaruim%20(15).jpeg","alt":"Foto do imóvel 15"}
-      ]
-      </script>
-      <div class="whatsapp-banner">
-        <button type="button" class="btn-ver-todas" id="btnVerTodas">Ver todas as fotos</button>
-        <a class="btn-gold" href="https://wa.me/5548999600601?text=Olá%20Flavia%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20imóvel%20v483" target="_blank" rel="noopener">
-          <img class="wa-icon" src="img/icons/whatsapp.png" alt="" width="22" height="22" />
-          Conversar com a corretora
-        </a>
-      </div>
-    </section>
-
-    <div id="galleryModal" class="modal" aria-hidden="true">
-      <div class="modal-content">
-        <button type="button" class="close-btn" id="closeGallery" aria-label="Fechar">&times;</button>
-        <img id="modalMainImg" class="modal-main-img" src="" alt="Foto do imóvel" />
-        <div class="modal-counter" id="modalCounter"></div>
-        <div class="carousel-controls">
-          <button type="button" class="carousel-btn" id="prevPhoto">Anterior</button>
-          <button type="button" class="carousel-btn" id="nextPhoto">Próxima</button>
-        </div>
-        <div class="modal-thumbs" id="modalThumbs"></div>
-      </div>
+  <h2>Galeria de fotos</h2>
+  <div class="zoom-gallery" id="galeriaGrid">
+    <div class="zoom-container" onclick="openModal(0)">
+      <img src="img/v489/capa-casa-sertao-do-imaruim.jpeg" alt="Capa – Casa Sertão do Imaruim" />
     </div>
+    <div class="zoom-container" onclick="openModal(1)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(1).jpeg" alt="Foto do imóvel 1" />
+    </div>
+    <div class="zoom-container" onclick="openModal(2)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(2).jpeg" alt="Foto do imóvel 2" />
+    </div>
+    <div class="zoom-container" onclick="openModal(3)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(3).jpeg" alt="Foto do imóvel 3" />
+    </div>
+    <div class="zoom-container" onclick="openModal(4)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(4).jpeg" alt="Foto do imóvel 4" />
+    </div>
+    <div class="zoom-container" onclick="openModal(5)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(5).jpeg" alt="Foto do imóvel 5" />
+    </div>
+    <div class="zoom-container" onclick="openModal(6)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(6).jpeg" alt="Foto do imóvel 6" />
+    </div>
+    <div class="zoom-container" onclick="openModal(7)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(7).jpeg" alt="Foto do imóvel 7" />
+    </div>
+    <div class="zoom-container" onclick="openModal(8)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(8).jpeg" alt="Foto do imóvel 8" />
+    </div>
+    <div class="zoom-container" onclick="openModal(9)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(9).jpeg" alt="Foto do imóvel 9" />
+    </div>
+    <div class="zoom-container" onclick="openModal(10)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(10).jpeg" alt="Foto do imóvel 10" />
+    </div>
+    <div class="zoom-container" onclick="openModal(11)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(11).jpeg" alt="Foto do imóvel 11" />
+    </div>
+    <div class="zoom-container" onclick="openModal(12)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(12).jpeg" alt="Foto do imóvel 12" />
+    </div>
+    <div class="zoom-container" onclick="openModal(13)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(13).jpeg" alt="Foto do imóvel 13" />
+    </div>
+    <div class="zoom-container" onclick="openModal(14)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(14).jpeg" alt="Foto do imóvel 14" />
+    </div>
+    <div class="zoom-container" onclick="openModal(15)">
+      <img src="img/v489/casa-sertao-do-imaruim%20(15).jpeg" alt="Foto do imóvel 15" />
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:18px;">
+    <a class="btn-whatsapp" href="https://wa.me/5548999600601?text=Olá%20Flavia%2C%20gostaria%20de%20informações%20sobre%20o%20imóvel%20v483" target="_blank" rel="noopener noreferrer">📲 Falar no WhatsApp</a>
+  </div>
+</section>
+
+<div id="imageModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">&times;</button>
+    <img id="modalImage" src="" alt="Imagem ampliada" />
+    <div class="carousel-controls">
+      <button class="carousel-btn" onclick="prevImage()">Anterior</button>
+      <button class="carousel-btn" onclick="nextImage()">Próxima</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const images = [
+    "img/v489/capa-casa-sertao-do-imaruim.jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(1).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(2).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(3).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(4).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(5).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(6).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(7).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(8).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(9).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(10).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(11).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(12).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(13).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(14).jpeg",
+    "img/v489/casa-sertao-do-imaruim%20(15).jpeg"
+  ];
+  let currentIndex = 0;
+
+  function openModal(index) {
+    currentIndex = index;
+    document.getElementById('modalImage').src = images[currentIndex];
+    document.getElementById('imageModal').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('imageModal').classList.remove('active');
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('modalImage').src = images[currentIndex];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('modalImage').src = images[currentIndex];
+  }
+</script>
 
     <section class="card">
       <h2>Descrição do imóvel</h2>
