@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <!-- Página inicial -->
   <url>
     <loc>https://www.flaviacapaciacorretora.com/index.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>1.0</priority>
   </url>
-
-  <!-- Página Sobre -->
+  <!-- Páginas institucionais -->
   <url>
     <loc>https://www.flaviacapaciacorretora.com/sobre.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>0.8</priority>
   </url>
-
-  <!-- Página Negocie -->
   <url>
     <loc>https://www.flaviacapaciacorretora.com/negocie.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>0.7</priority>
   </url>
-
-  <!-- Página Financie -->
   <url>
     <loc>https://www.flaviacapaciacorretora.com/financie.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>0.7</priority>
   </url>
-
-  <!-- Página Contato -->
   <url>
     <loc>https://www.flaviacapaciacorretora.com/contato.html</loc>
     <lastmod>2025-11-30</lastmod>
@@ -42,205 +34,183 @@
     <lastmod>2025-11-30</lastmod>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.flaviacapaciacorretora.com/v456-apartamento-a-venda-em-palmas-governador-celso-ramos-sc.html</loc>
     <lastmod>2026-06-02</lastmod>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.flaviacapaciacorretora.com/v465-apartamento-a-venda-com-02-suites-e-sacada-em-florianopolis.html</loc>
     <lastmod>2026-06-02</lastmod>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.flaviacapaciacorretora.com/v472-apartamento-3-quartos-agronomica-florianopolis-condominio-ancoradouro.html</loc>
     <lastmod>2026-06-02</lastmod>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.flaviacapaciacorretora.com/v476-apartamento-a-venda-com-2-dormitorios-e-suite-em-sao-jose.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v477-casa-tipo-sobrado-venda-com-02-suites-e-quintal-em-em-sao-jose.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <url>
     <loc>https://www.flaviacapaciacorretora.com/v478-casa-tipo-sobrado-a-venda-com-02-suites-e-quintal-e-passagem-lateral-em-sao-jose.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Outras páginas -->
   <url>
-    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-agronomica-v439.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <loc>https://www.flaviacapaciacorretora.com/v479-apartamento-a-venda-com-02-dormitorios-suite-e-sacada-no-kobrasol.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v480-apartamento-a-venda-com-03-dormitorios-e-suite-no-patio-das-artes-na-pedra-branca-em-palhoca.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v481-apartamento-a-venda-com-03-dormitorios-no-dubai-resisence-na-pedra-branca-em-palhoca-sc.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v482-studio-sertao-do-maruim-sao-jose.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v483-casa-a-venda-em-sertao-do-imaruim-saso-jose.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v484-lancamento-apartamentos-tipo-studio-com-suite-e-cobertura-na-trindade-em-florianopolis-sc.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v485-casa-a-venda-com-02-dormitorios-suite-e-piscina-no-bela-vista-em-palhoca-sc.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v486-apartamento-a-venda-com-3-dormitorios-sendo-2-suites-a-poucos-metros-da-praia-em-palmas-sc.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v487-apartamento-a-venda-com-3-dormitorios-sendo-2-suites-a-poucos-metros-da-praia-em-palmas-sc.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v488-casa-a-venda-com-02-dormitorios-no-bairro-sertao-do-imaruim-em-sao-jose.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v490-apartamento-a-venda-com-3-dormitorios-a-poucos-mtrs-da-beira-mar-de-sao-jose-sc.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v491-apartamento-a-venda-o-com-220m2-4-suites-e-elevador-privativo-no-centro-de-florianopolis-sc.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v492-apartamento-a-venda-com-3-dormitorios-em-imbituba-sc.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v493-apartamento-a-venda-com-3-dormitorios-em-campinas-sao-jose-sc.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flaviacapaciacorretora.com/v494-apartamento-dimas-d-yard-3-suites-no-centro-florianopolis.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/v495-apartamento-venda-trindade-cobertura-duplex.html</loc>
+    <lastmod>2026-10-16</lastmod>
     <priority>0.9</priority>
   </url>
 
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-centro-v447.html</loc>
-    <lastmod>2025-11-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Blog e artigos -->
+  <!-- Artigos / Blog -->
   <url>
     <loc>https://www.flaviacapaciacorretora.com/blog.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/artigo-morar-na-agronomica-beiramar-escola-dinamica.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/artigo-trindade-mercado-imobiliario-proximo-a-ufsc.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://www.flaviacapaciacorretora.com/artigo-airbnb.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://www.flaviacapaciacorretora.com/artigo-cfl-campeche.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://www.flaviacapaciacorretora.com/artigo-floripa-mercado-imobiliario.html</loc>
     <lastmod>2025-11-30</lastmod>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://www.flaviacapaciacorretora.com/artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html</loc>
     <lastmod>2026-06-02</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.flaviacapaciacorretora.com/artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/artigo-bairros-kobrasol-imoveis-investir-guia-completo.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Páginas antigas mantidas -->
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-agronomica-v439.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.flaviacapaciacorretora.com/apartamento-venda-centro-v447.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.flaviacapaciacorretora.com/v464-apartamento-a-venda-no-bairro-kobrasol-em-sao-jose-sc-com-2-quartos-1-suite-1-vaga.html</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.6</priority>
   </url>
-  
-  <!-- Página de Contato -->
   <url>
     <loc>https://www.flaviacapaciacorretora.com/contato.fc</loc>
     <lastmod>2026-08-04</lastmod>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Imóvel: Studio Santa Mônica -->
   <url>
     <loc>https://www.flaviacapaciacorretora.com/L780-apartamento-aluguel-studio-quintal-mobiliado-santa-monica-perto-da-ufsc.html</loc>
     <lastmod>2026-08-04</lastmod>
     <priority>0.7</priority>
   </url>
-
- <url>
-    <loc>https://www.flaviacapaciacorretora.com/v479-apartamento-a-venda-com-02-dormitorios-suite-e-sacada-no-kobrasol.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  
- <url>
-    <loc>https://www.flaviacapaciacorretora.com/https://www.flaviacapaciacorretora.com/artigo-bairros-kobrasol-imoveis-investir-guia-completo.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <priority>0.6</priority>
-   </url>
-  
-
-  
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v480-apartamento-a-venda-com-03-dormitorios-e-suite-no-patio-das-artes-na-pedra-branca-em-palhoca.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v481-apartamento-a-venda-com-03-dormitorios-no-dubai-resisence-na-pedra-branca-em-palhoca-sc.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-</urlset>
-   <url>
-    <loc>https://www.flaviacapaciacorretora.com/artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <priority>0.6</priority>
-   </url> 
-
-  <!-- Imóveis novos -->
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v482-studio-sertao-do-maruim-sao-jose.html</loc>
-    <lastmod>2026-09-08</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v483-casa-a-venda-em-sertao-do-imaruim-saso-jose.html</loc>
-    <lastmod>2026-09-08</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v484-lancamento-apartamentos-tipo-studio-com-suite-e-cobertura-na-trindade-em-florianopolis-sc.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v485-casa-a-venda-com-02-dormitorios-suite-e-piscina-no-bela-vista-em-palhoca-sc.html</loc>
-    <lastmod>2026-09-24</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v486-apartamento-a-venda-com-3-dormitorios-sendo-2-suites-a-poucos-metros-da-praia-em-palmas-sc.html</loc>
-    <lastmod>2026-09-15</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v487-apartamento-a-venda-com-3-dormitorios-sendo-2-suites-a-poucos-metros-da-praia-em-palmas-sc.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v488-casa-a-venda-com-02-dormitorios-no-bairro-sertao-do-imaruim-em-sao-jose.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v490-apartamento-a-venda-com-3-dormitorios-a-poucos-mtrs-da-beira-mar-de-sao-jose-sc.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v490-lancamento-apartamento-a-venda-com-3-dormitorios-a-poucos-mtrs-da-beira-mar-de-sao-jose-sc.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v491-apartamento-a-venda-o-com-220m2-4-suites-e-elevador-privativo-no-centro-de-florianopolis-sc.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.flaviacapaciacorretora.com/v492-apartamento-a-venda-com-3-dormitorios-em-imbituba-sc.html</loc>
-    <lastmod>2026-09-29</lastmod>
-    <priority>0.9</priority>
-  </url>
-
 </urlset>
