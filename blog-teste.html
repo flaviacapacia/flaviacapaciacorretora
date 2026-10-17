@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Imobiliário — Mercado, Bairros e Oportunidades | Flavia Capacia Corretora</title>
+  <meta name="description" content="Análises de bairros, tendências do mercado imobiliário e o que ninguém conta sobre morar na Grande Florianópolis. Por Flavia Capacia." />
+  <meta name="author" content="Flavia Capacia Corretora" />
+  <link rel="canonical" href="https://www.flaviacapaciacorretora.com/blog.html" />
+  <meta property="og:title" content="Blog Imobiliário | Flavia Capacia Corretora" />
+  <meta property="og:description" content="Bairros, investimentos e a essência de morar na Grande Florianópolis — com quem vive e conhece cada detalhe." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bronze-medio: #b08d57;
+      --fundo-claro: #ffffff;
+      --cinza-borda: #e5e5e5;
+      --cinza-texto: #333333;
+      --cinza-claro: #666666;
+      --fundo-pagina: #f7f7f7;
+      --dourado-suave: #f9f6f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--fundo-pagina);
+      color: var(--cinza-texto);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 2px solid var(--bronze-medio);
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    header img { height: 54px; }
+    nav { position: relative; }
+    #menu-toggle {
+      background: none;
+      border: 1px solid var(--bronze-medio);
+      color: var(--bronze-medio);
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    #menu-toggle:hover { background-color: var(--bronze-medio); color: #fff; }
+    #menu {
+      list-style: none;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background-color: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      min-width: 180px;
+      z-index: 100;
+    }
+    #menu.open { display: block; }
+    #menu li { margin: 8px 0; }
+    #menu li a {
+      text-decoration: none;
+      color: var(--cinza-texto);
+      font-weight: bold;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    #menu li a:hover { color: var(--bronze-medio); background: #fafafa; }
+    .page-intro {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--cinza-borda);
+    }
+    .page-intro h1 {
+      color: var(--bronze-medio);
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .page-intro p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--cinza-claro);
+      font-size: 1.05em;
+    }
+    .about-note {
+      background: var(--dourado-suave);
+      border-radius: 10px;
+      padding: 22px 25px;
+      margin-bottom: 40px;
+      font-style: italic;
+      color: #4a4a4a;
+      border-left: 3px solid var(--bronze-medio);
+    }
+    .section-title {
+      color: var(--bronze-medio);
+      font-size: 1.4em;
+      margin: 35px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--cinza-borda);
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .article-card {
+      background: var(--fundo-claro);
+      border: 1px solid var(--cinza-borda);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .article-card.featured {
+      border-color: var(--bronze-medio);
+      border-width: 2px;
+      background: #fffdf9;
+    }
+    .article-card h3 {
+      color: var(--bronze-medio);
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      line-height: 1.4;
+    }
+    .article-card p {
+      font-size: 0.95em;
+      color: var(--cinza-claro);
+      margin-bottom: 12px;
+    }
+    .article-card a {
+      color: var(--bronze-medio);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+    .article-card a:hover { text-decoration: underline; }
+    .article-card .cta-link {
+      display: inline-block;
+      margin-top: 8px;
+      margin-left: 10px;
+      color: #25D366;
+      font-size: 0.9em;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .article-card .cta-link:hover { text-decoration: underline; }
+    .category-tag {
+      display: inline-block;
+      background: #f0ebe3;
+      color: var(--bronze-medio);
+      font-size: 0.8em;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 2px solid var(--bronze-medio);
+      text-align: center;
+    }
+    .footer-contact p { margin-bottom: 5px; }
+    .footer-contact a {
+      color: var(--bronze-medio);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer-social { margin: 15px 0; }
+    .footer-social a {
+      color: var(--bronze-medio);
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer-credit {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: var(--cinza-claro);
+    }
+    @media (max-width: 768px) {
+      .container { padding: 15px; }
+      .articles-grid { grid-template-columns: 1fr; }
+      header { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" aria-label="Página inicial">
+        <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" alt="Logo Flavia Capacia Corretora" />
+      </a>
+      <nav>
+        <button id="menu-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu">Menu</button>
+        <ul id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-intro">
+        <h1>Blog Imobiliário — Mercado, Bairros e Oportunidades</h1>
+        <p>Análises, guias e o que ninguém conta sobre morar e investir na Grande Florianópolis. Por quem vive e conhece cada canto desta região.</p>
+      </section>
+
+      <section class="about-note">
+        <p>Escrevo aqui não apenas como corretora, mas como alguém que escolheu viver nesta terra. Cada bairro tem uma luz, um ritmo, uma forma de receber — e esses detalhes fazem toda a diferença na hora de escolher um lar. Uso a tecnologia para organizar e compartilhar o que aprendi percorrendo ruas, conversando com moradores e acompanhando a transformação da região. O que escrevo não vem de bancos de dados: vem do olhar de quem está aqui.</p>
+      </section>
+
+      <h2 class="section-title">Bairros em Destaque</h2>
+      <div class="articles-grid">
+        <article class="article-card featured">
+          <span class="category-tag">Palhoça</span>
+          <h3>Pedra Branca: o bairro que foi projetado para ser vivido</h3>
+          <p>Conceito urbano, calçadas pensadas, ruas com nomes de flores, Reserva da Pedra e lançamentos que se esgotam no dia. Conheça este que é um dos projetos mais ambiciosos do Sul do país.</p>
+          <a href="artigo-pedra-branca.html">Ler artigo completo</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20em%20Pedra%20Branca" target="_blank">Falar sobre Pedra Branca</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">São José</span>
+          <h3>Kobrasol: guia completo — morar e investir</h3>
+          <p>Infraestrutura, mobilidade, valorização e por que continua sendo o bairro mais procurado da Grande Florianópolis.</p>
+          <a href="artigo-bairros-kobrasol-imoveis-investir-guia-completo.html">Ler guia completo</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Campinas%20ou%20Kobrasol" target="_blank">Falar sobre Kobrasol</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">São José</span>
+          <h3>Campinas: qualidade de vida no dia a dia</h3>
+          <p>Tranquilidade, proximidade, comércio completo e o perfil de famílias que escolhem viver bem aqui.</p>
+          <a href="artigo-campinas-kobrasol-investir-morar-qualidade-de-vida-apartamentos-sao-jose.html">Ler artigo</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Campinas%20ou%20Kobrasol" target="_blank">Falar sobre Campinas</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">Florianópolis</span>
+          <h3>Centro de Florianópolis: tradição e valorização</h3>
+          <p>História, ruas nobres, imóveis de alto padrão e o que observar antes de comprar no coração da capital.</p>
+          <a href="artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html">Ler guia completo</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">Florianópolis</span>
+          <h3>Agronômica: perto de tudo, com tranquilidade</h3>
+          <p>Escolas, comércio, proximidade com a Beira-Mar e o jeito de viver bem no coração da Ilha.</p>
+          <a href="artigo-morar-na-agronomica-beiramar-escola-dinamica.html">Ler artigo</a>
+        </article>
+      </div>
+
+      <h2 class="section-title">Tendências e Investimentos</h2>
+      <div class="articles-grid">
+        <article class="article-card">
+          <span class="category-tag">Alto Padrão</span>
+          <h3>O Novo Luxo é Viver: bem-estar e imóveis premium</h3>
+          <p>Por que Florianópolis se tornou referência nacional em imóveis que unem natureza, saúde e qualidade de vida.</p>
+          <a href="artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html">Ler artigo</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20saber%20mais%20sobre%20imóveis%20wellness" target="_blank">Falar comigo</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">Infraestrutura</span>
+          <h3>Marina na Beira-Mar Norte: transformação da orla</h3>
+          <p>Como a nova marina e as obras de mobilidade estão redefinindo valores e atraindo compradores para a região.</p>
+          <a href="artigo-marina-infra.html">Ler análise</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20na%20Beira-Mar" target="_blank">Falar sobre Beira-Mar</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">Investimento</span>
+          <h3>Airbnb: rentabilidade com locação por temporada</h3>
+          <p>Onde investir, quais bairros têm maior retorno e como aproveitar a demanda turística da região.</p>
+          <a href="artigo-airbnb.html">Ler dicas</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Airbnb" target="_blank">Falar sobre investimento</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">Lançamentos</span>
+          <h3>La Mare: alto padrão no Campeche pela CFL</h3>
+          <p>Empreendimento exclusivo com vista para o mar, arquitetura contemporânea e estrutura completa de lazer.</p>
+          <a href="artigo-cfl-campeche.html">Conhecer o lançamento</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20detalhes%20do%20lançamento%20Campeche" target="_blank">Receber detalhes</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">Análise</span>
+          <h3>Mercado imobiliário: panorama e o que observar</h3>
+          <p>Tendências de valorização, preços médios e dicas para comprar com segurança e visão de longo prazo.</p>
+          <a href="artigo-floripa-mercado-imobiliario.html">Ler análise completa</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20tenho%20interesse%20em%20investir" target="_blank">Falar sobre investir</a>
+        </article>
+
+        <article class="article-card">
+          <span class="category-tag">Beira-Mar</span>
+          <h3>Marina e o impacto nos preços da orla</h3>
+          <p>Como a infraestrutura nova está valorizando imóveis na Beira-Mar Norte e quais oportunidades surgem.</p>
+          <a href="artigo-marina-mercadoimobiliario.html">Ler análise</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20na%20Beira-Mar" target="_blank">Ver imóveis na região</a>
+        </article>
+      </div>
+
+      <h2 class="section-title">Imóveis em Destaque</h2>
+      <div class="articles-grid">
+        <article class="article-card">
+          <h3>Beira-Mar Norte — Solar de Kastellorizon, 3 quartos</h3>
+          <p>110m², posição solar privilegiada, próximo à Marina. R$ 1.200.000.</p>
+          <a href="v460-apartamento-venda-3dormitorios-beira-mar-norte+marina+110m2+vaga+florianopolis.html">Ver detalhes</a>
+        </article>
+        <article class="article-card">
+          <h3>Centro — Apartamento exclusivo, 212m²</h3>
+          <p>Alto padrão, reforma recente, 2 vagas de garagem. R$ 2.650.000.</p>
+          <a href="apartamento-venda-centro-v447.html">Ver detalhes</a>
+        </article>
+        <article class="article-card">
+          <h3>Balneário do Estreito — Duplex cobertura, 220m²</h3>
+          <p>3 quartos, sacada com churrasqueira, piscina e infraestrutura completa. R$ 1.950.000.</p>
+          <a href="v448-apartamento-duplex-cobertura-220m2-3dormitorios-sacada+churrasqueira+vista+academia.html">Ver detalhes</a>
+        </article>
+        <article class="article-card">
+          <h3>Palmas — Governador Celso Ramos, 3 quartos</h3>
+          <p>A 350m da praia, totalmente mobiliado, lazer completo. R$ 1.270.000.</p>
+          <a href="v456-apartamento-venda-palmas-sacada-praia-celso-ramos+3dormitorios+suite.html">Ver detalhes</a>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-contact">
+        <h3 style="color: var(--bronze-medio);">Contato</h3>
+        <p><a href="mailto:flavia.capacia@creci.org.br">flavia.capacia@creci.org.br</a></p>
+        <p><a href="tel:+5548999600601">(48) 99960-0601</a></p>
+        <p>Florianópolis · São José · Palhoça</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/flaviacapaciacorretora/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/flaviacapaciacorretora" target="_blank">Facebook</a>
+        <a href="https://www.linkedin.com/in/flaviacapaciacorretora" target="_blank">LinkedIn</a>
+        <a href="https://www.youtube.com/@flaviacapaciacorretora" target="_blank">YouTube</a>
+      </div>
+      <div class="footer-credit">
+        <p>&copy; 2026 Flavia Capacia Corretora — Todos os direitos reservados.</p>
+        <p>Conhecimento real, experiência de quem vive aqui.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      function closeMenu() { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      function openMenu() { menu.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        menu.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      document.addEventListener('click', function (e) {
+        if (!btn.parentElement.contains(e.target)) closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>
