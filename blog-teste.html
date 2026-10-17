@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Imobiliário — Mercado, Bairros e Oportunidades | Flavia Capacia Corretora</title>
+  <title>Blog Imobiliário — Mercado, Bairros e Oportunidades | Flavia Capacia Corretora- </title>
   <meta name="description" content="Análises de bairros, tendências do mercado imobiliário e o que ninguém conta sobre morar na Grande Florianópolis. Por Flavia Capacia." />
   <meta name="author" content="Flavia Capacia Corretora" />
   <link rel="canonical" href="https://www.flaviacapaciacorretora.com/blog.html" />
@@ -100,19 +100,55 @@
     .about-note {
       background: var(--dourado-suave);
       border-radius: 10px;
-      padding: 22px 25px;
+      padding: 25px 28px;
       margin-bottom: 40px;
-      font-style: italic;
       color: #4a4a4a;
       border-left: 3px solid var(--bronze-medio);
+    }
+    .about-note p { margin-bottom: 12px; text-align: justify; }
+    .about-note p:last-child { margin-bottom: 0; }
+    .about-signature {
+      margin-top: 15px;
+      font-weight: bold;
+      color: var(--bronze-medio);
+      display: block;
     }
     .section-title {
       color: var(--bronze-medio);
       font-size: 1.4em;
-      margin: 35px 0 20px;
+      margin: 40px 0 20px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--cinza-borda);
     }
+    /* Carrossel com setas */
+    .carousel-wrapper { position: relative; margin-bottom: 30px; }
+    .carousel-container { overflow: hidden; }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+      gap: 20px;
+    }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: 1px solid var(--bronze-medio);
+      color: var(--bronze-medio);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .carousel-nav:hover { background: var(--bronze-medio); color: #fff; }
+    .carousel-prev { left: -21px; }
+    .carousel-next { right: -21px; }
     .articles-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -125,6 +161,8 @@
       border-radius: 10px;
       padding: 20px;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      min-width: 300px;
+      flex-shrink: 0;
     }
     .article-card:hover {
       transform: translateY(-3px);
@@ -201,6 +239,10 @@
       .container { padding: 15px; }
       .articles-grid { grid-template-columns: 1fr; }
       header { flex-direction: column; text-align: center; }
+      .carousel-nav { width: 36px; height: 36px; font-size: 16px; }
+      .carousel-prev { left: -5px; }
+      .carousel-next { right: -5px; }
+      .article-card { min-width: calc(100vw - 70px); }
     }
   </style>
 </head>
@@ -215,6 +257,7 @@
         <ul id="menu">
           <li><a href="index.html">Início</a></li>
           <li><a href="blog.html">Blog</a></li>
+          <li><a href="blog-visao-corretora.html">Minha Visão</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
@@ -223,126 +266,197 @@
     <main>
       <section class="page-intro">
         <h1>Blog Imobiliário — Mercado, Bairros e Oportunidades</h1>
-        <p>Análises, guias e o que ninguém conta sobre morar e investir na Grande Florianópolis. Por quem vive e conhece cada canto desta região.</p>
+        <p>Análises, guias e o que ninguém conta sobre estar, vier e morar em Florianópolis e região, no litoral de Santa Catarina. Por quem vive e conhece cada canto desta região.</p>
       </section>
 
       <section class="about-note">
-        <p>Escrevo aqui não apenas como corretora, mas como alguém que escolheu viver nesta terra. Cada bairro tem uma luz, um ritmo, uma forma de receber — e esses detalhes fazem toda a diferença na hora de escolher um lar. Uso a tecnologia para organizar e compartilhar o que aprendi percorrendo ruas, conversando com moradores e acompanhando a transformação da região. O que escrevo não vem de bancos de dados: vem do olhar de quem está aqui.</p>
+        <p>Escrevo aqui não apenas como corretora, mas como alguém que escolheu viver nesta terra. Cada bairro tem uma luz, um ritmo, uma forma de receber — e esses detalhes fazem toda a diferença na hora de escolher um lar.</p>
+        <p>Quando falo de um lugar, não repito o que li em sites. Falo do que vi ao caminhar pelas ruas, do que ouvi de famílias que moram há gerações, do que percebo nas mudanças que transformam a paisagem e o dia a dia. Conheço o sol que nasce em cada bairro, a brisa que chega mais cedo ou mais tarde, a tranquilidade que certas ruas guardam.</p>
+        <p>Hoje, a tecnologia facilita muito o acesso à informação. Mas nenhum algoritmo substitui o olhar de quem percorre, observa e entende o que realmente importa para uma família. Uso a tecnologia para organizar e compartilhar o que aprendi — mas a essência do que escrevo vem da experiência real, de viver aqui, de fazer parte desta comunidade.</p>
+        <p>Meu objetivo é simples: ajudar você a encontrar não apenas um endereço, mas um lugar que combine com a sua vida. Porque comprar um imóvel é muito mais do que uma transação — é escolher onde construir histórias.</p>
+        <span class="about-signature">— Flavia Capacia, Corretora especialista em Florianópolis e região metropolitana, litoral de Santa Catarina</span>
       </section>
 
       <h2 class="section-title">Bairros em Destaque</h2>
-      <div class="articles-grid">
-        <article class="article-card featured">
-          <span class="category-tag">Palhoça</span>
-          <h3>Pedra Branca: o bairro que foi projetado para ser vivido</h3>
-          <p>Conceito urbano, calçadas pensadas, ruas com nomes de flores, Reserva da Pedra e lançamentos que se esgotam no dia. Conheça este que é um dos projetos mais ambiciosos do Sul do país.</p>
-          <a href="artigo-pedra-branca.html">Ler artigo completo</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20em%20Pedra%20Branca" target="_blank">Falar sobre Pedra Branca</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">São José</span>
-          <h3>Kobrasol: guia completo — morar e investir</h3>
-          <p>Infraestrutura, mobilidade, valorização e por que continua sendo o bairro mais procurado da Grande Florianópolis.</p>
-          <a href="artigo-bairros-kobrasol-imoveis-investir-guia-completo.html">Ler guia completo</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Campinas%20ou%20Kobrasol" target="_blank">Falar sobre Kobrasol</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">São José</span>
-          <h3>Campinas: qualidade de vida no dia a dia</h3>
-          <p>Tranquilidade, proximidade, comércio completo e o perfil de famílias que escolhem viver bem aqui.</p>
-          <a href="artigo-campinas-kobrasol-investir-morar-qualidade-de-vida-apartamentos-sao-jose.html">Ler artigo</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Campinas%20ou%20Kobrasol" target="_blank">Falar sobre Campinas</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">Florianópolis</span>
-          <h3>Centro de Florianópolis: tradição e valorização</h3>
-          <p>História, ruas nobres, imóveis de alto padrão e o que observar antes de comprar no coração da capital.</p>
-          <a href="artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html">Ler guia completo</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">Florianópolis</span>
-          <h3>Agronômica: perto de tudo, com tranquilidade</h3>
-          <p>Escolas, comércio, proximidade com a Beira-Mar e o jeito de viver bem no coração da Ilha.</p>
-          <a href="artigo-morar-na-agronomica-beiramar-escola-dinamica.html">Ler artigo</a>
-        </article>
+      <div class="carousel-wrapper">
+        <button class="carousel-nav carousel-prev" id="bairrosPrev" aria-label="Anterior">&lsaquo;</button>
+        <div class="carousel-container">
+          <div class="carousel-track" id="bairrosTrack">
+            <article class="article-card featured">
+              <span class="category-tag">Palhoça</span>
+              <h3>Pedra Branca: o bairro projetado para ser vivido</h3>
+              <p>Conceito urbano, calçadas pensadas, ruas com nomes de flores, Reserva da Pedra e lançamentos que se esgotam no dia.</p>
+              <a href="artigo-comprar-imovel-na-pedra-branca-%20passeio-pedra-branca-palhoça-blog-flavia-capacia-corretora-na-grane-florianopolis.html">Ler artigo completo</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20em%20Pedra%20Branca" target="_blank">Falar sobre Pedra Branca</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">São José</span>
+              <h3>Kobrasol: guia completo — morar e investir</h3>
+              <p>Infraestrutura, mobilidade, valorização e por que continua sendo o bairro mais procurado da Grande Florianópolis.</p>
+              <a href="artigo-bairros-kobrasol-imoveis-investir-guia-completo.html">Ler guia completo</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Campinas%20ou%20Kobrasol" target="_blank">Falar sobre Kobrasol</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">São José</span>
+              <h3>Campinas: qualidade de vida no dia a dia</h3>
+              <p>Tranquilidade, proximidade, comércio completo e o perfil de famílias que escolhem viver bem aqui.</p>
+              <a href="artigo-campinas-kobrasol-investir-morar-qualidade-de-vida-apartamentos-sao-jose.html">Ler artigo</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Campinas%20ou%20Kobrasol" target="_blank">Falar sobre Campinas</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Florianópolis</span>
+              <h3>Agronômica: perto de tudo, com tranquilidade</h3>
+              <p>Escolas, comércio, proximidade com a Beira-Mar e o jeito de viver bem no coração da Ilha.</p>
+              <a href="artigo-morar-na-agronomica-beiramar-escola-dinamica.html">Ler artigo</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20Agronômica" target="_blank">Falar sobre Agronômica</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Florianópolis</span>
+              <h3>Centro de Florianópolis: tradição e valorização</h3>
+              <p>História, ruas nobres, imóveis de alto padrão e o que observar antes de comprar no coração da capital.</p>
+              <a href="artigo-bairros-centro-floripa-imoveis-valorizacao-guia-completo.html">Ler guia completo</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Florianópolis</span>
+              <h3>Beira-Mar Norte: refúgio na capital</h3>
+              <p>Como a orla está se transformando, a chegada da Marina e o impacto nos imóveis desta região.</p>
+              <a href="artigo-centro-beira-mar-norte-refugio-capital-produtivo.html">Ler artigo</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20na%20Beira-Mar" target="_blank">Falar sobre Beira-Mar</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Florianópolis</span>
+              <h3>Trindade: próximo à UFSC e em ascensão</h3>
+              <p>Perfil do bairro, crescimento e oportunidades de moradia e investimento perto da universidade.</p>
+              <a href="artigo-trindade-mercado-imobiliario-proximo-a-ufsc.html">Ler artigo</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Florianópolis</span>
+              <h3>Estreito: morar com praticidade e conforto</h3>
+              <p>Localização estratégica, infraestrutura completa e apartamentos que atendem famílias de todos os perfis.</p>
+              <a href="artigo-estreito.html">Ler artigo</a>
+            </article>
+          </div>
+        </div>
+        <button class="carousel-nav carousel-next" id="bairrosNext" aria-label="Próximo">&rsaquo;</button>
       </div>
 
       <h2 class="section-title">Tendências e Investimentos</h2>
-      <div class="articles-grid">
-        <article class="article-card">
-          <span class="category-tag">Alto Padrão</span>
-          <h3>O Novo Luxo é Viver: bem-estar e imóveis premium</h3>
-          <p>Por que Florianópolis se tornou referência nacional em imóveis que unem natureza, saúde e qualidade de vida.</p>
-          <a href="artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html">Ler artigo</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20saber%20mais%20sobre%20imóveis%20wellness" target="_blank">Falar comigo</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">Infraestrutura</span>
-          <h3>Marina na Beira-Mar Norte: transformação da orla</h3>
-          <p>Como a nova marina e as obras de mobilidade estão redefinindo valores e atraindo compradores para a região.</p>
-          <a href="artigo-marina-infra.html">Ler análise</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20na%20Beira-Mar" target="_blank">Falar sobre Beira-Mar</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">Investimento</span>
-          <h3>Airbnb: rentabilidade com locação por temporada</h3>
-          <p>Onde investir, quais bairros têm maior retorno e como aproveitar a demanda turística da região.</p>
-          <a href="artigo-airbnb.html">Ler dicas</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Airbnb" target="_blank">Falar sobre investimento</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">Lançamentos</span>
-          <h3>La Mare: alto padrão no Campeche pela CFL</h3>
-          <p>Empreendimento exclusivo com vista para o mar, arquitetura contemporânea e estrutura completa de lazer.</p>
-          <a href="artigo-cfl-campeche.html">Conhecer o lançamento</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20detalhes%20do%20lançamento%20Campeche" target="_blank">Receber detalhes</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">Análise</span>
-          <h3>Mercado imobiliário: panorama e o que observar</h3>
-          <p>Tendências de valorização, preços médios e dicas para comprar com segurança e visão de longo prazo.</p>
-          <a href="artigo-floripa-mercado-imobiliario.html">Ler análise completa</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20tenho%20interesse%20em%20investir" target="_blank">Falar sobre investir</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category-tag">Beira-Mar</span>
-          <h3>Marina e o impacto nos preços da orla</h3>
-          <p>Como a infraestrutura nova está valorizando imóveis na Beira-Mar Norte e quais oportunidades surgem.</p>
-          <a href="artigo-marina-mercadoimobiliario.html">Ler análise</a>
-          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20na%20Beira-Mar" target="_blank">Ver imóveis na região</a>
-        </article>
+      <div class="carousel-wrapper">
+        <button class="carousel-nav carousel-prev" id="tendenciasPrev" aria-label="Anterior">&lsaquo;</button>
+        <div class="carousel-container">
+          <div class="carousel-track" id="tendenciasTrack">
+            <article class="article-card">
+              <span class="category-tag">Alto Padrão</span>
+              <h3>O Novo Luxo é Viver: bem-estar e imóveis premium</h3>
+              <p>Por que Florianópolis se tornou referência nacional em imóveis que unem natureza, saúde e qualidade de vida.</p>
+              <a href="artigo-novo-wellness-imoveis-alto-padrao-luxo-floripa.html">Ler artigo</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20saber%20mais%20sobre%20imóveis%20wellness" target="_blank">Falar comigo</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Investimento</span>
+              <h3>Airbnb: rentabilidade com locação por temporada</h3>
+              <p>Onde investir, quais bairros têm maior retorno e como aproveitar a demanda turística da região.</p>
+              <a href="artigo-airbnb.html">Ler dicas</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20interesse%20em%20Airbnb" target="_blank">Falar sobre investimento</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Lançamentos</span>
+              <h3>La Mare: alto padrão no Campeche pela CFL</h3>
+              <p>Empreendimento exclusivo com vista para o mar, arquitetura contemporânea e estrutura completa de lazer.</p>
+              <a href="artigo-cfl-campeche.html">Conhecer o lançamento</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20detalhes%20do%20lançamento%20Campeche" target="_blank">Receber detalhes</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Análise</span>
+              <h3>Mercado imobiliário: panorama e o que observar</h3>
+              <p>Tendências de valorização, preços médios e dicas para comprar com segurança e visão de longo prazo.</p>
+              <a href="artigo-floripa-mercado-imobiliario.html">Ler análise completa</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20tenho%20interesse%20em%20investir" target="_blank">Falar sobre investir</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Infraestrutura</span>
+              <h3>Marina na Beira-Mar Norte: transformação da orla</h3>
+              <p>Como a nova marina e as obras de mobilidade estão redefinindo valores e atraindo compradores.</p>
+              <a href="artigo-marina-infra.html">Ler análise</a>
+              <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20quero%20saber%20sobre%20imóveis%20na%20Beira-Mar" target="_blank">Falar sobre Beira-Mar</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Investimento</span>
+              <h3>Investir em Florianópolis: o que diz a Forbes</h3>
+              <p>Por que a Ilha se destaca em rentabilidade e qualidade de vida segundo publicação nacional.</p>
+              <a href="artigo-forbes-investir-em-florianopolis-rentabilidade-e-qualidade-de-vida.html">Ler artigo</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Investimento</span>
+              <h3>Praia de Palmas: morar e investir no litoral</h3>
+              <p>Calma, infraestrutura completa e imóveis com excelente custo-benefício em Governador Celso Ramos.</p>
+              <a href="artigo-investir-praia-de-palmas-governador-celso-ramos.html">Ler artigo</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Análise</span>
+              <h3>Universitários e o mercado imobiliário em Floripa</h3>
+              <p>Como a proximidade com a UFSC impulsiona a procura por imóveis e cria oportunidades de investimento.</p>
+              <a href="artigo-bairros-universitarios-e-%20mercado-imobiliario-floripa.html">Ler análise</a>
+            </article>
+            <article class="article-card">
+              <span class="category-tag">Tendência</span>
+              <h3>A casa como refúgio: nova realidade nacional</h3>
+              <p>Como mudanças de comportamento valorizaram imóveis com espaço, conforto e natureza.</p>
+              <a href="artigo-revolucao-mercado-imobiliario-nacional-casa%20-se-torna-refugio.html">Ler artigo</a>
+            </article>
+          </div>
+        </div>
+        <button class="carousel-nav carousel-next" id="tendenciasNext" aria-label="Próximo">&rsaquo;</button>
       </div>
 
       <h2 class="section-title">Imóveis em Destaque</h2>
+      <div class="carousel-wrapper">
+        <button class="carousel-nav carousel-prev" id="imoveisPrev" aria-label="Anterior">&lsaquo;</button>
+        <div class="carousel-container">
+          <div class="carousel-track" id="imoveisTrack">
+            <article class="article-card">
+              <h3>Ratones — Casa em área ampla, v449</h3>
+              <p>4 quartos, 3 vagas, 355m² de área construída. Norte da Ilha. R$ 1.450.000.</p>
+              <a href="apartamento-venda-ratones-v449.html">Ver detalhes</a>
+            </article>
+            <article class="article-card">
+              <h3>Balneário do Estreito — Duplex v448</h3>
+              <p>3 quartos, sacada com churrasqueira, piscina e academia. R$ 1.950.000.</p>
+              <a href="apartamento.duplex-venda-estreito-v448.html">Ver detalhes</a>
+            </article>
+            <article class="article-card">
+              <h3>Agronômica — 2 quartos, v439</h3>
+              <p>1 suíte, vaga, excelente localização. R$ 790.000.</p>
+              <a href="apto_agronomicaV439.html">Ver detalhes</a>
+            </article>
+            <article class="article-card">
+              <h3>Campinas — Apartamento v416</h3>
+              <p>Qualidade de vida no coração de São José. Confira valores e condições.</p>
+              <a href="apto_campinasV416.html">Ver detalhes</a>
+            </article>
+            <article class="article-card">
+              <h3>Kobrasol — 3 quartos, v440</h3>
+              <p>Suíte, comodidades completas, no bairro mais procurado. R$ 940.000.</p>
+              <a href="apto_testeV440.html">Ver detalhes</a>
+            </article>
+            <article class="article-card">
+              <h3>Trindade — Cobertura próximo à UFSC</h3>
+              <p>Imóvel diferenciado em região de valorização. Conheça os detalhes.</p>
+              <a href="artigo-venda-imoveis-cobertura-trindade.html">Ver detalhes</a>
+            </article>
+          </div>
+        </div>
+        <button class="carousel-nav carousel-next" id="imoveisNext" aria-label="Próximo">&rsaquo;</button>
+      </div>
+
+      <h2 class="section-title">Conheça minha visão</h2>
       <div class="articles-grid">
-        <article class="article-card">
-          <h3>Beira-Mar Norte — Solar de Kastellorizon, 3 quartos</h3>
-          <p>110m², posição solar privilegiada, próximo à Marina. R$ 1.200.000.</p>
-          <a href="v460-apartamento-venda-3dormitorios-beira-mar-norte+marina+110m2+vaga+florianopolis.html">Ver detalhes</a>
-        </article>
-        <article class="article-card">
-          <h3>Centro — Apartamento exclusivo, 212m²</h3>
-          <p>Alto padrão, reforma recente, 2 vagas de garagem. R$ 2.650.000.</p>
-          <a href="apartamento-venda-centro-v447.html">Ver detalhes</a>
-        </article>
-        <article class="article-card">
-          <h3>Balneário do Estreito — Duplex cobertura, 220m²</h3>
-          <p>3 quartos, sacada com churrasqueira, piscina e infraestrutura completa. R$ 1.950.000.</p>
-          <a href="v448-apartamento-duplex-cobertura-220m2-3dormitorios-sacada+churrasqueira+vista+academia.html">Ver detalhes</a>
-        </article>
-        <article class="article-card">
-          <h3>Palmas — Governador Celso Ramos, 3 quartos</h3>
-          <p>A 350m da praia, totalmente mobiliado, lazer completo. R$ 1.270.000.</p>
-          <a href="v456-apartamento-venda-palmas-sacada-praia-celso-ramos+3dormitorios+suite.html">Ver detalhes</a>
+        <article class="article-card featured">
+          <span class="category-tag">Sobre mim</span>
+          <h3>Minha trajetória e visão do mercado imobiliário</h3>
+          <p>Como vejo a Grande Florianópolis, o que mudou e o que realmente importa na escolha de um lar. Página exclusiva com minha história e propósito.</p>
+          <a href="blog-visao-corretora.html">Ler minha visão completa</a>
+          <a class="cta-link" href="https://wa.me/5548999600601?text=Olá%20Flavia,%20gostaria%20de%20conversar" target="_blank">Conversar comigo</a>
         </article>
       </div>
     </main>
@@ -368,6 +482,7 @@
   </div>
 
   <script>
+    // Menu
     (function () {
       const btn = document.getElementById('menu-toggle');
       const menu = document.getElementById('menu');
@@ -384,6 +499,35 @@
         if (e.key === 'Escape') closeMenu();
       });
     })();
+
+    // Carrossel com setas
+    function initCarousel(trackId, prevId, nextId) {
+      const track = document.getElementById(trackId);
+      const prev = document.getElementById(prevId);
+      const next = document.getElementById(nextId);
+      if (!track || !prev || !next) return;
+
+      let scrollPosition = 0;
+      const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 20 : 320;
+
+      prev.addEventListener('click', () => {
+        scrollPosition = Math.max(scrollPosition - cardWidth, 0);
+        track.style.transform = `translateX(-${scrollPosition}px)`;
+      });
+
+      next.addEventListener('click', () => {
+        const maxScroll = track.scrollWidth - track.parentElement.clientWidth;
+        scrollPosition = Math.min(scrollPosition + cardWidth, maxScroll);
+        track.style.transform = `translateX(-${scrollPosition}px)`;
+      });
+    }
+
+    // Inicializa todos os carrosséis
+    document.addEventListener('DOMContentLoaded', () => {
+      initCarousel('bairrosTrack', 'bairrosPrev', 'bairrosNext');
+      initCarousel('tendenciasTrack', 'tendenciasPrev', 'tendenciasNext');
+      initCarousel('imoveisTrack', 'imoveisPrev', 'imoveisNext');
+    });
   </script>
 </body>
 </html>
