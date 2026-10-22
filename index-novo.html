@@ -323,6 +323,7 @@ function limparFiltros() {
   document.querySelectorAll('.btn-favorito').forEach(paintFavorito);
 })();
 </script>
+         
 <!-- OS IMÓVEIS EM DESTAQUE AQUI -->
 <div class="properties-grid">
 <article class="property-card" data-bairro="Centro" data-cidade="Florianópolis" data-codigo="v491" data-negocio="venda" data-preco="9500000" data-quartos="4" data-tipo="Apartamento" id="card-v491">
@@ -1632,6 +1633,7 @@ function limparFiltros() {
     const precoTxt = item.precoTexto || ('R$ ' + Number(preco).toLocaleString('pt-BR'));
     const img = item.imagem || 'img/placeholder.jpg';
     const url = item.url || '#';
+           const LOGO = 'https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:400,h:300,cg:true,m';
     const codigo = item.codigo || '';
     const titulo = item.titulo || codigo;
     const destaque = item.destaque || '';
