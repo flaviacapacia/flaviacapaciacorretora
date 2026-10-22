@@ -664,7 +664,10 @@ button.btn-favorito.ativo svg path {
   font-weight: 700;
   margin-bottom: 3px;
 }
-.avaliacao-meta { font-size: 13px; color: #888; }
+.avaliacao-meta {
+  font-size: 13px;
+  color: #888;
+}
 .avaliacoes-arrow {
   position: absolute;
   right: -22px;
@@ -682,9 +685,14 @@ button.btn-favorito.ativo svg path {
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
-.avaliacoes-arrow:hover { background: var(--bronze); }
-.avaliacoes-arrow:hover svg path { stroke: #fff; }
+.avaliacoes-arrow:hover {
+  background: var(--bronze);
+}
+.avaliacoes-arrow:hover svg path {
+  stroke: #fff;
+}
 .avaliacoes-ver-todas {
   text-align: center;
   margin-top: 36px;
@@ -698,6 +706,29 @@ button.btn-favorito.ativo svg path {
 .avaliacoes-ver-todas a:hover {
   color: var(--dourado);
   text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .avaliacao-card {
+    flex: 0 0 calc(50% - 12px);
+  }
+  .avaliacoes-arrow {
+    right: -12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .avaliacao-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+  .avaliacoes-arrow {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 28px auto 0;
+  }
 }
 
 /* ========== BLOG ========== */
