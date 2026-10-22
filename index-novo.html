@@ -41,7 +41,23 @@
   <meta itemprop="name" content="Flavia Capacia Corretora | Imóveis em Florianópolis" />
   <meta itemprop="description" content="Imóveis de alto padrão em Florianópolis, São José, Palhoça e Biguaçu. Apartamentos, casas e coberturas com a experiência de Flavia Capacia." />
   <meta itemprop="image" content="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" />
-
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1416451792495001');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1416451792495001&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
@@ -52,11 +68,11 @@
   <div class="top-bar">
     <div class="top-bar-content">
       <div class="top-bar-contact">
-        <a href="mailto: flaviacapacia@creci.gov.com" class="icon-link" aria-label="E-mail">
+        <a href="mailto: flaviacapacia@creci.org.com" class="icon-link" aria-label="E-mail">
           <span class="icon-bg">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#8B8B97"/><path d="M4 7.5V16a1.5 1.5 0 001.5 1.5h13A1.5 1.5 0 0020 16V7.5l-8 5.5-8-5.5z" fill="#fff"/><path d="M20 6a1.5 1.5 0 00-1.5-1.5h-13A1.5 1.5 0 004 6l8 5.5L20 6z" fill="#fff"/></svg>
           </span>
-         flaviacapacia@creci.gov.com
+         flaviacapacia@creci.org.com
         </a>
         <a href="tel:+5548999600601" class="icon-link" aria-label="Telefone">
           <span class="icon-bg">
@@ -95,156 +111,253 @@
   <section class="hero-image-section">
     <div class="hero-image-content">
       <h1>Encontre o seu imóvel na Grande Florianópolis</h1>
-      <div class="hero-tabs">
-        <button class="hero-tab active">Venda</button>
-        <button class="hero-tab">Lançamentos</button>
-        <button class="hero-tab">Aluguel</button>
-      </div>
-   <div class="hero-search-advanced">
-  <input type="text" id="filtro-cidade-busca" class="search-input-main" placeholder="Digite a cidade, bairro ou condomínio...">
-  <div class="search-filters">
-    <select id="filtro-tipo">
-      <option value="">Tipo de Imóvel</option>
-      <option value="Apartamento">Apartamento</option>
-      <option value="Casa">Casa</option>
-      <option value="Cobertura">Cobertura</option>
-      <option value="Studio">Studio</option>
-      <option value="Terreno">Terreno</option>
-    </select>
-    <select id="filtro-quartos">
-      <option value="">Dormitórios(s)</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4+</option>
-    </select>
-    <input type="text" id="filtro-codigo" placeholder="Digite o código...">
-  </div>
-  <div class="search-actions">
-    <button class="search-btn-main" onclick="aplicarFiltros()">🔍 Buscar</button>
-    <button class="filter-btn" onclick="limparFiltros()">Limpar</button>
-  </div>
-</div>
 
+      <div class="hero-tabs" id="heroTabs">
+        <button type="button" class="hero-tab active" data-negocio="venda">Venda</button>
+        <button type="button" class="hero-tab" data-negocio="lancamento">Lançamentos</button>
+        <button type="button" class="hero-tab" data-negocio="locacao">Aluguel</button>
+      </div>
+
+      <div class="hero-search-advanced">
+        <input type="text" id="filtro-busca" class="search-input-main"
+          placeholder="Cidade, bairro, condomínio ou código...">
+
+        <div class="search-filters">
+          <select id="filtro-cidade">
+            <option value="">Todas as cidades</option>
+            <option value="Florianópolis">Florianópolis</option>
+            <option value="São José">São José</option>
+            <option value="Palhoça">Palhoça</option>
+            <option value="Biguaçu">Biguaçu</option>
+            <option value="Governador Celso Ramos">Governador Celso Ramos</option>
+            <option value="Garopaba">Garopaba</option>
+            <option value="Imbituba">Imbituba</option>
+          </select>
+
+          <select id="filtro-bairro">
+            <option value="">Todos os bairros</option>
+            <optgroup label="Florianópolis">
+              <option value="Agronômica">Agronômica</option>
+              <option value="Centro">Centro</option>
+              <option value="Beira Mar Norte">Beira Mar Norte</option>
+              <option value="Trindade">Trindade</option>
+              <option value="Saco dos Limões">Saco dos Limões</option>
+              <option value="Santa Mônica">Santa Mônica</option>
+              <option value="Santo Antônio de Lisboa">Santo Antônio de Lisboa</option>
+              <option value="Jurerê">Jurerê</option>
+              <option value="Ingleses">Ingleses</option>
+              <option value="Lagoa da Conceição">Lagoa da Conceição</option>
+            </optgroup>
+            <optgroup label="São José">
+              <option value="Kobrasol">Kobrasol</option>
+              <option value="Campinas">Campinas</option>
+              <option value="Forquilhas">Forquilhas</option>
+              <option value="Sertão do Imaruím">Sertão do Imaruím</option>
+              <option value="Sertão do Maruim">Sertão do Maruim</option>
+              <option value="Centro Histórico">Centro Histórico</option>
+            </optgroup>
+            <optgroup label="Palhoça">
+              <option value="Pedra Branca">Pedra Branca</option>
+              <option value="Bela Vista">Bela Vista</option>
+              <option value="Praia do Sonho">Praia do Sonho</option>
+            </optgroup>
+            <optgroup label="Litoral">
+              <option value="Praia de Palmas">Praia de Palmas</option>
+              <option value="Praia da Vila">Praia da Vila</option>
+            </optgroup>
+          </select>
+
+          <select id="filtro-tipo">
+            <option value="">Tipo de imóvel</option>
+            <option value="Apartamento">Apartamento</option>
+            <option value="Casa">Casa</option>
+            <option value="Cobertura">Cobertura</option>
+            <option value="Studio">Studio</option>
+            <option value="Terreno">Terreno</option>
+            <option value="Sala Comercial">Sala Comercial</option>
+            <option value="Sobrado">Sobrado</option>
+          </select>
+
+          <select id="filtro-quartos">
+            <option value="">Dormitórios</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4+</option>
+          </select>
+
+          <input type="number" id="filtro-min" placeholder="Valor mín. R$">
+          <input type="number" id="filtro-max" placeholder="Valor máx. R$">
+          <input type="text" id="filtro-codigo" placeholder="Código (ex: v496)">
+        </div>
+
+        <div class="search-actions">
+          <button type="button" class="search-btn-main" onclick="aplicarFiltros()">Buscar</button>
+          <button type="button" class="filter-btn" onclick="limparFiltros()">Limpar</button>
+        </div>
+      </div>
+    </div>
   </section>
+
   <div class="breadcrumb-bar">
     <div class="breadcrumb-content">
-      <a href="index.html">Início</a> > <span>Imóveis à venda</span>
+      <a href="index.html">Início</a> &gt; <span>Imóveis à venda</span>
     </div>
   </div>
+
   <main class="main-content">
     <div class="section-header">
       <h2 class="section-title">Imóveis em Destaque</h2>
       <p class="section-subtitle">Confira nossa seleção especial de imóveis de alto padrão</p>
-    </div><div class="filter-section">
-  <div class="filter-grid">
-    <div class="filter-item">
-      <label>Cidade</label>
-      <select id="filtro-cidade">
-        <option value="">Todas</option>
-        <option value="Florianópolis">Florianópolis</option>
-        <option value="São José">São José</option>
-        <option value="Palhoça">Palhoça</option>
-      </select>
+      <p id="filtro-status" style="margin-top:10px;font-size:14px;color:#666;"></p>
     </div>
-    <div class="filter-item">
-      <label>Bairro</label>
-      <select id="filtro-bairro">
-        <option value="">Todos</option>
-        <option value="Agronômica">Agronômica</option>
-        <option value="Centro">Centro</option>
-        <option value="Kobrasol">Kobrasol</option>
-        <option value="Trindade">Trindade</option>
-      </select>
-    </div>
-    <div class="filter-item">
-      <label>Quartos</label>
-      <select id="filtro-quartos">
-        <option value="">Todos</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4+</option>
-      </select>
-    </div>
-    <div class="filter-item">
-      <label>Valor Mínimo</label>
-      <input type="number" id="filtro-min" placeholder="R$ 0">
-    </div>
-    <div class="filter-item">
-      <label>Valor Máximo</label>
-      <input type="number" id="filtro-max" placeholder="R$ 0">
-    </div>
-    <div class="filter-item">
-  <label>Código</label>
-  <input type="text" id="filtro-codigo" placeholder="Digite o código...">
-</div>
 
-    <div class="filter-item">
-      <button class="filter-btn" onclick="aplicarFiltros()">Filtrar</button>
-    </div>
-  </div>
-</div>
+
 <script>
-function aplicarFiltros() {
-  const cidade = document.getElementById('filtro-cidade')?.value || "";
-  const bairro = document.getElementById('filtro-bairro')?.value || "";
-  const quartos = document.getElementById('filtro-quartos')?.value || "";
-  const min = parseInt(document.getElementById('filtro-min')?.value) || 0;
-  const max = parseInt(document.getElementById('filtro-max')?.value) || Infinity;
-  const codigo = document.getElementById('filtro-codigo')?.value.trim() || "";
-  const busca = document.getElementById('filtro-cidade-busca')?.value.toLowerCase() || "";
+<script>
+(function () {
+  let negocioAtivo = 'venda'; // venda | lancamento | locacao
 
-  const cards = document.querySelectorAll('.property-card');
-
-  cards.forEach(card => {
-    const cidadeCard = (card.getAttribute('data-cidade') || "").toLowerCase();
-    const bairroCard = (card.getAttribute('data-bairro') || "").toLowerCase();
-    const quartosCard = parseInt(card.getAttribute('data-quartos')) || 0;
-    const precoCard = parseInt(card.getAttribute('data-preco')) || 0;
-    const codigoCard = card.getAttribute('data-codigo') || "";
-
-    let visivel = true;
-
-    // filtros principais
-    if (cidade && cidadeCard !== cidade.toLowerCase()) visivel = false;
-    if (bairro && bairroCard !== bairro.toLowerCase()) visivel = false;
-    if (quartos && (quartosCard != quartos && !(quartos === "4" && quartosCard >= 4))) visivel = false;
-    if (precoCard < min || precoCard > max) visivel = false;
-    if (codigo && codigoCard.toLowerCase() !== codigo.toLowerCase()) visivel = false;
-
-    // filtro de busca livre (cidade/bairro)
-    if (busca && !(cidadeCard.includes(busca) || bairroCard.includes(busca))) visivel = false;
-
-    card.style.display = visivel ? 'block' : 'none';
+  // Abas do hero
+  document.querySelectorAll('#heroTabs .hero-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#heroTabs .hero-tab').forEach(function (b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+      negocioAtivo = btn.getAttribute('data-negocio') || 'venda';
+      aplicarFiltros();
+    });
   });
-}
 
-function limparFiltros() {
-  // limpa todos os campos
-  if (document.getElementById('filtro-cidade')) document.getElementById('filtro-cidade').value = "";
-  if (document.getElementById('filtro-bairro')) document.getElementById('filtro-bairro').value = "";
-  if (document.getElementById('filtro-quartos')) document.getElementById('filtro-quartos').value = "";
-  if (document.getElementById('filtro-min')) document.getElementById('filtro-min').value = "";
-  if (document.getElementById('filtro-max')) document.getElementById('filtro-max').value = "";
-  if (document.getElementById('filtro-codigo')) document.getElementById('filtro-codigo').value = "";
-  if (document.getElementById('filtro-cidade-busca')) document.getElementById('filtro-cidade-busca').value = "";
+  window.aplicarFiltros = function () {
+    var cidade = (document.getElementById('filtro-cidade') && document.getElementById('filtro-cidade').value || '').toLowerCase();
+    var bairro = (document.getElementById('filtro-bairro') && document.getElementById('filtro-bairro').value || '').toLowerCase();
+    var tipo = (document.getElementById('filtro-tipo') && document.getElementById('filtro-tipo').value || '').toLowerCase();
+    var quartos = (document.getElementById('filtro-quartos') && document.getElementById('filtro-quartos').value) || '';
+    var min = parseInt(document.getElementById('filtro-min') && document.getElementById('filtro-min').value, 10) || 0;
+    var max = parseInt(document.getElementById('filtro-max') && document.getElementById('filtro-max').value, 10) || Infinity;
+    var codigo = (document.getElementById('filtro-codigo') && document.getElementById('filtro-codigo').value || '').trim().toLowerCase();
+    var busca = (document.getElementById('filtro-busca') && document.getElementById('filtro-busca').value || '').toLowerCase().trim();
 
-  // mostra todos os cards novamente
-  const cards = document.querySelectorAll('.property-card');
-  cards.forEach(card => card.style.display = 'block');
-}
+    var cards = document.querySelectorAll('.property-card');
+    var visiveis = 0;
 
-function compartilhar(link) {
-  navigator.clipboard.writeText(link);
-  alert("Link copiado! Você pode enviar para alguém no WhatsApp ou redes sociais.");
-}
+    cards.forEach(function (card) {
+      var cidadeCard = (card.getAttribute('data-cidade') || '').toLowerCase();
+      var bairroCard = (card.getAttribute('data-bairro') || '').toLowerCase();
+      var tipoCard = (card.getAttribute('data-tipo') || card.querySelector('.property-type') && card.querySelector('.property-type').textContent || '').toLowerCase();
+      var negocioCard = (card.getAttribute('data-negocio') || 'venda').toLowerCase();
+      var quartosCard = parseInt(card.getAttribute('data-quartos'), 10) || 0;
+      var precoCard = parseInt(card.getAttribute('data-preco'), 10) || 0;
+      var codigoCard = (card.getAttribute('data-codigo') || '').toLowerCase();
+      var tituloCard = (card.querySelector('.property-title') && card.querySelector('.property-title').textContent || '').toLowerCase();
 
-function toggleFavorito(btn) {
-  btn.classList.toggle("favorito");
-}
+      var ok = true;
+
+      // Aba: venda / lançamento / aluguel
+      if (negocioAtivo === 'locacao' && negocioCard.indexOf('loca') === -1 && negocioCard !== 'aluguel') ok = false;
+      if (negocioAtivo === 'lancamento' && negocioCard.indexOf('lanc') === -1) ok = false;
+      if (negocioAtivo === 'venda' && (negocioCard.indexOf('loca') !== -1 || negocioCard === 'aluguel')) ok = false;
+
+      if (cidade && cidadeCard !== cidade) ok = false;
+      if (bairro && bairroCard !== bairro) ok = false;
+      if (tipo && tipoCard.indexOf(tipo) === -1) ok = false;
+
+      if (quartos) {
+        if (quartos === '4') {
+          if (quartosCard < 4) ok = false;
+        } else if (String(quartosCard) !== String(quartos)) ok = false;
+      }
+
+      if (precoCard < min || (max !== Infinity && precoCard > max)) ok = false;
+      if (codigo && codigoCard !== codigo) ok = false;
+
+      if (busca) {
+        var hay = cidadeCard + ' ' + bairroCard + ' ' + tituloCard + ' ' + codigoCard + ' ' + tipoCard;
+        if (hay.indexOf(busca) === -1) ok = false;
+      }
+
+      card.style.display = ok ? '' : 'none';
+      if (ok) visiveis++;
+    });
+
+    var status = document.getElementById('filtro-status');
+    if (status) {
+      status.textContent = visiveis + ' imóvel(is) encontrado(s)';
+    }
+  };
+
+  window.limparFiltros = function () {
+    ['filtro-cidade', 'filtro-bairro', 'filtro-tipo', 'filtro-quartos', 'filtro-min', 'filtro-max', 'filtro-codigo', 'filtro-busca'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    negocioAtivo = 'venda';
+    document.querySelectorAll('#heroTabs .hero-tab').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-negocio') === 'venda');
+    });
+    document.querySelectorAll('.property-card').forEach(function (c) {
+      c.style.display = '';
+    });
+    var status = document.getElementById('filtro-status');
+    if (status) status.textContent = '';
+  };
+
+  // Favoritos + compartilhar (igual ao que você já tinha)
+  function getFavoritos() {
+    try { return JSON.parse(localStorage.getItem('flavia_favoritos') || '[]'); }
+    catch (e) { return []; }
+  }
+  function setFavoritos(list) {
+    localStorage.setItem('flavia_favoritos', JSON.stringify(list));
+  }
+  function paintFavorito(btn) {
+    var codigo = btn.getAttribute('data-codigo');
+    var ativo = getFavoritos().indexOf(String(codigo)) !== -1;
+    btn.classList.toggle('ativo', ativo);
+    var path = btn.querySelector('path');
+    if (path) path.setAttribute('fill', ativo ? 'currentColor' : 'none');
+  }
+  window.toggleFavorito = function (btn) {
+    if (!btn) return;
+    var codigo = btn.getAttribute('data-codigo');
+    if (!codigo) return;
+    var list = getFavoritos();
+    if (list.indexOf(codigo) !== -1) list = list.filter(function (c) { return c !== codigo; });
+    else list.push(codigo);
+    setFavoritos(list);
+    paintFavorito(btn);
+  };
+  window.compartilhar = async function (url, title) {
+    var shareUrl = url || window.location.href;
+    var shareTitle = title || document.title;
+    try {
+      if (navigator.share) { await navigator.share({ title: shareTitle, text: shareTitle, url: shareUrl }); return; }
+    } catch (err) {
+      if (err && err.name === 'AbortError') return;
+    }
+    try {
+      if (navigator.clipboard) { await navigator.clipboard.writeText(shareUrl); alert('Link copiado: ' + shareUrl); return; }
+    } catch (e) {}
+    window.prompt('Copie o link do imóvel:', shareUrl);
+  };
+  document.addEventListener('click', function (e) {
+    var shareBtn = e.target.closest('.btn-compartilhar');
+    if (shareBtn) {
+      e.preventDefault();
+      compartilhar(shareBtn.getAttribute('data-share-url'), shareBtn.getAttribute('data-share-title'));
+      return;
+    }
+    var favBtn = e.target.closest('.btn-favorito');
+    if (favBtn) {
+      e.preventDefault();
+      toggleFavorito(favBtn);
+    }
+  });
+  document.querySelectorAll('.btn-favorito').forEach(paintFavorito);
+})();
 </script>
-
 
 
 
@@ -252,14 +365,352 @@ function toggleFavorito(btn) {
    <!-- OS IMÓVEIS EM DESTAQUE AQUI -->
 
     <div class="properties-grid">
-     <article id="card-v439" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Agronômica" 
-         data-quartos="2" 
-         data-preco="815000"
-         data-codigo="v439">
+<article id="card-v491" class="property-card" data-cidade="Florianópolis" data-bairro="Centro" data-quartos="4" data-preco="950000000" data-codigo="v491">
+  <span class="property-tag">Centro</span>
+  <img src="img/v491/FSC_01_Fachada A_EF2.jpg" class="property-image" alt="Apartamento Centro" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento à venda o com 220m2 4 suítes e elevador privativo no Centro de Florianópolis SC</h3>
+    <div class="property-location">Centro - Florianópolis/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>4</strong> Quartos</div>
+      <div class="feature-item"><strong>4</strong> Suites</div>
+      <div class="feature-item"><strong>5</strong> Banheiros</div>
+      <div class="feature-item"><strong>4</strong> Vagas</div>
+    </div>
+    <div class="property-price">9.500.000,00</div>
+    <div class="property-code">Codigo: v491</div>
+    <div class="property-actions">
+      <a href="v491-apartamento-a-venda-o-com-220m2-4-suites-e-elevador-privativo-no-centro-de-florianopolis-sc.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20Apartamento%20no%20Centro%20-%20C%C3%B3digo%3A%20v491" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v491-apartamento-a-venda-o-com-220m2-4-suites-e-elevador-privativo-no-centro-de-florianopolis-sc.html" data-share-title="Apartamento à venda o com 220m2 4 suítes e elevador privativo no Centro de Florianópolis SC" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v491" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article id="card-v486" class="property-card" data-cidade="Governador Celso Ramos" data-bairro="Palmas" data-quartos="3" data-preco="79000000" data-codigo="v486">
+  <span class="property-tag">Palmas</span>
+  <img src="img/v486/1-capa-apartamento-3-qts-palmas-floripa.jpeg" class="property-image" alt="Apartamento Palmas" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento à Venda com 3 dormitórios sendo 2 suítes à poucos metros da Praia em Palmas SC</h3>
+    <div class="property-location">Palmas - Governador Celso Ramos/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>3</strong> Quartos</div>
+      <div class="feature-item"><strong>2</strong> Suítes</div>
+      <div class="feature-item"><strong>1</strong> Vaga</div>
+    </div>
+    <div class="property-price">790.000,00</div>
+    <div class="property-code">Código: v486</div>
+    <div class="property-actions">
+      <a href="v486-apartamento-a-venda-com-3-dormitorios-sendo-2-suites-a-poucos-metros-da-praia-em-palmas-sc.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20Apartamento%20no%20Palmas%20-%20C%C3%B3digo%3A%20v486" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+     <button type="button" class="btn-icon btn-compartilhar" data-share-url="..." data-share-title="..." aria-label="Compartilhar" title="Compartilhar">
+  <svg ...>...</svg>
+</button>
+<button type="button" class="btn-icon btn-favorito" data-codigo="..." aria-label="Favoritar" title="Salvar nos favoritos">
+  <svg ...>...</svg>
+</button>
+    </div>
+  </div>
+</article>
+
+<article id="card-v484" class="property-card" data-cidade="Florianópolis SC" data-bairro="Trindade" data-quartos="2" data-preco="400000" data-codigo="v484">
+  <span class="property-tag">Trindade</span>
+  <img src="img/v484/v484-2.jpeg" class="property-image" alt="Apartamento Trindade" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Lançamento</div>
+    <h3 class="property-title">Apartamento, Cobertura, stúdio</h3>
+    <div class="property-location">Trindade - Florianópolis SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>2</strong> Quartos</div>
+      <div class="feature-item"><strong>0</strong> Suíte</div>
+      <div class="feature-item"><strong>0</strong> Vaga</div>
+    </div>
+    <div class="property-price">400.000</div>
+    <div class="property-code">Código: v484</div>
+   <div class="property-actions">
+  <a href="v484-lancamento-apartamentos-tipo-studio-com-suite-e-cobertura-na-trindade-em-florianopolis-sc.html" class="btn-details">Ver Detalhes</a>
+  <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20Apartamento%20no%20Trindade%20-%20C%C3%B3digo%3A%20v484" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+  <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v484-lancamento-apartamentos-tipo-studio-com-suite-e-cobertura-na-trindade-em-florianopolis-sc.html" data-share-title="Apartamento, Cobertura, stúdio" aria-label="Compartilhar" title="Compartilhar">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+  </button>
+  <button type="button" class="btn-icon btn-favorito" data-codigo="v484" aria-label="Favoritar" title="Salvar nos favoritos">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+  </button>
+</div>
+  </div>
+</article>
+
+<!-- v494 → R$ 3.200.000,00 -->
+<article id="card-v494" class="property-card" data-cidade="Florianópolis" data-bairro="Centro" data-quartos="2" data-preco="3200000" data-codigo="v494">
+  <span class="property-tag">Centro</span>
+  <img src="img/v494/Cobertura-coutinho.2.jpg" class="property-image" alt="Cobertura Dimas D'Yard" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento / Cobertura</div>
+    <h3 class="property-title">Cobertura com 2 Dormitórios, Jacuzzi e Churrasqueira no Centro de Florianópolis</h3>
+    <div class="property-location">Centro - Florianópolis/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>2</strong> Quartos</div>
+      <div class="feature-item"><strong>2</strong> Suítes</div>
+      <div class="feature-item"><strong>3</strong> Banheiros</div>
+      <div class="feature-item"><strong>2</strong> Vagas</div>
+    </div>
+    <div class="property-price">R$ 3.200.000,00</div>
+    <div class="property-code">Código: v494</div>
+    <div class="property-actions">
+      <a href="v494-apartamento-dimas-d-yard-3-suites-no-centro-florianopolis.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20C%C3%B3digo%20v494" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v494-apartamento-dimas-d-yard-3-suites-no-centro-florianopolis.html" data-share-title="Cobertura Dimas D'Yard - Centro Floripa" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v494" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- v480 → R$ 1.065.000,00 -->
+<article id="card-v480" class="property-card" data-cidade="Palhoça" data-bairro="Pedra Branca" data-quartos="3" data-preco="1065000" data-codigo="v480">
+  <span class="property-tag">Pedra Branca</span>
+  <img src="img/v480/patio-das-artes-fachada.jpeg" class="property-image" alt="Apartamento Pátio das Artes" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento com 3 Dormitórios e Suíte no Pátio das Artes - Pedra Branca/Palhoça</h3>
+    <div class="property-location">Pedra Branca - Palhoça/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>3</strong> Quartos</div>
+      <div class="feature-item"><strong>1</strong> Suíte</div>
+      <div class="feature-item"><strong>2</strong> Banheiros</div>
+      <div class="feature-item"><strong>1</strong> Vaga</div>
+    </div>
+    <div class="property-price">R$ 1.065.000,00</div>
+    <div class="property-code">Código: v480</div>
+    <div class="property-actions">
+      <a href="v480-apartamento-a-venda-com-03-dormitorios-e-suite-no-patio-das-artes-na-pedra-branca-em-palhoca.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20C%C3%B3digo%20v480" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v480-apartamento-a-venda-com-03-dormitorios-e-suite-no-patio-das-artes-na-pedra-branca-em-palhoca.html" data-share-title="Apartamento Pátio das Artes - Pedra Branca" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v480" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- v481 → R$ 1.054.000,00 -->
+<article id="card-v481" class="property-card" data-cidade="Palhoça" data-bairro="Pedra Branca" data-quartos="3" data-preco="1054000" data-codigo="v481">
+  <span class="property-tag">Pedra Branca</span>
+  <img src="img/v481/v481-1.jpeg" class="property-image" alt="Apartamento Dubai Residence" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento com 3 Dormitórios no Dubai Residence - Pedra Branca/Palhoça</h3>
+    <div class="property-location">Pedra Branca - Palhoça/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>3</strong> Quartos</div>
+      <div class="feature-item"><strong>1</strong> Suíte</div>
+      <div class="feature-item"><strong>2</strong> Banheiros</div>
+      <div class="feature-item"><strong>1</strong> Vaga</div>
+    </div>
+    <div class="property-price">R$ 1.054.000,00</div>
+    <div class="property-code">Código: v481</div>
+    <div class="property-actions">
+      <a href="v481-apartamento-a-venda-com-03-dormitorios-no-dubai-resisence-na-pedra-branca-em-palhoca-sc.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20C%C3%B3digo%20v481" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v481-apartamento-a-venda-com-03-dormitorios-no-dubai-resisence-na-pedra-branca-em-palhoca-sc.html" data-share-title="Apartamento Dubai Residence - Pedra Branca" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v481" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- v492 → R$ 940.000,00 -->
+<article id="card-v492" class="property-card" data-cidade="Imbituba" data-bairro="Praia da Vila" data-quartos="3" data-preco="940000" data-codigo="v492">
+  <span class="property-tag">Praia</span>
+  <img src="img/v492/capa-apartamento-imbituba-permuta (2).jpeg" class="property-image" alt="Apartamento Praia da Vila" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento com 3 Dormitórios e Vista Mar - Praia da Vila/Imbituba</h3>
+    <div class="property-location">Praia da Vila - Imbituba/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>3</strong> Quartos</div>
+      <div class="feature-item"><strong>1</strong> Suíte</div>
+      <div class="feature-item"><strong>2</strong> Banheiros</div>
+      <div class="feature-item"><strong>1</strong> Vaga</div>
+    </div>
+    <div class="property-price">R$ 940.000,00</div>
+    <div class="property-code">Código: v492</div>
+    <div class="property-actions">
+      <a href="v492-apartamento-a-venda-com-3-dormitorios-em-imbituba-sc.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20C%C3%B3digo%20v492" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v492-apartamento-a-venda-com-3-dormitorios-em-imbituba-sc.html" data-share-title="Apartamento Praia da Vila - Imbituba" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v492" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- v489 → R$ 930.000,00 -->
+<article id="card-v489" class="property-card" data-cidade="São José" data-bairro="Sertão do Imaruím" data-quartos="3" data-preco="930000" data-codigo="v489">
+  <span class="property-tag">Casa</span>
+  <img src="img/v489/capa-casa-sertao-do-imaruim.jpeg" class="property-image" alt="Casa com Piscina Sertão do Imaruím" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Casa</div>
+    <h3 class="property-title">Casa com Piscina no Sertão do Imaruím - São José/SC</h3>
+    <div class="property-location">Sertão do Imaruím - São José/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>3</strong> Quartos</div>
+      <div class="feature-item"><strong>1</strong> Suíte</div>
+      <div class="feature-item"><strong>3</strong> Banheiros</div>
+      <div class="feature-item"><strong>3</strong> Vagas</div>
+    </div>
+    <div class="property-price">R$ 930.000,00</div>
+    <div class="property-code">Código: v489</div>
+    <div class="property-actions">
+      <a href="v489-casa-venda-com-piscina-sertao-do-imaruim-sj-sc.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20C%C3%B3digo%20v489" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v489-casa-venda-com-piscina-sertao-do-imaruim-sj-sc.html" data-share-title="Casa com Piscina - Sertão do Imaruím" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v489" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- v493 → R$ 790.000,00 -->
+<article id="card-v493" class="property-card" data-cidade="São José" data-bairro="Campinas" data-quartos="3" data-preco="790000" data-codigo="v493">
+  <span class="property-tag">Campinas</span>
+  <img src="img/v493/capa-apartamento-venda-campinas-sj-3-quartos-parque-dos-principes.jpeg" class="property-image" alt="Apartamento Parque dos Príncipes" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento com 3 Dormitórios, 2 Suítes e Vista Privilegiada - Campinas/São José</h3>
+    <div class="property-location">Parque dos Príncipes - Campinas - São José/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>3</strong> Quartos</div>
+      <div class="feature-item"><strong>2</strong> Suítes</div>
+      <div class="feature-item"><strong>3</strong> Banheiros</div>
+      <div class="feature-item"><strong>1</strong> Vaga</div>
+    </div>
+    <div class="property-price">R$ 790.000,00</div>
+    <div class="property-code">Código: v493</div>
+    <div class="property-actions">
+      <a href="v493-apartamento-a-venda-com-3-dormitorios-em-campinas-sao-jose-sc.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20C%C3%B3digo%20v493" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v493-apartamento-a-venda-com-3-dormitorios-em-campinas-sao-jose-sc.html" data-share-title="Apartamento Parque dos Príncipes - Campinas" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v493" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- v479 → R$ 629.000,00 -->
+<article id="card-v479" class="property-card" data-cidade="São José" data-bairro="Campinas" data-quartos="2" data-preco="629000" data-codigo="v479">
+  <span class="property-tag">Campinas</span>
+  <img src="img/v479/v479-6.jpeg" class="property-image" alt="Apartamento Residencial Ilha de Murano" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento com 2 Dormitórios, Suíte e Sacada Fechada - Campinas/São José</h3>
+    <div class="property-location">Campinas - São José/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>2</strong> Quartos</div>
+      <div class="feature-item"><strong>1</strong> Suíte</div>
+      <div class="feature-item"><strong>2</strong> Banheiros</div>
+      <div class="feature-item"><strong>1</strong> Vaga</div>
+    </div>
+    <div class="property-price">R$ 629.000,00</div>
+    <div class="property-code">Código: v479</div>
+    <div class="property-actions">
+      <a href="v479-apartamento-a-venda-com-02-dormitorios-suite-e-sacada-no-campinas.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20C%C3%B3digo%20v479" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v479-apartamento-a-venda-com-02-dormitorios-suite-e-sacada-no-campinas.html" data-share-title="Apartamento Ilha de Murano - Campinas" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v479" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- v477 → R$ 560.000,00 -->
+<article id="card-v477" class="property-card" data-cidade="São José" data-bairro="Nova São José" data-quartos="2" data-preco="560000" data-codigo="v477">
+  <span class="property-tag">Casa</span>
+  <img src="img/v477/v477-1.jpeg" class="property-image" alt="Sobrado com 2 Suítes e Quintal" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Casa / Sobrado</div>
+    <h3 class="property-title">Sobrado com 2 Suítes e Quintal - Nova São José/SC</h3>
+    <div class="property-location">Nova São José - São José/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>2</strong> Quartos</div>
+      <div class="feature-item"><strong>2</strong> Suítes</div>
+      <div class="feature-item"><strong>2</strong> Banheiros</div>
+      <div class="feature-item"><strong>2</strong> Vagas</div>
+    </div>
+    <div class="property-price">R$ 560.000,00</div>
+    <div class="property-code">Código: v477</div>
+    <div class="property-actions">
+      <a href="v477-casa-tipo-sobrado-venda-com-02-suites-e-quintal-em-em-sao-jose.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20C%C3%B3digo%20v477" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v477-casa-tipo-sobrado-venda-com-02-suites-e-quintal-em-em-sao-jose.html" data-share-title="Sobrado 2 Suítes - Nova São José" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v477" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- v478 → R$ 540.000,00 -->
+<article id="card-v478" class="property-card" data-cidade="São José" data-bairro="Nova São José" data-quartos="4" data-preco="540000" data-codigo="v478">
+  <span class="property-tag">Casa</span>
+  <img src="img/v478/v478-1.jpeg" class="property-image" alt="Sobrado Nova São José" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Casa / Sobrado</div>
+    <h3 class="property-title">Sobrado com 2 Suítes, Quintal e Passagem Lateral - Nova São José/SC</h3>
+    <div class="property-location">Nova São José - São José/SC</div>
+    <div class="property-features">
+      <div class="feature-item"><strong>4</strong> Quartos</div>
+      <div class="feature-item"><strong>2</strong> Suítes</div>
+      <div class="feature-item"><strong>3</strong> Banheiros</div>
+      <div class="feature-item"><strong>2</strong> Vagas</div>
+    </div>
+    <div class="property-price">R$ 540.000,00</div>
+    <div class="property-code">Código: v478</div>
+    <div class="property-actions">
+      <a href="v478-casa-tipo-sobrado-a-venda-com-02-suites-e-quintal-e-passagem-lateral-em-sao-jose.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20C%C3%B3digo%20v478" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v478-casa-tipo-sobrado-a-venda-com-02-suites-e-quintal-e-passagem-lateral-em-sao-jose.html" data-share-title="Sobrado Nova São José" aria-label="Compartilhar" title="Compartilhar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+      </button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v478" aria-label="Favoritar" title="Salvar nos favoritos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</article>
+<article id="card-v439" class="property-card" data-cidade="Florianópolis" data-bairro="Agronômica" data-quartos="2" data-preco="815000" data-codigo="v439">
   <span class="property-tag">Destaque</span>
-  <img src="img/sala1.webp" class="property-image" alt="Apartamento Agronômica">
+  <img src="img/sala1.webp" class="property-image" alt="Apartamento Agronômica" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento na Agronômica</h3>
@@ -269,28 +720,20 @@ function toggleFavorito(btn) {
       <div class="feature-item"><strong>1</strong> Suíte</div>
       <div class="feature-item"><strong>1</strong> Vaga</div>
     </div>
-    <div class="property-price">R$ 815.000</div>
+    <div class="property-price">R$ 795.000</div>
     <div class="property-code">Código: v439</div>
     <div class="property-actions">
-      <a href="apartamento-venda-agronomica-v439.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20na%20Agronômica%20-%20Código:%20v439" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp">WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/apartamento-venda-agronomica-v439.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="v439-apartamento-a-venda-porteira-fechada-para-airbnb-na-agronomica.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20na%20Agron%C3%B4mica%20-%20C%C3%B3digo%3A%20v439" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v439-apartamento-a-venda-porteira-fechada-para-airbnb-na-agronomica.html" data-share-title="Apartamento na Agronômica" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v439" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
 
-      <!-- Os cards antigos permanecem acima. Inserir os 3 novos imóveis ao final da grid -->
-      <div class="properties-grid">
-     <article id="card-v472" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Agronômica" 
-         data-quartos="3" 
-         data-preco="2.995.000"
-         data-codigo="v472">
+<article id="card-v472" class="property-card" data-cidade="Florianópolis" data-bairro="Agronômica" data-quartos="3" data-preco="2995000" data-codigo="v472">
   <span class="property-tag">Destaque</span>
-  <img src="img/v472/anco1.jpeg" class="property-image" alt="Apartamento Agronômica">
+  <img src="img/v472/anco1.jpeg" class="property-image" alt="Apartamento Agronômica" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento na Agronômica</h3>
@@ -303,23 +746,17 @@ function toggleFavorito(btn) {
     <div class="property-price">R$ 2.995.000</div>
     <div class="property-code">Código: v472</div>
     <div class="property-actions">
-      <a href="v472-apartamento-3-quartos-agronomica-florianopolis-ancoradouro.html"class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20na%20Agronômica%20-%20Código:%20v472" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp">WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v472-apartamento-3-quartos-agronomica-florianopolis-ancoradouro.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="v464-apartamento-3-quartos-agronomica-florianopolis-ancoradouro.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20na%20Agron%C3%B4mica%20-%20C%C3%B3digo%3A%20v472" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v464-apartamento-3-quartos-agronomica-florianopolis-ancoradouro.html" data-share-title="Apartamento na Agronômica" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v472" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
-</article> 
-</div>
-   <article id="card-v456" class="property-card" 
-         data-cidade="Governador Celso Ramos" 
-         data-bairro="Palmas" 
-         data-quartos="3" 
-         data-preco="1270000" 
-         data-codigo="v456">
-  <span class="property-tag">Praia</span>         
-  <img src="img/palmas1.jpeg" class="property-image" alt="Apartamento Palmas Celso Ramos">
+</article>
+
+<article id="card-v456" class="property-card" data-cidade="Governador Celso Ramos" data-bairro="Palmas" data-quartos="3" data-preco="1270000" data-codigo="v456">
+  <span class="property-tag">Praia</span>
+  <img src="img/palmas1.jpeg" class="property-image" alt="Apartamento Palmas Celso Ramos" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento Palmas - Celso Ramos</h3>
@@ -333,22 +770,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v456</div>
     <div class="property-actions">
       <a href="v456-apartamento-venda-palmas-sacada-praia-celso-ramos+3dormitorios+suite.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20em%20Palmas%20Celso%20Ramos%20-%20Código:%20v456" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v456-apartamento-venda-palmas-sacada-praia-celso-ramos+3dormitorios+suite.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20em%20Palmas%20Celso%20Ramos%20-%20C%C3%B3digo%3A%20v456" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v456-apartamento-venda-palmas-sacada-praia-celso-ramos+3dormitorios+suite.html" data-share-title="Apartamento Palmas - Celso Ramos" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v456" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
 
-<article id="card-v465" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Saco dos Limões" 
-         data-quartos="2" 
-         data-preco="1690000" 
-         data-codigo="v465">
+<article id="card-v465" class="property-card" data-cidade="Florianópolis" data-bairro="Saco dos Limões" data-quartos="2" data-preco="1690000" data-codigo="v465">
   <span class="property-tag">Novo</span>
-  <img src="img/v465/sala.jpeg" class="property-image" alt="Apartamento Saco dos Limões">
+  <img src="img/v465/sala.jpeg" class="property-image" alt="Apartamento Saco dos Limões" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento no Saco dos Limões</h3>
@@ -361,51 +792,19 @@ function toggleFavorito(btn) {
     <div class="property-price">R$ 1.690.000</div>
     <div class="property-code">Código: v465</div>
     <div class="property-actions">
-      <a href="v465-apartamento-venda-saco-dos-limoes-florianopolis-2-quartos-sendo-2-suites-sacada-vaga.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20no%20Saco%20dos%20Limões%20-%20Código:%20v465" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v465-apartamento-venda-saco-dos-limoes-florianopolis-2-quartos-sendo-2-suites-sacada-vaga.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="v465-apartamento-venda-02-suites-sacada-saco-dos-limoes-em-florianopolis.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20no%20Saco%20dos%20Lim%C3%B5es%20-%20C%C3%B3digo%3A%20v465" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v465-apartamento-venda-02-suites-sacada-saco-dos-limoes-em-florianopolis.html" data-share-title="Apartamento no Saco dos Limões" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v465" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
 
-     <article id="card-v448" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Estreito" 
-         data-quartos="3" 
-         data-preco="2020000" 
-         data-codigo="v448">
-  <span class="property-tag">Duplex</span>
-  <img src="img/v448/12.1 sacada mesanino.jpg" class="property-image" alt="Duplex Cobertura Estreito">
-  <div class="property-details">
-    <div class="property-type">Apartamento</div>
-    <h3 class="property-title">Duplex Cobertura Estreito</h3>
-    <div class="property-location">Balneário do Estreito - Florianópolis/SC</div>
-    <div class="property-features">
-      <div class="feature-item"><strong>3</strong> Quartos</div>
-      <div class="feature-item"><strong>1</strong> Suíte</div>
-      <div class="feature-item"><strong>2</strong> Vagas</div>
-    </div>
-    <div class="property-price">R$ 2.020.000</div>
-    <div class="property-code">Código: v448</div>
-    <div class="property-actions">
-      <a href="v448-apartamento-duplex-cobertura-220m2-3dormitorios-sacada+churrasqueira+vista+academia.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20duplex%20cobertura%20no%20Estreito%20-%20Código:%20v448" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v448-apartamento-duplex-cobertura-220m2-3dormitorios-sacada+churrasqueira+vista+academia.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
-    </div>
-  </div>
-</article>
-<article id="card-v460" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Beira Mar Norte" 
-         data-quartos="3" 
-         data-preco="1200000" 
-         data-codigo="v460">
+
+
+<article id="card-v460" class="property-card" data-cidade="Florianópolis" data-bairro="Beira Mar Norte" data-quartos="3" data-preco="1200000" data-codigo="v460">
   <span class="property-tag">Beira Mar</span>
-  <img src="img/v460/6.0halldeentrada.jpg" class="property-image" alt="Beira Mar Norte Marina">
+  <img src="img/v460/6.0halldeentrada.jpg" class="property-image" alt="Beira Mar Norte Marina" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Beira Mar Norte - Marina</h3>
@@ -419,20 +818,15 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v460</div>
     <div class="property-actions">
       <a href="v460-apartamento-venda-3dormitorios-beira-mar-norte+marina+110m2+vaga+florianopolis.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20na%20Beira%20Mar%20Norte%20Marina%20-%20Código:%20v460" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp">WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v460-apartamento-venda-3dormitorios-beira-mar-norte+marina+110m2+vaga+florianopolis.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20na%20Beira%20Mar%20Norte%20Marina%20-%20C%C3%B3digo%3A%20v460" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v460-apartamento-venda-3dormitorios-beira-mar-norte+marina+110m2+vaga+florianopolis.html" data-share-title="Beira Mar Norte - Marina" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v460" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
-      <article id="card-v473" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Santo Antônio de Lisboa" 
-         data-quartos="3" 
-         data-preco="1250000"
-         data-codigo="v473">
-  <img src="img/v473/casa5.jpg" class="property-image" alt="Casa em Santo Antônio de Lisboa">
+
+<article id="card-v473" class="property-card" data-cidade="Florianópolis" data-bairro="Santo Antônio de Lisboa" data-quartos="3" data-preco="1850000" data-codigo="v473">
+  <img src="img/v473/casa5.jpg" class="property-image" alt="Casa em Santo Antônio de Lisboa" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Casa</div>
     <h3 class="property-title">Casa em Santo Antônio de Lisboa</h3>
@@ -446,21 +840,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v473</div>
     <div class="property-actions">
       <a href="v473-casa-a-venda-com-150m2-3-dormitorios-com-suite-em-santo-antonio-de-lisboa.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20Santo%20Antônio%20de%20Lisboa%20-%20Código:%20v473" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp">WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v473-casa-a-venda-com-150m2-3-dormitorios-com-suite-em-santo-antonio-de-lisboa.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20Santo%20Ant%C3%B4nio%20de%20Lisboa%20-%20C%C3%B3digo%3A%20v473" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v473-casa-a-venda-com-150m2-3-dormitorios-com-suite-em-santo-antonio-de-lisboa.html" data-share-title="Casa em Santo Antônio de Lisboa" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v473" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
-<article id="card-v466" class="property-card" 
-         data-cidade="Palhoça" 
-         data-bairro="Praia" 
-         data-quartos="3" 
-         data-preco="890000"
-         data-codigo="v466">
+
+<article id="card-v466" class="property-card" data-cidade="Palhoça" data-bairro="Praia" data-quartos="3" data-preco="998000" data-codigo="v466">
   <span class="property-tag">Destaque</span>
-  <img src="img/v466/1.0-piscina.jpeg" class="property-image" alt="Casa com piscina na Praia em Palhoça">
+  <img src="img/v466/1.0-piscina.jpeg" class="property-image" alt="Casa com piscina na Praia em Palhoça" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Casa</div>
     <h3 class="property-title">Casa com piscina na Praia</h3>
@@ -474,21 +863,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v466</div>
     <div class="property-actions">
       <a href="v466-casa-a-venda-com-03-dormitorios-e-piscina-na-praia-em-palhoca-sc.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20na%20Praia%20-%20Código:%20v466" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp">WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v466-casa-a-venda-com-03-dormitorios-e-piscina-na-praia-em-palhoca-sc.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20na%20Praia%20-%20C%C3%B3digo%3A%20v466" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v466-casa-a-venda-com-03-dormitorios-e-piscina-na-praia-em-palhoca-sc.html" data-share-title="Casa com piscina na Praia" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v466" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
 
-<article id="card-v469" class="property-card" 
-         data-cidade="Palhoça" 
-         data-bairro="Condomínio" 
-         data-quartos="2" 
-         data-preco="380000"
-         data-codigo="v469">
-  <img src="img/v469/1.14casa.jpeg" class="property-image" alt="Casa em condomínio em Palhoça">
+
+<article id="card-v469" class="property-card" data-cidade="Palhoça" data-bairro="Condomínio" data-quartos="2" data-preco="320000" data-codigo="v469">
+  <img src="img/v469/1.14casa.jpeg" class="property-image" alt="Casa em condomínio em Palhoça" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Casa</div>
     <h3 class="property-title">Casa em condomínio</h3>
@@ -502,22 +886,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v469</div>
     <div class="property-actions">
       <a href="v469-casa-a-venda-em-condominio-com-02-dormitorios-em-palhoca.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20condomínio%20-%20Código:%20v469" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp">WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v469-casa-a-venda-em-condominio-com-02-dormitorios-em-palhoca.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20condom%C3%ADnio%20-%20C%C3%B3digo%3A%20v469" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v469-casa-a-venda-em-condominio-com-02-dormitorios-em-palhoca.html" data-share-title="Casa em condomínio" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v469" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
 
-          <article id="card-v450" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Centro" 
-         data-quartos="2" 
-         data-preco="928000" 
-         data-codigo="v450">
+<article id="card-v450" class="property-card" data-cidade="Florianópolis" data-bairro="Centro" data-quartos="2" data-preco="928000" data-codigo="v450">
   <span class="property-tag">Centro</span>
-  <img src="img/v450/v450-capa (1).jpeg" class="property-image" alt="Apartamento Centro Kuboo">
+  <img src="img/v450/v450-capa (1).jpeg" class="property-image" alt="Apartamento Centro Kuboo" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento Centro Kuboo</h3>
@@ -530,22 +908,17 @@ function toggleFavorito(btn) {
     <div class="property-price">R$ 928.000</div>
     <div class="property-code">Código: v450</div>
     <div class="property-actions">
-      <a href="../apartamento-venda-centro-florianopolis-v450.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20no%20Centro%20Kuboo%20-%20Código:%20v450" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/apartamento-venda-centro-florianopolis-v450.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="apartamento-venda-centro-florianopolis-v450.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20no%20Centro%20Kuboo%20-%20C%C3%B3digo%3A%20v450" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/apartamento-venda-centro-florianopolis-v450.html" data-share-title="Apartamento Centro Kuboo" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v450" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
-<article id="card-v440" class="property-card" 
-         data-cidade="São José" 
-         data-bairro="Kobrasol" 
-         data-quartos="3" 
-         data-preco="940000" 
-         data-codigo="v440">
+
+<article id="card-v440" class="property-card" data-cidade="São José" data-bairro="Kobrasol" data-quartos="3" data-preco="940000" data-codigo="v440">
   <span class="property-tag">Kobrasol</span>
-  <img src="img/v440/sacada-1.jpeg" class="property-image" alt="Apartamento Kobrasol">
+  <img src="img/v440/sacada-1.jpeg" class="property-image" alt="Apartamento Kobrasol" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento no Kobrasol</h3>
@@ -558,22 +931,19 @@ function toggleFavorito(btn) {
     <div class="property-price">R$ 940.000</div>
     <div class="property-code">Código: v440</div>
     <div class="property-actions">
-      <a href="apartamento-venda-kobrasol-v440.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20no%20Kobrasol%20-%20Código:%20v440" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/apartamento-venda-kobrasol-v440.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="v440-apartamento-venda-com-3-dormitorios-no-kobrasol-em-130m2-sao-jose-sc.html" class="btn-details">Ver Detalhes</a>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20no%20Kobrasol%20-%20C%C3%B3digo%3A%20v440" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v440-apartamento-venda-com-3-dormitorios-no-kobrasol-em-130m2-sao-jose-sc.html" data-share-title="Apartamento no Kobrasol" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v440" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
-<article id="card-v463" class="property-card" 
-         data-cidade="São José" 
-         data-bairro="Forquilhas" 
-         data-quartos="3" 
-         data-preco="735000" 
-         data-codigo="v463">
+      
+
+      
+<article id="card-v463" class="property-card" data-cidade="São José" data-bairro="Forquilhas" data-quartos="3" data-preco="735000" data-codigo="v463">
   <span class="property-tag">Casa</span>
-  <img src="img/v463/8.1fachada.jpeg" class="property-image" alt="Casa Forquilhas">
+  <img src="img/v463/8.1fachada.jpeg" class="property-image" alt="Casa Forquilhas" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Casa</div>
     <h3 class="property-title">Casa Forquilhas</h3>
@@ -587,52 +957,18 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v463</div>
     <div class="property-actions">
       <a href="v463-casa-a-venda-com-03-dormitorios-no-bairro-forquilhas-em-sao-jose-sc.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20no%20Forquilhas%20-%20Código:%20v463" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v463-casa-a-venda-com-03-dormitorios-no-bairro-forquilhas-em-sao-jose-sc.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
-    </div>
-  </div>
-</article>
-<article id="card-v474" class="property-card" 
-         data-cidade="Governador Celso Ramos" 
-         data-bairro="Praia de Palmas" 
-         data-quartos="3" 
-         data-preco="890000" 
-         data-codigo="v474">
-  <span class="property-tag">Apartamento</span>
-  <img src="img/v474/v4745.jpeg" class="property-image" alt="Apartamento Praia de Palmas">
-  <div class="property-details">
-    <div class="property-type">Apartamento</div>
-    <h3 class="property-title">Apartamento à venda na Praia de Palmas</h3>
-    <div class="property-location">Governador Celso Ramos - SC</div>
-    <div class="property-features">
-      <div class="feature-item"><strong>3</strong> Quartos</div>
-      <div class="feature-item"><strong>1</strong> Suíte</div>
-      <div class="feature-item"><strong>1</strong> Vagas</div>
-      <div class="feature-item">Sacada</div>
-    </div>
-    <div class="property-price">R$ 890.000</div>
-    <div class="property-code">Código: v474</div>
-    <div class="property-actions">
-      <a href="v474-apartamento-a-venda-3-dormitorios-sacada-na-praia-de-palmas-sc.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20em%20Palmas%20-%20Código:%20v474" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v474-apartamento-a-venda-3-dormitorios-sacada-na-praia-de-palmas-sc.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20no%20Forquilhas%20-%20C%C3%B3digo%3A%20v463" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v463-casa-a-venda-com-03-dormitorios-no-bairro-forquilhas-em-sao-jose-sc.html" data-share-title="Casa Forquilhas" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v463" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
 
-      
-     <article id="card-v447" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Centro" 
-         data-quartos="3" 
-         data-preco="2250000" 
-         data-codigo="v447">
+
+
+<article id="card-v447" class="property-card" data-cidade="Florianópolis" data-bairro="Centro" data-quartos="3" data-preco="2250000" data-codigo="v447">
   <span class="property-tag">Centro</span>
-  <img src="img/v447/01sala_035.jpg" class="property-image" alt="Apartamento Centro">
+  <img src="img/v447/01sala_035.jpg" class="property-image" alt="Apartamento Centro" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento Centro</h3>
@@ -646,21 +982,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v447</div>
     <div class="property-actions">
       <a href="apartamento-venda-centro-v447.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20no%20Centro%20-%20Código:%20v447" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/apartamento-venda-centro-v447.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20no%20Centro%20-%20C%C3%B3digo%3A%20v447" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/apartamento-venda-centro-v447.html" data-share-title="Apartamento Centro" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v447" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
-<article id="card-v457" class="property-card" 
-         data-cidade="São José" 
-         data-bairro="Campinas" 
-         data-quartos="1" 
-         data-preco="318000" 
-         data-codigo="v457">
+
+<article id="card-v457" class="property-card" data-cidade="São José" data-bairro="Campinas" data-quartos="1" data-preco="318000" data-codigo="v457">
   <span class="property-tag">Oportunidade</span>
-  <img src="img/v457/v457-1.jpeg" class="property-image" alt="Apartamento Campinas">
+  <img src="img/v457/v457-1.jpeg" class="property-image" alt="Apartamento Campinas" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento Campinas</h3>
@@ -674,49 +1005,18 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v457</div>
     <div class="property-actions">
       <a href="apartamento-venda-campinas-v457.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20em%20Campinas%20-%20Código:%20v457" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/apartamento-venda-campinas-v457.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20em%20Campinas%20-%20C%C3%B3digo%3A%20v457" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/apartamento-venda-campinas-v457.html" data-share-title="Apartamento Campinas" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v457" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
-<article id="card-v471" class="property-card" 
-         data-cidade="São José" 
-         data-bairro="Bela Vista" 
-         data-quartos="3" 
-         data-preco="715000" 
-         data-codigo="v471">
-  <span class="property-tag">Bela Vista</span>
-  <img src="img/v471/v47118.jpeg" class="property-image" alt="Apartamento Bela Vista">
-  <div class="property-details">
-    <div class="property-type">Apartamento</div>
-    <h3 class="property-title">Apartamento Bela Vista</h3>
-    <div class="property-location">Bela Vista - São José/SC</div>
-    <div class="property-features">
-      <div class="feature-item"><strong>3</strong> Quartos</div>
-      <div class="feature-item"><strong>1</strong> Suíte</div>
-      <div class="feature-item"><strong>3</strong> Vagas</div>
-    </div>
-    <div class="property-price">R$ 715.000</div>
-    <div class="property-code">Código: v471</div>
-    <div class="property-actions">
-      <a href="v471-Corretor-Robson-apartamento-venda-bairro-bela-vista-sao-jose-90m2-2-sacadas-3-vagas.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20em%20Bela%20Vista%20-%20Código:%20v471" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v471-Corretor-Robson-apartamento-venda-bairro-bela-vista-sao-jose-90m2-2-sacadas-3-vagas.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
-    </div>
-  </div>
-</article>
-<article id="card-v441" class="property-card" 
-         data-cidade="São José" 
-         data-bairro="Floresta" 
-         data-quartos="3" 
-         data-preco="850000" 
-         data-codigo="v441">
+
+
+
+<article id="card-v441" class="property-card" data-cidade="São José" data-bairro="Floresta" data-quartos="3" data-preco="850000" data-codigo="v441">
   <span class="property-tag">Floresta</span>
-  <img src="img/v441/sala1.jpeg" class="property-image" alt="Apartamento Nossa Sra do Rosário">
+  <img src="img/v441/sala1.jpeg" class="property-image" alt="Apartamento Nossa Sra do Rosário" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento Nossa Sra do Rosário</h3>
@@ -730,21 +1030,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v441</div>
     <div class="property-actions">
       <a href="apartamento-venda-floresta-v441.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20Nossa%20Sra%20do%20Rosário%20-%20Código:%20v441" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/apartamento-venda-floresta-v441.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20Nossa%20Sra%20do%20Ros%C3%A1rio%20-%20C%C3%B3digo%3A%20v441" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/apartamento-venda-floresta-v441.html" data-share-title="Apartamento Nossa Sra do Rosário" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v441" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
-      <article id="card-v449" class="property-card" 
-         data-cidade="Florianópolis" 
-         data-bairro="Ratones" 
-         data-quartos="4" 
-         data-preco="1450000" 
-         data-codigo="v449">
+
+<article id="card-v449" class="property-card" data-cidade="Florianópolis" data-bairro="Ratones" data-quartos="4" data-preco="1450000" data-codigo="v449">
   <span class="property-tag">Casa</span>
-  <img src="img/v449/casav4491.jpg" class="property-image" alt="Casa Ratones Florianópolis">
+  <img src="img/v449/casav4491.jpg" class="property-image" alt="Casa Ratones Florianópolis" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Casa</div>
     <h3 class="property-title">Casa à venda em Ratones</h3>
@@ -759,21 +1054,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v449</div>
     <div class="property-actions">
       <a href="v449-casa-venda-norte-da-ilha-ratones-florianopolis-355m2-4quartos.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20Ratones%20-%20Código:%20v449" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v449-casa-venda-norte-da-ilha-ratones-florianopolis-355m2-4quartos.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20Ratones%20-%20C%C3%B3digo%3A%20v449" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v449-casa-venda-norte-da-ilha-ratones-florianopolis-355m2-4quartos.html" data-share-title="Casa à venda em Ratones" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v449" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
-      <article id="card-v475" class="property-card" 
-         data-cidade="São José" 
-         data-bairro="São José" 
-         data-quartos="2" 
-         data-preco="590000" 
-         data-codigo="v475">
+
+<article id="card-v475" class="property-card" data-cidade="São José" data-bairro="São José" data-quartos="2" data-preco="590000" data-codigo="v475">
   <span class="property-tag">Casa</span>
-  <img src="img/v475/v475 (7).jpeg" class="property-image" alt="Casa São José">
+  <img src="img/v475/v475 (7).jpeg" class="property-image" alt="Casa São José" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Casa</div>
     <h3 class="property-title">Casa à venda em São José</h3>
@@ -788,24 +1078,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v475</div>
     <div class="property-actions">
       <a href="v475-casa-a-venda-com-2-dormitorios-area-gourmet-com-hidro-em-sao-jose-sc.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20São%20José%20-%20Código:%20v475" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v475-casa-a-venda-com-2-dormitorios-area-gourmet-com-hidro-em-sao-jose-sc.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20S%C3%A3o%20Jos%C3%A9%20-%20C%C3%B3digo%3A%20v475" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v475-casa-a-venda-com-2-dormitorios-area-gourmet-com-hidro-em-sao-jose-sc.html" data-share-title="Casa à venda em São José" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v475" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
 
-
-
-<article id="card-v468" class="property-card" 
-         data-cidade="São José" 
-         data-bairro="Forquilhas" 
-         data-quartos="3" 
-         data-preco="890000"
-         data-codigo="v468">
+<article id="card-v468" class="property-card" data-cidade="São José" data-bairro="Forquilhas" data-quartos="3" data-preco="890000" data-codigo="v468">
   <span class="property-tag">Casa</span>
-  <img src="img/v468/1.1casa.jpeg" class="property-image" alt="Casa Unifamiliar Forquilhas">
+  <img src="img/v468/1.1casa.jpeg" class="property-image" alt="Casa Unifamiliar Forquilhas" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Casa</div>
     <h3 class="property-title">Casa Unifamiliar Forquilhas</h3>
@@ -819,24 +1101,16 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v468</div>
     <div class="property-actions">
       <a href="v468-casa-unifamiliar-a-venda-em-forquilhas.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20Forquilhas%20-%20Código:%20v468" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v468-casa-unifamiliar-a-venda-em-forquilhas.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20na%20casa%20em%20Forquilhas%20-%20C%C3%B3digo%3A%20v468" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v468-casa-unifamiliar-a-venda-em-forquilhas.html" data-share-title="Casa Unifamiliar Forquilhas" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v468" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
 
-
-
-<article id="card-v467" class="property-card" 
-         data-cidade="Palhoça" 
-         data-bairro="Nova Palhoça" 
-         data-quartos="2" 
-         data-preco="430000" 
-         data-codigo="v467">
+<article id="card-v467" class="property-card" data-cidade="Palhoça" data-bairro="Nova Palhoça" data-quartos="2" data-preco="430000" data-codigo="v467">
   <span class="property-tag">Apartamento</span>
-  <img src="img/v467/1.1sala.jpeg" class="property-image" alt="Apartamento Palhoça">
+  <img src="img/v467/1.1sala.jpeg" class="property-image" alt="Apartamento Palhoça" loading="lazy" decoding="async" width="400" height="230">
   <div class="property-details">
     <div class="property-type">Apartamento</div>
     <h3 class="property-title">Apartamento Palhoça</h3>
@@ -850,26 +1124,62 @@ function toggleFavorito(btn) {
     <div class="property-code">Código: v467</div>
     <div class="property-actions">
       <a href="v467-apartamento-com-02-dormitorios-em-palhoca-sc.html" class="btn-details">Ver Detalhes</a>
-      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20em%20Palhoça%20-%20Código:%20v467" 
-         class="btn-whats" target="_blank" aria-label="WhatsApp"> WhatsApp</a>
-      <button class="btn-compartilhar" onclick="compartilhar('https://imoveisfloripa.online/v467-apartamento-com-02-dormitorios-em-palhoca-sc.html')" aria-label="Compartilhar">🔗 Compartilhar</button>
-      <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Favoritar">❤️</button>
+      <a href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20apartamento%20em%20Palho%C3%A7a%20-%20C%C3%B3digo%3A%20v467" class="btn-whats" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+      <button type="button" class="btn-icon btn-compartilhar" data-share-url="https://www.flaviacapaciacorretora.com/v467-apartamento-com-02-dormitorios-em-palhoca-sc.html" data-share-title="Apartamento Palhoça" aria-label="Compartilhar" title="Compartilhar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button type="button" class="btn-icon btn-favorito" data-codigo="v467" aria-label="Favoritar" title="Salvar nos favoritos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
     </div>
   </div>
 </article>
+
+</div>
   </main>
   
   <section class="lancamentos-section" id="lancamentos">
     <div class="lancamentos-content">
       <div class="lancamentos-header">
+
         <h2>Lançamentos Exclusivos</h2>
+
         <p>Conheça os empreendimentos mais aguardados de Florianópolis</p>
       </div>
       <div class="lancamentos-grid">
+<article class="lancamento-card" id="lancamento-v492">
+  <img src="img/v492/apartamento-imbituba-permuta (15).jpeg" alt="Apartamento  à venda com 3 dormitorios em Imbituba/SC" class="lancamento-image">
+  <div class="lancamento-info">
+    <span class="lancamento-badge">Fase Final da Obra</span>
+    <h3 class="lancamento-title">Apartamento  à venda com 3 dormitorios em Imbituba/SC</h3>
+    <div class="lancamento-location">Praia da Vila - Imbituba/SC</div>
+    <p class="lancamento-description">Apartamento  à venda com 3 dormitorios em Imbituba/SC</p>
+    <a href="v492-apartamento-a-venda-com-3-dormitorios-em-imbituba-sc.html" class="lancamento-btn">Saiba Mais</a>
+  </div>
+</article>
+
+<article class="lancamento-card" id="lancamento-v484">
+  <img src="img/v484/v484-1.jpeg" alt="Apartamentos tipo studio, com suite e Cobertura na Trindade em Florianópolis SC" class="lancamento-image">
+  <div class="lancamento-info">
+    <span class="lancamento-badge">Pré-Lançamento</span>
+    <h3 class="lancamento-title">Apartamentos tipo studio, com suite e Cobertura na Trindade em Florianópolis SC</h3>
+    <div class="lancamento-location">Trindade - Florianópolis SC/SC</div>
+    <p class="lancamento-description">Apartamentos tipo studio, com suite e Cobertura na Trindade em Florianópolis SC</p>
+    <a href="v484-lancamento-apartamentos-tipo-studio-com-suite-e-cobertura-na-trindade-em-florianopolis-sc.html" class="lancamento-btn">Saiba Mais</a>
+  </div>
+</article>
+
+<article class="lancamento-card" id="lancamento-v490">
+  <img src="img/v490/dvert-dimas-apartamento-praia-cumprida (1).jpg" alt="Apartamento à Venda com 3 dormitórios a poucos mtrs da Beira Mar de São José SC" class="lancamento-image">
+  <div class="lancamento-info">
+    <span class="lancamento-badge">Pronto pra Morar </span>
+    <h3 class="lancamento-title">Apartamento à Venda com 3 dormitórios a poucos mtrs da Beira Mar de São José SC</h3>
+    <div class="lancamento-location">Rua Doutor Constâncio Krummel - São José/SC</div>
+    <p class="lancamento-description">Apartamento à Venda com 3 dormitórios a poucos mtrs da Beira Mar de São José SC</p>
+    <a href="v490-lancamento-apartamento-a-venda-com-3-dormitorios-a-poucos-mtrs-da-beira-mar-de-sao-jose-sc.html" class="lancamento-btn">Saiba Mais</a>
+  </div>
+</article>
+
         <article class="lancamento-card">
           <img src="https://gralha2.inforcedata.com.br/api/image/76402473.jpg" alt="Um Milano" class="lancamento-image">
           <div class="lancamento-info">
-            <span class="lancamento-badge">Pré-Lançamento</span>
+            <span class="lancamento-badge">Lançamento</span>
             <h3 class="lancamento-title">Um Milano</h3>
             <div class="lancamento-location"> Beira-Mar Norte - Florianópolis/SC</div>
             <p class="lancamento-description">
@@ -878,6 +1188,7 @@ function toggleFavorito(btn) {
             <a href="v452-arkki-apartamentos-de-2-e-3-suites-no-centro-de-florianopolis.html" class="lancamento-btn">Saiba Mais</a>
           </div>
         </article>
+
         <article class="lancamento-card">
           <img src="img/v452/76467372.jpg" alt="Connect 233" class="lancamento-image">
           <div class="lancamento-info">
@@ -890,6 +1201,7 @@ function toggleFavorito(btn) {
             <a href="v452-arkki-apartamentos-de-2-e-3-suites-no-centro-de-florianopolis.html" class="lancamento-btn">Saiba Mais</a>
           </div>
         </article>
+
         <article class="lancamento-card">
           <img src="https://gralha2.inforcedata.com.br/api/image/76467398.jpg" alt="ARKKI" class="lancamento-image">
           <div class="lancamento-info">
@@ -933,6 +1245,7 @@ function toggleFavorito(btn) {
       }
     })();
   </script>
+  
   </section>
  <a href="https://wa.me/5548999600601?text=Olá! Vim pelo site e gostaria de mais informações sobre os imóveis" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <span style="position:relative;display:flex;align-items:center;justify-content:center;width:82px;height:82px;background:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(34,34,34,0.10);">
@@ -943,6 +1256,11 @@ function toggleFavorito(btn) {
    <section class="blog-section">
     <h2>Blog Imobiliário</h2>
     <div class="blog-posts blog-slider" style="position:relative;">
+<article class="blog-post" id="blog-imoveis-de-luxo-em-florianopolis-exclusividade-sofisticacao-e-qualidade-de-vida">
+  <h3><a href="imoveis-de-luxo-em-florianopolis-exclusividade-sofisticacao-e-qualidade-de-vida.html">Imóveis de luxo em Florianópolis: exclusividade, sofisticação e qualidade de vida</a></h3>
+  <p>Florianópolis,  A cidade, que combina natureza exuberante, clima agradável e infraestrutura urbana em constante evolução, atrai cada vez mais investidores e fam</p>
+</article>
+
       <article class="blog-post">
         <h3><a href="artigo-marina-infra.html">Marina Beira-Mar Norte: Infraestrutura e Mobilidade</a></h3>
         <p>Como a nova marina e obras de mobilidade vão transformar Florianópolis e valorizar imóveis.</p>
@@ -974,7 +1292,59 @@ function toggleFavorito(btn) {
           <path d="M11 9l5 5-5 5" stroke="#8B8B97" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+    </div>  <!-- ========== AVALIAÇÕES GOOGLE ========== -->
+  <section class="avaliacoes-section" id="avaliacoes">
+    <div class="avaliacoes-content">
+      <div class="avaliacoes-header">
+        <h2>O que dizem os clientes</h2>
+        <p>Avaliações reais no Google · Flavia Capacia Corretora</p>
+      </div>
+      <div class="avaliacoes-grid">
+        <article class="avaliacao-card">
+          <div class="avaliacao-stars">★★★★★</div>
+          <p class="avaliacao-texto">"Profissional muito capacitada, atende prontamente interesse das partes e comunicação fácil."</p>
+          <div class="avaliacao-autor">
+            <strong>Rosangela Silva</strong>
+            <span class="avaliacao-meta">Google · há 1 semana</span>
+          </div>
+        </article>
+        <article class="avaliacao-card">
+          <div class="avaliacao-stars">★★★★★</div>
+          <p class="avaliacao-texto">"A melhor corretora, encontrou a melhor oportunidade dentro das minhas condições de renda e me ajudou a realizar o sonho de adquirir meu primeiro imóvel aos 19 anos."</p>
+          <div class="avaliacao-autor">
+            <strong>Carioca WQ</strong>
+            <span class="avaliacao-meta">Google · há 2 semanas</span>
+          </div>
+        </article>
+        <article class="avaliacao-card">
+          <div class="avaliacao-stars">★★★★★</div>
+          <p class="avaliacao-texto">"Uma profissional muito simpática e atenciosa. Respondeu a todas as minhas perguntas e foi muito fácil combinar a visita ao imóvel. Recomendo!"</p>
+          <div class="avaliacao-autor">
+            <strong>Ekaterina</strong>
+            <span class="avaliacao-meta">Google · há 3 semanas</span>
+          </div>
+        </article>
+      </div>
+      <a class="avaliacoes-arrow"
+         href="https://www.google.com/search?q=Flavia+Capacia+Corretora"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Ver todas as avaliações no Google — Flavia Capacia Corretora"
+         title="Flavia Capacia Corretora - Pesquisa Google">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" stroke="#b08d57" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="avaliacoes-ver-todas">
+        <a href="https://www.google.com/search?q=Flavia+Capacia+Corretora"
+           target="_blank"
+           rel="noopener noreferrer">
+          Ver todas as avaliações no Google →
+        </a>
+      </div>
     </div>
+  </section>
+     
     <script>
       // Carrossel de 3 em 3 artigos
       (function(){
@@ -1025,7 +1395,7 @@ function toggleFavorito(btn) {
           <span class="icon-bg">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#f5ecd9" stroke="#b08d57" stroke-width="1.5"/><path d="M4 7.5V16a1.5 1.5 0 001.5 1.5h13A1.5 1.5 0 0020 16V7.5l-8 5.5-8-5.5z" fill="#fff" stroke="#b08d57" stroke-width="1.2"/><path d="M20 6a1.5 1.5 0 00-1.5-1.5h-13A1.5 1.5 0 004 6l8 5.5L20 6z" fill="#fff" stroke="#b08d57" stroke-width="1.2"/></svg>
           </span>
-          <a href="mailto:flavia.capacia@creci.gov">flavia.capacia@creci.gov</a>
+          <a href="mailto:flavia.capacia@creci.org.gov">flavia.capacia@creci.org.com</a>
         </div>
         <div class="footer-contact-row">
           <span class="icon-bg">
