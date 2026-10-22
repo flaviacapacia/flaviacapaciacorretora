@@ -338,6 +338,178 @@ function limparFiltros() {
 
   document.querySelectorAll('.btn-favorito').forEach(paintFavorito);
 })();
+
+/* ===== Catálogo GitHub: imóveis publicados que podem não estar no index ===== */
+(function () {
+  const CATALOGO_URL = 'imoveis-catalogo.json';
+  const GRID_ID = null; // usa .properties-grid
+  let catalogo = [];
+
+  function formatPreco(n) {
+    if (!n || n <= 0) return 'Consulte';
+    return 'R$ ' + Number(n).toLocaleString('pt-BR');
+  }
+
+  function codigosNoIndex() {
+    return new Set(
+      Array.from(document.querySelectorAll('.property-card[data-codigo]'))
+        .map((c) => (c.getAttribute('data-codigo') || '').toLowerCase())
+    );
+  }
+
+  function criarCard(imovel) {
+    const codigo = String(imovel.codigo || '').trim();
+    const cidade = imovel.cidade || '';
+    const bairro = imovel.bairro || '';
+    const quartos = imovel.quartos || 0;
+    const preco = parseInt(imovel.preco, 10) || 0;
+    const precoTexto = imovel.precoTexto || formatPreco(preco);
+    const url = imovel.url || '#';
+    const img = imovel.imagem || 'img/capasite.webp';
+    const titulo = imovel.titulo || ('Imóvel ' + codigo);
+    const tipo = imovel.tipo || 'Imóvel';
+    const tag = imovel.tag || bairro || cidade;
+    const suites = imovel.suites || '';
+    const vagas = imovel.vagas || '';
+    const wa = 'https://wa.me/5548999600601?text=' + encodeURIComponent(
+      'Tenho interesse no imóvel código ' + codigo + ' — ' + titulo
+    );
+
+    const article = document.createElement('article');
+    article.className = 'property-card property-card--catalogo';
+    article.id = 'card-' + codigo;
+    article.setAttribute('data-cidade', cidade);
+    article.setAttribute('data-bairro', bairro);
+    article.setAttribute('data-quartos', String(quartos));
+    article.setAttribute('data-preco', String(preco));
+    article.setAttribute('data-codigo', codigo);
+    article.setAttribute('data-origem', 'catalogo');
+
+    article.innerHTML =
+      '<span class="property-tag">' + tag + '</span>' +
+      '<img src="' + img + '" class="property-image" alt="' + titulo.replace(/"/g, '&quot;') + '" loading="lazy">' +
+      '<div class="property-details">' +
+        '<div class="property-type">' + tipo + '</div>' +
+        '<h3 class="property-title">' + titulo + '</h3>' +
+        '<div class="property-location">' + [bairro, cidade].filter(Boolean).join(' · ') + '</div>' +
+        '<div class="property-features">' +
+          (quartos ? '<div class="feature-item"><strong>' + quartos + '</strong> Quartos</div>' : '') +
+          (suites ? '<div class="feature-item"><strong>' + suites + '</strong> Suíte(s)</div>' : '') +
+          (vagas ? '<div class="feature-item"><strong>' + vagas + '</strong> Vaga(s)</div>' : '') +
+        '</div>' +
+        '<div class="property-price">' + precoTexto + '</div>' +
+        '<div class="property-code">Código: ' + codigo + '</div>' +
+        '<div class="property-actions">' +
+          '<a href="' + url + '" class="btn-details">Ver Detalhes</a>' +
+          '<a href="' + wa + '" class="btn-whats" target="_blank" rel="noopener">WhatsApp</a>' +
+          '<button type="button" class="btn-icon btn-compartilhar" data-share-url="' + url + '" data-share-title="' + titulo.replace(/"/g, '&quot;') + '" aria-label="Compartilhar" title="Compartilhar">' +
+            '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>' +
+          '</button>' +
+          '<button type="button" class="btn-icon btn-favorito" data-codigo="' + codigo + '" aria-label="Favoritar" title="Salvar nos favoritos">' +
+            '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>' +
+          '</button>' +
+        '</div>' +
+      '</div>';
+
+    return article;
+  }
+
+  function injetarFaltantes() {
+    const grid = document.querySelector('.properties-grid');
+    if (!grid || !catalogo.length) return;
+
+    const jaTem = codigosNoIndex();
+    let adicionados = 0;
+
+    catalogo.forEach((imovel) => {
+      const codigo = String(imovel.codigo || '').toLowerCase();
+      if (!codigo || jaTem.has(codigo)) return;
+      grid.appendChild(criarCard(imovel));
+      jaTem.add(codigo);
+      adicionados++;
+    });
+
+    // repinta favoritos nos novos botões
+    if (typeof paintFavorito === 'function') {
+      document.querySelectorAll('.btn-favorito').forEach(paintFavorito);
+    } else {
+      document.querySelectorAll('.btn-favorito').forEach((btn) => {
+        try {
+          const list = JSON.parse(localStorage.getItem('flavia_favoritos') || '[]');
+          const codigo = btn.getAttribute('data-codigo');
+          if (list.includes(String(codigo))) btn.classList.add('ativo');
+        } catch (e) {}
+      });
+    }
+
+    console.log('[catálogo] imóveis injetados do JSON:', adicionados);
+  }
+
+  // Substitui/expande o filtro para também usar texto livre no título (cards do catálogo)
+  const aplicarFiltrosOriginal = window.aplicarFiltros;
+  window.aplicarFiltros = function () {
+    const cidade = (document.getElementById('filtro-cidade')?.value || '').toLowerCase();
+    const bairro = (document.getElementById('filtro-bairro')?.value || '').toLowerCase();
+    const quartos = document.getElementById('filtro-quartos')?.value || '';
+    const min = parseInt(document.getElementById('filtro-min')?.value, 10) || 0;
+    const max = parseInt(document.getElementById('filtro-max')?.value, 10) || Infinity;
+    const codigo = (document.getElementById('filtro-codigo')?.value || '').trim().toLowerCase();
+    const busca = (document.getElementById('filtro-cidade-busca')?.value || '').toLowerCase().trim();
+
+    const cards = document.querySelectorAll('.property-card');
+    let visiveis = 0;
+
+    cards.forEach((card) => {
+      const cidadeCard = (card.getAttribute('data-cidade') || '').toLowerCase();
+      const bairroCard = (card.getAttribute('data-bairro') || '').toLowerCase();
+      const quartosCard = parseInt(card.getAttribute('data-quartos'), 10) || 0;
+      const precoCard = parseInt(card.getAttribute('data-preco'), 10) || 0;
+      const codigoCard = (card.getAttribute('data-codigo') || '').toLowerCase();
+      const tituloCard = (card.querySelector('.property-title')?.textContent || '').toLowerCase();
+
+      let ok = true;
+      if (cidade && cidadeCard !== cidade) ok = false;
+      if (bairro && bairroCard !== bairro) ok = false;
+      if (quartos) {
+        if (quartos === '4') {
+          if (quartosCard < 4) ok = false;
+        } else if (quartosCard != quartos) ok = false;
+      }
+      if (precoCard < min || (max !== Infinity && precoCard > max)) ok = false;
+      if (codigo && codigoCard !== codigo) ok = false;
+      if (busca) {
+        const hay = cidadeCard + ' ' + bairroCard + ' ' + tituloCard + ' ' + codigoCard;
+        if (!hay.includes(busca)) ok = false;
+      }
+
+      card.style.display = ok ? '' : 'none';
+      if (ok) visiveis++;
+    });
+
+    let status = document.getElementById('filtro-status');
+    if (!status) {
+      status = document.createElement('p');
+      status.id = 'filtro-status';
+      status.style.cssText = 'margin:12px 0 0;font-size:14px;color:#666;';
+      const grid = document.querySelector('.properties-grid');
+      if (grid && grid.parentNode) grid.parentNode.insertBefore(status, grid);
+    }
+    status.textContent = visiveis + ' imóvel(is) encontrado(s)' +
+      (codigo ? ' · código ' + codigo : '') +
+      (busca ? ' · busca: "' + busca + '"' : '');
+  };
+
+  fetch(CATALOGO_URL, { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : []))
+    .then((data) => {
+      catalogo = Array.isArray(data) ? data : [];
+      injetarFaltantes();
+    })
+    .catch(() => {
+      console.warn('[catálogo] imoveis-catalogo.json não encontrado — filtros usam só o index');
+    });
+})();
+
 </script>
 
 
