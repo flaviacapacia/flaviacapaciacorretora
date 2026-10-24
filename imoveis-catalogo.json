@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v497",
+    "titulo": "Cobertura Triplex 4 Dormitórios – Centro, Florianópolis",
+    "tipo": "Cobertura",
+    "cidade": "Florianópolis",
+    "bairro": "Centro",
+    "quartos": 4,
+    "suites": 2,
+    "vagas": 2,
+    "banheiros": 5,
+    "preco": 2000000,
+    "precoTexto": "2000000",
+    "url": "v497-cobertura-triplex-4-dormitorios-centro-florianopolis.html",
+    "imagem": "/img/v497/capa-Cobertura-Triplex-4-dormitórios-Centro- Florianópolis.jpg",
+    "tag": "Cobertura",
+    "destaque": "Andar Alto\nVista Livre\nSuíte no primeiro pavimento\nsuíte principal com closet",
+    "descricao": "Esta cobertura triplex está localizada no Centro de Florianópolis, em posição estratégica próxima à Beira-Mar e à Ponte Hercílio Luz. Comércio local, serviços e toda a conveniência do centro da cidade estão ao redor, oferecendo praticidade e acessibilidade em um dos endereços mais procurados de Floripa. Primeiro pavimento: cozinha, uma suíte simples e suíte principal com closet. Terceiro pavimento: duas suítes, com versatilidade para quartos, escritório ou acomodação para hóspedes. Cobertura triplex é um tipo de propriedade rara no Centro de Florianópolis, com espaço exclusivo e privacidade. Próxima à Beira-Mar, com espaço gourmet e churrasqueira, suíte principal com closet, duas vagas de garagem e localização próxima à Ponte Hercílio Luz. Imóvel amplo e funcional, ideal para famílias que buscam conforto, qualidade de vida e valorização imobiliária."
+  },
+  {
     "codigo": "v496",
     "titulo": "Terreno 555m² — Centro Histórico, São José/SC",
     "tipo": "Terreno",
