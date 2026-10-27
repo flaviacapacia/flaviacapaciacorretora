@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v498",
+    "titulo": "Apartamento D/One à venda com 2 Dormitórios, sendo 1 Suíte – Centro, Florianópolis",
+    "tipo": "Apartamento",
+    "cidade": "Florianópolis",
+    "bairro": "Apartamento 2 Dormitórios",
+    "quartos": 2,
+    "suites": 1,
+    "vagas": 1,
+    "banheiros": 2,
+    "preco": 1800000,
+    "precoTexto": "1.800.000,00",
+    "url": "v498-apartamento-d-one-a-venda-com-2-dormitorios-sendo-1-suite-centro-florianopolis.html",
+    "imagem": "/img/v498/capa-apartamento-venda-centro-florianopolis-d-one-dimas-construtora.jpg",
+    "tag": "Apartamento",
+    "destaque": "Vista para o mar\nVista panorâmica\nVaranda fechada\nTotalmente mobiliado",
+    "descricao": "**Endereço:** R. Felipe Schmidt, 835, Centro, Florianópolis – SC - Projeto de decoração personalizado com móveis planejados de excelente qualidade Imóvel localizado no coração do Centro de Florianópolis. Com acesso fácil à Ponte Hercílio Luz, próximo a supermercados, padarias, farmácias, escolas, restaurantes e a poucos metros da Beira Mar Norte. [Inclua aqui seus dados de contato, telefone, WhatsApp e e-mail]"
+  },
+  {
     "codigo": "v497",
     "titulo": "Cobertura Triplex 4 Dormitórios – Centro, Florianópolis",
     "tipo": "Cobertura",
