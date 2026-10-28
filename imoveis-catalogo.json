@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v499",
+    "titulo": "Apartamento  à Venda com Duas Suítes e 2 Vagas Cobertas – Centro, Florianópolis",
+    "tipo": "Apartamento",
+    "cidade": "Florianópolis",
+    "bairro": "Centro",
+    "quartos": 2,
+    "suites": 2,
+    "vagas": 2,
+    "banheiros": 3,
+    "preco": 1600000,
+    "precoTexto": "1.600.000,00",
+    "url": "v499-apartamento-a-venda-com-duas-suites-e-2-vagas-cobertas-centro-florianopolis.html",
+    "imagem": "/img/v499/capa-apartamento-venda-2suites-2-vagas-novo-dimas-contrutora-centro-floripa.jpg",
+    "tag": "Apartamento",
+    "destaque": "Andar Alto\nEstado Semi-mobiliado\nLançamento Condomínio recém-entregue",
+    "descricao": "Este apartamento de alto padrão está localizado no Centro de Florianópolis, em andar alto com vista livre e exposição ao sol da tarde, oferecendo iluminação natural e conforto para moradia ou investimento. Com 69,73 m² de área privativa, o imóvel conta com duas suítes, lavabo e cozinha integrada à sala, com planta estratégica que valoriza cada ambiente. A propriedade é entregue semi-mobiliada e dispõe de duas vagas de garagem cobertas, diferencial importante para imóveis na região central. O condomínio foi recém-entregue e possui infraestrutura completa, incluindo área de lazer. A localização é um dos principais atrativos: no coração do Centro de Florianópolis, próximo a mercados, padarias, estabelecimentos comerciais e vias de acesso, com praticidade para o dia a dia e valorização constante da região. Imóvel em andar alto com vista livre e sol da tarde Duas suítes, lavabo e cozinha integrada à sala Semi-mobiliado, pronto para ocupar Condomínio recém-entregue com infraestrutura completa e área de lazer Localização central privilegiada no Centro de Florianópolis Próximo a mercados, padarias, comércio e serviços Planta bem distribuída, funcional e arejada Opção recomendada para quem busca morar bem em localização central e valorizada, ou para investimento em imóvel com alta procura no Centro de Florianópolis."
+  },
+  {
     "codigo": "v498",
     "titulo": "Apartamento D/One à venda com 2 Dormitórios, sendo 1 Suíte – Centro, Florianópolis",
     "tipo": "Apartamento",
