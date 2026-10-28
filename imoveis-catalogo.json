@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v500",
+    "titulo": "Apartamento  à Venda com 1 dormitório e 2 banheiros – Centro, Florianópolis",
+    "tipo": "Apartamento",
+    "cidade": "Florianópolis",
+    "bairro": "Centro",
+    "quartos": 1,
+    "suites": 1,
+    "vagas": 1,
+    "banheiros": 2,
+    "preco": 928000,
+    "precoTexto": "928000",
+    "url": "v500-apartamento-a-venda-com-1-dormitorio-e-2-banheiros-centro-florianopolis.html",
+    "imagem": "/img/v500/capa-apartamento-venda-kuboo-1-dormitorio-centro-floripa (1).jpeg",
+    "tag": "Apartamento",
+    "destaque": "Pet Place\nEspaço Gourmet\nLounge\nEspaço Happy Hour\nRooftop Grill\nForno de Pizza\nEspaço Relax\nSpa\nSauna\nSolarium\nEspaço Confraria",
+    "descricao": "Este apartamento novo e moderno representa uma oportunidade única de viver no Centro de Florianópolis com padrão de qualidade superior. Com 53 m² de área privativa, conta com 1 suíte e lavabo, além de possibilidade de implantação de segundo dormitório e área de garden, em fase de aprovação pelo condomínio, oferecendo versatilidade para adaptar o espaço às necessidades da família. O empreendimento Kuboo se destaca pelo projeto arquitetônico contemporâneo, acabamentos de alta qualidade e preocupação genuína com sustentabilidade, incluindo sistema de reaproveitamento de água e eficiência energética. A infraestrutura de lazer é completa, com espaços projetados para convívio, relaxamento e entretenimento, entre eles rooftop, spa, solarium e espaços gourmet. A localização é um dos grandes atrativos: no coração do Centro de Florianópolis, com acesso rápido a shoppings, pontos históricos, estabelecimentos comerciais, serviços, instituições de ensino e saúde. Ideal para quem valoriza praticidade, mobilidade e qualidade de vida. A propriedade aceita permuta de imóvel de até 40% do valor, facilitando a transição para um imóvel de padrão superior. Excelente escolha para moradia ou investimento em região de constante valorização. Para mais informações, fale com o corretor e conheça todos os detalhes desta oportunidade."
+  },
+  {
     "codigo": "v450",
     "titulo": "Apartamento  à Venda com 1 ou 2 dormitórios – Centro, Florianópolis",
     "tipo": "Apartamento",
