@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v501",
+    "titulo": "Apartamento Mobiliado com 3 Dormitórios – Kobrasol, São José",
+    "tipo": "Apartamento",
+    "cidade": "Kobrasol Sao Jose SC",
+    "bairro": "Kobrasol Sao Jose SC",
+    "quartos": 0,
+    "suites": 1,
+    "vagas": 2,
+    "banheiros": 2,
+    "preco": 950000,
+    "precoTexto": "950.000,00",
+    "url": "v501-apartamento-mobiliado-com-3-dormitorios-kobrasol-sao-jose.html",
+    "imagem": "/img/v501/capa-apartamento-venda-kobrasol-3quartos.jpg",
+    "tag": "Apartamento",
+    "destaque": "Andar Alto\nMobiliado, pronto para morar",
+    "descricao": "Localizado em andar alto, oferece excelente iluminação natural e vista mar. A distribuição conta com 3 dormitórios, sendo 1 suíte, salas de estar e jantar integradas, cozinha funcional, área de serviço independente, banheiro social e sacada com churrasqueira a carvão. Dispõe ainda de 1 vaga de garagem livre e coberta, além de espaço de hobby box. Será vendido porteira fechada, permanecendo todos os móveis planejados, eletrodomésticos e aparelhos de ar-condicionado split — estando pronto para morar. A localização é estratégica, cercada por completa infraestrutura de comércio, serviços e lazer. Nas proximidades encontram-se supermercados, bancos, academias, farmácias, restaurantes e instituições de ensino, como Colégio Dom Jaime, Colégio Visão e Colégio Gardner. A poucos minutos do Shopping Itaguaçu, Hospital Unimed e Beira-Mar de São José, com fácil acesso à Via Expressa, ao Centro de Florianópolis e aos bairros Campinas, Roçado e Praia Comprida."
+  },
+  {
     "codigo": "v500",
     "titulo": "Apartamento  à Venda com 1 dormitório e 2 banheiros – Centro, Florianópolis",
     "tipo": "Apartamento",
