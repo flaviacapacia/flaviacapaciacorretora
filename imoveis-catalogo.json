@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "V502",
+    "titulo": "Loft duplex à venda com 87m2 no Centro de Florianópolis SC",
+    "tipo": "Imóvel",
+    "cidade": "Florianópolis",
+    "bairro": "Centro",
+    "quartos": 1,
+    "suites": 1,
+    "vagas": 1,
+    "banheiros": 2,
+    "preco": 1400000,
+    "precoTexto": "1.400.000,00",
+    "url": "v502-loft-duplex-a-venda-com-87m2-no-centro-de-florianopolis-sc.html",
+    "imagem": "/img/v502/loft-duplex-alto-padrao-com-87m2 (1).jpg",
+    "tag": "Imóvel",
+    "destaque": "piso inferior com sala integrada à cozinha,\nlavanderia\nlavabo\nEstrutura completa: piscina,\nacademia\nsalão de festas\nplayground externo",
+    "descricao": "Loft Duplex – Centro de Florianópolis Feito para o seu estilo de vida Este loft duplex não é apenas um imóvel — é o espaço desenhado para quem valoriza cada metro quadrado, conexão e praticidade, no coração mais vibrante de Florianópolis. Para quem vive só e quer conforto sem excesso Se você é solteiro(a) e busca um lar que seja acolhedor, funcional e elegante, aqui é o lugar certo. Plantas compactas, mas generosas: ambientes se conectam de forma fluida, sem corredores longos ou cômodos que ficam vazios. Tudo ao alcance, sem abrir mão de estilo — cozinha integrada para receber amigos, suíte privativa com closet e toda a estrutura de um condomínio completo para aproveitar o dia a dia. Para nômades digitais e profissionais conectados Florianópolis é o seu ponto de operação, e o imóvel precisa acompanhar o ritmo. Este loft foi feito para quem trabalha de casa, viaja e vive com mobilidade: o piso inferior funciona como escritório, área de convívio e recepção o piso superior vira refúgio silencioso e privado. Sem divisões rígidas que bloqueiam a luz ou a circulação — diferente de apartamentos convencionais, onde paredes separam e isolam. Aqui, trabalho, descanso e vida social coexistem com harmonia. Localização central significa menos tempo no trânsito e mais tempo para a cidade, o mar e as oportunidades. Para quem valoriza estar próximo de tudo Para profissionais jovens, executivos e moradores que buscam conveniência total: viver no Centro de Florianópolis é ter comércio, cultura, gastronomia e transporte a poucos passos. Condomínio com segurança 24 horas, piscina, academia e garagem — praticidade que combina com uma rotina dinâmica. É investir em qualidade de vida sem abrir mão da localização mais estratégica da capital. Plano aberto e fluido: cada espaço tem função e propósito Piso inferior: sala, cozinha, lavanderia — tudo integrado e leve Piso superior: suíte com closet, refúgio silencioso e climatizado Condomínio com piscina, academia, salão de festas, portaria 24h e reconhecimento facial Localizado em rua nobre no coração da metropole. Ideal para solteiros que buscam elegância compacta, nômades digitais que precisam de versatilidade e profissionais que escolhem viver no centro de tudo."
+  },
+  {
     "codigo": "v501",
     "titulo": "Apartamento Mobiliado com 3 Dormitórios – Kobrasol, São José",
     "tipo": "Apartamento",
