@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v504",
+    "titulo": "Apartamento à venda com 4 dormitórios sendo 2 Suítes – Bairro Campinas, São José/SC",
+    "tipo": "Apartamento",
+    "cidade": "São José SC",
+    "bairro": "Campinas",
+    "quartos": 4,
+    "suites": 2,
+    "vagas": 2,
+    "banheiros": 5,
+    "preco": 1549999,
+    "precoTexto": "1.550.000,00",
+    "url": "v504-apartamento-a-venda-com-4-dormitorios-sendo-2-suites-bairro-campinas-sao-jose-sc.html",
+    "imagem": "/img/v504/capa-apartamento-4-dormitorios-campinas (7).jpg",
+    "tag": "Apartamento",
+    "destaque": "Andar Alto\nVista Livre",
+    "descricao": "Espaço, conforto e vista privilegiada no coração de Campinas Este apartamento de 152 m² é a escolha ideal para famílias que buscam amplidão e qualidade de vida em um dos bairros mais procurados de São José. São 4 dormitórios, sendo 2 suítes, distribuídos em ambientes bem organizados, com toda a luz natural que você merece. Destaques que fazem a diferença Andar alto com vista livre — sol da manhã e da tarde, sem obstruções Móveis planejados — praticidade e aproveitamento máximo de cada espaço Varanda com churrasqueira a carvão — o lugar perfeito para reunir a família e os amigos 2 vagas de garagem cobertas e home box — segurança e espaço para todos os seus pertences Condomínio com infraestrutura completa e portaria 24 horas — tranquilidade para você e sua família Localização que você procura em Campinas Morar aqui é estar perto de tudo o que faz o bairro tão especial: mercados, padarias, farmácias, escolas e todo o comércio local a poucos passos. Fica na Avenida Marechal Castelo Branco — via de fácil acesso, bem conhecida e valorizada por todos que vivem em Campinas. óvel da Construtora Beco Castello, referência de qualidade em São José. Localização estratégica, ideal para quem quer morar bem perto de tudo o que precisa. Entre em contato e agende sua visita."
+  },
+  {
     "codigo": "V502",
     "titulo": "Loft duplex à venda com 87m2 no Centro de Florianópolis SC",
     "tipo": "Imóvel",
