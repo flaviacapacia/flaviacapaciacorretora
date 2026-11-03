@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "503",
+    "titulo": "Apartamento à venda com 2 Dormitórios – Campinas, São José SC",
+    "tipo": "Apartamento",
+    "cidade": "São José SC",
+    "bairro": "Campinas",
+    "quartos": 3,
+    "suites": 1,
+    "vagas": 1,
+    "banheiros": 2,
+    "preco": 1060000,
+    "precoTexto": "1.060.000,00",
+    "url": "v503-apartamento-a-venda-com-2-dormitorios-campinas-sao-jose-sc.html",
+    "imagem": "/img/v503/apartamento-venda-2-dormitorios-campinas.jpg",
+    "tag": "Apartamento",
+    "destaque": "Andar Alto\nSala Ampliada\nCozinha Planejada\nÁrea de Serviço independente",
+    "descricao": "Viva o melhor de Campinas em um apartamento elegante e espaçoso, no Residencial Nair Heiderscheidt, um endereço valorizado e próximo de tudo o que você precisa. Originalmente com 3 dormitórios (e atuamente com 2 dormitórios), o imóvel foi repaginado para proporcionar uma ampla área social, integrando sala de estar e jantar em um ambiente de conforto e sofisticação, ideal para quem valoriza bons momentos em casa. Sala ampliada, integrando ambientes e oferecendo sensação de amplitude Varanda com churrasqueira, perfeita para receber amigos e familia Cozinha planejada e área de serviço independente Acabamentos de qualidade, piso porcelanato e móveis sob medida Na Avenida Vereador Walter Borges, Campinas, uma das regiões mais desejadas de São José. Próximo a supermercados, escolas, restaurantes e com fácil acesso à Beira-Mar e à Ilha de"
+  },
+  {
     "codigo": "v504",
     "titulo": "Apartamento à venda com 4 dormitórios sendo 2 Suítes – Bairro Campinas, São José/SC",
     "tipo": "Apartamento",
