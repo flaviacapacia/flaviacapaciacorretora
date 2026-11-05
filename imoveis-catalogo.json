@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v507",
+    "titulo": "Apartamento à Venda com 03 dormitórios  no Centro Histórico em São José",
+    "tipo": "Apartamento",
+    "cidade": "São José",
+    "bairro": "Centro Histórico",
+    "quartos": 0,
+    "suites": 3,
+    "vagas": 1,
+    "banheiros": 4,
+    "preco": 2200000,
+    "precoTexto": "2.200.000,00",
+    "url": "v507-apartamento-a-venda-com-03-dormitorios-no-centro-historico-em-sao-jose.html",
+    "imagem": "/img/v507/apartamento-3-suites-centro-historico (3).jpg",
+    "tag": "Apartamento",
+    "destaque": "Salão de festas\nEspaço gourmet\nFitness center\nBrinquedoteca\nEspaco teen\nElevador\nCondominio Fechado\nPorteiro 24 horas\nPiscina aquecida\nPlayground\nÁrea de Serviço\nChurrasqueira",
+    "descricao": "Viva o privilégio de morar de frente para o mar em um dos endereços mais desejados e valorizados da Grande Florianópolis. O D/Blue Residence Club, da Dimas Construções, é um empreendimento que une sofisticação, exclusividade e qualidade de vida em uma localização privilegiada na Beira-Mar de São José. Com arquitetura moderna, acabamentos de alto padrão e uma infraestrutura completa de lazer em estilo clube, oferece espaços planejados para proporcionar conforto, bem-estar e momentos inesqueciveis para toda a familia. Desfrute de uma vista permanente para o mar, áreas de convivência elegantes e a conveniência de estar próximo aos principais serviços, comércios e acessos da região. Um lugar único para viver com mais conforto, segurança e excelência todos os dias. Valor taxa condominio: R$ 1.506,00"
+  },
+  {
     "codigo": "v506",
     "titulo": "Apartamento à Venda com 02 dormitórios  à beira Mar no Centro de São José",
     "tipo": "Apartamento",
