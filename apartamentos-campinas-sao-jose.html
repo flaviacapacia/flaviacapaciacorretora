@@ -104,6 +104,18 @@
     .card-body .preco { color: var(--gold-light); font-weight: 800; font-size: 1.1rem; margin-bottom: 12px; }
     .card-body .actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; }
     .card-body .actions a { font-size: .82rem; padding: 10px 14px; }
+    .profile-card {
+      grid-column: 1 / -1; border-color: var(--gold);
+      background: linear-gradient(115deg, #302416, #17130e 72%);
+    }
+    .profile-card .card-body {
+      align-items: center; padding: clamp(26px, 5vw, 42px); text-align: center;
+    }
+    .profile-card .card-body h3 { font-size: clamp(1.35rem, 3vw, 1.8rem); margin-bottom: 12px; }
+    .profile-card .card-body .meta { max-width: 700px; font-size: 1rem; line-height: 1.6; margin-bottom: 14px; }
+    .profile-card .card-body .preco { font-size: 1rem; margin-bottom: 18px; }
+    .profile-card .card-body .actions { justify-content: center; margin-top: 0; }
+    .profile-card .card-body .actions a { font-size: .95rem; padding: 14px 24px; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 12px 0 0; }
     .chips li {
       background: var(--bg-soft); border: 1px solid var(--line);
@@ -178,7 +190,7 @@
       <div class="grid">
 
         <article class="card">
-          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:400,h:300,cg:true,m" alt="Apartamento 4 dormitórios Campinas v504" />
+          <img src="img/v504/capa-apartamento-4-dormitorios-campinas (7).jpg" alt="Apartamento 4 dormitórios Campinas v504" />
           <div class="card-body">
             <h3>Apartamento 4 dormitórios · 2 suítes – Campinas</h3>
             <p class="meta">4 dorm. · 2 suítes · 5 banheiros · 2 vagas · cód. v504</p>
@@ -191,7 +203,7 @@
         </article>
 
         <article class="card">
-          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:400,h:300,cg:true,m" alt="Apartamento 2 dormitórios Campinas v503" />
+          <img src="img/v503/apartamento-venda-2-dormitorios-campinas (1).jpg" alt="Apartamento 2 dormitórios Campinas v503" />
           <div class="card-body">
             <h3>Apartamento 2 dormitórios – Campinas</h3>
             <p class="meta">Campinas · São José · cód. 503 / v503</p>
@@ -204,7 +216,7 @@
         </article>
 
         <article class="card">
-          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:400,h:300,cg:true,m" alt="Apartamento 3 dormitórios Campinas v493" />
+          <img src="img/v493/capa-apartamento-venda-campinas-sj-3-quartos-parque-dos-principes.jpeg" alt="Apartamento 3 dormitórios Campinas v493" />
           <div class="card-body">
             <h3>Apartamento 3 dormitórios · 2 suítes – Campinas</h3>
             <p class="meta">3 dorm. · 2 suítes · 3 banheiros · 1 vaga · cód. v493</p>
@@ -217,7 +229,7 @@
         </article>
 
         <article class="card">
-          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:400,h:300,cg:true,m" alt="Apartamento 2 dormitórios Campinas v479" />
+          <img src="img/v479/v479-6.jpeg" alt="Apartamento 2 dormitórios Campinas v479" />
           <div class="card-body">
             <h3>Apartamento 2 dormitórios · suíte – Campinas</h3>
             <p class="meta">2 dorm. · 1 suíte · 2 banheiros · 1 vaga · cód. v479</p>
@@ -230,7 +242,7 @@
         </article>
 
         <article class="card">
-          <img src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png/:/rs=w:400,h:300,cg:true,m" alt="Apartamento Campinas v457" />
+          <img src="img/v457/v457-1.jpeg" alt="Apartamento Campinas v457" />
           <div class="card-body">
             <h3>Apartamento reformado – Campinas (Morada do Sol)</h3>
             <p class="meta">Opção acessível · cód. v457</p>
@@ -242,11 +254,11 @@
           </div>
         </article>
 
-        <article class="card">
-          <div class="card-body" style="padding-top:28px">
+        <article class="card profile-card">
+          <div class="card-body">
             <h3>Não encontrou o perfil ideal?</h3>
             <p class="meta">Me diga suítes, vagas e orçamento. Busco em Campinas, Kobrasol e região.</p>
-            <p class="preco" style="font-size:.95rem;font-weight:600">Atendimento personalizado</p>
+            <p class="preco">Atendimento personalizado</p>
             <div class="actions">
               <a class="btn btn-wa" href="https://wa.me/5548999600601?text=Ol%C3%A1%20Flavia%2C%20quero%20op%C3%A7%C3%B5es%20em%20Campinas" target="_blank" rel="noopener">Falar no WhatsApp</a>
             </div>
