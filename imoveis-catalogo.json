@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v506",
+    "titulo": "Apartamento à Venda com 02 dormitórios  à beira Mar no Centro de São José",
+    "tipo": "Apartamento",
+    "cidade": "São José",
+    "bairro": "Centro",
+    "quartos": 2,
+    "suites": 2,
+    "vagas": 1,
+    "banheiros": 3,
+    "preco": 1325000,
+    "precoTexto": "1325000",
+    "url": "v506-apartamento-a-venda-com-02-dormitorios-a-beira-mar-no-centro-de-sao-jose.html",
+    "imagem": "/img/v506/apartamento-2-suites-beira-mar-centro-sao-jose-sc (1).jpg",
+    "tag": "Apartamento",
+    "destaque": "Condominio Completo\nPiscina Externa\nPiscina Interna\nAcademia\nBrinquedoteca\nSalão de Festas",
+    "descricao": "Com 78m2 de área privativa, mobiliado e climatizado com projeto moderno e marcenaria sob O apartamento conta com dois dormitórios sendo um suite, living amplo e integrado com ilha, banheiro social, uma vaga de garagem e hobby box. O D/Blue oferece estrutura completa, com areas de lazer e ambientes pensados para toda a familia, segurança e qualidade de vida, além de excelente padrão construtivo e valorização. Conta com piscina adulto com borda infinita e vista mar, piscina térmica, piscina infantil, fitness center, playground, brinquedoteca, espaço teen, salão de festas e espaço gourmet. Empreendimento sustentável com reaproveitamento de água da chuva para jardim e limpeza. Localização privilegiada, com vista para o mar e acesso direto à orla. Um estilo de vida que une bem-estar, praticidade e contato com a natureza, em uma das regiões que mais valorizam na Grande Florianópolis e ao lado de todo comércio e serviço de Campinas e Kobrasol."
+  },
+  {
     "codigo": "503",
     "titulo": "Apartamento à venda com 2 Dormitórios – Campinas, São José SC",
     "tipo": "Apartamento",
