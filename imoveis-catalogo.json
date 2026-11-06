@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "V505",
+    "titulo": "Cobertura à venda com 3 suítes no Estreito em Florianópolis SC",
+    "tipo": "Cobertura",
+    "cidade": "Florianópolis",
+    "bairro": "Estreito",
+    "quartos": 3,
+    "suites": 3,
+    "vagas": 2,
+    "banheiros": 4,
+    "preco": 2190000,
+    "precoTexto": "2.190.000,00",
+    "url": "v505-cobertura-a-venda-com-3-suites-no-estreito-em-florianopolis-sc.html",
+    "imagem": "/img/v505/apartamento-estreito-3suites-2vagas (1).jpg",
+    "tag": "Cobertura",
+    "destaque": "Vista panorâmica\nCondominio novo de alto padrão\nLazer completo",
+    "descricao": "Linda cobertura com 134m2 de área privativa e vista panorâmica da ilha, finamente mobiliada, O imóvel dispõe de 3 suites com móveis de alto padrão sob medida. Apartamento com dois pavimentos. Duas vagas de garagem e Hobby Box. Valor do Condominio: R$ 1.500,00"
+  },
+  {
     "codigo": "v507",
     "titulo": "Apartamento à Venda com 03 dormitórios  no Centro Histórico em São José",
     "tipo": "Apartamento",
