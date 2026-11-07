@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "V508",
+    "titulo": "Apartamento à venda com 3 suítes no Estreito em Florianópolis",
+    "tipo": "Apartamento",
+    "cidade": "Florianópolis",
+    "bairro": "Balneário do Estreito",
+    "quartos": 3,
+    "suites": 3,
+    "vagas": 2,
+    "banheiros": 4,
+    "preco": 2790000,
+    "precoTexto": "2.790.000,00",
+    "url": "v508-apartamento-a-venda-com-3-suites-no-estreito-em-florianopolis.html",
+    "imagem": "/img/v508/capa-1-apartamento-3-suites-infinity-estreito (10).jpg",
+    "tag": "Apartamento",
+    "destaque": "Alto Padrao\nPadrão Cimes Construtora\nPorteira Fechada",
+    "descricao": "Apartamento de 131 m2 privativos, com planta bem distribuida e ambientes funcionais, ideal para quem busca conforto e praticidade. São 3 suítes, lavabo, cozinha planejada integrada com a sala de jantar e estar, varanda com churrasqueira a carvão, 2 vagas de garagem e um Hobby Box. O imóvel é vendido porteira fechada, permanecendo exatamente como está nas imagens, com mobiliário, marcenaria e eletros, pronto para morar. O condomínio oferece infraestrutura completa, com piscina, salão de festas, brinquedoteca, sala de jogos, mercadinho, pet place e áreas de convivência, garantindo lazer, conveniência e qualidade de vida no dia a dia."
+  },
+  {
     "codigo": "V505",
     "titulo": "Cobertura à venda com 3 suítes no Estreito em Florianópolis SC",
     "tipo": "Cobertura",
