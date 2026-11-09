@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v509",
+    "titulo": "APARTAMENTO 3 DORMITÓRIOS SENDO UMA SUÍTE - ESTREITO - FLORIANÓPOLIS",
+    "tipo": "APARTAMENTO",
+    "cidade": "Florianópolis",
+    "bairro": "Estreito",
+    "quartos": 3,
+    "suites": 1,
+    "vagas": 1,
+    "banheiros": 2,
+    "preco": 810000,
+    "precoTexto": "810.000,00",
+    "url": "v509-apartamento-3-dormitorios-sendo-uma-suite-estreito-florianopolis.html",
+    "imagem": "/img/v509/capa-apartamento-3-dormitorios-suite-estreito.JPG",
+    "tag": "APARTAMENTO",
+    "destaque": "",
+    "descricao": "O imóvel conta com ambientes bem distribuidos, sala de estar e jantar integradas e cozinha funcional com boa área de serviço. A suíte garante privacidade e praticidade, enquanto os outros dois dormitórios espaçosos. Situado no Estreito, uma região estratégica da cidade, o apartamento está próximo a comércios, escolas, restaurantes e possui fácil acesso ao centro de Florianópolis e às principais"
+  },
+  {
     "codigo": "V508",
     "titulo": "Apartamento à venda com 3 suítes no Estreito em Florianópolis",
     "tipo": "Apartamento",
