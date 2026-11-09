@@ -6,68 +6,138 @@
   <title>Imóveis em Estreito, Florianópolis | Flavia Capacia Corretora</title>
   <meta name="description" content="Encontre imóveis em Estreito, Florianópolis. Atendimento personalizado com Flavia Capacia Corretora.">
   <link rel="canonical" href="https://www.flaviacapaciacorretora.com/apartamentos-estreito-florianopolis.html">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Imóveis em Estreito, Florianópolis | Flavia Capacia Corretora">
   <meta property="og:description" content="Imóveis em Estreito, Florianópolis, com atendimento personalizado.">
   <style>
-    :root { --gold: #b08d57; --gold-dark: #80643b; --text: #292722; --muted: #6b665e; --line: rgba(176,141,87,.28); --soft: #faf7f1; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; color: var(--text); background: #fff; }
+    :root { --gold: #b08d57; --gold-dark: #80643b; --bronze: #4b3a2f; --bronze-light: #7a5c45; --text: #222; --muted: #6b665e; --line: #e8dfd6; --soft: #faf7f1; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font: 16px/1.6 Inter, "Playfair Display", Arial, sans-serif; color: var(--text); background: #fff; }
+    img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px max(18px, calc((100% - 1080px)/2)); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); }
-    .brand { color: var(--gold-dark); font-weight: 700; }
-    .button { display: inline-block; padding: 11px 18px; border-radius: 999px; background: linear-gradient(135deg,#927548,var(--gold-dark),#70552f); color: #fff; font-weight: 700; }
-    main { max-width: 1080px; margin: auto; padding: 28px 18px 48px; }
-    .hero { padding: 34px 20px; text-align: center; background: var(--soft); border: 1px solid var(--line); border-radius: 18px; }
-    .hero h1 { margin: 0 0 12px; font-size: clamp(1.7rem,4vw,2.5rem); line-height: 1.2; }
-    .hero p { max-width: 760px; margin: 0 auto 16px; color: var(--muted); }
-    .section { margin-top: 20px; padding: 22px; border: 1px solid var(--line); border-radius: 16px; }
-    .section h2 { margin: 0 0 10px; padding-left: 12px; border-left: 3px solid var(--gold); color: var(--gold-dark); font-size: 1.2rem; }
-    .section p { color: var(--muted); }
-    .property-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 16px; }
-    .property-card { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
-    .property-card img { display: block; width: 100%; height: 190px; object-fit: cover; background: var(--soft); }
-    .property-card-body { padding: 16px; }
-    .property-card h3 { margin: 4px 0 8px; font-size: 1rem; line-height: 1.35; }
-    .property-meta { color: var(--muted); font-size: .9rem; }
-    .property-price { margin: 12px 0; color: var(--gold-dark); font-size: 1.1rem; font-weight: 800; }
-    .property-link { display: inline-block; padding: 9px 16px; border-radius: 999px; background: var(--gold-dark); color: #fff; font-weight: 700; }
-    .neighborhood-cover { display: block; width: 100%; max-height: 340px; margin: 0 0 18px; border-radius: 12px; object-fit: cover; }
-    .cta { margin-top: 20px; padding: 24px; text-align: center; background: var(--soft); border: 1px solid var(--line); border-radius: 16px; }
-    @media (max-width: 560px) { .topbar { justify-content: center; text-align: center; } .section { padding: 18px; } }
+    .topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px max(18px, calc((100% - 1120px)/2)); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); }
+    .topbar-brand { color: var(--bronze); font-weight: 700; }
+    .topbar-links, .hero-ctas, .card-actions, .cta-actions { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .topbar-links { justify-content: flex-end; }
+    .topbar-links a:not(.button) { color: var(--gold-dark); font-size: .9rem; font-weight: 600; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: 11px 18px; border: 1px solid var(--gold); border-radius: 999px; color: var(--gold-dark); font-weight: 700; }
+    .button-gold { border-color: var(--gold-dark); background: linear-gradient(135deg,#927548,var(--gold-dark),#70552f); color: #fff; }
+    .button-whatsapp { border: 0; background: #25d366; color: #fff; }
+    .hero { max-width: 920px; margin: 0 auto; padding: 36px 18px 22px; text-align: center; }
+    .badge { display: inline-block; margin-bottom: 14px; padding: 6px 12px; border: 1px solid var(--gold); border-radius: 999px; color: var(--gold-dark); font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .hero h1 { margin-bottom: 12px; color: var(--bronze); font-size: clamp(1.45rem,3.4vw,2.25rem); line-height: 1.15; }
+    .hero p { max-width: 720px; margin: 0 auto 18px; color: var(--muted); }
+    .hero-ctas { margin-top: 18px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 12px 18px 48px; }
+    .section { margin-bottom: 18px; padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+    .section h2 { margin-bottom: 12px; padding-left: 12px; border-left: 3px solid var(--gold); color: var(--gold-dark); font-size: 1.15rem; }
+    .section p { margin-bottom: 10px; color: var(--muted); }
+    .property-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 20px; }
+    .property-card { position: relative; display: flex; flex-direction: column; overflow: hidden; border-radius: 12px; background: #fff; box-shadow: 0 3px 12px rgba(176,141,87,.14); transition: transform .2s, box-shadow .2s; }
+    .property-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(176,141,87,.2); }
+    .property-tag { position: absolute; z-index: 1; top: 15px; right: 15px; padding: 6px 14px; border-radius: 25px; background: var(--bronze); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .property-image { width: 100%; height: 230px; object-fit: cover; }
+    .property-details { display: flex; flex: 1; flex-direction: column; padding: 22px; }
+    .property-type { margin-bottom: 6px; color: var(--bronze); font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+    .property-title { min-height: 48px; margin-bottom: 8px; color: var(--text); font-family: "Playfair Display", Georgia, serif; font-size: 19px; line-height: 1.3; }
+    .property-location { margin-bottom: 14px; color: var(--bronze); font-size: 13px; }
+    .property-features { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 14px; padding: 14px 0; border-top: 1px solid #e8e0d5; border-bottom: 1px solid #e8e0d5; color: var(--bronze); font-size: 13px; }
+    .property-features strong { color: var(--text); font-weight: 600; }
+    .property-price { margin-bottom: 4px; color: var(--gold-dark); font-size: 1.25rem; font-weight: 800; }
+    .property-code { margin-bottom: 14px; color: var(--bronze); font-size: 13px; font-weight: 600; letter-spacing: .4px; text-transform: uppercase; }
+    .card-actions { justify-content: flex-start; margin-top: auto; }
+    .cta-band { margin-bottom: 18px; padding: 28px 20px; border: 1px solid var(--gold-dark); border-radius: 18px; background: linear-gradient(160deg,#faf7f1,#fff); text-align: center; }
+    .cta-band h2 { margin-bottom: 8px; color: var(--text); font-size: 1.25rem; }
+    .cta-band p { margin-bottom: 14px; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 28px 18px 40px; color: var(--muted); font-size: .9rem; text-align: center; }
+    footer .name { margin-bottom: 6px; color: var(--gold-dark); font-weight: 700; }
+    footer a { color: var(--gold-dark); }
+    @media (max-width: 600px) { .topbar { justify-content: center; text-align: center; } .topbar-links { justify-content: center; } .section { padding: 18px; } .property-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body data-neighborhood-page="apartamentos-estreito-florianopolis">
-  <header class="topbar"><a class="brand" href="/">Flavia Capacia Corretora</a><a href="/" aria-label="Voltar ao catálogo">Ver imóveis</a></header>
-  <main>
-    <section class="hero"><h1>Imóveis em Estreito, Florianópolis</h1><p>Seleção de apartamentos à venda no Estreito, um dos bairros mais estratégicos e valorizados de Florianópolis. Localizado na parte continental, próximo à Ponte Hercílio Luz e à Beira-Mar Continental, o Estreito oferece praticidade, comércio forte e excelente potencial de valorização. Ideal para quem busca morar ou investir com qualidade de vida.Sobre o bairro</p></section>
-    <section class="section"><h2>Sobre o bairro</h2><p>O Estreito é um dos bairros mais completos e dinâmicos de Florianópolis. Combina vida residencial com intenso movimento comercial e localização privilegiada — a poucos minutos da Ponte Hercílio Luz e do Centro da Ilha. Quem procura apartamento no Estreito valoriza a praticidade do dia a dia e a constante valorização imobiliária da região.</p></section>
-<section class="section"><h2>Infraestrutura e qualidade de vida</h2><p>O bairro conta com supermercados, escolas, hospitais, academias, farmácias e transporte público sempre por perto. A proximidade com a Beira-Mar Continental e o fácil acesso às principais vias tornam o Estreito uma escolha prática e agradável para o dia a dia, seja para famílias ou profissionais.</p></section>
-<section class="section"><h2>Morar e investir em Estreito</h2><p>Morar no Estreito significa viver com praticidade e boa infraestrutura. Investir na região é apostar em um dos bairros com maior demanda de aluguel e valorização constante em Florianópolis. Há opções desde studios até apartamentos com suítes e sacada gourmet, ideais tanto para uso próprio quanto para rendimento.</p></section>
+  <header class="topbar">
+    <a class="topbar-brand" href="https://www.flaviacapaciacorretora.com/">Flavia Capacia Corretora</a>
+    <nav class="topbar-links" aria-label="Links principais">
+      <a href="https://www.flaviacapaciacorretora.com/">Ver todos os imóveis</a>
+      <a class="button button-gold" href="https://wa.me/5548999600601?text=Ol%C3%A1%20Flavia%2C%20quero%20op%C3%A7%C3%B5es%20de%20im%C3%B3veis%20em%20Estreito%2C%20Florian%C3%B3polis" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <span class="badge">Florianópolis · SC</span>
+    <h1>Apartamentos à venda em Estreito, Florianópolis</h1>
+    <p>Seleção de apartamentos à venda no Estreito, um bairro estratégico e valorizado de Florianópolis. Localizado na parte continental, próximo à Ponte Hercílio Luz e à Beira-Mar Continental, oferece praticidade para morar ou investir.</p>
+    <div class="hero-ctas">
+      <a class="button button-whatsapp" href="https://wa.me/5548999600601?text=Ol%C3%A1%20Flavia%2C%20quero%20op%C3%A7%C3%B5es%20de%20im%C3%B3veis%20em%20Estreito%2C%20Florian%C3%B3polis" target="_blank" rel="noopener noreferrer">Pedir opções no WhatsApp</a>
+      <a class="button" href="https://www.flaviacapaciacorretora.com/">Ver catálogo completo</a>
+    </div>
+  </section>
+  <main class="wrap">
+    <section class="section">
+      <h2>Sobre Estreito</h2>
+      <p>O Estreito reúne comércio, escolas, hospitais e serviços, além de fácil acesso à Beira-Mar Continental e ao Centro. Sua infraestrutura e localização tornam o bairro uma opção prática para o dia a dia e interessante para morar ou investir.</p>
+    </section>
     <section class="section" id="bairro-imoveis"><h2>Imóveis disponíveis em Estreito</h2><div class="property-grid"><article class="property-card" data-imovel-codigo="v509">
-  <img src="/img/v509/apartamento-3-dormitorios-suite-estreito%20(1).JPG" alt="Apartamento à Venda com 3 dormitórios no Estreito em Florianópolis" loading="lazy" decoding="async">
-  <div class="property-card-body"><span class="property-meta">Apartamento</span><h3>Apartamento à Venda com 3 dormitórios no Estreito em Florianópolis</h3>
-    <p class="property-meta">3 quartos · 1 suíte · 1 vaga</p>
-    <p class="property-price">R$ 810.000,00</p>
-    <a class="property-link" href="v509-apartamento-a-venda-com-3-dormitorios-no-estreito-em-florianopolis.html">Ver imóvel</a>
+  <span class="property-tag">Apartamento</span>
+  <img class="property-image" src="/img/v509/apartamento-3-dormitorios-suite-estreito%20(1).JPG" alt="Apartamento à Venda com 3 dormitórios no Estreito em Florianópolis" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento à Venda com 3 dormitórios no Estreito em Florianópolis</h3>
+    <div class="property-location">Estreito - Florianópolis/SC</div>
+    <div class="property-features"><span><strong>3</strong> quartos</span> · <span><strong>1</strong> suíte</span> · <span><strong>2</strong> banheiros</span> · <span><strong>1</strong> vaga</span></div>
+    <div class="property-price">R$ 810.000,00</div>
+    <div class="property-code">Código: v509</div>
+    <div class="card-actions">
+      <a class="button button-gold" href="v509-apartamento-a-venda-com-3-dormitorios-no-estreito-em-florianopolis.html">Ver detalhes</a>
+      <a class="button button-whatsapp" href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20Apartamento%20no%20Estreito%20-%20C%C3%B3digo%3A%20v509" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
   </div>
 </article>
 <article class="property-card" data-imovel-codigo="v508">
-  <img src="/img/v508/apartamento-3-suites-infinity-estreito%20(1).jpg" alt="Apartamento à venda com 3 suítes no Estreito em Florianópolis" loading="lazy" decoding="async">
-  <div class="property-card-body"><span class="property-meta">Apartamento</span><h3>Apartamento à venda com 3 suítes no Estreito em Florianópolis</h3>
-    <p class="property-meta">3 quartos · 3 suítes · 2 vagas</p>
-    <p class="property-price">R$ 2.790.000,00</p>
-    <a class="property-link" href="v508-apartamento-a-venda-com-3-suites-no-estreito-em-florianopolis.html">Ver imóvel</a>
+  <span class="property-tag">Apartamento</span>
+  <img class="property-image" src="/img/v508/apartamento-3-suites-infinity-estreito%20(1).jpg" alt="Apartamento à venda com 3 suítes no Estreito em Florianópolis" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Apartamento</div>
+    <h3 class="property-title">Apartamento à venda com 3 suítes no Estreito em Florianópolis</h3>
+    <div class="property-location">Balneário do Estreito - Florianópolis/SC</div>
+    <div class="property-features"><span><strong>3</strong> quartos</span> · <span><strong>3</strong> suítes</span> · <span><strong>4</strong> banheiros</span> · <span><strong>2</strong> vagas</span></div>
+    <div class="property-price">R$ 2.790.000,00</div>
+    <div class="property-code">Código: v508</div>
+    <div class="card-actions">
+      <a class="button button-gold" href="v508-apartamento-a-venda-com-3-suites-no-estreito-em-florianopolis.html">Ver detalhes</a>
+      <a class="button button-whatsapp" href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20Apartamento%20no%20Balne%C3%A1rio%20do%20Estreito%20-%20C%C3%B3digo%3A%20V508" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
   </div>
 </article>
 <article class="property-card" data-imovel-codigo="v505">
-  <img src="/img/v505/apartamento-estreito-3suites-2vagas%20(1).jpg" alt="Cobertura à venda com 3 suítes no Estreito em Florianópolis SC" loading="lazy" decoding="async">
-  <div class="property-card-body"><span class="property-meta">Cobertura</span><h3>Cobertura à venda com 3 suítes no Estreito em Florianópolis SC</h3>
-    <p class="property-meta">3 quartos · 3 suítes · 2 vagas</p>
-    <p class="property-price">R$ 2.190.000,00</p>
-    <a class="property-link" href="v505-cobertura-a-venda-com-3-suites-no-estreito-em-florianopolis-sc.html">Ver imóvel</a>
+  <span class="property-tag">Cobertura</span>
+  <img class="property-image" src="/img/v505/apartamento-estreito-3suites-2vagas%20(1).jpg" alt="Cobertura à venda com 3 suítes no Estreito em Florianópolis SC" loading="lazy" decoding="async" width="400" height="230">
+  <div class="property-details">
+    <div class="property-type">Cobertura</div>
+    <h3 class="property-title">Cobertura à venda com 3 suítes no Estreito em Florianópolis SC</h3>
+    <div class="property-location">Estreito - Florianópolis/SC</div>
+    <div class="property-features"><span><strong>3</strong> quartos</span> · <span><strong>3</strong> suítes</span> · <span><strong>4</strong> banheiros</span> · <span><strong>2</strong> vagas</span></div>
+    <div class="property-price">R$ 2.190.000,00</div>
+    <div class="property-code">Código: v505</div>
+    <div class="card-actions">
+      <a class="button button-gold" href="v505-cobertura-a-venda-com-3-suites-no-estreito-em-florianopolis-sc.html">Ver detalhes</a>
+      <a class="button button-whatsapp" href="https://wa.me/5548999600601?text=Tenho%20interesse%20no%20Cobertura%20no%20Estreito%20-%20C%C3%B3digo%3A%20V505" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
   </div>
 </article></div></section>
-<section class="cta"><h2>Procura um imóvel em Estreito?</h2><p>Fale diretamente com a corretora para receber opções disponíveis na região.</p><a class="button" href="https://wa.me/5548999600601?text=Ol%C3%A1%20Flavia%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20im%C3%B3veis%20em%20Estreito%2C%20Florian%C3%B3polis" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a></section>
+    <section class="cta-band">
+      <h2>Quer opções em Estreito?</h2>
+      <p>Conte quantos dormitórios procura, se precisa de vaga e a faixa de valor.</p>
+      <div class="cta-actions">
+        <a class="button button-whatsapp" href="https://wa.me/5548999600601?text=Ol%C3%A1%20Flavia%2C%20quero%20op%C3%A7%C3%B5es%20de%20im%C3%B3veis%20em%20Estreito%2C%20Florian%C3%B3polis" target="_blank" rel="noopener noreferrer">WhatsApp Estreito</a>
+        <a class="button" href="https://www.flaviacapaciacorretora.com/">Ver todos os imóveis</a>
+      </div>
+    </section>
   </main>
+  <footer>
+    <p class="name">Flavia Capacia Corretora</p>
+    <p><a href="https://wa.me/5548999600601" target="_blank" rel="noopener noreferrer">(48) 99960-0601</a> · Florianópolis · SC</p>
+    <p style="margin-top:12px">&copy; 2026 Flavia Capacia Corretora</p>
+  </footer>
 </body>
 </html>
