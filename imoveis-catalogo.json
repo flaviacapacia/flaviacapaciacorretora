@@ -1,5 +1,23 @@
 [
   {
+    "codigo": "v510",
+    "titulo": "Apartamento Garden à venda com 3 suiítes no DMys no Estreito",
+    "tipo": "Apartamento",
+    "cidade": "Florianópolis",
+    "bairro": "Estreito",
+    "quartos": 3,
+    "suites": 3,
+    "vagas": 2,
+    "banheiros": 4,
+    "preco": 2200000,
+    "precoTexto": "2.200.000,00",
+    "url": "v510-apartamento-garden-a-venda-com-3-suiites-no-dmys-no-estreito.html",
+    "imagem": "/img/v510/capa-d-mys-apartamento-garden-3-suites.jpg",
+    "tag": "Apartamento",
+    "destaque": "Esquadrias de aluminio pintada na cor\ncinza e vidros transparentes.\nBanheiros acabados com azulejo e nicho e\npanorâmica.\nFechadura Eletrônica.\nHobby box",
+    "descricao": "Apartamento garden com 205 m² no Estreito, em empreendimento da Construtora Dimas. O imóvel conta com três suítes, lavabo, cozinha e sala de estar integradas, proporcionando ambientes amplos, funcionais e com excelente aproveitamento dos espaços. O grande destaque é o garden privativo, ideal para momentos de lazer, convivência e conforto, unindo a praticidade de um apartamento à sensação de uma casa. O condomínio conta com salão de festas, espaço gourmet, piscina, academia, brinquedoteca, playground, áreas de convivência, portaria e segurança"
+  },
+  {
     "codigo": "v509",
     "titulo": "APARTAMENTO 3 DORMITÓRIOS SENDO UMA SUÍTE - ESTREITO - FLORIANÓPOLIS",
     "tipo": "APARTAMENTO",
