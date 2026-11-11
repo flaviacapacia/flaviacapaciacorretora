@@ -2128,7 +2128,7 @@ document.addEventListener('DOMContentLoaded', function configurarAssistenteBusca
  
 </script>
 <script>
-/* Catálogo: injeta imóveis do GitHub que não estão no index (v496 terreno, v482 studio) */
+/* Mantém a ordem dos cards estáticos e elimina códigos duplicados. */
 (function(){
   const GRID = document.querySelector('.properties-grid');
   if (!GRID) return;
@@ -2303,55 +2303,16 @@ document.addEventListener('DOMContentLoaded', function configurarAssistenteBusca
     return article;
   }
 
-  async function injetarFaltantes() {
+  function inicializarCards() {
     organizarCardsRecentes();
-    try {
-      const res = await fetch('imoveis-catalogo.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('catalogo HTTP ' + res.status);
-      const lista = await res.json();
-      if (!Array.isArray(lista)) {
-        atualizarImoveisPorBairro();
-        return;
-      }
-      const existentes = new Set(
-        Array.from(document.querySelectorAll('.property-card[data-codigo]'))
-          .map(c => normalizarCodigo(c.getAttribute('data-codigo')))
-          .filter(Boolean)
-      );
-      const urlsExistentes = new Set(
-        Array.from(GRID.querySelectorAll('.property-card .btn-details[href]'))
-          .map(a => normalizarUrl(a.getAttribute('href')))
-          .filter(Boolean)
-      );
-      lista.forEach(item => {
-        const cod = normalizarCodigo(item.codigo);
-        const url = normalizarUrl(item.url);
-        if (!cod || existentes.has(cod) || (url && urlsExistentes.has(url))) return;
-        const card = criarCard(item);
-        if (item.publicarNoIndex === false) card.dataset.catalogSearchOnly = 'true';
-        if (codigosEmDestaque.has(cod)) {
-          const proximoCard = Array.from(GRID.children).find(elemento =>
-            !codigosEmDestaque.has(normalizarCodigo(elemento.getAttribute('data-codigo')))
-          ) || null;
-          GRID.insertBefore(card, proximoCard);
-        } else {
-          GRID.appendChild(card);
-        }
-        existentes.add(cod);
-        if (url) urlsExistentes.add(url);
-      });
-      organizarCardsRecentes();
-      atualizarImoveisPorBairro();
-      if (typeof aplicarFiltros === 'function') aplicarFiltros();
-    } catch (e) {
-      console.warn('Catálogo não carregado:', e);
-    }
+    atualizarImoveisPorBairro();
+    if (typeof aplicarFiltros === 'function') aplicarFiltros();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injetarFaltantes);
+    document.addEventListener('DOMContentLoaded', inicializarCards);
   } else {
-    injetarFaltantes();
+    inicializarCards();
   }
 })();
 </script>
