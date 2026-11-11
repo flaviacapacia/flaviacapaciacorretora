@@ -96,10 +96,11 @@ fbq('track', 'PageView');
 <section class="hero-image-section">
 <div class="hero-image-content">
 <h1>Encontre o seu imóvel na Grande Florianópolis</h1>
-<div class="hero-tabs">
+<div class="hero-tabs" role="group" aria-label="Tipo de imóvel">
 <button class="hero-tab active" data-negocio="venda" type="button">Venda</button>
-<button class="hero-tab" data-negocio="lancamento" type="button">Lançamentos</button>
 <button class="hero-tab" data-negocio="locacao" type="button">Aluguel</button>
+<button class="hero-tab" data-negocio="lancamento" type="button">Lançamentos</button>
+<a class="hero-tab hero-tab-link" href="blog.html">Blog</a>
 </div>
 <div class="hero-search-advanced">
 <input class="search-input-main" id="filtro-cidade-busca" placeholder="Digite a cidade, bairro ou condomínio..." type="text"/>
@@ -204,6 +205,7 @@ document.querySelectorAll('.hero-tab').forEach(tab => {
 });
 
 function aplicarFiltros() {
+  const normalizarTexto = valor => String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const cidade = (document.getElementById('filtro-cidade')?.value || '').trim();
   const bairro = (document.getElementById('filtro-bairro')?.value || '').trim();
   const tipo = (document.getElementById('filtro-tipo')?.value || '').trim();
@@ -211,21 +213,21 @@ function aplicarFiltros() {
   const min = parseInt(document.getElementById('filtro-min')?.value) || 0;
   const maxVal = document.getElementById('filtro-max')?.value;
   const max = maxVal ? parseInt(maxVal) : Infinity;
-  const codigo = (document.getElementById('filtro-codigo')?.value || '').trim().toLowerCase();
-  const busca = (document.getElementById('filtro-cidade-busca')?.value || '').toLowerCase().trim();
+  const codigo = normalizarTexto(document.getElementById('filtro-codigo')?.value);
+  const busca = normalizarTexto(document.getElementById('filtro-cidade-busca')?.value);
   const hasSearchCriteria = Boolean(cidade || bairro || tipo || quartos || min || maxVal || codigo || busca);
 
   const cards = document.querySelectorAll('.property-card');
 
   cards.forEach(card => {
-    const cidadeCard = (card.getAttribute('data-cidade') || '').toLowerCase();
-    const bairroCard = (card.getAttribute('data-bairro') || '').toLowerCase();
-    const tipoCard = (card.getAttribute('data-tipo') || '').toLowerCase();
-    const negocioCard = (card.getAttribute('data-negocio') || 'venda').toLowerCase();
+    const cidadeCard = normalizarTexto(card.getAttribute('data-cidade'));
+    const bairroCard = normalizarTexto(card.getAttribute('data-bairro'));
+    const tipoCard = normalizarTexto(card.getAttribute('data-tipo'));
+    const negocioCard = normalizarTexto(card.getAttribute('data-negocio') || 'venda');
     const quartosCard = parseInt(card.getAttribute('data-quartos')) || 0;
     const precoCard = parseInt(card.getAttribute('data-preco')) || 0;
-    const codigoCard = (card.getAttribute('data-codigo') || '').toLowerCase();
-    const textoCard = (card.textContent || '').toLowerCase();
+    const codigoCard = normalizarTexto(card.getAttribute('data-codigo'));
+    const textoCard = normalizarTexto(card.textContent);
 
     let visivel = true;
 
@@ -233,9 +235,9 @@ function aplicarFiltros() {
     if (negocioAtivo === 'locacao' && negocioCard !== 'locacao') visivel = false;
     if (negocioAtivo === 'lancamento' && negocioCard !== 'lancamento') visivel = false;
 
-    if (cidade && cidadeCard !== cidade.toLowerCase()) visivel = false;
-    if (bairro && bairroCard !== bairro.toLowerCase()) visivel = false;
-    if (tipo && tipoCard !== tipo.toLowerCase()) visivel = false;
+    if (cidade && cidadeCard !== normalizarTexto(cidade)) visivel = false;
+    if (bairro && bairroCard !== normalizarTexto(bairro)) visivel = false;
+    if (tipo && tipoCard !== normalizarTexto(tipo)) visivel = false;
     if (quartos) {
       if (quartos === '4') {
         if (quartosCard < 4) visivel = false;
@@ -260,8 +262,59 @@ function limparFiltros() {
   const vendaTab = document.querySelector('.hero-tab[data-negocio="venda"]');
   if (vendaTab) vendaTab.classList.add('active');
   negocioAtivo = 'venda';
+  atualizarBairros();
   aplicarFiltros();
 }
+
+function atualizarBairros() {
+  const cidade = document.getElementById('filtro-cidade');
+  const bairro = document.getElementById('filtro-bairro');
+  if (!cidade || !bairro) return;
+  const normalizar = valor => String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const cidadeSelecionada = normalizar(cidade.value);
+
+  Array.from(bairro.querySelectorAll('optgroup')).forEach(grupo => {
+    const mostrar = !cidadeSelecionada || normalizar(grupo.label) === cidadeSelecionada;
+    grupo.hidden = !mostrar;
+  });
+
+  const opcaoBairroSelecionada = bairro.options[bairro.selectedIndex];
+  const grupoBairroSelecionado = opcaoBairroSelecionada?.parentElement;
+  if (cidadeSelecionada && grupoBairroSelecionado?.tagName === 'OPTGROUP'
+      && normalizar(grupoBairroSelecionado.label) !== cidadeSelecionada) {
+    bairro.value = '';
+  }
+}
+
+document.getElementById('filtro-cidade')?.addEventListener('change', atualizarBairros);
+atualizarBairros();
+
+(function configurarAssistenteBusca() {
+  const botao = document.getElementById('assistente-busca-toggle');
+  const painel = document.getElementById('assistente-busca-painel');
+  const formulario = document.getElementById('assistente-busca-form');
+  const buscaAssistente = document.getElementById('assistente-busca');
+  if (!botao || !painel || !formulario || !buscaAssistente) return;
+
+  botao.addEventListener('click', () => {
+    const abrir = botao.getAttribute('aria-expanded') !== 'true';
+    botao.setAttribute('aria-expanded', String(abrir));
+    painel.hidden = !abrir;
+    if (abrir) buscaAssistente.focus();
+  });
+
+  formulario.addEventListener('submit', event => {
+    event.preventDefault();
+    const buscaPrincipal = document.getElementById('filtro-cidade-busca');
+    if (!buscaPrincipal) return;
+    limparFiltros();
+    buscaPrincipal.value = buscaAssistente.value.trim();
+    aplicarFiltros();
+    painel.hidden = true;
+    botao.setAttribute('aria-expanded', 'false');
+    document.querySelector('.properties-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
 
 (function(){
   const KEY = 'flavia_favoritos';
@@ -1452,12 +1505,28 @@ function limparFiltros() {
     })();
   </script>
 </section>
-<a aria-label="WhatsApp" class="whatsapp-float" href="https://wa.me/5548999600601?text=Olá! Vim pelo site e gostaria de mais informações sobre os imóveis" target="_blank">
-<span style="position:relative;display:flex;align-items:center;justify-content:center;width:82px;height:82px;background:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(34,34,34,0.10);">
-<img alt="Flavia Capacia" src="https://img1.wsimg.com/isteam/ip/07e23903-74f7-4959-8978-9a8be272f898/Logo%20Flavia%20Marca%20dagua%20dourada.png" style="width:72px;height:72px;object-fit:contain;display:block;"/>
-<span style="position:absolute;bottom:8px;right:8px;width:18px;height:18px;background:#25D366;border:2.5px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(34,34,34,0.10);"></span>
-</span>
-</a>
+<aside class="property-assistant" aria-label="Assistente de busca de imóveis">
+  <section class="assistant-panel" id="assistente-busca-painel" aria-labelledby="assistente-busca-titulo" hidden>
+    <div class="assistant-panel-header">
+      <div>
+        <p class="assistant-eyebrow">Flavia Capacia Corretora</p>
+        <h2 id="assistente-busca-titulo">Olá! Posso ajudar?</h2>
+      </div>
+      <span class="assistant-status">Online</span>
+    </div>
+    <p class="assistant-message">Busque por cidade, bairro, tipo de imóvel ou código. Se preferir, fale comigo pelo WhatsApp.</p>
+    <form id="assistente-busca-form">
+      <label class="sr-only" for="assistente-busca">O que você procura?</label>
+      <input id="assistente-busca" type="search" placeholder="Ex.: Kobrasol, casa, V496" autocomplete="off" required>
+      <button class="assistant-search-button" type="submit">Buscar imóveis</button>
+    </form>
+    <a class="assistant-whatsapp" href="https://wa.me/5548999600601?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20ajuda%20para%20encontrar%20um%20im%C3%B3vel." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+  </section>
+  <button class="assistant-toggle" id="assistente-busca-toggle" type="button" aria-expanded="false" aria-controls="assistente-busca-painel">
+    <svg class="assistant-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+    <span>Encontre seu imóvel</span>
+  </button>
+</aside>
 <!-- ========== AVALIAÇÕES GOOGLE ========== -->
 <section class="avaliacoes-section" id="avaliacoes">
 <div class="avaliacoes-content">
