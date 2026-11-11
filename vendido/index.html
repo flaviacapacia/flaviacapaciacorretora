@@ -289,7 +289,7 @@ function atualizarBairros() {
 document.getElementById('filtro-cidade')?.addEventListener('change', atualizarBairros);
 atualizarBairros();
 
-(function configurarAssistenteBusca() {
+document.addEventListener('DOMContentLoaded', function configurarAssistenteBusca() {
   const botao = document.getElementById('assistente-busca-toggle');
   const painel = document.getElementById('assistente-busca-painel');
   const formulario = document.getElementById('assistente-busca-form');
@@ -314,7 +314,7 @@ atualizarBairros();
     botao.setAttribute('aria-expanded', 'false');
     document.querySelector('.properties-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-})();
+}, { once: true });
 
 (function(){
   const KEY = 'flavia_favoritos';
