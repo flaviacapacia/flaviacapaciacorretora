@@ -14,7 +14,7 @@ body {
   font-family: var(--fonte-secundaria);
   color: var(--preto);
   line-height: 1.6;
-  background-color: var(--bronze-claro);
+  background-color: var(--branco);
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -67,6 +67,18 @@ img { max-width: 100%; height: auto; display: block; }
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+}
+.topbar-brand {
+  color: #4b3a2f;
+  font-family: var(--fonte-principal);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+.topbar-brand:hover,
+.topbar-brand:focus-visible {
+  color: var(--bronze);
 }
 .logo-img { max-width: 160px; height: auto; }
 .nav-menu ul {
@@ -277,7 +289,7 @@ img { max-width: 100%; height: auto; display: block; }
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(34, 34, 34, 0.12);
 }
-.bairro-page-card a {
+.bairro-page-card .bairro-page-link {
   display: flex;
   min-height: 150px;
   flex-direction: column;
@@ -285,7 +297,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: inherit;
   text-decoration: none;
 }
-.bairro-page-card a > span:first-child {
+.bairro-page-card .bairro-page-link > span:first-child {
   color: #80643b;
   font-size: 0.85rem;
 }
@@ -299,6 +311,51 @@ img { max-width: 100%; height: auto; display: block; }
 .bairro-page-card .bairro-page-cta {
   margin-top: auto;
   color: #80643b;
+  font-weight: 700;
+}
+.bairro-featured-slot {
+  padding: 0 14px 14px;
+}
+.bairro-page-card .bairro-featured-property {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #eee8df;
+  border-radius: 10px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.bairro-page-card .bairro-featured-property:hover,
+.bairro-page-card .bairro-featured-property:focus-visible {
+  border-color: var(--bronze);
+  box-shadow: 0 4px 14px rgba(34, 34, 34, 0.1);
+}
+.bairro-featured-property img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.bairro-featured-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 11px 12px;
+}
+.bairro-featured-info strong {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #292722;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.bairro-featured-price {
+  color: #80643b;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -938,6 +995,7 @@ button.btn-favorito.ativo svg path {
   gap: 12px;
 }
 .assistant-eyebrow {
+  display: inline-block;
   margin-bottom: 3px;
   color: var(--bronze);
   font-size: 12px;
@@ -1089,6 +1147,61 @@ button.btn-favorito.ativo svg path {
   border-top: 1px solid #e0e0e0;
   font-size: 13px;
   color: var(--bronze);
+}
+.footer-brand-name {
+  color: #4b3a2f;
+  font-weight: 700;
+}
+.footer-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 9px 16px;
+  border: 1px solid var(--bronze);
+  border-radius: 999px;
+  background: var(--branco);
+  color: var(--bronze);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.footer-back-to-top:hover,
+.footer-back-to-top:focus-visible {
+  background: var(--bronze);
+  color: var(--branco);
+}
+.region-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 40px;
+  padding: 28px 20px;
+  text-align: center;
+}
+.region-page-footer p {
+  margin: 0;
+  color: var(--preto);
+}
+.footer-back-to-site {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  border: 1px solid var(--bronze);
+  border-radius: 999px;
+  background: var(--branco);
+  color: var(--bronze);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.footer-back-to-site:hover,
+.footer-back-to-site:focus-visible {
+  background: var(--bronze);
+  color: var(--branco);
 }
 
 /* ========== RESPONSIVO (UMA VEZ SÓ) ========== */
