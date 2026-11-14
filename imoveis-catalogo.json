@@ -1,5 +1,24 @@
 [
   {
+    "codigo": "V512",
+    "titulo": "Apartamento Mobiliado com 1 Dormitório no Kobrasol São José",
+    "tipo": "Apartamento",
+    "cidade": "São José",
+    "bairro": "Kobrasol",
+    "quartos": 1,
+    "suites": 1,
+    "vagas": 1,
+    "banheiros": 1,
+    "preco": 699000,
+    "precoTexto": "R$ 699.000,00",
+    "publicarNoIndex": true,
+    "url": "v512-apartamento-mobiliado-com-1-dormitorio-no-kobrasol-sao-jose.html",
+    "imagem": "/img/v512/capa-1-apartamento-studio-aster-kobrasol.jpg",
+    "tag": "Apartamento",
+    "destaque": "Andar Alto\nMobiliado, pronto para morar",
+    "descricao": "Viva o melhor do Kobrasol, este belissimo apartamento Stúdio oferece 48,90 m2 de área privativa, ambientes amplos, bem iluminados e ventilados. A área social é integrada à varanda com orientação norte/oeste, garantindo um ótima incidência solar e vista ampla para o bairro. O apartamento será entregue com porteira fechada, com móveis planejados, móveis soltos, eletrodomésticos, ar condicionados, praticidade para quem já quer morar. Com 1 vaga de garagem e hobby box, o imóvel está inserido em um edificio contemporâneo, com estrutura completa, acesso facilitado a escolas, comércio e supermercados. O endereço está entre os mais valorizados da região, combinando conforto, localização estratégica e qualidade de vida. Tudo isso em um bairro que permite fazer tudo a pé: mercados, cafés, restaurantes, centro de Campinas, kobrasol e Beira mar de São José. Uma escolha perfeita para quem deseja morar com exclusividade, praticidade e conexão. Valor taxa condominio: R$ 655,00 Valor IPTU: R$ 335,40 anual + taxa de lixo Agende a sua visita!"
+  },
+  {
     "codigo": "V511",
     "titulo": "Apartamento Garden à venda com 3 suítes no DMys no Estreito",
     "tipo": "Apartamento",
